@@ -103,7 +103,7 @@ function CustoBeneficioPage() {
               title="Melhor Samsung custo-benefício"
               description="A melhor opção Samsung para quem quer equilíbrio entre preço, tela, bateria e experiência segura."
               href="/review/galaxy-a35"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
               highlight="Galaxy A35 5G"
             />
 
@@ -118,7 +118,7 @@ function CustoBeneficioPage() {
               title="Melhor Xiaomi custo-benefício"
               description="Excelente opção para quem busca ficha técnica forte, tela bonita e carregamento rápido."
               href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro.webp"
+              image="/images/products/redmi-note-13-pro-optimized.webp"
               highlight="Redmi Note 13 Pro 5G"
             />
           </div>
@@ -138,7 +138,7 @@ function CustoBeneficioPage() {
                   title="Review Galaxy A35 5G"
                   description="Excelente equilíbrio entre tela, bateria, preço e experiência Samsung confiável."
                   href="/review/galaxy-a35"
-              image="/images/products/galaxy-a35.webp"
+              image="/images/products/galaxy-a35-optimized.webp"
                   score="8.7"
                   badge="Samsung"
                 />
@@ -147,7 +147,7 @@ function CustoBeneficioPage() {
                   title="Review Galaxy A55 5G"
                   description="Experiência premium sem entrar na faixa flagship, com ótima tela e boa construção."
                   href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
                   score="9.0"
                   badge="Premium"
                 />
@@ -156,7 +156,7 @@ function CustoBeneficioPage() {
                   title="Review Redmi Note 13 Pro 5G"
                   description="Um dos melhores celulares Xiaomi para custo-benefício, tela e carregamento rápido."
                   href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro.webp"
+              image="/images/products/redmi-note-13-pro-optimized.webp"
                   score="9.0"
                   badge="Xiaomi"
                 />
@@ -175,7 +175,7 @@ function CustoBeneficioPage() {
                   title="Galaxy A55 vs Galaxy A35"
                   description="Veja se vale pagar mais no A55 ou economizar com o A35."
                   href="/comparativo-galaxy-a55-vs-galaxy-a35"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
                   winner="Galaxy A55 para experiência premium; A35 para economia."
                 />
 
@@ -183,7 +183,7 @@ function CustoBeneficioPage() {
                   title="Galaxy A55 vs Redmi Note 13 Pro"
                   description="Samsung ou Xiaomi? Compare tela, bateria, câmera, software e custo-benefício."
                   href="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
                   winner="Depende do perfil: segurança Samsung ou ficha técnica Xiaomi."
                 />
               </div>

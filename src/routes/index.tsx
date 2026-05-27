@@ -140,7 +140,7 @@ function HomePage() {
               title="Review Galaxy A55 5G"
               description="O Samsung mais equilibrado para a maioria das pessoas."
               href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
               score="9.0"
               badge="Samsung"
             />
@@ -149,7 +149,7 @@ function HomePage() {
               title="Review Redmi Note 13 Pro 5G"
               description="Excelente tela AMOLED e carregamento rápido."
               href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro.webp"
+              image="/images/products/redmi-note-13-pro-optimized.webp"
               score="9.0"
               badge="Xiaomi"
             />
@@ -158,7 +158,7 @@ function HomePage() {
               title="Review Galaxy S24"
               description="Experiência flagship compacta e premium."
               href="/review/galaxy-s24"
-              image="/images/products/galaxy-s24.webp"
+              image="/images/products/galaxy-s24-optimized.webp"
               score="9.6"
               badge="Premium"
             />
@@ -177,7 +177,7 @@ function HomePage() {
               title="Galaxy A55 vs Redmi Note 13 Pro"
               description="Samsung ou Xiaomi? Compare software, câmera, bateria e custo-benefício."
               href="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro.webp"
+              image="/images/products/redmi-note-13-pro-optimized.webp"
               winner="Galaxy A55 para experiência premium; Redmi para hardware."
             />
 
@@ -185,7 +185,7 @@ function HomePage() {
               title="Galaxy A55 vs Galaxy A35"
               description="Vale pagar mais pelo A55 ou o A35 já resolve?"
               href="/comparativo-galaxy-a55-vs-galaxy-a35"
-              image="/images/products/galaxy-a35.webp"
+              image="/images/products/galaxy-a35-optimized.webp"
               winner="A55 para premium; A35 para economia."
             />
           </div>

@@ -120,7 +120,7 @@ function MelhoresCelularesSamsung() {
               title="Review Galaxy S24"
               description="Top de linha compacto da Samsung com IA, excelente câmera e desempenho premium."
               href="/review/galaxy-s24"
-              image="/images/products/galaxy-s24.webp"
+              image="/images/products/galaxy-s24-optimized.webp"
               score="9.6"
               badge="Premium"
             />
@@ -129,7 +129,7 @@ function MelhoresCelularesSamsung() {
               title="Review Galaxy A55 5G"
               description="O Samsung mais equilibrado para a maioria das pessoas."
               href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
               score="9.0"
               badge="Intermediário Premium"
             />
@@ -138,7 +138,7 @@ function MelhoresCelularesSamsung() {
               title="Review Galaxy A35 5G"
               description="Ótima escolha custo-benefício dentro do ecossistema Samsung."
               href="/review/galaxy-a35"
-              image="/images/products/galaxy-a35.webp"
+              image="/images/products/galaxy-a35-optimized.webp"
               score="8.7"
               badge="Custo-benefício"
             />

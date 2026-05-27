@@ -120,7 +120,7 @@ function MelhoresCelularesXiaomi() {
               title="Review Redmi Note 13 Pro 5G"
               description="Excelente equilíbrio entre tela, desempenho e carregamento rápido."
               href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro.webp"
+              image="/images/products/redmi-note-13-pro-optimized.webp"
               score="9.0"
               badge="Custo-benefício"
             />
@@ -129,7 +129,7 @@ function MelhoresCelularesXiaomi() {
               title="Review Poco X6 Pro"
               description="Um dos celulares mais fortes para jogos e performance."
               href="/review/poco-x6-pro"
-              image="/images/products/poco-x6-pro.webp"
+              image="/images/products/poco-x6-pro-optimized.webp"
               score="9.2"
               badge="Performance"
             />

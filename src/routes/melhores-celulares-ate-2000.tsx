@@ -120,7 +120,7 @@ function MelhoresCelularesAte2000() {
               title="Review Galaxy A35 5G"
               description="Excelente equilíbrio entre bateria, tela e experiência Samsung."
               href="/review/galaxy-a35"
-              image="/images/products/galaxy-a35.webp"
+              image="/images/products/galaxy-a35-optimized.webp"
               score="8.7"
               badge="Samsung"
             />
@@ -129,7 +129,7 @@ function MelhoresCelularesAte2000() {
               title="Review Redmi Note 13 Pro 5G"
               description="Ótima tela AMOLED, carregamento rápido e forte custo-benefício."
               href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro.webp"
+              image="/images/products/redmi-note-13-pro-optimized.webp"
               score="9.0"
               badge="Xiaomi"
             />
@@ -138,7 +138,7 @@ function MelhoresCelularesAte2000() {
               title="Review Poco X6"
               description="Ótima escolha para quem prioriza desempenho e jogos."
               href="/review/poco-x6"
-              image="/images/products/poco-x6-pro.webp"
+              image="/images/products/poco-x6-pro-optimized.webp"
               score="8.9"
               badge="Performance"
             />

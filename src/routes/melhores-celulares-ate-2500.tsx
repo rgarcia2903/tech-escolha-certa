@@ -121,7 +121,7 @@ function MelhoresCelularesAte2500() {
               title="Review Galaxy A55 5G"
               description="Experiência premium sem entrar na faixa flagship."
               href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
               score="9.0"
               badge="Samsung"
             />
@@ -130,7 +130,7 @@ function MelhoresCelularesAte2500() {
               title="Review Redmi Note 13 Pro 5G"
               description="Ótimo custo-benefício com tela AMOLED e carregamento rápido."
               href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro.webp"
+              image="/images/products/redmi-note-13-pro-optimized.webp"
               score="9.0"
               badge="Xiaomi"
             />
@@ -139,7 +139,7 @@ function MelhoresCelularesAte2500() {
               title="Review Poco X6 Pro"
               description="Excelente escolha para quem quer máxima performance."
               href="/review/poco-x6-pro"
-              image="/images/products/poco-x6-pro.webp"
+              image="/images/products/poco-x6-pro-optimized.webp"
               score="9.2"
               badge="Performance"
             />
@@ -158,7 +158,7 @@ function MelhoresCelularesAte2500() {
               title="Galaxy A55 vs Redmi Note 13 Pro"
               description="Samsung ou Xiaomi? Compare tela, câmera, software e custo-benefício."
               href="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
               winner="Galaxy A55 para experiência premium; Redmi para ficha técnica."
             />
 
@@ -166,7 +166,7 @@ function MelhoresCelularesAte2500() {
               title="Galaxy A55 vs Poco X6 Pro"
               description="Equilíbrio premium ou performance extrema?"
               href="/comparativo/galaxy-a55-vs-poco-x6-pro"
-              image="/images/products/galaxy-a55.webp"
+              image="/images/products/galaxy-a55-optimized.webp"
               winner="A55 para equilíbrio; Poco para desempenho."
             />
           </div>

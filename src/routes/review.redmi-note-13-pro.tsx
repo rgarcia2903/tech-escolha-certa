@@ -35,7 +35,7 @@ export const Route = createFileRoute("/review/redmi-note-13-pro")({
 function ReviewRedmiNote13Pro() {
   return (
     <ReviewTemplate
-      image="/images/products/redmi-note-13-pro.webp"
+      image="/images/products/redmi-note-13-pro-optimized.webp"
       breadcrumbs={[
         { label: "Home", to: "/" },
         { label: "Celulares", to: "/celulares" },
