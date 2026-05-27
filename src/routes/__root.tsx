@@ -142,42 +142,95 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           href: "/favicon.png",
         },
       ],
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        title:
-          "Tech Escolha Certa — Análises, comparativos e ofertas de tecnologia",
-      },
-      {
-        name: "description",
-        content:
-          "Análises diretas, comparativos reais e recomendações confiáveis de celulares, notebooks, smartwatches e acessórios.",
-      },
-      { name: "author", content: "Tech Escolha Certa" },
-      {
-        property: "og:title",
-        content:
-          "Tech Escolha Certa — Análises, comparativos e ofertas de tecnologia",
-      },
-      {
-        property: "og:description",
-        content:
-          "Análises diretas, comparativos reais e recomendações confiáveis de celulares, notebooks, smartwatches e acessórios.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      {
-        name: "twitter:title",
-        content:
-          "Tech Escolha Certa — Análises, comparativos e ofertas de tecnologia",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "Análises diretas, comparativos reais e recomendações confiáveis de celulares, notebooks, smartwatches e acessórios.",
-      },
-    ],
+      meta: [
+        { charSet: "utf-8" },
+
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+
+        {
+          title:
+            "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+        },
+
+        {
+          name: "description",
+          content:
+            "Compare celulares, notebooks e smartwatches antes de comprar. Reviews reais, rankings atualizados e os melhores modelos custo-benefício de 2026.",
+        },
+
+        {
+          name: "keywords",
+          content:
+            "melhores celulares, comparativo celular, review smartphone, celular custo benefício, galaxy a55, redmi note 13 pro, melhores celulares 2026",
+        },
+
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+
+        {
+          name: "author",
+          content: "Tech Escolha Certa",
+        },
+
+        {
+          property: "og:type",
+          content: "website",
+        },
+
+        {
+          property: "og:site_name",
+          content: "Tech Escolha Certa",
+        },
+
+        {
+          property: "og:title",
+          content:
+            "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+        },
+
+        {
+          property: "og:description",
+          content:
+            "Reviews reais, comparativos completos e rankings atualizados dos melhores celulares para comprar em 2026.",
+        },
+
+        {
+          property: "og:url",
+          content: "https://techescolhacerta.com.br",
+        },
+
+        {
+          property: "og:image",
+          content: "https://techescolhacerta.com.br/favicon.png",
+        },
+
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+
+        {
+          name: "twitter:title",
+          content:
+            "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+        },
+
+        {
+          name: "twitter:description",
+          content:
+            "Compare celulares antes de comprar. Reviews, rankings e recomendações confiáveis.",
+        },
+
+        {
+          name: "twitter:image",
+          content: "https://techescolhacerta.com.br/favicon.png",
+        },
+      ],
   }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
