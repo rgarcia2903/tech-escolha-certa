@@ -55,7 +55,7 @@ export function ReviewTemplate({
   eyebrow = "Review completo",
   title,
   description,
-  image = "/images/products/phones-hero.webp",
+  image = "/images/products/phones-hero-optimized.webp",
   updatedAt = "Atualizado em 2026",
   readingTime = "Leitura rápida",
   productName,

@@ -51,7 +51,7 @@ function MelhoresCelularesAte2500() {
         eyebrow="Especial até R$ 2.500"
         title="Os melhores celulares até R$ 2.500 para comprar em 2026"
         description="Selecionamos os smartphones mais equilibrados até R$ 2.500 considerando tela, desempenho, câmera, bateria, software e experiência real de uso."
-        image="/images/products/phones-hero.webp"
+        image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">

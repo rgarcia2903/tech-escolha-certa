@@ -53,7 +53,7 @@ function HomePage() {
         eyebrow="Portal editorial de tecnologia"
         title="Compre tecnologia do jeito certo."
         description="Reviews, comparativos e recomendações editoriais para ajudar você a escolher celulares, notebooks e acessórios sem cair em marketing vazio."
-        image="/images/products/phones-hero.webp"
+        image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D9A066] ring-1 ring-white/20">

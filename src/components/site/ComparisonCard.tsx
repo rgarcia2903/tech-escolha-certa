@@ -13,7 +13,7 @@ export function ComparisonCard({
   title,
   description,
   href,
-  image = "/images/products/phones-hero.webp",
+  image = "/images/products/phones-hero-optimized.webp",
   winner,
 }: ComparisonCardProps) {
   return (

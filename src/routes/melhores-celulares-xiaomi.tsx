@@ -50,7 +50,7 @@ function MelhoresCelularesXiaomi() {
         eyebrow="Especial Xiaomi"
         title="Os melhores celulares Xiaomi para comprar em 2026"
         description="Selecionamos os celulares Xiaomi que mais valem a pena atualmente considerando desempenho, tela, bateria, carregamento rápido e custo-benefício."
-        image="/images/products/phones-hero.webp"
+        image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">

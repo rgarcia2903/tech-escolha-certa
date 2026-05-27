@@ -15,7 +15,7 @@ export function ReviewCard({
   title,
   description,
   href,
-  image = "/images/products/phones-hero.webp",
+  image = "/images/products/phones-hero-optimized.webp",
   category = "Review",
   score,
   badge,

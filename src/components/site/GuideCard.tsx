@@ -14,7 +14,7 @@ export function GuideCard({
   title,
   description,
   href,
-  image = "/images/products/phones-hero.webp",
+  image = "/images/products/phones-hero-optimized.webp",
   category = "Guia de compra",
   highlight,
 }: GuideCardProps) {
