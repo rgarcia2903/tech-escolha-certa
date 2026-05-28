@@ -173,7 +173,7 @@ function MelhoresCelularesXiaomi() {
               title="Melhores ofertas Xiaomi atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos celulares Xiaomi recomendados."
               buttonText="Ver ofertas Xiaomi"
-              href="https://meli.la/2KvVkSc"
+              href="https://www.mercadolivre.com.br/samsung-galaxy-a54-5g-256gb-preto-8gb-ram/p/MLB23138587?pdp_filters=item_id%3AMLB4713006737&matt_tool=38524122#origin=share&sid=share&wid=MLB4713006737&action=copy"
               highlight="Redmi • Poco • Xiaomi"
             />
 
@@ -236,4 +236,5 @@ function MelhoresCelularesXiaomi() {
     </main>
   );
 }
+
 

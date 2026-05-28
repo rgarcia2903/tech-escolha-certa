@@ -174,7 +174,7 @@ function MelhoresCelularesSamsung() {
               title="Melhores ofertas Samsung atualizadas"
               description="Veja preço, parcelamento e disponibilidade dos celulares Samsung recomendados."
               buttonText="Ver ofertas Samsung"
-              href="https://meli.la/2KvVkSc"
+              href="https://www.mercadolivre.com.br/samsung-galaxy-a54-5g-256gb-preto-8gb-ram/p/MLB23138587?pdp_filters=item_id%3AMLB4713006737&matt_tool=38524122#origin=share&sid=share&wid=MLB4713006737&action=copy"
               highlight="Galaxy S24 • Galaxy A55 • Galaxy A35"
             />
 
@@ -237,4 +237,5 @@ function MelhoresCelularesSamsung() {
     </main>
   );
 }
+
 

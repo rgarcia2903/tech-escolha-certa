@@ -193,7 +193,7 @@ function CustoBeneficioPage() {
               title="Celulares custo-benefício com ofertas atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos modelos recomendados diretamente no Mercado Livre."
               buttonText="Ver ofertas no Mercado Livre"
-              href="https://meli.la/2KvVkSc"
+              href="https://www.mercadolivre.com.br/samsung-galaxy-a54-5g-256gb-preto-8gb-ram/p/MLB23138587?pdp_filters=item_id%3AMLB4713006737&matt_tool=38524122#origin=share&sid=share&wid=MLB4713006737&action=copy"
               highlight="Samsung • Xiaomi • Intermediários premium"
             />
 
@@ -320,4 +320,5 @@ function CustoBeneficioPage() {
     </main>
   );
 }
+
 
