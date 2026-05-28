@@ -20,7 +20,7 @@ import {
 import { Badge, Rating } from "@/components/site/ui";
 
 const CANONICAL =
-  "https://tech-decide-right.lovable.app/guia/melhores-celulares-ate-2000-reais";
+  "https://techescolhacerta.com.br/melhores-celulares-ate-2000";
 
 export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")({
   head: () => ({
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")(
       {
         property: "og:image",
         content:
-          "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1600&q=80",
+          "https://techescolhacerta.com.br/favicon.png",
       },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
@@ -62,14 +62,14 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Article",
+          "@type": "TechArticle",
           headline: "Melhores celulares até 2000 reais em 2026",
           description:
             "Guia editorial dos melhores celulares intermediários de 2026 até R$ 2.000.",
           author: { "@type": "Organization", name: "Tech Escolha Certa" },
           datePublished: "2026-05-15",
           image:
-            "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1600&q=80",
+            "https://techescolhacerta.com.br/favicon.png",
         }),
       },
     ],
@@ -657,3 +657,4 @@ function PickBlock({ pick }: { pick: Pick }) {
     </section>
   );
 }
+
