@@ -25,3 +25,4 @@ export const Route = createFileRoute("/politica-de-privacidade")({
     </InfoLayout>
   ),
 });
+

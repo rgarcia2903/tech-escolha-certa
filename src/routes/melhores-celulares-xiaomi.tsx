@@ -173,7 +173,7 @@ function MelhoresCelularesXiaomi() {
               title="Melhores ofertas Xiaomi atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos celulares Xiaomi recomendados."
               buttonText="Ver ofertas Xiaomi"
-              href="https://SEU-LINK-AFILIADO"
+              href="https://meli.la/2KvVkSc"
               highlight="Redmi • Poco • Xiaomi"
             />
 
@@ -236,3 +236,4 @@ function MelhoresCelularesXiaomi() {
     </main>
   );
 }
+

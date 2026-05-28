@@ -132,7 +132,7 @@ function ReviewGalaxyA55() {
             </p>
 
             <a
-              href="https://SEU-LINK-AFILIADO"
+              href="https://meli.la/2KvVkSc"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
@@ -279,7 +279,7 @@ function ReviewGalaxyA55() {
             title="Galaxy A55 5G com melhor preço hoje"
             description="Confira preço atualizado, parcelamento e disponibilidade do Galaxy A55 no Mercado Livre."
             buttonText="Ver Galaxy A55 no Mercado Livre"
-            href="https://SEU-LINK-AFILIADO"
+            href="https://meli.la/2KvVkSc"
             highlight="Tela AMOLED • Ótima bateria • Excelente equilíbrio"
           />
 
@@ -336,7 +336,7 @@ function ReviewGalaxyA55() {
             </p>
 
             <a
-              href="https://SEU-LINK-AFILIADO"
+              href="https://meli.la/2KvVkSc"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
@@ -388,7 +388,7 @@ function ReviewGalaxyA55() {
           </div>
 
           <a
-            href="https://SEU-LINK-AFILIADO"
+            href="https://meli.la/2KvVkSc"
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-2xl bg-[#B9774B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
@@ -425,3 +425,4 @@ function AnalysisBlock({
     </section>
   );
 }
+

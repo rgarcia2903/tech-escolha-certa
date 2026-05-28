@@ -67,3 +67,4 @@ export function Rating({ value }: { value: number }) {
     </div>
   );
 }
+

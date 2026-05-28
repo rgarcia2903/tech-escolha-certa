@@ -174,7 +174,7 @@ function MelhoresCelularesSamsung() {
               title="Melhores ofertas Samsung atualizadas"
               description="Veja preço, parcelamento e disponibilidade dos celulares Samsung recomendados."
               buttonText="Ver ofertas Samsung"
-              href="https://SEU-LINK-AFILIADO"
+              href="https://meli.la/2KvVkSc"
               highlight="Galaxy S24 • Galaxy A55 • Galaxy A35"
             />
 
@@ -237,3 +237,4 @@ function MelhoresCelularesSamsung() {
     </main>
   );
 }
+

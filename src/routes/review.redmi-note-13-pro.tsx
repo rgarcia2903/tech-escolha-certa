@@ -50,7 +50,7 @@ function ReviewRedmiNote13Pro() {
       priceLabel="Ver preço atualizado"
       overallScore="9.0"
       verdictShort="O Redmi Note 13 Pro 5G vale a pena para quem quer muita ficha técnica pelo preço. Ele entrega ótima tela, desempenho forte, carregamento rápido e bom conjunto geral, mas perde para Samsung em software mais refinado e suporte mais previsível."
-      affiliateHref="https://SEU-LINK-AFILIADO"
+      affiliateHref="https://meli.la/2KvVkSc"
       affiliate={{
         title: "Redmi Note 13 Pro 5G com melhor preço hoje",
         description:
@@ -169,3 +169,4 @@ function ReviewRedmiNote13Pro() {
     />
   );
 }
+

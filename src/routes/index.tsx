@@ -219,7 +219,7 @@ function HomePage() {
               title="Ofertas atualizadas dos celulares recomendados"
               description="Veja preço, parcelamento e disponibilidade dos modelos mais recomendados do momento."
               buttonText="Ver ofertas atualizadas"
-              href="https://SEU-LINK-AFILIADO"
+              href="https://meli.la/2KvVkSc"
               highlight="Samsung • Xiaomi • Poco • Motorola"
             />
 
@@ -295,3 +295,4 @@ function SidebarLink({ title, href }: { title: string; href: string }) {
     </Link>
   );
 }
+

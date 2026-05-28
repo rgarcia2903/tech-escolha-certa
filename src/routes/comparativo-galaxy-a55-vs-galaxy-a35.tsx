@@ -341,3 +341,4 @@ function ComparativoGalaxyA55VsGalaxyA35() {
     </main>
   );
 }
+

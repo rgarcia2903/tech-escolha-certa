@@ -25,3 +25,4 @@ export const Route = createFileRoute("/termos-de-uso")({
     </InfoLayout>
   ),
 });
+

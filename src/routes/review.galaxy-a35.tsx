@@ -381,3 +381,4 @@ function ReviewGalaxyA35() {
     </main>
   );
 }
+

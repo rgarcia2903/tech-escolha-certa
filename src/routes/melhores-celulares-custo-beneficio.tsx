@@ -193,7 +193,7 @@ function CustoBeneficioPage() {
               title="Celulares custo-benefício com ofertas atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos modelos recomendados diretamente no Mercado Livre."
               buttonText="Ver ofertas no Mercado Livre"
-              href="https://SEU-LINK-AFILIADO"
+              href="https://meli.la/2KvVkSc"
               highlight="Samsung • Xiaomi • Intermediários premium"
             />
 
@@ -320,3 +320,4 @@ function CustoBeneficioPage() {
     </main>
   );
 }
+

@@ -200,7 +200,7 @@ function MelhoresCelularesAte2500() {
               title="Melhores ofertas até R$ 2.500"
               description="Veja preços, parcelamento e disponibilidade dos celulares recomendados."
               buttonText="Ver ofertas atualizadas"
-              href="https://SEU-LINK-AFILIADO"
+              href="https://meli.la/2KvVkSc"
               highlight="Samsung • Xiaomi • Poco"
             />
 
@@ -264,3 +264,4 @@ function MelhoresCelularesAte2500() {
   );
 }
   
+
