@@ -108,7 +108,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             </div>
 
             <a
-              href="https://www.mercadolivre.com.br/"
+              href="https://www.mercadolivre.com.br/samsung-galaxy-a54-5g-256gb-preto-8gb-ram/p/MLB23138587?pdp_filters=item_id%3AMLB4713006737&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               className="mt-8 inline-flex rounded-full bg-[#B9774B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
@@ -146,7 +146,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             </div>
 
             <a
-              href="https://www.mercadolivre.com.br/"
+              href="https://www.mercadolivre.com.br/samsung-galaxy-a35-5g-dual-sim-256gb-azul-escuro-8-gb-ram/p/MLB34729843?pdp_filters=item_id%3AMLB6662576092&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               className="mt-8 inline-flex rounded-full bg-[#B9774B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
