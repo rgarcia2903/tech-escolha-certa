@@ -200,7 +200,7 @@ function MelhoresCelularesAte2500() {
               title="Melhores ofertas até R$ 2.500"
               description="Veja preços, parcelamento e disponibilidade dos celulares recomendados."
               buttonText="Ver ofertas atualizadas"
-              href="https://www.mercadolivre.com.br/samsung-galaxy-a54-5g-256gb-preto-8gb-ram/p/MLB23138587?pdp_filters=item_id%3AMLB4713006737&matt_tool=38524122#origin=share&sid=share&wid=MLB4713006737&action=copy"
+              href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
               highlight="Samsung • Xiaomi • Poco"
             />
 
@@ -264,5 +264,7 @@ function MelhoresCelularesAte2500() {
   );
 }
   
+
+
 
 
