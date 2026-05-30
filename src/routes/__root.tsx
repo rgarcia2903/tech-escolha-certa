@@ -23,9 +23,25 @@ if (import.meta.env.DEV) {
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <head>
-        <HeadContent />
-      </head>
+<head>
+  <HeadContent />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-0FBRT0FGY5"
+  ></script>
+
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0FBRT0FGY5');
+      `,
+    }}
+  />
+</head>
 
       <body>
         {children}
