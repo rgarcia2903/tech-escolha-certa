@@ -47,7 +47,7 @@ export function AffiliateCTA({
               href={href}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#B9774B] px-6 py-4 text-sm font-bold text-white shadow-lg transition hover:brightness-95"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#8B5A2B] px-6 py-4 text-sm font-bold text-white shadow-lg transition hover:brightness-95"
             >
               {buttonText}
               <ExternalLink className="h-4 w-4" />
@@ -67,6 +67,7 @@ export function AffiliateCTA({
     </section>
   );
 }
+
 
 
 

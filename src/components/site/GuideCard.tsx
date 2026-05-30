@@ -41,7 +41,7 @@ export function GuideCard({
 
         {highlight && (
           <div className="absolute bottom-5 left-5 right-5">
-            <span className="inline-flex max-w-full rounded-full bg-[#B9774B] px-3 py-1 text-xs font-semibold text-white shadow-lg">
+            <span className="inline-flex max-w-full rounded-full bg-[#8B5A2B] px-3 py-1 text-xs font-semibold text-white shadow-lg">
               {highlight}
             </span>
           </div>
@@ -63,6 +63,7 @@ export function GuideCard({
     </Link>
   );
 }
+
 
 
 

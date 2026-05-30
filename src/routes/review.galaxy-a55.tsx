@@ -135,7 +135,7 @@ function ReviewGalaxyA55() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver oferta
               <ArrowUpRight className="h-4 w-4" />
@@ -213,7 +213,7 @@ function ReviewGalaxyA55() {
 
                   <div className="h-3 overflow-hidden rounded-full bg-slate-100">
                     <div
-                      className="h-full rounded-full bg-[#B9774B]"
+                      className="h-full rounded-full bg-[#8B5A2B]"
                       style={{ width: `${Number(score) * 10}%` }}
                     />
                   </div>
@@ -339,7 +339,7 @@ function ReviewGalaxyA55() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver oferta
               <ArrowUpRight className="h-4 w-4" />
@@ -391,7 +391,7 @@ function ReviewGalaxyA55() {
             href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl bg-[#B9774B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
+            className="inline-flex items-center gap-2 rounded-2xl bg-[#8B5A2B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
           >
             Ver oferta
             <ArrowUpRight className="h-3.5 w-3.5" />
@@ -425,6 +425,7 @@ function AnalysisBlock({
     </section>
   );
 }
+
 
 
 

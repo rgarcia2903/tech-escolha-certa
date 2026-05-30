@@ -68,7 +68,7 @@ function MelhoresCelularesAte2000() {
 
             <Link
               to="/review/galaxy-a35"
-              className="mt-6 block rounded-full bg-[#B9774B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
               Ler review completo
             </Link>
@@ -77,7 +77,7 @@ function MelhoresCelularesAte2000() {
       >
         <Link
           to="/melhores-celulares-custo-beneficio"
-          className="rounded-full bg-[#B9774B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
+          className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
         >
           Ver custo-benefício
         </Link>
@@ -237,6 +237,7 @@ function MelhoresCelularesAte2000() {
   );
 }
   
+
 
 
 

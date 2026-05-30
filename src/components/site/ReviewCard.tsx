@@ -52,7 +52,7 @@ export function ReviewCard({
 
         {badge && (
           <div className="absolute bottom-5 left-5">
-            <span className="rounded-full bg-[#B9774B] px-3 py-1 text-xs font-semibold text-white shadow-lg">
+            <span className="rounded-full bg-[#8B5A2B] px-3 py-1 text-xs font-semibold text-white shadow-lg">
               {badge}
             </span>
           </div>
@@ -73,6 +73,7 @@ export function ReviewCard({
     </Link>
   );
 }
+
 
 
 

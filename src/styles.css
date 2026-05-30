@@ -131,3 +131,4 @@
     radial-gradient(50% 70% at 0% 100%, color-mix(in oklab, var(--teal) 10%, transparent), transparent 60%),
     linear-gradient(180deg, var(--background), var(--surface));
 }
+
