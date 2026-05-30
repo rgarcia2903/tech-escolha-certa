@@ -53,7 +53,7 @@ function CustoBeneficioPage() {
         description="Selecionamos smartphones equilibrados para quem quer gastar bem, evitando pagar caro por recursos que não fazem diferença no uso real."
         aside={
           <>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Melhor escolha geral
             </p>
 
@@ -198,7 +198,7 @@ function CustoBeneficioPage() {
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Como escolher
               </p>
 
@@ -254,9 +254,9 @@ function CustoBeneficioPage() {
             </section>
           </article>
 
-          <aside className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
+          <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
             <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Ranking rápido
               </p>
 
@@ -270,7 +270,7 @@ function CustoBeneficioPage() {
                     key={category}
                     className="rounded-2xl bg-[#F7F2EB] p-4 ring-1 ring-slate-200"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[#B9774B]">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-[#8B5A2B]">
                       {category}
                     </p>
                     <p className="mt-1 font-bold text-[#0F3F4A]">{product}</p>
@@ -280,46 +280,48 @@ function CustoBeneficioPage() {
             </div>
 
             <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Links úteis
               </p>
 
               <div className="mt-5 space-y-3 text-sm">
                 <Link
                   to="/melhores-celulares-ate-2000"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares até R$ 2.000
                 </Link>
 
                 <Link
                   to="/melhores-celulares-ate-2500"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares até R$ 2.500
                 </Link>
 
                 <Link
                   to="/melhores-celulares-samsung"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares Samsung
                 </Link>
 
                 <Link
                   to="/melhores-celulares-xiaomi"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares Xiaomi
                 </Link>
               </div>
             </div>
-          </aside>
+          </div>
         </section>
       </section>
     </main>
   );
 }
+
+
 
 
 

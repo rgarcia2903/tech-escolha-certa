@@ -45,7 +45,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <div className="max-w-5xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#D9A066]">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#8B5A2B]">
               Comparativo premium
             </p>
 
@@ -80,7 +80,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[#B9774B]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#8B5A2B]">
               Galaxy A55
             </p>
 
@@ -118,7 +118,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[#B9774B]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#8B5A2B]">
               Galaxy A35
             </p>
 
@@ -158,7 +158,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
 
         <section className="mt-12 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
           <div className="mb-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Vencedor por categoria
             </p>
 
@@ -341,6 +341,8 @@ function ComparativoGalaxyA55VsGalaxyA35() {
     </main>
   );
 }
+
+
 
 
 

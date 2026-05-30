@@ -38,7 +38,7 @@ export function ComparisonCard({
 
         <div className="absolute bottom-5 left-5 right-5">
           <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-md ring-1 ring-white/20">
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-[#D9A066]">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-[#8B5A2B]">
               Melhor para:
             </p>
 
@@ -48,13 +48,13 @@ export function ComparisonCard({
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold tracking-tight text-[#0F3F4A] transition group-hover:text-[#B9774B]">
+        <h3 className="text-2xl font-bold tracking-tight text-[#0F3F4A] transition group-hover:text-[#8B5A2B]">
           {title}
         </h3>
 
         <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p>
 
-        <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#0F3F4A] transition group-hover:text-[#B9774B]">
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#0F3F4A] transition group-hover:text-[#8B5A2B]">
           Ver comparativo
           <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
         </div>
@@ -62,6 +62,8 @@ export function ComparisonCard({
     </Link>
   );
 }
+
+
 
 
 

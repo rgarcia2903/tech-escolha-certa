@@ -22,7 +22,7 @@ export function AffiliateCTA({
       <div className="relative z-10">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#D9A066] ring-1 ring-white/15">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#8B5A2B] ring-1 ring-white/15">
               <ShoppingBag className="h-3.5 w-3.5" />
               Oferta recomendada
             </div>
@@ -54,7 +54,7 @@ export function AffiliateCTA({
             </a>
 
             <div className="mt-4 flex items-start gap-3 rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
-              <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#D9A066]" />
+              <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8B5A2B]" />
 
               <p className="text-xs leading-6 text-slate-300">
                 Podemos receber comissão por compras realizadas através dos nossos links,
@@ -67,6 +67,8 @@ export function AffiliateCTA({
     </section>
   );
 }
+
+
 
 
 

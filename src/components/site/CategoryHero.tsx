@@ -39,7 +39,7 @@ export function CategoryHero({
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1fr_380px] lg:px-8">
         <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#D9A066]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#8B5A2B]">
             {eyebrow}
           </p>
 
@@ -55,14 +55,16 @@ export function CategoryHero({
         </div>
 
         {aside && (
-          <aside className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur-md">
+          <div className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur-md">
             {aside}
-          </aside>
+          </div>
         )}
       </div>
     </section>
   );
 }
+
+
 
 
 

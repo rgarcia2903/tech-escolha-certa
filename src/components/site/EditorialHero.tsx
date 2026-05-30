@@ -21,7 +21,7 @@ export function EditorialHero({
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1fr_360px] lg:px-8">
         <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#D9A066]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#8B5A2B]">
             {eyebrow}
           </p>
 
@@ -37,14 +37,16 @@ export function EditorialHero({
         </div>
 
         {aside && (
-          <aside className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
+          <div className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
             {aside}
-          </aside>
+          </div>
         )}
       </div>
     </section>
   );
 }
+
+
 
 
 

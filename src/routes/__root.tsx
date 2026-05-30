@@ -11,6 +11,14 @@ import {
 import appCss from "../styles.css?url";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
+import React from "react";
+import ReactDOM from "react-dom";
+
+if (import.meta.env.DEV) {
+  import("@axe-core/react").then((axe) => {
+    axe.default(React, ReactDOM, 1000);
+  });
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -236,6 +244,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
+
 
 
 

@@ -49,13 +49,13 @@ export function GuideCard({
       </div>
 
       <div className="p-7">
-        <h3 className="text-2xl font-bold tracking-tight text-[#0F3F4A] transition group-hover:text-[#B9774B]">
+        <h3 className="text-2xl font-bold tracking-tight text-[#0F3F4A] transition group-hover:text-[#8B5A2B]">
           {title}
         </h3>
 
         <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p>
 
-        <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#B9774B]">
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#8B5A2B]">
           Ver guia
           <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
         </div>
@@ -63,6 +63,8 @@ export function GuideCard({
     </Link>
   );
 }
+
+
 
 
 

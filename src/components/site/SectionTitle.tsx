@@ -14,7 +14,7 @@ export function SectionTitle({
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       {eyebrow && (
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
           {eyebrow}
         </p>
       )}
@@ -29,6 +29,8 @@ export function SectionTitle({
     </div>
   );
 }
+
+
 
 
 

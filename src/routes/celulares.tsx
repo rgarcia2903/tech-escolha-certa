@@ -101,7 +101,7 @@ function CelularesPage() {
         description="Análises editoriais com foco em custo-benefício, experiência real, bateria, desempenho, câmera e decisão de compra."
         aside={
           <>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Guia principal
             </p>
 
@@ -186,7 +186,7 @@ function CelularesPage() {
             </section>
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Curadoria editorial
               </p>
 
@@ -202,9 +202,9 @@ function CelularesPage() {
             </section>
           </article>
 
-          <aside className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
+          <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
             <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Rankings rápidos
               </p>
 
@@ -218,7 +218,7 @@ function CelularesPage() {
                     key={category}
                     className="rounded-2xl bg-[#F7F2EB] p-4 ring-1 ring-slate-200"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[#B9774B]">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-[#8B5A2B]">
                       {category}
                     </p>
 
@@ -231,46 +231,48 @@ function CelularesPage() {
             </div>
 
             <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Links rápidos
               </p>
 
               <div className="mt-5 space-y-3 text-sm">
                 <Link
                   to="/melhores-celulares-samsung"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares Samsung
                 </Link>
 
                 <Link
                   to="/review/redmi-note-13-pro"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Review Redmi Note 13 Pro
                 </Link>
 
                 <Link
                   to="/review/galaxy-a55"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Review Galaxy A55
                 </Link>
 
                 <Link
                   to="/comparativo-galaxy-a55-vs-galaxy-a35"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Galaxy A55 vs Galaxy A35
                 </Link>
               </div>
             </div>
-          </aside>
+          </div>
         </section>
       </section>
     </main>
   );
 }
+
+
 
 
 

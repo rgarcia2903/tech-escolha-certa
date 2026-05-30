@@ -519,7 +519,7 @@ function Page() {
           </article>
 
           {/* Sidebar */}
-          <aside className="hidden lg:block">
+          <div className="hidden lg:block">
             <div className="sticky top-24 space-y-6">
               <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
@@ -555,7 +555,7 @@ function Page() {
                 </a>
               </div>
             </div>
-          </aside>
+          </div>
         </div>
       </section>
     </>
@@ -661,6 +661,8 @@ function PickBlock({ pick }: { pick: Pick }) {
     </section>
   );
 }
+
+
 
 
 

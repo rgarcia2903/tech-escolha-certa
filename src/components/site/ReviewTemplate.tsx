@@ -102,7 +102,7 @@ export function ReviewTemplate({
               ))}
             </nav>
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#D9A066]">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#8B5A2B]">
               {eyebrow}
             </p>
 
@@ -127,8 +127,8 @@ export function ReviewTemplate({
             </div>
           </div>
 
-          <aside className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur-md">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+          <div className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur-md">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Nota geral
             </p>
 
@@ -148,14 +148,14 @@ export function ReviewTemplate({
               {priceLabel}
               <ArrowUpRight className="h-4 w-4" />
             </a>
-          </aside>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1fr_340px] lg:px-8">
         <article className="space-y-10">
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Veredito rápido
             </p>
 
@@ -271,9 +271,9 @@ export function ReviewTemplate({
           </section>
         </article>
 
-        <aside className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
+        <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
           <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Veredito
             </p>
 
@@ -300,7 +300,7 @@ export function ReviewTemplate({
                     <Link
                       key={link.to}
                       to={link.to}
-                      className="block text-slate-700 hover:text-[#B9774B]"
+                      className="block text-slate-700 hover:text-[#8B5A2B]"
                     >
                       {link.label}
                     </Link>
@@ -309,13 +309,13 @@ export function ReviewTemplate({
               </div>
             )}
           </div>
-        </aside>
+        </div>
       </section>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#071E25]/95 backdrop-blur-xl lg:hidden">
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3">
           <div className="min-w-0 flex-1">
-            <span className="block text-[10px] uppercase tracking-[0.18em] text-[#D9A066]">
+            <span className="block text-[10px] uppercase tracking-[0.18em] text-[#8B5A2B]">
               Melhor oferta
             </span>
             <span className="block truncate font-heading text-sm font-bold text-white">
@@ -352,7 +352,7 @@ function AnalysisBlock({
 }) {
   return (
     <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
         {eyebrow}
       </p>
 
@@ -362,6 +362,8 @@ function AnalysisBlock({
     </section>
   );
 }
+
+
 
 
 

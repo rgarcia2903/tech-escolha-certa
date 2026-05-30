@@ -44,7 +44,7 @@ export function ReviewCard({
         {score && (
           <div className="absolute right-5 top-5 rounded-2xl bg-[#071E25]/90 px-3 py-2 text-white shadow-lg backdrop-blur-md">
             <div className="flex items-center gap-1">
-              <Star className="h-3.5 w-3.5 fill-current text-[#D9A066]" />
+              <Star className="h-3.5 w-3.5 fill-current text-[#8B5A2B]" />
               <span className="text-sm font-bold">{score}</span>
             </div>
           </div>
@@ -60,19 +60,21 @@ export function ReviewCard({
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold tracking-tight text-[#0F3F4A] transition group-hover:text-[#B9774B]">
+        <h3 className="text-2xl font-bold tracking-tight text-[#0F3F4A] transition group-hover:text-[#8B5A2B]">
           {title}
         </h3>
 
         <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p>
 
-        <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#B9774B]">
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#8B5A2B]">
           Ler análise →
         </div>
       </div>
     </Link>
   );
 }
+
+
 
 
 

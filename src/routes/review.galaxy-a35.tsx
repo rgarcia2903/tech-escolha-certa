@@ -42,7 +42,7 @@ function ReviewGalaxyA35() {
 
         <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1fr_360px] lg:px-8">
           <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#D9A066]">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#8B5A2B]">
               Review completo
             </p>
 
@@ -69,8 +69,8 @@ function ReviewGalaxyA35() {
             </div>
           </div>
 
-          <aside className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+          <div className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Nota geral
             </p>
 
@@ -92,7 +92,7 @@ function ReviewGalaxyA35() {
             >
               Ver ofertas no Mercado Livre
             </a>
-          </aside>
+          </div>
         </div>
       </section>
 
@@ -104,7 +104,7 @@ function ReviewGalaxyA35() {
                 key={titulo}
                 className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
               >
-                <p className="text-sm font-semibold uppercase tracking-wide text-[#B9774B]">
+                <p className="text-sm font-semibold uppercase tracking-wide text-[#8B5A2B]">
                   {titulo}
                 </p>
                 <h2 className="mt-2 text-xl font-bold text-[#0F3F4A]">{texto}</h2>
@@ -325,9 +325,9 @@ function ReviewGalaxyA35() {
           </section>
         </article>
 
-        <aside className="lg:sticky lg:top-6 lg:h-fit">
+        <div className="lg:sticky lg:top-6 lg:h-fit">
           <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Veredito
             </p>
 
@@ -355,32 +355,34 @@ function ReviewGalaxyA35() {
               <div className="mt-3 space-y-3 text-sm">
                 <a
                   href="/comparativo-galaxy-a55-vs-galaxy-a35"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Galaxy A55 vs Galaxy A35
                 </a>
 
                 <a
                   href="/melhores-celulares-ate-2000"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares até R$ 2.000
                 </a>
 
                 <a
                   href="/melhores-celulares-ate-2500"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares até R$ 2.500
                 </a>
               </div>
             </div>
           </div>
-        </aside>
+        </div>
       </section>
     </main>
   );
 }
+
+
 
 
 

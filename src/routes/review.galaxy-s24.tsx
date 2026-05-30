@@ -269,7 +269,7 @@ function ReviewPage() {
       {/* Body */}
       <div className="container-tec grid gap-10 py-14 lg:grid-cols-12 lg:gap-12">
         {/* Sidebar TOC */}
-        <aside className="hidden lg:col-span-3 lg:block">
+        <div className="hidden lg:col-span-3 lg:block">
           <div className="sticky top-24 space-y-6">
             <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
               <span className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
@@ -314,7 +314,7 @@ function ReviewPage() {
               </Link>
             </div>
           </div>
-        </aside>
+        </div>
 
         {/* Main */}
         <main className="lg:col-span-9 space-y-14">
@@ -754,6 +754,8 @@ function AnalysisBlock({
     </section>
   );
 }
+
+
 
 
 

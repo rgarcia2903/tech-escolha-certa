@@ -50,7 +50,7 @@ export function Footer() {
 
               <span className="leading-none">
                 <span className="block text-lg tracking-tight">
-                  Tech <span className="text-[#D9A066]">Escolha Certa</span>
+                  Tech <span className="text-[#8B5A2B]">Escolha Certa</span>
                 </span>
                 <span className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
                   Guia editorial de tecnologia
@@ -66,7 +66,7 @@ export function Footer() {
 
             <div className="mt-6 rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
               <div className="flex items-start gap-3">
-                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#D9A066]" />
+                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8B5A2B]" />
 
                 <p className="text-xs leading-6 text-slate-300">
                   Trabalhamos com curadoria editorial e links afiliados. Podemos receber
@@ -80,7 +80,7 @@ export function Footer() {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#D9A066]"
+                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#8B5A2B]"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -88,7 +88,7 @@ export function Footer() {
               <a
                 href="#"
                 aria-label="YouTube"
-                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#D9A066]"
+                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#8B5A2B]"
               >
                 <Youtube className="h-5 w-5" />
               </a>
@@ -96,7 +96,7 @@ export function Footer() {
               <a
                 href="#"
                 aria-label="Twitter"
-                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#D9A066]"
+                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#8B5A2B]"
               >
                 <Twitter className="h-5 w-5" />
               </a>
@@ -113,9 +113,9 @@ export function Footer() {
 
         <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-[1fr_1fr]">
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D9A066]">
+            <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#8B5A2B]">
               Institucional
-            </h4>
+            </h3>
 
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-3 text-sm text-slate-300">
               {INSTITUCIONAL.map((item) => (
@@ -127,9 +127,9 @@ export function Footer() {
           </div>
 
           <div className="rounded-2xl bg-white/8 p-5 ring-1 ring-white/10">
-            <h4 className="text-sm font-bold text-white">
+            <h3 className="text-sm font-bold text-white">
               Compromisso editorial
-            </h4>
+            </h3>
 
             <p className="mt-2 text-sm leading-6 text-slate-300">
               Nossas recomendações são organizadas por perfil de uso, custo-benefício e
@@ -163,9 +163,9 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D9A066]">
+      <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#8B5A2B]">
         {title}
-      </h4>
+      </h3>
 
       <ul className="mt-4 space-y-3 text-sm text-slate-300">
         {links.map((item) => (
@@ -179,6 +179,8 @@ function FooterColumn({
     </div>
   );
 }
+
+
 
 
 

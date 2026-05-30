@@ -13,12 +13,12 @@ export function TopPickCard({
 }: TopPickCardProps) {
   return (
     <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <div className="inline-flex items-center gap-2 rounded-full bg-[#F7F2EB] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#B9774B] ring-1 ring-slate-200">
+      <div className="inline-flex items-center gap-2 rounded-full bg-[#F7F2EB] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-slate-200">
         <Star className="h-3.5 w-3.5" />
         Escolha recomendada
       </div>
 
-      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#B9774B]">
+      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#8B5A2B]">
         {category}
       </p>
 
@@ -34,6 +34,8 @@ export function TopPickCard({
     </div>
   );
 }
+
+
 
 
 

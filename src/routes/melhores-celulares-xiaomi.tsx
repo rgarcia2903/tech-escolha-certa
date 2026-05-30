@@ -53,7 +53,7 @@ function MelhoresCelularesXiaomi() {
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Melhor Xiaomi geral
             </p>
 
@@ -147,7 +147,7 @@ function MelhoresCelularesXiaomi() {
         <section className="mt-14 grid gap-8 lg:grid-cols-[1fr_340px]">
           <article className="space-y-10">
             <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Xiaomi em 2026
               </p>
 
@@ -178,7 +178,7 @@ function MelhoresCelularesXiaomi() {
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D9A066]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Recomendação editorial
               </p>
 
@@ -194,48 +194,50 @@ function MelhoresCelularesXiaomi() {
             </section>
           </article>
 
-          <aside className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
+          <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
             <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Links úteis
               </p>
 
               <div className="mt-5 space-y-3 text-sm">
                 <Link
                   to="/melhores-celulares-custo-beneficio"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores custo-benefício
                 </Link>
 
                 <Link
                   to="/melhores-celulares-samsung"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares Samsung
                 </Link>
 
                 <Link
                   to="/review/redmi-note-13-pro"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Review Redmi Note 13 Pro
                 </Link>
 
                 <Link
                   to="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-                  className="block text-slate-700 hover:text-[#B9774B]"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Galaxy A55 vs Redmi Note 13 Pro
                 </Link>
               </div>
             </div>
-          </aside>
+          </div>
         </section>
       </section>
     </main>
   );
 }
+
+
 
 
 

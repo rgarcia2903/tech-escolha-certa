@@ -56,7 +56,7 @@ function HomePage() {
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D9A066] ring-1 ring-white/20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-white/20">
               <ShieldCheck className="h-3.5 w-3.5" />
               Escolha editorial
             </div>
@@ -194,7 +194,7 @@ function HomePage() {
         <section className="mt-14 grid gap-8 lg:grid-cols-[1fr_340px]">
           <article className="space-y-10">
             <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#F7F2EB] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#B9774B] ring-1 ring-slate-200">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#F7F2EB] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-slate-200">
                 <Smartphone className="h-3.5 w-3.5" />
                 Guia editorial
               </div>
@@ -224,7 +224,7 @@ function HomePage() {
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D9A066] ring-1 ring-white/20">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-white/20">
                 <Star className="h-3.5 w-3.5" />
                 Filosofia editorial
               </div>
@@ -241,9 +241,9 @@ function HomePage() {
             </section>
           </article>
 
-          <aside className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
+          <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
             <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Links rápidos
               </p>
 
@@ -254,7 +254,7 @@ function HomePage() {
                 <SidebarLink title="Melhores até R$ 2.500" href="/melhores-celulares-ate-2500" />
               </div>
             </div>
-          </aside>
+          </div>
         </section>
       </section>
     </main>
@@ -276,7 +276,7 @@ function CategoryLink({ title, href }: { title: string; href: string }) {
           </p>
         </div>
 
-        <div className="rounded-full bg-[#F7F2EB] p-3 text-[#B9774B] ring-1 ring-slate-200">
+        <div className="rounded-full bg-[#F7F2EB] p-3 text-[#8B5A2B] ring-1 ring-slate-200">
           <ChevronRight className="h-5 w-5 transition group-hover:translate-x-1" />
         </div>
       </div>
@@ -288,13 +288,15 @@ function SidebarLink({ title, href }: { title: string; href: string }) {
   return (
     <Link
       to={href}
-      className="flex items-center justify-between rounded-2xl bg-[#F7F2EB] px-4 py-3 text-slate-700 ring-1 ring-slate-200 transition hover:text-[#B9774B]"
+      className="flex items-center justify-between rounded-2xl bg-[#F7F2EB] px-4 py-3 text-slate-700 ring-1 ring-slate-200 transition hover:text-[#8B5A2B]"
     >
       <span>{title}</span>
       <ArrowRight className="h-4 w-4" />
     </Link>
   );
 }
+
+
 
 
 
