@@ -35,6 +35,7 @@ import { Route as ReviewGalaxyA55RouteImport } from './routes/review.galaxy-a55'
 import { Route as ReviewGalaxyA35RouteImport } from './routes/review.galaxy-a35'
 import { Route as GuiaMelhoresCelularesAte3000ReaisRouteImport } from './routes/guia.melhores-celulares-ate-3000-reais'
 import { Route as GuiaMelhoresCelularesAte2000ReaisRouteImport } from './routes/guia.melhores-celulares-ate-2000-reais'
+import { Route as GuiaMelhoresCelularesAte1500ReaisRouteImport } from './routes/guia.melhores-celulares-ate-1500-reais'
 import { Route as ComparativoIphone15VsGalaxyS24RouteImport } from './routes/comparativo.iphone-15-vs-galaxy-s24'
 import { Route as ComparativoGalaxyA55VsRedmiNote13ProRouteImport } from './routes/comparativo.galaxy-a55-vs-redmi-note-13-pro'
 
@@ -175,6 +176,12 @@ const GuiaMelhoresCelularesAte2000ReaisRoute =
     path: '/guia/melhores-celulares-ate-2000-reais',
     getParentRoute: () => rootRouteImport,
   } as any)
+const GuiaMelhoresCelularesAte1500ReaisRoute =
+  GuiaMelhoresCelularesAte1500ReaisRouteImport.update({
+    id: '/guia/melhores-celulares-ate-1500-reais',
+    path: '/guia/melhores-celulares-ate-1500-reais',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ComparativoIphone15VsGalaxyS24Route =
   ComparativoIphone15VsGalaxyS24RouteImport.update({
     id: '/comparativo/iphone-15-vs-galaxy-s24',
@@ -210,6 +217,7 @@ export interface FileRoutesByFullPath {
   '/transparencia': typeof TransparenciaRoute
   '/comparativo/galaxy-a55-vs-redmi-note-13-pro': typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   '/comparativo/iphone-15-vs-galaxy-s24': typeof ComparativoIphone15VsGalaxyS24Route
+  '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
@@ -240,6 +248,7 @@ export interface FileRoutesByTo {
   '/transparencia': typeof TransparenciaRoute
   '/comparativo/galaxy-a55-vs-redmi-note-13-pro': typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   '/comparativo/iphone-15-vs-galaxy-s24': typeof ComparativoIphone15VsGalaxyS24Route
+  '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
@@ -271,6 +280,7 @@ export interface FileRoutesById {
   '/transparencia': typeof TransparenciaRoute
   '/comparativo/galaxy-a55-vs-redmi-note-13-pro': typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   '/comparativo/iphone-15-vs-galaxy-s24': typeof ComparativoIphone15VsGalaxyS24Route
+  '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
@@ -303,6 +313,7 @@ export interface FileRouteTypes {
     | '/transparencia'
     | '/comparativo/galaxy-a55-vs-redmi-note-13-pro'
     | '/comparativo/iphone-15-vs-galaxy-s24'
+    | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
     | '/review/galaxy-a35'
@@ -333,6 +344,7 @@ export interface FileRouteTypes {
     | '/transparencia'
     | '/comparativo/galaxy-a55-vs-redmi-note-13-pro'
     | '/comparativo/iphone-15-vs-galaxy-s24'
+    | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
     | '/review/galaxy-a35'
@@ -363,6 +375,7 @@ export interface FileRouteTypes {
     | '/transparencia'
     | '/comparativo/galaxy-a55-vs-redmi-note-13-pro'
     | '/comparativo/iphone-15-vs-galaxy-s24'
+    | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
     | '/review/galaxy-a35'
@@ -394,6 +407,7 @@ export interface RootRouteChildren {
   TransparenciaRoute: typeof TransparenciaRoute
   ComparativoGalaxyA55VsRedmiNote13ProRoute: typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   ComparativoIphone15VsGalaxyS24Route: typeof ComparativoIphone15VsGalaxyS24Route
+  GuiaMelhoresCelularesAte1500ReaisRoute: typeof GuiaMelhoresCelularesAte1500ReaisRoute
   GuiaMelhoresCelularesAte2000ReaisRoute: typeof GuiaMelhoresCelularesAte2000ReaisRoute
   GuiaMelhoresCelularesAte3000ReaisRoute: typeof GuiaMelhoresCelularesAte3000ReaisRoute
   ReviewGalaxyA35Route: typeof ReviewGalaxyA35Route
@@ -587,6 +601,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuiaMelhoresCelularesAte2000ReaisRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guia/melhores-celulares-ate-1500-reais': {
+      id: '/guia/melhores-celulares-ate-1500-reais'
+      path: '/guia/melhores-celulares-ate-1500-reais'
+      fullPath: '/guia/melhores-celulares-ate-1500-reais'
+      preLoaderRoute: typeof GuiaMelhoresCelularesAte1500ReaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comparativo/iphone-15-vs-galaxy-s24': {
       id: '/comparativo/iphone-15-vs-galaxy-s24'
       path: '/comparativo/iphone-15-vs-galaxy-s24'
@@ -627,6 +648,8 @@ const rootRouteChildren: RootRouteChildren = {
   ComparativoGalaxyA55VsRedmiNote13ProRoute:
     ComparativoGalaxyA55VsRedmiNote13ProRoute,
   ComparativoIphone15VsGalaxyS24Route: ComparativoIphone15VsGalaxyS24Route,
+  GuiaMelhoresCelularesAte1500ReaisRoute:
+    GuiaMelhoresCelularesAte1500ReaisRoute,
   GuiaMelhoresCelularesAte2000ReaisRoute:
     GuiaMelhoresCelularesAte2000ReaisRoute,
   GuiaMelhoresCelularesAte3000ReaisRoute:
