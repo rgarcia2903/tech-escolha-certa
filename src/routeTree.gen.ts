@@ -29,6 +29,7 @@ import { Route as CelularesRouteImport } from './routes/celulares'
 import { Route as AcessoriosRouteImport } from './routes/acessorios'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ReviewRedmiNote13ProRouteImport } from './routes/review.redmi-note-13-pro'
+import { Route as ReviewPocoX6ProRouteImport } from './routes/review.poco-x6-pro'
 import { Route as ReviewIphone15RouteImport } from './routes/review.iphone-15'
 import { Route as ReviewGalaxyS24RouteImport } from './routes/review.galaxy-s24'
 import { Route as ReviewGalaxyA55RouteImport } from './routes/review.galaxy-a55'
@@ -144,6 +145,11 @@ const ReviewRedmiNote13ProRoute = ReviewRedmiNote13ProRouteImport.update({
   path: '/review/redmi-note-13-pro',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReviewPocoX6ProRoute = ReviewPocoX6ProRouteImport.update({
+  id: '/review/poco-x6-pro',
+  path: '/review/poco-x6-pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewIphone15Route = ReviewIphone15RouteImport.update({
   id: '/review/iphone-15',
   path: '/review/iphone-15',
@@ -224,6 +230,7 @@ export interface FileRoutesByFullPath {
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
   '/review/iphone-15': typeof ReviewIphone15Route
+  '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
 }
 export interface FileRoutesByTo {
@@ -255,6 +262,7 @@ export interface FileRoutesByTo {
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
   '/review/iphone-15': typeof ReviewIphone15Route
+  '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
 }
 export interface FileRoutesById {
@@ -287,6 +295,7 @@ export interface FileRoutesById {
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
   '/review/iphone-15': typeof ReviewIphone15Route
+  '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
 }
 export interface FileRouteTypes {
@@ -320,6 +329,7 @@ export interface FileRouteTypes {
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
     | '/review/iphone-15'
+    | '/review/poco-x6-pro'
     | '/review/redmi-note-13-pro'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -351,6 +361,7 @@ export interface FileRouteTypes {
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
     | '/review/iphone-15'
+    | '/review/poco-x6-pro'
     | '/review/redmi-note-13-pro'
   id:
     | '__root__'
@@ -382,6 +393,7 @@ export interface FileRouteTypes {
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
     | '/review/iphone-15'
+    | '/review/poco-x6-pro'
     | '/review/redmi-note-13-pro'
   fileRoutesById: FileRoutesById
 }
@@ -414,6 +426,7 @@ export interface RootRouteChildren {
   ReviewGalaxyA55Route: typeof ReviewGalaxyA55Route
   ReviewGalaxyS24Route: typeof ReviewGalaxyS24Route
   ReviewIphone15Route: typeof ReviewIphone15Route
+  ReviewPocoX6ProRoute: typeof ReviewPocoX6ProRoute
   ReviewRedmiNote13ProRoute: typeof ReviewRedmiNote13ProRoute
 }
 
@@ -559,6 +572,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewRedmiNote13ProRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/review/poco-x6-pro': {
+      id: '/review/poco-x6-pro'
+      path: '/review/poco-x6-pro'
+      fullPath: '/review/poco-x6-pro'
+      preLoaderRoute: typeof ReviewPocoX6ProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/review/iphone-15': {
       id: '/review/iphone-15'
       path: '/review/iphone-15'
@@ -658,6 +678,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewGalaxyA55Route: ReviewGalaxyA55Route,
   ReviewGalaxyS24Route: ReviewGalaxyS24Route,
   ReviewIphone15Route: ReviewIphone15Route,
+  ReviewPocoX6ProRoute: ReviewPocoX6ProRoute,
   ReviewRedmiNote13ProRoute: ReviewRedmiNote13ProRoute,
 }
 export const routeTree = rootRouteImport
