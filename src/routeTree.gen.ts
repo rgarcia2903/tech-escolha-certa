@@ -34,6 +34,8 @@ import { Route as ReviewIphone15RouteImport } from './routes/review.iphone-15'
 import { Route as ReviewGalaxyS24RouteImport } from './routes/review.galaxy-s24'
 import { Route as ReviewGalaxyA55RouteImport } from './routes/review.galaxy-a55'
 import { Route as ReviewGalaxyA35RouteImport } from './routes/review.galaxy-a35'
+import { Route as GuiaMelhoresCelularesParaJogosAte2000RouteImport } from './routes/guia.melhores-celulares-para-jogos-ate-2000'
+import { Route as GuiaMelhoresCelularesAte3500ReaisRouteImport } from './routes/guia.melhores-celulares-ate-3500-reais'
 import { Route as GuiaMelhoresCelularesAte3000ReaisRouteImport } from './routes/guia.melhores-celulares-ate-3000-reais'
 import { Route as GuiaMelhoresCelularesAte2000ReaisRouteImport } from './routes/guia.melhores-celulares-ate-2000-reais'
 import { Route as GuiaMelhoresCelularesAte1500ReaisRouteImport } from './routes/guia.melhores-celulares-ate-1500-reais'
@@ -171,6 +173,18 @@ const ReviewGalaxyA35Route = ReviewGalaxyA35RouteImport.update({
   path: '/review/galaxy-a35',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuiaMelhoresCelularesParaJogosAte2000Route =
+  GuiaMelhoresCelularesParaJogosAte2000RouteImport.update({
+    id: '/guia/melhores-celulares-para-jogos-ate-2000',
+    path: '/guia/melhores-celulares-para-jogos-ate-2000',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiaMelhoresCelularesAte3500ReaisRoute =
+  GuiaMelhoresCelularesAte3500ReaisRouteImport.update({
+    id: '/guia/melhores-celulares-ate-3500-reais',
+    path: '/guia/melhores-celulares-ate-3500-reais',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const GuiaMelhoresCelularesAte3000ReaisRoute =
   GuiaMelhoresCelularesAte3000ReaisRouteImport.update({
     id: '/guia/melhores-celulares-ate-3000-reais',
@@ -234,6 +248,8 @@ export interface FileRoutesByFullPath {
   '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
+  '/guia/melhores-celulares-ate-3500-reais': typeof GuiaMelhoresCelularesAte3500ReaisRoute
+  '/guia/melhores-celulares-para-jogos-ate-2000': typeof GuiaMelhoresCelularesParaJogosAte2000Route
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
@@ -267,6 +283,8 @@ export interface FileRoutesByTo {
   '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
+  '/guia/melhores-celulares-ate-3500-reais': typeof GuiaMelhoresCelularesAte3500ReaisRoute
+  '/guia/melhores-celulares-para-jogos-ate-2000': typeof GuiaMelhoresCelularesParaJogosAte2000Route
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
@@ -301,6 +319,8 @@ export interface FileRoutesById {
   '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
+  '/guia/melhores-celulares-ate-3500-reais': typeof GuiaMelhoresCelularesAte3500ReaisRoute
+  '/guia/melhores-celulares-para-jogos-ate-2000': typeof GuiaMelhoresCelularesParaJogosAte2000Route
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
@@ -336,6 +356,8 @@ export interface FileRouteTypes {
     | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
+    | '/guia/melhores-celulares-ate-3500-reais'
+    | '/guia/melhores-celulares-para-jogos-ate-2000'
     | '/review/galaxy-a35'
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
@@ -369,6 +391,8 @@ export interface FileRouteTypes {
     | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
+    | '/guia/melhores-celulares-ate-3500-reais'
+    | '/guia/melhores-celulares-para-jogos-ate-2000'
     | '/review/galaxy-a35'
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
@@ -402,6 +426,8 @@ export interface FileRouteTypes {
     | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
+    | '/guia/melhores-celulares-ate-3500-reais'
+    | '/guia/melhores-celulares-para-jogos-ate-2000'
     | '/review/galaxy-a35'
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
@@ -436,6 +462,8 @@ export interface RootRouteChildren {
   GuiaMelhoresCelularesAte1500ReaisRoute: typeof GuiaMelhoresCelularesAte1500ReaisRoute
   GuiaMelhoresCelularesAte2000ReaisRoute: typeof GuiaMelhoresCelularesAte2000ReaisRoute
   GuiaMelhoresCelularesAte3000ReaisRoute: typeof GuiaMelhoresCelularesAte3000ReaisRoute
+  GuiaMelhoresCelularesAte3500ReaisRoute: typeof GuiaMelhoresCelularesAte3500ReaisRoute
+  GuiaMelhoresCelularesParaJogosAte2000Route: typeof GuiaMelhoresCelularesParaJogosAte2000Route
   ReviewGalaxyA35Route: typeof ReviewGalaxyA35Route
   ReviewGalaxyA55Route: typeof ReviewGalaxyA55Route
   ReviewGalaxyS24Route: typeof ReviewGalaxyS24Route
@@ -621,6 +649,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewGalaxyA35RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guia/melhores-celulares-para-jogos-ate-2000': {
+      id: '/guia/melhores-celulares-para-jogos-ate-2000'
+      path: '/guia/melhores-celulares-para-jogos-ate-2000'
+      fullPath: '/guia/melhores-celulares-para-jogos-ate-2000'
+      preLoaderRoute: typeof GuiaMelhoresCelularesParaJogosAte2000RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guia/melhores-celulares-ate-3500-reais': {
+      id: '/guia/melhores-celulares-ate-3500-reais'
+      path: '/guia/melhores-celulares-ate-3500-reais'
+      fullPath: '/guia/melhores-celulares-ate-3500-reais'
+      preLoaderRoute: typeof GuiaMelhoresCelularesAte3500ReaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guia/melhores-celulares-ate-3000-reais': {
       id: '/guia/melhores-celulares-ate-3000-reais'
       path: '/guia/melhores-celulares-ate-3000-reais'
@@ -696,6 +738,10 @@ const rootRouteChildren: RootRouteChildren = {
     GuiaMelhoresCelularesAte2000ReaisRoute,
   GuiaMelhoresCelularesAte3000ReaisRoute:
     GuiaMelhoresCelularesAte3000ReaisRoute,
+  GuiaMelhoresCelularesAte3500ReaisRoute:
+    GuiaMelhoresCelularesAte3500ReaisRoute,
+  GuiaMelhoresCelularesParaJogosAte2000Route:
+    GuiaMelhoresCelularesParaJogosAte2000Route,
   ReviewGalaxyA35Route: ReviewGalaxyA35Route,
   ReviewGalaxyA55Route: ReviewGalaxyA55Route,
   ReviewGalaxyS24Route: ReviewGalaxyS24Route,
