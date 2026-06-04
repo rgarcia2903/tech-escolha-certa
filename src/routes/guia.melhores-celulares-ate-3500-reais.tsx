@@ -145,7 +145,7 @@ const phones = [
     price: "até R$ 3.000",
     image: "/images/products/poco-x6-pro-optimized.webp",
     summary:
-      "O Poco X6 Pro é a escolha mais forte para quem quer desempenho, jogos e carregamento rápido pagando menos que em um topo de linha tradicional.",
+      "O Poco X6 Pro é a escolha mais forte para quem quer desempenho, jogos e carregamento rápido entregando desempenho acima da média mesmo custando menos que muitos intermediários premium.",
     bestFor:
       "Quem joga, usa muitos apps, quer fluidez e prioriza potência acima de câmera.",
     pros: [
@@ -217,7 +217,7 @@ const phones = [
     name: "Galaxy A55 5G",
     badge: "Mais equilibrado",
     rating: 4.5,
-    price: "até R$ 2.500",
+    price: "até R$ 2.000",
     image: "/images/products/galaxy-a55-optimized.webp",
     summary:
       "O Galaxy A55 é uma compra segura para quem não precisa de topo de linha, mas quer construção premium, IP67, boa tela e experiência Samsung confiável.",
