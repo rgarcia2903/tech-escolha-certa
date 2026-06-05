@@ -142,7 +142,7 @@ const phones = [
     name: "Poco X6 Pro",
     badge: "Melhor desempenho",
     rating: 4.7,
-    price: "até R$ 3.000",
+    price: "até R$ 2.000",
     image: "/images/products/poco-x6-pro-optimized.webp",
     summary:
       "O Poco X6 Pro é a escolha mais forte para quem quer desempenho, jogos e carregamento rápido entregando desempenho acima da média mesmo custando menos que muitos intermediários premium.",
@@ -192,7 +192,7 @@ const phones = [
     name: "Edge 50 Pro",
     badge: "Carregamento rápido",
     rating: 4.5,
-    price: "até R$ 3.500",
+    price: "até R$ 3.000",
     image: "/images/products/edge-50-pro-optimized.webp",
     summary:
       "O Edge 50 Pro é uma alternativa forte para quem quer design premium, tela de ótima qualidade, carregamento ultrarrápido e uma experiência Android mais limpa.",
@@ -215,9 +215,9 @@ const phones = [
   {
     rank: "5º",
     name: "Galaxy A55 5G",
-    badge: "Mais equilibrado",
+    badge: "Melhor equilíbrio",
     rating: 4.5,
-    price: "até R$ 2.000",
+    price: "até R$ 2.500",
     image: "/images/products/galaxy-a55-optimized.webp",
     summary:
       "O Galaxy A55 é uma compra segura para quem não precisa de topo de linha, mas quer construção premium, IP67, boa tela e experiência Samsung confiável.",
