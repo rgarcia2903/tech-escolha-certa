@@ -119,13 +119,17 @@ function HomePage() {
             title="Explore por categoria"
             description="Encontre rapidamente o tipo de smartphone ideal para seu perfil."
           />
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <CategoryLink title="Custo-benefício" href="/melhores-celulares-custo-beneficio" />
+          <CategoryLink title="Samsung" href="/melhores-celulares-samsung" />
+          <CategoryLink title="Xiaomi" href="/melhores-celulares-xiaomi" />
+          <CategoryLink title="Até R$ 1.500" href="/guia/melhores-celulares-ate-1500-reais" />
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <CategoryLink title="Custo-benefício" href="/melhores-celulares-custo-beneficio" />
-            <CategoryLink title="Samsung" href="/melhores-celulares-samsung" />
-            <CategoryLink title="Xiaomi" href="/melhores-celulares-xiaomi" />
-            <CategoryLink title="Até R$ 2.500" href="/melhores-celulares-ate-2500" />
-          </div>
+          <CategoryLink title="Até R$ 2.500" href="/melhores-celulares-ate-2500" />
+          <CategoryLink title="Até R$ 3.500" href="/guia/melhores-celulares-ate-3500-reais" />
+          <CategoryLink title="Para jogos" href="/guia/melhores-celulares-para-jogos-ate-2000" />
+          <CategoryLink title="Comparativos" href="/comparativo/galaxy-a55-vs-poco-x6-pro" />
+        </div>
         </section>
 
         <section className="mt-14 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
