@@ -140,7 +140,7 @@ const phones = [
     badge: "Melhor bateria",
     rating: 4.5,
     price: "até R$ 2.000",
-    image: "/images/products/galaxy-a35-optimized.webp",
+    image: "/images/products/galaxy-m35-optimized.webp",
     summary:
       "Boa alternativa para quem joga bastante e precisa de bateria forte. Não é o mais potente da lista, mas entrega equilíbrio, tela boa e autonomia acima da média.",
     bestFor: "Jogos populares, uso intenso, redes sociais, vídeos e longas sessões longe da tomada.",

@@ -166,7 +166,7 @@ function MelhoresCelularesSamsung() {
         eyebrow="Especial Samsung"
         title="Os melhores celulares Samsung para comprar em 2026"
         description="Selecionamos os modelos Samsung que mais valem a pena atualmente considerando experiência real, câmeras, bateria, desempenho, suporte, atualizações e custo-benefício."
-        image="/images/products/phones-hero-optimized.webp"
+        image="/images/products/galaxy-a55-optimized.webp"
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
