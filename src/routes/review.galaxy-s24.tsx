@@ -299,7 +299,7 @@ function ReviewPage() {
               <div className="mt-3 font-heading text-2xl font-bold text-foreground">R$ 4.299</div>
               <span className="text-[11px] text-muted-foreground">*pode variar</span>
               <a
-                href="#"
+                href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -610,7 +610,7 @@ function ReviewPage() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href="#"
+                    href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -676,7 +676,7 @@ function ReviewPage() {
             Comparar
           </Link>
           <a
-            href="#"
+            href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"

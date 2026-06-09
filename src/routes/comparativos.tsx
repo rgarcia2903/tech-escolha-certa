@@ -90,10 +90,10 @@ function ComparisonsPage() {
             Escolha pelo ecossistema que você já usa.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href="#" className="inline-flex items-center gap-2 rounded-md bg-cta px-5 py-2.5 text-sm font-semibold text-cta-foreground hover:brightness-95">
+            <a href="/comparativo/galaxy-a55-vs-poco-x6-pro" className="inline-flex items-center gap-2 rounded-md bg-cta px-5 py-2.5 text-sm font-semibold text-cta-foreground hover:brightness-95">
               Ver oferta iPhone 15 <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-secondary">
+            <a href="/comparativo/iphone-15-vs-galaxy-s24" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-secondary">
               Ver oferta Galaxy S24 <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -109,7 +109,7 @@ function ComparisonsPage() {
                 <Badge variant="teal">VS</Badge>
                 <h3 className="mt-3 font-heading text-lg font-semibold">{c.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{c.summary}</p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cta">Ver comparativo <ArrowRight className="h-4 w-4" /></a>
+                <a href="/comparativo/iphone-15-vs-galaxy-s24" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cta">Ver comparativo <ArrowRight className="h-4 w-4" /></a>
               </article>
             ))}
           </div>

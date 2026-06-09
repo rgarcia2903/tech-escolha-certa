@@ -284,7 +284,7 @@ function ComparisonPage() {
               </p>
               <div className="mt-4 space-y-2">
                 <a
-                  href="#"
+                  href="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/mlb39445846?pdp_filters=item_id%3amlb4162070017&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -292,7 +292,7 @@ function ComparisonPage() {
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/mlb34731719?pdp_filters=item_id%3amlb4580836945&attributes=color%3amlb34731719&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
@@ -558,7 +558,7 @@ function ComparisonPage() {
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
                 <a
-                  href="#"
+                  href="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/mlb39445846?pdp_filters=item_id%3amlb4162070017&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -566,7 +566,7 @@ function ComparisonPage() {
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/mlb34731719?pdp_filters=item_id%3amlb4580836945&attributes=color%3amlb34731719&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
@@ -590,7 +590,7 @@ function ComparisonPage() {
             </span>
           </div>
           <a
-            href="#"
+            href="/ofertas"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"

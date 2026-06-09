@@ -559,7 +559,7 @@ function VersusPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="#"
+                href="https://www.mercadolivre.com.br/apple-iphone-15-128-gb-azul-distribuidor-autorizado/p/MLB1027172667?pdp_filters=item_id%3AMLB4408547152&matt_tool=38524122"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -567,7 +567,7 @@ function VersusPage() {
                 Ver oferta do iPhone 15 <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
@@ -583,7 +583,7 @@ function VersusPage() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur lg:hidden">
         <div className="container-tec flex items-center gap-2">
           <a
-            href="#"
+            href="https://www.mercadolivre.com.br/apple-iphone-15-128-gb-azul-distribuidor-autorizado/p/MLB1027172667?pdp_filters=item_id%3AMLB4408547152&matt_tool=38524122"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-cta px-3 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
@@ -591,7 +591,7 @@ function VersusPage() {
             iPhone 15 · R$ 5.499
           </a>
           <a
-            href="#"
+            href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-3 py-2.5 text-xs font-semibold text-foreground"
@@ -652,7 +652,7 @@ function OfferLine({
         <span className="font-heading text-base font-bold text-foreground">{price}</span>
       </div>
       <a
-        href="#"
+        href="/ofertas"
         target="_blank"
         rel="noopener noreferrer sponsored"
         className={`mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition ${
@@ -872,7 +872,7 @@ function ProfileCard({
           ))}
         </ul>
         <a
-          href="#"
+          href="/ofertas"
           target="_blank"
           rel="noopener noreferrer sponsored"
           className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition ${

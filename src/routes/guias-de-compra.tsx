@@ -58,7 +58,7 @@ function GuidesPage() {
                 <Badge variant="soft">{g.tag}</Badge>
                 <h3 className="mt-3 font-heading text-lg font-semibold">{g.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{g.excerpt}</p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:text-cta">Ler guia <ArrowRight className="h-4 w-4" /></a>
+                <a href="/guia/melhores-celulares-ate-3500-reais" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:text-cta">Ler guia <ArrowRight className="h-4 w-4" /></a>
               </article>
             ))}
           </div>

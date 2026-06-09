@@ -131,7 +131,7 @@ function ReviewPocoX6Pro() {
             </p>
 
             <a
-              href="#"
+              href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/MLB29734179?pdp_filters=item_id%3AMLB4712693597&attributes=COLOR%3AMLB29734179&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
@@ -352,7 +352,7 @@ function ReviewPocoX6Pro() {
             </div>
 
             <a
-              href="#"
+              href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/MLB29734179?pdp_filters=item_id%3AMLB4712693597&attributes=COLOR%3AMLB29734179&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
