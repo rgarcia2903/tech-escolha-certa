@@ -128,7 +128,7 @@ function HomePage() {
           <CategoryLink title="Até R$ 2.500" href="/melhores-celulares-ate-2500" />
           <CategoryLink title="Até R$ 3.500" href="/guia/melhores-celulares-ate-3500-reais" />
           <CategoryLink title="Para jogos" href="/guia/melhores-celulares-para-jogos-ate-2000" />
-          <CategoryLink title="Comparativos" href="/comparativo/galaxy-a55-vs-poco-x6-pro" />
+          <CategoryLink title="A55 vs Poco X6 Pro" href="/comparativo/galaxy-a55-vs-poco-x6-pro" />
         </div>
         </section>
 

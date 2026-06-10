@@ -22,6 +22,7 @@ import { Route as MelhoresCelularesCustoBeneficioRouteImport } from './routes/me
 import { Route as MelhoresCelularesAte2500RouteImport } from './routes/melhores-celulares-ate-2500'
 import { Route as MelhoresCelularesAte2000RouteImport } from './routes/melhores-celulares-ate-2000'
 import { Route as GuiasDeCompraRouteImport } from './routes/guias-de-compra'
+import { Route as DivulgacaoDeAfiliadosRouteImport } from './routes/divulgacao-de-afiliados'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ComparativosRouteImport } from './routes/comparativos'
 import { Route as ComparativoGalaxyA55VsGalaxyA35RouteImport } from './routes/comparativo-galaxy-a55-vs-galaxy-a35'
@@ -110,6 +111,11 @@ const MelhoresCelularesAte2000Route =
 const GuiasDeCompraRoute = GuiasDeCompraRouteImport.update({
   id: '/guias-de-compra',
   path: '/guias-de-compra',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivulgacaoDeAfiliadosRoute = DivulgacaoDeAfiliadosRouteImport.update({
+  id: '/divulgacao-de-afiliados',
+  path: '/divulgacao-de-afiliados',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -229,6 +235,7 @@ export interface FileRoutesByFullPath {
   '/comparativo-galaxy-a55-vs-galaxy-a35': typeof ComparativoGalaxyA55VsGalaxyA35Route
   '/comparativos': typeof ComparativosRoute
   '/contato': typeof ContatoRoute
+  '/divulgacao-de-afiliados': typeof DivulgacaoDeAfiliadosRoute
   '/guias-de-compra': typeof GuiasDeCompraRoute
   '/melhores-celulares-ate-2000': typeof MelhoresCelularesAte2000Route
   '/melhores-celulares-ate-2500': typeof MelhoresCelularesAte2500Route
@@ -264,6 +271,7 @@ export interface FileRoutesByTo {
   '/comparativo-galaxy-a55-vs-galaxy-a35': typeof ComparativoGalaxyA55VsGalaxyA35Route
   '/comparativos': typeof ComparativosRoute
   '/contato': typeof ContatoRoute
+  '/divulgacao-de-afiliados': typeof DivulgacaoDeAfiliadosRoute
   '/guias-de-compra': typeof GuiasDeCompraRoute
   '/melhores-celulares-ate-2000': typeof MelhoresCelularesAte2000Route
   '/melhores-celulares-ate-2500': typeof MelhoresCelularesAte2500Route
@@ -300,6 +308,7 @@ export interface FileRoutesById {
   '/comparativo-galaxy-a55-vs-galaxy-a35': typeof ComparativoGalaxyA55VsGalaxyA35Route
   '/comparativos': typeof ComparativosRoute
   '/contato': typeof ContatoRoute
+  '/divulgacao-de-afiliados': typeof DivulgacaoDeAfiliadosRoute
   '/guias-de-compra': typeof GuiasDeCompraRoute
   '/melhores-celulares-ate-2000': typeof MelhoresCelularesAte2000Route
   '/melhores-celulares-ate-2500': typeof MelhoresCelularesAte2500Route
@@ -337,6 +346,7 @@ export interface FileRouteTypes {
     | '/comparativo-galaxy-a55-vs-galaxy-a35'
     | '/comparativos'
     | '/contato'
+    | '/divulgacao-de-afiliados'
     | '/guias-de-compra'
     | '/melhores-celulares-ate-2000'
     | '/melhores-celulares-ate-2500'
@@ -372,6 +382,7 @@ export interface FileRouteTypes {
     | '/comparativo-galaxy-a55-vs-galaxy-a35'
     | '/comparativos'
     | '/contato'
+    | '/divulgacao-de-afiliados'
     | '/guias-de-compra'
     | '/melhores-celulares-ate-2000'
     | '/melhores-celulares-ate-2500'
@@ -407,6 +418,7 @@ export interface FileRouteTypes {
     | '/comparativo-galaxy-a55-vs-galaxy-a35'
     | '/comparativos'
     | '/contato'
+    | '/divulgacao-de-afiliados'
     | '/guias-de-compra'
     | '/melhores-celulares-ate-2000'
     | '/melhores-celulares-ate-2500'
@@ -443,6 +455,7 @@ export interface RootRouteChildren {
   ComparativoGalaxyA55VsGalaxyA35Route: typeof ComparativoGalaxyA55VsGalaxyA35Route
   ComparativosRoute: typeof ComparativosRoute
   ContatoRoute: typeof ContatoRoute
+  DivulgacaoDeAfiliadosRoute: typeof DivulgacaoDeAfiliadosRoute
   GuiasDeCompraRoute: typeof GuiasDeCompraRoute
   MelhoresCelularesAte2000Route: typeof MelhoresCelularesAte2000Route
   MelhoresCelularesAte2500Route: typeof MelhoresCelularesAte2500Route
@@ -563,6 +576,13 @@ declare module '@tanstack/react-router' {
       path: '/guias-de-compra'
       fullPath: '/guias-de-compra'
       preLoaderRoute: typeof GuiasDeCompraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/divulgacao-de-afiliados': {
+      id: '/divulgacao-de-afiliados'
+      path: '/divulgacao-de-afiliados'
+      fullPath: '/divulgacao-de-afiliados'
+      preLoaderRoute: typeof DivulgacaoDeAfiliadosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -715,6 +735,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComparativoGalaxyA55VsGalaxyA35Route: ComparativoGalaxyA55VsGalaxyA35Route,
   ComparativosRoute: ComparativosRoute,
   ContatoRoute: ContatoRoute,
+  DivulgacaoDeAfiliadosRoute: DivulgacaoDeAfiliadosRoute,
   GuiasDeCompraRoute: GuiasDeCompraRoute,
   MelhoresCelularesAte2000Route: MelhoresCelularesAte2000Route,
   MelhoresCelularesAte2500Route: MelhoresCelularesAte2500Route,
