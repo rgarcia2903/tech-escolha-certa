@@ -1,3 +1,4 @@
+import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUpRight,
@@ -230,12 +231,20 @@ function OfertasPage() {
                 </div>
 
                 <div className="mt-6 flex flex-col gap-3">
-                  <a
-                    href={offer.href}
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
-                  >
+                 <a
+  href={offer.href}
+  target="_blank"
+  rel="nofollow sponsored noopener noreferrer"
+  onClick={() =>
+    trackAffiliateClick({
+      productName: offer.name,
+      pageType: "ofertas",
+    })
+  }
+  className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
+> 
+                    
+                  
                     {offer.priceLabel}
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
