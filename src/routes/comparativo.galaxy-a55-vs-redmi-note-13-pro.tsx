@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
+import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -287,6 +288,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/mlb39445846?pdp_filters=item_id%3amlb4162070017&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Redmi Note 13 Pro",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
@@ -295,6 +302,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/mlb34731719?pdp_filters=item_id%3amlb4580836945&attributes=color%3amlb34731719&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Galaxy A55",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
                   Ver Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
@@ -561,6 +574,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/mlb39445846?pdp_filters=item_id%3amlb4162070017&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Redmi Note 13 Pro",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
@@ -569,6 +588,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/mlb34731719?pdp_filters=item_id%3amlb4580836945&attributes=color%3amlb34731719&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Galaxy A55",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
                   Ver Redmi <ArrowUpRight className="h-4 w-4" />

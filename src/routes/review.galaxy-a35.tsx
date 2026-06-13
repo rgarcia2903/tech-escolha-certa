@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/review/galaxy-a35")({
   component: ReviewGalaxyA35,
@@ -88,6 +89,12 @@ function ReviewGalaxyA35() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a35-5g-dual-sim-256gb-azul-escuro-8-gb-ram/p/MLB34729843?pdp_filters=item_id%3AMLB6662576092&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A35",
+                  pageType: "review",
+                })
+              }
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver ofertas no Mercado Livre
@@ -344,6 +351,12 @@ function ReviewGalaxyA35() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a35-5g-dual-sim-256gb-azul-escuro-8-gb-ram/p/MLB34729843?pdp_filters=item_id%3AMLB6662576092&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A35",
+                  pageType: "review",
+                })
+              }
               className="mt-5 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver ofertas

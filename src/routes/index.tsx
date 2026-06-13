@@ -225,6 +225,8 @@ function HomePage() {
               buttonText="Ver ofertas atualizadas"
               href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
               highlight="Samsung • Xiaomi • Poco • Motorola"
+              productName="Galaxy A55"
+              pageType="home"
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">

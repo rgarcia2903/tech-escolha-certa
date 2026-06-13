@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { trackAffiliateClick } from "@/lib/analytics";
 
 export type ReviewTemplateProps = {
   breadcrumbs?: {
@@ -143,6 +144,12 @@ export function ReviewTemplate({
               href={affiliateHref}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName,
+                  pageType: "review",
+                })
+              }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
               {priceLabel}
@@ -255,6 +262,8 @@ export function ReviewTemplate({
             buttonText={affiliate.buttonText}
             href={affiliateHref}
             highlight={affiliate.highlight}
+            productName={productName}
+            pageType="review"
           />
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">

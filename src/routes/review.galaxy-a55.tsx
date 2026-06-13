@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/review/galaxy-a55")({
   head: () => ({
@@ -135,6 +136,12 @@ function ReviewGalaxyA55() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A55",
+                  pageType: "review",
+                })
+              }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver oferta
@@ -281,6 +288,8 @@ function ReviewGalaxyA55() {
             buttonText="Ver Galaxy A55 no Mercado Livre"
             href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
             highlight="Tela AMOLED • Ótima bateria • Excelente equilíbrio"
+            productName="Galaxy A55"
+            pageType="review"
           />
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
@@ -339,6 +348,12 @@ function ReviewGalaxyA55() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A55",
+                  pageType: "review",
+                })
+              }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver oferta
@@ -391,6 +406,12 @@ function ReviewGalaxyA55() {
             href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
+            onClick={() =>
+              trackAffiliateClick({
+                productName: "Galaxy A55",
+                pageType: "review",
+              })
+            }
             className="inline-flex items-center gap-2 rounded-2xl bg-[#8B5A2B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
           >
             Ver oferta

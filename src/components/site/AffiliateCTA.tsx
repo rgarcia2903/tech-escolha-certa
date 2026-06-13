@@ -1,4 +1,5 @@
 import { ExternalLink, ShieldCheck, ShoppingBag } from "lucide-react";
+import { trackAffiliateClick } from "@/lib/analytics";
 
 type AffiliateCTAProps = {
   title?: string;
@@ -6,6 +7,8 @@ type AffiliateCTAProps = {
   buttonText?: string;
   href: string;
   highlight?: string;
+  productName?: string;
+  pageType?: "review" | "comparativo" | "guia" | "ofertas" | "home";
 };
 
 export function AffiliateCTA({
@@ -14,6 +17,8 @@ export function AffiliateCTA({
   buttonText = "Ver oferta no Mercado Livre",
   href,
   highlight,
+  productName,
+  pageType = "guia",
 }: AffiliateCTAProps) {
   return (
     <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-[#0B2D35] via-[#114B59] to-[#071E25] p-8 text-white shadow-xl">
@@ -47,6 +52,12 @@ export function AffiliateCTA({
               href={href}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: productName ?? title,
+                  pageType,
+                })
+              }
               className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#8B5A2B] px-6 py-4 text-sm font-bold text-white shadow-lg transition hover:brightness-95"
             >
               {buttonText}
@@ -67,10 +78,3 @@ export function AffiliateCTA({
     </section>
   );
 }
-
-
-
-
-
-
-

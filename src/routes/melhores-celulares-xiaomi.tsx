@@ -175,6 +175,8 @@ function MelhoresCelularesXiaomi() {
               buttonText="Ver ofertas Xiaomi"
               href="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/MLB39445846?pdp_filters=item_id%3AMLB4162070017&matt_tool=38524122"
               highlight="Redmi • Poco • Xiaomi"
+              productName="Redmi Note 13 Pro"
+              pageType="guia"
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">

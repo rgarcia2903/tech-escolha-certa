@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/review/poco-x6-pro")({
   head: () => ({
@@ -134,6 +135,12 @@ function ReviewPocoX6Pro() {
               href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/MLB29734179?pdp_filters=item_id%3AMLB4712693597&attributes=COLOR%3AMLB29734179&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Poco X6 Pro",
+                  pageType: "review",
+                })
+              }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver oferta
@@ -355,6 +362,12 @@ function ReviewPocoX6Pro() {
               href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/MLB29734179?pdp_filters=item_id%3AMLB4712693597&attributes=COLOR%3AMLB29734179&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Poco X6 Pro",
+                  pageType: "review",
+                })
+              }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver oferta

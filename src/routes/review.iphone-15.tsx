@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -256,6 +257,12 @@ function ReviewPage() {
                 href="https://www.mercadolivre.com.br/apple-iphone-15-128-gb-azul-distribuidor-autorizado/p/MLB1027172667?pdp_filters=item_id%3AMLB4408547152&matt_tool=38524122"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
+                onClick={() =>
+                  trackAffiliateClick({
+                    productName: "iPhone 15",
+                    pageType: "review",
+                  })
+                }
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
               >
                 Ver oferta <ArrowUpRight className="h-4 w-4" />
@@ -549,6 +556,12 @@ function ReviewPage() {
                     href="https://www.mercadolivre.com.br/apple-iphone-15-128-gb-azul-distribuidor-autorizado/p/MLB1027172667?pdp_filters=item_id%3AMLB4408547152&matt_tool=38524122"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
+                    onClick={() =>
+                      trackAffiliateClick({
+                        productName: "iPhone 15",
+                        pageType: "review",
+                      })
+                    }
                     className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                   >
                     Ver oferta <ArrowUpRight className="h-4 w-4" />
@@ -585,6 +598,12 @@ function ReviewPage() {
             href="https://www.mercadolivre.com.br/apple-iphone-15-128-gb-azul-distribuidor-autorizado/p/MLB1027172667?pdp_filters=item_id%3AMLB4408547152&matt_tool=38524122"
             target="_blank"
             rel="noopener noreferrer sponsored"
+            onClick={() =>
+              trackAffiliateClick({
+                productName: "iPhone 15",
+                pageType: "review",
+              })
+            }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
             Ver oferta <ArrowUpRight className="h-3.5 w-3.5" />

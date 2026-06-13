@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
   component: ComparativoGalaxyA55VsGalaxyA35,
@@ -111,6 +112,12 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A55",
+                  pageType: "comparativo",
+                })
+              }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver Galaxy A55
@@ -149,6 +156,12 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               href="https://www.mercadolivre.com.br/samsung-galaxy-a35-5g-dual-sim-256gb-azul-escuro-8-gb-ram/p/MLB34729843?pdp_filters=item_id%3AMLB6662576092&matt_tool=38524122"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A35",
+                  pageType: "comparativo",
+                })
+              }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver Galaxy A35

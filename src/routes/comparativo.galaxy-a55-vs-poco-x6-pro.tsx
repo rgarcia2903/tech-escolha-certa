@@ -1,3 +1,4 @@
+import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
 import {
@@ -289,6 +290,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/mlb29734179?pdp_filters=item_id%3amlb4712693597&attributes=color%3amlb29734179&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Poco X6 Pro",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
@@ -297,6 +304,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Galaxy A55",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
                   Ver Poco X6 Pro <ArrowUpRight className="h-4 w-4" />
@@ -563,6 +576,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/mlb29734179?pdp_filters=item_id%3amlb4712693597&attributes=color%3amlb29734179&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Poco X6 Pro",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
@@ -571,6 +590,12 @@ function ComparisonPage() {
                   href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: "Galaxy A55",
+                      pageType: "comparativo",
+                    })
+                  }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
                   Ver Poco <ArrowUpRight className="h-4 w-4" />
