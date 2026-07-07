@@ -143,13 +143,13 @@ function ReviewPocoX6Pro() {
               }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver oferta
+              Ver preço do Poco X6 Pro
               <ArrowUpRight className="h-4 w-4" />
             </a>
 
             <p className="mt-3 text-xs leading-5 text-slate-300">
-              Substitua o link acima pelo afiliado do Mercado Livre quando tiver
-              o produto validado.
+              Ao comprar pelo nosso link, podemos receber uma comissão sem custo adicional
+              para você.
             </p>
           </div>
         </div>
