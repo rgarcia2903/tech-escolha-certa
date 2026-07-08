@@ -150,6 +150,10 @@ function ReviewRedmiNote13Pro() {
       ]}
       relatedLinks={[
         {
+          label: "Review Redmi Note 14 Pro+ 5G",
+          to: "/review/redmi-note-14-pro-plus",
+        },
+        {
           label: "Galaxy A55 vs Redmi Note 13 Pro",
           to: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
         },
@@ -169,10 +173,3 @@ function ReviewRedmiNote13Pro() {
     />
   );
 }
-
-
-
-
-
-
-

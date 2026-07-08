@@ -15,7 +15,7 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
       {
         name: "description",
         content:
-          "Qual é o melhor celular Xiaomi em 2026? Redmi Note 13 Pro 5G para equilíbrio e Poco X6 Pro para jogos. Compare tela, câmera, bateria e custo-benefício.",
+          "Qual é o melhor celular Xiaomi em 2026? Redmi Note 13 Pro 5G para equilíbrio, Redmi Note 14 Pro+ para conjunto premium e Poco X6 Pro para jogos.",
       },
     ],
   }),
@@ -30,12 +30,17 @@ const ranking = [
       "Excelente equilíbrio entre tela, câmera, bateria e custo-benefício.",
   },
   {
+    category: "Melhor Xiaomi premium",
+    product: "Redmi Note 14 Pro+ 5G",
+    description:
+      "Mais completo para quem quer câmera forte, tela premium e carregamento de 120 W.",
+  },
+  {
     category: "Melhor Xiaomi gamer",
     product: "Poco X6 Pro",
     description:
       "Desempenho extremamente forte para quem joga e quer máxima performance.",
   },
-
 ];
 
 function MelhoresCelularesXiaomi() {
@@ -92,7 +97,7 @@ function MelhoresCelularesXiaomi() {
           description="Seleção editorial focada em performance, tela, bateria e compra inteligente."
         />
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {ranking.map((item) => (
             <TopPickCard
               key={item.product}
@@ -110,7 +115,7 @@ function MelhoresCelularesXiaomi() {
             description="Análises completas dos celulares Xiaomi mais procurados."
           />
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
             <ReviewCard
               title="Review Redmi Note 13 Pro 5G"
               description="Excelente equilíbrio entre tela, desempenho e carregamento rápido."
@@ -121,6 +126,15 @@ function MelhoresCelularesXiaomi() {
             />
 
             <ReviewCard
+              title="Review Redmi Note 14 Pro+ 5G"
+              description="Modelo mais completo, com câmera de 200 MP e carregamento de 120 W."
+              href="/review/redmi-note-14-pro-plus"
+              image="/images/products/redmi-note-14-pro-plus-optimized.webp"
+              score="9.2"
+              badge="Premium"
+            />
+
+            <ReviewCard
               title="Review Poco X6 Pro"
               description="Um dos celulares mais fortes para jogos e performance."
               href="/review/poco-x6-pro"
@@ -128,7 +142,6 @@ function MelhoresCelularesXiaomi() {
               score="9.2"
               badge="Performance"
             />
-
           </div>
         </section>
 
@@ -167,13 +180,14 @@ function MelhoresCelularesXiaomi() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                Para a maioria das pessoas, o Redmi Note 13 Pro 5G é o Xiaomi mais
-                equilibrado: combina tela AMOLED, boa câmera, desempenho para o dia a
-                dia e carregamento rápido. Já o Poco X6 Pro é a escolha mais indicada
-                para quem prioriza jogos e desempenho acima de tudo.
+                Para a maioria das pessoas, o Redmi Note 13 Pro 5G segue como o
+                Xiaomi mais equilibrado: combina tela AMOLED, boa câmera, desempenho
+                para o dia a dia e carregamento rápido. Já o Redmi Note 14 Pro+ 5G
+                é a escolha mais completa para quem quer câmera de 200 MP,
+                carregamento de 120 W e construção mais premium.
               </p>
 
-              <div className="mt-6 grid gap-5 md:grid-cols-2">
+              <div className="mt-6 grid gap-5 md:grid-cols-3">
                 <div className="rounded-2xl bg-[#F7F2EB] p-5">
                   <h3 className="text-lg font-bold text-[#0F3F4A]">
                     Melhor Xiaomi para a maioria
@@ -181,6 +195,16 @@ function MelhoresCelularesXiaomi() {
                   <p className="mt-2 text-sm leading-6 text-slate-700">
                     O Redmi Note 13 Pro 5G entrega o conjunto mais equilibrado para
                     redes sociais, fotos, vídeos, trabalho e uso diário.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-[#F7F2EB] p-5">
+                  <h3 className="text-lg font-bold text-[#0F3F4A]">
+                    Melhor Xiaomi mais completo
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    O Redmi Note 14 Pro+ 5G faz sentido para quem quer câmera
+                    principal forte, carregamento muito rápido e acabamento superior.
                   </p>
                 </div>
 
@@ -214,6 +238,17 @@ function MelhoresCelularesXiaomi() {
                     O Redmi Note 13 Pro 5G costuma ser a compra mais equilibrada quando
                     aparece em promoção, porque reúne tela, câmera, desempenho e
                     carregamento rápido sem entrar na faixa de preço dos topos de linha.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-[#0F3F4A]">
+                    Redmi Note 14 Pro+ 5G vale a pena?
+                  </h3>
+                  <p className="mt-2 text-base leading-7 text-slate-700">
+                    Vale para quem quer um Xiaomi mais completo, com câmera principal
+                    de 200 MP, carregamento de 120 W e acabamento superior. Se o foco
+                    for economizar, o Redmi Note 13 Pro 5G ainda pode ser mais interessante.
                   </p>
                 </div>
 
@@ -279,6 +314,13 @@ function MelhoresCelularesXiaomi() {
                 </Link>
 
                 <Link
+                  to="/review/redmi-note-14-pro-plus"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Review Redmi Note 14 Pro+ 5G
+                </Link>
+
+                <Link
                   to="/review/redmi-note-13-pro"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
@@ -299,10 +341,3 @@ function MelhoresCelularesXiaomi() {
     </main>
   );
 }
-
-
-
-
-
-
-
