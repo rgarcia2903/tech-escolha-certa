@@ -29,6 +29,7 @@ import { Route as ComparativoGalaxyA55VsGalaxyA35RouteImport } from './routes/co
 import { Route as CelularesRouteImport } from './routes/celulares'
 import { Route as AcessoriosRouteImport } from './routes/acessorios'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ReviewRedmiNote14ProPlusRouteImport } from './routes/review.redmi-note-14-pro-plus'
 import { Route as ReviewRedmiNote13ProRouteImport } from './routes/review.redmi-note-13-pro'
 import { Route as ReviewPocoX6ProRouteImport } from './routes/review.poco-x6-pro'
 import { Route as ReviewIphone15RouteImport } from './routes/review.iphone-15'
@@ -149,6 +150,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReviewRedmiNote14ProPlusRoute =
+  ReviewRedmiNote14ProPlusRouteImport.update({
+    id: '/review/redmi-note-14-pro-plus',
+    path: '/review/redmi-note-14-pro-plus',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ReviewRedmiNote13ProRoute = ReviewRedmiNote13ProRouteImport.update({
   id: '/review/redmi-note-13-pro',
   path: '/review/redmi-note-13-pro',
@@ -263,6 +270,7 @@ export interface FileRoutesByFullPath {
   '/review/iphone-15': typeof ReviewIphone15Route
   '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
+  '/review/redmi-note-14-pro-plus': typeof ReviewRedmiNote14ProPlusRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -299,6 +307,7 @@ export interface FileRoutesByTo {
   '/review/iphone-15': typeof ReviewIphone15Route
   '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
+  '/review/redmi-note-14-pro-plus': typeof ReviewRedmiNote14ProPlusRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -336,6 +345,7 @@ export interface FileRoutesById {
   '/review/iphone-15': typeof ReviewIphone15Route
   '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
+  '/review/redmi-note-14-pro-plus': typeof ReviewRedmiNote14ProPlusRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -374,6 +384,7 @@ export interface FileRouteTypes {
     | '/review/iphone-15'
     | '/review/poco-x6-pro'
     | '/review/redmi-note-13-pro'
+    | '/review/redmi-note-14-pro-plus'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -410,6 +421,7 @@ export interface FileRouteTypes {
     | '/review/iphone-15'
     | '/review/poco-x6-pro'
     | '/review/redmi-note-13-pro'
+    | '/review/redmi-note-14-pro-plus'
   id:
     | '__root__'
     | '/'
@@ -446,6 +458,7 @@ export interface FileRouteTypes {
     | '/review/iphone-15'
     | '/review/poco-x6-pro'
     | '/review/redmi-note-13-pro'
+    | '/review/redmi-note-14-pro-plus'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -483,6 +496,7 @@ export interface RootRouteChildren {
   ReviewIphone15Route: typeof ReviewIphone15Route
   ReviewPocoX6ProRoute: typeof ReviewPocoX6ProRoute
   ReviewRedmiNote13ProRoute: typeof ReviewRedmiNote13ProRoute
+  ReviewRedmiNote14ProPlusRoute: typeof ReviewRedmiNote14ProPlusRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -627,6 +641,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/review/redmi-note-14-pro-plus': {
+      id: '/review/redmi-note-14-pro-plus'
+      path: '/review/redmi-note-14-pro-plus'
+      fullPath: '/review/redmi-note-14-pro-plus'
+      preLoaderRoute: typeof ReviewRedmiNote14ProPlusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/review/redmi-note-13-pro': {
       id: '/review/redmi-note-13-pro'
       path: '/review/redmi-note-13-pro'
@@ -769,6 +790,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewIphone15Route: ReviewIphone15Route,
   ReviewPocoX6ProRoute: ReviewPocoX6ProRoute,
   ReviewRedmiNote13ProRoute: ReviewRedmiNote13ProRoute,
+  ReviewRedmiNote14ProPlusRoute: ReviewRedmiNote14ProPlusRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
