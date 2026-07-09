@@ -102,4 +102,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+
+  <url>
+    <loc>https://techescolhacerta.com.br/review/poco-x7-pro</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
+
