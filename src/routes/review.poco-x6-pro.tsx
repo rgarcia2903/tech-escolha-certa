@@ -380,6 +380,13 @@ function ReviewPocoX6Pro() {
 
             <div className="mt-4 space-y-3 text-sm">
               <Link
+                to="/review/poco-x7-pro"
+                className="block text-slate-700 hover:text-[#8B5A2B]"
+              >
+                Review Poco X7 Pro
+              </Link>
+
+              <Link
                 to="/review/galaxy-a55"
                 className="block text-slate-700 hover:text-[#8B5A2B]"
               >
