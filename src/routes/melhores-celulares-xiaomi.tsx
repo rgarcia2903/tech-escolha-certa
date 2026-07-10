@@ -15,7 +15,7 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
       {
         name: "description",
         content:
-          "Qual é o melhor celular Xiaomi em 2026? Redmi Note 13 Pro 5G para equilíbrio, Redmi Note 14 Pro+ para conjunto premium e Poco X7 Pro para jogos.",
+          "Qual é o melhor celular Xiaomi em 2026? Redmi Note 13 Pro 5G para equilíbrio, Redmi Note 14 Pro+ para conjunto premium e Poco X6 Pro para jogos.",
       },
     ],
   }),
@@ -37,15 +37,9 @@ const ranking = [
   },
   {
     category: "Melhor Xiaomi gamer",
-    product: "Poco X7 Pro",
-    description:
-      "Mais indicado para quem quer desempenho forte, bateria grande e jogos.",
-  },
-  {
-    category: "Melhor Xiaomi gamer custo-benefício",
     product: "Poco X6 Pro",
     description:
-      "Ainda é uma ótima opção se aparecer com preço mais agressivo.",
+      "Desempenho extremamente forte para quem joga e quer máxima performance.",
   },
 ];
 
@@ -103,7 +97,7 @@ function MelhoresCelularesXiaomi() {
           description="Seleção editorial focada em performance, tela, bateria e compra inteligente."
         />
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {ranking.map((item) => (
             <TopPickCard
               key={item.product}
@@ -121,7 +115,7 @@ function MelhoresCelularesXiaomi() {
             description="Análises completas dos celulares Xiaomi mais procurados."
           />
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
             <ReviewCard
               title="Review Redmi Note 13 Pro 5G"
               description="Excelente equilíbrio entre tela, desempenho e carregamento rápido."
@@ -138,15 +132,6 @@ function MelhoresCelularesXiaomi() {
               image="/images/products/redmi-note-14-pro-plus-optimized.webp"
               score="9.2"
               badge="Premium"
-            />
-
-            <ReviewCard
-              title="Review Poco X7 Pro"
-              description="Opção mais forte para jogos, bateria e performance."
-              href="/review/poco-x7-pro"
-              image="/images/products/poco-x7-pro-optimized.webp"
-              score="9.3"
-              badge="Gamer"
             />
 
             <ReviewCard
@@ -199,8 +184,7 @@ function MelhoresCelularesXiaomi() {
                 Xiaomi mais equilibrado: combina tela AMOLED, boa câmera, desempenho
                 para o dia a dia e carregamento rápido. Já o Redmi Note 14 Pro+ 5G
                 é a escolha mais completa para quem quer câmera de 200 MP,
-                carregamento de 120 W e construção mais premium. Para jogos e
-                desempenho pesado, o Poco X7 Pro passa a ser a opção mais forte.
+                carregamento de 120 W e construção mais premium.
               </p>
 
               <div className="mt-6 grid gap-5 md:grid-cols-3">
@@ -229,8 +213,8 @@ function MelhoresCelularesXiaomi() {
                     Melhor Xiaomi para jogos
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    O Poco X7 Pro faz mais sentido para quem quer desempenho forte em
-                    jogos, multitarefa pesada, bateria maior e maior folga para os próximos anos.
+                    O Poco X6 Pro faz mais sentido para quem quer desempenho forte em
+                    jogos, multitarefa pesada e maior folga para os próximos anos.
                   </p>
                 </div>
               </div>
@@ -265,17 +249,6 @@ function MelhoresCelularesXiaomi() {
                     Vale para quem quer um Xiaomi mais completo, com câmera principal
                     de 200 MP, carregamento de 120 W e acabamento superior. Se o foco
                     for economizar, o Redmi Note 13 Pro 5G ainda pode ser mais interessante.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Poco X7 Pro vale a pena?
-                  </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-700">
-                    Vale para quem quer um Xiaomi focado em desempenho, jogos,
-                    bateria e carregamento rápido. Se o Poco X6 Pro estiver muito
-                    mais barato, ele ainda pode ser uma alternativa interessante.
                   </p>
                 </div>
 
@@ -338,13 +311,6 @@ function MelhoresCelularesXiaomi() {
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares Samsung
-                </Link>
-
-                <Link
-                  to="/review/poco-x7-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Review Poco X7 Pro
                 </Link>
 
                 <Link
