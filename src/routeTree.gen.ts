@@ -42,6 +42,7 @@ import { Route as GuiaMelhoresCelularesAte3500ReaisRouteImport } from './routes/
 import { Route as GuiaMelhoresCelularesAte3000ReaisRouteImport } from './routes/guia.melhores-celulares-ate-3000-reais'
 import { Route as GuiaMelhoresCelularesAte2000ReaisRouteImport } from './routes/guia.melhores-celulares-ate-2000-reais'
 import { Route as GuiaMelhoresCelularesAte1500ReaisRouteImport } from './routes/guia.melhores-celulares-ate-1500-reais'
+import { Route as ComparativoRedmiNote13ProVsRedmiNote14ProPlusRouteImport } from './routes/comparativo.redmi-note-13-pro-vs-redmi-note-14-pro-plus'
 import { Route as ComparativoPocoX6ProVsPocoX7ProRouteImport } from './routes/comparativo.poco-x6-pro-vs-poco-x7-pro'
 import { Route as ComparativoIphone15VsGalaxyS24RouteImport } from './routes/comparativo.iphone-15-vs-galaxy-s24'
 import { Route as ComparativoGalaxyA55VsRedmiNote13ProRouteImport } from './routes/comparativo.galaxy-a55-vs-redmi-note-13-pro'
@@ -223,6 +224,12 @@ const GuiaMelhoresCelularesAte1500ReaisRoute =
     path: '/guia/melhores-celulares-ate-1500-reais',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute =
+  ComparativoRedmiNote13ProVsRedmiNote14ProPlusRouteImport.update({
+    id: '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus',
+    path: '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ComparativoPocoX6ProVsPocoX7ProRoute =
   ComparativoPocoX6ProVsPocoX7ProRouteImport.update({
     id: '/comparativo/poco-x6-pro-vs-poco-x7-pro',
@@ -273,6 +280,7 @@ export interface FileRoutesByFullPath {
   '/comparativo/galaxy-a55-vs-redmi-note-13-pro': typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   '/comparativo/iphone-15-vs-galaxy-s24': typeof ComparativoIphone15VsGalaxyS24Route
   '/comparativo/poco-x6-pro-vs-poco-x7-pro': typeof ComparativoPocoX6ProVsPocoX7ProRoute
+  '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus': typeof ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute
   '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
@@ -312,6 +320,7 @@ export interface FileRoutesByTo {
   '/comparativo/galaxy-a55-vs-redmi-note-13-pro': typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   '/comparativo/iphone-15-vs-galaxy-s24': typeof ComparativoIphone15VsGalaxyS24Route
   '/comparativo/poco-x6-pro-vs-poco-x7-pro': typeof ComparativoPocoX6ProVsPocoX7ProRoute
+  '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus': typeof ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute
   '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
@@ -352,6 +361,7 @@ export interface FileRoutesById {
   '/comparativo/galaxy-a55-vs-redmi-note-13-pro': typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   '/comparativo/iphone-15-vs-galaxy-s24': typeof ComparativoIphone15VsGalaxyS24Route
   '/comparativo/poco-x6-pro-vs-poco-x7-pro': typeof ComparativoPocoX6ProVsPocoX7ProRoute
+  '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus': typeof ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute
   '/guia/melhores-celulares-ate-1500-reais': typeof GuiaMelhoresCelularesAte1500ReaisRoute
   '/guia/melhores-celulares-ate-2000-reais': typeof GuiaMelhoresCelularesAte2000ReaisRoute
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
@@ -393,6 +403,7 @@ export interface FileRouteTypes {
     | '/comparativo/galaxy-a55-vs-redmi-note-13-pro'
     | '/comparativo/iphone-15-vs-galaxy-s24'
     | '/comparativo/poco-x6-pro-vs-poco-x7-pro'
+    | '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus'
     | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
@@ -432,6 +443,7 @@ export interface FileRouteTypes {
     | '/comparativo/galaxy-a55-vs-redmi-note-13-pro'
     | '/comparativo/iphone-15-vs-galaxy-s24'
     | '/comparativo/poco-x6-pro-vs-poco-x7-pro'
+    | '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus'
     | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
@@ -471,6 +483,7 @@ export interface FileRouteTypes {
     | '/comparativo/galaxy-a55-vs-redmi-note-13-pro'
     | '/comparativo/iphone-15-vs-galaxy-s24'
     | '/comparativo/poco-x6-pro-vs-poco-x7-pro'
+    | '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus'
     | '/guia/melhores-celulares-ate-1500-reais'
     | '/guia/melhores-celulares-ate-2000-reais'
     | '/guia/melhores-celulares-ate-3000-reais'
@@ -511,6 +524,7 @@ export interface RootRouteChildren {
   ComparativoGalaxyA55VsRedmiNote13ProRoute: typeof ComparativoGalaxyA55VsRedmiNote13ProRoute
   ComparativoIphone15VsGalaxyS24Route: typeof ComparativoIphone15VsGalaxyS24Route
   ComparativoPocoX6ProVsPocoX7ProRoute: typeof ComparativoPocoX6ProVsPocoX7ProRoute
+  ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute: typeof ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute
   GuiaMelhoresCelularesAte1500ReaisRoute: typeof GuiaMelhoresCelularesAte1500ReaisRoute
   GuiaMelhoresCelularesAte2000ReaisRoute: typeof GuiaMelhoresCelularesAte2000ReaisRoute
   GuiaMelhoresCelularesAte3000ReaisRoute: typeof GuiaMelhoresCelularesAte3000ReaisRoute
@@ -759,6 +773,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuiaMelhoresCelularesAte1500ReaisRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus': {
+      id: '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus'
+      path: '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus'
+      fullPath: '/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus'
+      preLoaderRoute: typeof ComparativoRedmiNote13ProVsRedmiNote14ProPlusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comparativo/poco-x6-pro-vs-poco-x7-pro': {
       id: '/comparativo/poco-x6-pro-vs-poco-x7-pro'
       path: '/comparativo/poco-x6-pro-vs-poco-x7-pro'
@@ -816,6 +837,8 @@ const rootRouteChildren: RootRouteChildren = {
     ComparativoGalaxyA55VsRedmiNote13ProRoute,
   ComparativoIphone15VsGalaxyS24Route: ComparativoIphone15VsGalaxyS24Route,
   ComparativoPocoX6ProVsPocoX7ProRoute: ComparativoPocoX6ProVsPocoX7ProRoute,
+  ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute:
+    ComparativoRedmiNote13ProVsRedmiNote14ProPlusRoute,
   GuiaMelhoresCelularesAte1500ReaisRoute:
     GuiaMelhoresCelularesAte1500ReaisRoute,
   GuiaMelhoresCelularesAte2000ReaisRoute:
