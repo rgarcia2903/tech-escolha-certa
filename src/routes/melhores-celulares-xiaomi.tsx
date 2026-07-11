@@ -145,6 +145,21 @@ function MelhoresCelularesXiaomi() {
           </div>
         </section>
 
+        <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+          <SectionTitle
+            eyebrow="Comparativo Xiaomi"
+            title="Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena?"
+            description="Veja as diferenças entre os dois modelos Redmi antes de decidir se compensa pagar mais no modelo novo."
+          />
+
+          <Link
+            to="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
+            className="mt-6 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
+          >
+            Ver comparativo Redmi Note 13 Pro vs 14 Pro+
+          </Link>
+        </section>
+
         <section className="mt-14 grid gap-8 lg:grid-cols-[1fr_340px]">
           <article className="space-y-10">
             <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
@@ -318,6 +333,13 @@ function MelhoresCelularesXiaomi() {
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Review Redmi Note 14 Pro+ 5G
+                </Link>
+
+                <Link
+                  to="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Redmi Note 13 Pro vs Redmi Note 14 Pro+
                 </Link>
 
                 <Link

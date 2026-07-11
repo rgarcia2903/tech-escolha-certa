@@ -154,6 +154,10 @@ function ReviewRedmiNote13Pro() {
           to: "/review/redmi-note-14-pro-plus",
         },
         {
+          label: "Redmi Note 13 Pro vs Redmi Note 14 Pro+",
+          to: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
+        },
+        {
           label: "Galaxy A55 vs Redmi Note 13 Pro",
           to: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
         },

@@ -33,6 +33,12 @@ const ROWS: { label: string; a: string; b: string; winner: "a" | "b" | "tie" }[]
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Redmi Note 13 Pro vs Redmi Note 14 Pro+",
+    summary:
+      "Compare tela, câmera, bateria, carregamento, desempenho e preço para decidir se vale pagar mais no modelo novo.",
+    href: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
+  },
+  {
     title: "Poco X6 Pro vs Poco X7 Pro",
     summary:
       "Compare desempenho, bateria, câmera, tela, carregamento e custo-benefício para decidir qual Poco vale mais a pena.",
@@ -139,10 +145,10 @@ function ComparisonsPage() {
               Ver comparativo completo <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="/comparativo/poco-x6-pro-vs-poco-x7-pro"
+              href="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
               className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-secondary"
             >
-              Ver Poco X6 Pro vs Poco X7 Pro <ArrowRight className="h-4 w-4" />
+              Ver Redmi Note 13 Pro vs 14 Pro+ <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
