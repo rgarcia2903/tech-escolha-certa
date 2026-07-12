@@ -10,12 +10,26 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
     meta: [
       {
         title:
-          "Melhores celulares Xiaomi em 2026: os modelos que mais valem a pena",
+          "Melhores celulares Xiaomi em 2026: Redmi e Poco que valem a pena",
       },
       {
         name: "description",
         content:
-          "Qual é o melhor celular Xiaomi em 2026? Redmi Note 13 Pro 5G para equilíbrio, Redmi Note 14 Pro+ para conjunto premium e Poco X6 Pro para jogos.",
+          "Veja os melhores celulares Xiaomi em 2026: Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro e Poco X6 Pro, com reviews e comparativos para decidir melhor.",
+      },
+      {
+        name: "keywords",
+        content:
+          "melhores celulares Xiaomi 2026, melhor Xiaomi custo-benefício, Redmi Note 13 Pro, Redmi Note 14 Pro Plus, Poco X7 Pro, Poco X6 Pro",
+      },
+      {
+        property: "og:title",
+        content: "Melhores celulares Xiaomi em 2026 | Tech Escolha Certa",
+      },
+      {
+        property: "og:description",
+        content:
+          "Guia editorial com os Xiaomi que mais valem a pena, reviews completos e comparativos entre Redmi e Poco.",
       },
     ],
   }),
@@ -27,19 +41,56 @@ const ranking = [
     category: "Melhor Xiaomi geral",
     product: "Redmi Note 13 Pro 5G",
     description:
-      "Excelente equilíbrio entre tela, câmera, bateria e custo-benefício.",
+      "A escolha mais equilibrada para quem quer tela boa, câmera forte, carregamento rápido e preço competitivo.",
   },
   {
     category: "Melhor Xiaomi premium",
     product: "Redmi Note 14 Pro+ 5G",
     description:
-      "Mais completo para quem quer câmera forte, tela premium e carregamento de 120 W.",
+      "Modelo mais completo para quem quer câmera de 200 MP, IP68, construção melhor e carregamento de 120 W.",
   },
   {
-    category: "Melhor Xiaomi gamer",
+    category: "Melhor Xiaomi para jogos",
+    product: "Poco X7 Pro",
+    description:
+      "A opção mais forte para quem quer desempenho, bateria grande, tela fluida e folga para os próximos anos.",
+  },
+  {
+    category: "Melhor Xiaomi em promoção",
     product: "Poco X6 Pro",
     description:
-      "Desempenho extremamente forte para quem joga e quer máxima performance.",
+      "Ainda faz muito sentido quando aparece bem mais barato que o Poco X7 Pro.",
+  },
+];
+
+const comparisonCards = [
+  {
+    title: "Redmi Note 13 Pro vs Redmi Note 14 Pro+",
+    description:
+      "Compare os dois Redmi para entender se vale pagar mais no modelo novo ou economizar no Redmi Note 13 Pro.",
+    href: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
+    badge: "Redmi",
+  },
+  {
+    title: "Poco X6 Pro vs Poco X7 Pro",
+    description:
+      "Veja qual Poco compensa mais para jogos, bateria, desempenho e custo-benefício.",
+    href: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
+    badge: "Poco",
+  },
+  {
+    title: "Galaxy A55 vs Redmi Note 13 Pro",
+    description:
+      "Samsung mais equilibrado ou Xiaomi com ficha técnica agressiva? Compare antes de comprar.",
+    href: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
+    badge: "Samsung vs Xiaomi",
+  },
+  {
+    title: "Galaxy A55 vs Poco X6 Pro",
+    description:
+      "Boa escolha para quem está entre estabilidade da Samsung e desempenho da linha Poco.",
+    href: "/comparativo/galaxy-a55-vs-poco-x6-pro",
+    badge: "Samsung vs Poco",
   },
 ];
 
@@ -49,12 +100,12 @@ function MelhoresCelularesXiaomi() {
       <CategoryHero
         eyebrow="Especial Xiaomi"
         title="Os melhores celulares Xiaomi para comprar em 2026"
-        description="Selecionamos os celulares Xiaomi que mais valem a pena atualmente considerando desempenho, tela, bateria, carregamento rápido e custo-benefício."
+        description="Selecionamos os modelos Redmi e Poco que mais valem a pena hoje, separando por perfil de uso: melhor equilíbrio, melhor conjunto premium, melhor desempenho e melhor compra em promoção."
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Melhor Xiaomi geral
+              Escolha mais equilibrada
             </p>
 
             <h2 className="mt-3 text-3xl font-bold text-white">
@@ -62,16 +113,26 @@ function MelhoresCelularesXiaomi() {
             </h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Excelente combinação de tela AMOLED, desempenho forte,
-              carregamento rápido e ótimo custo-benefício.
+              Continua sendo uma das compras mais inteligentes para quem quer
+              tela AMOLED, câmera de 200 MP, bom desempenho e carregamento rápido
+              sem pagar preço de topo de linha.
             </p>
 
-            <Link
-              to="/review/redmi-note-13-pro"
-              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
-            >
-              Ler review completo
-            </Link>
+            <div className="mt-6 grid gap-3">
+              <Link
+                to="/review/redmi-note-13-pro"
+                className="block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+              >
+                Ler review do Redmi Note 13 Pro
+              </Link>
+
+              <Link
+                to="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
+                className="block rounded-full bg-white/10 px-5 py-3 text-center text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
+              >
+                Comparar com Redmi Note 14 Pro+
+              </Link>
+            </div>
           </>
         }
       >
@@ -83,10 +144,10 @@ function MelhoresCelularesXiaomi() {
         </Link>
 
         <Link
-          to="/melhores-celulares-ate-2500"
+          to="/comparativos"
           className="rounded-full bg-white/10 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
         >
-          Ver até R$ 2.500
+          Ver comparativos
         </Link>
       </CategoryHero>
 
@@ -94,10 +155,10 @@ function MelhoresCelularesXiaomi() {
         <SectionTitle
           eyebrow="Ranking Xiaomi"
           title="Os Xiaomi que mais valem a pena hoje"
-          description="Seleção editorial focada em performance, tela, bateria e compra inteligente."
+          description="Seleção editorial para compra inteligente, considerando preço, desempenho, câmera, bateria, carregamento e experiência geral."
         />
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {ranking.map((item) => (
             <TopPickCard
               key={item.product}
@@ -111,23 +172,23 @@ function MelhoresCelularesXiaomi() {
         <section className="mt-14 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
           <SectionTitle
             eyebrow="Reviews Xiaomi"
-            title="Reviews mais importantes da Xiaomi"
-            description="Análises completas dos celulares Xiaomi mais procurados."
+            title="Reviews completos dos principais modelos"
+            description="Leia a análise individual antes de decidir. Cada review traz pontos fortes, pontos fracos, ficha técnica e recomendação final."
           />
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             <ReviewCard
               title="Review Redmi Note 13 Pro 5G"
-              description="Excelente equilíbrio entre tela, desempenho e carregamento rápido."
+              description="O Xiaomi mais equilibrado para quem quer custo-benefício."
               href="/review/redmi-note-13-pro"
               image="/images/products/redmi-note-13-pro-optimized.webp"
               score="9.0"
-              badge="Custo-benefício"
+              badge="Equilíbrio"
             />
 
             <ReviewCard
               title="Review Redmi Note 14 Pro+ 5G"
-              description="Modelo mais completo, com câmera de 200 MP e carregamento de 120 W."
+              description="Mais completo, com IP68, 200 MP e carregamento de 120 W."
               href="/review/redmi-note-14-pro-plus"
               image="/images/products/redmi-note-14-pro-plus-optimized.webp"
               score="9.2"
@@ -135,56 +196,63 @@ function MelhoresCelularesXiaomi() {
             />
 
             <ReviewCard
+              title="Review Poco X7 Pro"
+              description="A melhor escolha da linha para desempenho, jogos e bateria."
+              href="/review/poco-x7-pro"
+              image="/images/products/poco-x7-pro-optimized.webp"
+              score="9.3"
+              badge="Performance"
+            />
+
+            <ReviewCard
               title="Review Poco X6 Pro"
-              description="Um dos celulares mais fortes para jogos e performance."
+              description="Ainda excelente se aparecer com preço bem mais baixo."
               href="/review/poco-x6-pro"
               image="/images/products/poco-x6-pro-optimized.webp"
               score="9.2"
-              badge="Performance"
+              badge="Promoção"
             />
           </div>
         </section>
 
-        <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+        <section className="mt-14 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
           <SectionTitle
-            eyebrow="Comparativo Xiaomi"
-            title="Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena?"
-            description="Veja as diferenças entre os dois modelos Redmi antes de decidir se compensa pagar mais no modelo novo."
+            eyebrow="Comparativos Xiaomi"
+            title="Compare antes de comprar"
+            description="Os comparativos ajudam a escolher entre modelos parecidos e evitam pagar mais por recursos que talvez você não use."
           />
 
-          <Link
-            to="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
-            className="mt-6 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
-          >
-            Ver comparativo Redmi Note 13 Pro vs 14 Pro+
-          </Link>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {comparisonCards.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-slate-200 bg-[#F7F2EB] p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-[#8B5A2B] ring-1 ring-slate-200">
+                  {item.badge}
+                </span>
+
+                <h3 className="mt-4 text-xl font-bold text-[#0F3F4A]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-700">
+                  {item.description}
+                </p>
+
+                <a
+                  href={item.href}
+                  className="mt-5 inline-flex rounded-full bg-[#8B5A2B] px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
+                >
+                  Ver comparativo
+                </a>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="mt-14 grid gap-8 lg:grid-cols-[1fr_340px]">
           <article className="space-y-10">
-            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Xiaomi em 2026
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-                Xiaomi continua forte no custo-benefício
-              </h2>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                A Xiaomi segue sendo uma das marcas mais fortes para quem quer
-                muita ficha técnica pelo menor preço possível. Os aparelhos da
-                linha Redmi e Poco normalmente entregam desempenho acima da média,
-                telas fortes e carregamento rápido.
-              </p>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                Em contrapartida, alguns usuários ainda preferem Samsung quando
-                o foco é software mais refinado, suporte mais previsível e
-                experiência mais consistente no longo prazo.
-              </p>
-            </section>
-
             <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                 Resposta direta
@@ -195,44 +263,75 @@ function MelhoresCelularesXiaomi() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                Para a maioria das pessoas, o Redmi Note 13 Pro 5G segue como o
-                Xiaomi mais equilibrado: combina tela AMOLED, boa câmera, desempenho
-                para o dia a dia e carregamento rápido. Já o Redmi Note 14 Pro+ 5G
-                é a escolha mais completa para quem quer câmera de 200 MP,
-                carregamento de 120 W e construção mais premium.
+                Para a maioria das pessoas, o <strong>Redmi Note 13 Pro 5G</strong>
+                é o Xiaomi mais equilibrado. Ele reúne tela AMOLED, câmera de alta
+                resolução, bom desempenho, bateria consistente e carregamento rápido
+                por um preço normalmente mais competitivo.
+              </p>
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                O <strong>Redmi Note 14 Pro+ 5G</strong> faz mais sentido para quem
+                quer um conjunto mais completo, com proteção IP68, carregamento de
+                120 W e melhor construção. Já o <strong>Poco X7 Pro</strong> é a
+                escolha mais indicada quando o foco principal é desempenho, jogos e
+                bateria.
               </p>
 
               <div className="mt-6 grid gap-5 md:grid-cols-3">
                 <div className="rounded-2xl bg-[#F7F2EB] p-5">
                   <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Melhor Xiaomi para a maioria
+                    Melhor para a maioria
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    O Redmi Note 13 Pro 5G entrega o conjunto mais equilibrado para
-                    redes sociais, fotos, vídeos, trabalho e uso diário.
+                    Redmi Note 13 Pro 5G: melhor equilíbrio entre preço, tela,
+                    câmera, bateria e carregamento.
                   </p>
                 </div>
 
                 <div className="rounded-2xl bg-[#F7F2EB] p-5">
                   <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Melhor Xiaomi mais completo
+                    Melhor mais completo
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    O Redmi Note 14 Pro+ 5G faz sentido para quem quer câmera
-                    principal forte, carregamento muito rápido e acabamento superior.
+                    Redmi Note 14 Pro+ 5G: melhor para quem quer acabamento,
+                    proteção e carregamento mais forte.
                   </p>
                 </div>
 
                 <div className="rounded-2xl bg-[#F7F2EB] p-5">
                   <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Melhor Xiaomi para jogos
+                    Melhor para jogos
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    O Poco X6 Pro faz mais sentido para quem quer desempenho forte em
-                    jogos, multitarefa pesada e maior folga para os próximos anos.
+                    Poco X7 Pro: melhor escolha para performance, multitarefa,
+                    jogos e uso pesado.
                   </p>
                 </div>
               </div>
+            </section>
+
+            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
+                Linha Redmi ou linha Poco
+              </p>
+
+              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
+                Redmi é mais equilibrado; Poco é mais focado em desempenho
+              </h2>
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                A linha Redmi costuma ser melhor para quem quer um celular completo
+                para o dia a dia: boa tela, câmera principal forte, bateria segura,
+                carregamento rápido e preço competitivo. É a opção mais lógica para
+                quem usa redes sociais, vídeos, câmera, WhatsApp, bancos, mapas e
+                navegação.
+              </p>
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                A linha Poco normalmente é mais indicada para quem prioriza potência.
+                Ela faz mais sentido para jogos, multitarefa pesada, uso intenso e
+                quem quer o máximo de desempenho possível pelo preço.
+              </p>
             </section>
 
             <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
@@ -250,9 +349,9 @@ function MelhoresCelularesXiaomi() {
                     Qual Xiaomi tem melhor custo-benefício?
                   </h3>
                   <p className="mt-2 text-base leading-7 text-slate-700">
-                    O Redmi Note 13 Pro 5G costuma ser a compra mais equilibrada quando
-                    aparece em promoção, porque reúne tela, câmera, desempenho e
-                    carregamento rápido sem entrar na faixa de preço dos topos de linha.
+                    O Redmi Note 13 Pro 5G costuma ser a compra mais equilibrada
+                    quando aparece em promoção. Se o Poco X6 Pro estiver bem mais
+                    barato que o Poco X7 Pro, ele também pode ser uma excelente compra.
                   </p>
                 </div>
 
@@ -261,20 +360,30 @@ function MelhoresCelularesXiaomi() {
                     Redmi Note 14 Pro+ 5G vale a pena?
                   </h3>
                   <p className="mt-2 text-base leading-7 text-slate-700">
-                    Vale para quem quer um Xiaomi mais completo, com câmera principal
-                    de 200 MP, carregamento de 120 W e acabamento superior. Se o foco
-                    for economizar, o Redmi Note 13 Pro 5G ainda pode ser mais interessante.
+                    Vale para quem quer um Xiaomi mais completo, com carregamento de
+                    120 W, proteção IP68 e acabamento superior. Se a diferença de preço
+                    for grande, o Redmi Note 13 Pro ainda pode ser mais racional.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Xiaomi ou Poco: qual escolher?
+                    Poco X7 Pro ou Poco X6 Pro?
                   </h3>
                   <p className="mt-2 text-base leading-7 text-slate-700">
-                    Escolha Redmi quando quiser um conjunto mais equilibrado para uso
-                    geral. Escolha Poco se desempenho e jogos forem mais importantes do
-                    que câmera e acabamento.
+                    O Poco X7 Pro é a escolha mais atual e completa. O Poco X6 Pro
+                    continua interessante quando aparece com preço mais agressivo.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-[#0F3F4A]">
+                    Xiaomi é melhor que Samsung?
+                  </h3>
+                  <p className="mt-2 text-base leading-7 text-slate-700">
+                    Xiaomi costuma entregar mais ficha técnica pelo preço. Samsung
+                    costuma entregar software mais refinado, suporte mais previsível
+                    e experiência mais consistente no longo prazo.
                   </p>
                 </div>
               </div>
@@ -296,13 +405,14 @@ function MelhoresCelularesXiaomi() {
               </p>
 
               <h2 className="mt-2 text-3xl font-bold text-[#F8FAFC]">
-                Xiaomi é excelente para quem prioriza hardware.
+                Xiaomi vale muito para quem prioriza ficha técnica.
               </h2>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Se o objetivo for máximo desempenho, tela forte e carregamento
-                rápido pelo menor preço possível, a Xiaomi continua sendo uma das
-                melhores marcas do mercado.
+                Se o objetivo for pagar menos por tela forte, carregamento rápido,
+                bateria boa e desempenho acima da média, Xiaomi continua sendo uma
+                das marcas mais fortes. Só vale comparar com Samsung quando software,
+                suporte e câmera mais previsível forem prioridades maiores.
               </p>
             </section>
           </article>
@@ -315,17 +425,10 @@ function MelhoresCelularesXiaomi() {
 
               <div className="mt-5 space-y-3 text-sm">
                 <Link
-                  to="/melhores-celulares-custo-beneficio"
+                  to="/review/redmi-note-13-pro"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
-                  Melhores custo-benefício
-                </Link>
-
-                <Link
-                  to="/melhores-celulares-samsung"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Melhores celulares Samsung
+                  Review Redmi Note 13 Pro
                 </Link>
 
                 <Link
@@ -336,6 +439,20 @@ function MelhoresCelularesXiaomi() {
                 </Link>
 
                 <Link
+                  to="/review/poco-x7-pro"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Review Poco X7 Pro
+                </Link>
+
+                <Link
+                  to="/review/poco-x6-pro"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Review Poco X6 Pro
+                </Link>
+
+                <Link
                   to="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
@@ -343,10 +460,10 @@ function MelhoresCelularesXiaomi() {
                 </Link>
 
                 <Link
-                  to="/review/redmi-note-13-pro"
+                  to="/comparativo/poco-x6-pro-vs-poco-x7-pro"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
-                  Review Redmi Note 13 Pro
+                  Poco X6 Pro vs Poco X7 Pro
                 </Link>
 
                 <Link
@@ -354,6 +471,20 @@ function MelhoresCelularesXiaomi() {
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Galaxy A55 vs Redmi Note 13 Pro
+                </Link>
+
+                <Link
+                  to="/melhores-celulares-custo-beneficio"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Melhores custo-benefício
+                </Link>
+
+                <Link
+                  to="/comparativos"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Todos os comparativos
                 </Link>
               </div>
             </div>
