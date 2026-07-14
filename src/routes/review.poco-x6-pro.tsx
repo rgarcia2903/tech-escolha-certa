@@ -132,7 +132,7 @@ function ReviewPocoX6Pro() {
             </p>
 
             <a
-              href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/MLB29734179?pdp_filters=item_id%3AMLB4712693597&attributes=COLOR%3AMLB29734179&matt_tool=38524122"
+              href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
@@ -359,7 +359,7 @@ function ReviewPocoX6Pro() {
             </div>
 
             <a
-              href="https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/MLB29734179?pdp_filters=item_id%3AMLB4712693597&attributes=COLOR%3AMLB29734179&matt_tool=38524122"
+              href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>

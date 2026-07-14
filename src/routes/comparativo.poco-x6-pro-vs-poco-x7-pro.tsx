@@ -82,7 +82,7 @@ const POCO_X6 = {
   price: "R$ 1.899",
   image: "/images/products/poco-x6-pro-optimized.webp",
   affiliateHref:
-    "https://www.mercadolivre.com.br/xiaomi-pocophone-poco-x6-pro-5g-dual-sim-512-gb-amarelo-12-gb-ram/p/MLB29734179?pdp_filters=item_id%3AMLB4712693597&attributes=COLOR%3AMLB29734179&matt_tool=38524122",
+    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D",
   strengths: [
     "Dimensity 8300-Ultra ainda entrega desempenho muito forte",
     "Ótimo custo-benefício quando aparece abaixo do Poco X7 Pro",
@@ -104,7 +104,7 @@ const POCO_X7 = {
   price: "R$ 2.299",
   image: "/images/products/poco-x7-pro-optimized.webp",
   affiliateHref:
-    "https://www.mercadolivre.com.br/xiaomi-poco-x7-pro-5g-12ram-512-gb-global-cor-preto/p/MLB47308422?pdp_filters=item_id%3AMLB6936726414&matt_tool=38524122",
+    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BEX9wHRtVEKXx9yO12fXHrh8xMgoDxPmqvJmScZP%2Bkpg%2Bjc924kYQWyPEwdMSE7Pofdd%2F3Dtwc2j60EISIGY%2BQrcELFX5fso2RASDnsUC2LtMEx4Os0fTE9%2F8GAv8o9U6RPyBDRQX6JlRJAzGu5gLZ8m9g%2FAwx%2BjHzZohHxVKTyWyZLU2APF8FUZqzy4DpZAN7ScnA%3D%3D",
   strengths: [
     "Dimensity 8400-Ultra entrega mais desempenho e longevidade",
     "Bateria de 6.000 mAh é um salto importante",

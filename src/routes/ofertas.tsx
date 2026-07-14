@@ -57,7 +57,7 @@ const offers = [
       "Uma das escolhas mais seguras para quem quer tela boa, construção premium, IP67, boa câmera e experiência Samsung confiável.",
     bestFor: "Quem quer equilíbrio e menor risco de arrependimento.",
     href:
-      "https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122",
+      "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BCL5bQjsjsabVIDan%2BquPGrfwN7a1FohoY06VAMKSazfMMvBQBdIW8zqBe37an9yyDe7QBDwJDm4QTYk2yzYChcH7E981AVDRBB24zjHcrAaiUrBmaIT95DFr4B%2BxfbwS56aaUOzDbz6%2B7hTZlL5IRF3RiLdsWRGZ73nYf4w1Km8Nrk1WlHmXz7vJLtq48XyAYE%2B%2F8s%3D",
     review: "/review/galaxy-a55",
   },
   {
@@ -83,7 +83,7 @@ const offers = [
       "Alternativa interessante para quem busca tela AMOLED, boa bateria, carregamento rápido e câmera principal de alta resolução.",
     bestFor: "Quem quer boa ficha técnica pelo preço.",
     href:
-      "https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/MLB39445846?pdp_filters=item_id%3AMLB4162070017&matt_tool=38524122",
+      "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D",
     review: "/review/redmi-note-13-pro",
   },
 ];

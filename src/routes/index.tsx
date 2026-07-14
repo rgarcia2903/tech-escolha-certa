@@ -349,7 +349,7 @@ function HomePage() {
               title="Ofertas atualizadas dos celulares recomendados"
               description="Veja preço, parcelamento e disponibilidade dos modelos mais recomendados do momento."
               buttonText="Ver ofertas atualizadas"
-              href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/MLB34731719?pdp_filters=item_id%3AMLB4580836945&attributes=COLOR%3AMLB34731719&matt_tool=38524122"
+              href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BCL5bQjsjsabVIDan%2BquPGrfwN7a1FohoY06VAMKSazfMMvBQBdIW8zqBe37an9yyDe7QBDwJDm4QTYk2yzYChcH7E981AVDRBB24zjHcrAaiUrBmaIT95DFr4B%2BxfbwS56aaUOzDbz6%2B7hTZlL5IRF3RiLdsWRGZ73nYf4w1Km8Nrk1WlHmXz7vJLtq48XyAYE%2B%2F8s%3D"
               highlight="Samsung • Xiaomi • Redmi • Poco"
               productName="Galaxy A55"
               pageType="home"

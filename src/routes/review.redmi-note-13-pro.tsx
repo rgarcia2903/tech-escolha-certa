@@ -50,7 +50,7 @@ function ReviewRedmiNote13Pro() {
       priceLabel="Ver preço atualizado"
       overallScore="9.0"
       verdictShort="O Redmi Note 13 Pro 5G vale a pena para quem quer muita ficha técnica pelo preço. Ele entrega ótima tela, desempenho forte, carregamento rápido e bom conjunto geral, mas perde para Samsung em software mais refinado e suporte mais previsível."
-      affiliateHref="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/MLB39445846?pdp_filters=item_id%3AMLB4162070017&matt_tool=38524122"
+      affiliateHref="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
       affiliate={{
         title: "Redmi Note 13 Pro 5G com melhor preço hoje",
         description:

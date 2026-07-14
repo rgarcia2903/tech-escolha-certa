@@ -285,7 +285,7 @@ function ComparisonPage() {
               </p>
               <div className="mt-4 space-y-2">
                 <a
-                  href="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/mlb39445846?pdp_filters=item_id%3amlb4162070017&matt_tool=38524122"
+                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
@@ -299,7 +299,7 @@ function ComparisonPage() {
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/mlb34731719?pdp_filters=item_id%3amlb4580836945&attributes=color%3amlb34731719&matt_tool=38524122"
+                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BCL5bQjsjsabVIDan%2BquPGrfwN7a1FohoY06VAMKSazfMMvBQBdIW8zqBe37an9yyDe7QBDwJDm4QTYk2yzYChcH7E981AVDRBB24zjHcrAaiUrBmaIT95DFr4B%2BxfbwS56aaUOzDbz6%2B7hTZlL5IRF3RiLdsWRGZ73nYf4w1Km8Nrk1WlHmXz7vJLtq48XyAYE%2B%2F8s%3D"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
@@ -571,7 +571,7 @@ function ComparisonPage() {
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
                 <a
-                  href="https://www.mercadolivre.com.br/smartphone-redmi-note-13-pro-5g-256gb-8ram-cnfc-cor-preto/p/mlb39445846?pdp_filters=item_id%3amlb4162070017&matt_tool=38524122"
+                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
@@ -585,7 +585,7 @@ function ComparisonPage() {
                   Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.mercadolivre.com.br/samsung-galaxy-a55-5g-dual-sim-256-gb-azul-celeste-8-gb-ram/p/mlb34731719?pdp_filters=item_id%3amlb4580836945&attributes=color%3amlb34731719&matt_tool=38524122"
+                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BCL5bQjsjsabVIDan%2BquPGrfwN7a1FohoY06VAMKSazfMMvBQBdIW8zqBe37an9yyDe7QBDwJDm4QTYk2yzYChcH7E981AVDRBB24zjHcrAaiUrBmaIT95DFr4B%2BxfbwS56aaUOzDbz6%2B7hTZlL5IRF3RiLdsWRGZ73nYf4w1Km8Nrk1WlHmXz7vJLtq48XyAYE%2B%2F8s%3D"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
