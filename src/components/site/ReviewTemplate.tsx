@@ -294,6 +294,12 @@ export function ReviewTemplate({
               href={affiliateHref}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName,
+                  pageType: "review",
+                })
+              }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
               Ver oferta
@@ -337,6 +343,12 @@ export function ReviewTemplate({
             href={affiliateHref}
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
+            onClick={() =>
+              trackAffiliateClick({
+                productName,
+                pageType: "review",
+              })
+            }
             className="inline-flex items-center gap-2 rounded-2xl bg-[#8B5A2B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
           >
             Ver oferta
@@ -371,10 +383,3 @@ function AnalysisBlock({
     </section>
   );
 }
-
-
-
-
-
-
-
