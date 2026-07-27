@@ -32,6 +32,12 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
           "Guia editorial com os Xiaomi que mais valem a pena, reviews completos e comparativos entre Redmi e Poco.",
       },
     ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://techescolhacerta.com.br/melhores-celulares-xiaomi",
+      },
+    ],
   }),
   component: MelhoresCelularesXiaomi,
 });
