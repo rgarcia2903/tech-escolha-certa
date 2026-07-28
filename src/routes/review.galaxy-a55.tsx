@@ -3,6 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { trackAffiliateClick } from "@/lib/analytics";
 
+const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a55";
+
 export const Route = createFileRoute("/review/galaxy-a55")({
   head: () => ({
     meta: [
@@ -26,7 +28,12 @@ export const Route = createFileRoute("/review/galaxy-a55")({
         content:
           "Analisamos tela, bateria, desempenho, câmeras e custo-benefício do Galaxy A55 para responder se ele ainda merece seu dinheiro em 2026.",
       },
+      {
+        property: "og:url",
+        content: CANONICAL,
+      },
     ],
+    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: ReviewGalaxyA55,
 });
