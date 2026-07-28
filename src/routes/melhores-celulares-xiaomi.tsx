@@ -211,7 +211,7 @@ function MelhoresCelularesXiaomi() {
             />
 
             <ReviewCard
-              title="Review Poco X6 Pro"
+              title="Poco X6 Pro vale a pena em 2026?"
               description="Ainda excelente se aparecer com preço bem mais baixo."
               href="/review/poco-x6-pro"
               image="/images/products/poco-x6-pro-optimized.webp"
@@ -455,7 +455,7 @@ function MelhoresCelularesXiaomi() {
                   to="/review/poco-x6-pro"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
-                  Review Poco X6 Pro
+                  Poco X6 Pro compensa em 2026?
                 </Link>
 
                 <Link
