@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { Badge, Rating } from "@/components/site/ui";
 
-const CANONICAL = "https://tech-decide-right.lovable.app/review/galaxy-s24";
+const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-s24";
 const HERO_IMG =
   "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1600&q=80";
 

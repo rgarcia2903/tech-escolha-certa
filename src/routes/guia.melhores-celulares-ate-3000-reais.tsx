@@ -20,7 +20,7 @@ import {
 import { Badge, Rating } from "@/components/site/ui";
 
 const CANONICAL =
-  "https://tech-decide-right.lovable.app/guia/melhores-celulares-ate-3000-reais";
+  "https://techescolhacerta.com.br/guia/melhores-celulares-ate-3000-reais";
 
 export const Route = createFileRoute("/guia/melhores-celulares-ate-3000-reais")({
   head: () => ({
