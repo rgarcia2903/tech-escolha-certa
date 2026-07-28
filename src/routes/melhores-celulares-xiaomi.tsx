@@ -129,7 +129,7 @@ function MelhoresCelularesXiaomi() {
                 to="/review/redmi-note-13-pro"
                 className="block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
               >
-                Ler review do Redmi Note 13 Pro
+                Redmi Note 13 Pro 5G vale a pena em 2026?
               </Link>
 
               <Link
@@ -434,7 +434,7 @@ function MelhoresCelularesXiaomi() {
                   to="/review/redmi-note-13-pro"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
-                  Review Redmi Note 13 Pro
+                  Redmi Note 13 Pro ainda compensa em 2026?
                 </Link>
 
                 <Link
