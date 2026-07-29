@@ -5,6 +5,8 @@ import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { TopPickCard } from "@/components/site/TopPickCard";
 
+const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-ate-2000";
+
 export const Route = createFileRoute("/melhores-celulares-ate-2000")({
   head: () => ({
     meta: [
@@ -17,7 +19,12 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
         content:
           "Veja os melhores celulares até R$ 2.000 para comprar em 2026. Galaxy A35, Redmi Note 13 Pro, Poco X6 e outros modelos com foco em custo-benefício.",
       },
+      {
+        property: "og:url",
+        content: CANONICAL,
+      },
     ],
+    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: MelhoresCelularesAte2000,
 });
