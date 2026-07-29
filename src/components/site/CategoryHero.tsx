@@ -5,6 +5,7 @@ type CategoryHeroProps = {
   title: string;
   description: string;
   image?: string;
+  hideImageOnMobile?: boolean;
   children?: ReactNode;
   aside?: ReactNode;
 };
@@ -14,6 +15,7 @@ export function CategoryHero({
   title,
   description,
   image,
+  hideImageOnMobile = false,
   children,
   aside,
 }: CategoryHeroProps) {
@@ -24,7 +26,10 @@ export function CategoryHero({
           <img
             src={image}
             alt={title}
-            className="absolute inset-0 h-full w-full object-cover opacity-35"
+            aria-hidden="true"
+            className={`absolute inset-0 h-full w-full object-cover opacity-35 ${
+              hideImageOnMobile ? "hidden md:block" : ""
+            }`}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#071E25]/96 via-[#071E25]/88 to-[#071E25]/72" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(185,119,75,0.25),transparent_42%)]" />

@@ -108,6 +108,7 @@ function HomePage() {
         title="Escolha seu próximo celular com mais segurança."
         description="Reviews, comparativos, guias de compra e recomendações editoriais para ajudar você a escolher entre Samsung, Xiaomi, Redmi, Poco e iPhone sem cair em marketing vazio."
         image="/images/products/phones-hero-optimized.webp"
+        hideImageOnMobile
         aside={
           <>
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-white/20">
