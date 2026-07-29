@@ -20,7 +20,7 @@ import {
 import { Badge, Rating } from "@/components/site/ui";
 
 const CANONICAL =
-  "https://techescolhacerta.com.br/melhores-celulares-ate-1500";
+  "https://techescolhacerta.com.br/guia/melhores-celulares-ate-1500-reais";
 
 export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")({
   head: () => ({
