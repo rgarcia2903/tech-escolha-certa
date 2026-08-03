@@ -5,7 +5,7 @@ export const Route = createFileRoute("/review/poco-x6-pro")({
   head: () => ({
     meta: [
       {
-        title: "Poco X6 Pro compensa em 2026? Review sincero",
+        title: "Poco X6 Pro vale a pena em 2026? Veja se ainda compensa",
       },
       {
         name: "description",
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/review/poco-x6-pro")({
       },
       {
         property: "og:title",
-        content: "Poco X6 Pro compensa em 2026?",
+        content: "Poco X6 Pro vale a pena em 2026?",
       },
       {
         property: "og:description",
@@ -41,7 +41,7 @@ function ReviewPocoX6Pro() {
         { label: "Review Poco X6 Pro" },
       ]}
       eyebrow="Review sincero"
-      title="Poco X6 Pro compensa em 2026?"
+      title="Poco X6 Pro vale a pena em 2026?"
       description="Sim, o Poco X6 Pro ainda compensa em 2026 para quem prioriza desempenho, jogos, tela AMOLED fluida e carregamento rápido. Ele continua sendo uma opção forte entre os intermediários, mas já precisa ser comparado com o Poco X7 Pro antes da compra."
       updatedAt="Atualizado em 2026"
       readingTime="Leitura • 7 min"
