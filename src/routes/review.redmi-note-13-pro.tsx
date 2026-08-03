@@ -6,7 +6,7 @@ export const Route = createFileRoute("/review/redmi-note-13-pro")({
     meta: [
       {
         title:
-          "Redmi Note 13 Pro 5G vale a pena em 2026? Review sincero",
+          "Redmi Note 13 Pro 5G vale a pena em 2026? Veja se ainda compensa",
       },
       {
         name: "description",
