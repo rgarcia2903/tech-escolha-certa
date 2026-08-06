@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { trackAffiliateClick } from "@/lib/analytics";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
-import { TopPickCard } from "@/components/site/TopPickCard";
 
 export const Route = createFileRoute("/melhores-celulares-samsung")({
   head: () => ({
@@ -111,24 +111,42 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
   component: MelhoresCelularesSamsung,
 });
 
+const affiliateLinks = {
+  galaxyA55:
+    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D",
+  galaxyS24:
+    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D",
+  galaxyA35:
+    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D",
+};
+
 const ranking = [
   {
     category: "Melhor Samsung geral",
     product: "Galaxy A55 5G",
     description:
       "O Samsung mais equilibrado para a maioria das pessoas: boa tela, boa bateria, construção premium, IP67 e experiência confiável.",
+    reviewHref: "/review/galaxy-a55",
+    affiliateHref: affiliateLinks.galaxyA55,
+    affiliateProductName: "Galaxy A55",
   },
   {
     category: "Melhor Samsung premium",
     product: "Galaxy S24",
     description:
       "Top de linha compacto com excelente câmera, desempenho premium, recursos de IA e vários anos de atualização.",
+    reviewHref: "/review/galaxy-s24",
+    affiliateHref: affiliateLinks.galaxyS24,
+    affiliateProductName: "Galaxy S24",
   },
   {
     category: "Melhor Samsung custo-benefício",
     product: "Galaxy A35 5G",
     description:
       "Ótima escolha para quem quer economizar sem abrir mão da experiência Samsung, tela AMOLED, 5G e IP67.",
+    reviewHref: "/review/galaxy-a35",
+    affiliateHref: affiliateLinks.galaxyA35,
+    affiliateProductName: "Galaxy A35",
   },
 ];
 
@@ -215,12 +233,46 @@ function MelhoresCelularesSamsung() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {ranking.map((item) => (
-            <TopPickCard
+            <article
               key={item.product}
-              category={item.category}
-              product={item.product}
-              description={item.description}
-            />
+              className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
+                {item.category}
+              </span>
+
+              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">
+                {item.product}
+              </h3>
+
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">
+                {item.description}
+              </p>
+
+              <div className="mt-5 grid gap-2">
+                <Link
+                  to={item.reviewHref}
+                  className="inline-flex items-center justify-center rounded-full bg-[#0F3F4A] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
+                >
+                  Ver análise
+                </Link>
+
+                <a
+                  href={item.affiliateHref}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: item.affiliateProductName,
+                      pageType: "guia",
+                    })
+                  }
+                  className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
+                >
+                  Ver preço no Mercado Livre
+                </a>
+              </div>
+            </article>
           ))}
         </div>
 
