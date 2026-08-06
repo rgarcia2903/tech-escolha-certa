@@ -300,7 +300,7 @@ function ReviewPage() {
               <div className="mt-3 font-heading text-2xl font-bold text-foreground">R$ 4.299</div>
               <span className="text-[11px] text-muted-foreground">*pode variar</span>
               <a
-                href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
+                href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 onClick={() =>
@@ -617,7 +617,7 @@ function ReviewPage() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
+                    href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     onClick={() =>
@@ -689,7 +689,7 @@ function ReviewPage() {
             Comparar
           </Link>
           <a
-            href="https://www.mercadolivre.com.br/celular-samsung-galaxy-s24-galaxy-ai-cmera-tripla-traseira-de-ate-50mp-selfie-de-12mp-tela-de-62-1-120hz-256gb-8gb-de-ram-esim-cinza/p/MLB34102203?pdp_filters=item_id%3AMLB4661894473&matt_tool=38524122"
+            href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D"
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={() =>
