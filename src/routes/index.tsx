@@ -45,24 +45,28 @@ const featuredPicks = [
     product: "Redmi Note 13 Pro 5G",
     description:
       "Equilíbrio forte entre tela AMOLED, câmera de 200 MP, bateria e custo-benefício.",
+    href: "/review/redmi-note-13-pro",
   },
   {
     category: "Melhor Xiaomi premium",
     product: "Redmi Note 14 Pro+ 5G",
     description:
       "Mais completo para quem quer câmera forte, IP68 e carregamento de 120 W.",
+    href: "/review/redmi-note-14-pro-plus",
   },
   {
     category: "Melhor performance",
     product: "Poco X7 Pro",
     description:
       "Escolha mais forte para jogos, multitarefa pesada, bateria e velocidade.",
+    href: "/review/poco-x7-pro",
   },
   {
     category: "Mais equilibrado",
     product: "Galaxy A55 5G",
     description:
       "Boa escolha para quem quer câmera, acabamento, One UI e segurança no longo prazo.",
+    href: "/review/galaxy-a55",
   },
 ];
 
@@ -181,6 +185,7 @@ function HomePage() {
                 category={item.category}
                 product={item.product}
                 description={item.description}
+                href={item.href}
               />
             ))}
           </div>
