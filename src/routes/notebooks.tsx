@@ -36,7 +36,7 @@ function NotebooksPage() {
           </span>
 
           <div className="mt-6 max-w-3xl">
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-6xl">
               Notebooks para estudar, trabalhar e comprar sem errar
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-200">
