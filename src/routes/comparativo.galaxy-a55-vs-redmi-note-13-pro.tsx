@@ -296,7 +296,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
@@ -310,7 +310,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -582,7 +582,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
@@ -596,7 +596,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Redmi <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -615,12 +615,12 @@ function ComparisonPage() {
             </span>
           </div>
           <a
-            href="/ofertas"
+            href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver ofertas <ArrowUpRight className="h-3.5 w-3.5" />
+            Ver preço do A55 <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>

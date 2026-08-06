@@ -120,7 +120,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A55
+              Ver preço do Galaxy A55
             </a>
           </div>
 
@@ -164,7 +164,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A35
+              Ver preço do Galaxy A35
             </a>
           </div>
         </div>

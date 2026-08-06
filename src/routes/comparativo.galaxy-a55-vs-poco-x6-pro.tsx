@@ -298,7 +298,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
@@ -312,7 +312,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Poco X6 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Poco X6 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -584,7 +584,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Galaxy A55 <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
@@ -598,7 +598,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Poco <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Poco X6 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -617,12 +617,12 @@ function ComparisonPage() {
             </span>
           </div>
           <a
-            href="/ofertas"
+            href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver ofertas <ArrowUpRight className="h-3.5 w-3.5" />
+            Ver preço do A55 <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>

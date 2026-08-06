@@ -309,8 +309,8 @@ function ComparisonPage() {
                 se estiver com preço bem menor.
               </p>
               <div className="mt-4 space-y-2">
-                <AffiliateButton product={POCO_X7} label="Ver Poco X7 Pro" variant="primary" />
-                <AffiliateButton product={POCO_X6} label="Ver Poco X6 Pro" variant="secondary" />
+                <AffiliateButton product={POCO_X7} label="Ver preço do Poco X7 Pro" variant="primary" />
+                <AffiliateButton product={POCO_X6} label="Ver preço do Poco X6 Pro" variant="secondary" />
               </div>
             </div>
           </div>
@@ -569,8 +569,8 @@ function ComparisonPage() {
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
-                <AffiliateButton product={POCO_X7} label="Ver Poco X7 Pro" variant="primary" />
-                <AffiliateButton product={POCO_X6} label="Ver Poco X6 Pro" variant="secondary" />
+                <AffiliateButton product={POCO_X7} label="Ver preço do Poco X7 Pro" variant="primary" />
+                <AffiliateButton product={POCO_X6} label="Ver preço do Poco X6 Pro" variant="secondary" />
               </div>
             </div>
           </section>

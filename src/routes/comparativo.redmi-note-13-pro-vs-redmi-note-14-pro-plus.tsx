@@ -301,7 +301,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href={REDMI13_AFFILIATE_URL}
@@ -315,7 +315,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -589,7 +589,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href={REDMI13_AFFILIATE_URL}
@@ -603,7 +603,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
