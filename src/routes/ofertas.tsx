@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Star,
   Trophy,
   Zap,
 } from "lucide-react";
@@ -26,12 +25,12 @@ export const Route = createFileRoute("/ofertas")({
       {
         name: "description",
         content:
-          "Confira celulares recomendados pelo Tech Escolha Certa com links afiliados oficiais do Mercado Livre. Veja Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro, Poco X6 Pro e Galaxy A55.",
+          "Confira celulares recomendados pelo Tech Escolha Certa com links afiliados oficiais do Mercado Livre. Veja Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro, Poco X6 Pro, Galaxy A55 e Galaxy A35.",
       },
       {
         name: "keywords",
         content:
-          "ofertas de celulares, celulares em promoção, ofertas Mercado Livre, Redmi Note 13 Pro oferta, Redmi Note 14 Pro Plus oferta, Poco X7 Pro oferta, Poco X6 Pro oferta, Galaxy A55 oferta",
+          "ofertas de celulares, celulares em promoção, ofertas Mercado Livre, Redmi Note 13 Pro oferta, Redmi Note 14 Pro Plus oferta, Poco X7 Pro oferta, Poco X6 Pro oferta, Galaxy A55 oferta, Galaxy A35 oferta",
       },
       {
         property: "og:title",
@@ -125,6 +124,23 @@ const offers = [
       "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D",
     review: "/review/galaxy-a55",
     comparison: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
+  },
+  {
+    name: "Samsung Galaxy A35 5G 256GB",
+    badge: "Samsung custo-benefício",
+    rating: 4.4,
+    image: "/images/products/galaxy-a35-optimized.webp",
+    priceLabel: "Conferir preço no Mercado Livre",
+    description:
+      "Boa alternativa para quem quer economizar dentro da linha Samsung sem abrir mão de tela AMOLED, 5G, IP67 e boa experiência no dia a dia.",
+    bestFor: "Quem quer Samsung gastando menos que no Galaxy A55.",
+    strengths: ["IP67", "Tela AMOLED", "Bom custo-benefício"],
+    href:
+      "https://" +
+      "www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=" +
+      "BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D",
+    review: "/review/galaxy-a35",
+    comparison: "/comparativo-galaxy-a55-vs-galaxy-a35",
   },
 ];
 
