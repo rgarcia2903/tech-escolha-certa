@@ -5,7 +5,36 @@ import { GuideCard } from "@/components/site/GuideCard";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
 
+const CANONICAL = "https" + "://techescolhacerta.com.br/celulares";
+
 export const Route = createFileRoute("/celulares")({
+  head: () => ({
+    meta: [
+      {
+        title:
+          "Celulares — Reviews, comparativos e guias para comprar melhor em 2026",
+      },
+      {
+        name: "description",
+        content:
+          "Veja reviews, comparativos, guias de compra e ofertas de celulares Samsung, Xiaomi, Redmi, Poco e iPhone para escolher melhor em 2026.",
+      },
+      {
+        property: "og" + ":title",
+        content: "Celulares — Tech Escolha Certa",
+      },
+      {
+        property: "og" + ":description",
+        content:
+          "Reviews, comparativos e guias para escolher o celular certo por marca, faixa de preço e perfil de uso.",
+      },
+      {
+        property: "og" + ":url",
+        content: CANONICAL,
+      },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+  }),
   component: CelularesPage,
 });
 
@@ -46,6 +75,13 @@ const reviews = [
 
 const guides = [
   {
+    title: "Melhores celulares custo-benefício",
+    description:
+      "Comece aqui se você quer comprar bem sem pagar caro por recursos que não vai usar.",
+    href: "/melhores-celulares-custo-beneficio",
+    highlight: "Guia principal",
+  },
+  {
     title: "Melhores celulares até R$ 2.000",
     description:
       "Os modelos mais equilibrados para quem quer comprar bem gastando menos.",
@@ -60,11 +96,25 @@ const guides = [
     highlight: "Melhor intermediário premium: Galaxy A55",
   },
   {
+    title: "Melhores celulares Xiaomi",
+    description:
+      "Redmi, Poco e Xiaomi organizados por perfil: equilíbrio, jogos, câmera e preço.",
+    href: "/melhores-celulares-xiaomi",
+    highlight: "Redmi e Poco",
+  },
+  {
     title: "Melhores celulares Samsung",
     description:
       "Veja quais modelos Samsung realmente valem a pena atualmente.",
     href: "/melhores-celulares-samsung",
     highlight: "Hub Samsung atualizado",
+  },
+  {
+    title: "Ofertas de celulares",
+    description:
+      "Atalho para consultar preços e disponibilidade dos modelos recomendados.",
+    href: "/ofertas",
+    highlight: "Preços atualizados",
   },
 ];
 
@@ -148,7 +198,7 @@ function CelularesPage() {
             description="Seleções organizadas por faixa de preço, perfil de uso e custo-benefício."
           />
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {guides.map((guide) => (
               <GuideCard key={guide.href} {...guide} />
             ))}
