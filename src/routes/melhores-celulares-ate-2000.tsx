@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { trackAffiliateClick } from "@/lib/analytics";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
-import { TopPickCard } from "@/components/site/TopPickCard";
 
 const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-ate-2000";
 
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
       {
         name: "description",
         content:
-          "Veja os melhores celulares até R$ 2.000 para comprar em 2026. Galaxy A35, Redmi Note 13 Pro, Poco X6 e outros modelos com foco em custo-benefício.",
+          "Veja os melhores celulares até R$ 2.000 para comprar em 2026. Galaxy A35, Redmi Note 13 Pro, Poco X6 Pro e outros modelos com foco em custo-benefício.",
       },
       {
         property: "og:url",
@@ -29,24 +29,50 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
   component: MelhoresCelularesAte2000,
 });
 
+const ml = (ref: string) =>
+  "https://" +
+  "www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=" +
+  ref;
+
+const affiliateLinks = {
+  galaxyA35: ml(
+    "BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D"
+  ),
+  redmiNote13Pro: ml(
+    "BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
+  ),
+  pocoX6Pro: ml(
+    "BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
+  ),
+};
+
 const ranking = [
   {
     category: "Melhor geral até R$ 2.000",
     product: "Galaxy A35 5G",
     description:
       "Excelente equilíbrio entre tela, bateria, software e confiabilidade.",
+    reviewHref: "/review/galaxy-a35",
+    affiliateHref: affiliateLinks.galaxyA35,
+    affiliateProductName: "Galaxy A35",
   },
   {
     category: "Melhor Xiaomi até R$ 2.000",
     product: "Redmi Note 13 Pro 5G",
     description:
       "Tela AMOLED forte, carregamento rápido e ótimo conjunto geral.",
+    reviewHref: "/review/redmi-note-13-pro",
+    affiliateHref: affiliateLinks.redmiNote13Pro,
+    affiliateProductName: "Redmi Note 13 Pro",
   },
   {
     category: "Melhor para jogos",
-    product: "Poco X6",
+    product: "Poco X6 Pro",
     description:
       "Ótima performance para quem prioriza jogos e desempenho.",
+    reviewHref: "/review/poco-x6-pro",
+    affiliateHref: affiliateLinks.pocoX6Pro,
+    affiliateProductName: "Poco X6 Pro",
   },
 ];
 
@@ -106,12 +132,46 @@ function MelhoresCelularesAte2000() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {ranking.map((item) => (
-            <TopPickCard
+            <article
               key={item.product}
-              category={item.category}
-              product={item.product}
-              description={item.description}
-            />
+              className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
+                {item.category}
+              </span>
+
+              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">
+                {item.product}
+              </h3>
+
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">
+                {item.description}
+              </p>
+
+              <div className="mt-5 grid gap-2">
+                <Link
+                  to={item.reviewHref}
+                  className="inline-flex items-center justify-center rounded-full bg-[#0F3F4A] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
+                >
+                  Ver análise
+                </Link>
+
+                <a
+                  href={item.affiliateHref}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: item.affiliateProductName,
+                      pageType: "guia",
+                    })
+                  }
+                  className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
+                >
+                  Ver preço no Mercado Livre
+                </a>
+              </div>
+            </article>
           ))}
         </div>
 
@@ -142,11 +202,11 @@ function MelhoresCelularesAte2000() {
             />
 
             <ReviewCard
-              title="Review Poco X6"
+              title="Review Poco X6 Pro"
               description="Ótima escolha para quem prioriza desempenho e jogos."
-              href="/review/poco-x6"
+              href="/review/poco-x6-pro"
               image="/images/products/poco-x6-pro-optimized.webp"
-              score="8.9"
+              score="9.2"
               badge="Performance"
             />
           </div>
@@ -180,9 +240,9 @@ function MelhoresCelularesAte2000() {
               title="Melhores ofertas até R$ 2.000"
               description="Veja preços, parcelamento e disponibilidade dos celulares recomendados."
               buttonText="Ver ofertas atualizadas"
-              href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D"
+              href={affiliateLinks.galaxyA35}
               highlight="Samsung • Xiaomi • Poco"
-              productName="Galaxy A55"
+              productName="Galaxy A35"
               pageType="guia"
             />
 
