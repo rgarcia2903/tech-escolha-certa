@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
+const CANONICAL = "https" + "://techescolhacerta.com.br/review/redmi-note-13-pro";
+
 export const Route = createFileRoute("/review/redmi-note-13-pro")({
   head: () => ({
     meta: [
@@ -27,7 +29,12 @@ export const Route = createFileRoute("/review/redmi-note-13-pro")({
         content:
           "Review sincero do Redmi Note 13 Pro 5G com pontos fortes, pontos fracos, câmera, bateria, desempenho e recomendação de compra.",
       },
+      {
+        property: "og:url",
+        content: CANONICAL,
+      },
     ],
+    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: ReviewRedmiNote13Pro,
 });
@@ -151,6 +158,11 @@ function ReviewRedmiNote13Pro() {
             "Sim. Ele ainda vale a pena em 2026 para quem busca tela AMOLED, bom desempenho, carregamento rápido e boa ficha técnica na faixa intermediária. Só vale comparar o preço com Galaxy A55, Poco X6 Pro e Redmi Note 14 Pro+ antes de decidir.",
         },
         {
+          question: "Redmi Note 13 Pro 5G ainda compensa em 2026?",
+          answer:
+            "Sim. O Redmi Note 13 Pro 5G ainda compensa em 2026 quando aparece com preço competitivo, principalmente para quem quer tela AMOLED, câmera principal forte, bom desempenho e carregamento rápido.",
+        },
+        {
           question: "O Redmi Note 13 Pro 5G é bom?",
           answer:
             "Sim. O Redmi Note 13 Pro 5G é bom para uso diário, redes sociais, vídeos, multitarefa e jogos populares. Os principais destaques são a tela, o carregamento rápido e a câmera principal durante o dia.",
@@ -195,6 +207,10 @@ function ReviewRedmiNote13Pro() {
         {
           label: "Review Galaxy A55",
           to: "/review/galaxy-a55",
+        },
+        {
+          label: "Ofertas de celulares recomendados",
+          to: "/ofertas",
         },
       ]}
     />
