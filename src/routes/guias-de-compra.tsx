@@ -62,6 +62,14 @@ const guides = [
     href: "/melhores-celulares-xiaomi",
     tag: "Xiaomi",
   },
+
+  {
+    title: "Melhores celulares Xiaomi custo-benefício",
+    excerpt:
+      "Redmi e Poco com melhor equilíbrio entre preço, desempenho, bateria e compra inteligente.",
+    href: "/melhores-celulares-xiaomi-custo-beneficio",
+    tag: "Xiaomi custo-benefício",
+  },
   {
     title: "Melhores celulares Samsung",
     excerpt:

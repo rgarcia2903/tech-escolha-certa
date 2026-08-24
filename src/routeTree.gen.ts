@@ -16,6 +16,7 @@ import { Route as SmartwatchesRouteImport } from './routes/smartwatches'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as OfertasRouteImport } from './routes/ofertas'
 import { Route as NotebooksRouteImport } from './routes/notebooks'
+import { Route as MelhoresCelularesXiaomiCustoBeneficioRouteImport } from './routes/melhores-celulares-xiaomi-custo-beneficio'
 import { Route as MelhoresCelularesXiaomiRouteImport } from './routes/melhores-celulares-xiaomi'
 import { Route as MelhoresCelularesSamsungRouteImport } from './routes/melhores-celulares-samsung'
 import { Route as MelhoresCelularesCustoBeneficioRouteImport } from './routes/melhores-celulares-custo-beneficio'
@@ -83,6 +84,12 @@ const NotebooksRoute = NotebooksRouteImport.update({
   path: '/notebooks',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MelhoresCelularesXiaomiCustoBeneficioRoute =
+  MelhoresCelularesXiaomiCustoBeneficioRouteImport.update({
+    id: '/melhores-celulares-xiaomi-custo-beneficio',
+    path: '/melhores-celulares-xiaomi-custo-beneficio',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MelhoresCelularesXiaomiRoute = MelhoresCelularesXiaomiRouteImport.update({
   id: '/melhores-celulares-xiaomi',
   path: '/melhores-celulares-xiaomi',
@@ -269,6 +276,7 @@ export interface FileRoutesByFullPath {
   '/melhores-celulares-custo-beneficio': typeof MelhoresCelularesCustoBeneficioRoute
   '/melhores-celulares-samsung': typeof MelhoresCelularesSamsungRoute
   '/melhores-celulares-xiaomi': typeof MelhoresCelularesXiaomiRoute
+  '/melhores-celulares-xiaomi-custo-beneficio': typeof MelhoresCelularesXiaomiCustoBeneficioRoute
   '/notebooks': typeof NotebooksRoute
   '/ofertas': typeof OfertasRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -309,6 +317,7 @@ export interface FileRoutesByTo {
   '/melhores-celulares-custo-beneficio': typeof MelhoresCelularesCustoBeneficioRoute
   '/melhores-celulares-samsung': typeof MelhoresCelularesSamsungRoute
   '/melhores-celulares-xiaomi': typeof MelhoresCelularesXiaomiRoute
+  '/melhores-celulares-xiaomi-custo-beneficio': typeof MelhoresCelularesXiaomiCustoBeneficioRoute
   '/notebooks': typeof NotebooksRoute
   '/ofertas': typeof OfertasRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -350,6 +359,7 @@ export interface FileRoutesById {
   '/melhores-celulares-custo-beneficio': typeof MelhoresCelularesCustoBeneficioRoute
   '/melhores-celulares-samsung': typeof MelhoresCelularesSamsungRoute
   '/melhores-celulares-xiaomi': typeof MelhoresCelularesXiaomiRoute
+  '/melhores-celulares-xiaomi-custo-beneficio': typeof MelhoresCelularesXiaomiCustoBeneficioRoute
   '/notebooks': typeof NotebooksRoute
   '/ofertas': typeof OfertasRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -392,6 +402,7 @@ export interface FileRouteTypes {
     | '/melhores-celulares-custo-beneficio'
     | '/melhores-celulares-samsung'
     | '/melhores-celulares-xiaomi'
+    | '/melhores-celulares-xiaomi-custo-beneficio'
     | '/notebooks'
     | '/ofertas'
     | '/politica-de-privacidade'
@@ -432,6 +443,7 @@ export interface FileRouteTypes {
     | '/melhores-celulares-custo-beneficio'
     | '/melhores-celulares-samsung'
     | '/melhores-celulares-xiaomi'
+    | '/melhores-celulares-xiaomi-custo-beneficio'
     | '/notebooks'
     | '/ofertas'
     | '/politica-de-privacidade'
@@ -472,6 +484,7 @@ export interface FileRouteTypes {
     | '/melhores-celulares-custo-beneficio'
     | '/melhores-celulares-samsung'
     | '/melhores-celulares-xiaomi'
+    | '/melhores-celulares-xiaomi-custo-beneficio'
     | '/notebooks'
     | '/ofertas'
     | '/politica-de-privacidade'
@@ -513,6 +526,7 @@ export interface RootRouteChildren {
   MelhoresCelularesCustoBeneficioRoute: typeof MelhoresCelularesCustoBeneficioRoute
   MelhoresCelularesSamsungRoute: typeof MelhoresCelularesSamsungRoute
   MelhoresCelularesXiaomiRoute: typeof MelhoresCelularesXiaomiRoute
+  MelhoresCelularesXiaomiCustoBeneficioRoute: typeof MelhoresCelularesXiaomiCustoBeneficioRoute
   NotebooksRoute: typeof NotebooksRoute
   OfertasRoute: typeof OfertasRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
@@ -589,6 +603,13 @@ declare module '@tanstack/react-router' {
       path: '/notebooks'
       fullPath: '/notebooks'
       preLoaderRoute: typeof NotebooksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/melhores-celulares-xiaomi-custo-beneficio': {
+      id: '/melhores-celulares-xiaomi-custo-beneficio'
+      path: '/melhores-celulares-xiaomi-custo-beneficio'
+      fullPath: '/melhores-celulares-xiaomi-custo-beneficio'
+      preLoaderRoute: typeof MelhoresCelularesXiaomiCustoBeneficioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/melhores-celulares-xiaomi': {
@@ -825,6 +846,8 @@ const rootRouteChildren: RootRouteChildren = {
   MelhoresCelularesCustoBeneficioRoute: MelhoresCelularesCustoBeneficioRoute,
   MelhoresCelularesSamsungRoute: MelhoresCelularesSamsungRoute,
   MelhoresCelularesXiaomiRoute: MelhoresCelularesXiaomiRoute,
+  MelhoresCelularesXiaomiCustoBeneficioRoute:
+    MelhoresCelularesXiaomiCustoBeneficioRoute,
   NotebooksRoute: NotebooksRoute,
   OfertasRoute: OfertasRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
