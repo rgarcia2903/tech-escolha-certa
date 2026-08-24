@@ -5,12 +5,14 @@ import { CategoryHero } from "@/components/site/CategoryHero";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
 
+const CANONICAL = "https" + "://techescolhacerta.com.br/melhores-celulares-xiaomi";
+
 export const Route = createFileRoute("/melhores-celulares-xiaomi")({
   head: () => ({
     meta: [
       {
         title:
-          "Qual é o melhor Xiaomi em 2026? Redmi e Poco que valem a pena",
+          "Melhor celular Xiaomi em 2026: Redmi e Poco que valem a pena",
       },
       {
         name: "description",
@@ -24,18 +26,22 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
       },
       {
         property: "og:title",
-        content: "Qual é o melhor Xiaomi em 2026? | Tech Escolha Certa",
+        content: "Melhor celular Xiaomi em 2026 | Tech Escolha Certa",
       },
       {
         property: "og:description",
         content:
           "Guia editorial com os Xiaomi que mais valem a pena, reviews completos e comparativos entre Redmi e Poco.",
       },
+      {
+        property: "og:url",
+        content: CANONICAL,
+      },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://techescolhacerta.com.br/melhores-celulares-xiaomi",
+        href: CANONICAL,
       },
     ],
   }),
@@ -128,7 +134,7 @@ function MelhoresCelularesXiaomi() {
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
         eyebrow="Especial Xiaomi"
-        title="Qual é o melhor Xiaomi para comprar em 2026?"
+        title="Qual é o melhor celular Xiaomi para comprar em 2026?"
         description="O Redmi Note 13 Pro 5G é a escolha mais equilibrada para a maioria das pessoas, enquanto os modelos Poco fazem mais sentido para jogos e desempenho."
         image="/images/products/phones-hero-optimized.webp"
         aside={
@@ -187,7 +193,7 @@ function MelhoresCelularesXiaomi() {
           </p>
 
           <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-            Qual é o melhor Xiaomi em 2026?
+            Qual é o melhor celular da Xiaomi em 2026?
           </h2>
 
           <p className="mt-4 text-base leading-7 text-slate-700">
@@ -433,6 +439,17 @@ function MelhoresCelularesXiaomi() {
               <div className="mt-6 space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-[#0F3F4A]">
+                    Quais são os melhores celulares Xiaomi em 2026?
+                  </h3>
+                  <p className="mt-2 text-base leading-7 text-slate-700">
+                    Entre os melhores celulares Xiaomi em 2026 estão o Redmi Note 13 Pro 5G
+                    para equilíbrio, o Redmi Note 14 Pro+ para conjunto mais premium, o Poco X7 Pro
+                    para desempenho e o Poco X6 Pro quando aparece com preço promocional.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-[#0F3F4A]">
                     Qual Xiaomi tem melhor custo-benefício?
                   </h3>
                   <p className="mt-2 text-base leading-7 text-slate-700">
@@ -565,6 +582,13 @@ function MelhoresCelularesXiaomi() {
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores custo-benefício
+                </Link>
+
+                <Link
+                  to="/ofertas"
+                  className="block font-bold text-[#8B5A2B] hover:text-[#0F3F4A]"
+                >
+                  Ofertas Xiaomi recomendadas
                 </Link>
 
                 <Link
