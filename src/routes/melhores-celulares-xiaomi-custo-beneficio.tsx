@@ -107,6 +107,14 @@ const comparisonCards = [
     badge: "Redmi",
   },
   {
+    title: "Redmi Note 13 Pro vs Poco X6 Pro",
+    description:
+      "Veja se vale mais escolher o Redmi equilibrado ou o Poco com foco em desempenho.",
+    href: "/comparativo/redmi-note-13-pro-vs-poco-x6-pro",
+    badge: "Redmi vs Poco",
+  },
+
+  {
     title: "Poco X6 Pro vs Poco X7 Pro",
     description:
       "Veja qual Poco compensa mais para jogos, bateria, desempenho e custo-benefício.",
@@ -561,6 +569,13 @@ function MelhoresCelularesXiaomiCustoBeneficio() {
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Redmi Note 13 Pro vs Redmi Note 14 Pro+
+                </Link>
+
+                <Link
+                  to="/comparativo/redmi-note-13-pro-vs-poco-x6-pro"
+                  className="block font-bold text-[#8B5A2B] hover:text-[#0F3F4A]"
+                >
+                  Redmi Note 13 Pro vs Poco X6 Pro
                 </Link>
 
                 <Link

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/comparativos")({
       {
         name: "keywords",
         content:
-          "comparativo de celulares, Poco X6 Pro vs Poco X7 Pro, Redmi Note 13 Pro vs Redmi Note 14 Pro Plus, Galaxy A55 vs Poco X6 Pro, Galaxy A55 vs Redmi Note 13 Pro, iPhone 15 vs Galaxy S24",
+          "comparativo de celulares, Redmi Note 13 Pro vs Poco X6 Pro, Poco X6 Pro vs Poco X7 Pro, Redmi Note 13 Pro vs Redmi Note 14 Pro Plus, Galaxy A55 vs Poco X6 Pro, Galaxy A55 vs Redmi Note 13 Pro, iPhone 15 vs Galaxy S24",
       },
       {
         property: "og:title",
@@ -42,6 +42,14 @@ const FEATURED_COMPARISONS = [
     tag: "Mais novo",
     bestFor: "Quem está em dúvida entre economizar ou pegar o Redmi mais completo.",
   },
+  {
+    title: "Redmi Note 13 Pro vs Poco X6 Pro",
+    description:
+      "Compare dois Xiaomi custo-benefício para decidir entre câmera e equilíbrio ou mais desempenho em jogos.",
+    href: "/comparativo/redmi-note-13-pro-vs-poco-x6-pro",
+    badge: "Xiaomi",
+  },
+
   {
     title: "Poco X6 Pro vs Poco X7 Pro",
     summary:
