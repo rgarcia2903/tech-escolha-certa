@@ -166,14 +166,15 @@ function ReviewGalaxyA55() {
             </p>
 
             <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-              O Galaxy A55 ainda vale a pena?
+              A55 vale a pena em 2026?
             </h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Sim. O <strong>Galaxy A55</strong> ainda vale a pena em 2026 quando aparece
-              com preço competitivo. Ele não é o celular mais potente da categoria, mas
-              entrega um pacote muito equilibrado: tela de ótima qualidade, construção
-              superior, bateria segura, câmera principal competente e software maduro.
+              Sim. O <strong>Galaxy A55</strong>, também buscado como <strong>A55</strong>,
+              ainda vale a pena em 2026 quando aparece com preço competitivo. Ele não é
+              o celular mais potente da categoria, mas entrega um pacote muito equilibrado:
+              tela de ótima qualidade, construção superior, bateria segura, câmera principal
+              competente e software maduro.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
@@ -305,6 +306,17 @@ function ReviewGalaxyA55() {
             <div className="mt-8 space-y-6">
               <div>
                 <h3 className="font-bold text-slate-900">
+                  A55 vale a pena em 2026?
+                </h3>
+                <p className="mt-2 text-slate-700">
+                  Sim. O A55 vale a pena em 2026 para quem quer um Samsung equilibrado,
+                  com boa tela, bateria confiável, construção premium e experiência de uso
+                  mais previsível que muitos concorrentes da mesma faixa.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-slate-900">
                   O Galaxy A55 é bom para jogos?
                 </h3>
                 <p className="mt-2 text-slate-700">
@@ -390,6 +402,13 @@ function ReviewGalaxyA55() {
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Melhores celulares até R$ 2.500
+                </Link>
+
+                <Link
+                  to="/ofertas"
+                  className="block font-bold text-[#8B5A2B] hover:text-[#0F3F4A]"
+                >
+                  Ofertas de celulares recomendados
                 </Link>
               </div>
             </div>
