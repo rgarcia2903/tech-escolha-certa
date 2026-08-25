@@ -77,7 +77,7 @@ const SECTIONS = [
 
 const POCO_X6 = {
   name: "Poco X6 Pro",
-  badge: "Melhor se estiver barato",
+  badge: "Melhor para desempenho",
   rating: 4.6,
   price: "R$ 1.899",
   image: "/images/products/poco-x6-pro-optimized.webp",
@@ -92,29 +92,29 @@ const POCO_X6 = {
   ],
   weaknesses: [
     "Bateria menor que a do Redmi Note 13 Pro",
-    "Proteção inferior contra água e poeira",
-    "Menor folga para os próximos anos",
+    "Proteção IP54, sem vantagem clara em resistência",
+    "Câmera principal menos chamativa que a do Redmi Note 13 Pro",
   ],
 };
 
 const REDMI_NOTE_13_PRO = {
   name: "Redmi Note 13 Pro",
-  badge: "Melhor escolha geral",
+  badge: "Mais equilibrado",
   rating: 4.7,
   price: "R$ 2.299",
   image: "/images/products/redmi-note-13-pro-optimized.webp",
   affiliateHref:
     "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D",
   strengths: [
-    "Dimensity 8400-Ultra entrega mais desempenho e longevidade",
-    "Bateria de 6.000 mAh é um salto importante",
-    "Carregamento rápido de 90 W",
-    "Proteção IP68 contra água e poeira",
-    "Melhor opção para quem quer comprar e ficar mais tempo",
+    "Câmera principal de 200 MP com OIS",
+    "Bateria de 5.100 mAh com boa autonomia",
+    "Carregamento rápido de 67 W",
+    "Tela AMOLED 120 Hz muito boa para a faixa",
+    "Escolha mais equilibrada para câmera, tela e uso diário",
   ],
   weaknesses: [
-    "Pode custar bem mais que o Poco X6 Pro",
-    "Câmeras continuam não sendo o grande foco da linha Poco",
+    "Snapdragon 7s Gen 2 fica atrás do Poco X6 Pro em desempenho bruto",
+    "Não é a melhor opção da dupla para jogos pesados",
     "HyperOS ainda pode não agradar todos os usuários",
   ],
 };
@@ -122,33 +122,33 @@ const REDMI_NOTE_13_PRO = {
 const QUICK_SCORE = [
   {
     category: "Desempenho",
-    winner: "Redmi Note 13 Pro",
-    reason: "Dimensity 8400-Ultra é mais novo e mais forte",
+    winner: "Poco X6 Pro",
+    reason: "Dimensity 8300-Ultra é mais forte para jogos e uso pesado",
   },
   {
     category: "Tela",
-    winner: "Redmi Note 13 Pro",
-    reason: "painel 1.5K 120 Hz mais atual",
+    winner: "Empate técnico",
+    reason: "ambos entregam AMOLED 120 Hz de ótima qualidade",
   },
   {
     category: "Bateria",
-    winner: "Redmi Note 13 Pro",
-    reason: "6.000 mAh contra 5.000 mAh",
+    winner: "Empate técnico",
+    reason: "5.100 mAh no Redmi contra 5.000 mAh no Poco",
   },
   {
     category: "Carregamento",
-    winner: "Redmi Note 13 Pro",
-    reason: "90 W contra 67 W",
+    winner: "Empate técnico",
+    reason: "os dois trabalham com carregamento rápido de 67 W",
   },
   {
     category: "Câmera",
-    winner: "Empate técnico",
-    reason: "ambos cumprem bem, mas não são focados em fotografia",
+    winner: "Redmi Note 13 Pro",
+    reason: "sensor principal de 200 MP é mais forte no papel",
   },
   {
     category: "Resistência",
-    winner: "Redmi Note 13 Pro",
-    reason: "IP68 é uma vantagem importante",
+    winner: "Empate técnico",
+    reason: "ambos têm proteção IP54",
   },
   {
     category: "Custo-benefício",
@@ -159,23 +159,23 @@ const QUICK_SCORE = [
 
 const SPECS: Array<[string, string, string]> = [
   ["Tela", 'AMOLED 6,67" • 1.5K • 120 Hz', 'AMOLED 6,67" • 1.5K • 120 Hz'],
-  ["Processador", "MediaTek Dimensity 8300-Ultra", "MediaTek Dimensity 8400-Ultra"],
+  ["Processador", "MediaTek Dimensity 8300-Ultra", "Snapdragon 7s Gen 2"],
   ["RAM", "8 GB / 12 GB", "12 GB, conforme versão"],
   ["Armazenamento", "256 GB / 512 GB", "512 GB, conforme versão"],
   ["Câmera principal", "64 MP com OIS", "50 MP com OIS"],
   ["Ultrawide", "8 MP", "8 MP"],
   ["Macro", "2 MP", "—"],
   ["Selfie", "16 MP", "20 MP"],
-  ["Bateria", "5.000 mAh", "6.000 mAh"],
-  ["Carregamento", "67 W", "90 W"],
-  ["Proteção", "IP54", "IP68"],
+  ["Bateria", "5.000 mAh", "5.100 mAh"],
+  ["Carregamento", "67 W", "67 W"],
+  ["Proteção", "IP54", "IP54"],
   ["Sistema", "Android com HyperOS", "Android com HyperOS"],
 ];
 
 const FAQS = [
   {
     q: "Redmi Note 13 Pro ou Poco X6 Pro: qual é melhor?",
-    a: "O Redmi Note 13 Pro é melhor no conjunto geral, principalmente por desempenho mais novo, bateria maior, carregamento mais rápido e IP68. O Poco X6 Pro ainda vale a pena se estiver bem mais barato.",
+    a: "Depende do perfil. O Redmi Note 13 Pro é melhor para câmera principal e equilíbrio geral. O Poco X6 Pro ainda vale a pena se estiver bem mais barato.",
   },
   {
     q: "O Redmi Note 13 Pro vale a diferença de preço?",
@@ -183,7 +183,7 @@ const FAQS = [
   },
   {
     q: "Qual é melhor para jogos?",
-    a: "O Redmi Note 13 Pro é melhor para jogos por ter hardware mais novo e bateria maior. O Poco X6 Pro, porém, ainda roda muito bem jogos populares e segue forte em custo-benefício.",
+    a: "O Poco X6 Pro é melhor para jogos por ter desempenho bruto mais forte. O Redmi Note 13 Pro é mais equilibrado para câmera, tela e uso diário.",
   },
   {
     q: "Qual tem melhor câmera?",
@@ -251,7 +251,7 @@ function ComparisonPage() {
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
               O Poco X6 Pro ainda é um intermediário muito forte, mas o Redmi Note 13 Pro
-              chegou com bateria maior, chip mais novo, carregamento mais rápido e
+              se destaca por câmera principal de 200 MP, boa tela, bateria consistente e
               proteção superior. Comparamos os dois para mostrar quando vale pagar mais
               pelo modelo novo e quando o X6 Pro ainda faz sentido.
             </p>
@@ -302,7 +302,7 @@ function ComparisonPage() {
 
             <div className="rounded-2xl border border-cta/30 bg-card p-5 shadow-soft ring-1 ring-cta/10">
               <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cta">
-                Melhor escolha geral
+                Mais equilibrado
               </span>
               <p className="mt-2 text-sm text-muted-foreground">
                 O Redmi Note 13 Pro é a escolha mais completa. O Poco X6 Pro só leva vantagem
@@ -322,7 +322,7 @@ function ComparisonPage() {
             <div className="mt-5 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-soft">
               <p className="text-lg leading-relaxed text-foreground">
                 O <strong>Redmi Note 13 Pro</strong> é a melhor escolha para quem quer o conjunto
-                mais atual: mais desempenho, bateria maior, carregamento de 90 W e proteção IP68.
+                mais equilibrado: câmera principal mais forte, boa tela, bateria de 5.100 mAh e carregamento de 67 W.
                 O <strong>Poco X6 Pro</strong> ainda vale a pena se aparecer com preço bem mais baixo,
                 porque continua sendo muito forte para jogos e uso pesado.
               </p>
@@ -330,13 +330,13 @@ function ComparisonPage() {
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <VerdictCard
                   icon={Trophy}
-                  title="Melhor escolha geral"
+                  title="Mais equilibrado"
                   product="Redmi Note 13 Pro"
                   text="Mais novo, mais completo e melhor para quem quer ficar mais tempo com o celular."
                 />
                 <VerdictCard
                   icon={Zap}
-                  title="Melhor se estiver barato"
+                  title="Melhor para desempenho"
                   product="Poco X6 Pro"
                   text="Continua muito forte e pode ser compra melhor quando a diferença de preço for grande."
                 />
@@ -368,16 +368,16 @@ function ComparisonPage() {
             id="design"
             icon={Smartphone}
             eyebrow="Design e resistência"
-            title="Redmi Note 13 Pro ganha pela proteção IP68"
+            title="Redmi Note 13 Pro ganha pela proteção IP54"
             winner="Redmi Note 13 Pro"
             paragraphs={[
-              "O Poco X6 Pro tem visual moderno e continua bonito, mas o Redmi Note 13 Pro dá um passo importante em resistência. A certificação IP68 é uma diferença real para quem quer mais segurança contra água e poeira no uso diário.",
-              "Na prática, os dois mantêm a identidade agressiva da linha Poco, mas o X7 Pro passa mais confiança para quem pretende ficar mais tempo com o aparelho.",
+              "O Poco X6 Pro tem visual moderno e continua bonito, mas o Redmi Note 13 Pro dá um passo importante em resistência. A certificação IP54 é uma diferença real para quem quer mais segurança contra água e poeira no uso diário.",
+              "Na prática, os dois têm propostas diferentes: o Poco X6 Pro é mais agressivo em desempenho, enquanto o Redmi Note 13 Pro tenta equilibrar câmera, tela e uso diário.",
             ]}
             bullets={[
-              "X7 Pro tem IP68",
+              "Ambos têm IP54",
               "X6 Pro continua moderno, mas menos protegido",
-              "Para longevidade, X7 Pro leva vantagem",
+              "Para desempenho, Poco X6 Pro leva vantagem",
             ]}
           />
 
@@ -393,7 +393,7 @@ function ComparisonPage() {
             ]}
             bullets={[
               "Ambos entregam AMOLED 120 Hz",
-              "X7 Pro tem conjunto mais atual",
+              "Redmi Note 13 Pro tem câmera principal mais forte",
               "Diferença de tela não é o principal motivo da troca",
             ]}
           />
@@ -406,12 +406,12 @@ function ComparisonPage() {
             winner="Redmi Note 13 Pro"
             paragraphs={[
               "O Poco X6 Pro já era muito forte com o Dimensity 8300-Ultra e continua excelente para jogos, multitarefa e uso pesado. Para muita gente, ele ainda sobra em desempenho.",
-              "O Redmi Note 13 Pro avança com o Dimensity 8400-Ultra, entregando mais fôlego para os próximos anos. Se a ideia é comprar agora e ficar bastante tempo com o celular, o X7 Pro é a escolha mais segura.",
+              "O Redmi Note 13 Pro usa o Snapdragon 7s Gen 2 e faz mais sentido para quem quer equilíbrio entre câmera, tela, bateria e uso diário. Para desempenho bruto e jogos, o Poco X6 Pro continua levando vantagem.",
             ]}
             bullets={[
               "X6 Pro ainda é muito rápido",
-              "X7 Pro é mais novo e mais forte",
-              "Para longevidade, X7 Pro é melhor",
+              "Poco X6 Pro é mais forte em desempenho",
+              "Para jogos, Poco X6 Pro é melhor",
             ]}
           />
 
@@ -436,15 +436,15 @@ function ComparisonPage() {
             id="bateria"
             icon={Battery}
             eyebrow="Bateria e carregamento"
-            title="Bateria maior e 90 W dão vitória clara ao Redmi Note 13 Pro"
+            title="Bateria maior e 67 W dão vitória clara ao Redmi Note 13 Pro"
             winner="Redmi Note 13 Pro"
             paragraphs={[
               "Aqui está uma das maiores diferenças. O Poco X6 Pro tem bateria de 5.000 mAh e carregamento de 67 W, conjunto que já é muito bom para a categoria.",
-              "O Redmi Note 13 Pro sobe para 6.000 mAh e 90 W, o que melhora tanto autonomia quanto conveniência. Para quem joga, usa 5G, assiste muitos vídeos ou passa bastante tempo fora de casa, essa vantagem pesa bastante.",
+              "O Redmi Note 13 Pro sobe para 5.100 mAh e 67 W, o que melhora tanto autonomia quanto conveniência. Para quem joga, usa 5G, assiste muitos vídeos ou passa bastante tempo fora de casa, essa vantagem pesa bastante.",
             ]}
             bullets={[
-              "X7 Pro tem 6.000 mAh",
-              "X7 Pro carrega a 90 W",
+              "Redmi Note 13 Pro tem 5.100 mAh",
+              "Ambos carregam a 67 W",
               "Maior diferença prática do comparativo",
             ]}
           />
@@ -457,12 +457,12 @@ function ComparisonPage() {
             winner="Redmi Note 13 Pro"
             paragraphs={[
               "O Poco X6 Pro segue excelente para jogos. Ele roda títulos populares com ótimo desempenho e continua sendo uma opção muito forte se aparecer com preço agressivo.",
-              "O Redmi Note 13 Pro, porém, combina processador mais novo, bateria maior e carregamento mais rápido. Para quem joga bastante, esses três pontos fazem diferença no uso real.",
+              "O Poco X6 Pro, porém, combina processador mais forte e foco maior em performance. Para quem joga bastante, esse desempenho bruto faz diferença no uso real.",
             ]}
             bullets={[
               "X6 Pro ainda é ótimo para games",
-              "X7 Pro tem mais bateria para jogar",
-              "Quem joga muito deve priorizar o X7 Pro",
+              "Poco X6 Pro tem mais desempenho para jogar",
+              "Quem joga muito deve priorizar o Poco X6 Pro",
             ]}
           />
 
@@ -501,7 +501,7 @@ function ComparisonPage() {
                   "quer o melhor desempenho da comparação",
                   "joga bastante no celular",
                   "valoriza bateria grande",
-                  "quer carregamento mais rápido",
+                  "prioriza câmera, tela e equilíbrio geral",
                   "pretende ficar mais tempo com o aparelho",
                 ]}
                 positive
@@ -512,7 +512,7 @@ function ComparisonPage() {
                   "encontrou uma promoção muito boa",
                   "quer economizar sem perder muito desempenho",
                   "usa o celular para jogos, mas não precisa do modelo mais novo",
-                  "não liga tanto para IP68",
+                  "não liga tanto para IP54",
                   "quer máximo custo-benefício imediato",
                 ]}
                 positive
@@ -528,7 +528,7 @@ function ComparisonPage() {
               <ProfileCard
                 title="Evite o Poco X6 Pro se você..."
                 items={[
-                  "quer mais bateria e proteção IP68",
+                  "quer mais bateria e proteção IP54",
                   "pretende ficar muitos anos com o celular",
                   "quer o melhor desempenho possível dentro da linha Poco X",
                 ]}
@@ -584,7 +584,7 @@ function ComparisonPage() {
               Comparativo
             </span>
             <span className="font-heading text-sm font-bold text-foreground">
-              X6 Pro vs X7 Pro
+              Redmi Note 13 Pro vs Poco X6 Pro
             </span>
           </div>
           <a
@@ -599,7 +599,7 @@ function ComparisonPage() {
             }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver X7 Pro <ArrowUpRight className="h-3.5 w-3.5" />
+            Ver Redmi Note 13 Pro <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
