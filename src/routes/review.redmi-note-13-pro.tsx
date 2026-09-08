@@ -13,7 +13,7 @@ export const Route = createFileRoute("/review/redmi-note-13-pro")({
       {
         name: "description",
         content:
-          "Veja se o Redmi Note 13 Pro 5G ainda vale a pena em 2026: tela, desempenho, câmera, bateria, pontos negativos e para quem ele faz sentido antes de comprar.",
+          "Redmi Note 13 Pro 5G é bom e ainda vale a pena em 2026? Veja câmera, desempenho, bateria, aquecimento, principais problemas e pontos negativos antes de comprar.",
       },
       {
         name: "keywords",
@@ -109,9 +109,9 @@ function ReviewRedmiNote13Pro() {
         },
         {
           eyebrow: "Para quem faz sentido",
-          title: "É uma boa compra para quem quer ficha técnica forte",
+          title: "Redmi Note 13 Pro 5G é bom?",
           text:
-            "O Redmi Note 13 Pro 5G combina tela AMOLED, processador competente, câmera principal de alta resolução e carregamento rápido. Por isso, faz sentido para quem usa bastante redes sociais, vídeos, navegação, aplicativos do dia a dia e quer um celular com aparência e especificações acima da média na faixa intermediária.",
+            "Sim. O Redmi Note 13 Pro 5G é bom para quem quer tela AMOLED, câmera principal forte, bom desempenho e carregamento rápido. Ele atende muito bem redes sociais, vídeos, navegação, multitarefa e jogos populares, principalmente quando aparece com preço competitivo.",
         },
         {
           eyebrow: "Tela e design",
@@ -144,6 +144,12 @@ function ReviewRedmiNote13Pro() {
             "O sistema da Xiaomi oferece muitos recursos e personalizações, mas pode incomodar quem prefere uma experiência mais limpa. Alguns usuários gostam da quantidade de funções, enquanto outros preferem a estabilidade e simplicidade da One UI da Samsung.",
         },
         {
+          eyebrow: "Pontos de atenção",
+          title: "Quais são os principais problemas do Redmi Note 13 Pro 5G?",
+          text:
+            "Os principais pontos negativos são o excesso de aplicativos pré-instalados em algumas versões, software que pode parecer carregado para quem prefere uma interface mais limpa, câmera noturna abaixo dos melhores concorrentes e suporte de atualizações menos previsível que em modelos Samsung.",
+        },
+        {
           eyebrow: "Antes de comprar",
           title: "Confira preço, versão e vendedor",
           text:
@@ -166,6 +172,11 @@ function ReviewRedmiNote13Pro() {
           question: "O Redmi Note 13 Pro 5G é bom?",
           answer:
             "Sim. O Redmi Note 13 Pro 5G é bom para uso diário, redes sociais, vídeos, multitarefa e jogos populares. Os principais destaques são a tela, o carregamento rápido e a câmera principal durante o dia.",
+        },
+        {
+          question: "Redmi Note 13 Pro 5G esquenta muito?",
+          answer:
+            "Em uso comum, o aquecimento não tende a ser o principal problema. Em jogos, gravação de vídeo ou uso intenso por períodos longos, o aparelho pode aquecer, como é comum em celulares intermediários sob carga elevada.",
         },
         {
           question: "O Redmi Note 13 Pro 5G é melhor que o Galaxy A55?",
