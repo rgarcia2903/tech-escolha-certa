@@ -12,12 +12,12 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
     meta: [
       {
         title:
-          "Melhor celular Xiaomi em 2026: Redmi e Poco que valem a pena",
+          "Melhor celular Xiaomi em 2026: qual comprar entre Redmi e Poco?",
       },
       {
         name: "description",
         content:
-          "Veja qual é o melhor Xiaomi em 2026: Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro e Poco X6 Pro, com indicações por perfil de uso.",
+          "Qual Xiaomi comprar em 2026? Compare Redmi e Poco para escolher o melhor modelo para uso geral, câmera, jogos, desempenho e preço.",
       },
       {
         name: "keywords",
@@ -409,6 +409,24 @@ function MelhoresCelularesXiaomi() {
                   </p>
                 </div>
               </div>
+            </section>
+
+            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
+                Guia rápido de escolha
+              </p>
+
+              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
+                Qual Xiaomi comprar em 2026?
+              </h2>
+
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                A melhor escolha depende do seu perfil. Para uso geral, câmera e equilíbrio,
+                o Redmi Note 13 Pro 5G é o mais indicado. Para jogos e desempenho pesado,
+                o Poco X7 Pro é a escolha mais forte. Quem procura um conjunto mais premium
+                pode preferir o Redmi Note 14 Pro+ 5G, enquanto o Poco X6 Pro continua
+                interessante quando aparece com preço promocional.
+              </p>
             </section>
 
             <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
