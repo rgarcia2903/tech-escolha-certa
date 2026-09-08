@@ -12,7 +12,7 @@ export const Route = createFileRoute("/review/poco-x6-pro")({
       {
         name: "description",
         content:
-          "Veja se o Poco X6 Pro ainda compensa em 2026: desempenho, jogos, tela, bateria, câmeras, pontos negativos e comparação com Poco X7 Pro antes de comprar.",
+          "Poco X6 Pro é bom e ainda compensa em 2026? Veja desempenho, jogos, câmera, bateria, aquecimento, principais problemas e pontos negativos antes de comprar.",
       },
       {
         name: "keywords",
@@ -107,6 +107,24 @@ function ReviewPocoX6Pro() {
             "Compensa principalmente para quem quer desempenho acima da média, boa tela e foco em jogos sem pagar preço de topo de linha. A compra fica menos interessante se o Poco X7 Pro estiver com pouca diferença de preço ou se câmera e suporte de atualizações forem prioridades maiores.",
         },
         {
+          eyebrow: "Vale a compra?",
+          title: "Poco X6 Pro é bom?",
+          text:
+            "Sim. O Poco X6 Pro é um celular muito bom para quem prioriza desempenho, jogos, tela fluida e rapidez no uso diário. O principal destaque é o Dimensity 8300-Ultra. Por outro lado, ele não é tão forte em câmeras secundárias, fotografia noturna e previsibilidade de atualizações.",
+        },
+        {
+          eyebrow: "Pontos de atenção",
+          title: "Quais são os principais problemas do Poco X6 Pro?",
+          text:
+            "Os principais pontos negativos são as câmeras secundárias simples, desempenho apenas mediano em fotos noturnas, software que pode não agradar todo mundo e aquecimento perceptível em jogos pesados por períodos longos. Nenhum desses pontos anula o bom desempenho geral, mas são fatores importantes antes da compra.",
+        },
+        {
+          eyebrow: "Temperatura",
+          title: "Poco X6 Pro esquenta muito?",
+          text:
+            "Em tarefas comuns, o aquecimento tende a não ser o principal problema. Em jogos pesados ou sessões longas, porém, o aparelho pode esquentar e reduzir desempenho para controlar a temperatura. Isso é mais relevante para quem joga por bastante tempo seguido.",
+        },
+        {
           eyebrow: "Para quem faz sentido",
           title: "É uma boa compra para jogos e uso pesado",
           text:
@@ -171,6 +189,21 @@ function ReviewPocoX6Pro() {
           question: "Poco X6 Pro em 2026 ainda é uma boa compra?",
           answer:
             "Sim. O Poco X6 Pro em 2026 ainda é uma boa compra quando aparece com preço competitivo, principalmente para quem quer desempenho forte, jogos, tela AMOLED e carregamento rápido.",
+        },
+        {
+          question: "Poco X6 Pro é bom?",
+          answer:
+            "Sim. O Poco X6 Pro é muito bom para quem busca desempenho, jogos, tela AMOLED de 120 Hz e carregamento rápido. Os principais pontos de atenção são câmeras secundárias, fotos noturnas e aquecimento em uso pesado.",
+        },
+        {
+          question: "Quais são os principais problemas do Poco X6 Pro?",
+          answer:
+            "Os principais pontos negativos são câmeras auxiliares simples, desempenho apenas mediano em fotos noturnas, HyperOS que pode não agradar todo mundo e aquecimento em sessões longas de jogos.",
+        },
+        {
+          question: "Poco X6 Pro esquenta muito?",
+          answer:
+            "Pode aquecer em jogos pesados e uso intenso por bastante tempo. Em tarefas comuns, isso tende a ser menos relevante.",
         },
         {
           question: "Poco X6 Pro é bom para jogos?",
