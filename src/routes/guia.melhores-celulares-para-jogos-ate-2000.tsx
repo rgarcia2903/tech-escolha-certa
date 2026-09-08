@@ -26,7 +26,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
       {
         name: "description",
         content:
-          "Veja os melhores celulares para jogos até R$ 2.000 em 2026. Guia com Poco X6, Galaxy M35, Galaxy A35, Redmi Note 13 5G e outras opções para Free Fire, COD Mobile, PUBG e Genshin Impact.",
+          "Veja os melhores celulares para jogos até R$ 2.000 em 2026. Guia com Poco X6, Galaxy M35, Galaxy A35, Redmi Note 13 Pro 5G e outras opções para Free Fire, COD Mobile, PUBG e Genshin Impact.",
       },
       {
         name: "keywords",
@@ -68,7 +68,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
             name: "Tech Escolha Certa",
           },
           datePublished: "2026-06-02",
-          dateModified: "2026-06-02",
+          dateModified: "2026-09-08",
           mainEntityOfPage: CANONICAL,
         }),
       },
@@ -83,7 +83,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
               name: "Qual é o melhor celular para jogos até R$ 2.000?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "O Poco X6 5G tende a ser uma das melhores escolhas até R$ 2.000 para quem prioriza desempenho, tela AMOLED 120 Hz, boa fluidez e carregamento rápido.",
+                text: "O Poco X6 Pro tende a ser uma das melhores escolhas quando encontrado por até R$ 2.000, principalmente para quem prioriza desempenho, tela AMOLED 120 Hz, boa fluidez e carregamento rápido.",
               },
             },
             {
@@ -91,7 +91,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
               name: "Celular até R$ 2.000 roda Genshin Impact?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Roda, mas com ajustes gráficos. Modelos como Poco X6 5G e Galaxy M35 5G são boas opções para jogos pesados nessa faixa, mas não entregam a mesma folga de aparelhos mais caros.",
+                text: "Roda, mas com ajustes gráficos. Modelos como Poco X6 Pro e Galaxy M35 5G são boas opções para jogos pesados nessa faixa, mas não entregam a mesma folga de aparelhos mais caros.",
               },
             },
             {
@@ -99,7 +99,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
               name: "O Galaxy A35 é bom para jogos?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Sim, o Galaxy A35 é bom para jogos casuais e intermediários. Para jogos pesados, o Poco X6 5G costuma entregar melhor desempenho pelo preço.",
+                text: "Sim, o Galaxy A35 é bom para jogos casuais e intermediários. Para jogos pesados, o Poco X6 Pro costuma entregar melhor desempenho pelo preço.",
               },
             },
           ],
@@ -113,13 +113,13 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
 const phones = [
   {
     rank: "1º",
-    name: "Poco X6 5G",
+    name: "Poco X6 Pro",
     badge: "Melhor para jogos",
     rating: 4.7,
     price: "até R$ 2.000",
     image: "/images/products/poco-x6-pro-optimized.webp",
     summary:
-      "A melhor escolha para quem quer desempenho em jogos sem passar de R$ 2.000. O conjunto de processador, tela AMOLED 120 Hz e carregamento rápido faz muita diferença no uso real.",
+      "Uma das melhores escolhas para quem quer desempenho em jogos quando encontrado por até R$ 2.000. O conjunto de processador, tela AMOLED 120 Hz e carregamento rápido faz muita diferença no uso real.",
     bestFor: "Free Fire, COD Mobile, PUBG Mobile, Asphalt e Genshin Impact com ajustes.",
     pros: [
       "Ótimo desempenho pelo preço",
@@ -182,7 +182,7 @@ const phones = [
   },
   {
     rank: "4º",
-    name: "Redmi Note 13 5G",
+    name: "Redmi Note 13 Pro 5G",
     badge: "Bom custo-benefício",
     rating: 4.2,
     price: "até R$ 2.000",
@@ -206,17 +206,17 @@ const phones = [
 ];
 
 const quickRanking = [
-  ["Melhor geral para jogos", "Poco X6 5G"],
+  ["Melhor geral para jogos", "Poco X6 Pro"],
   ["Melhor bateria", "Galaxy M35 5G"],
   ["Mais equilibrado", "Galaxy A35 5G"],
-  ["Mais barato em promoções", "Redmi Note 13 5G"],
+  ["Mais barato em promoções", "Redmi Note 13 Pro 5G"],
 ];
 
 const faq = [
   {
     question: "Qual é o melhor celular para jogos até R$ 2.000 em 2026?",
     answer:
-      "O Poco X6 5G é a melhor escolha para a maioria das pessoas, porque combina bom processador, tela AMOLED 120 Hz, carregamento rápido e desempenho forte para a faixa de preço.",
+      "O Poco X6 Pro é uma das melhores escolhas para a maioria das pessoas quando aparece por até R$ 2.000, porque combina processador forte, tela AMOLED 120 Hz, carregamento rápido e ótimo desempenho para a faixa de preço.",
   },
   {
     question: "Celular até R$ 2.000 roda Genshin Impact?",
@@ -262,7 +262,7 @@ function GamingPhonesGuide() {
 
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
                 <span>Por Equipe Tech Escolha Certa</span>
-                <span>Atualizado em junho de 2026</span>
+                <span>Atualizado em setembro de 2026</span>
                 <span>Leitura • 8 min</span>
                 <span>Análise independente</span>
               </div>
@@ -528,8 +528,8 @@ function GamingPhonesGuide() {
                 </h2>
               </div>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                Para a maioria das pessoas, o Poco X6 5G é a melhor escolha para
-                jogos até R$ 2.000. Se você prefere bateria e estabilidade,
+                Para a maioria das pessoas, o Poco X6 Pro é uma das melhores escolhas para
+                jogos quando encontrado por até R$ 2.000. Se você prefere bateria e estabilidade,
                 Galaxy M35 é uma boa alternativa. Se quer uma experiência mais
                 equilibrada e segura, Galaxy A35 também faz sentido.
               </p>
