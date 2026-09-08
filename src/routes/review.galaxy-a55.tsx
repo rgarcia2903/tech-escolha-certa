@@ -12,7 +12,7 @@ export const Route = createFileRoute("/review/galaxy-a55")({
       {
         name: "description",
         content:
-          "Galaxy A55 vale a pena em 2026? Análise editorial completa: tela, bateria, desempenho, câmeras, One UI, pontos positivos, pontos negativos e recomendação final.",
+          "Galaxy A55 é bom e vale a pena em 2026? Veja desempenho, câmera, bateria, jogos, aquecimento, principais problemas, pontos negativos e recomendação final.",
       },
       {
         name: "keywords",
@@ -183,6 +183,12 @@ function ReviewGalaxyA55() {
             </p>
           </section>
 
+          <AnalysisBlock
+            eyebrow="Vale a compra?"
+            title="Galaxy A55 é bom?"
+            text="Sim. O Galaxy A55 é um celular muito equilibrado para quem busca boa tela, construção premium, bateria confiável, câmera principal competente e uma experiência Samsung madura. Ele não é o mais forte para jogos pesados, mas continua sendo uma escolha segura para uso diário."
+          />
+
           <section className="grid gap-8 lg:grid-cols-2">
             <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
               <h2 className="text-2xl font-bold text-[#0F3F4A]">Pontos positivos</h2>
@@ -278,6 +284,12 @@ function ReviewGalaxyA55() {
             text="A bateria de 5.000 mAh é um dos motivos para considerar o Galaxy A55. Em uso misto, ele atravessa o dia com boa margem para a maioria das pessoas. O ponto fraco é o carregamento de 25 W, que fica atrás de rivais Xiaomi e Poco."
           />
 
+          <AnalysisBlock
+            eyebrow="Pontos de atenção"
+            title="Quais são os principais problemas do Galaxy A55?"
+            text="Os principais pontos negativos são o carregamento de 25 W, que é mais lento que o de vários concorrentes, desempenho apenas intermediário em jogos pesados, perda de qualidade da câmera ultrawide em baixa luz e ausência de carregador na caixa. Para quem prioriza desempenho máximo ou recarga muito rápida, existem opções mais fortes."
+          />
+
           <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
             <h2 className="text-3xl font-bold text-[#F8FAFC]">
               Recomendação final
@@ -332,6 +344,39 @@ function ReviewGalaxyA55() {
                 <p className="mt-2 text-slate-700">
                   Sim. A câmera principal é confiável, principalmente durante o dia. Em
                   fotos noturnas, ela é boa para a categoria, mas não faz milagre.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-slate-900">
+                  Galaxy A55 é bom?
+                </h3>
+                <p className="mt-2 text-slate-700">
+                  Sim. O Galaxy A55 é bom para quem busca equilíbrio entre tela, bateria,
+                  câmera, construção e software. Ele é menos indicado para quem quer
+                  desempenho máximo em jogos pesados.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-slate-900">
+                  Quais são os principais problemas do Galaxy A55?
+                </h3>
+                <p className="mt-2 text-slate-700">
+                  Os principais pontos negativos são o carregamento de 25 W, desempenho
+                  apenas intermediário em jogos pesados, câmera ultrawide mais fraca à
+                  noite e ausência de carregador na caixa.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-slate-900">
+                  Galaxy A55 esquenta muito?
+                </h3>
+                <p className="mt-2 text-slate-700">
+                  Em uso comum, o aquecimento tende a não ser um problema importante.
+                  Em jogos pesados ou uso intenso por bastante tempo, o aparelho pode
+                  aquecer, como acontece com outros intermediários sob carga elevada.
                 </p>
               </div>
 
