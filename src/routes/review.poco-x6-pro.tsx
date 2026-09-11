@@ -3,16 +3,21 @@ import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 const CANONICAL = "https" + "://techescolhacerta.com.br/review/poco-x6-pro";
 
+const PAGE_TITLE = "Poco X6 Pro vale a pena em 2026? Prós e contras";
+const PAGE_DESCRIPTION = "Poco X6 Pro em 2026: veja quando compensa comprar, os limites em câmera e jogos e o que comparar com o Poco X7 Pro antes de escolher.";
+
 export const Route = createFileRoute("/review/poco-x6-pro")({
   head: () => ({
     meta: [
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
-        title: "Poco X6 Pro compensa em 2026? Veja se ainda vale a pena",
+        title: PAGE_TITLE,
       },
       {
         name: "description",
         content:
-          "Poco X6 Pro é bom e ainda compensa em 2026? Veja desempenho, jogos, câmera, bateria, aquecimento, principais problemas e pontos negativos antes de comprar.",
+          PAGE_DESCRIPTION,
       },
       {
         name: "keywords",
@@ -21,12 +26,12 @@ export const Route = createFileRoute("/review/poco-x6-pro")({
       },
       {
         property: "og:title",
-        content: "Poco X6 Pro compensa em 2026?",
+        content: PAGE_TITLE,
       },
       {
         property: "og:description",
         content:
-          "Review sincero do Poco X6 Pro com foco em desempenho, jogos, tela, bateria, câmeras e recomendação de compra.",
+          PAGE_DESCRIPTION,
       },
       {
         property: "og:url",
@@ -47,9 +52,9 @@ function ReviewPocoX6Pro() {
         { label: "Celulares", to: "/celulares" },
         { label: "Review Poco X6 Pro" },
       ]}
-      eyebrow="Review sincero"
-      title="Poco X6 Pro compensa em 2026?"
-      description="Sim, o Poco X6 Pro compensa em 2026 para quem prioriza desempenho, jogos, tela AMOLED fluida e carregamento rápido. Ele ainda vale a pena como intermediário potente, mas precisa ser comparado com o Poco X7 Pro antes da compra."
+      eyebrow="Análise editorial"
+      title="Poco X6 Pro vale a pena em 2026?"
+      description="O Poco X6 Pro pode valer a pena em 2026 para quem prioriza jogos e encontra uma oferta com economia relevante frente ao Poco X7 Pro. Compare versões equivalentes e considere as limitações das câmeras antes de decidir."
       updatedAt="Atualizado em 2026"
       readingTime="Leitura • 7 min"
       productName="Poco X6 Pro"
@@ -100,6 +105,11 @@ function ReviewPocoX6Pro() {
         ["Sistema", "HyperOS"],
       ]}
       sections={[
+        {
+          eyebrow: "Critério de compra",
+          title: "Compare o custo total da mesma versão",
+          text: "Compare anúncios com a mesma memória e armazenamento, incluindo frete e juros. Confira se o aparelho é novo, a garantia oferecida e os acessórios incluídos. Uma recomendação de custo-benefício depende dessas condições, não apenas do nome do modelo.",
+        },
         {
           eyebrow: "Resposta rápida",
           title: "Poco X6 Pro compensa em 2026?",

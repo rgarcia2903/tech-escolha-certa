@@ -5,14 +5,19 @@ import { trackAffiliateClick } from "@/lib/analytics";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a55";
 
+const PAGE_TITLE = "Galaxy A55 vale a pena em 2026? Prós e contras";
+const PAGE_DESCRIPTION = "Galaxy A55 em 2026: veja para quem compensa, os limites em jogos e na recarga e quando comparar com Galaxy A35 ou Poco X6 Pro.";
+
 export const Route = createFileRoute("/review/galaxy-a55")({
   head: () => ({
     meta: [
-      { title: "Galaxy A55 vale a pena em 2026? Review completo e honesto" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { title: PAGE_TITLE },
       {
         name: "description",
         content:
-          "Galaxy A55 é bom e vale a pena em 2026? Veja desempenho, câmera, bateria, jogos, aquecimento, principais problemas, pontos negativos e recomendação final.",
+          PAGE_DESCRIPTION,
       },
       {
         name: "keywords",
@@ -21,12 +26,12 @@ export const Route = createFileRoute("/review/galaxy-a55")({
       },
       {
         property: "og:title",
-        content: "Galaxy A55 vale a pena em 2026? Review completo",
+        content: PAGE_TITLE,
       },
       {
         property: "og:description",
         content:
-          "Analisamos tela, bateria, desempenho, câmeras e custo-benefício do Galaxy A55 para responder se ele ainda merece seu dinheiro em 2026.",
+          PAGE_DESCRIPTION,
       },
       {
         property: "og:url",
@@ -60,7 +65,7 @@ const cons = [
   "Carregamento de 25 W poderia ser mais rápido",
   "Não é o melhor celular para jogos pesados",
   "Câmera ultrawide perde qualidade em baixa luz",
-  "Não vem com carregador na caixa",
+  "Confira os acessórios e a potência do carregador incluído no anúncio",
   "Pode perder atratividade se estiver próximo do Galaxy S24 em promoção",
 ];
 
@@ -102,13 +107,13 @@ function ReviewGalaxyA55() {
             </p>
 
             <h1 className="text-4xl font-extrabold tracking-tight text-[#F8FAFC] md:text-6xl">
-              Galaxy A55 vale a pena em 2026? Review completo e sem enrolação
+              Galaxy A55 vale a pena em 2026?
             </h1>
 
             <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
-              O Galaxy A55 continua sendo um dos intermediários premium mais interessantes
-              para quem quer tela excelente, construção sólida, boa bateria e experiência
-              Samsung sem pagar preço de topo de linha.
+              O Galaxy A55 pode valer a pena em 2026 para quem busca uma experiência
+              Samsung equilibrada e encontra um preço competitivo. Compare o custo
+              com modelos mais novos e considere os limites em jogos e na recarga.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -182,6 +187,12 @@ function ReviewGalaxyA55() {
               sendo uma das escolhas mais racionais da linha intermediária premium.
             </p>
           </section>
+
+          <AnalysisBlock
+            eyebrow="Antes de decidir"
+            title="Quando compensa comprar o Galaxy A55?"
+            text="Compare o preço final de aparelhos novos com a mesma capacidade e garantia. Se um Samsung mais novo estiver próximo de preço, confira também seu prazo de suporte. Se o objetivo for economizar, compare com o Galaxy A35. Para priorizar jogos, consulte o comparativo com o Poco X6 Pro antes de escolher."
+          />
 
           <AnalysisBlock
             eyebrow="Vale a compra?"
@@ -287,7 +298,7 @@ function ReviewGalaxyA55() {
           <AnalysisBlock
             eyebrow="Pontos de atenção"
             title="Quais são os principais problemas do Galaxy A55?"
-            text="Os principais pontos negativos são o carregamento de 25 W, que é mais lento que o de vários concorrentes, desempenho apenas intermediário em jogos pesados, perda de qualidade da câmera ultrawide em baixa luz e ausência de carregador na caixa. Para quem prioriza desempenho máximo ou recarga muito rápida, existem opções mais fortes."
+            text="Os principais pontos negativos são o carregamento de 25 W, que é mais lento que o de vários concorrentes, desempenho apenas intermediário em jogos pesados, perda de qualidade da câmera ultrawide em baixa luz e a necessidade de conferir o carregador incluído no anúncio. Para quem prioriza desempenho máximo ou recarga muito rápida, existem opções mais fortes."
           />
 
           <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
@@ -303,7 +314,7 @@ function ReviewGalaxyA55() {
           </section>
 
           <AffiliateCTA
-            title="Galaxy A55 5G com melhor preço hoje"
+            title="Conferir preço do Galaxy A55 5G"
             description="Confira preço atualizado, parcelamento e disponibilidade do Galaxy A55 no Mercado Livre."
             buttonText="Ver Galaxy A55 no Mercado Livre"
             href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D"
@@ -365,7 +376,7 @@ function ReviewGalaxyA55() {
                 <p className="mt-2 text-slate-700">
                   Os principais pontos negativos são o carregamento de 25 W, desempenho
                   apenas intermediário em jogos pesados, câmera ultrawide mais fraca à
-                  noite e ausência de carregador na caixa.
+                  noite e a necessidade de conferir o carregador incluído no anúncio.
                 </p>
               </div>
 
@@ -470,7 +481,7 @@ function ReviewGalaxyA55() {
             <span className="block truncate font-heading text-sm font-bold text-white">
               Galaxy A55 5G
             </span>
-            <span className="text-xs text-slate-300">A partir de R$ 1.899</span>
+            <span className="text-xs text-slate-300">Conferir preço atualizado</span>
           </div>
 
           <a
