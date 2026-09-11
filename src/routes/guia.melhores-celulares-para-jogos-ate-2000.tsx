@@ -16,31 +16,36 @@ import { Badge, Rating } from "@/components/site/ui";
 const CANONICAL =
   "https://techescolhacerta.com.br/guia/melhores-celulares-para-jogos-ate-2000";
 
+const PAGE_TITLE = "Melhores celulares para jogos até R$ 2.000 em 2026";
+const PAGE_DESCRIPTION = "Compare Poco X6 Pro, Galaxy M35, Galaxy A35 e Redmi Note 13 Pro 5G para jogos. Veja os limites de cada opção e confira o preço antes de comprar.";
+
 export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-2000")({
   head: () => ({
     meta: [
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
         title:
-          "Melhores celulares para jogos até R$ 2.000 em 2026 | Guia completo",
+          PAGE_TITLE,
       },
       {
         name: "description",
         content:
-          "Veja os melhores celulares para jogos até R$ 2.000 em 2026. Guia com Poco X6, Galaxy M35, Galaxy A35, Redmi Note 13 Pro 5G e outras opções para Free Fire, COD Mobile, PUBG e Genshin Impact.",
+          PAGE_DESCRIPTION,
       },
       {
         name: "keywords",
         content:
-          "melhor celular para jogos até 2000, celular gamer até 2000, melhor celular para Free Fire, melhor celular para COD Mobile, celular para Genshin Impact barato, Poco X6, Galaxy M35",
+          "melhor celular para jogos até 2000, celular gamer até 2000, melhor celular para Free Fire, melhor celular para COD Mobile, celular para Genshin Impact barato, Poco X6 Pro, Galaxy M35",
       },
       {
         property: "og:title",
-        content: "Melhores celulares para jogos até R$ 2.000 em 2026",
+        content: PAGE_TITLE,
       },
       {
         property: "og:description",
         content:
-          "Selecionamos os celulares com melhor desempenho para jogos até R$ 2.000, considerando processador, tela, bateria, aquecimento e custo-benefício.",
+          PAGE_DESCRIPTION,
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
@@ -68,7 +73,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
             name: "Tech Escolha Certa",
           },
           datePublished: "2026-06-02",
-          dateModified: "2026-09-08",
+          dateModified: "2026-09-11",
           mainEntityOfPage: CANONICAL,
         }),
       },
@@ -153,7 +158,7 @@ const phones = [
     cons: [
       "Carregamento mais lento que rivais Xiaomi/Poco",
       "Mais pesado",
-      "Desempenho inferior ao Poco X6 em jogos pesados",
+      "Desempenho inferior ao Poco X6 Pro em jogos pesados",
     ],
     cta: "/melhores-celulares-samsung",
   },
@@ -197,7 +202,7 @@ const phones = [
       "5G",
     ],
     cons: [
-      "Desempenho abaixo do Poco X6",
+      "Desempenho abaixo do Poco X6 Pro",
       "Câmeras secundárias simples",
       "Não é o mais indicado para jogos pesados",
     ],
@@ -255,9 +260,10 @@ function GamingPhonesGuide() {
               </h1>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Selecionamos os celulares que mais fazem sentido para jogar bem
-                sem passar de R$ 2.000. O foco aqui é desempenho real,
-                estabilidade, tela, bateria, carregamento e custo-benefício.
+                Entre os modelos desta seleção, o Poco X6 Pro é a indicação para
+                priorizar jogos quando encontrado por até R$ 2.000. Compare também
+                Galaxy M35, Galaxy A35 e Redmi Note 13 Pro 5G conforme seu uso.
+                A inclusão no guia não garante uma oferta disponível nesse valor.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -331,8 +337,9 @@ function GamingPhonesGuide() {
             Top celulares para jogos até R$ 2.000
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            A lista prioriza desempenho real. Câmera, acabamento e marca também
-            importam, mas aqui o peso maior está em jogos, fluidez e autonomia.
+            A seleção editorial considera processador, tela, bateria e carregamento.
+            As notas são avaliações editoriais, não medições de FPS. O desempenho
+            depende do jogo, dos ajustes gráficos, da temperatura e da versão do sistema.
           </p>
         </div>
 
@@ -462,12 +469,12 @@ function GamingPhonesGuide() {
             <CriteriaCard
               icon={<Cpu className="h-5 w-5" />}
               title="Processador"
-              text="É o item mais importante. Quanto melhor o chip, mais estável será o FPS nos jogos."
+              text="É o item mais importante. Compare o chip e o desempenho no jogo desejado; temperatura e ajustes também afetam a estabilidade."
             />
             <CriteriaCard
               icon={<Smartphone className="h-5 w-5" />}
               title="Tela"
-              text="AMOLED e 120 Hz deixam jogos, rolagem e animações mais suaves."
+              text="Uma tela de 120 Hz permite maior fluidez, mas não garante 120 FPS: o jogo e o aparelho precisam suportar essa taxa."
             />
             <CriteriaCard
               icon={<Battery className="h-5 w-5" />}
