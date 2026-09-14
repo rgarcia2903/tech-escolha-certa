@@ -25,5 +25,6 @@ export function trackAffiliateClick({
     product_name: productName,
     page_type: pageType,
     destination,
+    page_path: window.location.pathname,
   });
 }
