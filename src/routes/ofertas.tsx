@@ -121,7 +121,7 @@ const offers = [
     bestFor: "Quem quer equilíbrio, pós-venda Samsung e menor risco de arrependimento.",
     strengths: ["IP67", "Boa construção", "Experiência Samsung"],
     href:
-      "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D",
+      "https://meli.la/2NMinTZ",
     review: "/review/galaxy-a55",
     comparison: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
   },

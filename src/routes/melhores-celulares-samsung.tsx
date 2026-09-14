@@ -113,7 +113,7 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
 
 const affiliateLinks = {
   galaxyA55:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D",
+    "https://meli.la/2NMinTZ",
   galaxyS24:
     "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D",
   galaxyA35:
@@ -387,7 +387,7 @@ function MelhoresCelularesSamsung() {
               title="Melhores ofertas Samsung atualizadas"
               description="Veja preço, parcelamento e disponibilidade dos celulares Samsung recomendados."
               buttonText="Ver ofertas Samsung"
-              href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D"
+              href="https://meli.la/2NMinTZ"
               highlight="Galaxy S24 • Galaxy A55 • Galaxy A35"
               productName="Galaxy A55"
               pageType="guia"
