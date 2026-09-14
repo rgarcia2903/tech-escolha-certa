@@ -618,6 +618,12 @@ function ComparisonPage() {
             href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BP5uisCx81KiJq7Zc7Unh01y59IC9oAwb7oAdQW%2BPGVonlCg29%2B5kf1jumdkrFYPesuyEtOjbLbnwRf0SwqoCzcKakWVlZrdKqz6MJ%2B1OCfVR3cpo%2FM6MwP7eC0p5Ht%2BrQxZim%2BRlPU6mpV%2FcQq9W1zSH4LjgbmlF5T7Vymwi7pFVvxhblb8CrYytYQ%2BycCJaVRqwQM%3D"
             target="_blank"
             rel="noopener noreferrer sponsored"
+            onClick={() =>
+              trackAffiliateClick({
+                productName: "Galaxy A55",
+                pageType: "comparativo",
+              })
+            }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
             Ver preço do A55 <ArrowUpRight className="h-3.5 w-3.5" />
