@@ -1,3 +1,8 @@
+import {
+  GALAXY_A35_AFFILIATE_URL,
+  POCO_X6_PRO_AFFILIATE_URL,
+  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -29,21 +34,10 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
   component: MelhoresCelularesAte2000,
 });
 
-const ml = (ref: string) =>
-  "https://" +
-  "www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=" +
-  ref;
-
 const affiliateLinks = {
-  galaxyA35: ml(
-    "BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D"
-  ),
-  redmiNote13Pro: ml(
-    "BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
-  ),
-  pocoX6Pro: ml(
-    "BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
-  ),
+  galaxyA35: GALAXY_A35_AFFILIATE_URL,
+  redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
 };
 
 const ranking = [

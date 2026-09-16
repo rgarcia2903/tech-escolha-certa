@@ -1,7 +1,10 @@
+import {
+  GALAXY_A55_AFFILIATE_URL,
+  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -300,7 +303,7 @@ function ComparisonPage() {
                   Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
+                  href={REDMI_NOTE_13_PRO_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
@@ -586,7 +589,7 @@ function ComparisonPage() {
                   Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
+                  href={REDMI_NOTE_13_PRO_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>

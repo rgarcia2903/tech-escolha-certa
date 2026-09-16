@@ -1,6 +1,9 @@
+import {
+  GALAXY_A35_AFFILIATE_URL,
+  GALAXY_A55_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 
 export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
   component: ComparativoGalaxyA55VsGalaxyA35,
@@ -154,7 +157,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             </div>
 
             <a
-              href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D"
+              href={GALAXY_A35_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>

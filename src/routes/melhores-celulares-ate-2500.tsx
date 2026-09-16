@@ -1,7 +1,11 @@
+import {
+  GALAXY_A55_AFFILIATE_URL,
+  POCO_X6_PRO_AFFILIATE_URL,
+  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { ReviewCard } from "@/components/site/ReviewCard";
@@ -24,19 +28,10 @@ export const Route = createFileRoute("/melhores-celulares-ate-2500")({
   component: MelhoresCelularesAte2500,
 });
 
-const ml = (ref: string) =>
-  "https://" +
-  "www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=" +
-  ref;
-
 const affiliateLinks = {
   galaxyA55: GALAXY_A55_AFFILIATE_URL,
-  redmiNote13Pro: ml(
-    "BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
-  ),
-  pocoX6Pro: ml(
-    "BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
-  ),
+  redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
 };
 
 const ranking = [

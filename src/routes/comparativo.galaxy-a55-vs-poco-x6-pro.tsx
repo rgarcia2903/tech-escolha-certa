@@ -1,5 +1,8 @@
+import {
+  GALAXY_A55_AFFILIATE_URL,
+  POCO_X6_PRO_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
 import {
@@ -302,7 +305,7 @@ function ComparisonPage() {
                   Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
+                  href={POCO_X6_PRO_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
@@ -588,7 +591,7 @@ function ComparisonPage() {
                   Ver preço do Galaxy A55 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D"
+                  href={POCO_X6_PRO_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>

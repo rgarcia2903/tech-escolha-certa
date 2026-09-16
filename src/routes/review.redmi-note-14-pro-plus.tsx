@@ -1,3 +1,4 @@
+import { REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
@@ -50,7 +51,7 @@ function ReviewRedmiNote14ProPlus() {
       priceLabel="Ver preço atualizado"
       overallScore="9.2"
       verdictShort="O Redmi Note 14 Pro+ 5G vale a pena para quem quer um Xiaomi intermediário premium, com tela de alto nível, câmera principal de 200 MP, carregamento de 120 W e bom desempenho geral. Ele não é o celular mais barato da linha, mas entrega um conjunto mais completo que o Redmi Note 13 Pro."
-      affiliateHref="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BAtoKVPghjdMrPDSvQucfOIyJZTtqw%2B%2B99vk4nDBCh2L0rqadZ3UoTBTKgG8J8EasFIZlKmX4m8B6LUIisxINcxwzk7Os83ZSnuuskNd4Ovo3O%2FQTlSI4aN0G7I6DVL004nh8hlN6NcS42MwFHJFidRG0cEjSEpbyJqbez1Oz2UmljyX3ibeKPVHHjFVMp3aHdyMXe8%3D"
+      affiliateHref={REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL}
       affiliate={{
         title: "Redmi Note 14 Pro+ 5G com preço atualizado",
         description:
