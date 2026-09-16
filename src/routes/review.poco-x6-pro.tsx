@@ -59,7 +59,7 @@ function ReviewPocoX6Pro() {
       updatedAt="Atualizado em 2026"
       readingTime="Leitura • 7 min"
       productName="Poco X6 Pro"
-      priceLabel="Conferir preço atualizado"
+      priceLabel="Ver no Mercado Livre"
       overallScore="8.9"
       verdictShort="O Poco X6 Pro compensa em 2026 se você quer potência, jogos, tela boa e carregamento rápido por um preço competitivo. Ele não é a melhor escolha para quem prioriza câmeras, acabamento premium ou atualizações mais previsíveis."
       affiliateHref={POCO_X6_PRO_AFFILIATE_URL}

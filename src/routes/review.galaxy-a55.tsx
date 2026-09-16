@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 
@@ -157,9 +158,10 @@ function ReviewGalaxyA55() {
               }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver oferta
+              Ver Galaxy A55 no Mercado Livre
               <ArrowUpRight className="h-4 w-4" />
             </a>
+            <AffiliateRedirectNotice className="mt-3" tone="dark" />
           </div>
         </div>
       </section>
@@ -432,9 +434,10 @@ function ReviewGalaxyA55() {
               }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver oferta
+              Ver Galaxy A55 no Mercado Livre
               <ArrowUpRight className="h-4 w-4" />
             </a>
+            <AffiliateRedirectNotice className="mt-3" />
 
             <div className="mt-6 border-t border-slate-200 pt-5">
               <p className="text-sm font-bold text-[#0F3F4A]">Também leia:</p>
@@ -497,7 +500,7 @@ function ReviewGalaxyA55() {
             }
             className="inline-flex items-center gap-2 rounded-2xl bg-[#8B5A2B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
           >
-            Ver oferta
+            Ver no Mercado Livre
             <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
@@ -529,7 +532,6 @@ function AnalysisBlock({
     </section>
   );
 }
-
 
 
 

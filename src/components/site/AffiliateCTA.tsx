@@ -1,4 +1,5 @@
 import { ExternalLink, ShieldCheck, ShoppingBag } from "lucide-react";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 
 type AffiliateCTAProps = {
@@ -14,7 +15,7 @@ type AffiliateCTAProps = {
 export function AffiliateCTA({
   title = "Melhor oferta encontrada",
   description = "Confira preço atualizado, disponibilidade e condições diretamente na loja.",
-  buttonText = "Ver oferta no Mercado Livre",
+  buttonText = "Ver produto no Mercado Livre",
   href,
   highlight,
   productName,
@@ -63,6 +64,8 @@ export function AffiliateCTA({
               {buttonText}
               <ExternalLink className="h-4 w-4" />
             </a>
+
+            <AffiliateRedirectNotice className="mt-3" tone="dark" />
 
             <div className="mt-4 flex items-start gap-3 rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8B5A2B]" />

@@ -233,7 +233,7 @@ function MelhoresCelularesAte2000() {
             <AffiliateCTA
               title="Melhores ofertas até R$ 2.000"
               description="Veja preços, parcelamento e disponibilidade dos celulares recomendados."
-              buttonText="Ver ofertas atualizadas"
+              buttonText="Ver Galaxy A35 no Mercado Livre"
               href={affiliateLinks.galaxyA35}
               highlight="Samsung • Xiaomi • Poco"
               productName="Galaxy A35"
@@ -300,7 +300,6 @@ function MelhoresCelularesAte2000() {
   );
 }
   
-
 
 
 

@@ -355,7 +355,7 @@ function HomePage() {
             <AffiliateCTA
               title="Ofertas atualizadas dos celulares recomendados"
               description="Veja preço, parcelamento e disponibilidade dos modelos mais recomendados do momento."
-              buttonText="Ver ofertas atualizadas"
+              buttonText="Ver Galaxy A55 no Mercado Livre"
               href={GALAXY_A55_AFFILIATE_URL}
               highlight="Samsung • Xiaomi • Redmi • Poco"
               productName="Galaxy A55"

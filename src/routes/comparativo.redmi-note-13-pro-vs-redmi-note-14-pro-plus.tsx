@@ -2,6 +2,7 @@ import {
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
@@ -305,7 +306,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver preço do Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
+                  Ver Redmi Note 14 Pro+ no Mercado Livre <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href={REDMI13_AFFILIATE_URL}
@@ -319,9 +320,10 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver Redmi Note 13 Pro no Mercado Livre <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
+              <AffiliateRedirectNotice className="mt-3" />
             </div>
           </div>
         </div>
@@ -593,7 +595,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver preço do Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
+                  Ver Redmi Note 14 Pro+ no Mercado Livre <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href={REDMI13_AFFILIATE_URL}
@@ -607,7 +609,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver Redmi Note 13 Pro no Mercado Livre <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -637,7 +639,7 @@ function ComparisonPage() {
             }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver 14 Pro+ <ArrowUpRight className="h-3.5 w-3.5" />
+            Ver 14 Pro+ no Mercado Livre <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>

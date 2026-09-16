@@ -60,7 +60,7 @@ function ReviewRedmiNote13Pro() {
       updatedAt="Atualizado em 2026"
       readingTime="Leitura • 7 min"
       productName="Redmi Note 13 Pro 5G"
-      priceLabel="Conferir preço atualizado"
+      priceLabel="Ver no Mercado Livre"
       overallScore="9.0"
       verdictShort="O Redmi Note 13 Pro 5G vale a pena em 2026 se você quer tela excelente, desempenho forte, carregamento rápido e boa ficha técnica sem pagar preço de topo de linha. Ele só não é a melhor escolha para quem prioriza software mais limpo, suporte mais previsível e câmeras mais consistentes à noite."
       affiliateHref={REDMI_NOTE_13_PRO_AFFILIATE_URL}
