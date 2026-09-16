@@ -1,4 +1,5 @@
 import { trackAffiliateClick } from "@/lib/analytics";
+import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { Badge, Rating } from "@/components/site/ui";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
@@ -121,7 +122,7 @@ const offers = [
     bestFor: "Quem quer equilíbrio, pós-venda Samsung e menor risco de arrependimento.",
     strengths: ["IP67", "Boa construção", "Experiência Samsung"],
     href:
-      "https://meli.la/2NMinTZ",
+      GALAXY_A55_AFFILIATE_URL,
     review: "/review/galaxy-a55",
     comparison: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
   },
