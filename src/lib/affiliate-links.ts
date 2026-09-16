@@ -1,23 +1,15 @@
-export const GALAXY_A35_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D";
+export const GALAXY_A35_AFFILIATE_URL = "https://meli.la/26WiZy6";
 
-export const GALAXY_A55_AFFILIATE_URL =
-  "https://meli.la/2NMinTZ";
+export const GALAXY_A55_AFFILIATE_URL = "https://meli.la/2NMinTZ";
 
-export const GALAXY_S24_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D";
+export const GALAXY_S24_AFFILIATE_URL = "https://meli.la/1jcBPte";
 
-export const IPHONE_15_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNmgzqEE5bUDUlOZB7vVFqnRJK2UVykvrBlyRvhQPefSFnWrpzAuiiwcW7%2Fj8s3vPEtuGlS5OcZBU9DBPTl1wINpAi3hSv7JutmMfHIt3kzPgPoYrajzIzycygjtZ6EqOfO1kO7SihMhHJ0k64XC6W%2FVq6nQAXvP4WtL6bHHQ1MpzTznp66DK60TofaUTejvFlQP%2BLmCzA%3D%3D";
+export const IPHONE_15_AFFILIATE_URL = "https://meli.la/2m3GhG6";
 
-export const POCO_X6_PRO_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D";
+export const POCO_X6_PRO_AFFILIATE_URL = "https://meli.la/12mgwo6";
 
-export const POCO_X7_PRO_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BEX9wHRtVEKXx9yO12fXHrh8xMgoDxPmqvJmScZP%2Bkpg%2Bjc924kYQWyPEwdMSE7Pofdd%2F3Dtwc2j60EISIGY%2BQrcELFX5fso2RASDnsUC2LtMEx4Os0fTE9%2F8GAv8o9U6RPyBDRQX6JlRJAzGu5gLZ8m9g%2FAwx%2BjHzZohHxVKTyWyZLU2APF8FUZqzy4DpZAN7ScnA%3D%3D";
+export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/1Gu5Lut";
 
-export const REDMI_NOTE_13_PRO_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D";
+export const REDMI_NOTE_13_PRO_AFFILIATE_URL = "https://meli.la/1dksoic";
 
-export const REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BAtoKVPghjdMrPDSvQucfOIyJZTtqw%2B%2B99vk4nDBCh2L0rqadZ3UoTBTKgG8J8EasFIZlKmX4m8B6LUIisxINcxwzk7Os83ZSnuuskNd4Ovo3O%2FQTlSI4aN0G7I6DVL004nh8hlN6NcS42MwFHJFidRG0cEjSEpbyJqbez1Oz2UmljyX3ibeKPVHHjFVMp3aHdyMXe8%3D";
+export const REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL = "https://meli.la/1at28cv";
