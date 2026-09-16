@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { trackAffiliateClick } from "@/lib/analytics";
+import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { ReviewCard } from "@/components/site/ReviewCard";
@@ -29,7 +30,7 @@ const ml = (ref: string) =>
   ref;
 
 const affiliateLinks = {
-  galaxyA55: "https://meli.la/2NMinTZ",
+  galaxyA55: GALAXY_A55_AFFILIATE_URL,
   redmiNote13Pro: ml(
     "BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
   ),

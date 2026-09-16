@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { trackAffiliateClick } from "@/lib/analytics";
+import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a55";
 
@@ -145,7 +146,7 @@ function ReviewGalaxyA55() {
             </p>
 
             <a
-              href="https://meli.la/2NMinTZ"
+              href={GALAXY_A55_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
@@ -317,7 +318,7 @@ function ReviewGalaxyA55() {
             title="Conferir preço do Galaxy A55 5G"
             description="Confira preço atualizado, parcelamento e disponibilidade do Galaxy A55 no Mercado Livre."
             buttonText="Ver Galaxy A55 no Mercado Livre"
-            href="https://meli.la/2NMinTZ"
+            href={GALAXY_A55_AFFILIATE_URL}
             highlight="Tela AMOLED • Ótima bateria • Excelente equilíbrio"
             productName="Galaxy A55"
             pageType="review"
@@ -420,7 +421,7 @@ function ReviewGalaxyA55() {
             </p>
 
             <a
-              href="https://meli.la/2NMinTZ"
+              href={GALAXY_A55_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
@@ -485,7 +486,7 @@ function ReviewGalaxyA55() {
           </div>
 
           <a
-            href="https://meli.la/2NMinTZ"
+            href={GALAXY_A55_AFFILIATE_URL}
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
             onClick={() =>

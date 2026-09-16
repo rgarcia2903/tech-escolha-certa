@@ -1,4 +1,5 @@
 import { trackAffiliateClick } from "@/lib/analytics";
+import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
 import {
@@ -287,7 +288,7 @@ function ComparisonPage() {
               </p>
               <div className="mt-4 space-y-2">
                 <a
-                  href="https://meli.la/2NMinTZ"
+                  href={GALAXY_A55_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
@@ -573,7 +574,7 @@ function ComparisonPage() {
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
                 <a
-                  href="https://meli.la/2NMinTZ"
+                  href={GALAXY_A55_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
@@ -617,7 +618,7 @@ function ComparisonPage() {
             </span>
           </div>
           <a
-            href="https://meli.la/2NMinTZ"
+            href={GALAXY_A55_AFFILIATE_URL}
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={() =>

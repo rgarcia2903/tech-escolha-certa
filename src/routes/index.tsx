@@ -6,6 +6,7 @@ import { CategoryHero } from "@/components/site/CategoryHero";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
+import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { TopPickCard } from "@/components/site/TopPickCard";
 
 export const Route = createFileRoute("/")({
@@ -355,7 +356,7 @@ function HomePage() {
               title="Ofertas atualizadas dos celulares recomendados"
               description="Veja preço, parcelamento e disponibilidade dos modelos mais recomendados do momento."
               buttonText="Ver ofertas atualizadas"
-              href="https://meli.la/2NMinTZ"
+              href={GALAXY_A55_AFFILIATE_URL}
               highlight="Samsung • Xiaomi • Redmi • Poco"
               productName="Galaxy A55"
               pageType="home"

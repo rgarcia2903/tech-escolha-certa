@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { trackAffiliateClick } from "@/lib/analytics";
+import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 
 export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
   component: ComparativoGalaxyA55VsGalaxyA35,
@@ -109,7 +110,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             </div>
 
             <a
-              href="https://meli.la/2NMinTZ"
+              href={GALAXY_A55_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
