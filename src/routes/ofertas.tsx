@@ -1,5 +1,12 @@
+import {
+  GALAXY_A35_AFFILIATE_URL,
+  GALAXY_A55_AFFILIATE_URL,
+  POCO_X6_PRO_AFFILIATE_URL,
+  POCO_X7_PRO_AFFILIATE_URL,
+  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { Badge, Rating } from "@/components/site/ui";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
@@ -62,7 +69,7 @@ const offers = [
     bestFor: "Quem quer tela boa, bateria forte e câmera de 200 MP pagando menos.",
     strengths: ["Câmera de 200 MP", "Tela AMOLED", "Boa relação preço/ficha"],
     href:
-      "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D",
+      REDMI_NOTE_13_PRO_AFFILIATE_URL,
     review: "/review/redmi-note-13-pro",
     comparison: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
   },
@@ -77,7 +84,7 @@ const offers = [
     bestFor: "Quem joga, usa muitos apps e quer desempenho acima da média.",
     strengths: ["Foco em performance", "512 GB", "Boa opção para jogos"],
     href:
-      "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BEX9wHRtVEKXx9yO12fXHrh8xMgoDxPmqvJmScZP%2Bkpg%2Bjc924kYQWyPEwdMSE7Pofdd%2F3Dtwc2j60EISIGY%2BQrcELFX5fso2RASDnsUC2LtMEx4Os0fTE9%2F8GAv8o9U6RPyBDRQX6JlRJAzGu5gLZ8m9g%2FAwx%2BjHzZohHxVKTyWyZLU2APF8FUZqzy4DpZAN7ScnA%3D%3D",
+      POCO_X7_PRO_AFFILIATE_URL,
     review: "/review/poco-x7-pro",
     comparison: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
   },
@@ -92,7 +99,7 @@ const offers = [
     bestFor: "Quem quer um intermediário premium e aceita pagar mais pelo conjunto.",
     strengths: ["Carregamento 120 W", "512 GB", "Construção mais premium"],
     href:
-      "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BAtoKVPghjdMrPDSvQucfOIyJZTtqw%2B%2B99vk4nDBCh2L0rqadZ3UoTBTKgG8J8EasFIZlKmX4m8B6LUIisxINcxwzk7Os83ZSnuuskNd4Ovo3O%2FQTlSI4aN0G7I6DVL004nh8hlN6NcS42MwFHJFidRG0cEjSEpbyJqbez1Oz2UmljyX3ibeKPVHHjFVMp3aHdyMXe8%3D",
+      REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
     review: "/review/redmi-note-14-pro-plus",
     comparison: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
   },
@@ -107,7 +114,7 @@ const offers = [
     bestFor: "Quem quer desempenho para jogos e multitarefa sem pagar pelo modelo mais novo.",
     strengths: ["Desempenho forte", "512 GB", "Boa tela"],
     href:
-      "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D",
+      POCO_X6_PRO_AFFILIATE_URL,
     review: "/review/poco-x6-pro",
     comparison: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
   },
@@ -137,9 +144,7 @@ const offers = [
     bestFor: "Quem quer Samsung gastando menos que no Galaxy A55.",
     strengths: ["IP67", "Tela AMOLED", "Bom custo-benefício"],
     href:
-      "https://" +
-      "www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=" +
-      "BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D",
+      GALAXY_A35_AFFILIATE_URL,
     review: "/review/galaxy-a35",
     comparison: "/comparativo-galaxy-a55-vs-galaxy-a35",
   },

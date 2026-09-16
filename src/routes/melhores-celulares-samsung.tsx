@@ -1,7 +1,11 @@
+import {
+  GALAXY_A35_AFFILIATE_URL,
+  GALAXY_A55_AFFILIATE_URL,
+  GALAXY_S24_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
@@ -116,9 +120,9 @@ const affiliateLinks = {
   galaxyA55:
     GALAXY_A55_AFFILIATE_URL,
   galaxyS24:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D",
+    GALAXY_S24_AFFILIATE_URL,
   galaxyA35:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BECQRPg9JPQNeBdgSuaF279FfN690%2Ft5yaUw2qT0c4we82ydQOZHEzo8BzkPR4o5miAU3yyawzFiqQlXoP%2BupTq5odupfoPzTbiTgdbNA9cNdeA7YySNqRwXoZq7ewwuWIVsf9DD0qhxiyZkwOfSBZA%2BKLdW%2FtPVx3sv%2Fi6lx7J2RaGKQlhawxmiaFoX2KjTnjGm6y8%3D",
+    GALAXY_A35_AFFILIATE_URL,
 };
 
 const ranking = [

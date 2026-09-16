@@ -1,3 +1,9 @@
+import {
+  POCO_X6_PRO_AFFILIATE_URL,
+  POCO_X7_PRO_AFFILIATE_URL,
+  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -50,13 +56,13 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
 
 const affiliateLinks = {
   redmiNote13Pro:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D",
+    REDMI_NOTE_13_PRO_AFFILIATE_URL,
   redmiNote14ProPlus:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BAtoKVPghjdMrPDSvQucfOIyJZTtqw%2B%2B99vk4nDBCh2L0rqadZ3UoTBTKgG8J8EasFIZlKmX4m8B6LUIisxINcxwzk7Os83ZSnuuskNd4Ovo3O%2FQTlSI4aN0G7I6DVL004nh8hlN6NcS42MwFHJFidRG0cEjSEpbyJqbez1Oz2UmljyX3ibeKPVHHjFVMp3aHdyMXe8%3D",
+    REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
   pocoX7Pro:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BEX9wHRtVEKXx9yO12fXHrh8xMgoDxPmqvJmScZP%2Bkpg%2Bjc924kYQWyPEwdMSE7Pofdd%2F3Dtwc2j60EISIGY%2BQrcELFX5fso2RASDnsUC2LtMEx4Os0fTE9%2F8GAv8o9U6RPyBDRQX6JlRJAzGu5gLZ8m9g%2FAwx%2BjHzZohHxVKTyWyZLU2APF8FUZqzy4DpZAN7ScnA%3D%3D",
+    POCO_X7_PRO_AFFILIATE_URL,
   pocoX6Pro:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D",
+    POCO_X6_PRO_AFFILIATE_URL,
 };
 
 const ranking = [
@@ -523,7 +529,7 @@ function MelhoresCelularesXiaomi() {
               title="Melhores ofertas Xiaomi atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos celulares Xiaomi recomendados."
               buttonText="Ver ofertas Xiaomi"
-              href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D"
+              href={REDMI_NOTE_13_PRO_AFFILIATE_URL}
               highlight="Redmi • Poco • Xiaomi"
               productName="Redmi Note 13 Pro"
               pageType="guia"

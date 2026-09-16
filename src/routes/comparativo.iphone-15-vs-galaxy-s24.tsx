@@ -1,3 +1,7 @@
+import {
+  GALAXY_S24_AFFILIATE_URL,
+  IPHONE_15_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -560,7 +564,7 @@ function VersusPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNmgzqEE5bUDUlOZB7vVFqnRJK2UVykvrBlyRvhQPefSFnWrpzAuiiwcW7%2Fj8s3vPEtuGlS5OcZBU9DBPTl1wINpAi3hSv7JutmMfHIt3kzPgPoYrajzIzycygjtZ6EqOfO1kO7SihMhHJ0k64XC6W%2FVq6nQAXvP4WtL6bHHQ1MpzTznp66DK60TofaUTejvFlQP%2BLmCzA%3D%3D"
+                href={IPHONE_15_AFFILIATE_URL}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 onClick={() =>
@@ -574,7 +578,7 @@ function VersusPage() {
                 Ver oferta do iPhone 15 <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
-                href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D"
+                href={GALAXY_S24_AFFILIATE_URL}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 onClick={() =>
@@ -596,7 +600,7 @@ function VersusPage() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur lg:hidden">
         <div className="container-tec flex items-center gap-2">
           <a
-            href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNmgzqEE5bUDUlOZB7vVFqnRJK2UVykvrBlyRvhQPefSFnWrpzAuiiwcW7%2Fj8s3vPEtuGlS5OcZBU9DBPTl1wINpAi3hSv7JutmMfHIt3kzPgPoYrajzIzycygjtZ6EqOfO1kO7SihMhHJ0k64XC6W%2FVq6nQAXvP4WtL6bHHQ1MpzTznp66DK60TofaUTejvFlQP%2BLmCzA%3D%3D"
+            href={IPHONE_15_AFFILIATE_URL}
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={() =>
@@ -610,7 +614,7 @@ function VersusPage() {
             iPhone 15 · R$ 5.499
           </a>
           <a
-            href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BJK6UcblrJhFks%2ByyhqvNreFyj7m7v8VbFpOdm%2Bo%2BLV7q%2FZ%2FDO0tMjm8%2FdRtgwpL1OFludaoh6ZvEvrZP%2BD%2B9yd4tKkCzJjnvDlQ500YIp7kxQFs5nWnSCRw3WoaGx4PD2vzx36wWHRO87e6buZ7PEiBWZShduDI4WEXvNVfael7a%2BNG6s6WtHok%2BdTSan1x5nTvRhw%3D"
+            href={GALAXY_S24_AFFILIATE_URL}
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={() =>

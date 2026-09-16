@@ -1,3 +1,4 @@
+import { IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -254,7 +255,7 @@ function ReviewPage() {
               <div className="mt-3 font-heading text-2xl font-bold text-foreground">R$ 5.499</div>
               <span className="text-[11px] text-muted-foreground">*pode variar</span>
               <a
-                href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNmgzqEE5bUDUlOZB7vVFqnRJK2UVykvrBlyRvhQPefSFnWrpzAuiiwcW7%2Fj8s3vPEtuGlS5OcZBU9DBPTl1wINpAi3hSv7JutmMfHIt3kzPgPoYrajzIzycygjtZ6EqOfO1kO7SihMhHJ0k64XC6W%2FVq6nQAXvP4WtL6bHHQ1MpzTznp66DK60TofaUTejvFlQP%2BLmCzA%3D%3D"
+                href={IPHONE_15_AFFILIATE_URL}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 onClick={() =>
@@ -553,7 +554,7 @@ function ReviewPage() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNmgzqEE5bUDUlOZB7vVFqnRJK2UVykvrBlyRvhQPefSFnWrpzAuiiwcW7%2Fj8s3vPEtuGlS5OcZBU9DBPTl1wINpAi3hSv7JutmMfHIt3kzPgPoYrajzIzycygjtZ6EqOfO1kO7SihMhHJ0k64XC6W%2FVq6nQAXvP4WtL6bHHQ1MpzTznp66DK60TofaUTejvFlQP%2BLmCzA%3D%3D"
+                    href={IPHONE_15_AFFILIATE_URL}
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     onClick={() =>
@@ -595,7 +596,7 @@ function ReviewPage() {
             Comparar
           </Link>
           <a
-            href="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNmgzqEE5bUDUlOZB7vVFqnRJK2UVykvrBlyRvhQPefSFnWrpzAuiiwcW7%2Fj8s3vPEtuGlS5OcZBU9DBPTl1wINpAi3hSv7JutmMfHIt3kzPgPoYrajzIzycygjtZ6EqOfO1kO7SihMhHJ0k64XC6W%2FVq6nQAXvP4WtL6bHHQ1MpzTznp66DK60TofaUTejvFlQP%2BLmCzA%3D%3D"
+            href={IPHONE_15_AFFILIATE_URL}
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={() =>

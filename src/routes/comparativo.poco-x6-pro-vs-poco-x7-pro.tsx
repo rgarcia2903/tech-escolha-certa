@@ -1,3 +1,7 @@
+import {
+  POCO_X6_PRO_AFFILIATE_URL,
+  POCO_X7_PRO_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
@@ -82,7 +86,7 @@ const POCO_X6 = {
   price: "R$ 1.899",
   image: "/images/products/poco-x6-pro-optimized.webp",
   affiliateHref:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BNcRGlKdJOfT6JoH3E5fZGIfv7c24CXTT3VxCIOml%2BVEr9jpSKxFF7Hjgu%2F2OHm3qzTcjdy2zGZmVxFSJuMa%2BKFSXlB2TY0GDX7lrtHOcSbNH%2B1QkMcVpeseWTif%2FPnEXCEL14RtFO4wSnZ6svrG62ZYOPj6RGfs%2BNBdzymz8MVrIyQhE%2BWL3C6XatHNbIAwzCnEXMc%3D",
+    POCO_X6_PRO_AFFILIATE_URL,
   strengths: [
     "Dimensity 8300-Ultra ainda entrega desempenho muito forte",
     "Ótimo custo-benefício quando aparece abaixo do Poco X7 Pro",
@@ -104,7 +108,7 @@ const POCO_X7 = {
   price: "R$ 2.299",
   image: "/images/products/poco-x7-pro-optimized.webp",
   affiliateHref:
-    "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BEX9wHRtVEKXx9yO12fXHrh8xMgoDxPmqvJmScZP%2Bkpg%2Bjc924kYQWyPEwdMSE7Pofdd%2F3Dtwc2j60EISIGY%2BQrcELFX5fso2RASDnsUC2LtMEx4Os0fTE9%2F8GAv8o9U6RPyBDRQX6JlRJAzGu5gLZ8m9g%2FAwx%2BjHzZohHxVKTyWyZLU2APF8FUZqzy4DpZAN7ScnA%3D%3D",
+    POCO_X7_PRO_AFFILIATE_URL,
   strengths: [
     "Dimensity 8400-Ultra entrega mais desempenho e longevidade",
     "Bateria de 6.000 mAh é um salto importante",

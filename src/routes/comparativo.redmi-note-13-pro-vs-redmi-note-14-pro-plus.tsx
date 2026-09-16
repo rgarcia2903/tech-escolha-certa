@@ -1,3 +1,7 @@
+import {
+  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
@@ -65,10 +69,10 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
 });
 
 const REDMI13_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BGtpHQ2Gd7gu3NJ6rm%2BaBDzcdVEsJkmjUCfPoUqsyMdISk7qaEcLyOhgcKjTflKbMEvjvhG39ybzwLuBiHmGufxF%2FFBwYPJPvak9%2FHtxxTfaEdzk4I0k92KRruIQTVCVFPTIyFEF3xDzYe3eHCv%2Bo6MC6%2FXnj3uM2pxoKFhaJpyQgtgoF2cqW2%2BOv8BcdH0IMZlkW0I%3D";
+  REDMI_NOTE_13_PRO_AFFILIATE_URL;
 
 const REDMI14_AFFILIATE_URL =
-  "https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BAtoKVPghjdMrPDSvQucfOIyJZTtqw%2B%2B99vk4nDBCh2L0rqadZ3UoTBTKgG8J8EasFIZlKmX4m8B6LUIisxINcxwzk7Os83ZSnuuskNd4Ovo3O%2FQTlSI4aN0G7I6DVL004nh8hlN6NcS42MwFHJFidRG0cEjSEpbyJqbez1Oz2UmljyX3ibeKPVHHjFVMp3aHdyMXe8%3D";
+  REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL;
 
 const SECTIONS = [
   { id: "veredito", label: "Veredito" },

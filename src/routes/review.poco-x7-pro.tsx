@@ -1,3 +1,4 @@
+import { POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
@@ -50,7 +51,7 @@ function ReviewPocoX7Pro() {
       priceLabel="Ver preço atualizado"
       overallScore="9.3"
       verdictShort="O Poco X7 Pro vale a pena para quem quer um celular muito rápido, com excelente bateria, ótima tela e desempenho acima da média para jogos e multitarefa. Ele é uma evolução natural para quem gostou da linha Poco e quer mais potência sem saltar para um topo de linha muito caro."
-      affiliateHref="https://www.mercadolivre.com.br/social/gari4140335?matt_word=gari4140335&matt_tool=94872161&forceInApp=true&ref=BEX9wHRtVEKXx9yO12fXHrh8xMgoDxPmqvJmScZP%2Bkpg%2Bjc924kYQWyPEwdMSE7Pofdd%2F3Dtwc2j60EISIGY%2BQrcELFX5fso2RASDnsUC2LtMEx4Os0fTE9%2F8GAv8o9U6RPyBDRQX6JlRJAzGu5gLZ8m9g%2FAwx%2BjHzZohHxVKTyWyZLU2APF8FUZqzy4DpZAN7ScnA%3D%3D"
+      affiliateHref={POCO_X7_PRO_AFFILIATE_URL}
       affiliate={{
         title: "Poco X7 Pro com preço atualizado",
         description:
