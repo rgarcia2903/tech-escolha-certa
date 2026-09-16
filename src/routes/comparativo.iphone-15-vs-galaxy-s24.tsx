@@ -4,6 +4,7 @@ import {
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowUpRight,
@@ -575,7 +576,7 @@ function VersusPage() {
                 }
                 className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
               >
-                Ver oferta do iPhone 15 <ArrowUpRight className="h-4 w-4" />
+                Ver iPhone 15 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href={GALAXY_S24_AFFILIATE_URL}
@@ -589,9 +590,10 @@ function VersusPage() {
                 }
                 className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
               >
-                Ver oferta do Galaxy S24 <ArrowUpRight className="h-4 w-4" />
+                Ver Galaxy S24 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
+            <AffiliateRedirectNotice className="mt-4" />
           </section>
         </main>
       </div>
@@ -611,7 +613,7 @@ function VersusPage() {
             }
             className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-cta px-3 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            iPhone 15 · R$ 5.499
+            iPhone 15 no Mercado Livre
           </a>
           <a
             href={GALAXY_S24_AFFILIATE_URL}
@@ -625,7 +627,7 @@ function VersusPage() {
             }
             className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-3 py-2.5 text-xs font-semibold text-foreground"
           >
-            Galaxy S24 · R$ 4.299
+            Galaxy S24 no Mercado Livre
           </a>
         </div>
       </div>
@@ -916,7 +918,6 @@ function ProfileCard({
     </article>
   );
 }
-
 
 
 

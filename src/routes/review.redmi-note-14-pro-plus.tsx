@@ -48,7 +48,7 @@ function ReviewRedmiNote14ProPlus() {
       updatedAt="Atualizado em 2026"
       readingTime="Leitura • 8 min"
       productName="Redmi Note 14 Pro+ 5G"
-      priceLabel="Ver preço atualizado"
+      priceLabel="Ver no Mercado Livre"
       overallScore="9.2"
       verdictShort="O Redmi Note 14 Pro+ 5G vale a pena para quem quer um Xiaomi intermediário premium, com tela de alto nível, câmera principal de 200 MP, carregamento de 120 W e bom desempenho geral. Ele não é o celular mais barato da linha, mas entrega um conjunto mais completo que o Redmi Note 13 Pro."
       affiliateHref={REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL}

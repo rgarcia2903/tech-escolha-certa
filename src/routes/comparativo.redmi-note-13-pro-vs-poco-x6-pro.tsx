@@ -2,6 +2,7 @@ import {
   POCO_X6_PRO_AFFILIATE_URL,
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
@@ -280,6 +281,7 @@ function ComparisonPage() {
             <ProductHero product={POCO_X6} accent="teal" />
             <ProductHero product={REDMI_NOTE_13_PRO} accent="cta" />
           </div>
+          <AffiliateRedirectNotice className="mt-4" />
         </div>
       </header>
 
@@ -313,8 +315,8 @@ function ComparisonPage() {
                 se estiver com preço bem menor.
               </p>
               <div className="mt-4 space-y-2">
-                <AffiliateButton product={REDMI_NOTE_13_PRO} label="Ver preço do Redmi Note 13 Pro" variant="primary" />
-                <AffiliateButton product={POCO_X6} label="Ver preço do Poco X6 Pro" variant="secondary" />
+                <AffiliateButton product={REDMI_NOTE_13_PRO} label="Ver Redmi Note 13 Pro no Mercado Livre" variant="primary" />
+                <AffiliateButton product={POCO_X6} label="Ver Poco X6 Pro no Mercado Livre" variant="secondary" />
               </div>
             </div>
           </div>
@@ -573,8 +575,8 @@ function ComparisonPage() {
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
-                <AffiliateButton product={REDMI_NOTE_13_PRO} label="Ver preço do Redmi Note 13 Pro" variant="primary" />
-                <AffiliateButton product={POCO_X6} label="Ver preço do Poco X6 Pro" variant="secondary" />
+                <AffiliateButton product={REDMI_NOTE_13_PRO} label="Ver Redmi Note 13 Pro no Mercado Livre" variant="primary" />
+                <AffiliateButton product={POCO_X6} label="Ver Poco X6 Pro no Mercado Livre" variant="secondary" />
               </div>
             </div>
           </section>
@@ -603,7 +605,7 @@ function ComparisonPage() {
             }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver Redmi Note 13 Pro <ArrowUpRight className="h-3.5 w-3.5" />
+            Ver no Mercado Livre <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
@@ -685,7 +687,7 @@ function ProductHero({
           <div className="mt-4">
             <AffiliateButton
               product={product}
-              label={`Ver ${product.name}`}
+              label={`Ver ${product.name} no Mercado Livre`}
               variant={accent === "cta" ? "primary" : "secondary"}
             />
           </div>

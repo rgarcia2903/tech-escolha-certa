@@ -3,6 +3,7 @@ import {
   GALAXY_A55_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
@@ -124,7 +125,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver preço do Galaxy A55
+              Ver Galaxy A55 no Mercado Livre
             </a>
           </div>
 
@@ -168,10 +169,12 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver preço do Galaxy A35
+              Ver Galaxy A35 no Mercado Livre
             </a>
           </div>
         </div>
+
+        <AffiliateRedirectNotice className="mt-4" />
 
         <section className="mt-12 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
           <div className="mb-8">
@@ -358,7 +361,6 @@ function ComparativoGalaxyA55VsGalaxyA35() {
     </main>
   );
 }
-
 
 
 

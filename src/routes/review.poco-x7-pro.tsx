@@ -48,7 +48,7 @@ function ReviewPocoX7Pro() {
       updatedAt="Atualizado em 2026"
       readingTime="Leitura • 8 min"
       productName="Poco X7 Pro"
-      priceLabel="Ver preço atualizado"
+      priceLabel="Ver no Mercado Livre"
       overallScore="9.3"
       verdictShort="O Poco X7 Pro vale a pena para quem quer um celular muito rápido, com excelente bateria, ótima tela e desempenho acima da média para jogos e multitarefa. Ele é uma evolução natural para quem gostou da linha Poco e quer mais potência sem saltar para um topo de linha muito caro."
       affiliateHref={POCO_X7_PRO_AFFILIATE_URL}

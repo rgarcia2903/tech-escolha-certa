@@ -391,7 +391,7 @@ function MelhoresCelularesSamsung() {
             <AffiliateCTA
               title="Melhores ofertas Samsung atualizadas"
               description="Veja preço, parcelamento e disponibilidade dos celulares Samsung recomendados."
-              buttonText="Ver ofertas Samsung"
+              buttonText="Ver Galaxy A55 no Mercado Livre"
               href={GALAXY_A55_AFFILIATE_URL}
               highlight="Galaxy S24 • Galaxy A55 • Galaxy A35"
               productName="Galaxy A55"

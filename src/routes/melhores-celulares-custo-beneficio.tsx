@@ -256,7 +256,7 @@ function CustoBeneficioPage() {
             <AffiliateCTA
               title="Celulares custo-benefício com ofertas atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos modelos recomendados diretamente no Mercado Livre."
-              buttonText="Ver ofertas no Mercado Livre"
+              buttonText="Ver Galaxy A55 no Mercado Livre"
               href={GALAXY_A55_AFFILIATE_URL}
               highlight="Samsung • Xiaomi • Intermediários premium"
               productName="Galaxy A55"
@@ -386,7 +386,6 @@ function CustoBeneficioPage() {
     </main>
   );
 }
-
 
 
 

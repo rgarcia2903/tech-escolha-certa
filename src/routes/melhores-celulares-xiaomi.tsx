@@ -528,7 +528,7 @@ function MelhoresCelularesXiaomi() {
             <AffiliateCTA
               title="Melhores ofertas Xiaomi atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos celulares Xiaomi recomendados."
-              buttonText="Ver ofertas Xiaomi"
+              buttonText="Ver Redmi Note 13 Pro no Mercado Livre"
               href={REDMI_NOTE_13_PRO_AFFILIATE_URL}
               highlight="Redmi • Poco • Xiaomi"
               productName="Redmi Note 13 Pro"

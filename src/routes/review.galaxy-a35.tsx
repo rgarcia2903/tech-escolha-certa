@@ -1,5 +1,6 @@
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/review/galaxy-a35")({
@@ -98,8 +99,9 @@ function ReviewGalaxyA35() {
               }
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver ofertas no Mercado Livre
+              Ver Galaxy A35 no Mercado Livre
             </a>
+            <AffiliateRedirectNotice className="mt-3" tone="dark" />
           </div>
         </div>
       </section>
@@ -360,8 +362,9 @@ function ReviewGalaxyA35() {
               }
               className="mt-5 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver ofertas
+              Ver Galaxy A35 no Mercado Livre
             </a>
+            <AffiliateRedirectNotice className="mt-3" />
 
             <div className="mt-6 border-t border-slate-200 pt-5">
               <p className="text-sm font-bold text-[#0F3F4A]">Também leia:</p>
@@ -395,7 +398,6 @@ function ReviewGalaxyA35() {
     </main>
   );
 }
-
 
 
 
