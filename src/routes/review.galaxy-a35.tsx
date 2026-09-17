@@ -351,6 +351,13 @@ function ReviewGalaxyA35() {
 
               <div className="mt-3 space-y-3 text-sm">
                 <a
+                  href="/comparativo/galaxy-a35-vs-redmi-note-13-pro"
+                  className="block font-semibold text-[#8B5A2B] hover:text-[#0F3F4A]"
+                >
+                  Galaxy A35 vs Redmi Note 13 Pro
+                </a>
+
+                <a
                   href="/comparativo-galaxy-a55-vs-galaxy-a35"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >

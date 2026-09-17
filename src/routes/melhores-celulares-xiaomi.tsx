@@ -128,6 +128,13 @@ const comparisonCards = [
     badge: "Poco",
   },
   {
+    title: "Galaxy A35 vs Redmi Note 13 Pro",
+    description:
+      "Compare dois dos celulares mais disputados até R$ 2.000: proteção e software Samsung contra tela e carga rápida Xiaomi.",
+    href: "/comparativo/galaxy-a35-vs-redmi-note-13-pro",
+    badge: "Samsung vs Xiaomi",
+  },
+  {
     title: "Galaxy A55 vs Redmi Note 13 Pro",
     description:
       "Samsung mais equilibrado ou Xiaomi com ficha técnica agressiva? Compare antes de comprar.",
@@ -607,6 +614,13 @@ function MelhoresCelularesXiaomi() {
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
                   Poco X6 Pro vs Poco X7 Pro
+                </Link>
+
+                <Link
+                  to="/comparativo/galaxy-a35-vs-redmi-note-13-pro"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Galaxy A35 vs Redmi Note 13 Pro
                 </Link>
 
                 <Link
