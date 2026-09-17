@@ -33,13 +33,9 @@ export function AffiliateCTA({
               Oferta recomendada
             </div>
 
-            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white">
-              {title}
-            </h2>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white">{title}</h2>
 
-            <p className="mt-4 text-base leading-7 text-slate-200">
-              {description}
-            </p>
+            <p className="mt-4 text-base leading-7 text-slate-200">{description}</p>
 
             {highlight && (
               <div className="mt-5 inline-flex items-center rounded-2xl bg-white/10 px-4 py-3 text-sm font-semibold text-white ring-1 ring-white/10">
@@ -57,6 +53,7 @@ export function AffiliateCTA({
                 trackAffiliateClick({
                   productName: productName ?? title,
                   pageType,
+                  ctaPlacement: "content",
                 })
               }
               className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#8B5A2B] px-6 py-4 text-sm font-bold text-white shadow-lg transition hover:brightness-95"
@@ -71,8 +68,8 @@ export function AffiliateCTA({
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8B5A2B]" />
 
               <p className="text-xs leading-6 text-slate-300">
-                Podemos receber comissão por compras realizadas através dos nossos links,
-                sem custo adicional para você.
+                Podemos receber comissão por compras realizadas através dos nossos links, sem custo
+                adicional para você.
               </p>
             </div>
           </div>

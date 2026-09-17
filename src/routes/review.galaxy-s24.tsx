@@ -2,6 +2,8 @@ import { GALAXY_S24_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowRight,
@@ -26,8 +28,7 @@ import {
 import { Badge, Rating } from "@/components/site/ui";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-s24";
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1600&q=80";
+const HERO_IMG = "https://techescolhacerta.com.br/images/products/galaxy-s24-optimized.webp";
 
 export const Route = createFileRoute("/review/galaxy-s24")({
   head: () => ({
@@ -244,6 +245,19 @@ function ReviewPage() {
                 <ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente
               </span>
             </div>
+
+            <PurchaseActions
+              className="mt-6"
+              options={[
+                {
+                  productName: "Galaxy S24",
+                  href: GALAXY_S24_AFFILIATE_URL,
+                  label: "Ver Galaxy S24 no Mercado Livre",
+                },
+              ]}
+              pageType="review"
+              placement="hero"
+            />
           </div>
           <div className="relative lg:col-span-5">
             <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-cta/20 via-cta/5 to-teal/15 blur-3xl" />
@@ -262,10 +276,11 @@ function ReviewPage() {
                 </span>
                 <div className="mt-1 flex items-end gap-2">
                   <span className="font-heading text-3xl font-bold leading-none text-foreground">
-                    {overall.toFixed(1)}
+                    {(overall * 2).toFixed(1)}
                   </span>
-                  <span className="text-sm text-muted-foreground">/ 5</span>
+                  <span className="text-sm text-muted-foreground">/10</span>
                 </div>
+                <ScoreMethodLink className="mt-2" />
               </div>
               <div className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -324,6 +339,7 @@ function ReviewPage() {
                   trackAffiliateClick({
                     productName: "Galaxy S24",
                     pageType: "review",
+                    ctaPlacement: "sidebar",
                   })
                 }
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -664,6 +680,7 @@ function ReviewPage() {
                       trackAffiliateClick({
                         productName: "Galaxy S24",
                         pageType: "review",
+                        ctaPlacement: "content",
                       })
                     }
                     className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -736,6 +753,7 @@ function ReviewPage() {
               trackAffiliateClick({
                 productName: "Galaxy S24",
                 pageType: "review",
+                ctaPlacement: "sticky",
               })
             }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"

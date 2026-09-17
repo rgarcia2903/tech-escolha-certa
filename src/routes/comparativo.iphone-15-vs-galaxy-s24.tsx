@@ -2,6 +2,8 @@ import { GALAXY_S24_AFFILIATE_URL, IPHONE_15_AFFILIATE_URL } from "@/lib/affilia
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowUpRight,
@@ -47,23 +49,19 @@ export const Route = createFileRoute("/comparativo/iphone-15-vs-galaxy-s24")({
       },
       {
         property: "og:image",
-        content:
-          "https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=1600&q=80",
+        content: "https://techescolhacerta.com.br/images/products/iphone-15-optimized.webp",
       },
       {
         property: "twitter:image",
-        content:
-          "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1600&q=80",
+        content: "https://techescolhacerta.com.br/images/products/galaxy-s24-optimized.webp",
       },
     ],
   }),
   component: VersusPage,
 });
 
-const IPHONE_IMG =
-  "https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=1200&q=80";
-const GALAXY_IMG =
-  "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1200&q=80";
+const IPHONE_IMG = "/images/products/iphone-15-optimized.webp";
+const GALAXY_IMG = "/images/products/galaxy-s24-optimized.webp";
 
 const SECTIONS = [
   { id: "veredito", label: "Veredito rápido" },
@@ -286,6 +284,25 @@ function VersusPage() {
                   <ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente
                 </span>
               </div>
+
+              <PurchaseActions
+                className="mt-6"
+                options={[
+                  {
+                    productName: "iPhone 15",
+                    href: IPHONE_15_AFFILIATE_URL,
+                    label: "Ver iPhone 15",
+                  },
+                  {
+                    productName: "Galaxy S24",
+                    href: GALAXY_S24_AFFILIATE_URL,
+                    label: "Ver Galaxy S24",
+                  },
+                ]}
+                pageType="comparativo"
+                placement="hero"
+              />
+              <ScoreMethodLink className="mt-3" />
             </div>
 
             {/* Side by side hero */}
@@ -700,15 +717,15 @@ function HeroSide({
   align: "left" | "right";
 }) {
   return (
-    <div className="relative aspect-[4/5] overflow-hidden bg-surface">
-      <img src={image} alt={name} className="h-full w-full object-cover" loading="eager" />
+    <div className="relative aspect-square overflow-hidden bg-surface">
+      <img src={image} alt={name} className="h-full w-full object-contain p-2" loading="eager" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/90 via-background/15 to-transparent" />
       <div className={`absolute bottom-3 ${align === "left" ? "left-3" : "right-3"} space-y-1`}>
         <span className="block rounded-md bg-background/90 px-2 py-1 text-[11px] font-semibold text-foreground backdrop-blur">
           {name}
         </span>
         <span className="inline-flex items-center gap-1 rounded-md bg-background/90 px-2 py-1 text-[11px] font-semibold text-foreground backdrop-blur">
-          <Star className="h-3 w-3 fill-cta text-cta" /> {rating.toFixed(1)}
+          <Star className="h-3 w-3 fill-cta text-cta" /> {(rating * 2).toFixed(1)}/10
         </span>
       </div>
     </div>
@@ -738,6 +755,7 @@ function OfferLine({
           trackAffiliateClick({
             productName: name,
             pageType: "comparativo",
+            ctaPlacement: "sidebar",
           })
         }
         className={`mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition ${
@@ -968,6 +986,7 @@ function ProfileCard({
             trackAffiliateClick({
               productName,
               pageType: "comparativo",
+              ctaPlacement: "content",
             })
           }
           className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition ${

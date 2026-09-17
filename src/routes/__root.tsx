@@ -6,6 +6,7 @@ import {
   Scripts,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
@@ -13,6 +14,7 @@ import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import React from "react";
 import ReactDOM from "react-dom";
+import { trackPageView } from "@/lib/analytics";
 
 if (import.meta.env.DEV) {
   import("@axe-core/react").then((axe) => {
@@ -23,37 +25,34 @@ if (import.meta.env.DEV) {
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-<head>
-  <script
-    type="text/javascript"
-    dangerouslySetInnerHTML={{
-    __html: `
+      <head>
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "x0ds1dhbb4");
     `,
-    }}
-/>
-  <HeadContent />
+          }}
+        />
+        <HeadContent />
 
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-0FBRT0FGY5"
-  ></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0FBRT0FGY5"></script>
 
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-0FBRT0FGY5');
+        gtag('config', 'G-0FBRT0FGY5', { send_page_view: false });
       `,
-    }}
-  />
-</head>
+          }}
+        />
+      </head>
 
       <body>
         {children}
@@ -65,6 +64,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+
+  React.useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname]);
 
   return (
     <RootDocument>
@@ -89,9 +93,7 @@ function NotFoundComponent() {
           <div className="max-w-md text-center">
             <h1 className="text-7xl font-bold text-[#0F3F4A]">404</h1>
 
-            <h2 className="mt-4 text-xl font-semibold text-[#0F3F4A]">
-              Página não encontrada
-            </h2>
+            <h2 className="mt-4 text-xl font-semibold text-[#0F3F4A]">Página não encontrada</h2>
 
             <p className="mt-2 text-sm text-slate-600">
               A página que você está procurando não existe ou foi movida.
@@ -163,119 +165,109 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-      links: [
-        {
-          rel: "stylesheet",
-          href: appCss,
-        },
-        {
-          rel: "icon",
-          type: "image/png",
-          href: "/favicon.png",
-        },
-        {
-          rel: "apple-touch-icon",
-          href: "/favicon.png",
-        },
-      ],
-      meta: [
-        { charSet: "utf-8" },
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: "/favicon.png",
+      },
+    ],
+    meta: [
+      { charSet: "utf-8" },
 
-        {
-          name: "viewport",
-          content: "width=device-width, initial-scale=1",
-        },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
 
-        {
-          title:
-            "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
-        },
+      {
+        title: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+      },
 
-        {
-          name: "description",
-          content:
-            "Compare celulares, notebooks e smartwatches antes de comprar. Reviews reais, rankings atualizados e os melhores modelos custo-benefício de 2026.",
-        },
+      {
+        name: "description",
+        content:
+          "Compare celulares, notebooks e smartwatches antes de comprar. Reviews reais, rankings atualizados e os melhores modelos custo-benefício de 2026.",
+      },
 
-        {
-          name: "keywords",
-          content:
-            "melhores celulares, comparativo celular, review smartphone, celular custo benefício, galaxy a55, redmi note 13 pro, melhores celulares 2026",
-        },
+      {
+        name: "keywords",
+        content:
+          "melhores celulares, comparativo celular, review smartphone, celular custo benefício, galaxy a55, redmi note 13 pro, melhores celulares 2026",
+      },
 
-        {
-          name: "robots",
-          content: "index, follow",
-        },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
 
-        {
-          name: "author",
-          content: "Tech Escolha Certa",
-        },
+      {
+        name: "author",
+        content: "Tech Escolha Certa",
+      },
 
-        {
-          property: "og:type",
-          content: "website",
-        },
+      {
+        property: "og:type",
+        content: "website",
+      },
 
-        {
-          property: "og:site_name",
-          content: "Tech Escolha Certa",
-        },
+      {
+        property: "og:site_name",
+        content: "Tech Escolha Certa",
+      },
 
-        {
-          property: "og:title",
-          content:
-            "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
-        },
+      {
+        property: "og:title",
+        content: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+      },
 
-        {
-          property: "og:description",
-          content:
-            "Reviews reais, comparativos completos e rankings atualizados dos melhores celulares para comprar em 2026.",
-        },
+      {
+        property: "og:description",
+        content:
+          "Reviews reais, comparativos completos e rankings atualizados dos melhores celulares para comprar em 2026.",
+      },
 
-        {
-          property: "og:url",
-          content: "https://techescolhacerta.com.br",
-        },
+      {
+        property: "og:url",
+        content: "https://techescolhacerta.com.br",
+      },
 
-        {
-          property: "og:image",
-          content: "https://techescolhacerta.com.br/favicon.png",
-        },
+      {
+        property: "og:image",
+        content: "https://techescolhacerta.com.br/favicon.png",
+      },
 
-        {
-          name: "twitter:card",
-          content: "summary_large_image",
-        },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
 
-        {
-          name: "twitter:title",
-          content:
-            "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
-        },
+      {
+        name: "twitter:title",
+        content: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+      },
 
-        {
-          name: "twitter:description",
-          content:
-            "Compare celulares antes de comprar. Reviews, rankings e recomendações confiáveis.",
-        },
+      {
+        name: "twitter:description",
+        content:
+          "Compare celulares antes de comprar. Reviews, rankings e recomendações confiáveis.",
+      },
 
-        {
-          name: "twitter:image",
-          content: "https://techescolhacerta.com.br/favicon.png",
-        },
-      ],
+      {
+        name: "twitter:image",
+        content: "https://techescolhacerta.com.br/favicon.png",
+      },
+    ],
   }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-
-
-
-
-
-

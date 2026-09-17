@@ -52,7 +52,9 @@ export function Badge({
     soft: "bg-surface text-foreground border border-border",
   } as const;
   return (
-    <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${styles[variant]}`}>
+    <span
+      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${styles[variant]}`}
+    >
       {children}
     </span>
   );
@@ -62,15 +64,8 @@ export function Rating({ value }: { value: number }) {
   return (
     <div className="inline-flex items-center gap-1 text-sm text-foreground">
       <Star className="h-4 w-4 fill-cta text-cta" />
-      <span className="font-semibold">{value.toFixed(1)}</span>
-      <span className="text-muted-foreground">/5</span>
+      <span className="font-semibold">{(value * 2).toFixed(1)}</span>
+      <span className="text-muted-foreground">/10</span>
     </div>
   );
 }
-
-
-
-
-
-
-

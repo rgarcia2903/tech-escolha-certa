@@ -1,9 +1,8 @@
-import {
-  GALAXY_A35_AFFILIATE_URL,
-  GALAXY_A55_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
+import { GALAXY_A35_AFFILIATE_URL, GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
@@ -60,10 +59,9 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             </h1>
 
             <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
-              O Galaxy A55 e o Galaxy A35 são dois dos celulares Samsung mais procurados
-              atualmente. Neste comparativo completo, analisamos desempenho, câmera,
-              tela, bateria, construção e custo-benefício para descobrir qual é a melhor
-              compra para cada perfil de usuário.
+              O Galaxy A55 e o Galaxy A35 são dois dos celulares Samsung mais procurados atualmente.
+              Neste comparativo completo, analisamos desempenho, câmera, tela, bateria, construção e
+              custo-benefício para descobrir qual é a melhor compra para cada perfil de usuário.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -79,6 +77,18 @@ function ComparativoGalaxyA55VsGalaxyA35() {
                 Foco em custo-benefício
               </span>
             </div>
+
+            <PurchaseActions
+              className="mt-6"
+              options={[
+                { productName: "Galaxy A55", href: GALAXY_A55_AFFILIATE_URL },
+                { productName: "Galaxy A35", href: GALAXY_A35_AFFILIATE_URL },
+              ]}
+              pageType="comparativo"
+              placement="hero"
+              tone="dark"
+            />
+            <ScoreMethodLink className="mt-3" tone="dark" />
           </div>
         </div>
       </section>
@@ -90,13 +100,11 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               Galaxy A55
             </p>
 
-            <h2 className="mt-2 text-4xl font-bold text-[#0F3F4A]">
-              Mais premium
-            </h2>
+            <h2 className="mt-2 text-4xl font-bold text-[#0F3F4A]">Mais premium</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              O Galaxy A55 é a melhor escolha para quem quer acabamento superior,
-              experiência mais refinada, câmeras melhores e desempenho mais consistente.
+              O Galaxy A55 é a melhor escolha para quem quer acabamento superior, experiência mais
+              refinada, câmeras melhores e desempenho mais consistente.
             </p>
 
             <div className="mt-6 space-y-3">
@@ -121,6 +129,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
                 trackAffiliateClick({
                   productName: "Galaxy A55",
                   pageType: "comparativo",
+                  ctaPlacement: "content",
                 })
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
@@ -134,13 +143,11 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               Galaxy A35
             </p>
 
-            <h2 className="mt-2 text-4xl font-bold text-[#0F3F4A]">
-              Melhor custo-benefício
-            </h2>
+            <h2 className="mt-2 text-4xl font-bold text-[#0F3F4A]">Melhor custo-benefício</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              O Galaxy A35 é ideal para quem quer economizar sem abrir mão da experiência
-              Samsung. Ele entrega ótima tela, boa bateria e desempenho muito equilibrado.
+              O Galaxy A35 é ideal para quem quer economizar sem abrir mão da experiência Samsung.
+              Ele entrega ótima tela, boa bateria e desempenho muito equilibrado.
             </p>
 
             <div className="mt-6 space-y-3">
@@ -165,6 +172,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
                 trackAffiliateClick({
                   productName: "Galaxy A35",
                   pageType: "comparativo",
+                  ctaPlacement: "content",
                 })
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
@@ -182,9 +190,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               Vencedor por categoria
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-              Quem vence em cada ponto?
-            </h2>
+            <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">Quem vence em cada ponto?</h2>
           </div>
 
           <div className="space-y-5">
@@ -195,9 +201,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               >
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <h3 className="text-xl font-bold text-[#0F3F4A]">
-                      {item.categoria}
-                    </h3>
+                    <h3 className="text-xl font-bold text-[#0F3F4A]">{item.categoria}</h3>
 
                     <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-700">
                       {item.descricao}
@@ -214,9 +218,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
         </section>
 
         <section className="mt-12 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-3xl font-bold text-[#0F3F4A]">
-            Comparativo técnico
-          </h2>
+          <h2 className="text-3xl font-bold text-[#0F3F4A]">Comparativo técnico</h2>
 
           <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-slate-200">
             <table className="w-full border-collapse text-left text-sm">
@@ -230,63 +232,33 @@ function ComparativoGalaxyA55VsGalaxyA35() {
 
               <tbody className="divide-y divide-slate-200 bg-white">
                 <tr>
-                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">
-                    Tela
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Super AMOLED 120Hz
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Super AMOLED 120Hz
-                  </td>
+                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">Tela</td>
+                  <td className="px-5 py-4 text-slate-700">Super AMOLED 120Hz</td>
+                  <td className="px-5 py-4 text-slate-700">Super AMOLED 120Hz</td>
                 </tr>
 
                 <tr>
-                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">
-                    Processador
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Exynos 1480
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Exynos 1380
-                  </td>
+                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">Processador</td>
+                  <td className="px-5 py-4 text-slate-700">Exynos 1480</td>
+                  <td className="px-5 py-4 text-slate-700">Exynos 1380</td>
                 </tr>
 
                 <tr>
-                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">
-                    Bateria
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    5.000 mAh
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    5.000 mAh
-                  </td>
+                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">Bateria</td>
+                  <td className="px-5 py-4 text-slate-700">5.000 mAh</td>
+                  <td className="px-5 py-4 text-slate-700">5.000 mAh</td>
                 </tr>
 
                 <tr>
-                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">
-                    Construção
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Mais premium
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Boa construção
-                  </td>
+                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">Construção</td>
+                  <td className="px-5 py-4 text-slate-700">Mais premium</td>
+                  <td className="px-5 py-4 text-slate-700">Boa construção</td>
                 </tr>
 
                 <tr>
-                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">
-                    Melhor para
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Experiência premium
-                  </td>
-                  <td className="px-5 py-4 text-slate-700">
-                    Economia
-                  </td>
+                  <td className="px-5 py-4 font-semibold text-[#0F3F4A]">Melhor para</td>
+                  <td className="px-5 py-4 text-slate-700">Experiência premium</td>
+                  <td className="px-5 py-4 text-slate-700">Economia</td>
                 </tr>
               </tbody>
             </table>
@@ -294,22 +266,17 @@ function ComparativoGalaxyA55VsGalaxyA35() {
         </section>
 
         <section className="mt-12 rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-          <h2 className="text-3xl font-bold text-[#F8FAFC]">
-            Recomendação final
-          </h2>
+          <h2 className="text-3xl font-bold text-[#F8FAFC]">Recomendação final</h2>
 
           <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-            O Galaxy A55 vale mais a pena para quem quer uma experiência mais premium,
-            melhor acabamento e câmeras superiores. Já o Galaxy A35 é uma das melhores
-            compras custo-benefício da Samsung atualmente e atende muito bem a maioria
-            dos usuários.
+            O Galaxy A55 vale mais a pena para quem quer uma experiência mais premium, melhor
+            acabamento e câmeras superiores. Já o Galaxy A35 é uma das melhores compras
+            custo-benefício da Samsung atualmente e atende muito bem a maioria dos usuários.
           </p>
         </section>
 
         <section className="mt-12 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-3xl font-bold text-[#0F3F4A]">
-            Perguntas frequentes
-          </h2>
+          <h2 className="text-3xl font-bold text-[#0F3F4A]">Perguntas frequentes</h2>
 
           <div className="mt-8 space-y-6">
             <div>
@@ -318,41 +285,35 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               </h3>
 
               <p className="mt-2 text-slate-700">
-                Não muito. O A55 é melhor em construção, câmera e desempenho, mas o A35
-                entrega experiência muito próxima custando menos.
+                Não muito. O A55 é melhor em construção, câmera e desempenho, mas o A35 entrega
+                experiência muito próxima custando menos.
               </p>
             </div>
 
             <div>
-              <h3 className="font-bold text-slate-900">
-                Vale pagar mais pelo Galaxy A55?
-              </h3>
+              <h3 className="font-bold text-slate-900">Vale pagar mais pelo Galaxy A55?</h3>
 
               <p className="mt-2 text-slate-700">
-                Vale para quem prioriza acabamento premium, melhor câmera e experiência
-                mais refinada no dia a dia.
+                Vale para quem prioriza acabamento premium, melhor câmera e experiência mais
+                refinada no dia a dia.
               </p>
             </div>
 
             <div>
-              <h3 className="font-bold text-slate-900">
-                Qual tem a melhor bateria?
-              </h3>
+              <h3 className="font-bold text-slate-900">Qual tem a melhor bateria?</h3>
 
               <p className="mt-2 text-slate-700">
-                Ambos possuem ótima autonomia e conseguem entregar um dia completo de uso
-                sem dificuldade.
+                Ambos possuem ótima autonomia e conseguem entregar um dia completo de uso sem
+                dificuldade.
               </p>
             </div>
 
             <div>
-              <h3 className="font-bold text-slate-900">
-                Qual é o melhor custo-benefício?
-              </h3>
+              <h3 className="font-bold text-slate-900">Qual é o melhor custo-benefício?</h3>
 
               <p className="mt-2 text-slate-700">
-                O Galaxy A35 costuma ser a melhor compra para quem quer economizar sem
-                perder muito da experiência Samsung.
+                O Galaxy A35 costuma ser a melhor compra para quem quer economizar sem perder muito
+                da experiência Samsung.
               </p>
             </div>
           </div>
@@ -361,9 +322,3 @@ function ComparativoGalaxyA55VsGalaxyA35() {
     </main>
   );
 }
-
-
-
-
-
-

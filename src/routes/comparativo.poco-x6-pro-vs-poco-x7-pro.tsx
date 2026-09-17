@@ -1,5 +1,6 @@
 import { POCO_X6_PRO_AFFILIATE_URL, POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
@@ -273,6 +274,7 @@ function ComparisonPage() {
             <ProductHero product={POCO_X7} accent="cta" />
           </div>
           <AffiliateRedirectNotice className="mt-4" />
+          <ScoreMethodLink className="mt-3" />
         </div>
       </header>
 
@@ -678,7 +680,7 @@ function ProductHero({ product, accent }: { product: typeof POCO_X6; accent: "te
           width={800}
           height={600}
           loading="eager"
-          className="aspect-[4/3] w-full rounded-2xl border border-border object-cover shadow-soft"
+          className="aspect-[4/3] w-full rounded-2xl border border-border bg-surface object-contain p-3 shadow-soft"
         />
         <div>
           <span
@@ -689,9 +691,6 @@ function ProductHero({ product, accent }: { product: typeof POCO_X6; accent: "te
           <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">{product.name}</h2>
           <div className="mt-2 flex items-center gap-2">
             <Rating value={product.rating} />
-            <span className="text-sm font-semibold text-foreground">
-              {product.rating.toFixed(1)}
-            </span>
           </div>
           <div className="mt-4 font-heading text-lg font-bold text-foreground">
             Preço atualizado no Mercado Livre

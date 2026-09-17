@@ -2,6 +2,8 @@ import { GALAXY_A55_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowRight,
@@ -54,13 +56,11 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-redmi-note-13-p
       },
       {
         property: "og:image",
-        content:
-          "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1600&q=80",
+        content: "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp",
       },
       {
         property: "twitter:image",
-        content:
-          "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1600&q=80",
+        content: "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp",
       },
     ],
   }),
@@ -84,8 +84,7 @@ const GALAXY = {
   name: "Galaxy A55",
   badge: "Mais equilibrado",
   rating: 4.6,
-  image:
-    "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1200&q=80",
+  image: "/images/products/galaxy-a55-optimized.webp",
   strengths: [
     "Construção premium com vidro e alumínio",
     "One UI madura, estável e com boa política de atualizações",
@@ -104,8 +103,7 @@ const REDMI = {
   name: "Redmi Note 13 Pro",
   badge: "Melhor ficha técnica",
   rating: 4.5,
-  image:
-    "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1200&q=80",
+  image: "/images/products/redmi-note-13-pro-optimized.webp",
   strengths: [
     "Tela AMOLED muito forte para a faixa de preço",
     "Carregamento rápido de 67 W",
@@ -249,7 +247,18 @@ function ComparisonPage() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <PurchaseActions
+            className="mt-8"
+            options={[
+              { productName: "Galaxy A55", href: GALAXY_A55_AFFILIATE_URL },
+              { productName: "Redmi Note 13 Pro", href: REDMI_NOTE_13_PRO_AFFILIATE_URL },
+            ]}
+            pageType="comparativo"
+            placement="hero"
+          />
+          <ScoreMethodLink className="mt-3" />
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
             <ProductHero product={GALAXY} accent="teal" />
             <ProductHero product={REDMI} accent="cta" />
           </div>
@@ -294,6 +303,7 @@ function ComparisonPage() {
                     trackAffiliateClick({
                       productName: "Galaxy A55",
                       pageType: "comparativo",
+                      ctaPlacement: "sidebar",
                     })
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
@@ -308,6 +318,7 @@ function ComparisonPage() {
                     trackAffiliateClick({
                       productName: "Redmi Note 13 Pro",
                       pageType: "comparativo",
+                      ctaPlacement: "sidebar",
                     })
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
@@ -665,7 +676,7 @@ function ProductHero({ product, accent }: { product: typeof GALAXY; accent: "tea
           width={800}
           height={600}
           loading="eager"
-          className="aspect-[4/3] w-full rounded-2xl border border-border object-cover shadow-soft"
+          className="aspect-[4/3] w-full rounded-2xl border border-border bg-surface object-contain p-3 shadow-soft"
         />
         <div>
           <span
@@ -676,9 +687,6 @@ function ProductHero({ product, accent }: { product: typeof GALAXY; accent: "tea
           <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">{product.name}</h2>
           <div className="mt-2 flex items-center gap-2">
             <Rating value={product.rating} />
-            <span className="text-sm font-semibold text-foreground">
-              {product.rating.toFixed(1)}
-            </span>
           </div>
           <div className="mt-4 font-heading text-lg font-bold text-foreground">
             Preço atualizado no Mercado Livre

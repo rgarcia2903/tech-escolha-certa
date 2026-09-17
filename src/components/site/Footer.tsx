@@ -31,6 +31,7 @@ const COMPARATIVOS = [
 
 const INSTITUCIONAL = [
   { to: "/sobre", label: "Sobre" },
+  { to: "/como-avaliamos", label: "Como avaliamos" },
   { to: "/contato", label: "Contato" },
   { to: "/transparencia", label: "Transparência" },
   { to: "/politica-de-privacidade", label: "Política de Privacidade" },
@@ -59,9 +60,9 @@ export function Footer() {
             </Link>
 
             <p className="mt-5 text-sm leading-7 text-slate-300">
-              Portal independente de análises, comparativos e recomendações de tecnologia.
-              Ajudamos você a comprar celulares, notebooks, smartwatches e acessórios com
-              mais clareza, contexto e segurança.
+              Portal independente de análises, comparativos e recomendações de tecnologia. Ajudamos
+              você a comprar celulares, notebooks, smartwatches e acessórios com mais clareza,
+              contexto e segurança.
             </p>
 
             <div className="mt-6 rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
@@ -69,9 +70,8 @@ export function Footer() {
                 <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8B5A2B]" />
 
                 <p className="text-xs leading-6 text-slate-300">
-                  Trabalhamos com curadoria editorial e links afiliados. Podemos receber
-                  comissão por compras realizadas através dos nossos links, sem custo
-                  adicional para você.
+                  Trabalhamos com curadoria editorial e links afiliados. Podemos receber comissão
+                  por compras realizadas através dos nossos links, sem custo adicional para você.
                 </p>
               </div>
             </div>
@@ -127,14 +127,12 @@ export function Footer() {
           </div>
 
           <div className="rounded-2xl bg-white/8 p-5 ring-1 ring-white/10">
-            <h3 className="text-sm font-bold text-white">
-              Compromisso editorial
-            </h3>
+            <h3 className="text-sm font-bold text-white">Compromisso editorial</h3>
 
             <p className="mt-2 text-sm leading-6 text-slate-300">
-              Nossas recomendações são organizadas por perfil de uso, custo-benefício e
-              clareza para o consumidor. O objetivo é facilitar decisões de compra, não
-              parecer uma vitrine genérica de produtos.
+              Nossas recomendações são organizadas por perfil de uso, custo-benefício e clareza para
+              o consumidor. O objetivo é facilitar decisões de compra, não parecer uma vitrine
+              genérica de produtos.
             </p>
           </div>
         </div>
@@ -145,8 +143,8 @@ export function Footer() {
           <p>© {new Date().getFullYear()} Tech Escolha Certa. Todos os direitos reservados.</p>
 
           <p className="max-w-2xl md:text-right">
-            Conteúdo editorial com possíveis links afiliados. Preços e disponibilidade
-            podem mudar sem aviso prévio.
+            Conteúdo editorial com possíveis links afiliados. Preços e disponibilidade podem mudar
+            sem aviso prévio.
           </p>
         </div>
       </div>
@@ -163,9 +161,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#8B5A2B]">
-        {title}
-      </h3>
+      <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#8B5A2B]">{title}</h3>
 
       <ul className="mt-4 space-y-3 text-sm text-slate-300">
         {links.map((item) => (
@@ -179,10 +175,3 @@ function FooterColumn({
     </div>
   );
 }
-
-
-
-
-
-
-
