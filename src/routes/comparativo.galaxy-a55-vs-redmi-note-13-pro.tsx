@@ -95,7 +95,7 @@ const GALAXY = {
   ],
   weaknesses: [
     "Carregamento de 25 W é lento para a categoria",
-    "Desempenho em jogos pesados fica atrás do Poco X6 Pro",
+    "Não é a opção mais indicada para quem prioriza jogos pesados",
     "Carregador geralmente não vem na caixa",
   ],
 };
@@ -123,7 +123,11 @@ const REDMI = {
 const QUICK_SCORE = [
   { category: "Construção", winner: "Galaxy A55", reason: "vidro, alumínio e IP67" },
   { category: "Tela", winner: "Empate técnico", reason: "ambos entregam AMOLED forte" },
-  { category: "Desempenho", winner: "Redmi Note 13 Pro", reason: "melhor resposta em uso intenso" },
+  {
+    category: "Desempenho",
+    winner: "Empate técnico",
+    reason: "ambos atendem bem ao uso diário, com propostas diferentes",
+  },
   { category: "Câmera", winner: "Galaxy A55", reason: "mais previsível no automático" },
   { category: "Bateria e carga", winner: "Redmi Note 13 Pro", reason: "67 W muda o dia a dia" },
   { category: "Software", winner: "Galaxy A55", reason: "One UI mais estável e suporte melhor" },
@@ -156,7 +160,7 @@ const FAQS = [
   },
   {
     q: "Qual vale mais a pena para jogar?",
-    a: "Para jogos e uso mais pesado, o Redmi Note 13 Pro tende a ser mais interessante pelo conjunto de desempenho e carregamento rápido. Para estabilidade geral, o A55 segue mais equilibrado.",
+    a: "Os dois atendem a jogos casuais, mas nenhum é focado em desempenho extremo. Se jogos pesados forem a prioridade, o Poco X6 Pro costuma ser uma alternativa mais adequada.",
   },
   {
     q: "Qual deve durar mais tempo?",
@@ -405,16 +409,16 @@ function ComparisonPage() {
             id="desempenho"
             icon={Cpu}
             eyebrow="Desempenho"
-            title="Redmi entrega mais força bruta; Galaxy é mais consistente"
-            winner="Redmi Note 13 Pro"
+            title="Desempenho equilibrado, com diferenças de proposta"
+            winner="Empate técnico"
             paragraphs={[
-              "O Redmi Note 13 Pro tende a entregar melhor sensação de velocidade em tarefas pesadas, especialmente com mais RAM e armazenamento em algumas versões. Para quem alterna muitos apps, joga casualmente e quer resposta rápida, ele passa uma sensação de aparelho mais agressivo pelo preço.",
-              "O Galaxy A55 não é lento — longe disso. A One UI está bem otimizada, as animações são estáveis e o Exynos 1480 segura bem o dia a dia. A diferença é que o Samsung prioriza estabilidade e eficiência, enquanto o Redmi busca entregar mais especificação pelo menor preço.",
+              "O Galaxy A55 usa o Exynos 1480, enquanto o Redmi Note 13 Pro 5G traz o Snapdragon 7s Gen 2. Ambos atendem bem a redes sociais, navegação, câmera, vídeos e multitarefa comum.",
+              "O Redmi oferece versões com mais RAM e armazenamento; o Galaxy combina o hardware com uma One UI madura. Para jogos pesados, vale olhar um modelo dedicado a desempenho em vez de escolher apenas pelo nome do chip.",
             ]}
             bullets={[
-              "Redmi leva vantagem em ficha técnica e carga de trabalho",
-              "Galaxy é estável e bem otimizado",
-              "Para uso comum, ambos atendem muito bem",
+              "Exynos 1480 no Galaxy A55",
+              "Snapdragon 7s Gen 2 no Redmi Note 13 Pro 5G",
+              "Ambos atendem bem ao uso comum",
             ]}
           />
 
@@ -456,16 +460,16 @@ function ComparisonPage() {
             id="gaming"
             icon={Gamepad2}
             eyebrow="Jogos"
-            title="Para gaming casual, ambos servem; para desempenho, Redmi é melhor"
-            winner="Redmi Note 13 Pro"
+            title="Os dois servem para jogos casuais; nenhum é focado em gaming"
+            winner="Empate técnico"
             paragraphs={[
-              "Em jogos populares como Free Fire, PUBG Mobile, Asphalt e Call of Duty Mobile, os dois entregam boa experiência. O Redmi tende a manter configurações mais altas em alguns cenários e agrada quem prioriza desempenho por real investido.",
-              "O Galaxy A55 é mais do que suficiente para jogar casualmente, mas não é a melhor opção se o objetivo principal for performance. Nesse caso, o Poco X6 Pro, inclusive, pode ser ainda mais interessante que os dois.",
+              "Em jogos populares, Galaxy A55 e Redmi Note 13 Pro atendem bem com ajustes adequados. A experiência varia conforme o título, a qualidade gráfica e a temperatura do aparelho.",
+              "Se o objetivo principal for performance em jogos pesados, o Poco X6 Pro costuma ser uma alternativa mais indicada por usar o Dimensity 8300-Ultra.",
             ]}
             bullets={[
-              "Redmi é mais indicado para quem joga mais",
-              "Galaxy atende bem jogos casuais",
-              "Poco X6 Pro é alternativa melhor para foco total em games",
+              "Ambos atendem jogos casuais",
+              "Ajustes gráficos influenciam estabilidade e calor",
+              "Poco X6 Pro é alternativa para foco em desempenho",
             ]}
           />
 

@@ -155,7 +155,7 @@ const SPECS: Array<[string, string, string]> = [
   ["Selfie", "16 MP", "20 MP"],
   ["Bateria", "5.100 mAh", "5.110 mAh"],
   ["Carregamento", "67 W", "120 W"],
-  ["Proteção", "Proteção básica contra respingos", "IP68"],
+  ["Proteção", "IP54", "IP68"],
   ["Sistema", "Android com HyperOS/MIUI", "Android com HyperOS"],
 ];
 

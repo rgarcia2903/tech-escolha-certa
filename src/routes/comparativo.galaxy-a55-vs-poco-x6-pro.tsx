@@ -125,7 +125,11 @@ const Poco = {
 const QUICK_SCORE = [
   { category: "Construção", winner: "Galaxy A55", reason: "vidro, alumínio e IP67" },
   { category: "Tela", winner: "Empate técnico", reason: "ambos entregam AMOLED forte" },
-  { category: "Desempenho", winner: "Poco X6 Pro", reason: "melhor resposta em uso intenso" },
+  {
+    category: "Desempenho",
+    winner: "Poco X6 Pro",
+    reason: "Dimensity 8300-Ultra é mais forte em tarefas pesadas",
+  },
   { category: "Câmera", winner: "Galaxy A55", reason: "mais previsível no automático" },
   { category: "Bateria e carga", winner: "Poco X6 Pro", reason: "67 W muda o dia a dia" },
   { category: "Software", winner: "Galaxy A55", reason: "One UI mais estável e suporte melhor" },
@@ -134,14 +138,14 @@ const QUICK_SCORE = [
 
 const SPECS: Array<[string, string, string]> = [
   ["Tela", '6,6" Super AMOLED 120 Hz', '6,67" AMOLED 120 Hz'],
-  ["Processador", "Exynos 1480", "Snapdragon 7s Gen 2"],
+  ["Processador", "Exynos 1480", "Dimensity 8300-Ultra"],
   ["RAM", "8 GB", "8 / 12 GB"],
   ["Armazenamento", "128 / 256 GB", "256 / 512 GB"],
-  ["Câmera principal", "50 MP com OIS", "200 MP com OIS"],
+  ["Câmera principal", "50 MP com OIS", "64 MP com OIS"],
   ["Ultrawide", "12 MP", "8 MP"],
   ["Macro", "5 MP", "2 MP"],
   ["Selfie", "32 MP", "16 MP"],
-  ["Bateria", "5.000 mAh", "5.100 mAh"],
+  ["Bateria", "5.000 mAh", "5.000 mAh"],
   ["Carregamento", "25 W", "67 W"],
   ["Proteção", "IP67", "IP54"],
   ["Sistema", "Android com One UI", "Android com HyperOS/MIUI"],
@@ -154,7 +158,7 @@ const FAQS = [
   },
   {
     q: "Qual tem a melhor câmera?",
-    a: "Apesar do sensor de 200 MP do Poco chamar atenção, o Galaxy A55 costuma ser mais previsível no modo automático, especialmente em cores, HDR e consistência entre fotos.",
+    a: "O Poco X6 Pro traz câmera principal de 64 MP com OIS, mas o Galaxy A55 costuma ser mais previsível no modo automático, especialmente em cores, HDR e consistência entre fotos.",
   },
   {
     q: "Qual vale mais a pena para jogar?",
@@ -410,7 +414,7 @@ function ComparisonPage() {
             title="Poco entrega mais força bruta; Galaxy é mais consistente"
             winner="Poco X6 Pro"
             paragraphs={[
-              "O Poco X6 Pro tende a entregar melhor sensação de velocidade em tarefas pesadas, especialmente com mais RAM e armazenamento em algumas versões. Para quem alterna muitos apps, joga casualmente e quer resposta rápida, ele passa uma sensação de aparelho mais agressivo pelo preço.",
+              "O Poco X6 Pro usa o Dimensity 8300-Ultra e leva vantagem clara em tarefas pesadas e jogos. As versões com até 12 GB de RAM e armazenamento UFS 4.0 também dão mais folga para multitarefa.",
               "O Galaxy A55 não é lento — longe disso. A One UI está bem otimizada, as animações são estáveis e o Exynos 1480 segura bem o dia a dia. A diferença é que o Samsung prioriza estabilidade e eficiência, enquanto o Poco busca entregar mais especificação pelo menor preço.",
             ]}
             bullets={[
@@ -424,16 +428,16 @@ function ComparisonPage() {
             id="camera"
             icon={Camera}
             eyebrow="Câmeras"
-            title="Sensor de 200 MP chama atenção, mas Galaxy fotografa melhor no automático"
+            title="Poco traz 64 MP, mas Galaxy é mais consistente no automático"
             winner="Galaxy A55"
             paragraphs={[
-              "O Poco X6 Pro tem o número mais chamativo: câmera principal de 200 MP. Em boa luz, ele captura fotos detalhadas e impressiona em nitidez. Mas megapixel não é tudo. Em HDR, pele, cores, retratos e consistência entre ambientes, o Galaxy A55 costuma errar menos.",
-              "Para quem só quer apontar e fotografar sem configurar nada, o Samsung é mais confiável. O Poco recompensa quem gosta de testar modos, brincar com resolução alta e fotografar em boa iluminação. Em vídeo, o Galaxy também passa mais segurança pela estabilização e processamento mais estável.",
+              "O Poco X6 Pro traz câmera principal de 64 MP com OIS, ultrawide de 8 MP e macro de 2 MP. O Galaxy A55 combina principal de 50 MP com OIS, ultrawide de 12 MP e macro de 5 MP.",
+              "Para quem só quer apontar e fotografar, o Samsung tende a entregar um conjunto mais equilibrado. O Poco atende bem a registros casuais, mas sua proposta principal continua sendo desempenho.",
             ]}
             bullets={[
-              "Poco: mais detalhe em luz boa",
-              "Galaxy: cores e HDR mais confiáveis",
-              "Vídeo e modo automático favorecem Samsung",
+              "Poco: principal de 64 MP com OIS",
+              "Galaxy: ultrawide de 12 MP e principal de 50 MP com OIS",
+              "Conjunto mais equilibrado favorece o Galaxy",
             ]}
           />
 
@@ -462,12 +466,12 @@ function ComparisonPage() {
             winner="Poco X6 Pro"
             paragraphs={[
               "Em jogos populares como Free Fire, PUBG Mobile, Asphalt e Call of Duty Mobile, os dois entregam boa experiência. O Poco tende a manter configurações mais altas em alguns cenários e agrada quem prioriza desempenho por real investido.",
-              "O Galaxy A55 é mais do que suficiente para jogar casualmente, mas não é a melhor opção se o objetivo principal for performance. Nesse caso, o Poco X6 Pro, inclusive, pode ser ainda mais interessante que os dois.",
+              "O Galaxy A55 é mais do que suficiente para jogar casualmente, mas o Dimensity 8300-Ultra torna o Poco X6 Pro a escolha mais indicada quando performance é a prioridade.",
             ]}
             bullets={[
               "Poco é mais indicado para quem joga mais",
               "Galaxy atende bem jogos casuais",
-              "Poco X6 Pro é alternativa melhor para foco total em games",
+              "Dimensity 8300-Ultra dá mais folga ao Poco",
             ]}
           />
 
