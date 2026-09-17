@@ -1,7 +1,4 @@
-import {
-  GALAXY_S24_AFFILIATE_URL,
-  IPHONE_15_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
+import { GALAXY_S24_AFFILIATE_URL, IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -46,7 +43,7 @@ export const Route = createFileRoute("/comparativo/iphone-15-vs-galaxy-s24")({
       {
         property: "og:description",
         content:
-          "Testamos lado a lado iPhone 15 e Galaxy S24 para responder, sem rodeios, qual entrega mais pelo seu dinheiro em 2026.",
+          "Análise lado a lado de iPhone 15 e Galaxy S24 para mostrar qual entrega mais pelo seu dinheiro em 2026.",
       },
       {
         property: "og:image",
@@ -88,7 +85,7 @@ const B_RATING = 4.7;
 
 const A_PROS = [
   "Câmera principal com tonalidade mais previsível e vídeo 4K cinema",
-  "iOS 17 com suporte garantido até pelo menos 2029",
+  "iOS com longo histórico de atualizações",
   "Integração total com Mac, iPad, AirPods, Apple Watch e CarPlay",
   "Maior valor de revenda no mercado brasileiro",
 ];
@@ -100,7 +97,7 @@ const A_CONS = [
 
 const B_PROS = [
   "Tela AMOLED de 120 Hz com 2.600 nits de pico",
-  "Snapdragon 8 Gen 3 com teleobjetiva 3x dedicada",
+  "Exynos 2400 com teleobjetiva 3x dedicada",
   "Galaxy AI: tradução ao vivo, busca por círculo e edição generativa",
   "Sete anos de atualizações de Android e segurança",
 ];
@@ -119,17 +116,71 @@ type Row = {
 };
 
 const ROWS: Row[] = [
-  { label: "Tela", icon: Sun, a: "OLED 6,1\" · 60 Hz · 2.000 nits", b: "AMOLED 6,2\" · 120 Hz · 2.600 nits", winner: "b" },
-  { label: "Processador", icon: Cpu, a: "Apple A16 Bionic (4 nm)", b: "Snapdragon 8 Gen 3 for Galaxy (4 nm)", winner: "tie" },
+  {
+    label: "Tela",
+    icon: Sun,
+    a: 'OLED 6,1" · 60 Hz · 2.000 nits',
+    b: 'AMOLED 6,2" · 120 Hz · 2.600 nits',
+    winner: "b",
+  },
+  {
+    label: "Processador",
+    icon: Cpu,
+    a: "Apple A16 Bionic",
+    b: "Exynos 2400 (4 nm)",
+    winner: "tie",
+  },
   { label: "Memória RAM", icon: Layers, a: "6 GB", b: "8 GB", winner: "b" },
-  { label: "Câmera principal", icon: Camera, a: "48 MP f/1.6 + ultrawide 12 MP", b: "50 MP f/1.8 + ultrawide 12 MP + tele 10 MP 3x", winner: "b" },
-  { label: "Vídeo", icon: Camera, a: "4K 60 fps Dolby Vision HDR", b: "4K 60 fps · 8K 30 fps", winner: "tie" },
-  { label: "Bateria", icon: Battery, a: "3.349 mAh · até 20h vídeo", b: "4.000 mAh · até 22h vídeo", winner: "b" },
-  { label: "Carregamento", icon: Battery, a: "20 W fio · 15 W MagSafe", b: "25 W fio · 15 W sem fio", winner: "b" },
-  { label: "Software", icon: Smartphone, a: "iOS 17 · ~6 anos de updates", b: "One UI 6 (Android 14) · 7 anos de updates", winner: "b" },
-  { label: "Recursos de IA", icon: Sparkles, a: "Apple Intelligence (não chega ao iPhone 15)", b: "Galaxy AI nativa", winner: "b" },
+  {
+    label: "Câmera principal",
+    icon: Camera,
+    a: "48 MP f/1.6 + ultrawide 12 MP",
+    b: "50 MP f/1.8 + ultrawide 12 MP + tele 10 MP 3x",
+    winner: "b",
+  },
+  {
+    label: "Vídeo",
+    icon: Camera,
+    a: "4K 60 fps Dolby Vision HDR",
+    b: "4K 60 fps · 8K 30 fps",
+    winner: "tie",
+  },
+  {
+    label: "Bateria",
+    icon: Battery,
+    a: "Até 20h de vídeo",
+    b: "4.000 mAh · até 22h de vídeo",
+    winner: "b",
+  },
+  {
+    label: "Carregamento",
+    icon: Battery,
+    a: "20 W fio · 15 W MagSafe",
+    b: "25 W fio · 15 W sem fio",
+    winner: "b",
+  },
+  {
+    label: "Software",
+    icon: Smartphone,
+    a: "iOS · longo histórico de suporte",
+    b: "One UI · 7 anos de atualizações",
+    winner: "b",
+  },
+  {
+    label: "Recursos de IA",
+    icon: Sparkles,
+    a: "Apple Intelligence (não chega ao iPhone 15)",
+    b: "Galaxy AI nativa",
+    winner: "b",
+  },
   { label: "Resistência", icon: ShieldCheck, a: "IP68", b: "IP68", winner: "tie" },
-  { label: "Preço de partida (BR)", icon: Wallet, a: "R$ 5.499", b: "R$ 4.299", winner: "b" },
+  {
+    label: "Faixa de preço",
+    icon: Wallet,
+    a: "Geralmente mais caro",
+    b: "Geralmente mais barato",
+    winner: "b",
+  },
 ];
 
 const PROFILES = [
@@ -142,7 +193,9 @@ const PROFILES = [
       "pretende usar o aparelho por 4 a 5 anos com revenda alta no fim",
       "prefere uma curva de uso simples, sem bloatware nem propaganda",
     ],
-    cta: "Ver oferta do iPhone 15",
+    productName: "iPhone 15",
+    affiliateHref: IPHONE_15_AFFILIATE_URL,
+    cta: "Ver iPhone 15 no Mercado Livre",
     accent: "cta" as const,
   },
   {
@@ -154,7 +207,9 @@ const PROFILES = [
       "precisa de teleobjetiva óptica de 3x para retrato e shows",
       "quer 7 anos de atualizações Android sem pagar preço de iPhone",
     ],
-    cta: "Ver oferta do Galaxy S24",
+    productName: "Galaxy S24",
+    affiliateHref: GALAXY_S24_AFFILIATE_URL,
+    cta: "Ver Galaxy S24 no Mercado Livre",
     accent: "teal" as const,
   },
 ];
@@ -193,9 +248,13 @@ function VersusPage() {
         </div>
         <div className="container-tec relative py-14 md:py-20">
           <nav className="mb-5 flex items-center gap-2 text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-foreground">Home</Link>
+            <Link to="/" className="hover:text-foreground">
+              Home
+            </Link>
             <span>/</span>
-            <Link to="/comparativos" className="hover:text-foreground">Comparativos</Link>
+            <Link to="/comparativos" className="hover:text-foreground">
+              Comparativos
+            </Link>
             <span>/</span>
             <span className="text-foreground">iPhone 15 vs Galaxy S24</span>
           </nav>
@@ -209,15 +268,23 @@ function VersusPage() {
                 iPhone 15 vs Galaxy S24: qual vale mais a pena em 2026?
               </h1>
               <p className="mt-5 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-                Colocamos lado a lado os dois smartphones mais procurados do Brasil em 2026.
-                Tela, câmera, bateria, desempenho, IA e ecossistema — testados em uso real
-                durante quatro semanas para mostrar, sem rodeios, qual entrega mais pelo seu dinheiro.
+                Colocamos lado a lado dois smartphones muito procurados no Brasil em 2026. A análise
+                compara tela, câmera, bateria, desempenho, IA e ecossistema para mostrar, sem
+                rodeios, qual faz mais sentido para cada perfil.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5"><User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa</span>
-                <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-3.5 w-3.5" /> Atualizado em 13 mai. 2026</span>
-                <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> Leitura · 11 min</span>
-                <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente</span>
+                <span className="inline-flex items-center gap-1.5">
+                  <User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 13 mai. 2026
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Clock className="h-3.5 w-3.5" /> Leitura · 11 min
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente
+                </span>
               </div>
             </div>
 
@@ -226,7 +293,10 @@ function VersusPage() {
               <div className="relative grid grid-cols-2 overflow-hidden rounded-[1.25rem] border border-border bg-card shadow-elevated">
                 <HeroSide image={IPHONE_IMG} name="iPhone 15" rating={A_RATING} align="left" />
                 <HeroSide image={GALAXY_IMG} name="Galaxy S24" rating={B_RATING} align="right" />
-                <div aria-hidden className="pointer-events-none absolute inset-y-3 left-1/2 -translate-x-1/2 w-px bg-border" />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-y-3 left-1/2 -translate-x-1/2 w-px bg-border"
+                />
                 <span
                   aria-hidden
                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grid h-12 w-12 place-items-center rounded-full border border-border bg-background text-xs font-bold tracking-wider text-foreground shadow-soft"
@@ -267,9 +337,14 @@ function VersusPage() {
                 Ofertas atualizadas
               </span>
               <div className="mt-4 space-y-3">
-                <OfferLine name="iPhone 15" price="R$ 5.499" cta="Ver oferta do iPhone 15" variant="cta" />
-                <OfferLine name="Galaxy S24" price="R$ 4.299" cta="Ver oferta do Galaxy S24" variant="outline" />
+                <OfferLine name="iPhone 15" affiliateHref={IPHONE_15_AFFILIATE_URL} variant="cta" />
+                <OfferLine
+                  name="Galaxy S24"
+                  affiliateHref={GALAXY_S24_AFFILIATE_URL}
+                  variant="outline"
+                />
               </div>
+              <AffiliateRedirectNotice className="mt-3" />
             </div>
           </div>
         </div>
@@ -280,12 +355,11 @@ function VersusPage() {
           <section id="veredito" className="scroll-mt-24">
             <SectionTitle eyebrow="Veredito rápido" title="iPhone 15 ou Galaxy S24 em 2026?" />
             <p className="mt-4 text-lg leading-relaxed text-foreground">
-              Em hardware puro, o <strong>Galaxy S24 entrega mais pelo preço cobrado</strong>:
-              tela 120 Hz, teleobjetiva óptica, bateria maior, carga mais rápida e Galaxy AI
-              integrada. O <strong>iPhone 15</strong> devolve com câmera mais previsível, vídeo
-              de qualidade cinematográfica, integração total com o ecossistema Apple e revenda
-              que segura o investimento por anos. A escolha não é técnica — é sobre como você
-              usa o celular.
+              Em hardware puro, o <strong>Galaxy S24 entrega mais pelo preço cobrado</strong>: tela
+              120 Hz, teleobjetiva óptica, bateria maior, carga mais rápida e Galaxy AI integrada. O{" "}
+              <strong>iPhone 15</strong> devolve com câmera mais previsível, vídeo de qualidade
+              cinematográfica, integração total com o ecossistema Apple e revenda que segura o
+              investimento por anos. A escolha não é técnica — é sobre como você usa o celular.
             </p>
 
             <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -313,14 +387,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "Alumínio aeroespacial com vidro fosco que reduz marcas de dedo. A 171 g, equilíbrio perfeito na mão. Dynamic Island se mostrou útil para timer, navegação e música após algumas semanas de uso.",
+              text: "Alumínio aeroespacial com vidro fosco que reduz marcas de dedo. A 171 g, equilíbrio perfeito na mão. Dynamic Island se mostrou útil para timer, navegação e música após algumas semanas de uso.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "Moldura de alumínio reto e cantos ligeiramente arredondados. 167 g, levemente mais leve. O acabamento é premium, mas o vidro traseiro brilhante marca digitais com facilidade.",
+              text: "Moldura de alumínio reto e cantos ligeiramente arredondados. 167 g, levemente mais leve. O acabamento é premium, mas o vidro traseiro brilhante marca digitais com facilidade.",
             }}
             winner="tie"
           />
@@ -334,14 +406,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "Super Retina XDR de 6,1\" com calibração de cor impecável e 2.000 nits em HDR. O incômodo segue sendo a taxa de atualização de 60 Hz: rolar feed e jogar parece datado depois de testar 120 Hz.",
+              text: 'Super Retina XDR de 6,1" com calibração de cor impecável e 2.000 nits em HDR. O incômodo segue sendo a taxa de atualização de 60 Hz: rolar feed e jogar parece datado depois de testar 120 Hz.',
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "AMOLED de 6,2\" com 120 Hz adaptativos, 2.600 nits de pico e visibilidade superior sob sol forte. A fluidez na rolagem e nos jogos é o diferencial mais imediato em relação ao iPhone.",
+              text: 'AMOLED de 6,2" com 120 Hz adaptativos, 2.600 nits de pico e visibilidade superior sob sol forte. A fluidez na rolagem e nos jogos é o diferencial mais imediato em relação ao iPhone.',
             }}
             winner="b"
           />
@@ -351,18 +421,16 @@ function VersusPage() {
             id="desempenho"
             icon={Cpu}
             eyebrow="Desempenho"
-            title="A16 Bionic vs Snapdragon 8 Gen 3"
+            title="A16 Bionic vs Exynos 2400"
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "A16 Bionic ainda figura no topo do single-core (Geekbench 6 ~2.520) e abre apps de forma instantânea. Os 6 GB de RAM são compensados pela gestão agressiva do iOS, que mantém vários apps em segundo plano.",
+              text: "O A16 Bionic continua confortável para apps, câmera, edição e jogos. Os 6 GB de RAM são administrados pelo iOS, embora aplicativos pesados possam recarregar com mais frequência do que em aparelhos com mais memória.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "Snapdragon 8 Gen 3 for Galaxy lidera o multi-core (Geekbench 6 ~6.900) e tem GPU mais potente. Os 8 GB de RAM ajudam em multitarefa pesada, edição de vídeo e Galaxy AI rodando localmente.",
+              text: "O Exynos 2400 entrega desempenho de categoria premium e os 8 GB de RAM ajudam em multitarefa, edição de vídeo e recursos do Galaxy AI. A experiência também depende da temperatura, do software e da versão do aparelho.",
             }}
             winner="tie"
           />
@@ -376,14 +444,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "48 MP f/1.6 com pixel binning de 24 MP, mais ultrawide 12 MP. Tom de pele realista, vídeo 4K Dolby Vision líder do mercado e modo retrato automático sem precisar trocar de modo.",
+              text: "48 MP f/1.6 com pixel binning de 24 MP, mais ultrawide 12 MP. Tom de pele realista, vídeo 4K Dolby Vision líder do mercado e modo retrato automático sem precisar trocar de modo.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "50 MP f/1.8, ultrawide 12 MP e teleobjetiva óptica 3x de 10 MP. Mais alcance e versatilidade para shows, viagens e retratos. Edição generativa com IA permite remover objetos e refazer fundos.",
+              text: "50 MP f/1.8, ultrawide 12 MP e teleobjetiva óptica 3x de 10 MP. Mais alcance e versatilidade para shows, viagens e retratos. Edição generativa com IA permite remover objetos e refazer fundos.",
             }}
             winner="b"
           />
@@ -397,14 +463,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "3.349 mAh entregam 6 a 7 horas de tela em uso misto. Carregamento de 20 W com fio leva o aparelho de 0% a 50% em ~30 minutos, mas a carga completa exige cerca de 1h30.",
+              text: "A Apple informa até 20 horas de reprodução de vídeo. A autonomia varia com brilho, sinal, câmera, jogos e navegação; a recarga rápida pode chegar a cerca de 50% em 30 minutos com adaptador compatível.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "4.000 mAh sustentam 7 a 8 horas de tela. Carga de 25 W com fio (cabo não incluso) atinge 0% a 65% em 30 minutos. Há ainda 15 W sem fio e 4,5 W reverso para carregar fones.",
+              text: "A bateria de 4.000 mAh foi projetada para atravessar um dia de uso moderado. Segundo a Samsung, a carga de 25 W chega a cerca de 50% em 30 minutos; há também carregamento sem fio e Wireless PowerShare.",
             }}
             winner="b"
           />
@@ -418,14 +482,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "Genshin Impact em qualidade Alta segura 55–60 fps por longas sessões com aquecimento controlado. A limitação real é o painel de 60 Hz, que não acompanha jogos preparados para 90 ou 120 fps.",
+              text: "O A16 Bionic ainda tem potência para jogos exigentes, mas o painel de 60 Hz não exibe a fluidez adicional de títulos preparados para 90 ou 120 fps. Desempenho e temperatura variam conforme o jogo e as configurações.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "Snapdragon 8 Gen 3 com ray tracing por hardware roda Genshin acima de 60 fps e suporta jogos a 120 fps no painel adaptativo. Esquenta um pouco mais sob carga sustentada, mas mantém estabilidade.",
+              text: "O Exynos 2400 traz GPU com ray tracing por hardware e aproveita o painel adaptativo de até 120 Hz em jogos compatíveis. Em sessões longas, desempenho e temperatura variam conforme o título e as configurações.",
             }}
             winner="b"
           />
@@ -439,14 +501,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "Apple Intelligence ficou restrita à linha 15 Pro e superior — o iPhone 15 padrão não roda os recursos generativos do iOS 18. O que existe é a Siri tradicional e ditado offline. Para quem busca IA local, fica devendo.",
+              text: "Apple Intelligence ficou restrita à linha 15 Pro e superior — o iPhone 15 padrão não roda os recursos generativos do iOS 18. O que existe é a Siri tradicional e ditado offline. Para quem busca IA local, fica devendo.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "Galaxy AI integrada nativamente: tradução de chamadas ao vivo, busca por círculo, transcrição com resumo de reuniões, edição generativa de fotos e teclado com sugestões de tom. Funciona local e na nuvem.",
+              text: "Galaxy AI integrada nativamente: tradução de chamadas ao vivo, busca por círculo, transcrição com resumo de reuniões, edição generativa de fotos e teclado com sugestões de tom. Funciona local e na nuvem.",
             }}
             winner="b"
           />
@@ -460,14 +520,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "Integração quase invisível com Mac, iPad, AirPods, Apple Watch, AirTag e CarPlay. AirDrop, Handoff, Universal Clipboard e Continuity Camera funcionam sem configuração. Difícil sair depois de entrar.",
+              text: "Integração quase invisível com Mac, iPad, AirPods, Apple Watch, AirTag e CarPlay. AirDrop, Handoff, Universal Clipboard e Continuity Camera funcionam sem configuração. Difícil sair depois de entrar.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "Conecta bem com Galaxy Watch, Buds e tablets, e tem boa integração com Windows via Phone Link. Quick Share funciona como o AirDrop. Menos amarrado, mais flexível com produtos de terceiros.",
+              text: "Conecta bem com Galaxy Watch, Buds e tablets, e tem boa integração com Windows via Phone Link. Quick Share funciona como o AirDrop. Menos amarrado, mais flexível com produtos de terceiros.",
             }}
             winner="a"
           />
@@ -481,14 +539,12 @@ function VersusPage() {
             a={{
               name: "iPhone 15",
               image: IPHONE_IMG,
-              text:
-                "A partir de R$ 5.499 na versão de 128 GB. Revenda histórica acima de 60% após dois anos — o melhor mercado de seminovos do país. O custo real após troca tende a ser menor que rivais Android.",
+              text: "Normalmente custa mais na versão de 128 GB, mas mantém boa procura no mercado de seminovos. O custo após uma futura troca pode compensar parte da diferença inicial.",
             }}
             b={{
               name: "Galaxy S24",
               image: GALAXY_IMG,
-              text:
-                "A partir de R$ 4.299 na versão de 256 GB — mais armazenamento por menos dinheiro. Revenda gira em torno de 45% em dois anos, abaixo do iPhone, mas o desconto inicial compensa em quase todos os cenários.",
+              text: "Normalmente entrega mais armazenamento por um preço menor. A revenda tende a ficar abaixo da do iPhone, mas a economia inicial pode compensar essa diferença.",
             }}
             winner="b"
           />
@@ -497,24 +553,17 @@ function VersusPage() {
           <section className="scroll-mt-24">
             <SectionTitle eyebrow="Forças e fraquezas" title="O que pesa de cada lado" />
             <div className="mt-6 grid gap-5 md:grid-cols-2">
-              <StrengthsCard
-                tone="cta"
-                name="iPhone 15"
-                pros={A_PROS}
-                cons={A_CONS}
-              />
-              <StrengthsCard
-                tone="teal"
-                name="Galaxy S24"
-                pros={B_PROS}
-                cons={B_CONS}
-              />
+              <StrengthsCard tone="cta" name="iPhone 15" pros={A_PROS} cons={A_CONS} />
+              <StrengthsCard tone="teal" name="Galaxy S24" pros={B_PROS} cons={B_CONS} />
             </div>
           </section>
 
           {/* Tabela */}
           <section id="tabela" className="scroll-mt-24">
-            <SectionTitle eyebrow="Tabela completa" title="iPhone 15 vs Galaxy S24, item por item" />
+            <SectionTitle
+              eyebrow="Tabela completa"
+              title="iPhone 15 vs Galaxy S24, item por item"
+            />
             <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
               <div className="grid grid-cols-[1.1fr_1fr_1fr] border-b border-border bg-surface text-sm">
                 <div className="p-4 font-semibold text-foreground">Característica</div>
@@ -557,11 +606,12 @@ function VersusPage() {
               Qual vale mais a pena em 2026?
             </h2>
             <p className="mt-3 text-foreground leading-relaxed">
-              Se a decisão fosse puramente racional pelo preço cobrado, o <strong>Galaxy S24</strong> sai
-              na frente em quase todas as categorias técnicas. Mas comprar celular é decisão de
-              ecossistema. Se você já tem produtos Apple, ou se câmera com tom de pele realista e
-              vídeo de qualidade profissional importam mais do que IA generativa, o <strong>iPhone 15</strong> ainda
-              é o caminho. Não existe escolha errada — existe a escolha alinhada ao seu uso.
+              Se a decisão fosse puramente racional pelo preço cobrado, o{" "}
+              <strong>Galaxy S24</strong> sai na frente em quase todas as categorias técnicas. Mas
+              comprar celular é decisão de ecossistema. Se você já tem produtos Apple, ou se câmera
+              com tom de pele realista e vídeo de qualidade profissional importam mais do que IA
+              generativa, o <strong>iPhone 15</strong> ainda é o caminho. Não existe escolha errada
+              — existe a escolha alinhada ao seu uso.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -667,32 +717,36 @@ function HeroSide({
 
 function OfferLine({
   name,
-  price,
-  cta,
+  affiliateHref,
   variant,
 }: {
   name: string;
-  price: string;
-  cta: string;
+  affiliateHref: string;
   variant: "cta" | "outline";
 }) {
   return (
     <div className="rounded-xl border border-border bg-background p-3">
       <div className="flex items-baseline justify-between">
         <span className="text-xs font-semibold text-foreground">{name}</span>
-        <span className="font-heading text-base font-bold text-foreground">{price}</span>
+        <span className="text-[11px] text-muted-foreground">Preço e estoque atualizados</span>
       </div>
       <a
-        href="/ofertas"
+        href={affiliateHref}
         target="_blank"
-        rel="noopener noreferrer sponsored"
+        rel="nofollow sponsored noopener noreferrer"
+        onClick={() =>
+          trackAffiliateClick({
+            productName: name,
+            pageType: "comparativo",
+          })
+        }
         className={`mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition ${
           variant === "cta"
             ? "bg-cta text-cta-foreground shadow-soft hover:brightness-105"
             : "border border-border bg-background text-foreground hover:bg-secondary"
         }`}
       >
-        {cta} <ArrowUpRight className="h-3.5 w-3.5" />
+        Ver no Mercado Livre <ArrowUpRight className="h-3.5 w-3.5" />
       </a>
     </div>
   );
@@ -874,12 +928,16 @@ function ProfileCard({
   title,
   image,
   items,
+  productName,
+  affiliateHref,
   cta,
   accent,
 }: {
   title: string;
   image: string;
   items: string[];
+  productName: string;
+  affiliateHref: string;
   cta: string;
   accent: "cta" | "teal";
 }) {
@@ -903,9 +961,15 @@ function ProfileCard({
           ))}
         </ul>
         <a
-          href="/ofertas"
+          href={affiliateHref}
           target="_blank"
-          rel="noopener noreferrer sponsored"
+          rel="nofollow sponsored noopener noreferrer"
+          onClick={() =>
+            trackAffiliateClick({
+              productName,
+              pageType: "comparativo",
+            })
+          }
           className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition ${
             accent === "cta"
               ? "bg-cta text-cta-foreground shadow-soft hover:brightness-105 hover:-translate-y-0.5"
@@ -918,9 +982,3 @@ function ProfileCard({
     </article>
   );
 }
-
-
-
-
-
-

@@ -47,7 +47,7 @@ export const Route = createFileRoute("/review/galaxy-s24")({
       {
         property: "og:description",
         content:
-          "Testamos câmera, Galaxy AI, bateria e gaming do Galaxy S24 em 2026 para responder, sem rodeios, se ele ainda merece o seu dinheiro.",
+          "Analisamos câmera, Galaxy AI, bateria e desempenho do Galaxy S24 em 2026 para responder, sem rodeios, se ele ainda merece o seu dinheiro.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
@@ -102,30 +102,30 @@ const SCORES = [
 
 const PROS = [
   "Tela LTPO 120 Hz com 2.600 nits de pico — referência da categoria",
-  "Snapdragon 8 Gen 3 for Galaxy entrega desempenho de top de linha sustentado",
+  "Exynos 2400 entrega desempenho de categoria premium",
   "Galaxy AI nativa: tradução em ligações, Circle to Search e edição generativa",
   "7 anos de atualizações de Android e patches de segurança",
-  "Tamanho compacto (6,2\") com chassi em alumínio e Gorilla Glass Victus 2",
+  'Tamanho compacto (6,2") com chassi em alumínio e Gorilla Glass Victus 2',
   "Carregamento de 25 W com fio + 15 W sem fio + carga reversa",
 ];
 
 const CONS = [
   "Bateria de 4.000 mAh é a menor do segmento premium",
   "Carregamento de 25 W ficou atrás dos rivais chineses (45–100 W)",
-  "Versão brasileira ainda usa Exynos em algumas regiões — confira a SKU",
+  "Versões importadas podem usar outro processador — confira o anúncio e a SKU",
   "Câmera ultrawide de 12 MP perde detalhe em baixa luz",
   "Bordas relativamente grossas comparadas ao Galaxy S24+ e Ultra",
 ];
 
 const SPECS: Array<[string, string]> = [
-  ["Tela", "6,2\" Dynamic AMOLED 2X LTPO · 120 Hz · 2.600 nits HDR"],
-  ["Processador", "Snapdragon 8 Gen 3 for Galaxy (4 nm)"],
+  ["Tela", '6,2" Dynamic AMOLED 2X LTPO · 120 Hz · 2.600 nits HDR'],
+  ["Processador", "Exynos 2400 (4 nm) na versão analisada"],
   ["Memória RAM", "8 GB LPDDR5X"],
   ["Armazenamento", "128 / 256 / 512 GB UFS 4.0"],
   ["Câmera principal", "50 MP f/1.8 OIS + tele 10 MP 3x + ultrawide 12 MP"],
   ["Câmera frontal", "12 MP f/2.2 com autofoco dual pixel"],
   ["Bateria", "4.000 mAh · até 22h de vídeo"],
-  ["Carregamento", "25 W com fio · 15 W Qi2 · 4,5 W reverso"],
+  ["Carregamento", "25 W com fio · carregamento sem fio · Wireless PowerShare"],
   ["Conector", "USB-C 3.2 (até 10 Gbps)"],
   ["Resistência", "IP68 (até 1,5 m, 30 min)"],
   ["Peso", "167 g"],
@@ -139,22 +139,22 @@ const COMPARES = [
   },
   {
     title: "Galaxy S24 vs S23",
-    note: "Galaxy AI exclusiva, novo Snapdragon 8 Gen 3 e tela com 2.600 nits valem o upgrade vindo do S22 ou anterior. Do S23 para o S24 o salto é incremental.",
+    note: "Galaxy AI, Exynos 2400 e tela com 2.600 nits tornam o S24 mais atraente para quem vem do S22 ou anterior. Do S23 para o S24, o salto é incremental.",
   },
   {
     title: "Galaxy S24 vs S24+",
-    note: "O Plus traz tela 6,7\" QHD+, bateria de 4.900 mAh e carga de 45 W. Se autonomia e área de tela importam, vale a diferença de R$ 1.000.",
+    note: 'O Plus traz tela 6,7" QHD+, bateria de 4.900 mAh e carga de 45 W. Se autonomia e área de tela importam, vale comparar a diferença de preço atual.',
   },
 ];
 
 const FAQ = [
   {
     q: "Galaxy S24 vale a pena comprar em 2026?",
-    a: "Sim. Com a chegada do S25 e do S26, o S24 caiu para a faixa de R$ 4.299 e ficou com um custo-benefício excelente. Você leva tela LTPO 120 Hz, Snapdragon 8 Gen 3, Galaxy AI completa e 7 anos de atualizações — pacote que poucos rivais entregam pelo preço.",
+    a: "Pode valer muito a pena quando aparece com bom desconto. Você leva tela LTPO de 120 Hz, Exynos 2400, recursos do Galaxy AI e sete anos de atualizações a partir do lançamento. Compare o preço atual antes de decidir.",
   },
   {
     q: "A versão brasileira do Galaxy S24 é Snapdragon ou Exynos?",
-    a: "Em 2026, a Samsung passou a distribuir majoritariamente a versão Snapdragon 8 Gen 3 for Galaxy no Brasil, mas algumas SKUs antigas em estoque ainda trazem o Exynos 2400. A diferença em uso real é pequena, mas o Snapdragon vence em eficiência térmica e gaming sustentado.",
+    a: "A configuração considerada nesta análise usa o Exynos 2400, processador que a própria Samsung associa ao Galaxy S24. Como anúncios importados podem trazer outra variante, confirme a SKU e o processador informados pelo vendedor antes da compra.",
   },
   {
     q: "Galaxy AI funciona em português?",
@@ -162,11 +162,11 @@ const FAQ = [
   },
   {
     q: "Galaxy S24 esquenta jogando?",
-    a: "Sob carga pesada (Genshin Impact, Wuthering Waves), o aparelho atinge cerca de 42 °C na traseira após 30 minutos. A câmara de vapor faz um trabalho honesto, mas o S24+ e o S24 Ultra dissipam calor melhor por terem chassi maior.",
+    a: "Como todo aparelho compacto de alto desempenho, o Galaxy S24 pode aquecer em jogos e tarefas pesadas. Temperatura e estabilidade variam conforme o jogo, as configurações, a versão do sistema e o ambiente; modelos maiores tendem a dissipar calor com mais facilidade.",
   },
   {
     q: "Por quanto tempo o Galaxy S24 vai receber atualizações?",
-    a: "A Samsung garante 7 anos de atualizações de Android e patches de segurança, ou seja, suporte estendido até 2031. É a maior promessa de longevidade do mercado Android, equivalente ao histórico da Apple.",
+    a: "A Samsung anunciou sete gerações de atualizações do sistema e sete anos de atualizações de segurança para a linha S24, contados a partir do lançamento. O calendário e a disponibilidade podem variar por mercado e operadora.",
   },
 ];
 
@@ -207,9 +207,13 @@ function ReviewPage() {
         <div className="container-tec relative grid gap-12 py-14 md:py-20 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7">
             <nav className="mb-5 flex items-center gap-2 text-xs text-muted-foreground">
-              <Link to="/" className="hover:text-foreground">Home</Link>
+              <Link to="/" className="hover:text-foreground">
+                Home
+              </Link>
               <span>/</span>
-              <Link to="/celulares" className="hover:text-foreground">Celulares</Link>
+              <Link to="/celulares" className="hover:text-foreground">
+                Celulares
+              </Link>
               <span>/</span>
               <span className="text-foreground">Galaxy S24 Review</span>
             </nav>
@@ -222,16 +226,23 @@ function ReviewPage() {
               Galaxy S24 vale a pena em 2026? Review completo e sem rodeios
             </h1>
             <p className="mt-5 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              Passamos quatro semanas com o Galaxy S24 padrão como aparelho principal — fotografando
-              ao sol e à noite, jogando títulos pesados, testando Galaxy AI em português e carregando
-              ele do zero ao fim do dia. O veredito direto sobre tela, câmera, bateria e custo-benefício
-              em 2026, com o Galaxy S26 já no mercado.
+              Nesta análise editorial, reunimos especificações oficiais e os pontos que mais pesam
+              na compra do Galaxy S24 padrão: tela, câmera, desempenho, bateria, Galaxy AI e
+              custo-benefício em 2026.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5"><User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa</span>
-              <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-3.5 w-3.5" /> Atualizado em 12 mai. 2026</span>
-              <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> Leitura · 11 min</span>
-              <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente</span>
+              <span className="inline-flex items-center gap-1.5">
+                <User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 12 mai. 2026
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-3.5 w-3.5" /> Leitura · 11 min
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente
+              </span>
             </div>
           </div>
           <div className="relative lg:col-span-5">
@@ -299,8 +310,12 @@ function ReviewPage() {
               <p className="mt-2 text-sm text-muted-foreground">
                 Veja a oferta mais atualizada em parceiro confiável.
               </p>
-              <div className="mt-3 font-heading text-2xl font-bold text-foreground">R$ 4.299</div>
-              <span className="text-[11px] text-muted-foreground">*pode variar</span>
+              <div className="mt-3 font-heading text-lg font-bold text-foreground">
+                Consulte o preço atual
+              </div>
+              <span className="text-[11px] text-muted-foreground">
+                Preço, estoque e condições podem mudar
+              </span>
               <a
                 href={GALAXY_S24_AFFILIATE_URL}
                 target="_blank"
@@ -330,19 +345,27 @@ function ReviewPage() {
         <main className="lg:col-span-9 space-y-14">
           {/* Veredito */}
           <section id="veredito" className="scroll-mt-24">
-            <SectionTitle eyebrow="Veredito rápido" title="Vale a pena comprar o Galaxy S24 em 2026?" />
+            <SectionTitle
+              eyebrow="Veredito rápido"
+              title="Vale a pena comprar o Galaxy S24 em 2026?"
+            />
             <p className="mt-4 text-lg leading-relaxed text-foreground">
-              Sim — e talvez seja a compra mais inteligente do segmento Android premium em 2026.
-              Com a queda natural de preço pós-S26, o S24 padrão ficou na faixa de R$ 4.299
-              entregando <strong>tela LTPO 120 Hz, Snapdragon 8 Gen 3 for Galaxy, Galaxy AI completa
-              em português e 7 anos de atualizações</strong>. Os pontos fracos seguem sendo
-              autonomia (4.000 mAh) e carga lenta (25 W), mas a soma dos acertos faz dele o
-              melhor compacto Android do momento.
+              Sim — especialmente quando aparece com desconto frente aos modelos mais novos. O S24
+              padrão entrega{" "}
+              <strong>
+                tela LTPO 120 Hz, Exynos 2400, recursos do Galaxy AI e 7 anos de atualizações a
+                partir do lançamento
+              </strong>
+              . Os pontos fracos seguem sendo autonomia (4.000 mAh) e carga lenta (25 W), mas a soma
+              dos acertos faz dele o melhor compacto Android do momento.
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {SCORES.map((s) => (
-                <div key={s.label} className="rounded-xl border border-border bg-card p-4 shadow-soft">
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-border bg-card p-4 shadow-soft"
+                >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-foreground">{s.label}</span>
                     <Rating value={s.value} />
@@ -367,7 +390,9 @@ function ReviewPage() {
                   <span className="grid h-8 w-8 place-items-center rounded-md bg-teal/10 text-teal">
                     <Check className="h-4 w-4" strokeWidth={2.5} />
                   </span>
-                  <h3 className="font-heading text-lg font-semibold text-foreground">Pontos fortes</h3>
+                  <h3 className="font-heading text-lg font-semibold text-foreground">
+                    Pontos fortes
+                  </h3>
                 </div>
                 <ul className="mt-4 space-y-2.5">
                   {PROS.map((p) => (
@@ -383,7 +408,9 @@ function ReviewPage() {
                   <span className="grid h-8 w-8 place-items-center rounded-md bg-destructive/10 text-destructive">
                     <X className="h-4 w-4" strokeWidth={2.5} />
                   </span>
-                  <h3 className="font-heading text-lg font-semibold text-foreground">Pontos fracos</h3>
+                  <h3 className="font-heading text-lg font-semibold text-foreground">
+                    Pontos fracos
+                  </h3>
                 </div>
                 <ul className="mt-4 space-y-2.5">
                   {CONS.map((c) => (
@@ -405,7 +432,10 @@ function ReviewPage() {
                 <tbody>
                   {SPECS.map(([k, v], i) => (
                     <tr key={k} className={i % 2 === 0 ? "bg-card" : "bg-surface"}>
-                      <th scope="row" className="w-1/3 px-5 py-3 text-left font-semibold text-foreground">
+                      <th
+                        scope="row"
+                        className="w-1/3 px-5 py-3 text-left font-semibold text-foreground"
+                      >
                         {k}
                       </th>
                       <td className="px-5 py-3 text-muted-foreground">{v}</td>
@@ -437,15 +467,15 @@ function ReviewPage() {
             id="desempenho"
             icon={Cpu}
             eyebrow="Desempenho"
-            title="Snapdragon 8 Gen 3 for Galaxy: top de linha sustentado"
+            title="Exynos 2400: desempenho de categoria premium"
             score={4.8}
             paragraphs={[
-              "A versão 'for Galaxy' do Snapdragon 8 Gen 3 chega com clock levemente superior ao padrão e é exclusiva da linha S24. Em benchmarks, marca cerca de 2.250 pontos no single-core e 7.100 no multi-core do Geekbench 6. Em uso real, o que mais impressiona é a sustentação: depois de 20 minutos de carga pesada, o desempenho cai apenas 7–9% — bem abaixo dos 15–20% típicos de rivais Android.",
-              "Os 8 GB de RAM LPDDR5X dão conta de multitarefa real com 6–8 apps em segundo plano sem recarregar. Para quem usa muito Samsung DeX, abrir o aparelho ao monitor entrega uma experiência de mini-PC bastante competente — algo que o iOS ainda não oferece sem adaptações.",
+              "O Exynos 2400 combina CPU de dez núcleos e GPU Xclipse 940 com ray tracing por hardware. É um chip de categoria premium, adequado para multitarefa, edição e jogos; a sustentação varia conforme temperatura, versão do software e carga aplicada.",
+              "Os 8 GB de RAM LPDDR5X atendem bem à multitarefa e aos recursos do Galaxy AI. O Samsung DeX também permite usar o aparelho em monitor externo, recurso útil para produtividade leve.",
             ]}
             bullets={[
-              "Geekbench 6: ~2.250 single / ~7.100 multi",
-              "Throttling controlado: queda de 7–9% sob carga longa",
+              "CPU de dez núcleos e GPU Xclipse 940",
+              "Ray tracing por hardware em jogos compatíveis",
               "Samsung DeX para uso desktop em monitor externo",
             ]}
           />
@@ -457,12 +487,12 @@ function ReviewPage() {
             title="Gaming no Galaxy S24: 120 Hz e câmara de vapor para sessões longas"
             score={4.7}
             paragraphs={[
-              "Genshin Impact roda em qualidade alta com 60 fps quase travados, e Wuthering Waves se mantém em 60 fps com configuração média-alta. Call of Duty Mobile aceita 120 fps no Battle Royale e a tela LTPO entrega de fato essa fluidez visual — algo que o iPhone 15 não consegue por travar em 60 Hz.",
-              "A câmara de vapor é maior que a do S23 e dissipa calor de forma eficiente até cerca de 30 minutos. Em sessões mais longas, o aparelho atinge ~42 °C na traseira e o desempenho cai uns 8%. Para quem joga sério, é o melhor pacote do segmento compacto Android até R$ 4.500.",
+              "O Exynos 2400 e a tela adaptativa de até 120 Hz formam um conjunto forte para jogos compatíveis. A taxa efetiva de quadros depende do título, da qualidade gráfica, da temperatura e das atualizações do sistema.",
+              "A câmara de vapor ajuda a controlar o calor, mas o corpo compacto oferece menos área de dissipação que modelos maiores. Em sessões longas, reduzir detalhes gráficos pode favorecer estabilidade e autonomia.",
             ]}
             bullets={[
-              "Genshin Impact: 60 fps em High estáveis",
-              "CoDM em 120 fps reais com tela acompanhando",
+              "Tela adaptativa de até 120 Hz",
+              "GPU com ray tracing por hardware",
               "Câmara de vapor mais robusta que a do S23",
             ]}
           />
@@ -475,7 +505,7 @@ function ReviewPage() {
             score={4.6}
             paragraphs={[
               "O conjunto fotográfico do S24 padrão é o que falta na maioria dos rivais: além da principal de 50 MP com OIS, ele traz uma teleobjetiva dedicada de 10 MP com zoom óptico de 3x — recurso que o iPhone 15 padrão não oferece. As fotos saem com bom alcance dinâmico, processamento Samsung um pouco mais saturado que o natural e excelente performance em retratos com bokeh recortado.",
-              "Em baixa luz, o modo Noturno usa exposições de até 5 segundos e o ISP do Snapdragon entrega resultados consistentes, com ruído controlado e cores fiéis. O vídeo chega a 8K 30 fps e 4K 60 fps com HDR10+, com estabilização Super Steady muito eficiente. A ultrawide de 12 MP é o elo mais fraco: cumpre em luz boa, mas perde nitidez à noite.",
+              "Em baixa luz, o modo Noturno combina múltiplos quadros para reduzir ruído. O vídeo chega a 8K 30 fps e 4K 60 fps com HDR10+, enquanto a ultrawide de 12 MP tende a perder mais detalhe à noite do que a câmera principal.",
             ]}
             bullets={[
               "Teleobjetiva dedicada 3x (10 MP) — rara no compacto",
@@ -491,13 +521,13 @@ function ReviewPage() {
             title="Galaxy AI em português: o diferencial real do S24 em 2026"
             score={4.7}
             paragraphs={[
-              "Galaxy AI deixou de ser promessa e virou recurso de uso diário. A tradução ao vivo de ligações funciona em português brasileiro com latência de 1–2 segundos e precisão alta para conversas comuns — testamos com inglês, espanhol e japonês. O Circle to Search (em parceria com o Google) permite contornar qualquer elemento na tela e pesquisar imediatamente, recurso que economiza tempo real quando se vê algo em foto ou vídeo.",
-              "Outros destaques: Note Assist gera resumos e formatação automática de notas; Browsing Assist resume páginas longas no Samsung Internet; Photo Assist remove pessoas, objetos e reflexos com qualidade comparável ao Magic Editor do Pixel; e Interpreter funciona offline em conversas presenciais. A Samsung confirmou que esses recursos seguem gratuitos até 2025 e devem permanecer no S24 mesmo após eventual cobrança em modelos novos.",
+              "O Galaxy AI reúne tradução de chamadas, Circle to Search, resumo de notas, transcrição e edição generativa. A utilidade e a precisão variam por idioma, conteúdo e conexão, e alguns recursos exigem conta Samsung ou Google.",
+              "Note Assist ajuda a resumir e formatar notas; Browsing Assist resume páginas no Samsung Internet; Photo Assist permite mover ou remover elementos; e Interpreter auxilia em conversas presenciais. Disponibilidade e condições podem variar por região, versão do sistema e serviço.",
             ]}
             bullets={[
               "Tradução ao vivo de ligações em português",
               "Circle to Search e Photo Assist generativo",
-              "Recursos confirmados sem cobrança no S24",
+              "Disponibilidade varia por conta, região e serviço",
             ]}
           />
 
@@ -508,13 +538,13 @@ function ReviewPage() {
             title="Bateria do Galaxy S24: dia inteiro, mas sem folga"
             score={4.5}
             paragraphs={[
-              "Os 4.000 mAh são o ponto mais frágil do pacote. Em uso misto (1h30 de redes sociais, 1h de streaming, 30 min de jogos, GPS e mensagens), o S24 termina o dia entre 12% e 22%, com 6h30 a 8h de tela ativa graças à eficiência do LTPO. É um resultado dentro do esperado para o tamanho da bateria, mas inferior ao Galaxy S24+ (4.900 mAh) e ao iPhone 15 Plus.",
-              "O carregamento de 25 W com fio é o ponto mais defasado: 0–50% em cerca de 30 minutos e carga total em pouco mais de 1 hora. Com Android chegando a 100 W no segmento chinês, a Samsung manteve uma postura conservadora prometendo maior longevidade da bateria — algo que se confirma em históricos de saúde após 12–18 meses.",
+              "Os 4.000 mAh pedem mais atenção de quem usa jogos, câmera, 5G ou navegação por muitas horas. Para uso moderado, a proposta é chegar ao fim do dia; o S24+ oferece mais folga com 4.900 mAh.",
+              "O carregamento de 25 W com fio é um ponto defasado frente a rivais mais rápidos. Segundo a Samsung, o Galaxy S24 chega a cerca de 50% em 30 minutos com o adaptador compatível, vendido separadamente em alguns mercados.",
             ]}
             bullets={[
-              "Tela ativa: 6h30 a 8h em uso real",
-              "0–50% em ~30 min · carga total em ~1h",
-              "Saúde da bateria preservada após ciclos longos",
+              "Autonomia varia bastante conforme o uso e a rede",
+              "Até cerca de 50% em 30 min com adaptador de 25 W",
+              "Carregamento sem fio e Wireless PowerShare",
             ]}
           />
 
@@ -526,7 +556,7 @@ function ReviewPage() {
             score={4.7}
             paragraphs={[
               "A One UI 6.1 sobre Android 14 é, hoje, a melhor versão da skin da Samsung. Animações fluidas, painel rápido reformulado, modo escuro consistente em todos os apps próprios e personalização profunda de tela inicial e telas de bloqueio. O Good Lock, baixado à parte, libera customizações que o Android puro não oferece.",
-              "O ecossistema cresceu: Galaxy Watch, Buds, tablets e notebooks Samsung conversam de forma fluida com o S24 via Quick Share, transferência de áudio automática e Continuity. Para quem já tem uma TV Samsung, o Smart View ainda é a melhor experiência de espelhamento Android. O grande trunfo, porém, segue sendo o suporte: 7 anos de Android e patches garantidos até 2031, equiparando o histórico da Apple.",
+              "O ecossistema cresceu: Galaxy Watch, Buds, tablets e notebooks Samsung conversam com o S24 via Quick Share, transferência de áudio e recursos de continuidade. Para quem já tem uma TV Samsung, o Smart View facilita o espelhamento. O grande trunfo é o compromisso anunciado de sete gerações de sistema e sete anos de atualizações de segurança desde o lançamento.",
             ]}
             bullets={[
               "7 anos de Android + patches garantidos pela Samsung",
@@ -539,12 +569,14 @@ function ReviewPage() {
           <section id="comparativos" className="scroll-mt-24">
             <SectionTitle eyebrow="Comparativos" title="Galaxy S24 vs iPhone 15 e outros rivais" />
             <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-              Contra o iPhone 15, o S24 leva vantagem em <strong>tela (LTPO 120 Hz vs 60 Hz)</strong>,
-              <strong> versatilidade fotográfica</strong> (teleobjetiva dedicada de 3x), <strong>recursos
-              de IA generativa nativos</strong> e <strong>preço cerca de R$ 1.200 menor</strong> no
-              Brasil em 2026. O iPhone devolve com câmera mais previsível em vídeo, integração com
+              Contra o iPhone 15, o S24 leva vantagem em{" "}
+              <strong>tela (LTPO 120 Hz vs 60 Hz)</strong>,
+              <strong> versatilidade fotográfica</strong> (teleobjetiva dedicada de 3x),{" "}
+              <strong>recursos de IA generativa nativos</strong> e costuma aparecer por um preço
+              menor. O iPhone devolve com câmera mais previsível em vídeo, integração com
               Mac/iPad/AirPods e curva de revenda mais favorável. Para quem está fora do ecossistema
-              Apple, o S24 é hoje a escolha mais racional na faixa premium até R$ 4.500.
+              Apple, o S24 pode ser a escolha mais racional quando a diferença de preço for
+              relevante.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {COMPARES.map((c) => (
@@ -554,7 +586,9 @@ function ReviewPage() {
                   className="group rounded-2xl border border-border bg-card p-5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-card"
                 >
                   <Badge variant="teal">VS</Badge>
-                  <h3 className="mt-3 font-heading text-base font-semibold text-foreground">{c.title}</h3>
+                  <h3 className="mt-3 font-heading text-base font-semibold text-foreground">
+                    {c.title}
+                  </h3>
                   <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{c.note}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-foreground group-hover:text-cta">
                     Ver comparativo <ArrowRight className="h-4 w-4" />
@@ -566,7 +600,10 @@ function ReviewPage() {
 
           {/* Recomendação */}
           <section id="recomendacao" className="scroll-mt-24">
-            <SectionTitle eyebrow="Recomendação" title="Veredito final: Galaxy S24 vale a pena em 2026?" />
+            <SectionTitle
+              eyebrow="Recomendação"
+              title="Veredito final: Galaxy S24 vale a pena em 2026?"
+            />
             <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-soft">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
@@ -598,7 +635,7 @@ function ReviewPage() {
                       "Quer carga ultrarrápida (45 W ou mais) presente em rivais chineses",
                       "Já tem um Galaxy S23 — o ganho prático é incremental",
                       "Vive no ecossistema Apple (Mac, iPad, AirPods) — o iPhone 15 faz mais sentido",
-                      "Procura o melhor custo-benefício puro (Redmi Note 13 Pro entrega mais hardware por R$)",
+                      "Procura o melhor custo-benefício puro (o Redmi Note 13 Pro entrega mais hardware pelo menor preço)",
                     ].map((t) => (
                       <li key={t} className="flex items-start gap-2">
                         <X className="mt-1 h-4 w-4 shrink-0 text-destructive" strokeWidth={2.5} />
@@ -683,7 +720,7 @@ function ReviewPage() {
             <span className="block text-[10px] uppercase tracking-wider text-muted-foreground">
               Galaxy S24
             </span>
-            <span className="font-heading text-base font-bold text-foreground">R$ 4.299</span>
+            <span className="font-heading text-sm font-bold text-foreground">Preço atualizado</span>
           </div>
           <Link
             to="/comparativo/iphone-15-vs-galaxy-s24"
@@ -776,9 +813,3 @@ function AnalysisBlock({
     </section>
   );
 }
-
-
-
-
-
-

@@ -1,7 +1,4 @@
-import {
-  POCO_X6_PRO_AFFILIATE_URL,
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
+import { POCO_X6_PRO_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -54,13 +51,11 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-poco-x6-
       },
       {
         property: "og:image",
-        content:
-          "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp",
+        content: "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp",
       },
       {
         property: "twitter:image",
-        content:
-          "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp",
+        content: "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp",
       },
     ],
   }),
@@ -84,10 +79,8 @@ const POCO_X6 = {
   name: "Poco X6 Pro",
   badge: "Melhor para desempenho",
   rating: 4.6,
-  price: "R$ 1.899",
   image: "/images/products/poco-x6-pro-optimized.webp",
-  affiliateHref:
-    POCO_X6_PRO_AFFILIATE_URL,
+  affiliateHref: POCO_X6_PRO_AFFILIATE_URL,
   strengths: [
     "Dimensity 8300-Ultra ainda entrega desempenho muito forte",
     "Ótimo custo-benefício quando aparece abaixo do Redmi Note 13 Pro",
@@ -106,10 +99,8 @@ const REDMI_NOTE_13_PRO = {
   name: "Redmi Note 13 Pro",
   badge: "Mais equilibrado",
   rating: 4.7,
-  price: "R$ 2.299",
   image: "/images/products/redmi-note-13-pro-optimized.webp",
-  affiliateHref:
-    REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  affiliateHref: REDMI_NOTE_13_PRO_AFFILIATE_URL,
   strengths: [
     "Câmera principal de 200 MP com OIS",
     "Bateria de 5.100 mAh com boa autonomia",
@@ -255,10 +246,10 @@ function ComparisonPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              O Poco X6 Pro ainda é um intermediário muito forte, mas o Redmi Note 13 Pro
-              se destaca por câmera principal de 200 MP, boa tela, bateria consistente e
-              proteção superior. Comparamos os dois para mostrar quando vale pagar mais
-              pelo modelo novo e quando o X6 Pro ainda faz sentido.
+              O Poco X6 Pro ainda é um intermediário muito forte, mas o Redmi Note 13 Pro se destaca
+              por câmera principal de 200 MP, boa tela, bateria consistente e proteção superior.
+              Comparamos os dois para mostrar quando vale pagar mais pelo modelo novo e quando o X6
+              Pro ainda faz sentido.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -311,12 +302,20 @@ function ComparisonPage() {
                 Mais equilibrado
               </span>
               <p className="mt-2 text-sm text-muted-foreground">
-                O Redmi Note 13 Pro é a escolha mais completa. O Poco X6 Pro só leva vantagem
-                se estiver com preço bem menor.
+                O Redmi Note 13 Pro é a escolha mais completa. O Poco X6 Pro só leva vantagem se
+                estiver com preço bem menor.
               </p>
               <div className="mt-4 space-y-2">
-                <AffiliateButton product={REDMI_NOTE_13_PRO} label="Ver Redmi Note 13 Pro no Mercado Livre" variant="primary" />
-                <AffiliateButton product={POCO_X6} label="Ver Poco X6 Pro no Mercado Livre" variant="secondary" />
+                <AffiliateButton
+                  product={REDMI_NOTE_13_PRO}
+                  label="Ver Redmi Note 13 Pro no Mercado Livre"
+                  variant="primary"
+                />
+                <AffiliateButton
+                  product={POCO_X6}
+                  label="Ver Poco X6 Pro no Mercado Livre"
+                  variant="secondary"
+                />
               </div>
             </div>
           </div>
@@ -324,13 +323,16 @@ function ComparisonPage() {
 
         <main className="lg:col-span-9 space-y-14">
           <section id="veredito" className="scroll-mt-24">
-            <SectionTitle eyebrow="Veredito rápido" title="Qual é melhor: Redmi Note 13 Pro ou Poco X6 Pro?" />
+            <SectionTitle
+              eyebrow="Veredito rápido"
+              title="Qual é melhor: Redmi Note 13 Pro ou Poco X6 Pro?"
+            />
             <div className="mt-5 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-soft">
               <p className="text-lg leading-relaxed text-foreground">
                 O <strong>Redmi Note 13 Pro</strong> é a melhor escolha para quem quer o conjunto
-                mais equilibrado: câmera principal mais forte, boa tela, bateria de 5.100 mAh e carregamento de 67 W.
-                O <strong>Poco X6 Pro</strong> ainda vale a pena se aparecer com preço bem mais baixo,
-                porque continua sendo muito forte para jogos e uso pesado.
+                mais equilibrado: câmera principal mais forte, boa tela, bateria de 5.100 mAh e
+                carregamento de 67 W. O <strong>Poco X6 Pro</strong> ainda vale a pena se aparecer
+                com preço bem mais baixo, porque continua sendo muito forte para jogos e uso pesado.
               </p>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -473,14 +475,21 @@ function ComparisonPage() {
           />
 
           <section id="tabela" className="scroll-mt-24">
-            <SectionTitle eyebrow="Tabela comparativa" title="Redmi Note 13 Pro vs Poco X6 Pro em detalhes" />
+            <SectionTitle
+              eyebrow="Tabela comparativa"
+              title="Redmi Note 13 Pro vs Poco X6 Pro em detalhes"
+            />
             <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
               <table className="w-full text-sm">
                 <thead className="bg-surface">
                   <tr>
                     <th className="px-5 py-4 text-left font-semibold text-foreground">Critério</th>
-                    <th className="px-5 py-4 text-left font-semibold text-foreground">Poco X6 Pro</th>
-                    <th className="px-5 py-4 text-left font-semibold text-foreground">Redmi Note 13 Pro</th>
+                    <th className="px-5 py-4 text-left font-semibold text-foreground">
+                      Poco X6 Pro
+                    </th>
+                    <th className="px-5 py-4 text-left font-semibold text-foreground">
+                      Redmi Note 13 Pro
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -499,7 +508,10 @@ function ComparisonPage() {
           </section>
 
           <section id="perfis" className="scroll-mt-24">
-            <SectionTitle eyebrow="Recomendação por perfil" title="Qual comprar para cada tipo de usuário?" />
+            <SectionTitle
+              eyebrow="Recomendação por perfil"
+              title="Qual comprar para cada tipo de usuário?"
+            />
             <div className="mt-6 grid gap-5 md:grid-cols-2">
               <ProfileCard
                 title="Compre o Redmi Note 13 Pro se você..."
@@ -570,13 +582,22 @@ function ComparisonPage() {
                   Redmi Note 13 Pro é melhor; Poco X6 Pro só vence no preço.
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                  Para comprar hoje e ficar mais tempo, o Redmi Note 13 Pro é a escolha mais completa.
-                  Se o Poco X6 Pro aparecer muito mais barato, ele ainda pode ser uma compra inteligente.
+                  Para comprar hoje e ficar mais tempo, o Redmi Note 13 Pro é a escolha mais
+                  completa. Se o Poco X6 Pro aparecer muito mais barato, ele ainda pode ser uma
+                  compra inteligente.
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
-                <AffiliateButton product={REDMI_NOTE_13_PRO} label="Ver Redmi Note 13 Pro no Mercado Livre" variant="primary" />
-                <AffiliateButton product={POCO_X6} label="Ver Poco X6 Pro no Mercado Livre" variant="secondary" />
+                <AffiliateButton
+                  product={REDMI_NOTE_13_PRO}
+                  label="Ver Redmi Note 13 Pro no Mercado Livre"
+                  variant="primary"
+                />
+                <AffiliateButton
+                  product={POCO_X6}
+                  label="Ver Poco X6 Pro no Mercado Livre"
+                  variant="secondary"
+                />
               </div>
             </div>
           </section>
@@ -646,17 +667,9 @@ function AffiliateButton({
   );
 }
 
-function ProductHero({
-  product,
-  accent,
-}: {
-  product: typeof POCO_X6;
-  accent: "teal" | "cta";
-}) {
+function ProductHero({ product, accent }: { product: typeof POCO_X6; accent: "teal" | "cta" }) {
   const accentClasses =
-    accent === "teal"
-      ? "border-teal/30 bg-teal/5 text-teal"
-      : "border-cta/30 bg-cta/5 text-cta";
+    accent === "teal" ? "border-teal/30 bg-teal/5 text-teal" : "border-cta/30 bg-cta/5 text-cta";
 
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
@@ -670,20 +683,24 @@ function ProductHero({
           className="aspect-[4/3] w-full rounded-2xl border border-border object-cover shadow-soft"
         />
         <div>
-          <span className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${accentClasses}`}>
+          <span
+            className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${accentClasses}`}
+          >
             {product.badge}
           </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">
-            {product.name}
-          </h2>
+          <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">{product.name}</h2>
           <div className="mt-2 flex items-center gap-2">
             <Rating value={product.rating} />
-            <span className="text-sm font-semibold text-foreground">{product.rating.toFixed(1)}</span>
+            <span className="text-sm font-semibold text-foreground">
+              {product.rating.toFixed(1)}
+            </span>
           </div>
-          <div className="mt-4 font-heading text-2xl font-bold text-foreground">
-            A partir de {product.price}
+          <div className="mt-4 font-heading text-lg font-bold text-foreground">
+            Preço atualizado no Mercado Livre
           </div>
-          <span className="text-[11px] text-muted-foreground">*preço pode variar</span>
+          <span className="text-[11px] text-muted-foreground">
+            Consulte valor, estoque e condições
+          </span>
           <div className="mt-4">
             <AffiliateButton
               product={product}
@@ -700,9 +717,7 @@ function ProductHero({
 function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <div>
-      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
-        {eyebrow}
-      </span>
+      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">{eyebrow}</span>
       <h2 className="mt-2 font-heading text-2xl md:text-3xl font-bold tracking-tight text-foreground">
         {title}
       </h2>
