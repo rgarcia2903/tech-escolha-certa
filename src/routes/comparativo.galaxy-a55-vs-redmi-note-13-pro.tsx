@@ -1,7 +1,4 @@
-import {
-  GALAXY_A55_AFFILIATE_URL,
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
+import { GALAXY_A55_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -34,8 +31,7 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-redmi-note-13-p
   head: () => ({
     meta: [
       {
-        title:
-          "Galaxy A55 vs Redmi Note 13 Pro: qual vale mais a pena em 2026?",
+        title: "Galaxy A55 vs Redmi Note 13 Pro: qual vale mais a pena em 2026?",
       },
       {
         name: "description",
@@ -49,8 +45,7 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-redmi-note-13-p
       },
       {
         property: "og:title",
-        content:
-          "Galaxy A55 vs Redmi Note 13 Pro: qual vale mais a pena em 2026?",
+        content: "Galaxy A55 vs Redmi Note 13 Pro: qual vale mais a pena em 2026?",
       },
       {
         property: "og:description",
@@ -89,7 +84,6 @@ const GALAXY = {
   name: "Galaxy A55",
   badge: "Mais equilibrado",
   rating: 4.6,
-  price: "R$ 1.899",
   image:
     "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1200&q=80",
   strengths: [
@@ -101,7 +95,7 @@ const GALAXY = {
   ],
   weaknesses: [
     "Carregamento de 25 W é lento para a categoria",
-    "Desempenho em jogos pesados fica atrás do Poco X6 Pro",
+    "Não é a opção mais indicada para quem prioriza jogos pesados",
     "Carregador geralmente não vem na caixa",
   ],
 };
@@ -110,7 +104,6 @@ const REDMI = {
   name: "Redmi Note 13 Pro",
   badge: "Melhor ficha técnica",
   rating: 4.5,
-  price: "R$ 1.699",
   image:
     "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1200&q=80",
   strengths: [
@@ -130,7 +123,11 @@ const REDMI = {
 const QUICK_SCORE = [
   { category: "Construção", winner: "Galaxy A55", reason: "vidro, alumínio e IP67" },
   { category: "Tela", winner: "Empate técnico", reason: "ambos entregam AMOLED forte" },
-  { category: "Desempenho", winner: "Redmi Note 13 Pro", reason: "melhor resposta em uso intenso" },
+  {
+    category: "Desempenho",
+    winner: "Empate técnico",
+    reason: "ambos atendem bem ao uso diário, com propostas diferentes",
+  },
   { category: "Câmera", winner: "Galaxy A55", reason: "mais previsível no automático" },
   { category: "Bateria e carga", winner: "Redmi Note 13 Pro", reason: "67 W muda o dia a dia" },
   { category: "Software", winner: "Galaxy A55", reason: "One UI mais estável e suporte melhor" },
@@ -138,7 +135,7 @@ const QUICK_SCORE = [
 ];
 
 const SPECS: Array<[string, string, string]> = [
-  ["Tela", "6,6\" Super AMOLED 120 Hz", "6,67\" AMOLED 120 Hz"],
+  ["Tela", '6,6" Super AMOLED 120 Hz', '6,67" AMOLED 120 Hz'],
   ["Processador", "Exynos 1480", "Snapdragon 7s Gen 2"],
   ["RAM", "8 GB", "8 / 12 GB"],
   ["Armazenamento", "128 / 256 GB", "256 / 512 GB"],
@@ -163,7 +160,7 @@ const FAQS = [
   },
   {
     q: "Qual vale mais a pena para jogar?",
-    a: "Para jogos e uso mais pesado, o Redmi Note 13 Pro tende a ser mais interessante pelo conjunto de desempenho e carregamento rápido. Para estabilidade geral, o A55 segue mais equilibrado.",
+    a: "Os dois atendem a jogos casuais, mas nenhum é focado em desempenho extremo. Se jogos pesados forem a prioridade, o Poco X6 Pro costuma ser uma alternativa mais adequada.",
   },
   {
     q: "Qual deve durar mais tempo?",
@@ -230,10 +227,10 @@ function ComparisonPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              Dois dos intermediários mais buscados do Brasil colocam frente a frente a
-              experiência mais equilibrada da Samsung e a ficha técnica agressiva da Xiaomi.
-              Comparamos construção, tela, câmera, bateria, desempenho, software e custo-benefício
-              para mostrar qual faz mais sentido para cada perfil de compra.
+              Dois dos intermediários mais buscados do Brasil colocam frente a frente a experiência
+              mais equilibrada da Samsung e a ficha técnica agressiva da Xiaomi. Comparamos
+              construção, tela, câmera, bateria, desempenho, software e custo-benefício para mostrar
+              qual faz mais sentido para cada perfil de compra.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -285,8 +282,8 @@ function ComparisonPage() {
                 Melhor escolha geral
               </span>
               <p className="mt-2 text-sm text-muted-foreground">
-                Para a maioria das pessoas, o Galaxy A55 é mais seguro. Para preço e carga rápida,
-                o Redmi brilha.
+                Para a maioria das pessoas, o Galaxy A55 é mais seguro. Para preço e carga rápida, o
+                Redmi brilha.
               </p>
               <div className="mt-4 space-y-2">
                 <a
@@ -325,13 +322,16 @@ function ComparisonPage() {
 
         <main className="lg:col-span-9 space-y-14">
           <section id="veredito" className="scroll-mt-24">
-            <SectionTitle eyebrow="Veredito rápido" title="Qual é melhor: Galaxy A55 ou Redmi Note 13 Pro?" />
+            <SectionTitle
+              eyebrow="Veredito rápido"
+              title="Qual é melhor: Galaxy A55 ou Redmi Note 13 Pro?"
+            />
             <div className="mt-5 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-soft">
               <p className="text-lg leading-relaxed text-foreground">
                 O <strong>Galaxy A55</strong> é a melhor escolha para quem quer um celular mais
                 confiável para durar anos: construção superior, IP67, One UI madura e câmeras mais
-                previsíveis. O <strong>Redmi Note 13 Pro</strong> é mais interessante para quem busca
-                máximo custo-benefício, tela forte, carregamento rápido e preço menor.
+                previsíveis. O <strong>Redmi Note 13 Pro</strong> é mais interessante para quem
+                busca máximo custo-benefício, tela forte, carregamento rápido e preço menor.
               </p>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -409,16 +409,16 @@ function ComparisonPage() {
             id="desempenho"
             icon={Cpu}
             eyebrow="Desempenho"
-            title="Redmi entrega mais força bruta; Galaxy é mais consistente"
-            winner="Redmi Note 13 Pro"
+            title="Desempenho equilibrado, com diferenças de proposta"
+            winner="Empate técnico"
             paragraphs={[
-              "O Redmi Note 13 Pro tende a entregar melhor sensação de velocidade em tarefas pesadas, especialmente com mais RAM e armazenamento em algumas versões. Para quem alterna muitos apps, joga casualmente e quer resposta rápida, ele passa uma sensação de aparelho mais agressivo pelo preço.",
-              "O Galaxy A55 não é lento — longe disso. A One UI está bem otimizada, as animações são estáveis e o Exynos 1480 segura bem o dia a dia. A diferença é que o Samsung prioriza estabilidade e eficiência, enquanto o Redmi busca entregar mais especificação pelo menor preço.",
+              "O Galaxy A55 usa o Exynos 1480, enquanto o Redmi Note 13 Pro 5G traz o Snapdragon 7s Gen 2. Ambos atendem bem a redes sociais, navegação, câmera, vídeos e multitarefa comum.",
+              "O Redmi oferece versões com mais RAM e armazenamento; o Galaxy combina o hardware com uma One UI madura. Para jogos pesados, vale olhar um modelo dedicado a desempenho em vez de escolher apenas pelo nome do chip.",
             ]}
             bullets={[
-              "Redmi leva vantagem em ficha técnica e carga de trabalho",
-              "Galaxy é estável e bem otimizado",
-              "Para uso comum, ambos atendem muito bem",
+              "Exynos 1480 no Galaxy A55",
+              "Snapdragon 7s Gen 2 no Redmi Note 13 Pro 5G",
+              "Ambos atendem bem ao uso comum",
             ]}
           />
 
@@ -460,28 +460,35 @@ function ComparisonPage() {
             id="gaming"
             icon={Gamepad2}
             eyebrow="Jogos"
-            title="Para gaming casual, ambos servem; para desempenho, Redmi é melhor"
-            winner="Redmi Note 13 Pro"
+            title="Os dois servem para jogos casuais; nenhum é focado em gaming"
+            winner="Empate técnico"
             paragraphs={[
-              "Em jogos populares como Free Fire, PUBG Mobile, Asphalt e Call of Duty Mobile, os dois entregam boa experiência. O Redmi tende a manter configurações mais altas em alguns cenários e agrada quem prioriza desempenho por real investido.",
-              "O Galaxy A55 é mais do que suficiente para jogar casualmente, mas não é a melhor opção se o objetivo principal for performance. Nesse caso, o Poco X6 Pro, inclusive, pode ser ainda mais interessante que os dois.",
+              "Em jogos populares, Galaxy A55 e Redmi Note 13 Pro atendem bem com ajustes adequados. A experiência varia conforme o título, a qualidade gráfica e a temperatura do aparelho.",
+              "Se o objetivo principal for performance em jogos pesados, o Poco X6 Pro costuma ser uma alternativa mais indicada por usar o Dimensity 8300-Ultra.",
             ]}
             bullets={[
-              "Redmi é mais indicado para quem joga mais",
-              "Galaxy atende bem jogos casuais",
-              "Poco X6 Pro é alternativa melhor para foco total em games",
+              "Ambos atendem jogos casuais",
+              "Ajustes gráficos influenciam estabilidade e calor",
+              "Poco X6 Pro é alternativa para foco em desempenho",
             ]}
           />
 
           <section id="tabela" className="scroll-mt-24">
-            <SectionTitle eyebrow="Tabela comparativa" title="Galaxy A55 vs Redmi Note 13 Pro em detalhes" />
+            <SectionTitle
+              eyebrow="Tabela comparativa"
+              title="Galaxy A55 vs Redmi Note 13 Pro em detalhes"
+            />
             <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
               <table className="w-full text-sm">
                 <thead className="bg-surface">
                   <tr>
                     <th className="px-5 py-4 text-left font-semibold text-foreground">Critério</th>
-                    <th className="px-5 py-4 text-left font-semibold text-foreground">Galaxy A55</th>
-                    <th className="px-5 py-4 text-left font-semibold text-foreground">Redmi Note 13 Pro</th>
+                    <th className="px-5 py-4 text-left font-semibold text-foreground">
+                      Galaxy A55
+                    </th>
+                    <th className="px-5 py-4 text-left font-semibold text-foreground">
+                      Redmi Note 13 Pro
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -500,7 +507,10 @@ function ComparisonPage() {
           </section>
 
           <section id="perfis" className="scroll-mt-24">
-            <SectionTitle eyebrow="Recomendação por perfil" title="Qual comprar para cada tipo de usuário?" />
+            <SectionTitle
+              eyebrow="Recomendação por perfil"
+              title="Qual comprar para cada tipo de usuário?"
+            />
             <div className="mt-6 grid gap-5 md:grid-cols-2">
               <ProfileCard
                 title="Compre o Galaxy A55 se você..."
@@ -572,7 +582,8 @@ function ComparisonPage() {
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                   Para a maioria, o Galaxy A55 é a recomendação mais equilibrada. Para quem quer
-                  economizar e valoriza carregamento rápido, o Redmi Note 13 Pro pode ser a melhor compra.
+                  economizar e valoriza carregamento rápido, o Redmi Note 13 Pro pode ser a melhor
+                  compra.
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
@@ -641,17 +652,9 @@ function ComparisonPage() {
   );
 }
 
-function ProductHero({
-  product,
-  accent,
-}: {
-  product: typeof GALAXY;
-  accent: "teal" | "cta";
-}) {
+function ProductHero({ product, accent }: { product: typeof GALAXY; accent: "teal" | "cta" }) {
   const accentClasses =
-    accent === "teal"
-      ? "border-teal/30 bg-teal/5 text-teal"
-      : "border-cta/30 bg-cta/5 text-cta";
+    accent === "teal" ? "border-teal/30 bg-teal/5 text-teal" : "border-cta/30 bg-cta/5 text-cta";
 
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
@@ -665,20 +668,24 @@ function ProductHero({
           className="aspect-[4/3] w-full rounded-2xl border border-border object-cover shadow-soft"
         />
         <div>
-          <span className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${accentClasses}`}>
+          <span
+            className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${accentClasses}`}
+          >
             {product.badge}
           </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">
-            {product.name}
-          </h2>
+          <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">{product.name}</h2>
           <div className="mt-2 flex items-center gap-2">
             <Rating value={product.rating} />
-            <span className="text-sm font-semibold text-foreground">{product.rating.toFixed(1)}</span>
+            <span className="text-sm font-semibold text-foreground">
+              {product.rating.toFixed(1)}
+            </span>
           </div>
-          <div className="mt-4 font-heading text-2xl font-bold text-foreground">
-            A partir de {product.price}
+          <div className="mt-4 font-heading text-lg font-bold text-foreground">
+            Preço atualizado no Mercado Livre
           </div>
-          <span className="text-[11px] text-muted-foreground">*preço pode variar</span>
+          <span className="text-[11px] text-muted-foreground">
+            Consulte valor, estoque e condições
+          </span>
         </div>
       </div>
     </div>
@@ -688,9 +695,7 @@ function ProductHero({
 function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <div>
-      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
-        {eyebrow}
-      </span>
+      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">{eyebrow}</span>
       <h2 className="mt-2 font-heading text-2xl md:text-3xl font-bold tracking-tight text-foreground">
         {title}
       </h2>
@@ -805,9 +810,3 @@ function ProfileCard({
     </div>
   );
 }
-
-
-
-
-
-

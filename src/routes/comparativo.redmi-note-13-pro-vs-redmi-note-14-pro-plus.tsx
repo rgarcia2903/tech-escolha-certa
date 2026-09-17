@@ -31,8 +31,7 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
   head: () => ({
     meta: [
       {
-        title:
-          "Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena em 2026?",
+        title: "Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena em 2026?",
       },
       {
         name: "description",
@@ -46,8 +45,7 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
       },
       {
         property: "og:title",
-        content:
-          "Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena em 2026?",
+        content: "Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena em 2026?",
       },
       {
         property: "og:description",
@@ -69,11 +67,9 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
   component: ComparisonPage,
 });
 
-const REDMI13_AFFILIATE_URL =
-  REDMI_NOTE_13_PRO_AFFILIATE_URL;
+const REDMI13_AFFILIATE_URL = REDMI_NOTE_13_PRO_AFFILIATE_URL;
 
-const REDMI14_AFFILIATE_URL =
-  REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL;
+const REDMI14_AFFILIATE_URL = REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL;
 
 const SECTIONS = [
   { id: "veredito", label: "Veredito" },
@@ -92,7 +88,6 @@ const REDMI13 = {
   name: "Redmi Note 13 Pro",
   badge: "Melhor custo-benefício",
   rating: 4.6,
-  price: "R$ 1.699",
   image: "/images/products/redmi-note-13-pro-optimized.webp",
   strengths: [
     "Tela AMOLED 1.5K de 120 Hz ainda muito forte",
@@ -112,7 +107,6 @@ const REDMI14 = {
   name: "Redmi Note 14 Pro+",
   badge: "Mais completo",
   rating: 4.7,
-  price: "R$ 2.399",
   image: "/images/products/redmi-note-14-pro-plus-optimized.webp",
   strengths: [
     "Snapdragon 7s Gen 3 mais atual",
@@ -129,17 +123,29 @@ const REDMI14 = {
 };
 
 const QUICK_SCORE = [
-  { category: "Construção", winner: "Redmi Note 14 Pro+", reason: "IP68 e acabamento mais premium" },
+  {
+    category: "Construção",
+    winner: "Redmi Note 14 Pro+",
+    reason: "IP68 e acabamento mais premium",
+  },
   { category: "Tela", winner: "Empate técnico", reason: "ambos têm AMOLED 1.5K 120 Hz" },
   { category: "Desempenho", winner: "Redmi Note 14 Pro+", reason: "Snapdragon 7s Gen 3 mais novo" },
-  { category: "Câmera", winner: "Redmi Note 14 Pro+", reason: "processamento mais atual e conjunto mais refinado" },
+  {
+    category: "Câmera",
+    winner: "Redmi Note 14 Pro+",
+    reason: "processamento mais atual e conjunto mais refinado",
+  },
   { category: "Bateria e carga", winner: "Redmi Note 14 Pro+", reason: "5.110 mAh e 120 W" },
   { category: "Preço", winner: "Redmi Note 13 Pro", reason: "costuma aparecer mais barato" },
-  { category: "Custo-benefício", winner: "Depende do preço", reason: "13 Pro em promoção; 14 Pro+ se a diferença for pequena" },
+  {
+    category: "Custo-benefício",
+    winner: "Depende do preço",
+    reason: "13 Pro em promoção; 14 Pro+ se a diferença for pequena",
+  },
 ];
 
 const SPECS: Array<[string, string, string]> = [
-  ["Tela", "6,67\" AMOLED 1.5K 120 Hz", "6,67\" AMOLED 1.5K 120 Hz"],
+  ["Tela", '6,67" AMOLED 1.5K 120 Hz', '6,67" AMOLED 1.5K 120 Hz'],
   ["Processador", "Snapdragon 7s Gen 2", "Snapdragon 7s Gen 3"],
   ["RAM", "8 / 12 GB", "12 GB, conforme versão"],
   ["Armazenamento", "256 GB, conforme versão", "512 GB, conforme versão"],
@@ -149,7 +155,7 @@ const SPECS: Array<[string, string, string]> = [
   ["Selfie", "16 MP", "20 MP"],
   ["Bateria", "5.100 mAh", "5.110 mAh"],
   ["Carregamento", "67 W", "120 W"],
-  ["Proteção", "Proteção básica contra respingos", "IP68"],
+  ["Proteção", "IP54", "IP68"],
   ["Sistema", "Android com HyperOS/MIUI", "Android com HyperOS"],
 ];
 
@@ -235,10 +241,9 @@ function ComparisonPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              O Redmi Note 13 Pro ficou conhecido pelo conjunto forte de tela, câmera e
-              carregamento rápido. O Redmi Note 14 Pro+ chega como opção mais completa,
-              com chip mais atual, IP68 e carregamento de 120 W. Veja qual faz mais sentido
-              para comprar agora.
+              O Redmi Note 13 Pro ficou conhecido pelo conjunto forte de tela, câmera e carregamento
+              rápido. O Redmi Note 14 Pro+ chega como opção mais completa, com chip mais atual, IP68
+              e carregamento de 120 W. Veja qual faz mais sentido para comprar agora.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -290,8 +295,8 @@ function ComparisonPage() {
                 Melhor escolha geral
               </span>
               <p className="mt-2 text-sm text-muted-foreground">
-                O Redmi Note 14 Pro+ é melhor no conjunto. O Redmi Note 13 Pro pode vencer
-                quando a diferença de preço for grande.
+                O Redmi Note 14 Pro+ é melhor no conjunto. O Redmi Note 13 Pro pode vencer quando a
+                diferença de preço for grande.
               </p>
               <div className="mt-4 space-y-2">
                 <a
@@ -330,14 +335,17 @@ function ComparisonPage() {
 
         <main className="lg:col-span-9 space-y-14">
           <section id="veredito" className="scroll-mt-24">
-            <SectionTitle eyebrow="Veredito rápido" title="Qual é melhor: Redmi Note 13 Pro ou Redmi Note 14 Pro+?" />
+            <SectionTitle
+              eyebrow="Veredito rápido"
+              title="Qual é melhor: Redmi Note 13 Pro ou Redmi Note 14 Pro+?"
+            />
             <div className="mt-5 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-soft">
               <p className="text-lg leading-relaxed text-foreground">
-                O <strong>Redmi Note 14 Pro+</strong> é a melhor escolha para quem quer o
-                Xiaomi mais completo: processador mais novo, proteção IP68, carregamento de
-                120 W e conjunto mais premium. O <strong>Redmi Note 13 Pro</strong> ainda é
-                excelente para quem quer economizar e encontrar uma boa oferta sem abrir mão
-                de tela AMOLED, câmera de 200 MP e carregamento rápido.
+                O <strong>Redmi Note 14 Pro+</strong> é a melhor escolha para quem quer o Xiaomi
+                mais completo: processador mais novo, proteção IP68, carregamento de 120 W e
+                conjunto mais premium. O <strong>Redmi Note 13 Pro</strong> ainda é excelente para
+                quem quer economizar e encontrar uma boa oferta sem abrir mão de tela AMOLED, câmera
+                de 200 MP e carregamento rápido.
               </p>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -480,14 +488,21 @@ function ComparisonPage() {
           />
 
           <section id="tabela" className="scroll-mt-24">
-            <SectionTitle eyebrow="Tabela comparativa" title="Redmi Note 13 Pro vs Redmi Note 14 Pro+ em detalhes" />
+            <SectionTitle
+              eyebrow="Tabela comparativa"
+              title="Redmi Note 13 Pro vs Redmi Note 14 Pro+ em detalhes"
+            />
             <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
               <table className="w-full text-sm">
                 <thead className="bg-surface">
                   <tr>
                     <th className="px-5 py-4 text-left font-semibold text-foreground">Critério</th>
-                    <th className="px-5 py-4 text-left font-semibold text-foreground">Redmi Note 13 Pro</th>
-                    <th className="px-5 py-4 text-left font-semibold text-foreground">Redmi Note 14 Pro+</th>
+                    <th className="px-5 py-4 text-left font-semibold text-foreground">
+                      Redmi Note 13 Pro
+                    </th>
+                    <th className="px-5 py-4 text-left font-semibold text-foreground">
+                      Redmi Note 14 Pro+
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -506,7 +521,10 @@ function ComparisonPage() {
           </section>
 
           <section id="perfis" className="scroll-mt-24">
-            <SectionTitle eyebrow="Recomendação por perfil" title="Qual comprar para cada tipo de usuário?" />
+            <SectionTitle
+              eyebrow="Recomendação por perfil"
+              title="Qual comprar para cada tipo de usuário?"
+            />
             <div className="mt-6 grid gap-5 md:grid-cols-2">
               <ProfileCard
                 title="Compre o Redmi Note 14 Pro+ se você..."
@@ -577,9 +595,9 @@ function ComparisonPage() {
                   Redmi Note 14 Pro+ é melhor; Redmi Note 13 Pro vence no preço.
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                  Escolha o Redmi Note 14 Pro+ se a diferença de preço for pequena ou se você
-                  quer IP68, 120 W e chip mais novo. Escolha o Redmi Note 13 Pro se ele estiver
-                  em promoção e você quiser economizar sem perder uma boa tela e câmera forte.
+                  Escolha o Redmi Note 14 Pro+ se a diferença de preço for pequena ou se você quer
+                  IP68, 120 W e chip mais novo. Escolha o Redmi Note 13 Pro se ele estiver em
+                  promoção e você quiser economizar sem perder uma boa tela e câmera forte.
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
@@ -648,17 +666,9 @@ function ComparisonPage() {
   );
 }
 
-function ProductHero({
-  product,
-  accent,
-}: {
-  product: typeof REDMI13;
-  accent: "teal" | "cta";
-}) {
+function ProductHero({ product, accent }: { product: typeof REDMI13; accent: "teal" | "cta" }) {
   const accentClasses =
-    accent === "teal"
-      ? "border-teal/30 bg-teal/5 text-teal"
-      : "border-cta/30 bg-cta/5 text-cta";
+    accent === "teal" ? "border-teal/30 bg-teal/5 text-teal" : "border-cta/30 bg-cta/5 text-cta";
 
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
@@ -672,20 +682,24 @@ function ProductHero({
           className="aspect-[4/3] w-full rounded-2xl border border-border object-contain bg-surface p-4 shadow-soft"
         />
         <div>
-          <span className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${accentClasses}`}>
+          <span
+            className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${accentClasses}`}
+          >
             {product.badge}
           </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">
-            {product.name}
-          </h2>
+          <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">{product.name}</h2>
           <div className="mt-2 flex items-center gap-2">
             <Rating value={product.rating} />
-            <span className="text-sm font-semibold text-foreground">{product.rating.toFixed(1)}</span>
+            <span className="text-sm font-semibold text-foreground">
+              {product.rating.toFixed(1)}
+            </span>
           </div>
-          <div className="mt-4 font-heading text-2xl font-bold text-foreground">
-            A partir de {product.price}
+          <div className="mt-4 font-heading text-lg font-bold text-foreground">
+            Preço atualizado no Mercado Livre
           </div>
-          <span className="text-[11px] text-muted-foreground">*preço pode variar</span>
+          <span className="text-[11px] text-muted-foreground">
+            Consulte valor, estoque e condições
+          </span>
         </div>
       </div>
     </div>
@@ -695,9 +709,7 @@ function ProductHero({
 function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <div>
-      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
-        {eyebrow}
-      </span>
+      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">{eyebrow}</span>
       <h2 className="mt-2 font-heading text-2xl md:text-3xl font-bold tracking-tight text-foreground">
         {title}
       </h2>

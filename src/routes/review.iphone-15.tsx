@@ -29,14 +29,18 @@ export const Route = createFileRoute("/review/iphone-15")({
       {
         name: "description",
         content:
-          "iPhone 15 vale a pena em 2026? Análise editorial completa: câmera de 48 MP, bateria, desempenho do A16, gaming, iOS 17 e comparativo direto com o Galaxy S24.",
+          "iPhone 15 vale a pena em 2026? Análise editorial completa: câmera de 48 MP, bateria, desempenho do A16, iOS e comparativo direto com o Galaxy S24.",
       },
-      { name: "keywords", content: "iPhone 15 vale a pena em 2026, iPhone 15 review, iPhone 15 análise, iPhone 15 vs Galaxy S24" },
+      {
+        name: "keywords",
+        content:
+          "iPhone 15 vale a pena em 2026, iPhone 15 review, iPhone 15 análise, iPhone 15 vs Galaxy S24",
+      },
       { property: "og:title", content: "iPhone 15 vale a pena em 2026? Review completo" },
       {
         property: "og:description",
         content:
-          "Testamos câmera, bateria, desempenho e gaming do iPhone 15 em 2026 para responder, sem rodeios, se ele ainda merece o seu dinheiro.",
+          "Analisamos câmera, bateria, desempenho e experiência de uso do iPhone 15 em 2026 para responder se ele ainda merece o seu dinheiro.",
       },
       {
         property: "og:image",
@@ -80,7 +84,7 @@ const PROS = [
   "Câmera principal de 48 MP com alcance dinâmico de nível profissional",
   "Chip A16 Bionic mantém desempenho de topo mesmo dois anos após o lançamento",
   "Construção premium em alumínio aeroespacial com vidro fosco resistente",
-  "iOS 17 com suporte garantido até pelo menos 2029, preservando a revenda",
+  "Longo histórico de atualizações do iOS e boa procura no mercado de usados",
   "Tela Super Retina XDR com calibração de cor consistente para foto e vídeo",
   "USB-C universal facilita o ecossistema com iPad, Mac e acessórios",
 ];
@@ -89,29 +93,29 @@ const CONS = [
   "Tela travada em 60 Hz incomoda em rolagem e jogos depois de testar 120 Hz",
   "Carregamento de 20 W é lento perto dos 45–67 W dos rivais Android",
   "Versão base de 128 GB ficou apertada para quem grava vídeo em 4K",
-  "Preço no Brasil ainda parte de R$ 5.499 — o ágio sobre os EUA segue alto",
+  "Preço no Brasil costuma ficar acima de rivais Android equivalentes",
   "USB-C limitado à velocidade USB 2.0 (480 Mbps), atrás do Pro",
 ];
 
 const SPECS: Array<[string, string]> = [
-  ["Tela", "6,1\" Super Retina XDR OLED · 60 Hz · 2.000 nits HDR"],
-  ["Processador", "Apple A16 Bionic (5 nm, 6 núcleos)"],
+  ["Tela", '6,1" Super Retina XDR OLED · 60 Hz · 2.000 nits HDR'],
+  ["Processador", "Apple A16 Bionic (6 núcleos)"],
   ["Memória RAM", "6 GB"],
   ["Armazenamento", "128 / 256 / 512 GB"],
   ["Câmera principal", "48 MP f/1.6 OIS + ultrawide 12 MP f/2.4"],
   ["Câmera frontal", "12 MP TrueDepth f/1.9 com autofoco"],
-  ["Bateria", "3.349 mAh · até 20h de vídeo"],
+  ["Bateria", "Até 20h de reprodução de vídeo, segundo a Apple"],
   ["Carregamento", "20 W com fio · 15 W MagSafe · 7,5 W Qi"],
   ["Conector", "USB-C (USB 2.0, 480 Mbps)"],
   ["Resistência", "IP68 (até 6 m, 30 min)"],
   ["Peso", "171 g"],
-  ["Sistema", "iOS 17 (atualizável até iOS 21+)"],
+  ["Sistema", "iOS · compatível com as atualizações disponibilizadas pela Apple"],
 ];
 
 const COMPARES = [
   {
     title: "iPhone 15 vs Galaxy S24",
-    note: "Galaxy leva tela 120 Hz, carga rápida de 45 W e mais armazenamento. iPhone devolve com câmera mais previsível, longevidade de software e revenda muito superior.",
+    note: "Galaxy leva tela 120 Hz, carga de 25 W e mais armazenamento em algumas versões. iPhone devolve com câmera previsível, integração com o ecossistema Apple e boa revenda.",
   },
   {
     title: "iPhone 15 vs iPhone 14",
@@ -119,7 +123,7 @@ const COMPARES = [
   },
   {
     title: "iPhone 15 vs iPhone 15 Pro",
-    note: "O Pro entrega ProMotion 120 Hz, chassi em titânio, A17 Pro e teleobjetiva 3x. O padrão acerta no essencial por R$ 2.000 a menos.",
+    note: "O Pro entrega ProMotion 120 Hz, chassi em titânio, A17 Pro e teleobjetiva 3x. O padrão acerta no essencial e normalmente custa menos.",
   },
 ];
 
@@ -162,9 +166,13 @@ function ReviewPage() {
         <div className="container-tec relative grid gap-12 py-14 md:py-20 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7">
             <nav className="mb-5 flex items-center gap-2 text-xs text-muted-foreground">
-              <Link to="/" className="hover:text-foreground">Home</Link>
+              <Link to="/" className="hover:text-foreground">
+                Home
+              </Link>
               <span>/</span>
-              <Link to="/celulares" className="hover:text-foreground">Celulares</Link>
+              <Link to="/celulares" className="hover:text-foreground">
+                Celulares
+              </Link>
               <span>/</span>
               <span className="text-foreground">iPhone 15 Review</span>
             </nav>
@@ -176,16 +184,23 @@ function ReviewPage() {
               iPhone 15 vale a pena em 2026? Review completo e sem rodeios
             </h1>
             <p className="mt-5 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              Depois de quatro semanas com o iPhone 15 padrão como aparelho principal — fotografando
-              em viagens, jogando títulos pesados, gravando vídeo em 4K e pendurado no Waze diariamente —
-              chegamos a um veredito direto sobre câmera, bateria, desempenho e custo-benefício
-              em pleno 2026, com o lançamento do iPhone 17 já no retrovisor.
+              Nesta análise editorial, reunimos especificações oficiais e os pontos que mais pesam
+              na compra do iPhone 15 padrão: câmera, bateria, desempenho, experiência com o iOS e
+              custo-benefício em 2026.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5"><User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa</span>
-              <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-3.5 w-3.5" /> Atualizado em 10 mai. 2026</span>
-              <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> Leitura · 9 min</span>
-              <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente</span>
+              <span className="inline-flex items-center gap-1.5">
+                <User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 10 mai. 2026
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-3.5 w-3.5" /> Leitura · 9 min
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-teal" /> Análise independente
+              </span>
             </div>
           </div>
           <div className="relative lg:col-span-5">
@@ -253,8 +268,12 @@ function ReviewPage() {
               <p className="mt-2 text-sm text-muted-foreground">
                 Veja a oferta mais atualizada em parceiro confiável.
               </p>
-              <div className="mt-3 font-heading text-2xl font-bold text-foreground">R$ 5.499</div>
-              <span className="text-[11px] text-muted-foreground">*pode variar</span>
+              <div className="mt-3 font-heading text-lg font-bold text-foreground">
+                Consulte o preço atual
+              </div>
+              <span className="text-[11px] text-muted-foreground">
+                Preço, estoque e condições podem mudar
+              </span>
               <a
                 href={IPHONE_15_AFFILIATE_URL}
                 target="_blank"
@@ -284,18 +303,25 @@ function ReviewPage() {
         <main className="lg:col-span-9 space-y-14">
           {/* Veredito */}
           <section id="veredito" className="scroll-mt-24">
-            <SectionTitle eyebrow="Veredito rápido" title="Vale a pena comprar o iPhone 15 em 2026?" />
+            <SectionTitle
+              eyebrow="Veredito rápido"
+              title="Vale a pena comprar o iPhone 15 em 2026?"
+            />
             <p className="mt-4 text-lg leading-relaxed text-foreground">
-              Sim — desde que o seu critério principal seja <strong>câmera previsível, longevidade
-              de software e fluidez</strong>. Em 2026, com a queda natural do preço e o iOS 17 maduro,
-              o iPhone 15 padrão é o melhor ponto de entrada no ecossistema Apple. Se a sua
-              prioridade é tela 120 Hz, carregamento rápido ou o menor preço por especificação,
-              o Galaxy S24 ou um intermediário premium fazem mais sentido financeiro.
+              Sim — desde que o seu critério principal seja{" "}
+              <strong>câmera previsível, longevidade de software e fluidez</strong>. Em 2026, com a
+              queda natural do preço e um iOS maduro, o iPhone 15 padrão é o melhor ponto de entrada
+              no ecossistema Apple. Se a sua prioridade é tela 120 Hz, carregamento rápido ou o
+              menor preço por especificação, o Galaxy S24 ou um intermediário premium fazem mais
+              sentido financeiro.
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {SCORES.map((s) => (
-                <div key={s.label} className="rounded-xl border border-border bg-card p-4 shadow-soft">
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-border bg-card p-4 shadow-soft"
+                >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-foreground">{s.label}</span>
                     <Rating value={s.value} />
@@ -320,7 +346,9 @@ function ReviewPage() {
                   <span className="grid h-8 w-8 place-items-center rounded-md bg-teal/10 text-teal">
                     <Check className="h-4 w-4" strokeWidth={2.5} />
                   </span>
-                  <h3 className="font-heading text-lg font-semibold text-foreground">Pontos fortes</h3>
+                  <h3 className="font-heading text-lg font-semibold text-foreground">
+                    Pontos fortes
+                  </h3>
                 </div>
                 <ul className="mt-4 space-y-2.5">
                   {PROS.map((p) => (
@@ -336,7 +364,9 @@ function ReviewPage() {
                   <span className="grid h-8 w-8 place-items-center rounded-md bg-destructive/10 text-destructive">
                     <X className="h-4 w-4" strokeWidth={2.5} />
                   </span>
-                  <h3 className="font-heading text-lg font-semibold text-foreground">Pontos fracos</h3>
+                  <h3 className="font-heading text-lg font-semibold text-foreground">
+                    Pontos fracos
+                  </h3>
                 </div>
                 <ul className="mt-4 space-y-2.5">
                   {CONS.map((c) => (
@@ -358,7 +388,10 @@ function ReviewPage() {
                 <tbody>
                   {SPECS.map(([k, v], i) => (
                     <tr key={k} className={i % 2 === 0 ? "bg-card" : "bg-surface"}>
-                      <th scope="row" className="w-1/3 px-5 py-3 text-left font-semibold text-foreground">
+                      <th
+                        scope="row"
+                        className="w-1/3 px-5 py-3 text-left font-semibold text-foreground"
+                      >
                         {k}
                       </th>
                       <td className="px-5 py-3 text-muted-foreground">{v}</td>
@@ -377,13 +410,13 @@ function ReviewPage() {
             title="A16 Bionic: rápido em 2023, ainda confortável em 2026"
             score={4.9}
             paragraphs={[
-              "Três anos após a estreia, o A16 Bionic continua acima da média do mercado Android intermediário e empata com chips premium recentes em tarefas reais. Em benchmarks, marca cerca de 2.520 pontos no single-core e 6.380 no multi-core do Geekbench 6 — números que se traduzem em abrir o Instagram instantaneamente, exportar vídeos no CapCut sem espera e processar fotos RAW em segundos.",
-              "No uso diário, o que mais impressiona é a consistência. Depois de 30 dias com mais de 80 apps instalados, incluindo edição de vídeo e jogos pesados, não houve uma única reinicialização inesperada nem desaceleração perceptível. Os 6 GB de RAM, antes alvo de críticas, são compensados pela gestão de memória agressiva do iOS, que mantém facilmente 8 a 10 apps em segundo plano sem recarregar.",
+              "Três anos após a estreia, o A16 Bionic continua confortável para redes sociais, navegação, câmera, edição e jogos. Resultados de benchmark variam por versão do sistema, temperatura e metodologia, por isso são menos úteis do que observar o perfil de uso.",
+              "No uso diário, o A16 continua confortável para redes sociais, navegação, câmera, edição e jogos. Os 6 GB de RAM são administrados pelo iOS, embora aplicativos pesados possam recarregar com mais frequência do que em aparelhos com mais memória.",
             ]}
             bullets={[
-              "Geekbench 6: ~2.520 single-core / ~6.380 multi-core",
-              "Aquecimento controlado mesmo em exportação de vídeo 4K",
-              "Multitarefa real: 8 a 10 apps preservados em segundo plano",
+              "A16 Bionic ainda atende tarefas exigentes",
+              "Desempenho varia conforme temperatura e software",
+              "Gestão de memória integrada ao iOS",
             ]}
           />
 
@@ -395,13 +428,13 @@ function ReviewPage() {
             title="Gaming no iPhone 15: top de linha com ressalva na tela"
             score={4.6}
             paragraphs={[
-              "Genshin Impact roda em qualidade alta com 60 fps estáveis na maior parte do tempo, com quedas pontuais para 50 fps em cenas com muitas partículas — comportamento melhor que vários Android premium na mesma faixa de preço. Call of Duty Mobile fixa 120 fps no modo Battle Royale; PUBG New State e Wild Rift sequer suam.",
-              "O grande limitador é a tela de 60 Hz. Em jogos competitivos como CoDM e Free Fire, o aparelho renderiza acima do que o painel mostra — você sente a fluidez do hardware, mas não vê a suavidade visual que um S24 entrega. Para quem joga sério, é o argumento mais forte para subir ao iPhone 15 Pro ou olhar para a concorrência.",
+              "O A16 Bionic ainda oferece potência para jogos exigentes, mas desempenho, temperatura e autonomia variam conforme o título, a qualidade gráfica e a versão do sistema.",
+              "O grande limitador é a tela de 60 Hz. Em jogos compatíveis com taxas maiores, o painel não mostra a mesma suavidade visual de um aparelho de 90 ou 120 Hz, como o Galaxy S24.",
             ]}
             bullets={[
-              "Genshin Impact: 60 fps em High, com quedas pontuais",
-              "CoDM trava em 120 fps; tela limita a percepção visual",
-              "Aquecimento sob controle em sessões de 30+ minutos",
+              "A16 Bionic ainda tem boa folga para jogos",
+              "Tela de 60 Hz limita a fluidez visual",
+              "Resultado varia conforme jogo e configuração",
             ]}
           />
 
@@ -431,13 +464,13 @@ function ReviewPage() {
             title="Bateria do iPhone 15: um dia inteiro, mas carga é lenta"
             score={4.4}
             paragraphs={[
-              "Em uso misto real — cerca de 1h30 de redes sociais, 40 minutos de câmera, 1h de streaming, navegação por GPS e 250 mensagens —, o iPhone 15 termina o dia entre 18% e 26%, com 6h30 a 7h45 de tela ativa. É um resultado honesto para a faixa, mas inferior ao Galaxy S24 (8h+) e ao próprio iPhone 15 Plus, que rende mais 2 horas reais.",
-              "O calcanhar de Aquiles continua sendo o carregamento. Os 20 W via USB-C completam 0–50% em cerca de 30 minutos, mas a carga total leva 1h30 a 1h45. MagSafe 15 W é prático, mas esquenta o aparelho. Em 2026, com Android premium chegando a 100 W, o atraso da Apple incomoda — embora a degradação de bateria a longo prazo da Apple permaneça das menores do mercado.",
+              "A Apple informa até 20 horas de reprodução de vídeo. A autonomia real varia bastante com brilho, sinal, câmera, jogos, navegação e saúde da bateria; quem usa o aparelho intensamente pode precisar de uma recarga antes do fim do dia.",
+              "O carregamento é mais lento que o de muitos rivais Android. Com adaptador compatível, a Apple informa recarga de até cerca de 50% em 30 minutos; o MagSafe acrescenta conveniência, mas também pode gerar mais calor.",
             ]}
             bullets={[
-              "Tela ativa: 6h30 a 7h45 em uso real",
-              "0–50% em ~30 min · carga total em ~1h30",
-              "Saúde da bateria: degradação baixa após ciclos longos",
+              "Até 20h de reprodução de vídeo, segundo a Apple",
+              "Até cerca de 50% em 30 min com adaptador compatível",
+              "Autonomia depende do uso e da saúde da bateria",
             ]}
           />
 
@@ -446,14 +479,14 @@ function ReviewPage() {
             id="ios"
             icon={Smartphone}
             eyebrow="Experiência iOS"
-            title="iOS 17 em 2026: maturidade que justifica o preço"
+            title="iOS em 2026: integração e suporte de longo prazo"
             score={4.8}
             paragraphs={[
-              "O iOS 17 amadureceu de um jeito que o Android premium ainda não conseguiu replicar com a mesma coerência. Widgets interativos, StandBy mode quando o aparelho está carregando, AirDrop por proximidade e o ecossistema com Mac, iPad, AirPods e Apple Watch operam como um aparelho só. Para quem já vive no ecossistema Apple, é praticamente impossível voltar.",
-              "Mais importante para quem compra em 2026: o iPhone 15 deve receber atualizações grandes até pelo menos iOS 21 — algo entre 2029 e 2030. Nenhum Android, nem o Galaxy S24 com seus prometidos 7 anos, oferece o mesmo nível histórico de cumprimento. Isso protege a revenda: um iPhone 15 usado em 2027 ainda valerá significativamente mais que um Android equivalente.",
+              "O iOS oferece integração consistente com Mac, iPad, AirPods e Apple Watch, além de recursos como AirDrop, StandBy e widgets interativos. Esse ecossistema continua sendo um argumento forte para quem já usa outros produtos Apple.",
+              "A Apple não publica antecipadamente uma data final de suporte para cada iPhone. O histórico da marca indica vários anos de atualizações, mas a decisão deve considerar o suporte efetivamente disponível no momento da compra, sem prometer uma versão futura específica.",
             ]}
             bullets={[
-              "Suporte estimado até iOS 21+ (2029/2030)",
+              "Histórico de vários anos de atualizações",
               "Ecossistema integrado com Mac, iPad e AirPods",
               "Revenda historicamente superior ao Android premium",
             ]}
@@ -464,12 +497,12 @@ function ReviewPage() {
             <SectionTitle eyebrow="Comparativos" title="iPhone 15 vs Galaxy S24 e outros rivais" />
             <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
               O Galaxy S24 é o rival direto e a comparação é menos óbvia do que parece. O Samsung
-              entrega <strong>tela LTPO 120 Hz</strong>, carregamento de 45 W, 256 GB de base e
-              recursos de IA generativa nativos — vantagens reais no dia a dia. O iPhone 15
-              devolve com câmera mais previsível em vídeo, fluidez de iOS, integração com Mac/iPad
-              e uma curva de revenda muito mais favorável depois de 24 meses. Em valores brasileiros
-              de 2026, o S24 sai cerca de R$ 1.200 mais barato — diferença que pesa, mas que para
-              quem já vive no ecossistema Apple raramente compensa a migração.
+              entrega <strong>tela LTPO 120 Hz</strong>, carregamento de 25 W e mais armazenamento
+              em algumas versões, recursos de IA generativa nativos — vantagens reais no dia a dia.
+              O iPhone 15 devolve com câmera mais previsível em vídeo, fluidez de iOS, integração
+              com Mac/iPad e uma curva de revenda historicamente favorável. O S24 costuma aparecer
+              mais barato — diferença que pesa, mas que para quem já vive no ecossistema Apple
+              raramente compensa a migração.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {COMPARES.map((c) => (
@@ -479,7 +512,9 @@ function ReviewPage() {
                   className="group rounded-2xl border border-border bg-card p-5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-card"
                 >
                   <Badge variant="teal">VS</Badge>
-                  <h3 className="mt-3 font-heading text-base font-semibold text-foreground">{c.title}</h3>
+                  <h3 className="mt-3 font-heading text-base font-semibold text-foreground">
+                    {c.title}
+                  </h3>
                   <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{c.note}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-foreground group-hover:text-cta">
                     Ver comparativo <ArrowRight className="h-4 w-4" />
@@ -495,14 +530,17 @@ function ReviewPage() {
             <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
               O iPhone 15 não é universal. Em 2026, com o iPhone 16 e 17 já no mercado, ele se
               encaixa muito bem em alguns perfis e pouco em outros. Resumimos abaixo, sem rodeios,
-              os cenários em que recomendamos a compra e aqueles em que sua grana rende mais
-              em outro aparelho.
+              os cenários em que recomendamos a compra e aqueles em que sua grana rende mais em
+              outro aparelho.
             </p>
           </section>
 
           {/* Recomendação */}
           <section id="recomendacao" className="scroll-mt-24">
-            <SectionTitle eyebrow="Recomendação" title="Veredito final: iPhone 15 vale a pena em 2026?" />
+            <SectionTitle
+              eyebrow="Recomendação"
+              title="Veredito final: iPhone 15 vale a pena em 2026?"
+            />
             <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-soft">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
@@ -551,7 +589,8 @@ function ReviewPage() {
                     Veredito final
                   </span>
                   <p className="mt-1 font-heading text-lg font-semibold text-foreground">
-                    Sim, o iPhone 15 vale a pena em 2026 para quem prioriza câmera, iOS e longevidade.
+                    Sim, o iPhone 15 vale a pena em 2026 para quem prioriza câmera, iOS e
+                    longevidade.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-3">
@@ -589,7 +628,7 @@ function ReviewPage() {
             <span className="block text-[10px] uppercase tracking-wider text-muted-foreground">
               iPhone 15
             </span>
-            <span className="font-heading text-base font-bold text-foreground">R$ 5.499</span>
+            <span className="font-heading text-sm font-bold text-foreground">Preço atualizado</span>
           </div>
           <Link
             to="/comparativos"
@@ -682,9 +721,3 @@ function AnalysisBlock({
     </section>
   );
 }
-
-
-
-
-
-
