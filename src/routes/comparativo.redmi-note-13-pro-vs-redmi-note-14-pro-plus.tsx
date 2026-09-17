@@ -264,12 +264,8 @@ function ComparisonPage() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            <ProductHero product={REDMI13} accent="teal" />
-            <ProductHero product={REDMI14} accent="cta" />
-          </div>
           <PurchaseActions
-            className="mt-5"
+            className="mt-8"
             options={[
               { productName: "Redmi Note 14 Pro+", href: REDMI14_AFFILIATE_URL },
               { productName: "Redmi Note 13 Pro", href: REDMI13_AFFILIATE_URL },
@@ -278,6 +274,11 @@ function ComparisonPage() {
             placement="hero"
           />
           <ScoreMethodLink className="mt-3" />
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            <ProductHero product={REDMI13} accent="teal" />
+            <ProductHero product={REDMI14} accent="cta" />
+          </div>
         </div>
       </header>
 

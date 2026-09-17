@@ -259,7 +259,7 @@ function HomePage() {
               description="Experiência flagship compacta, premium e muito completa."
               href="/review/galaxy-s24"
               image="/images/products/galaxy-s24-optimized.webp"
-              score="9.6"
+              score="9.4"
               badge="Premium"
             />
           </div>
