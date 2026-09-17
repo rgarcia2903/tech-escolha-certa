@@ -1,6 +1,7 @@
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/review/galaxy-a35")({
@@ -54,9 +55,9 @@ function ReviewGalaxyA35() {
             </h1>
 
             <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
-              O Galaxy A35 5G é um dos intermediários mais importantes da Samsung para
-              quem busca boa tela, bateria confiável, câmera honesta e uma experiência
-              segura sem pagar preço de topo de linha.
+              O Galaxy A35 5G é um dos intermediários mais importantes da Samsung para quem busca
+              boa tela, bateria confiável, câmera honesta e uma experiência segura sem pagar preço
+              de topo de linha.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -83,9 +84,11 @@ function ReviewGalaxyA35() {
             </div>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Excelente escolha para quem quer um Samsung confiável, equilibrado e com
-              boa vida útil dentro da faixa intermediária.
+              Excelente escolha para quem quer um Samsung confiável, equilibrado e com boa vida útil
+              dentro da faixa intermediária.
             </p>
+
+            <ScoreMethodLink className="mt-4" tone="dark" />
 
             <a
               href={GALAXY_A35_AFFILIATE_URL}
@@ -95,6 +98,7 @@ function ReviewGalaxyA35() {
                 trackAffiliateClick({
                   productName: "Galaxy A35",
                   pageType: "review",
+                  ctaPlacement: "hero",
                 })
               }
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
@@ -123,22 +127,20 @@ function ReviewGalaxyA35() {
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              O Galaxy A35 5G vale a pena?
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">O Galaxy A35 5G vale a pena?</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Sim, o <strong>Galaxy A35 5G</strong> vale a pena principalmente quando
-              aparece em boas promoções. Ele não é o celular mais potente da categoria,
-              mas entrega um pacote muito consistente: tela excelente, boa bateria,
-              sistema confiável e suporte mais previsível que muitos concorrentes.
+              Sim, o <strong>Galaxy A35 5G</strong> vale a pena principalmente quando aparece em
+              boas promoções. Ele não é o celular mais potente da categoria, mas entrega um pacote
+              muito consistente: tela excelente, boa bateria, sistema confiável e suporte mais
+              previsível que muitos concorrentes.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Para quem quer um aparelho para redes sociais, vídeos, fotos do dia a dia,
-              bancos, WhatsApp, navegação e uso profissional leve, o A35 é uma compra
-              segura. Quem joga bastante ou quer câmera mais avançada pode considerar o
-              Galaxy A55 ou modelos como Poco X6.
+              Para quem quer um aparelho para redes sociais, vídeos, fotos do dia a dia, bancos,
+              WhatsApp, navegação e uso profissional leve, o A35 é uma compra segura. Quem joga
+              bastante ou quer câmera mais avançada pode considerar o Galaxy A55 ou modelos como
+              Poco X6.
             </p>
           </section>
 
@@ -175,9 +177,7 @@ function ReviewGalaxyA35() {
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Notas por categoria
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Notas por categoria</h2>
 
             <div className="mt-6 space-y-4">
               {notas.map(([categoria, nota]) => (
@@ -199,97 +199,84 @@ function ReviewGalaxyA35() {
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Tela e design
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Tela e design</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              A tela é um dos grandes pontos fortes do Galaxy A35. O painel Super AMOLED
-              com alta fluidez deixa o celular muito agradável para vídeos, redes sociais,
-              leitura e navegação. É justamente nesse ponto que o aparelho transmite uma
-              sensação acima da média para a faixa de preço.
+              A tela é um dos grandes pontos fortes do Galaxy A35. O painel Super AMOLED com alta
+              fluidez deixa o celular muito agradável para vídeos, redes sociais, leitura e
+              navegação. É justamente nesse ponto que o aparelho transmite uma sensação acima da
+              média para a faixa de preço.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              O design segue a identidade atual da Samsung, com visual limpo e moderno.
-              Ele não tem o mesmo refinamento do Galaxy A55, mas passa boa impressão e
-              não parece um aparelho básico.
+              O design segue a identidade atual da Samsung, com visual limpo e moderno. Ele não tem
+              o mesmo refinamento do Galaxy A55, mas passa boa impressão e não parece um aparelho
+              básico.
             </p>
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Câmeras
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Câmeras</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              A câmera principal do Galaxy A35 atende bem no uso comum. Fotos durante o
-              dia costumam sair boas, com cores agradáveis e nível de detalhe suficiente
-              para redes sociais. Em ambientes internos ou à noite, o resultado cai, mas
-              ainda é aceitável para a categoria.
+              A câmera principal do Galaxy A35 atende bem no uso comum. Fotos durante o dia costumam
+              sair boas, com cores agradáveis e nível de detalhe suficiente para redes sociais. Em
+              ambientes internos ou à noite, o resultado cai, mas ainda é aceitável para a
+              categoria.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Para quem faz muitas fotos e vídeos, o Galaxy A55 continua sendo uma opção
-              mais forte. Mas para registros cotidianos, viagens simples, família e redes
-              sociais, o A35 cumpre bem o papel.
+              Para quem faz muitas fotos e vídeos, o Galaxy A55 continua sendo uma opção mais forte.
+              Mas para registros cotidianos, viagens simples, família e redes sociais, o A35 cumpre
+              bem o papel.
             </p>
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Desempenho e jogos
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Desempenho e jogos</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              O desempenho do Galaxy A35 é suficiente para a maioria dos usuários. Ele
-              roda bem aplicativos populares, alterna entre tarefas comuns sem grandes
-              problemas e mantém uma experiência estável no dia a dia.
+              O desempenho do Galaxy A35 é suficiente para a maioria dos usuários. Ele roda bem
+              aplicativos populares, alterna entre tarefas comuns sem grandes problemas e mantém uma
+              experiência estável no dia a dia.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Para jogos, ele funciona melhor em títulos leves e intermediários. Em games
-              mais pesados, é preciso ajustar gráficos para manter fluidez. Quem quer
-              desempenho como prioridade deve olhar para Poco X6 ou Galaxy A55.
+              Para jogos, ele funciona melhor em títulos leves e intermediários. Em games mais
+              pesados, é preciso ajustar gráficos para manter fluidez. Quem quer desempenho como
+              prioridade deve olhar para Poco X6 ou Galaxy A55.
             </p>
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Bateria
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Bateria</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              A bateria é outro ponto positivo. O Galaxy A35 consegue entregar um dia
-              completo de uso para a maior parte das pessoas, especialmente em uma rotina
-              com redes sociais, mensagens, vídeos, navegador e aplicativos de banco.
+              A bateria é outro ponto positivo. O Galaxy A35 consegue entregar um dia completo de
+              uso para a maior parte das pessoas, especialmente em uma rotina com redes sociais,
+              mensagens, vídeos, navegador e aplicativos de banco.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              O ponto menos empolgante é o carregamento, que não acompanha a velocidade de
-              alguns concorrentes chineses. Mesmo assim, a autonomia compensa para quem
-              prioriza estabilidade.
+              O ponto menos empolgante é o carregamento, que não acompanha a velocidade de alguns
+              concorrentes chineses. Mesmo assim, a autonomia compensa para quem prioriza
+              estabilidade.
             </p>
           </section>
 
           <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-            <h2 className="text-3xl font-bold text-[#F8FAFC]">
-              Recomendação final
-            </h2>
+            <h2 className="text-3xl font-bold text-[#F8FAFC]">Recomendação final</h2>
 
             <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-              O Galaxy A35 5G é uma compra muito sólida para quem busca um celular
-              Samsung confiável até R$ 2.000. Ele é indicado para quem quer tela bonita,
-              boa bateria, sistema estável e suporte mais seguro. Se o preço estiver
-              próximo do Galaxy A55, vale considerar subir de categoria; se estiver bem
-              mais barato, o A35 é uma excelente escolha.
+              O Galaxy A35 5G é uma compra muito sólida para quem busca um celular Samsung confiável
+              até R$ 2.000. Ele é indicado para quem quer tela bonita, boa bateria, sistema estável
+              e suporte mais seguro. Se o preço estiver próximo do Galaxy A55, vale considerar subir
+              de categoria; se estiver bem mais barato, o A35 é uma excelente escolha.
             </p>
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Perguntas frequentes
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Perguntas frequentes</h2>
 
             <div className="mt-8 space-y-6">
               <div>
@@ -297,35 +284,29 @@ function ReviewGalaxyA35() {
                   O Galaxy A35 é melhor que o Galaxy A55?
                 </h3>
                 <p className="mt-2 text-slate-700">
-                  Não. O Galaxy A55 é superior em desempenho, câmera e construção. O A35
-                  se destaca por entregar boa experiência custando menos.
+                  Não. O Galaxy A55 é superior em desempenho, câmera e construção. O A35 se destaca
+                  por entregar boa experiência custando menos.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-slate-900">
-                  O Galaxy A35 é bom para jogos?
-                </h3>
+                <h3 className="font-bold text-slate-900">O Galaxy A35 é bom para jogos?</h3>
                 <p className="mt-2 text-slate-700">
-                  Ele é bom para jogos leves e intermediários. Para jogos pesados, existem
-                  opções mais fortes em desempenho na mesma faixa de preço.
+                  Ele é bom para jogos leves e intermediários. Para jogos pesados, existem opções
+                  mais fortes em desempenho na mesma faixa de preço.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-slate-900">
-                  A câmera do Galaxy A35 é boa?
-                </h3>
+                <h3 className="font-bold text-slate-900">A câmera do Galaxy A35 é boa?</h3>
                 <p className="mt-2 text-slate-700">
-                  Sim, principalmente durante o dia. Para fotos noturnas e vídeos mais
-                  exigentes, o Galaxy A55 entrega resultado melhor.
+                  Sim, principalmente durante o dia. Para fotos noturnas e vídeos mais exigentes, o
+                  Galaxy A55 entrega resultado melhor.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-slate-900">
-                  Vale comprar o Galaxy A35 em 2026?
-                </h3>
+                <h3 className="font-bold text-slate-900">Vale comprar o Galaxy A35 em 2026?</h3>
                 <p className="mt-2 text-slate-700">
                   Vale, principalmente se ele estiver com bom preço. É uma das opções mais
                   equilibradas da Samsung para quem busca custo-benefício.
@@ -341,13 +322,11 @@ function ReviewGalaxyA35() {
               Veredito
             </p>
 
-            <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">
-              Compra segura até R$ 2.000
-            </h2>
+            <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">Compra segura até R$ 2.000</h2>
 
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              O Galaxy A35 é ideal para quem quer um Samsung equilibrado, com boa tela,
-              bateria forte e experiência confiável.
+              O Galaxy A35 é ideal para quem quer um Samsung equilibrado, com boa tela, bateria
+              forte e experiência confiável.
             </p>
 
             <a
@@ -358,6 +337,7 @@ function ReviewGalaxyA35() {
                 trackAffiliateClick({
                   productName: "Galaxy A35",
                   pageType: "review",
+                  ctaPlacement: "sidebar",
                 })
               }
               className="mt-5 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
@@ -398,9 +378,3 @@ function ReviewGalaxyA35() {
     </main>
   );
 }
-
-
-
-
-
-

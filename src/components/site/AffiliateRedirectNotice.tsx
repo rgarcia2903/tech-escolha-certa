@@ -21,7 +21,7 @@ export function AffiliateRedirectNotice({
       <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
       <span>
         Abre no ambiente oficial do Mercado Livre e pode passar por uma página intermediária antes
-        do anúncio.
+        do anúncio. O link é afiliado, sem custo adicional para você.
       </span>
     </p>
   );

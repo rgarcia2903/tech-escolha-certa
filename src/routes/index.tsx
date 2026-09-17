@@ -5,6 +5,7 @@ import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { ReviewCard } from "@/components/site/ReviewCard";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { TopPickCard } from "@/components/site/TopPickCard";
@@ -13,8 +14,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Tech Escolha Certa | Melhores celulares, reviews e comparativos 2026",
+        title: "Tech Escolha Certa | Melhores celulares, reviews e comparativos 2026",
       },
       {
         name: "description",
@@ -44,22 +44,19 @@ const featuredPicks = [
   {
     category: "Melhor Xiaomi geral",
     product: "Redmi Note 13 Pro 5G",
-    description:
-      "Equilíbrio forte entre tela AMOLED, câmera de 200 MP, bateria e custo-benefício.",
+    description: "Equilíbrio forte entre tela AMOLED, câmera de 200 MP, bateria e custo-benefício.",
     href: "/review/redmi-note-13-pro",
   },
   {
     category: "Melhor Xiaomi premium",
     product: "Redmi Note 14 Pro+ 5G",
-    description:
-      "Mais completo para quem quer câmera forte, IP68 e carregamento de 120 W.",
+    description: "Mais completo para quem quer câmera forte, IP68 e carregamento de 120 W.",
     href: "/review/redmi-note-14-pro-plus",
   },
   {
     category: "Melhor performance",
     product: "Poco X7 Pro",
-    description:
-      "Escolha mais forte para jogos, multitarefa pesada, bateria e velocidade.",
+    description: "Escolha mais forte para jogos, multitarefa pesada, bateria e velocidade.",
     href: "/review/poco-x7-pro",
   },
   {
@@ -121,13 +118,11 @@ function HomePage() {
               Hub em destaque
             </div>
 
-            <h2 className="mt-4 text-3xl font-bold text-white">
-              Melhores celulares Xiaomi
-            </h2>
+            <h2 className="mt-4 text-3xl font-bold text-white">Melhores celulares Xiaomi</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Guia atualizado com Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro
-              e Poco X6 Pro, incluindo reviews e comparativos para decidir melhor.
+              Guia atualizado com Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro e Poco X6 Pro,
+              incluindo reviews e comparativos para decidir melhor.
             </p>
 
             <Link
@@ -140,10 +135,10 @@ function HomePage() {
         }
       >
         <Link
-          to="/melhores-celulares-xiaomi"
+          to="/celulares"
           className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
         >
-          Ver melhores Xiaomi
+          Encontrar meu celular
         </Link>
 
         <Link
@@ -268,6 +263,8 @@ function HomePage() {
               badge="Premium"
             />
           </div>
+
+          <ScoreMethodLink className="mt-6" />
         </section>
 
         <section className="mt-14 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
@@ -340,15 +337,15 @@ function HomePage() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                O mercado de smartphones ficou extremamente confuso. Existem dezenas de
-                modelos parecidos, fichas técnicas difíceis de comparar e muito marketing
-                que nem sempre explica o que muda no uso real.
+                O mercado de smartphones ficou extremamente confuso. Existem dezenas de modelos
+                parecidos, fichas técnicas difíceis de comparar e muito marketing que nem sempre
+                explica o que muda no uso real.
               </p>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                O Tech Escolha Certa simplifica isso com reviews claros, comparativos
-                diretos e recomendações organizadas por perfil: custo-benefício, marca,
-                jogos, câmera, bateria e faixa de preço.
+                O Tech Escolha Certa simplifica isso com reviews claros, comparativos diretos e
+                recomendações organizadas por perfil: custo-benefício, marca, jogos, câmera, bateria
+                e faixa de preço.
               </p>
             </section>
 
@@ -373,9 +370,8 @@ function HomePage() {
               </h2>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Nosso foco é encontrar os aparelhos que realmente fazem sentido para cada
-                perfil e faixa de preço, equilibrando experiência, longevidade,
-                desempenho e custo-benefício.
+                Nosso foco é encontrar os aparelhos que realmente fazem sentido para cada perfil e
+                faixa de preço, equilibrando experiência, longevidade, desempenho e custo-benefício.
               </p>
             </section>
           </article>
@@ -389,7 +385,10 @@ function HomePage() {
               <div className="mt-5 space-y-3 text-sm">
                 <SidebarLink title="Melhores Xiaomi" href="/melhores-celulares-xiaomi" />
                 <SidebarLink title="Comparativos" href="/comparativos" />
-                <SidebarLink title="Melhores custo-benefício" href="/melhores-celulares-custo-beneficio" />
+                <SidebarLink
+                  title="Melhores custo-benefício"
+                  href="/melhores-celulares-custo-beneficio"
+                />
                 <SidebarLink title="Ofertas" href="/ofertas" />
                 <SidebarLink title="Melhores Samsung" href="/melhores-celulares-samsung" />
                 <SidebarLink title="Melhores até R$ 2.500" href="/melhores-celulares-ate-2500" />
@@ -402,7 +401,15 @@ function HomePage() {
   );
 }
 
-function HubCard({ title, href, description }: { title: string; href: string; description: string }) {
+function HubCard({
+  title,
+  href,
+  description,
+}: {
+  title: string;
+  href: string;
+  description: string;
+}) {
   return (
     <Link
       to={href}
@@ -432,9 +439,7 @@ function CategoryLink({ title, href }: { title: string; href: string }) {
         <div>
           <p className="text-sm font-bold text-[#0F3F4A]">{title}</p>
 
-          <p className="mt-2 text-sm text-slate-600">
-            Ver recomendações editoriais
-          </p>
+          <p className="mt-2 text-sm text-slate-600">Ver recomendações editoriais</p>
         </div>
 
         <div className="rounded-full bg-[#F7F2EB] p-3 text-[#8B5A2B] ring-1 ring-slate-200">

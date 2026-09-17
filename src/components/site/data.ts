@@ -3,19 +3,17 @@ import type { Product } from "./ProductCard";
 export const FEATURED_PRODUCTS: Product[] = [
   {
     name: "Apple iPhone 15",
-    image:
-      "https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/iphone-15-optimized.webp",
     rating: 4.8,
     reviews: 2143,
     summary: "Câmera excelente em qualquer luz e bateria que dura o dia inteiro com folga.",
     price: "R$ 5.499",
-    description: "Câmera de 48 MP, chip A16 Bionic e tela Super Retina XDR de 6,1\".",
+    description: 'Câmera de 48 MP, chip A16 Bionic e tela Super Retina XDR de 6,1".',
     badge: { variant: "cta", label: "Recomendado" },
   },
   {
     name: "Samsung Galaxy S24",
-    image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/galaxy-s24-optimized.webp",
     rating: 4.7,
     reviews: 1876,
     summary: "Tela AMOLED impressionante e desempenho fluido até nos jogos mais pesados.",
@@ -25,8 +23,7 @@ export const FEATURED_PRODUCTS: Product[] = [
   },
   {
     name: "Xiaomi Redmi Note 13",
-    image:
-      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/redmi-note-13-pro-optimized.webp",
     rating: 4.6,
     reviews: 3421,
     summary: "Custo-benefício difícil de bater: bateria enorme e tela muito acima do preço.",
@@ -75,14 +72,12 @@ export const COMPARISONS: Comparison[] = [
       "iOS ou Android no topo: qual entrega mais pelo preço cobrado no dia a dia, em câmera e em desempenho.",
     left: {
       name: "iPhone 15",
-      image:
-        "https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=600&q=80",
+      image: "/images/products/iphone-15-optimized.webp",
       strengths: ["Câmera consistente", "iOS otimizado", "Revenda alta"],
     },
     right: {
       name: "Galaxy S24",
-      image:
-        "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80",
+      image: "/images/products/galaxy-s24-optimized.webp",
       strengths: ["Tela 120 Hz", "Recursos de IA", "Mais armazenamento"],
     },
   },
@@ -93,14 +88,12 @@ export const COMPARISONS: Comparison[] = [
       "A briga mais quente do intermediário em 2026: custo-benefício extremo contra acabamento e marca forte.",
     left: {
       name: "Redmi Note 13",
-      image:
-        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80",
+      image: "/images/products/redmi-note-13-pro-optimized.webp",
       strengths: ["Preço agressivo", "Bateria 5.000 mAh", "Tela AMOLED"],
     },
     right: {
       name: "Galaxy A55",
-      image:
-        "https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=600&q=80",
+      image: "/images/products/galaxy-a55-optimized.webp",
       strengths: ["Acabamento premium", "Atualizações longas", "Câmera estável"],
     },
   },
@@ -123,6 +116,3 @@ export const COMPARISONS: Comparison[] = [
     },
   },
 ];
-
-
-

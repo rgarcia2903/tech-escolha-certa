@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
 export type ReviewTemplateProps = {
@@ -112,9 +113,7 @@ export function ReviewTemplate({
               {title}
             </h1>
 
-            <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
-              {description}
-            </p>
+            <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">{description}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
@@ -141,6 +140,8 @@ export function ReviewTemplate({
 
             <p className="mt-4 text-sm leading-6 text-slate-200">{verdictShort}</p>
 
+            <ScoreMethodLink className="mt-4" tone="dark" />
+
             <a
               href={affiliateHref}
               target="_blank"
@@ -149,6 +150,7 @@ export function ReviewTemplate({
                 trackAffiliateClick({
                   productName,
                   pageType: "review",
+                  ctaPlacement: "hero",
                 })
               }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
@@ -169,9 +171,7 @@ export function ReviewTemplate({
               Veredito rápido
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-              {productName} vale a pena?
-            </h2>
+            <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">{productName} vale a pena?</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">{verdictShort}</p>
           </section>
@@ -301,6 +301,7 @@ export function ReviewTemplate({
                 trackAffiliateClick({
                   productName,
                   pageType: "review",
+                  ctaPlacement: "sidebar",
                 })
               }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
@@ -352,6 +353,7 @@ export function ReviewTemplate({
               trackAffiliateClick({
                 productName,
                 pageType: "review",
+                ctaPlacement: "sticky",
               })
             }
             className="inline-flex items-center gap-2 rounded-2xl bg-[#8B5A2B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
@@ -367,20 +369,10 @@ export function ReviewTemplate({
   );
 }
 
-function AnalysisBlock({
-  eyebrow,
-  title,
-  text,
-}: {
-  eyebrow: string;
-  title: string;
-  text: string;
-}) {
+function AnalysisBlock({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return (
     <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-        {eyebrow}
-      </p>
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">{eyebrow}</p>
 
       <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">{title}</h2>
 

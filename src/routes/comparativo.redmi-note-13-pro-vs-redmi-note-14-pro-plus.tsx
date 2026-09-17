@@ -3,6 +3,8 @@ import {
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
@@ -266,6 +268,16 @@ function ComparisonPage() {
             <ProductHero product={REDMI13} accent="teal" />
             <ProductHero product={REDMI14} accent="cta" />
           </div>
+          <PurchaseActions
+            className="mt-5"
+            options={[
+              { productName: "Redmi Note 14 Pro+", href: REDMI14_AFFILIATE_URL },
+              { productName: "Redmi Note 13 Pro", href: REDMI13_AFFILIATE_URL },
+            ]}
+            pageType="comparativo"
+            placement="hero"
+          />
+          <ScoreMethodLink className="mt-3" />
         </div>
       </header>
 
@@ -690,9 +702,6 @@ function ProductHero({ product, accent }: { product: typeof REDMI13; accent: "te
           <h2 className="mt-3 font-heading text-2xl font-bold text-foreground">{product.name}</h2>
           <div className="mt-2 flex items-center gap-2">
             <Rating value={product.rating} />
-            <span className="text-sm font-semibold text-foreground">
-              {product.rating.toFixed(1)}
-            </span>
           </div>
           <div className="mt-4 font-heading text-lg font-bold text-foreground">
             Preço atualizado no Mercado Livre

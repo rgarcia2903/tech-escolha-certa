@@ -41,10 +41,11 @@ export function ProductCard({ product }: { product: Product }) {
         </h3>
         <div className="mt-2 flex items-center gap-2">
           <Rating value={product.rating} />
-          <span className="text-xs text-muted-foreground">
-            {product.rating.toFixed(1)}
-            {product.reviews ? ` · ${product.reviews.toLocaleString("pt-BR")} avaliações` : ""}
-          </span>
+          {product.reviews ? (
+            <span className="text-xs text-muted-foreground">
+              {product.reviews.toLocaleString("pt-BR")} avaliações
+            </span>
+          ) : null}
         </div>
         {product.summary && (
           <p className="mt-3 border-l-2 border-teal/40 pl-3 text-[13px] italic text-muted-foreground line-clamp-2">
@@ -78,10 +79,3 @@ export function ProductCard({ product }: { product: Product }) {
     </article>
   );
 }
-
-
-
-
-
-
-

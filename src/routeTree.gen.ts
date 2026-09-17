@@ -27,6 +27,7 @@ import { Route as DivulgacaoDeAfiliadosRouteImport } from './routes/divulgacao-d
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ComparativosRouteImport } from './routes/comparativos'
 import { Route as ComparativoGalaxyA55VsGalaxyA35RouteImport } from './routes/comparativo-galaxy-a55-vs-galaxy-a35'
+import { Route as ComoAvaliamosRouteImport } from './routes/como-avaliamos'
 import { Route as CelularesRouteImport } from './routes/celulares'
 import { Route as AcessoriosRouteImport } from './routes/acessorios'
 import { Route as IndexRouteImport } from './routes/index'
@@ -146,6 +147,11 @@ const ComparativoGalaxyA55VsGalaxyA35Route =
     path: '/comparativo-galaxy-a55-vs-galaxy-a35',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ComoAvaliamosRoute = ComoAvaliamosRouteImport.update({
+  id: '/como-avaliamos',
+  path: '/como-avaliamos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CelularesRoute = CelularesRouteImport.update({
   id: '/celulares',
   path: '/celulares',
@@ -273,6 +279,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/acessorios': typeof AcessoriosRoute
   '/celulares': typeof CelularesRoute
+  '/como-avaliamos': typeof ComoAvaliamosRoute
   '/comparativo-galaxy-a55-vs-galaxy-a35': typeof ComparativoGalaxyA55VsGalaxyA35Route
   '/comparativos': typeof ComparativosRoute
   '/contato': typeof ContatoRoute
@@ -315,6 +322,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/acessorios': typeof AcessoriosRoute
   '/celulares': typeof CelularesRoute
+  '/como-avaliamos': typeof ComoAvaliamosRoute
   '/comparativo-galaxy-a55-vs-galaxy-a35': typeof ComparativoGalaxyA55VsGalaxyA35Route
   '/comparativos': typeof ComparativosRoute
   '/contato': typeof ContatoRoute
@@ -358,6 +366,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/acessorios': typeof AcessoriosRoute
   '/celulares': typeof CelularesRoute
+  '/como-avaliamos': typeof ComoAvaliamosRoute
   '/comparativo-galaxy-a55-vs-galaxy-a35': typeof ComparativoGalaxyA55VsGalaxyA35Route
   '/comparativos': typeof ComparativosRoute
   '/contato': typeof ContatoRoute
@@ -402,6 +411,7 @@ export interface FileRouteTypes {
     | '/'
     | '/acessorios'
     | '/celulares'
+    | '/como-avaliamos'
     | '/comparativo-galaxy-a55-vs-galaxy-a35'
     | '/comparativos'
     | '/contato'
@@ -444,6 +454,7 @@ export interface FileRouteTypes {
     | '/'
     | '/acessorios'
     | '/celulares'
+    | '/como-avaliamos'
     | '/comparativo-galaxy-a55-vs-galaxy-a35'
     | '/comparativos'
     | '/contato'
@@ -486,6 +497,7 @@ export interface FileRouteTypes {
     | '/'
     | '/acessorios'
     | '/celulares'
+    | '/como-avaliamos'
     | '/comparativo-galaxy-a55-vs-galaxy-a35'
     | '/comparativos'
     | '/contato'
@@ -529,6 +541,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AcessoriosRoute: typeof AcessoriosRoute
   CelularesRoute: typeof CelularesRoute
+  ComoAvaliamosRoute: typeof ComoAvaliamosRoute
   ComparativoGalaxyA55VsGalaxyA35Route: typeof ComparativoGalaxyA55VsGalaxyA35Route
   ComparativosRoute: typeof ComparativosRoute
   ContatoRoute: typeof ContatoRoute
@@ -696,6 +709,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComparativoGalaxyA55VsGalaxyA35RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-avaliamos': {
+      id: '/como-avaliamos'
+      path: '/como-avaliamos'
+      fullPath: '/como-avaliamos'
+      preLoaderRoute: typeof ComoAvaliamosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/celulares': {
       id: '/celulares'
       path: '/celulares'
@@ -857,6 +877,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AcessoriosRoute: AcessoriosRoute,
   CelularesRoute: CelularesRoute,
+  ComoAvaliamosRoute: ComoAvaliamosRoute,
   ComparativoGalaxyA55VsGalaxyA35Route: ComparativoGalaxyA55VsGalaxyA35Route,
   ComparativosRoute: ComparativosRoute,
   ContatoRoute: ContatoRoute,
