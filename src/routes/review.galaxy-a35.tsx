@@ -1,10 +1,81 @@
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
+const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a35";
+const HERO_IMG = "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp";
+const PAGE_TITLE = "Galaxy A35 5G vale a pena em 2026? Review completo";
+const PAGE_DESCRIPTION =
+  "Galaxy A35 5G em 2026: veja tela, câmeras, bateria, desempenho, prós, contras e quando ele vale mais a pena que Galaxy A55 ou Redmi Note 13 Pro.";
+
 export const Route = createFileRoute("/review/galaxy-a35")({
+  head: () => ({
+    meta: [
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
+      {
+        name: "keywords",
+        content:
+          "Galaxy A35 vale a pena em 2026, Galaxy A35 review, Galaxy A35 é bom, Galaxy A35 vs Galaxy A55, Galaxy A35 vs Redmi Note 13 Pro",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMG },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMG },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Samsung Galaxy A35 5G",
+          image: [HERO_IMG],
+          description: PAGE_DESCRIPTION,
+          brand: { "@type": "Brand", name: "Samsung" },
+          review: {
+            "@type": "Review",
+            name: PAGE_TITLE,
+            author: {
+              "@type": "Team",
+              name: "Equipe Tech Escolha Certa",
+              url: "https://techescolhacerta.com.br/sobre",
+            },
+            dateModified: "2026-09-20",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: 8.7,
+              bestRating: 10,
+              worstRating: 0,
+            },
+            positiveNotes: {
+              "@type": "ItemList",
+              itemListElement: pros.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+            negativeNotes: {
+              "@type": "ItemList",
+              itemListElement: contras.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+          },
+        }),
+      },
+    ],
+  }),
   component: ReviewGalaxyA35,
 });
 
@@ -62,11 +133,14 @@ function ReviewGalaxyA35() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
-                Atualizado para 2026
+                Atualizado em 20 set. 2026
               </span>
-              <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
-                Review editorial
-              </span>
+              <Link
+                to="/sobre"
+                className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20 transition hover:bg-white/15"
+              >
+                Por Equipe Tech Escolha Certa
+              </Link>
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
                 Foco em custo-benefício
               </span>
@@ -74,6 +148,17 @@ function ReviewGalaxyA35() {
           </div>
 
           <div className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
+            <div className="mb-6 overflow-hidden rounded-2xl bg-white p-4">
+              <img
+                src="/images/products/galaxy-a35-optimized.webp"
+                alt="Samsung Galaxy A35 5G"
+                width="512"
+                height="512"
+                fetchPriority="high"
+                className="mx-auto h-48 w-full object-contain"
+              />
+            </div>
+
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Nota geral
             </p>
