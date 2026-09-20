@@ -1,11 +1,88 @@
 import { GALAXY_A35_AFFILIATE_URL, GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
+const CANONICAL = "https://techescolhacerta.com.br/comparativo-galaxy-a55-vs-galaxy-a35";
+const HERO_IMG = "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp";
+const PAGE_TITLE = "Galaxy A55 vs Galaxy A35: qual vale mais a pena em 2026?";
+const PAGE_DESCRIPTION =
+  "Galaxy A55 vs Galaxy A35: compare tela, desempenho, câmeras, bateria, construção e custo-benefício para decidir qual Samsung comprar em 2026.";
+
 export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
+  head: () => ({
+    meta: [
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
+      {
+        name: "keywords",
+        content:
+          "Galaxy A55 vs Galaxy A35, Galaxy A55 ou Galaxy A35, comparativo Galaxy A55 A35, qual Samsung comprar em 2026",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMG },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMG },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Article",
+              headline: PAGE_TITLE,
+              description: PAGE_DESCRIPTION,
+              image: [HERO_IMG],
+              dateModified: "2026-09-20",
+              mainEntityOfPage: CANONICAL,
+              author: {
+                "@type": "Organization",
+                name: "Tech Escolha Certa",
+                url: "https://techescolhacerta.com.br/sobre",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Tech Escolha Certa",
+                url: "https://techescolhacerta.com.br",
+              },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Início",
+                  item: "https://techescolhacerta.com.br",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Comparativos",
+                  item: "https://techescolhacerta.com.br/comparativos",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Galaxy A55 vs Galaxy A35",
+                  item: CANONICAL,
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
+  }),
   component: ComparativoGalaxyA55VsGalaxyA35,
 });
 
@@ -66,12 +143,15 @@ function ComparativoGalaxyA55VsGalaxyA35() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
-                Atualizado para 2026
+                Atualizado em 20 set. 2026
               </span>
 
-              <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
-                Comparativo Samsung
-              </span>
+              <Link
+                to="/sobre"
+                className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20 transition hover:bg-white/15"
+              >
+                Por Equipe Tech Escolha Certa
+              </Link>
 
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
                 Foco em custo-benefício
@@ -96,6 +176,14 @@ function ComparativoGalaxyA55VsGalaxyA35() {
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+            <img
+              src="/images/products/galaxy-a55-optimized.webp"
+              alt="Samsung Galaxy A55 5G"
+              width="512"
+              height="512"
+              className="mb-6 h-48 w-full rounded-2xl bg-slate-50 p-4 object-contain"
+            />
+
             <p className="text-sm font-semibold uppercase tracking-wide text-[#8B5A2B]">
               Galaxy A55
             </p>
@@ -139,6 +227,14 @@ function ComparativoGalaxyA55VsGalaxyA35() {
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+            <img
+              src="/images/products/galaxy-a35-optimized.webp"
+              alt="Samsung Galaxy A35 5G"
+              width="512"
+              height="512"
+              className="mb-6 h-48 w-full rounded-2xl bg-slate-50 p-4 object-contain"
+            />
+
             <p className="text-sm font-semibold uppercase tracking-wide text-[#8B5A2B]">
               Galaxy A35
             </p>
