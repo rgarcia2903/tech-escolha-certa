@@ -16,7 +16,7 @@ export const Route = createFileRoute("/comparativos")({
       {
         name: "keywords",
         content:
-          "comparativo de celulares, Redmi Note 13 Pro vs Poco X6 Pro, Poco X6 Pro vs Poco X7 Pro, Redmi Note 13 Pro vs Redmi Note 14 Pro Plus, Galaxy A35 vs Redmi Note 13 Pro, Galaxy A55 vs Poco X6 Pro, Galaxy A55 vs Redmi Note 13 Pro, iPhone 15 vs Galaxy S24",
+          "comparativo de celulares, Redmi Note 13 Pro vs Poco X6 Pro, Poco X6 Pro vs Poco X7 Pro, Redmi Note 13 Pro vs Redmi Note 14 Pro Plus, Galaxy A55 vs Galaxy A35, Galaxy A35 vs Redmi Note 13 Pro, Galaxy A55 vs Poco X6 Pro, Galaxy A55 vs Redmi Note 13 Pro, iPhone 15 vs Galaxy S24",
       },
       {
         property: "og:title",
@@ -75,9 +75,17 @@ const ALL_COMPARISONS = [
     bestFor: "Quem quer decidir entre proteção e software Samsung ou mais ficha técnica Xiaomi.",
   },
   {
-    title: "Galaxy A55 vs Poco X6 Pro",
+    title: "Galaxy A55 vs Galaxy A35",
     summary:
-      "Samsung mais equilibrado contra Xiaomi com foco em desempenho e preço agressivo.",
+      "Compare dois intermediários Samsung em acabamento, câmeras, desempenho, bateria e custo-benefício.",
+    href: "/comparativo-galaxy-a55-vs-galaxy-a35",
+    family: "Samsung",
+    tag: "Mesma linha",
+    bestFor: "Quem quer saber se vale pagar mais no Galaxy A55 ou economizar com o Galaxy A35.",
+  },
+  {
+    title: "Galaxy A55 vs Poco X6 Pro",
+    summary: "Samsung mais equilibrado contra Xiaomi com foco em desempenho e preço agressivo.",
     href: "/comparativo/galaxy-a55-vs-poco-x6-pro",
     family: "Samsung vs Xiaomi",
     tag: "Custo-benefício",
@@ -94,8 +102,7 @@ const ALL_COMPARISONS = [
   },
   {
     title: "iPhone 15 vs Galaxy S24",
-    summary:
-      "Compare ecossistema, desempenho, câmera, bateria e preço antes de escolher.",
+    summary: "Compare ecossistema, desempenho, câmera, bateria e preço antes de escolher.",
     href: "/comparativo/iphone-15-vs-galaxy-s24",
     family: "Apple vs Samsung",
     tag: "Premium",
@@ -138,9 +145,9 @@ function ComparisonsPage() {
                 Compare celulares antes de comprar
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                Reunimos os principais comparativos do Tech Escolha Certa para você decidir
-                com clareza entre Poco, Redmi, Galaxy e iPhone. A ideia é simples: mostrar
-                qual modelo faz mais sentido para cada perfil de uso.
+                Reunimos os principais comparativos do Tech Escolha Certa para você decidir com
+                clareza entre Poco, Redmi, Galaxy e iPhone. A ideia é simples: mostrar qual modelo
+                faz mais sentido para cada perfil de uso.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -257,11 +264,10 @@ function ComparisonsPage() {
                   <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">
                     {guide.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {guide.text}
-                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{guide.text}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cta">
-                    Abrir guia <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                    Abrir guia{" "}
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                   </span>
                 </a>
               );

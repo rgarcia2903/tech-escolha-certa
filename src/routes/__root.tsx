@@ -164,109 +164,122 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      {
-        rel: "icon",
-        type: "image/png",
-        href: "/favicon.png",
-      },
-      {
-        rel: "apple-touch-icon",
-        href: "/favicon.png",
-      },
-    ],
-    meta: [
-      { charSet: "utf-8" },
+  head: ({ matches }) => {
+    const pathname = matches.at(-1)?.pathname ?? "/";
+    const canonicalPath =
+      pathname === "/guia/melhores-celulares-ate-2000-reais"
+        ? "/melhores-celulares-ate-2000"
+        : pathname;
+    const canonicalUrl = `https://techescolhacerta.com.br${canonicalPath === "/" ? "" : canonicalPath}`;
 
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
-      },
+    return {
+      links: [
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          href: "/favicon.png",
+        },
+        {
+          rel: "canonical",
+          href: canonicalUrl,
+        },
+      ],
+      meta: [
+        { charSet: "utf-8" },
 
-      {
-        title: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
-      },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
 
-      {
-        name: "description",
-        content:
-          "Compare celulares, notebooks e smartwatches antes de comprar. Reviews reais, rankings atualizados e os melhores modelos custo-benefício de 2026.",
-      },
+        {
+          title: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+        },
 
-      {
-        name: "keywords",
-        content:
-          "melhores celulares, comparativo celular, review smartphone, celular custo benefício, galaxy a55, redmi note 13 pro, melhores celulares 2026",
-      },
+        {
+          name: "description",
+          content:
+            "Compare celulares, notebooks e smartwatches antes de comprar. Reviews reais, rankings atualizados e os melhores modelos custo-benefício de 2026.",
+        },
 
-      {
-        name: "robots",
-        content: "index, follow",
-      },
+        {
+          name: "keywords",
+          content:
+            "melhores celulares, comparativo celular, review smartphone, celular custo benefício, galaxy a55, redmi note 13 pro, melhores celulares 2026",
+        },
 
-      {
-        name: "author",
-        content: "Tech Escolha Certa",
-      },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
 
-      {
-        property: "og:type",
-        content: "website",
-      },
+        {
+          name: "author",
+          content: "Tech Escolha Certa",
+        },
 
-      {
-        property: "og:site_name",
-        content: "Tech Escolha Certa",
-      },
+        {
+          property: "og:type",
+          content: "website",
+        },
 
-      {
-        property: "og:title",
-        content: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
-      },
+        {
+          property: "og:site_name",
+          content: "Tech Escolha Certa",
+        },
 
-      {
-        property: "og:description",
-        content:
-          "Reviews reais, comparativos completos e rankings atualizados dos melhores celulares para comprar em 2026.",
-      },
+        {
+          property: "og:title",
+          content: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+        },
 
-      {
-        property: "og:url",
-        content: "https://techescolhacerta.com.br",
-      },
+        {
+          property: "og:description",
+          content:
+            "Reviews reais, comparativos completos e rankings atualizados dos melhores celulares para comprar em 2026.",
+        },
 
-      {
-        property: "og:image",
-        content: "https://techescolhacerta.com.br/favicon.png",
-      },
+        {
+          property: "og:url",
+          content: canonicalUrl,
+        },
 
-      {
-        name: "twitter:card",
-        content: "summary_large_image",
-      },
+        {
+          property: "og:image",
+          content: "https://techescolhacerta.com.br/favicon.png",
+        },
 
-      {
-        name: "twitter:title",
-        content: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
-      },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
 
-      {
-        name: "twitter:description",
-        content:
-          "Compare celulares antes de comprar. Reviews, rankings e recomendações confiáveis.",
-      },
+        {
+          name: "twitter:title",
+          content: "Tech Escolha Certa | Reviews, Comparativos e Melhores Celulares",
+        },
 
-      {
-        name: "twitter:image",
-        content: "https://techescolhacerta.com.br/favicon.png",
-      },
-    ],
-  }),
+        {
+          name: "twitter:description",
+          content:
+            "Compare celulares antes de comprar. Reviews, rankings e recomendações confiáveis.",
+        },
+
+        {
+          name: "twitter:image",
+          content: "https://techescolhacerta.com.br/favicon.png",
+        },
+      ],
+    };
+  },
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
