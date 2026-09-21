@@ -1,6 +1,8 @@
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
@@ -360,6 +362,20 @@ function ReviewGalaxyA35() {
             </p>
           </section>
 
+          <PurchaseActions
+            options={[
+              {
+                productName: "Galaxy A35",
+                href: GALAXY_A35_AFFILIATE_URL,
+                label: "Conferir preço do Galaxy A35",
+              },
+            ]}
+            pageType="review"
+            placement="decision"
+            title="O Galaxy A35 compensa pelo preço certo"
+            description="Confira o valor atual, o vendedor e o prazo de entrega antes de decidir. Se estiver bem abaixo do Galaxy A55, ele costuma ser a compra mais econômica."
+          />
+
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
             <h2 className="text-3xl font-bold text-[#0F3F4A]">Perguntas frequentes</h2>
 
@@ -467,6 +483,18 @@ function ReviewGalaxyA35() {
           </div>
         </div>
       </section>
+
+      <MobilePurchaseBar
+        title="Galaxy A35 5G"
+        options={[
+          {
+            productName: "Galaxy A35",
+            href: GALAXY_A35_AFFILIATE_URL,
+            label: "Ver preço",
+          },
+        ]}
+        pageType="review"
+      />
     </main>
   );
 }
