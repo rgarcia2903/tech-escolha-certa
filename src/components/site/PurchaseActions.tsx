@@ -14,7 +14,7 @@ type PurchaseOption = {
 type PurchaseActionsProps = {
   options: PurchaseOption[];
   pageType: "review" | "comparativo" | "guia" | "ofertas" | "home";
-  placement?: "hero" | "sidebar" | "content" | "sticky";
+  placement?: "hero" | "sidebar" | "content" | "sticky" | "decision";
   title?: string;
   description?: string;
   tone?: "light" | "dark";
