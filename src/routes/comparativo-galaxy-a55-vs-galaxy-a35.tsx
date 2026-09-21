@@ -1,6 +1,7 @@
 import { GALAXY_A35_AFFILIATE_URL, GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -371,6 +372,28 @@ function ComparativoGalaxyA55VsGalaxyA35() {
           </p>
         </section>
 
+        <PurchaseActions
+          className="mt-6"
+          options={[
+            {
+              productName: "Galaxy A35",
+              href: GALAXY_A35_AFFILIATE_URL,
+              label: "Economizar com o Galaxy A35",
+              primary: true,
+            },
+            {
+              productName: "Galaxy A55",
+              href: GALAXY_A55_AFFILIATE_URL,
+              label: "Escolher o Galaxy A55",
+              primary: false,
+            },
+          ]}
+          pageType="comparativo"
+          placement="decision"
+          title="Escolha pelo seu perfil e confira o preço atual"
+          description="Galaxy A35 para economizar; Galaxy A55 para acabamento, câmera e desempenho superiores. Compare o valor final antes de comprar."
+        />
+
         <section className="mt-12 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
           <h2 className="text-3xl font-bold text-[#0F3F4A]">Perguntas frequentes</h2>
 
@@ -415,6 +438,26 @@ function ComparativoGalaxyA55VsGalaxyA35() {
           </div>
         </section>
       </section>
+
+      <MobilePurchaseBar
+        eyebrow="Decisão rápida"
+        title="A35 ou A55? Confira os preços"
+        options={[
+          {
+            productName: "Galaxy A35",
+            href: GALAXY_A35_AFFILIATE_URL,
+            label: "A35: economizar",
+            primary: true,
+          },
+          {
+            productName: "Galaxy A55",
+            href: GALAXY_A55_AFFILIATE_URL,
+            label: "A55: premium",
+            primary: false,
+          },
+        ]}
+        pageType="comparativo"
+      />
     </main>
   );
 }
