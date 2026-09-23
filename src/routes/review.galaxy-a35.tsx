@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
@@ -229,6 +230,15 @@ function ReviewGalaxyA35() {
               bastante ou quer câmera mais avançada pode considerar o Galaxy A55 ou modelos como
               Poco X6.
             </p>
+
+            <ReviewDecisionPanel
+              productName="Galaxy A35"
+              bestFor="Você quer uma experiência Samsung segura, boa tela, bateria confiável e proteção IP67 sem entrar na faixa premium."
+              caution="Jogos pesados ou câmeras melhores forem prioridade, ou a diferença de preço para o Galaxy A55 estiver pequena."
+              affiliateHref={GALAXY_A35_AFFILIATE_URL}
+              comparisonHref="/comparativo-galaxy-a55-vs-galaxy-a35"
+              comparisonLabel="Comparar Galaxy A35 e A55"
+            />
           </section>
 
           <section className="grid gap-8 lg:grid-cols-2">
