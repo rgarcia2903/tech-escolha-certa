@@ -28,6 +28,44 @@ export function trackAffiliateClick({
   });
 }
 
+export function trackFinderChoice({
+  step,
+  choice,
+  recommendation = "pending",
+}: {
+  step: string;
+  choice: string;
+  recommendation?: string;
+}) {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "phone_finder_choice", {
+    finder_step: step,
+    finder_choice: choice,
+    recommended_product: recommendation,
+    page_path: window.location.pathname,
+  });
+}
+
+export function trackSiteSearchSelection({
+  query,
+  resultTitle,
+  destination,
+}: {
+  query: string;
+  resultTitle: string;
+  destination: string;
+}) {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "site_search_selection", {
+    search_term: query,
+    result_title: resultTitle,
+    destination,
+    page_path: window.location.pathname,
+  });
+}
+
 export function trackPageView(path: string) {
   if (typeof window === "undefined") return;
 
