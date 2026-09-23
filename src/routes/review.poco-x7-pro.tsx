@@ -6,8 +6,7 @@ export const Route = createFileRoute("/review/poco-x7-pro")({
   head: () => ({
     meta: [
       {
-        title:
-          "Poco X7 Pro vale a pena em 2026? Review completo e honesto",
+        title: "Poco X7 Pro vale a pena em 2026? Review completo e honesto",
       },
       {
         name: "description",
@@ -57,8 +56,15 @@ function ReviewPocoX7Pro() {
         description:
           "Confira preço, parcelamento e disponibilidade do Poco X7 Pro no Mercado Livre.",
         buttonText: "Ver Poco X7 Pro no Mercado Livre",
-        highlight:
-          "Dimensity 8400-Ultra • Bateria 6000 mAh • Carregamento 90 W",
+        highlight: "Dimensity 8400-Ultra • Bateria 6000 mAh • Carregamento 90 W",
+      }}
+      decision={{
+        bestFor:
+          "Você quer máximo desempenho, bateria forte e boa experiência em jogos sem pagar o preço de um flagship tradicional.",
+        caution:
+          "Câmera, acabamento e software mais refinado forem mais importantes do que potência bruta e autonomia.",
+        comparisonHref: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
+        comparisonLabel: "Comparar X7 Pro e X6 Pro",
       }}
       pros={[
         "Desempenho muito forte para a categoria",
@@ -101,44 +107,37 @@ function ReviewPocoX7Pro() {
         {
           eyebrow: "Veredito",
           title: "O Poco X7 Pro é bom?",
-          text:
-            "Sim. O Poco X7 Pro é uma ótima escolha para quem quer desempenho muito forte, boa autonomia e uma tela de qualidade. Ele é um celular pensado para quem valoriza velocidade, jogos e multitarefa, mais do que câmera ou refinamento de software.",
+          text: "Sim. O Poco X7 Pro é uma ótima escolha para quem quer desempenho muito forte, boa autonomia e uma tela de qualidade. Ele é um celular pensado para quem valoriza velocidade, jogos e multitarefa, mais do que câmera ou refinamento de software.",
         },
         {
           eyebrow: "Tela e construção",
           title: "Tela excelente para jogos, vídeos e uso diário",
-          text:
-            "A tela AMOLED com resolução 1.5K e 120 Hz entrega ótima fluidez, bom brilho e excelente experiência para vídeos, redes sociais, leitura e jogos. É um dos pontos fortes do aparelho e ajuda a reforçar a proposta premium da linha Poco X.",
+          text: "A tela AMOLED com resolução 1.5K e 120 Hz entrega ótima fluidez, bom brilho e excelente experiência para vídeos, redes sociais, leitura e jogos. É um dos pontos fortes do aparelho e ajuda a reforçar a proposta premium da linha Poco X.",
         },
         {
           eyebrow: "Desempenho",
           title: "Desempenho é o grande destaque do Poco X7 Pro",
-          text:
-            "O Dimensity 8400-Ultra coloca o Poco X7 Pro entre os celulares mais interessantes para quem quer jogar e usar muitos apps ao mesmo tempo. A performance deve agradar bastante quem busca folga para os próximos anos, inclusive em tarefas mais pesadas.",
+          text: "O Dimensity 8400-Ultra coloca o Poco X7 Pro entre os celulares mais interessantes para quem quer jogar e usar muitos apps ao mesmo tempo. A performance deve agradar bastante quem busca folga para os próximos anos, inclusive em tarefas mais pesadas.",
         },
         {
           eyebrow: "Câmeras",
           title: "Câmera principal é competente, mas não é o foco",
-          text:
-            "A câmera principal de 50 MP com estabilização óptica tende a entregar resultados bons no uso diário, especialmente durante o dia. Ainda assim, a proposta do Poco X7 Pro é muito mais centrada em desempenho do que em fotografia, então ele não é a melhor opção para quem prioriza câmera.",
+          text: "A câmera principal de 50 MP com estabilização óptica tende a entregar resultados bons no uso diário, especialmente durante o dia. Ainda assim, a proposta do Poco X7 Pro é muito mais centrada em desempenho do que em fotografia, então ele não é a melhor opção para quem prioriza câmera.",
         },
         {
           eyebrow: "Bateria e carregamento",
           title: "Autonomia forte e carregamento rápido fazem diferença",
-          text:
-            "A bateria de 6.000 mAh é um dos grandes trunfos do Poco X7 Pro. Ela deve entregar boa autonomia para uso pesado, enquanto o carregamento rápido de 90 W ajuda bastante na rotina de quem não quer ficar muito tempo preso à tomada.",
+          text: "A bateria de 6.000 mAh é um dos grandes trunfos do Poco X7 Pro. Ela deve entregar boa autonomia para uso pesado, enquanto o carregamento rápido de 90 W ajuda bastante na rotina de quem não quer ficar muito tempo preso à tomada.",
         },
         {
           eyebrow: "Software",
           title: "HyperOS tem recursos extras, mas divide opiniões",
-          text:
-            "O HyperOS oferece bastante personalização e recursos, algo que pode agradar usuários avançados. Por outro lado, quem prefere uma experiência mais limpa e previsível talvez se sinta mais confortável com aparelhos Samsung ou até alguns Motorola.",
+          text: "O HyperOS oferece bastante personalização e recursos, algo que pode agradar usuários avançados. Por outro lado, quem prefere uma experiência mais limpa e previsível talvez se sinta mais confortável com aparelhos Samsung ou até alguns Motorola.",
         },
         {
           eyebrow: "Comparação",
           title: "Poco X7 Pro ou Poco X6 Pro: qual vale mais a pena?",
-          text:
-            "O Poco X7 Pro faz mais sentido para quem quer um passo à frente em bateria, hardware e longevidade. Já o Poco X6 Pro ainda continua interessante se aparecer com preço muito agressivo, principalmente para quem quer economizar sem abrir mão de muita performance.",
+          text: "O Poco X7 Pro faz mais sentido para quem quer um passo à frente em bateria, hardware e longevidade. Já o Poco X6 Pro ainda continua interessante se aparecer com preço muito agressivo, principalmente para quem quer economizar sem abrir mão de muita performance.",
         },
       ]}
       finalRecommendation="O Poco X7 Pro vale a pena para quem quer um celular com foco claro em desempenho, jogos, bateria e custo-benefício. Se você procura potência e uma ficha técnica forte, ele é uma das opções mais interessantes da categoria. Se seu foco principal for câmera, acabamento premium ou software mais refinado, pode valer comparar com outras linhas antes de decidir."
