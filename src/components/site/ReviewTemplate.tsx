@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
@@ -174,6 +175,36 @@ export function ReviewTemplate({
             <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">{productName} vale a pena?</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">{verdictShort}</p>
+
+            <div className="mt-6 rounded-2xl bg-[#F7F2EB] p-5 ring-1 ring-slate-200">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
+                Já decidiu?
+              </p>
+
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Confira o preço atualizado, o parcelamento e a reputação do vendedor antes de
+                comprar.
+              </p>
+
+              <a
+                href={affiliateHref}
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                onClick={() =>
+                  trackAffiliateClick({
+                    productName,
+                    pageType: "review",
+                    ctaPlacement: "decision",
+                  })
+                }
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#B9774B] px-5 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:brightness-95 sm:w-auto"
+              >
+                Ver preço atualizado
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </a>
+
+              <AffiliateRedirectNotice className="mt-3" />
+            </div>
           </section>
 
           <section className="grid gap-8 lg:grid-cols-2">
@@ -333,38 +364,19 @@ export function ReviewTemplate({
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#071E25]/95 backdrop-blur-xl lg:hidden">
-        <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3">
-          <div className="min-w-0 flex-1">
-            <span className="block text-[10px] uppercase tracking-[0.18em] text-[#8B5A2B]">
-              Melhor oferta
-            </span>
-            <span className="block truncate font-heading text-sm font-bold text-white">
-              {productName}
-            </span>
-            <span className="text-xs text-slate-300">{priceLabel}</span>
-          </div>
-
-          <a
-            href={affiliateHref}
-            target="_blank"
-            rel="nofollow sponsored noopener noreferrer"
-            onClick={() =>
-              trackAffiliateClick({
-                productName,
-                pageType: "review",
-                ctaPlacement: "sticky",
-              })
-            }
-            className="inline-flex items-center gap-2 rounded-2xl bg-[#8B5A2B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
-          >
-            Ver no Mercado Livre
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
-        </div>
-      </div>
-
-      <div className="h-24 lg:hidden" aria-hidden />
+      <MobilePurchaseBar
+        options={[
+          {
+            productName,
+            href: affiliateHref,
+            label: "Ver preço",
+            primary: true,
+          },
+        ]}
+        pageType="review"
+        title={productName}
+        eyebrow="Preço atualizado"
+      />
     </main>
   );
 }
