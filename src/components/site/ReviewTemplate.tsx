@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
+import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 
@@ -27,6 +28,12 @@ export type ReviewTemplateProps = {
     description: string;
     buttonText: string;
     highlight: string;
+  };
+  decision: {
+    bestFor: string;
+    caution: string;
+    comparisonHref: string;
+    comparisonLabel: string;
   };
   pros: string[];
   cons: string[];
@@ -68,6 +75,7 @@ export function ReviewTemplate({
   verdictShort,
   affiliateHref,
   affiliate,
+  decision,
   pros,
   cons,
   scores,
@@ -176,35 +184,14 @@ export function ReviewTemplate({
 
             <p className="mt-4 text-base leading-7 text-slate-700">{verdictShort}</p>
 
-            <div className="mt-6 rounded-2xl bg-[#F7F2EB] p-5 ring-1 ring-slate-200">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
-                Já decidiu?
-              </p>
-
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Confira o preço atualizado, o parcelamento e a reputação do vendedor antes de
-                comprar.
-              </p>
-
-              <a
-                href={affiliateHref}
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                onClick={() =>
-                  trackAffiliateClick({
-                    productName,
-                    pageType: "review",
-                    ctaPlacement: "decision",
-                  })
-                }
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#B9774B] px-5 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:brightness-95 sm:w-auto"
-              >
-                Ver preço atualizado
-                <ArrowUpRight className="h-4 w-4" aria-hidden />
-              </a>
-
-              <AffiliateRedirectNotice className="mt-3" />
-            </div>
+            <ReviewDecisionPanel
+              productName={productName}
+              bestFor={decision.bestFor}
+              caution={decision.caution}
+              affiliateHref={affiliateHref}
+              comparisonHref={decision.comparisonHref}
+              comparisonLabel={decision.comparisonLabel}
+            />
           </section>
 
           <section className="grid gap-8 lg:grid-cols-2">
