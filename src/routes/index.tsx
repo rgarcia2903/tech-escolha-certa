@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight, ShieldCheck, Smartphone, Star } from "lucide-
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
+import { PhoneDecisionFinder } from "@/components/site/PhoneDecisionFinder";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { SectionTitle } from "@/components/site/SectionTitle";
@@ -107,39 +108,41 @@ function HomePage() {
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
         eyebrow="Portal editorial de tecnologia"
-        title="Escolha seu próximo celular com mais segurança."
-        description="Reviews, comparativos, guias de compra e recomendações editoriais para ajudar você a escolher entre Samsung, Xiaomi, Redmi, Poco e iPhone sem cair em marketing vazio."
+        title="Encontre o celular certo sem perder horas comparando."
+        description="Informe seu orçamento e prioridade para chegar a uma recomendação clara. Depois, confira a análise, compare as alternativas e consulte o preço atual."
         image="/images/products/phones-hero-optimized.webp"
         hideImageOnMobile
         aside={
           <>
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-white/20">
               <ShieldCheck className="h-3.5 w-3.5" />
-              Hub em destaque
+              Escolha rápida
             </div>
 
-            <h2 className="mt-4 text-3xl font-bold text-white">Melhores celulares Xiaomi</h2>
+            <h2 className="mt-4 text-3xl font-bold text-white">
+              Descubra sua melhor opção em 30 segundos
+            </h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Guia atualizado com Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro e Poco X6 Pro,
-              incluindo reviews e comparativos para decidir melhor.
+              Escolha a faixa de preço e o que mais importa. Você recebe uma indicação direta, o
+              principal ponto de atenção e a comparação que vale fazer.
             </p>
 
-            <Link
-              to="/melhores-celulares-xiaomi"
+            <a
+              href="#escolha-rapida"
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver guia Xiaomi
-            </Link>
+              Começar escolha guiada
+            </a>
           </>
         }
       >
-        <Link
-          to="/celulares"
+        <a
+          href="#escolha-rapida"
           className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
         >
-          Encontrar meu celular
-        </Link>
+          Escolher meu celular
+        </a>
 
         <Link
           to="/comparativos"
@@ -149,11 +152,13 @@ function HomePage() {
         </Link>
       </CategoryHero>
 
+      <PhoneDecisionFinder />
+
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
-          eyebrow="Comece por aqui"
-          title="Escolha o melhor caminho para comprar"
-          description="Acesse rapidamente os hubs principais do site: guias, comparativos, custo-benefício e ofertas."
+          eyebrow="Continue sua pesquisa"
+          title="Já sabe por onde quer começar?"
+          description="Acesse diretamente os guias, comparativos, seleções custo-benefício ou ofertas recomendadas."
         />
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
