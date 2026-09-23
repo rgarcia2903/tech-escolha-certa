@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -190,6 +192,22 @@ function ReviewGalaxyA55() {
               Para quem quer um Samsung confiável sem pagar por um Galaxy S, ele continua sendo uma
               das escolhas mais racionais da linha intermediária premium.
             </p>
+
+            <PurchaseActions
+              className="mt-6"
+              options={[
+                {
+                  productName: "Galaxy A55",
+                  href: GALAXY_A55_AFFILIATE_URL,
+                  label: "Ver preço do Galaxy A55",
+                  primary: true,
+                },
+              ]}
+              pageType="review"
+              placement="decision"
+              title="Galaxy A55: confira a oferta atual"
+              description="Compare o valor final, o parcelamento e a reputação do vendedor antes de comprar."
+            />
           </section>
 
           <AnalysisBlock
@@ -459,38 +477,18 @@ function ReviewGalaxyA55() {
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#071E25]/95 backdrop-blur-xl lg:hidden">
-        <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3">
-          <div className="min-w-0 flex-1">
-            <span className="block text-[10px] uppercase tracking-[0.18em] text-[#8B5A2B]">
-              Melhor oferta
-            </span>
-            <span className="block truncate font-heading text-sm font-bold text-white">
-              Galaxy A55 5G
-            </span>
-            <span className="text-xs text-slate-300">Conferir preço atualizado</span>
-          </div>
-
-          <a
-            href={GALAXY_A55_AFFILIATE_URL}
-            target="_blank"
-            rel="nofollow sponsored noopener noreferrer"
-            onClick={() =>
-              trackAffiliateClick({
-                productName: "Galaxy A55",
-                pageType: "review",
-                ctaPlacement: "sticky",
-              })
-            }
-            className="inline-flex items-center gap-2 rounded-2xl bg-[#8B5A2B] px-5 py-3 text-xs font-bold text-white shadow-lg transition hover:brightness-95"
-          >
-            Ver no Mercado Livre
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
-        </div>
-      </div>
-
-      <div className="h-24 lg:hidden" aria-hidden />
+      <MobilePurchaseBar
+        options={[
+          {
+            productName: "Galaxy A55",
+            href: GALAXY_A55_AFFILIATE_URL,
+            label: "Ver preço",
+            primary: true,
+          },
+        ]}
+        pageType="review"
+        title="Galaxy A55 5G"
+      />
     </main>
   );
 }
