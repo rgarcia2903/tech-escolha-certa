@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, Search, Tag, X } from "lucide-react";
+import { Menu, Tag, X } from "lucide-react";
+
+import { SiteSearch } from "@/components/site/SiteSearch";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -63,13 +65,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            aria-label="Buscar"
-            className="hidden rounded-xl border border-border bg-background p-2 text-muted-foreground transition hover:bg-secondary hover:text-foreground md:inline-flex"
-          >
-            <Search className="h-4 w-4" />
-          </button>
+          <SiteSearch />
 
           <Link
             to="/ofertas"
@@ -151,10 +147,3 @@ export function Header() {
     </header>
   );
 }
-
-
-
-
-
-
-
