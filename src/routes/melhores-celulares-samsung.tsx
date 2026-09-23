@@ -5,6 +5,8 @@ import {
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ReviewCard } from "@/components/site/ReviewCard";
@@ -14,8 +16,7 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
   head: () => ({
     meta: [
       {
-        title:
-          "Melhores celulares Samsung em 2026: guia completo para escolher o ideal",
+        title: "Melhores celulares Samsung em 2026: guia completo para escolher o ideal",
       },
       {
         name: "description",
@@ -62,8 +63,7 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
           "@context": "https://schema.org",
           "@type": "Article",
           headline: "Melhores celulares Samsung em 2026",
-          description:
-            "Guia editorial dos melhores celulares Samsung para comprar em 2026.",
+          description: "Guia editorial dos melhores celulares Samsung para comprar em 2026.",
           author: {
             "@type": "Organization",
             name: "Tech Escolha Certa",
@@ -74,8 +74,7 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
           },
           datePublished: "2026-06-02",
           dateModified: "2026-06-02",
-          mainEntityOfPage:
-            "https://techescolhacerta.com.br/melhores-celulares-samsung",
+          mainEntityOfPage: "https://techescolhacerta.com.br/melhores-celulares-samsung",
         }),
       },
       {
@@ -117,12 +116,9 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
 });
 
 const affiliateLinks = {
-  galaxyA55:
-    GALAXY_A55_AFFILIATE_URL,
-  galaxyS24:
-    GALAXY_S24_AFFILIATE_URL,
-  galaxyA35:
-    GALAXY_A35_AFFILIATE_URL,
+  galaxyA55: GALAXY_A55_AFFILIATE_URL,
+  galaxyS24: GALAXY_S24_AFFILIATE_URL,
+  galaxyA35: GALAXY_A35_AFFILIATE_URL,
 };
 
 const ranking = [
@@ -158,18 +154,15 @@ const ranking = [
 const samsungProfiles = [
   {
     title: "Compre o Galaxy A55 se você quer equilíbrio",
-    text:
-      "É a melhor escolha para quem quer um celular completo, bonito, resistente e confiável para vários anos. Ele não é o mais barato nem o mais potente, mas entrega o conjunto mais seguro.",
+    text: "É a melhor escolha para quem quer um celular completo, bonito, resistente e confiável para vários anos. Ele não é o mais barato nem o mais potente, mas entrega o conjunto mais seguro.",
   },
   {
     title: "Compre o Galaxy S24 se você quer experiência premium",
-    text:
-      "É indicado para quem quer câmera superior, desempenho topo de linha, tela excelente, recursos de IA e acabamento premium em um aparelho compacto.",
+    text: "É indicado para quem quer câmera superior, desempenho topo de linha, tela excelente, recursos de IA e acabamento premium em um aparelho compacto.",
   },
   {
     title: "Compre o Galaxy A35 se você quer economizar",
-    text:
-      "É a opção mais racional para quem quer Samsung com boa tela, 5G, IP67 e uso diário fluido sem pagar o preço do A55.",
+    text: "É a opção mais racional para quem quer Samsung com boa tela, 5G, IP67 e uso diário fluido sem pagar o preço do A55.",
   },
 ];
 
@@ -196,18 +189,34 @@ function MelhoresCelularesSamsung() {
               Melhor Samsung geral
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold text-white">
-              Galaxy A55 5G
-            </h2>
+            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A55 5G</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Um dos celulares mais equilibrados da Samsung para quem quer
-              ótima tela, boa bateria, construção premium, IP67 e longa vida útil.
+              Um dos celulares mais equilibrados da Samsung para quem quer ótima tela, boa bateria,
+              construção premium, IP67 e longa vida útil.
             </p>
+
+            <a
+              href={GALAXY_A55_AFFILIATE_URL}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A55",
+                  pageType: "guia",
+                  ctaPlacement: "hero",
+                })
+              }
+              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+            >
+              Ver preço do Galaxy A55
+            </a>
+
+            <AffiliateRedirectNotice className="mt-3" tone="dark" />
 
             <Link
               to="/review/galaxy-a55"
-              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+              className="mt-3 block text-center text-sm font-semibold text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
               Ler review completo
             </Link>
@@ -246,13 +255,9 @@ function MelhoresCelularesSamsung() {
                 {item.category}
               </span>
 
-              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">
-                {item.product}
-              </h3>
+              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
 
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">
-                {item.description}
-              </p>
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">{item.description}</p>
 
               <div className="mt-5 grid gap-2">
                 <Link
@@ -270,6 +275,7 @@ function MelhoresCelularesSamsung() {
                     trackAffiliateClick({
                       productName: item.affiliateProductName,
                       pageType: "guia",
+                      ctaPlacement: "ranking",
                     })
                   }
                   className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
@@ -330,23 +336,22 @@ function MelhoresCelularesSamsung() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                O <strong>Galaxy A55</strong> é a escolha mais equilibrada para
-                a maioria das pessoas. Ele combina boa tela, boa bateria,
-                construção premium, resistência IP67, câmeras confiáveis e
-                software mais estável.
+                O <strong>Galaxy A55</strong> é a escolha mais equilibrada para a maioria das
+                pessoas. Ele combina boa tela, boa bateria, construção premium, resistência IP67,
+                câmeras confiáveis e software mais estável.
               </p>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                O <strong>Galaxy S24</strong> é ideal para quem quer experiência
-                premium, câmeras superiores, recursos de IA e desempenho de topo
-                de linha. Já o <strong>Galaxy A35</strong> é excelente para
-                economizar mantendo a experiência Samsung.
+                O <strong>Galaxy S24</strong> é ideal para quem quer experiência premium, câmeras
+                superiores, recursos de IA e desempenho de topo de linha. Já o{" "}
+                <strong>Galaxy A35</strong> é excelente para economizar mantendo a experiência
+                Samsung.
               </p>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                A Samsung continua sendo uma das marcas mais fortes para quem
-                prioriza estabilidade, assistência, atualizações, câmeras
-                equilibradas e um celular confiável para usar por vários anos.
+                A Samsung continua sendo uma das marcas mais fortes para quem prioriza estabilidade,
+                assistência, atualizações, câmeras equilibradas e um celular confiável para usar por
+                vários anos.
               </p>
             </section>
 
@@ -356,12 +361,8 @@ function MelhoresCelularesSamsung() {
                   key={item.title}
                   className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
                 >
-                  <h3 className="text-xl font-bold text-[#0F3F4A]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">
-                    {item.text}
-                  </p>
+                  <h3 className="text-xl font-bold text-[#0F3F4A]">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-700">{item.text}</p>
                 </article>
               ))}
             </section>
@@ -408,15 +409,15 @@ function MelhoresCelularesSamsung() {
               </h2>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                A combinação de software refinado, boa otimização, construção,
-                suporte e atualizações faz os Galaxy continuarem entre os
-                aparelhos mais recomendados para uso no longo prazo.
+                A combinação de software refinado, boa otimização, construção, suporte e
+                atualizações faz os Galaxy continuarem entre os aparelhos mais recomendados para uso
+                no longo prazo.
               </p>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Se você quer comprar sem arriscar muito, o Galaxy A55 é a melhor
-                recomendação geral. Se quer economizar, vá de Galaxy A35. Se quer
-                o melhor da Samsung em tamanho compacto, escolha o Galaxy S24.
+                Se você quer comprar sem arriscar muito, o Galaxy A55 é a melhor recomendação geral.
+                Se quer economizar, vá de Galaxy A35. Se quer o melhor da Samsung em tamanho
+                compacto, escolha o Galaxy S24.
               </p>
             </section>
           </article>
@@ -428,24 +429,15 @@ function MelhoresCelularesSamsung() {
               </p>
 
               <div className="mt-5 space-y-3 text-sm">
-                <Link
-                  to="/review/galaxy-a55"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
+                <Link to="/review/galaxy-a55" className="block text-slate-700 hover:text-[#8B5A2B]">
                   Review Galaxy A55
                 </Link>
 
-                <Link
-                  to="/review/galaxy-a35"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
+                <Link to="/review/galaxy-a35" className="block text-slate-700 hover:text-[#8B5A2B]">
                   Review Galaxy A35
                 </Link>
 
-                <Link
-                  to="/review/galaxy-s24"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
+                <Link to="/review/galaxy-s24" className="block text-slate-700 hover:text-[#8B5A2B]">
                   Review Galaxy S24
                 </Link>
 
@@ -504,6 +496,20 @@ function MelhoresCelularesSamsung() {
           </div>
         </section>
       </section>
+
+      <MobilePurchaseBar
+        options={[
+          {
+            productName: "Galaxy A55",
+            href: GALAXY_A55_AFFILIATE_URL,
+            label: "Ver preço",
+            primary: true,
+          },
+        ]}
+        pageType="guia"
+        title="Galaxy A55 5G"
+        eyebrow="Melhor Samsung geral"
+      />
     </main>
   );
 }
