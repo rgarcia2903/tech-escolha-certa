@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import {
@@ -332,20 +333,13 @@ function ReviewPage() {
               sentido financeiro.
             </p>
 
-            <PurchaseActions
-              className="mt-6"
-              options={[
-                {
-                  productName: "iPhone 15",
-                  href: IPHONE_15_AFFILIATE_URL,
-                  label: "Ver preço do iPhone 15",
-                  primary: true,
-                },
-              ]}
-              pageType="review"
-              placement="decision"
-              title="iPhone 15: confira a oferta atual"
-              description="Compare o valor final, o parcelamento e a reputação do vendedor antes de comprar."
+            <ReviewDecisionPanel
+              productName="iPhone 15"
+              bestFor="Você prioriza câmera previsível, vídeos, longevidade e integração com outros produtos Apple."
+              caution="Tela de 120 Hz, carregamento rápido ou mais especificações pelo preço forem prioridades."
+              affiliateHref={IPHONE_15_AFFILIATE_URL}
+              comparisonHref="/comparativo/iphone-15-vs-galaxy-s24"
+              comparisonLabel="Comparar iPhone 15 e Galaxy S24"
             />
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
