@@ -6,8 +6,7 @@ export const Route = createFileRoute("/review/redmi-note-14-pro-plus")({
   head: () => ({
     meta: [
       {
-        title:
-          "Redmi Note 14 Pro+ 5G vale a pena em 2026? Review completo e honesto",
+        title: "Redmi Note 14 Pro+ 5G vale a pena em 2026? Review completo e honesto",
       },
       {
         name: "description",
@@ -57,8 +56,15 @@ function ReviewRedmiNote14ProPlus() {
         description:
           "Confira preço, parcelamento e disponibilidade do Redmi Note 14 Pro+ 5G no Mercado Livre.",
         buttonText: "Ver Redmi Note 14 Pro+ no Mercado Livre",
-        highlight:
-          "200 MP com OIS • Snapdragon 7s Gen 3 • Carregamento 120 W",
+        highlight: "200 MP com OIS • Snapdragon 7s Gen 3 • Carregamento 120 W",
+      }}
+      decision={{
+        bestFor:
+          "Você quer um Redmi mais completo, com câmera principal forte, proteção IP68 e recarga extremamente rápida.",
+        caution:
+          "A diferença de preço para o Redmi Note 13 Pro estiver alta; o modelo anterior pode entregar melhor custo-benefício.",
+        comparisonHref: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
+        comparisonLabel: "Comparar Note 14 Pro+ e Note 13 Pro",
       }}
       pros={[
         "Tela AMOLED 1.5K de 120 Hz com excelente qualidade visual",
@@ -102,44 +108,37 @@ function ReviewRedmiNote14ProPlus() {
         {
           eyebrow: "Veredito",
           title: "O Redmi Note 14 Pro+ 5G é bom?",
-          text:
-            "Sim. O Redmi Note 14 Pro+ 5G é uma boa escolha para quem quer um Xiaomi mais completo, com foco em tela, câmera principal, carregamento rápido e bastante memória. Ele mira quem quer mais do que um intermediário básico, mas ainda não quer pagar preço de topo de linha.",
+          text: "Sim. O Redmi Note 14 Pro+ 5G é uma boa escolha para quem quer um Xiaomi mais completo, com foco em tela, câmera principal, carregamento rápido e bastante memória. Ele mira quem quer mais do que um intermediário básico, mas ainda não quer pagar preço de topo de linha.",
         },
         {
           eyebrow: "Tela e construção",
           title: "Tela 1.5K de 120 Hz é um dos pontos fortes",
-          text:
-            "A tela AMOLED de 6,67 polegadas com resolução 1.5K e taxa de atualização de 120 Hz entrega uma experiência muito boa para vídeos, redes sociais, leitura, navegação e jogos. É um painel acima da média para quem valoriza qualidade visual.",
+          text: "A tela AMOLED de 6,67 polegadas com resolução 1.5K e taxa de atualização de 120 Hz entrega uma experiência muito boa para vídeos, redes sociais, leitura, navegação e jogos. É um painel acima da média para quem valoriza qualidade visual.",
         },
         {
           eyebrow: "Desempenho",
           title: "Snapdragon 7s Gen 3 dá conta do uso pesado",
-          text:
-            "O Snapdragon 7s Gen 3 oferece desempenho sólido para aplicativos, multitarefa, redes sociais, vídeos e jogos populares. Ele não é um chip topo de linha, mas entrega uma experiência rápida e consistente para a maioria dos usuários.",
+          text: "O Snapdragon 7s Gen 3 oferece desempenho sólido para aplicativos, multitarefa, redes sociais, vídeos e jogos populares. Ele não é um chip topo de linha, mas entrega uma experiência rápida e consistente para a maioria dos usuários.",
         },
         {
           eyebrow: "Câmeras",
           title: "Câmera principal de 200 MP é o destaque",
-          text:
-            "A câmera principal de 200 MP com OIS é o grande atrativo do conjunto. Ela tende a entregar fotos com bom nível de detalhe, especialmente durante o dia. As câmeras auxiliares são mais simples, então o foco real está na câmera principal.",
+          text: "A câmera principal de 200 MP com OIS é o grande atrativo do conjunto. Ela tende a entregar fotos com bom nível de detalhe, especialmente durante o dia. As câmeras auxiliares são mais simples, então o foco real está na câmera principal.",
         },
         {
           eyebrow: "Bateria e carregamento",
           title: "Carregamento de 120 W é o maior diferencial",
-          text:
-            "A bateria de 5.110 mAh oferece boa autonomia para um dia de uso, mas o grande destaque é o carregamento HyperCharge de 120 W. Para quem costuma carregar o celular rapidamente antes de sair, esse é um diferencial muito forte frente a vários concorrentes.",
+          text: "A bateria de 5.110 mAh oferece boa autonomia para um dia de uso, mas o grande destaque é o carregamento HyperCharge de 120 W. Para quem costuma carregar o celular rapidamente antes de sair, esse é um diferencial muito forte frente a vários concorrentes.",
         },
         {
           eyebrow: "Software",
           title: "HyperOS tem recursos, mas divide opiniões",
-          text:
-            "O HyperOS traz muitas funções e opções de personalização, o que agrada usuários que gostam de controle e recursos extras. Por outro lado, quem prefere uma experiência mais limpa e previsível pode se adaptar melhor à One UI da Samsung.",
+          text: "O HyperOS traz muitas funções e opções de personalização, o que agrada usuários que gostam de controle e recursos extras. Por outro lado, quem prefere uma experiência mais limpa e previsível pode se adaptar melhor à One UI da Samsung.",
         },
         {
           eyebrow: "Comparação",
           title: "Redmi Note 14 Pro+ ou Redmi Note 13 Pro?",
-          text:
-            "O Redmi Note 14 Pro+ faz mais sentido para quem quer um conjunto mais atual, carregamento muito mais rápido, melhor construção e desempenho mais moderno. Já o Redmi Note 13 Pro ainda pode ser melhor compra se estiver bem mais barato.",
+          text: "O Redmi Note 14 Pro+ faz mais sentido para quem quer um conjunto mais atual, carregamento muito mais rápido, melhor construção e desempenho mais moderno. Já o Redmi Note 13 Pro ainda pode ser melhor compra se estiver bem mais barato.",
         },
       ]}
       finalRecommendation="O Redmi Note 14 Pro+ 5G vale a pena para quem busca um Xiaomi intermediário premium, com tela excelente, câmera principal forte, bom desempenho, muita memória e carregamento extremamente rápido. Se o preço estiver próximo do Redmi Note 13 Pro, o modelo mais novo é mais interessante. Se a diferença de preço for grande, o Redmi Note 13 Pro ainda pode entregar melhor custo-benefício."
