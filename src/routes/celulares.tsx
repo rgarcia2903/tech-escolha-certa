@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Check, ChevronRight, ShieldCheck, Sparkles } from "lucide-react";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { EditorialHero } from "@/components/site/EditorialHero";
 import { GuideCard } from "@/components/site/GuideCard";
+import { PhoneDecisionFinder } from "@/components/site/PhoneDecisionFinder";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
 
@@ -11,13 +13,12 @@ export const Route = createFileRoute("/celulares")({
   head: () => ({
     meta: [
       {
-        title:
-          "Celulares — Reviews, comparativos e guias para comprar melhor em 2026",
+        title: "Qual celular comprar em 2026? Encontre o modelo certo para você",
       },
       {
         name: "description",
         content:
-          "Veja reviews, comparativos, guias de compra e ofertas de celulares Samsung, Xiaomi, Redmi, Poco e iPhone para escolher melhor em 2026.",
+          "Informe seu orçamento e prioridade para descobrir qual celular comprar em 2026. Compare Samsung, Xiaomi, Redmi, Poco e iPhone antes de decidir.",
       },
       {
         property: "og" + ":title",
@@ -83,36 +84,31 @@ const guides = [
   },
   {
     title: "Melhores celulares até R$ 2.000",
-    description:
-      "Os modelos mais equilibrados para quem quer comprar bem gastando menos.",
+    description: "Os modelos mais equilibrados para quem quer comprar bem gastando menos.",
     href: "/melhores-celulares-ate-2000",
     highlight: "Melhor compra geral: Galaxy A35",
   },
   {
     title: "Melhores celulares até R$ 2.500",
-    description:
-      "Guia completo para quem busca intermediários premium em 2026.",
+    description: "Guia completo para quem busca intermediários premium em 2026.",
     href: "/melhores-celulares-ate-2500",
     highlight: "Melhor intermediário premium: Galaxy A55",
   },
   {
     title: "Melhores celulares Xiaomi",
-    description:
-      "Redmi, Poco e Xiaomi organizados por perfil: equilíbrio, jogos, câmera e preço.",
+    description: "Redmi, Poco e Xiaomi organizados por perfil: equilíbrio, jogos, câmera e preço.",
     href: "/melhores-celulares-xiaomi",
     highlight: "Redmi e Poco",
   },
   {
     title: "Melhores celulares Samsung",
-    description:
-      "Veja quais modelos Samsung realmente valem a pena atualmente.",
+    description: "Veja quais modelos Samsung realmente valem a pena atualmente.",
     href: "/melhores-celulares-samsung",
     highlight: "Hub Samsung atualizado",
   },
   {
     title: "Ofertas de celulares",
-    description:
-      "Atalho para consultar preços e disponibilidade dos modelos recomendados.",
+    description: "Atalho para consultar preços e disponibilidade dos modelos recomendados.",
     href: "/ofertas",
     highlight: "Preços atualizados",
   },
@@ -121,65 +117,88 @@ const guides = [
 const comparisons = [
   {
     title: "Galaxy A55 vs Galaxy A35",
-    description:
-      "Qual Samsung intermediário faz mais sentido para o seu perfil?",
+    description: "Qual Samsung intermediário faz mais sentido para o seu perfil?",
     href: "/comparativo-galaxy-a55-vs-galaxy-a35",
     winner: "Galaxy A55 entrega experiência mais premium.",
   },
   {
     title: "Galaxy A55 vs Redmi Note 13 Pro",
-    description:
-      "Samsung ou Xiaomi? Compare câmera, bateria, desempenho e experiência.",
+    description: "Samsung ou Xiaomi? Compare câmera, bateria, desempenho e experiência.",
     href: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
     winner: "Empate técnico dependendo do perfil.",
   },
 ];
 
 const rankings = [
-  ["Melhor celular premium", "Galaxy S24"],
-  ["Melhor Samsung custo-benefício", "Galaxy A35"],
-  ["Melhor intermediário premium", "Galaxy A55"],
-  ["Melhor Xiaomi custo-benefício", "Redmi Note 13 Pro"],
+  {
+    category: "Melhor celular premium",
+    product: "Galaxy S24",
+    href: "/review/galaxy-s24",
+  },
+  {
+    category: "Melhor Samsung custo-benefício",
+    product: "Galaxy A35",
+    href: "/review/galaxy-a35",
+  },
+  {
+    category: "Melhor intermediário premium",
+    product: "Galaxy A55",
+    href: "/review/galaxy-a55",
+  },
+  {
+    category: "Melhor Xiaomi custo-benefício",
+    product: "Redmi Note 13 Pro",
+    href: "/review/redmi-note-13-pro",
+  },
 ];
 
 function CelularesPage() {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <EditorialHero
-        eyebrow="Categoria • Smartphones"
-        title="Reviews, comparativos e guias para escolher o celular certo"
-        description="Análises editoriais com foco em custo-benefício, experiência real, bateria, desempenho, câmera e decisão de compra."
+        eyebrow="Decisão de compra • Smartphones"
+        title="Qual celular comprar? Encontre a opção certa para você"
+        description="Escolha seu orçamento e o que mais importa. Você recebe uma recomendação direta, entende o principal ponto de atenção e compara a alternativa antes de comprar."
         aside={
           <>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Guia principal
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D7A77E] ring-1 ring-white/20">
+              <Sparkles className="h-3.5 w-3.5" />
+              Escolha guiada
+            </div>
 
-            <h2 className="mt-3 text-3xl font-bold text-white">
-              Melhores celulares até R$ 2.500
-            </h2>
+            <h2 className="mt-4 text-3xl font-bold text-white">Decida em três passos simples</h2>
 
-            <p className="mt-4 text-sm leading-6 text-slate-200">
-              Nossa seleção mais equilibrada para quem quer comprar um celular forte sem
-              entrar na faixa premium mais cara.
-            </p>
+            <ol className="mt-5 space-y-3 text-sm text-slate-200">
+              {[
+                "Defina quanto quer gastar",
+                "Escolha sua prioridade",
+                "Confira a indicação e compare",
+              ].map((step, index) => (
+                <li key={step} className="flex items-center gap-3">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-white/10 font-bold text-[#D7A77E] ring-1 ring-white/15">
+                    {index + 1}
+                  </span>
+                  {step}
+                </li>
+              ))}
+            </ol>
 
-            <Link
-              to="/melhores-celulares-ate-2500"
+            <a
+              href="#escolha-rapida"
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver guia completo
-            </Link>
+              Começar agora
+            </a>
           </>
         }
       >
         <div className="flex flex-wrap gap-3">
-          <Link
-            to="/melhores-celulares-samsung"
+          <a
+            href="#escolha-rapida"
             className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
           >
-            Ver melhores Samsung
-          </Link>
+            Encontrar meu celular
+          </a>
 
           <Link
             to="/comparativos"
@@ -190,12 +209,43 @@ function CelularesPage() {
         </div>
       </EditorialHero>
 
+      <PhoneDecisionFinder pageType="celulares" />
+
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-6 md:grid-cols-3 lg:px-8">
+          {[
+            {
+              title: "Indicação direta",
+              description: "Uma escolha coerente com seu orçamento e prioridade.",
+            },
+            {
+              title: "Ponto de atenção",
+              description: "O principal limite do aparelho antes de você decidir.",
+            },
+            {
+              title: "Alternativa comparada",
+              description: "O concorrente que merece ser visto antes da compra.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="flex items-start gap-3 rounded-2xl bg-[#F7F2EB] p-4">
+              <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#0F3F4A] text-white">
+                <Check className="h-4 w-4" />
+              </span>
+              <div>
+                <p className="font-bold text-[#0F3F4A]">{item.title}</p>
+                <p className="mt-1 text-sm leading-5 text-slate-600">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <section>
           <SectionTitle
-            eyebrow="Guias de compra"
-            title="Comece pelos melhores guias"
-            description="Seleções organizadas por faixa de preço, perfil de uso e custo-benefício."
+            eyebrow="Continue sua pesquisa"
+            title="Já sabe qual caminho quer explorar?"
+            description="Aprofunde a decisão por faixa de preço, marca ou custo-benefício — sem precisar recomeçar a pesquisa do zero."
           />
 
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -245,9 +295,8 @@ function CelularesPage() {
               </h2>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Em vez de apenas listar especificações, organizamos os smartphones por
-                perfil de uso, custo-benefício e experiência real para ajudar você a
-                comprar melhor.
+                Em vez de apenas listar especificações, organizamos os smartphones por perfil de
+                uso, custo-benefício e experiência real para ajudar você a comprar melhor.
               </p>
             </section>
           </article>
@@ -258,24 +307,23 @@ function CelularesPage() {
                 Rankings rápidos
               </p>
 
-              <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">
-                Melhores escolhas
-              </h2>
+              <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">Melhores escolhas</h2>
 
               <div className="mt-5 space-y-3">
-                {rankings.map(([category, product]) => (
-                  <div
-                    key={category}
-                    className="rounded-2xl bg-[#F7F2EB] p-4 ring-1 ring-slate-200"
+                {rankings.map((item) => (
+                  <Link
+                    key={item.category}
+                    to={item.href}
+                    className="group flex items-center justify-between gap-3 rounded-2xl bg-[#F7F2EB] p-4 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-[#8B5A2B]/50"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[#8B5A2B]">
-                      {category}
-                    </p>
-
-                    <p className="mt-1 font-bold text-[#0F3F4A]">
-                      {product}
-                    </p>
-                  </div>
+                    <span>
+                      <span className="block text-xs font-semibold uppercase tracking-wide text-[#8B5A2B]">
+                        {item.category}
+                      </span>
+                      <span className="mt-1 block font-bold text-[#0F3F4A]">{item.product}</span>
+                    </span>
+                    <ChevronRight className="h-5 w-5 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#8B5A2B]" />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -285,35 +333,54 @@ function CelularesPage() {
                 Links rápidos
               </p>
 
-              <div className="mt-5 space-y-3 text-sm">
+              <div className="mt-5 space-y-2 text-sm">
                 <Link
                   to="/melhores-celulares-samsung"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                  className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-slate-700 transition hover:bg-[#F7F2EB] hover:text-[#8B5A2B]"
                 >
-                  Melhores celulares Samsung
+                  <span>Melhores celulares Samsung</span>
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </Link>
 
                 <Link
-                  to="/review/redmi-note-13-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                  to="/melhores-celulares-xiaomi"
+                  className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-slate-700 transition hover:bg-[#F7F2EB] hover:text-[#8B5A2B]"
                 >
-                  Review Redmi Note 13 Pro
+                  <span>Melhores celulares Xiaomi</span>
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </Link>
 
                 <Link
-                  to="/review/galaxy-a55"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                  to="/melhores-celulares-custo-beneficio"
+                  className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-slate-700 transition hover:bg-[#F7F2EB] hover:text-[#8B5A2B]"
                 >
-                  Review Galaxy A55
+                  <span>Melhores custo-benefício</span>
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </Link>
 
                 <Link
-                  to="/comparativo-galaxy-a55-vs-galaxy-a35"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                  to="/comparativos"
+                  className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-slate-700 transition hover:bg-[#F7F2EB] hover:text-[#8B5A2B]"
                 >
-                  Galaxy A55 vs Galaxy A35
+                  <span>Todos os comparativos</span>
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                 </Link>
               </div>
+            </div>
+
+            <div className="rounded-3xl bg-[#0F3F4A] p-6 text-white shadow-sm">
+              <ShieldCheck className="h-6 w-6 text-[#D7A77E]" />
+              <p className="mt-4 text-lg font-bold">Decida com contexto</p>
+              <p className="mt-2 text-sm leading-6 text-slate-200">
+                Preço muda rápido. Confira a análise e o concorrente indicado antes de abrir a
+                oferta.
+              </p>
+              <a
+                href="#escolha-rapida"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#D7A77E] transition hover:text-white"
+              >
+                Refazer escolha <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>
@@ -321,10 +388,3 @@ function CelularesPage() {
     </main>
   );
 }
-
-
-
-
-
-
-
