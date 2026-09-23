@@ -207,7 +207,11 @@ const recommendations: Record<`${Budget}:${Priority}`, Recommendation> = {
   },
 };
 
-export function PhoneDecisionFinder() {
+type PhoneDecisionFinderProps = {
+  pageType?: "home" | "celulares";
+};
+
+export function PhoneDecisionFinder({ pageType = "home" }: PhoneDecisionFinderProps) {
   const [budget, setBudget] = useState<Budget>("ate-2000");
   const [priority, setPriority] = useState<Priority>("equilibrio");
 
@@ -390,7 +394,7 @@ export function PhoneDecisionFinder() {
                     onClick={() =>
                       trackAffiliateClick({
                         productName: recommendation.shortName,
-                        pageType: "home",
+                        pageType,
                         ctaPlacement: "decision_finder",
                       })
                     }
