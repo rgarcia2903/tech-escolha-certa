@@ -5,6 +5,8 @@ import {
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ReviewCard } from "@/components/site/ReviewCard";
@@ -16,8 +18,7 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
   head: () => ({
     meta: [
       {
-        title:
-          "Melhores celulares até R$ 2.000 em 2026: os modelos que mais valem a pena",
+        title: "Melhores celulares até R$ 2.000 em 2026: os modelos que mais valem a pena",
       },
       {
         name: "description",
@@ -44,8 +45,7 @@ const ranking = [
   {
     category: "Melhor geral até R$ 2.000",
     product: "Galaxy A35 5G",
-    description:
-      "Excelente equilíbrio entre tela, bateria, software e confiabilidade.",
+    description: "Excelente equilíbrio entre tela, bateria, software e confiabilidade.",
     reviewHref: "/review/galaxy-a35",
     affiliateHref: affiliateLinks.galaxyA35,
     affiliateProductName: "Galaxy A35",
@@ -53,8 +53,7 @@ const ranking = [
   {
     category: "Melhor Xiaomi até R$ 2.000",
     product: "Redmi Note 13 Pro 5G",
-    description:
-      "Tela AMOLED forte, carregamento rápido e ótimo conjunto geral.",
+    description: "Tela AMOLED forte, carregamento rápido e ótimo conjunto geral.",
     reviewHref: "/review/redmi-note-13-pro",
     affiliateHref: affiliateLinks.redmiNote13Pro,
     affiliateProductName: "Redmi Note 13 Pro",
@@ -62,8 +61,7 @@ const ranking = [
   {
     category: "Melhor para jogos",
     product: "Poco X6 Pro",
-    description:
-      "Ótima performance para quem prioriza jogos e desempenho.",
+    description: "Ótima performance para quem prioriza jogos e desempenho.",
     reviewHref: "/review/poco-x6-pro",
     affiliateHref: affiliateLinks.pocoX6Pro,
     affiliateProductName: "Poco X6 Pro",
@@ -84,18 +82,34 @@ function MelhoresCelularesAte2000() {
               Melhor escolha geral
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold text-white">
-              Galaxy A35 5G
-            </h2>
+            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A35 5G</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Um dos celulares mais equilibrados da faixa até R$ 2.000 para
-              quem quer segurança, bateria e experiência Samsung consistente.
+              Um dos celulares mais equilibrados da faixa até R$ 2.000 para quem quer segurança,
+              bateria e experiência Samsung consistente.
             </p>
+
+            <a
+              href={GALAXY_A35_AFFILIATE_URL}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A35",
+                  pageType: "guia",
+                  ctaPlacement: "hero",
+                })
+              }
+              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+            >
+              Ver preço do Galaxy A35
+            </a>
+
+            <AffiliateRedirectNotice className="mt-3" tone="dark" />
 
             <Link
               to="/review/galaxy-a35"
-              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+              className="mt-3 block text-center text-sm font-semibold text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
               Ler review completo
             </Link>
@@ -134,13 +148,9 @@ function MelhoresCelularesAte2000() {
                 {item.category}
               </span>
 
-              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">
-                {item.product}
-              </h3>
+              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
 
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">
-                {item.description}
-              </p>
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">{item.description}</p>
 
               <div className="mt-5 grid gap-2">
                 <Link
@@ -158,6 +168,7 @@ function MelhoresCelularesAte2000() {
                     trackAffiliateClick({
                       productName: item.affiliateProductName,
                       pageType: "guia",
+                      ctaPlacement: "ranking",
                     })
                   }
                   className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
@@ -218,15 +229,14 @@ function MelhoresCelularesAte2000() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                A faixa até R$ 2.000 se tornou uma das mais interessantes do
-                mercado. Hoje existem aparelhos com tela AMOLED, boas câmeras,
-                desempenho forte e bateria confiável sem precisar investir em
-                modelos premium.
+                A faixa até R$ 2.000 se tornou uma das mais interessantes do mercado. Hoje existem
+                aparelhos com tela AMOLED, boas câmeras, desempenho forte e bateria confiável sem
+                precisar investir em modelos premium.
               </p>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                Para a maioria das pessoas, um bom intermediário já entrega
-                praticamente tudo que realmente importa no uso diário.
+                Para a maioria das pessoas, um bom intermediário já entrega praticamente tudo que
+                realmente importa no uso diário.
               </p>
             </section>
 
@@ -250,9 +260,9 @@ function MelhoresCelularesAte2000() {
               </h2>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                A diferença entre intermediários fortes e celulares premium
-                diminuiu bastante nos últimos anos. Para a maioria das pessoas,
-                essa faixa já entrega excelente experiência no dia a dia.
+                A diferença entre intermediários fortes e celulares premium diminuiu bastante nos
+                últimos anos. Para a maioria das pessoas, essa faixa já entrega excelente
+                experiência no dia a dia.
               </p>
             </section>
           </article>
@@ -285,10 +295,7 @@ function MelhoresCelularesAte2000() {
                   Melhores Xiaomi
                 </Link>
 
-                <Link
-                  to="/review/galaxy-a35"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
+                <Link to="/review/galaxy-a35" className="block text-slate-700 hover:text-[#8B5A2B]">
                   Review Galaxy A35
                 </Link>
               </div>
@@ -296,13 +303,20 @@ function MelhoresCelularesAte2000() {
           </div>
         </section>
       </section>
+
+      <MobilePurchaseBar
+        options={[
+          {
+            productName: "Galaxy A35",
+            href: GALAXY_A35_AFFILIATE_URL,
+            label: "Ver preço",
+            primary: true,
+          },
+        ]}
+        pageType="guia"
+        title="Galaxy A35 5G"
+        eyebrow="Melhor até R$ 2.000"
+      />
     </main>
   );
 }
-  
-
-
-
-
-
-
