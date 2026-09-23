@@ -5,6 +5,8 @@ import {
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { EditorialHero } from "@/components/site/EditorialHero";
@@ -15,8 +17,7 @@ export const Route = createFileRoute("/melhores-celulares-custo-beneficio")({
   head: () => ({
     meta: [
       {
-        title:
-          "Melhores celulares custo-benefício em 2026: guia completo para comprar bem",
+        title: "Melhores celulares custo-benefício em 2026: guia completo para comprar bem",
       },
       {
         name: "description",
@@ -50,12 +51,9 @@ const quickPicks = [
 ];
 
 const affiliateLinks = {
-  galaxyA35:
-    GALAXY_A35_AFFILIATE_URL,
-  galaxyA55:
-    GALAXY_A55_AFFILIATE_URL,
-  redmiNote13Pro:
-    REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  galaxyA35: GALAXY_A35_AFFILIATE_URL,
+  galaxyA55: GALAXY_A55_AFFILIATE_URL,
+  redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
 };
 
 const recommendedPicks = [
@@ -104,13 +102,31 @@ function CustoBeneficioPage() {
             <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A55 5G</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Um dos celulares mais equilibrados para quem busca boa câmera,
-              desempenho forte, bateria confiável e experiência Samsung premium.
+              Um dos celulares mais equilibrados para quem busca boa câmera, desempenho forte,
+              bateria confiável e experiência Samsung premium.
             </p>
+
+            <a
+              href={GALAXY_A55_AFFILIATE_URL}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A55",
+                  pageType: "guia",
+                  ctaPlacement: "hero",
+                })
+              }
+              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+            >
+              Ver preço do Galaxy A55
+            </a>
+
+            <AffiliateRedirectNotice className="mt-3" tone="dark" />
 
             <Link
               to="/review/galaxy-a55"
-              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+              className="mt-3 block text-center text-sm font-semibold text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
               Ler review completo
             </Link>
@@ -152,13 +168,9 @@ function CustoBeneficioPage() {
                   {item.title}
                 </span>
 
-                <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">
-                  {item.product}
-                </h3>
+                <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
 
-                <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">
-                  {item.description}
-                </p>
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">{item.description}</p>
 
                 <div className="mt-5 grid gap-2">
                   <Link
@@ -176,6 +188,7 @@ function CustoBeneficioPage() {
                       trackAffiliateClick({
                         productName: item.affiliateProductName,
                         pageType: "guia",
+                        ctaPlacement: "ranking",
                       })
                     }
                     className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
@@ -202,7 +215,7 @@ function CustoBeneficioPage() {
                   title="Review Galaxy A35 5G"
                   description="Excelente equilíbrio entre tela, bateria, preço e experiência Samsung confiável."
                   href="/review/galaxy-a35"
-              image="/images/products/galaxy-a35-optimized.webp"
+                  image="/images/products/galaxy-a35-optimized.webp"
                   score="8.7"
                   badge="Samsung"
                 />
@@ -211,7 +224,7 @@ function CustoBeneficioPage() {
                   title="Review Galaxy A55 5G"
                   description="Experiência premium sem entrar na faixa flagship, com ótima tela e boa construção."
                   href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55-optimized.webp"
+                  image="/images/products/galaxy-a55-optimized.webp"
                   score="9.0"
                   badge="Premium"
                 />
@@ -220,7 +233,7 @@ function CustoBeneficioPage() {
                   title="Review Redmi Note 13 Pro 5G"
                   description="Um dos melhores celulares Xiaomi para custo-benefício, tela e carregamento rápido."
                   href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro-optimized.webp"
+                  image="/images/products/redmi-note-13-pro-optimized.webp"
                   score="9.0"
                   badge="Xiaomi"
                 />
@@ -239,7 +252,7 @@ function CustoBeneficioPage() {
                   title="Galaxy A55 vs Galaxy A35"
                   description="Veja se vale pagar mais no A55 ou economizar com o A35."
                   href="/comparativo-galaxy-a55-vs-galaxy-a35"
-              image="/images/products/galaxy-a55-optimized.webp"
+                  image="/images/products/galaxy-a55-optimized.webp"
                   winner="Galaxy A55 para experiência premium; A35 para economia."
                 />
 
@@ -247,7 +260,7 @@ function CustoBeneficioPage() {
                   title="Galaxy A55 vs Redmi Note 13 Pro"
                   description="Samsung ou Xiaomi? Compare tela, bateria, câmera, software e custo-benefício."
                   href="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-              image="/images/products/galaxy-a55-optimized.webp"
+                  image="/images/products/galaxy-a55-optimized.webp"
                   winner="Depende do perfil: segurança Samsung ou ficha técnica Xiaomi."
                 />
               </div>
@@ -273,16 +286,14 @@ function CustoBeneficioPage() {
               </h2>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Um bom celular custo-benefício precisa equilibrar tela, bateria, câmera,
-                desempenho, suporte, construção e preço. Às vezes vale pagar um pouco mais
-                por um aparelho que vai durar melhor e dar menos dor de cabeça.
+                Um bom celular custo-benefício precisa equilibrar tela, bateria, câmera, desempenho,
+                suporte, construção e preço. Às vezes vale pagar um pouco mais por um aparelho que
+                vai durar melhor e dar menos dor de cabeça.
               </p>
             </section>
 
             <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <h2 className="text-3xl font-bold text-[#0F3F4A]">
-                Perguntas frequentes
-              </h2>
+              <h2 className="text-3xl font-bold text-[#0F3F4A]">Perguntas frequentes</h2>
 
               <div className="mt-8 space-y-6">
                 <div>
@@ -290,9 +301,9 @@ function CustoBeneficioPage() {
                     Qual é o melhor celular custo-benefício em 2026?
                   </h3>
                   <p className="mt-2 text-slate-700">
-                    Para a maioria das pessoas, o Galaxy A55 é uma das escolhas mais
-                    equilibradas. Para economizar mais, o Galaxy A35 é excelente. Para
-                    ficha técnica forte pelo preço, o Redmi Note 13 Pro se destaca.
+                    Para a maioria das pessoas, o Galaxy A55 é uma das escolhas mais equilibradas.
+                    Para economizar mais, o Galaxy A35 é excelente. Para ficha técnica forte pelo
+                    preço, o Redmi Note 13 Pro se destaca.
                   </p>
                 </div>
 
@@ -301,8 +312,8 @@ function CustoBeneficioPage() {
                     Samsung ou Xiaomi tem melhor custo-benefício?
                   </h3>
                   <p className="mt-2 text-slate-700">
-                    Xiaomi costuma entregar mais ficha técnica pelo preço. Samsung costuma
-                    oferecer suporte, software e experiência mais previsíveis.
+                    Xiaomi costuma entregar mais ficha técnica pelo preço. Samsung costuma oferecer
+                    suporte, software e experiência mais previsíveis.
                   </p>
                 </div>
 
@@ -311,9 +322,8 @@ function CustoBeneficioPage() {
                     Vale comprar celular intermediário premium?
                   </h3>
                   <p className="mt-2 text-slate-700">
-                    Sim, especialmente quando o preço está próximo dos modelos
-                    intermediários comuns. Eles tendem a durar mais e entregar experiência
-                    superior.
+                    Sim, especialmente quando o preço está próximo dos modelos intermediários
+                    comuns. Eles tendem a durar mais e entregar experiência superior.
                   </p>
                 </div>
               </div>
@@ -326,9 +336,7 @@ function CustoBeneficioPage() {
                 Ranking rápido
               </p>
 
-              <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">
-                Escolhas principais
-              </h2>
+              <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">Escolhas principais</h2>
 
               <div className="mt-5 space-y-3">
                 {quickPicks.map(([category, product]) => (
@@ -383,12 +391,20 @@ function CustoBeneficioPage() {
           </div>
         </section>
       </section>
+
+      <MobilePurchaseBar
+        options={[
+          {
+            productName: "Galaxy A55",
+            href: GALAXY_A55_AFFILIATE_URL,
+            label: "Ver preço",
+            primary: true,
+          },
+        ]}
+        pageType="guia"
+        title="Galaxy A55 5G"
+        eyebrow="Melhor custo-benefício"
+      />
     </main>
   );
 }
-
-
-
-
-
-

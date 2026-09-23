@@ -5,6 +5,8 @@ import {
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { CategoryHero } from "@/components/site/CategoryHero";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
@@ -15,8 +17,7 @@ export const Route = createFileRoute("/melhores-celulares-ate-2500")({
   head: () => ({
     meta: [
       {
-        title:
-          "Melhores celulares até R$ 2.500 em 2026: os modelos que mais valem a pena",
+        title: "Melhores celulares até R$ 2.500 em 2026: os modelos que mais valem a pena",
       },
       {
         name: "description",
@@ -38,8 +39,7 @@ const ranking = [
   {
     category: "Melhor geral até R$ 2.500",
     product: "Galaxy A55 5G",
-    description:
-      "O intermediário premium mais equilibrado para a maioria das pessoas.",
+    description: "O intermediário premium mais equilibrado para a maioria das pessoas.",
     reviewHref: "/review/galaxy-a55",
     affiliateHref: affiliateLinks.galaxyA55,
     affiliateProductName: "Galaxy A55",
@@ -47,8 +47,7 @@ const ranking = [
   {
     category: "Melhor Xiaomi até R$ 2.500",
     product: "Redmi Note 13 Pro 5G",
-    description:
-      "Excelente tela, carregamento rápido e ficha técnica forte.",
+    description: "Excelente tela, carregamento rápido e ficha técnica forte.",
     reviewHref: "/review/redmi-note-13-pro",
     affiliateHref: affiliateLinks.redmiNote13Pro,
     affiliateProductName: "Redmi Note 13 Pro",
@@ -56,8 +55,7 @@ const ranking = [
   {
     category: "Melhor performance",
     product: "Poco X6 Pro",
-    description:
-      "Excelente escolha para jogos e alto desempenho.",
+    description: "Excelente escolha para jogos e alto desempenho.",
     reviewHref: "/review/poco-x6-pro",
     affiliateHref: affiliateLinks.pocoX6Pro,
     affiliateProductName: "Poco X6 Pro",
@@ -78,18 +76,34 @@ function MelhoresCelularesAte2500() {
               Melhor escolha geral
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold text-white">
-              Galaxy A55 5G
-            </h2>
+            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A55 5G</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Um dos celulares mais equilibrados da categoria para quem quer
-              experiência premium sem pagar preço de flagship.
+              Um dos celulares mais equilibrados da categoria para quem quer experiência premium sem
+              pagar preço de flagship.
             </p>
+
+            <a
+              href={GALAXY_A55_AFFILIATE_URL}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Galaxy A55",
+                  pageType: "guia",
+                  ctaPlacement: "hero",
+                })
+              }
+              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+            >
+              Ver preço do Galaxy A55
+            </a>
+
+            <AffiliateRedirectNotice className="mt-3" tone="dark" />
 
             <Link
               to="/review/galaxy-a55"
-              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
+              className="mt-3 block text-center text-sm font-semibold text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
               Ler review completo
             </Link>
@@ -128,13 +142,9 @@ function MelhoresCelularesAte2500() {
                 {item.category}
               </span>
 
-              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">
-                {item.product}
-              </h3>
+              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
 
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">
-                {item.description}
-              </p>
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">{item.description}</p>
 
               <div className="mt-5 grid gap-2">
                 <Link
@@ -152,6 +162,7 @@ function MelhoresCelularesAte2500() {
                     trackAffiliateClick({
                       productName: item.affiliateProductName,
                       pageType: "guia",
+                      ctaPlacement: "ranking",
                     })
                   }
                   className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
@@ -238,15 +249,14 @@ function MelhoresCelularesAte2500() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                A faixa até R$ 2.500 concentra alguns dos celulares mais
-                interessantes do mercado. Aqui já aparecem modelos com acabamento
-                premium, telas excelentes, boas câmeras e experiência muito próxima
-                de aparelhos topo de linha.
+                A faixa até R$ 2.500 concentra alguns dos celulares mais interessantes do mercado.
+                Aqui já aparecem modelos com acabamento premium, telas excelentes, boas câmeras e
+                experiência muito próxima de aparelhos topo de linha.
               </p>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                Para muitas pessoas, investir nessa faixa faz mais sentido do que
-                pagar muito mais caro em um flagship.
+                Para muitas pessoas, investir nessa faixa faz mais sentido do que pagar muito mais
+                caro em um flagship.
               </p>
             </section>
 
@@ -270,9 +280,9 @@ function MelhoresCelularesAte2500() {
               </h2>
 
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Até R$ 2.500 já é possível comprar celulares extremamente fortes,
-                com ótima experiência, excelente tela, boas câmeras e vida útil
-                longa sem precisar entrar no segmento premium mais caro.
+                Até R$ 2.500 já é possível comprar celulares extremamente fortes, com ótima
+                experiência, excelente tela, boas câmeras e vida útil longa sem precisar entrar no
+                segmento premium mais caro.
               </p>
             </section>
           </article>
@@ -298,10 +308,7 @@ function MelhoresCelularesAte2500() {
                   Melhores até R$ 2.000
                 </Link>
 
-                <Link
-                  to="/review/galaxy-a55"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
+                <Link to="/review/galaxy-a55" className="block text-slate-700 hover:text-[#8B5A2B]">
                   Review Galaxy A55
                 </Link>
 
@@ -316,13 +323,20 @@ function MelhoresCelularesAte2500() {
           </div>
         </section>
       </section>
+
+      <MobilePurchaseBar
+        options={[
+          {
+            productName: "Galaxy A55",
+            href: GALAXY_A55_AFFILIATE_URL,
+            label: "Ver preço",
+            primary: true,
+          },
+        ]}
+        pageType="guia"
+        title="Galaxy A55 5G"
+        eyebrow="Melhor até R$ 2.500"
+      />
     </main>
   );
 }
-  
-
-
-
-
-
-
