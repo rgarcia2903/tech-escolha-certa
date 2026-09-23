@@ -66,6 +66,23 @@ export function trackSiteSearchSelection({
   });
 }
 
+export function trackReviewComparisonClick({
+  productName,
+  comparisonPath,
+}: {
+  productName: string;
+  comparisonPath: string;
+}) {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "review_comparison_click", {
+    product_name: productName,
+    comparison_path: comparisonPath,
+    cta_placement: "decision_panel",
+    page_path: window.location.pathname,
+  });
+}
+
 export function trackPageView(path: string) {
   if (typeof window === "undefined") return;
 

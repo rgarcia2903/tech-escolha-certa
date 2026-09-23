@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import {
@@ -377,20 +378,13 @@ function ReviewPage() {
               dos acertos faz dele o melhor compacto Android do momento.
             </p>
 
-            <PurchaseActions
-              className="mt-6"
-              options={[
-                {
-                  productName: "Galaxy S24",
-                  href: GALAXY_S24_AFFILIATE_URL,
-                  label: "Ver preço do Galaxy S24",
-                  primary: true,
-                },
-              ]}
-              pageType="review"
-              placement="decision"
-              title="Galaxy S24: confira a oferta atual"
-              description="Compare o valor final, o parcelamento e a reputação do vendedor antes de comprar."
+            <ReviewDecisionPanel
+              productName="Galaxy S24"
+              bestFor="Você quer um Android compacto, câmera consistente, desempenho premium e suporte prolongado."
+              caution="Autonomia, carregamento rápido ou integração com produtos Apple pesarem mais na sua decisão."
+              affiliateHref={GALAXY_S24_AFFILIATE_URL}
+              comparisonHref="/comparativo/iphone-15-vs-galaxy-s24"
+              comparisonLabel="Comparar Galaxy S24 e iPhone 15"
             />
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
