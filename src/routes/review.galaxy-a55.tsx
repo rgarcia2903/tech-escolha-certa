@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
-import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -193,20 +193,13 @@ function ReviewGalaxyA55() {
               das escolhas mais racionais da linha intermediária premium.
             </p>
 
-            <PurchaseActions
-              className="mt-6"
-              options={[
-                {
-                  productName: "Galaxy A55",
-                  href: GALAXY_A55_AFFILIATE_URL,
-                  label: "Ver preço do Galaxy A55",
-                  primary: true,
-                },
-              ]}
-              pageType="review"
-              placement="decision"
-              title="Galaxy A55: confira a oferta atual"
-              description="Compare o valor final, o parcelamento e a reputação do vendedor antes de comprar."
+            <ReviewDecisionPanel
+              productName="Galaxy A55"
+              bestFor="Você valoriza acabamento, câmera consistente, software refinado e uma experiência equilibrada para vários anos."
+              caution="Desempenho bruto ou menor preço forem prioridade; Redmi e Poco podem entregar mais hardware pelo valor."
+              affiliateHref={GALAXY_A55_AFFILIATE_URL}
+              comparisonHref="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
+              comparisonLabel="Comparar Galaxy A55 e Redmi"
             />
           </section>
 
