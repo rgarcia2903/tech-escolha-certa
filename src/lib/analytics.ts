@@ -83,6 +83,25 @@ export function trackReviewComparisonClick({
   });
 }
 
+export function trackOfferResearchClick({
+  productName,
+  destination,
+  destinationPath,
+}: {
+  productName: string;
+  destination: "review" | "comparativo";
+  destinationPath: string;
+}) {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "offer_research_click", {
+    product_name: productName,
+    research_destination: destination,
+    destination_path: destinationPath,
+    page_path: window.location.pathname,
+  });
+}
+
 export function trackPageView(path: string) {
   if (typeof window === "undefined") return;
 
