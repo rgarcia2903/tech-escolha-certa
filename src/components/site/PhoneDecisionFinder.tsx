@@ -208,7 +208,7 @@ const recommendations: Record<`${Budget}:${Priority}`, Recommendation> = {
 };
 
 type PhoneDecisionFinderProps = {
-  pageType?: "home" | "celulares";
+  pageType?: "home" | "celulares" | "ofertas";
 };
 
 export function PhoneDecisionFinder({ pageType = "home" }: PhoneDecisionFinderProps) {
