@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -240,6 +240,8 @@ export function PhoneDecisionFinder({
   const [budget, setBudget] = useState<Budget>("ate-2000");
   const [priority, setPriority] = useState<Priority>("equilibrio");
   const [hasInteracted, setHasInteracted] = useState(false);
+  const budgetRef = useRef<Budget>("ate-2000");
+  const priorityRef = useRef<Priority>("equilibrio");
 
   useEffect(() => {
     try {
@@ -257,6 +259,8 @@ export function PhoneDecisionFinder({
         return;
       }
 
+      budgetRef.current = parsedChoice.budget;
+      priorityRef.current = parsedChoice.priority;
       setBudget(parsedChoice.budget);
       setPriority(parsedChoice.priority);
       setHasInteracted(true);
@@ -265,20 +269,16 @@ export function PhoneDecisionFinder({
     }
   }, []);
 
-  useEffect(() => {
-    if (!hasInteracted) return;
-
-    persistFinderChoice(budget, priority);
-  }, [budget, hasInteracted, priority]);
-
   const recommendation = useMemo(
     () => recommendations[`${budget}:${priority}`],
     [budget, priority],
   );
 
   const changeBudget = (value: Budget) => {
+    budgetRef.current = value;
     setBudget(value);
     setHasInteracted(true);
+    persistFinderChoice(value, priorityRef.current);
     trackFinderChoice({
       step: "orcamento",
       choice: value,
@@ -287,8 +287,10 @@ export function PhoneDecisionFinder({
   };
 
   const changePriority = (value: Priority) => {
+    priorityRef.current = value;
     setPriority(value);
     setHasInteracted(true);
+    persistFinderChoice(budgetRef.current, value);
     trackFinderChoice({
       step: "prioridade",
       choice: value,
