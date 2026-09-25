@@ -265,6 +265,12 @@ export function PhoneDecisionFinder({
     }
   }, []);
 
+  useEffect(() => {
+    if (!hasInteracted) return;
+
+    persistFinderChoice(budget, priority);
+  }, [budget, hasInteracted, priority]);
+
   const recommendation = useMemo(
     () => recommendations[`${budget}:${priority}`],
     [budget, priority],
@@ -273,7 +279,6 @@ export function PhoneDecisionFinder({
   const changeBudget = (value: Budget) => {
     setBudget(value);
     setHasInteracted(true);
-    persistFinderChoice(value, priority);
     trackFinderChoice({
       step: "orcamento",
       choice: value,
@@ -284,7 +289,6 @@ export function PhoneDecisionFinder({
   const changePriority = (value: Priority) => {
     setPriority(value);
     setHasInteracted(true);
-    persistFinderChoice(budget, value);
     trackFinderChoice({
       step: "prioridade",
       choice: value,
