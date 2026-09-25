@@ -15,6 +15,7 @@ type MobilePurchaseBarProps = {
   pageType: "review" | "comparativo" | "guia" | "ofertas" | "home";
   title: string;
   eyebrow?: string;
+  reserveSpace?: boolean;
 };
 
 export function MobilePurchaseBar({
@@ -22,6 +23,7 @@ export function MobilePurchaseBar({
   pageType,
   title,
   eyebrow = "Preço atualizado",
+  reserveSpace = true,
 }: MobilePurchaseBarProps) {
   const singleOption = options.length === 1;
 
@@ -80,7 +82,9 @@ export function MobilePurchaseBar({
         </div>
       </aside>
 
-      <div className={cn(singleOption ? "h-24" : "h-32", "lg:hidden")} aria-hidden />
+      {reserveSpace && (
+        <div className={cn(singleOption ? "h-24" : "h-32", "lg:hidden")} aria-hidden />
+      )}
     </>
   );
 }
