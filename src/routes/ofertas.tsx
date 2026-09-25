@@ -9,7 +9,6 @@ import {
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
-import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PhoneDecisionFinder } from "@/components/site/PhoneDecisionFinder";
 import { trackAffiliateClick, trackOfferResearchClick } from "@/lib/analytics";
 import { Badge, Rating } from "@/components/site/ui";
@@ -323,7 +322,7 @@ function OfertasPage() {
         </div>
       </section>
 
-      <PhoneDecisionFinder pageType="ofertas" />
+      <PhoneDecisionFinder pageType="ofertas" showOfferMobileBar />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
         <div className="grid gap-4 md:grid-cols-3">
@@ -532,24 +531,7 @@ function OfertasPage() {
         </div>
       </section>
 
-      <MobilePurchaseBar
-        options={[
-          {
-            productName: "Galaxy A55",
-            href: GALAXY_A55_AFFILIATE_URL,
-            label: "Equilíbrio: A55",
-            primary: true,
-          },
-          {
-            productName: "Poco X7 Pro",
-            href: POCO_X7_PRO_AFFILIATE_URL,
-            label: "Potência: X7 Pro",
-          },
-        ]}
-        pageType="ofertas"
-        title="Duas escolhas por perfil"
-        eyebrow="Atalhos de compra"
-      />
+      <div className="h-24 lg:hidden" aria-hidden />
     </main>
   );
 }

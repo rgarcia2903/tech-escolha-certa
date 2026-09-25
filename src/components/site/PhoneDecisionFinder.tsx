@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import {
   GALAXY_A35_AFFILIATE_URL,
   GALAXY_A55_AFFILIATE_URL,
@@ -209,11 +210,16 @@ const recommendations: Record<`${Budget}:${Priority}`, Recommendation> = {
 
 type PhoneDecisionFinderProps = {
   pageType?: "home" | "celulares" | "ofertas";
+  showOfferMobileBar?: boolean;
 };
 
-export function PhoneDecisionFinder({ pageType = "home" }: PhoneDecisionFinderProps) {
+export function PhoneDecisionFinder({
+  pageType = "home",
+  showOfferMobileBar = false,
+}: PhoneDecisionFinderProps) {
   const [budget, setBudget] = useState<Budget>("ate-2000");
   const [priority, setPriority] = useState<Priority>("equilibrio");
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const recommendation = useMemo(
     () => recommendations[`${budget}:${priority}`],
@@ -222,12 +228,22 @@ export function PhoneDecisionFinder({ pageType = "home" }: PhoneDecisionFinderPr
 
   const changeBudget = (value: Budget) => {
     setBudget(value);
-    trackFinderChoice({ step: "orcamento", choice: value });
+    setHasInteracted(true);
+    trackFinderChoice({
+      step: "orcamento",
+      choice: value,
+      recommendation: recommendations[`${value}:${priority}`].shortName,
+    });
   };
 
   const changePriority = (value: Priority) => {
     setPriority(value);
-    trackFinderChoice({ step: "prioridade", choice: value });
+    setHasInteracted(true);
+    trackFinderChoice({
+      step: "prioridade",
+      choice: value,
+      recommendation: recommendations[`${budget}:${value}`].shortName,
+    });
   };
 
   return (
@@ -437,6 +453,23 @@ export function PhoneDecisionFinder({ pageType = "home" }: PhoneDecisionFinderPr
           </article>
         </div>
       </div>
+
+      {showOfferMobileBar && hasInteracted && (
+        <MobilePurchaseBar
+          options={[
+            {
+              productName: recommendation.shortName,
+              href: recommendation.affiliateHref,
+              label: "Ver preço atual",
+              primary: true,
+            },
+          ]}
+          pageType="ofertas"
+          title={`Sua indicação: ${recommendation.shortName}`}
+          eyebrow="Resultado da escolha"
+          reserveSpace={false}
+        />
+      )}
     </section>
   );
 }
