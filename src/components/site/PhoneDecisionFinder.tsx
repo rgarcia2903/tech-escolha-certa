@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -30,6 +30,8 @@ import { trackAffiliateClick, trackFinderChoice } from "@/lib/analytics";
 
 type Budget = "ate-2000" | "ate-3000" | "premium";
 type Priority = "equilibrio" | "desempenho" | "camera";
+
+const FINDER_STORAGE_KEY = "tech-escolha-certa:phone-finder";
 
 type Recommendation = {
   productName: string;
@@ -76,6 +78,24 @@ const priorities: Array<{
     icon: Camera,
   },
 ];
+
+function isBudget(value: unknown): value is Budget {
+  return budgets.some((option) => option.value === value);
+}
+
+function isPriority(value: unknown): value is Priority {
+  return priorities.some((option) => option.value === value);
+}
+
+function persistFinderChoice(budget: Budget, priority: Priority) {
+  if (typeof window === "undefined") return;
+
+  try {
+    window.sessionStorage.setItem(FINDER_STORAGE_KEY, JSON.stringify({ budget, priority }));
+  } catch {
+    // A recomendação continua funcionando quando o navegador bloqueia armazenamento.
+  }
+}
 
 const recommendations: Record<`${Budget}:${Priority}`, Recommendation> = {
   "ate-2000:equilibrio": {
@@ -221,6 +241,30 @@ export function PhoneDecisionFinder({
   const [priority, setPriority] = useState<Priority>("equilibrio");
   const [hasInteracted, setHasInteracted] = useState(false);
 
+  useEffect(() => {
+    try {
+      const storedChoice = window.sessionStorage.getItem(FINDER_STORAGE_KEY);
+
+      if (!storedChoice) return;
+
+      const parsedChoice = JSON.parse(storedChoice) as {
+        budget?: unknown;
+        priority?: unknown;
+      };
+
+      if (!isBudget(parsedChoice.budget) || !isPriority(parsedChoice.priority)) {
+        window.sessionStorage.removeItem(FINDER_STORAGE_KEY);
+        return;
+      }
+
+      setBudget(parsedChoice.budget);
+      setPriority(parsedChoice.priority);
+      setHasInteracted(true);
+    } catch {
+      // Mantém os padrões quando a sessão está indisponível ou contém dados inválidos.
+    }
+  }, []);
+
   const recommendation = useMemo(
     () => recommendations[`${budget}:${priority}`],
     [budget, priority],
@@ -229,6 +273,7 @@ export function PhoneDecisionFinder({
   const changeBudget = (value: Budget) => {
     setBudget(value);
     setHasInteracted(true);
+    persistFinderChoice(value, priority);
     trackFinderChoice({
       step: "orcamento",
       choice: value,
@@ -239,6 +284,7 @@ export function PhoneDecisionFinder({
   const changePriority = (value: Priority) => {
     setPriority(value);
     setHasInteracted(true);
+    persistFinderChoice(budget, value);
     trackFinderChoice({
       step: "prioridade",
       choice: value,
