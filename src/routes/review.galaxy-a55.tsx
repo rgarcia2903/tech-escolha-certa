@@ -10,9 +10,9 @@ import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a55";
 
-const PAGE_TITLE = "Galaxy A55 vale a pena em 2026? Prós e contras";
+const PAGE_TITLE = "Galaxy A55 vale a pena em 2026? Veja o veredito";
 const PAGE_DESCRIPTION =
-  "Galaxy A55 em 2026: veja para quem compensa, os limites em jogos e na recarga e quando comparar com Galaxy A35 ou Poco X6 Pro.";
+  "O Galaxy A55 ainda vale a pena em 2026? Veja o veredito, seus principais problemas e quando escolher o A35, o Poco X6 Pro ou um Galaxy mais novo.";
 
 export const Route = createFileRoute("/review/galaxy-a55")({
   head: () => ({
@@ -122,7 +122,7 @@ function ReviewGalaxyA55() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
-                Atualizado para 2026
+                Atualizado em outubro de 2026
               </span>
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
                 Intermediário premium
