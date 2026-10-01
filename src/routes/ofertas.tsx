@@ -1,10 +1,13 @@
 import {
+  GALAXY_A25_AFFILIATE_URL,
   GALAXY_A35_AFFILIATE_URL,
   GALAXY_A55_AFFILIATE_URL,
+  GALAXY_M35_AFFILIATE_URL,
   GALAXY_S24_AFFILIATE_URL,
   IPHONE_15_AFFILIATE_URL,
   POCO_X6_PRO_AFFILIATE_URL,
   POCO_X7_PRO_AFFILIATE_URL,
+  REDMI_NOTE_13_4G_AFFILIATE_URL,
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
@@ -36,7 +39,7 @@ export const Route = createFileRoute("/ofertas")({
       {
         name: "description",
         content:
-          "Escolha seu orçamento e prioridade para encontrar a oferta de celular mais coerente. Compare Samsung, Xiaomi, Poco e iPhone antes de ver o preço no Mercado Livre.",
+          "Compare celulares por orçamento e encontre ofertas verificadas de Galaxy A25, Redmi Note 13 4G, Galaxy M35 e outros modelos no Mercado Livre.",
       },
       {
         name: "keywords",
@@ -59,6 +62,30 @@ export const Route = createFileRoute("/ofertas")({
   }),
   component: OfertasPage,
 });
+
+const budgetOffers = [
+  {
+    name: "Samsung Galaxy A25 5G",
+    badge: "Melhor escolha geral",
+    summary: "Tela AMOLED 120 Hz, 5G e experiência Samsung equilibrada para o uso diário.",
+    caution: "Confirme se a versão anunciada tem a memória e a cor que você deseja.",
+    href: GALAXY_A25_AFFILIATE_URL,
+  },
+  {
+    name: "Redmi Note 13 4G",
+    badge: "Custo-benefício",
+    summary: "Tela AMOLED, boa bateria e carregamento rápido para quem não faz questão de 5G.",
+    caution: "Este modelo é 4G; escolha outra opção se o 5G for indispensável.",
+    href: REDMI_NOTE_13_4G_AFFILIATE_URL,
+  },
+  {
+    name: "Samsung Galaxy M35 5G",
+    badge: "Melhor bateria",
+    summary: "Bateria de 6.000 mAh, tela AMOLED e 5G para quem passa mais tempo longe da tomada.",
+    caution: "É um aparelho mais pesado e vale mais quando estiver abaixo de R$ 1.500.",
+    href: GALAXY_M35_AFFILIATE_URL,
+  },
+];
 
 const offers = [
   {
@@ -211,6 +238,10 @@ const confidenceCards = [
 
 const guides = [
   {
+    title: "Melhores celulares até R$ 1.500",
+    href: "/guia/melhores-celulares-ate-1500-reais",
+  },
+  {
     title: "Melhores celulares Xiaomi",
     href: "/melhores-celulares-xiaomi",
   },
@@ -278,10 +309,10 @@ function OfertasPage() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#ofertas-recomendadas"
+                  href="#ofertas-ate-1500"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver todos os modelos
+                  Ver ofertas até R$ 1.500
                 </a>
               </div>
             </div>
@@ -319,6 +350,72 @@ function OfertasPage() {
               <AffiliateRedirectNotice className="mt-5 border-t border-border pt-5" />
             </aside>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="ofertas-ate-1500"
+        className="scroll-mt-28 border-b border-border bg-background"
+      >
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">
+              Ofertas diretas e verificadas
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+              Três boas escolhas até R$ 1.500
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Comece pelos modelos com oferta disponível. Cada opção atende a um perfil diferente,
+              e o preço final deve ser confirmado no Mercado Livre antes da compra.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {budgetOffers.map((offer, index) => (
+              <article
+                key={offer.name}
+                className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-elevated"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <Badge variant={index === 0 ? "cta" : "soft"}>{offer.badge}</Badge>
+                  <span className="text-xs font-semibold text-teal">Até R$ 1.500</span>
+                </div>
+
+                <h3 className="mt-5 text-xl font-bold text-foreground">{offer.name}</h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+                  {offer.summary}
+                </p>
+
+                <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4">
+                  <p className="flex items-start gap-2 text-xs leading-5 text-amber-950">
+                    <CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
+                    <span>{offer.caution}</span>
+                  </p>
+                </div>
+
+                <a
+                  href={offer.href}
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: offer.name,
+                      pageType: "ofertas",
+                      destination: "mercado_livre",
+                      ctaPlacement: "budget_offer_card",
+                    })
+                  }
+                  className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-center text-sm font-bold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
+                >
+                  Ver preço no Mercado Livre
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <AffiliateRedirectNotice className="mt-6 rounded-xl border border-border bg-surface p-4" />
         </div>
       </section>
 
