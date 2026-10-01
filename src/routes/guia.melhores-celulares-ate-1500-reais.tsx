@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
-import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
+import {
+  GALAXY_A25_AFFILIATE_URL,
+  GALAXY_A35_AFFILIATE_URL,
+  GALAXY_M35_AFFILIATE_URL,
+  REDMI_NOTE_13_4G_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
+import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowUpRight,
   Award,
@@ -95,6 +101,7 @@ type Pick = {
   profile: string;
   pros: string[];
   cons: string[];
+  affiliateUrl?: string;
 };
 
 const PICKS: Pick[] = [
@@ -124,6 +131,7 @@ const PICKS: Pick[] = [
       "Carregamento poderia ser mais rápido",
       "Não é o melhor para jogos pesados",
     ],
+    affiliateUrl: GALAXY_A25_AFFILIATE_URL,
   },
   {
     id: "melhor-custo-beneficio",
@@ -151,6 +159,7 @@ const PICKS: Pick[] = [
       "Não tem 5G nesta versão",
       "Câmeras secundárias simples",
     ],
+    affiliateUrl: REDMI_NOTE_13_4G_AFFILIATE_URL,
   },
   {
     id: "melhor-bateria",
@@ -178,6 +187,7 @@ const PICKS: Pick[] = [
       "Pode ser mais pesado",
       "Vale mais quando está em promoção",
     ],
+    affiliateUrl: GALAXY_M35_AFFILIATE_URL,
   },
   {
     id: "melhor-para-jogos-leves",
@@ -599,13 +609,32 @@ function PickCard({ pick }: { pick: Pick }) {
               <p className="mt-1 text-sm text-foreground">{pick.profile}</p>
             </div>
 
-            <Link
-              to="/ofertas"
-              className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
-            >
-              Ver ofertas recomendadas
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            {pick.affiliateUrl ? (
+              <a
+                href={pick.affiliateUrl}
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                onClick={() =>
+                  trackAffiliateClick({
+                    productName: pick.name,
+                    pageType: "guia",
+                    ctaPlacement: "ranking",
+                  })
+                }
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
+              >
+                Ver preço no Mercado Livre
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            ) : (
+              <Link
+                to="/ofertas"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-sm font-semibold text-foreground shadow-soft transition-all hover:bg-secondary hover:-translate-y-0.5"
+              >
+                Ver alternativas disponíveis
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            )}
           </div>
         </div>
 
