@@ -9,6 +9,10 @@ const LINKS_EDITORIAIS = [
 ];
 
 const GUIAS = [
+  {
+    to: "/guia/melhores-celulares-ate-1500-reais",
+    label: "Melhores celulares até R$ 1.500",
+  },
   { to: "/melhores-celulares-ate-2000", label: "Melhores celulares até R$ 2.000" },
   { to: "/melhores-celulares-ate-2500", label: "Melhores celulares até R$ 2.500" },
   { to: "/melhores-celulares-samsung", label: "Melhores celulares Samsung" },
