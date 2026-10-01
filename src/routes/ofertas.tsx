@@ -416,6 +416,23 @@ function OfertasPage() {
           </div>
 
           <AffiliateRedirectNotice className="mt-6 rounded-xl border border-border bg-surface p-4" />
+
+          <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-teal/25 bg-teal/5 p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-bold text-foreground">
+                Em dúvida entre Galaxy A25 e Redmi Note 13?
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Veja qual ganha em 5G, câmera, desempenho, tela e carregamento antes de abrir a oferta.
+              </p>
+            </div>
+            <Link
+              to="/comparativo/galaxy-a25-vs-redmi-note-13"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-teal/30 bg-card px-5 py-3 text-sm font-bold text-foreground transition hover:-translate-y-0.5 hover:shadow-soft"
+            >
+              Comparar os dois <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
