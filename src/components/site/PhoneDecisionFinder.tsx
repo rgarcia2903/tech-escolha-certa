@@ -10,6 +10,7 @@ import {
   CircleAlert,
   Gauge,
   ShieldCheck,
+  Smartphone,
   Sparkles,
   WalletCards,
 } from "lucide-react";
@@ -17,18 +18,21 @@ import {
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import {
+  GALAXY_A25_AFFILIATE_URL,
   GALAXY_A35_AFFILIATE_URL,
   GALAXY_A55_AFFILIATE_URL,
+  GALAXY_M35_AFFILIATE_URL,
   GALAXY_S24_AFFILIATE_URL,
   IPHONE_15_AFFILIATE_URL,
   POCO_X6_PRO_AFFILIATE_URL,
   POCO_X7_PRO_AFFILIATE_URL,
+  REDMI_NOTE_13_4G_AFFILIATE_URL,
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { trackAffiliateClick, trackFinderChoice } from "@/lib/analytics";
 
-type Budget = "ate-2000" | "ate-3000" | "premium";
+type Budget = "ate-1500" | "ate-2000" | "ate-3000" | "premium";
 type Priority = "equilibrio" | "desempenho" | "camera";
 
 const FINDER_STORAGE_KEY = "tech-escolha-certa:phone-finder";
@@ -40,14 +44,18 @@ type Recommendation = {
   verdict: string;
   strengths: [string, string, string];
   caution: string;
-  image: string;
+  image?: string;
   affiliateHref: string;
   reviewHref: string;
+  reviewHash?: string;
+  reviewLabel?: string;
   compareHref: string;
+  compareHash?: string;
   compareLabel: string;
 };
 
 const budgets: Array<{ value: Budget; label: string; detail: string }> = [
+  { value: "ate-1500", label: "Até R$ 1.500", detail: "Quero gastar menos" },
   { value: "ate-2000", label: "Até R$ 2.000", detail: "Quero economizar" },
   { value: "ate-3000", label: "Até R$ 3.000", detail: "Quero subir de nível" },
   { value: "premium", label: "Premium", detail: "Quero a melhor experiência" },
@@ -98,6 +106,55 @@ function persistFinderChoice(budget: Budget, priority: Priority) {
 }
 
 const recommendations: Record<`${Budget}:${Priority}`, Recommendation> = {
+  "ate-1500:equilibrio": {
+    productName: "Samsung Galaxy A25 5G",
+    shortName: "Galaxy A25",
+    badge: "Escolha equilibrada até R$ 1.500",
+    verdict:
+      "É a indicação mais segura da faixa para quem quer tela AMOLED, 5G e uma experiência Samsung equilibrada sem gastar além do necessário.",
+    strengths: ["Tela AMOLED 120 Hz", "Conectividade 5G", "Software Samsung"],
+    caution: "Confirme a memória e a cor do anúncio antes de finalizar a compra.",
+    affiliateHref: GALAXY_A25_AFFILIATE_URL,
+    reviewHref: "/guia/melhores-celulares-ate-1500-reais",
+    reviewHash: "melhor-geral",
+    reviewLabel: "Ver análise no guia",
+    compareHref: "/guia/melhores-celulares-ate-1500-reais",
+    compareHash: "ranking",
+    compareLabel: "Comparar opções até R$ 1.500",
+  },
+  "ate-1500:desempenho": {
+    productName: "Samsung Galaxy M35 5G",
+    shortName: "Galaxy M35",
+    badge: "Desempenho e bateria até R$ 1.500",
+    verdict:
+      "É a opção mais forte entre as ofertas verificadas para quem quer boa autonomia, tela AMOLED e desempenho consistente no uso diário.",
+    strengths: ["Bateria de 6.000 mAh", "Tela AMOLED 120 Hz", "Conectividade 5G"],
+    caution: "É um aparelho mais pesado e vale mais quando estiver realmente abaixo de R$ 1.500.",
+    image: "/images/products/galaxy-m35-optimized.webp",
+    affiliateHref: GALAXY_M35_AFFILIATE_URL,
+    reviewHref: "/guia/melhores-celulares-ate-1500-reais",
+    reviewHash: "melhor-bateria",
+    reviewLabel: "Ver análise no guia",
+    compareHref: "/guia/melhores-celulares-ate-1500-reais",
+    compareHash: "ranking",
+    compareLabel: "Comparar opções até R$ 1.500",
+  },
+  "ate-1500:camera": {
+    productName: "Redmi Note 13 4G",
+    shortName: "Redmi Note 13 4G",
+    badge: "Tela e câmera pelo menor preço",
+    verdict:
+      "Faz sentido para quem prioriza tela AMOLED, câmera principal competente e carregamento rápido, sem necessidade de conectividade 5G.",
+    strengths: ["Tela AMOLED 120 Hz", "Câmera principal de 108 MP", "Carga rápida de 33 W"],
+    caution: "Esta versão é 4G; escolha um Galaxy A25 ou M35 se o 5G for indispensável.",
+    affiliateHref: REDMI_NOTE_13_4G_AFFILIATE_URL,
+    reviewHref: "/guia/melhores-celulares-ate-1500-reais",
+    reviewHash: "melhor-custo-beneficio",
+    reviewLabel: "Ver análise no guia",
+    compareHref: "/guia/melhores-celulares-ate-1500-reais",
+    compareHash: "ranking",
+    compareLabel: "Comparar opções até R$ 1.500",
+  },
   "ate-2000:equilibrio": {
     productName: "Galaxy A35 5G",
     shortName: "Galaxy A35",
@@ -237,10 +294,10 @@ export function PhoneDecisionFinder({
   pageType = "home",
   showOfferMobileBar = false,
 }: PhoneDecisionFinderProps) {
-  const [budget, setBudget] = useState<Budget>("ate-2000");
+  const [budget, setBudget] = useState<Budget>("ate-1500");
   const [priority, setPriority] = useState<Priority>("equilibrio");
   const [hasInteracted, setHasInteracted] = useState(false);
-  const budgetRef = useRef<Budget>("ate-2000");
+  const budgetRef = useRef<Budget>("ate-1500");
   const priorityRef = useRef<Priority>("equilibrio");
 
   useEffect(() => {
@@ -325,7 +382,7 @@ export function PhoneDecisionFinder({
                 Qual é o seu orçamento?
               </legend>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                 {budgets.map((option) => {
                   const selected = budget === option.value;
 
@@ -412,11 +469,25 @@ export function PhoneDecisionFinder({
           >
             <div className="grid h-full md:grid-cols-[220px_1fr]">
               <div className="flex min-h-64 items-center justify-center bg-white p-6 md:min-h-full">
-                <img
-                  src={recommendation.image}
-                  alt={recommendation.productName}
-                  className="h-56 w-full object-contain md:h-80"
-                />
+                {recommendation.image ? (
+                  <img
+                    src={recommendation.image}
+                    alt={recommendation.productName}
+                    className="h-56 w-full object-contain md:h-80"
+                  />
+                ) : (
+                  <div className="flex max-w-48 flex-col items-center text-center">
+                    <span className="grid h-20 w-20 place-items-center rounded-3xl bg-[#F7F2EB] text-[#8B5A2B] ring-1 ring-[#8B5A2B]/20">
+                      <Smartphone className="h-10 w-10" />
+                    </span>
+                    <strong className="mt-5 text-lg text-[#0F3F4A]">
+                      {recommendation.productName}
+                    </strong>
+                    <span className="mt-2 text-xs leading-5 text-slate-500">
+                      Veja as imagens reais e a versão disponível no anúncio.
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-col p-6 md:p-8">
@@ -472,6 +543,7 @@ export function PhoneDecisionFinder({
                   </a>
                   <Link
                     to={recommendation.reviewHref}
+                    hash={recommendation.reviewHash}
                     onClick={() =>
                       trackFinderChoice({
                         step: "resultado",
@@ -481,12 +553,13 @@ export function PhoneDecisionFinder({
                     }
                     className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-center text-sm font-bold text-[#0F3F4A] transition hover:border-[#8B5A2B] hover:text-[#8B5A2B]"
                   >
-                    Ler análise <ArrowRight className="h-4 w-4" />
+                    {recommendation.reviewLabel ?? "Ler análise"} <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
 
                 <Link
                   to={recommendation.compareHref}
+                  hash={recommendation.compareHash}
                   onClick={() =>
                     trackFinderChoice({
                       step: "resultado",
