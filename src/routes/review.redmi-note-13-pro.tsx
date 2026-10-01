@@ -4,9 +4,9 @@ import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 const CANONICAL = "https" + "://techescolhacerta.com.br/review/redmi-note-13-pro";
 
-const PAGE_TITLE = "Redmi Note 13 Pro 5G vale a pena em 2026?";
+const PAGE_TITLE = "Redmi Note 13 Pro 5G vale a pena em 2026? Veredito";
 const PAGE_DESCRIPTION =
-  "Redmi Note 13 Pro 5G em 2026: câmera de 200 MP, carga de 67 W e pontos fracos. Compare com Galaxy A55 e Poco X6 Pro antes de comprar.";
+  "O Redmi Note 13 Pro 5G ainda vale a pena em 2026? Veja o veredito, os problemas, a câmera de 200 MP e quando escolher Galaxy A55 ou Poco X6 Pro.";
 
 export const Route = createFileRoute("/review/redmi-note-13-pro")({
   head: () => ({
@@ -55,7 +55,7 @@ function ReviewRedmiNote13Pro() {
       eyebrow="Análise editorial"
       title="Redmi Note 13 Pro 5G vale a pena em 2026?"
       description="O Redmi Note 13 Pro 5G pode valer a pena em 2026 para quem busca tela AMOLED, câmera principal de 200 MP e recarga de 67 W. A escolha depende do preço frente ao Galaxy A55 e ao Poco X6 Pro. Esta análise se refere à versão 5G."
-      updatedAt="Atualizado em 2026"
+      updatedAt="Atualizado em outubro de 2026"
       readingTime="Leitura • 7 min"
       productName="Redmi Note 13 Pro 5G"
       priceLabel="Ver no Mercado Livre"
