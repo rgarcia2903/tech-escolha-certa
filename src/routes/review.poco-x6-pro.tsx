@@ -4,9 +4,9 @@ import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 const CANONICAL = "https" + "://techescolhacerta.com.br/review/poco-x6-pro";
 
-const PAGE_TITLE = "Poco X6 Pro vale a pena em 2026? Prós e contras";
+const PAGE_TITLE = "Poco X6 Pro vale a pena em 2026? Veja o veredito";
 const PAGE_DESCRIPTION =
-  "Poco X6 Pro em 2026: veja quando compensa comprar, os limites em câmera e jogos e o que comparar com o Poco X7 Pro antes de escolher.";
+  "O Poco X6 Pro ainda compensa em 2026 para desempenho e jogos? Veja problemas, pontos fortes e quando vale pagar mais no Poco X7 Pro.";
 
 export const Route = createFileRoute("/review/poco-x6-pro")({
   head: () => ({
@@ -55,7 +55,7 @@ function ReviewPocoX6Pro() {
       eyebrow="Análise editorial"
       title="Poco X6 Pro vale a pena em 2026?"
       description="O Poco X6 Pro pode valer a pena em 2026 para quem prioriza jogos e encontra uma oferta com economia relevante frente ao Poco X7 Pro. Compare versões equivalentes e considere as limitações das câmeras antes de decidir."
-      updatedAt="Atualizado em 2026"
+      updatedAt="Atualizado em outubro de 2026"
       readingTime="Leitura • 7 min"
       productName="Poco X6 Pro"
       priceLabel="Ver no Mercado Livre"
