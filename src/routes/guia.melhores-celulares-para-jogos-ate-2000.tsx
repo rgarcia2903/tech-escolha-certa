@@ -16,8 +16,9 @@ import { Badge, Rating } from "@/components/site/ui";
 const CANONICAL =
   "https://techescolhacerta.com.br/guia/melhores-celulares-para-jogos-ate-2000";
 
-const PAGE_TITLE = "Melhores celulares para jogos até R$ 2.000 em 2026";
-const PAGE_DESCRIPTION = "Compare Poco X6 Pro, Galaxy M35, Galaxy A35 e Redmi Note 13 Pro 5G para jogos. Veja os limites de cada opção e confira o preço antes de comprar.";
+const PAGE_TITLE = "4 melhores celulares para jogos até R$ 2.000 em 2026";
+const PAGE_DESCRIPTION =
+  "Ranking atualizado com Poco X6 Pro, Galaxy M35, Galaxy A35 e Redmi Note 13 Pro 5G. Veja qual combina com cada perfil e confirme o preço atual.";
 
 export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-2000")({
   head: () => ({
@@ -73,7 +74,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
             name: "Tech Escolha Certa",
           },
           datePublished: "2026-06-02",
-          dateModified: "2026-09-11",
+          dateModified: "2026-10-01",
           mainEntityOfPage: CANONICAL,
         }),
       },
@@ -256,7 +257,7 @@ function GamingPhonesGuide() {
               </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">
-                Melhores celulares para jogos até R$ 2.000 em 2026
+                4 melhores celulares para jogos até R$ 2.000 em 2026
               </h1>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -268,7 +269,7 @@ function GamingPhonesGuide() {
 
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
                 <span>Por Equipe Tech Escolha Certa</span>
-                <span>Atualizado em setembro de 2026</span>
+                <span>Atualizado em outubro de 2026</span>
                 <span>Leitura • 8 min</span>
                 <span>Análise independente</span>
               </div>
@@ -563,7 +564,7 @@ function CriteriaCard({
 }: {
   icon: React.ReactNode;
   title: string;
-  text: string; 
+  text: string;
 }) {
   return (
     <article className="rounded-2xl border border-border bg-card p-6 shadow-soft">
