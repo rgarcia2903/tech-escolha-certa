@@ -29,16 +29,23 @@ import {
 } from "lucide-react";
 import { Badge, Rating } from "@/components/site/ui";
 
+const CANONICAL = "https://techescolhacerta.com.br/comparativo/galaxy-a55-vs-poco-x6-pro";
+const HERO_IMG = "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp";
+const PAGE_TITLE = "Galaxy A55 vs Poco X6 Pro em 2026: qual comprar?";
+const PAGE_DESCRIPTION =
+  "Galaxy A55 ou Poco X6 Pro? Compare câmera, jogos, bateria, software e preço para descobrir qual modelo combina mais com seu uso em 2026.";
+
 export const Route = createFileRoute("/comparativo/galaxy-a55-vs-poco-x6-pro")({
   head: () => ({
     meta: [
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
-        title: "Galaxy A55 vs Poco X6 Pro: qual vale mais a pena em 2026?",
+        title: PAGE_TITLE,
       },
       {
         name: "description",
-        content:
-          "Galaxy A55 vs Poco X6 Pro: comparativo completo de câmera, tela, desempenho, bateria, construção, custo-benefício e recomendação de compra em 2026.",
+        content: PAGE_DESCRIPTION,
       },
       {
         name: "keywords",
@@ -47,20 +54,39 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-poco-x6-pro")({
       },
       {
         property: "og:title",
-        content: "Galaxy A55 vs Poco X6 Pro: qual vale mais a pena em 2026?",
+        content: PAGE_TITLE,
       },
       {
         property: "og:description",
-        content:
-          "Comparamos Galaxy A55 e Poco X6 Pro em câmera, bateria, desempenho, tela e custo-benefício para mostrar qual comprar em 2026.",
+        content: PAGE_DESCRIPTION,
       },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp",
+        content: HERO_IMG,
       },
       {
         property: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp",
+        content: HERO_IMG,
+      },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: PAGE_TITLE,
+          description: PAGE_DESCRIPTION,
+          author: { "@type": "Organization", name: "Tech Escolha Certa" },
+          publisher: { "@type": "Organization", name: "Tech Escolha Certa" },
+          datePublished: "2026-05-15",
+          dateModified: "2026-10-01",
+          mainEntityOfPage: CANONICAL,
+          image: HERO_IMG,
+        }),
       },
     ],
   }),
@@ -223,7 +249,7 @@ function ComparisonPage() {
             </div>
 
             <h1 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-foreground text-balance">
-              Galaxy A55 vs Poco X6 Pro: qual vale mais a pena em 2026?
+              Galaxy A55 vs Poco X6 Pro em 2026: qual comprar?
             </h1>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
@@ -238,7 +264,7 @@ function ComparisonPage() {
                 <User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 15 mai. 2026
+                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 1 out. 2026
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5" /> Leitura · 8 min

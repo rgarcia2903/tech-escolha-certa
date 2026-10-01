@@ -31,26 +31,29 @@ import { Badge, Rating } from "@/components/site/ui";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-s24";
 const HERO_IMG = "https://techescolhacerta.com.br/images/products/galaxy-s24-optimized.webp";
+const PAGE_TITLE = "Galaxy S24 vale a pena em 2026? Veja o veredito";
+const PAGE_DESCRIPTION =
+  "O Galaxy S24 ainda vale a pena em 2026? Veja problemas, bateria, câmeras, Galaxy AI e quando comparar com o iPhone 15 antes de comprar.";
 
 export const Route = createFileRoute("/review/galaxy-s24")({
   head: () => ({
     meta: [
-      { title: "Galaxy S24 vale a pena em 2026? Review completo e honesto" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { title: PAGE_TITLE },
       {
         name: "description",
-        content:
-          "Galaxy S24 vale a pena em 2026? Análise editorial completa: tela LTPO 120 Hz, Galaxy AI, câmera de 50 MP, bateria, gaming e comparativo direto com o iPhone 15.",
+        content: PAGE_DESCRIPTION,
       },
       {
         name: "keywords",
         content:
           "Galaxy S24 vale a pena em 2026, Galaxy S24 review, Galaxy S24 análise, Galaxy S24 vs iPhone 15, Galaxy AI",
       },
-      { property: "og:title", content: "Galaxy S24 vale a pena em 2026? Review completo" },
+      { property: "og:title", content: PAGE_TITLE },
       {
         property: "og:description",
-        content:
-          "Analisamos câmera, Galaxy AI, bateria e desempenho do Galaxy S24 em 2026 para responder, sem rodeios, se ele ainda merece o seu dinheiro.",
+        content: PAGE_DESCRIPTION,
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
@@ -64,11 +67,11 @@ export const Route = createFileRoute("/review/galaxy-s24")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "Galaxy S24 vale a pena em 2026? Review completo",
-          description:
-            "Análise editorial do Galaxy S24 em 2026: câmera, Galaxy AI, bateria, gaming e comparativo com iPhone 15.",
+          headline: PAGE_TITLE,
+          description: PAGE_DESCRIPTION,
           author: { "@type": "Organization", name: "Tech Escolha Certa" },
           datePublished: "2026-05-12",
+          dateModified: "2026-10-01",
           image: HERO_IMG,
         }),
       },
@@ -226,7 +229,7 @@ function ReviewPage() {
               <Badge variant="teal">Galaxy AI</Badge>
             </div>
             <h1 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-foreground text-balance">
-              Galaxy S24 vale a pena em 2026? Review completo e sem rodeios
+              Galaxy S24 vale a pena em 2026? Veja o veredito
             </h1>
             <p className="mt-5 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
               Nesta análise editorial, reunimos especificações oficiais e os pontos que mais pesam
@@ -238,7 +241,7 @@ function ReviewPage() {
                 <User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 12 mai. 2026
+                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 1 out. 2026
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5" /> Leitura · 11 min
