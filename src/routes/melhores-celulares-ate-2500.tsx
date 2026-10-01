@@ -13,18 +13,32 @@ import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
 
+const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-ate-2500";
+const HERO_IMG = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
+const PAGE_TITLE = "3 melhores celulares até R$ 2.500 em 2026";
+const PAGE_DESCRIPTION =
+  "Compare Galaxy A55, Redmi Note 13 Pro e Poco X6 Pro. Veja qual é melhor para câmera, jogos ou uso equilibrado e confira o preço atual.";
+
 export const Route = createFileRoute("/melhores-celulares-ate-2500")({
   head: () => ({
     meta: [
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
-        title: "Melhores celulares até R$ 2.500 em 2026: os modelos que mais valem a pena",
+        title: PAGE_TITLE,
       },
       {
         name: "description",
-        content:
-          "Veja os melhores celulares até R$ 2.500 para comprar em 2026. Galaxy A55, Redmi Note 13 Pro, Poco X6 Pro e outros modelos com ótimo custo-benefício.",
+        content: PAGE_DESCRIPTION,
       },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMG },
+      { property: "twitter:image", content: HERO_IMG },
     ],
+    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: MelhoresCelularesAte2500,
 });
@@ -67,7 +81,7 @@ function MelhoresCelularesAte2500() {
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
         eyebrow="Especial até R$ 2.500"
-        title="Os melhores celulares até R$ 2.500 para comprar em 2026"
+        title="3 melhores celulares até R$ 2.500 para comprar em 2026"
         description="Selecionamos os smartphones mais equilibrados até R$ 2.500 considerando tela, desempenho, câmera, bateria, software e experiência real de uso."
         image="/images/products/phones-hero-optimized.webp"
         aside={
