@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
 import {
   ArrowUpRight,
   Award,
@@ -21,18 +23,22 @@ import { Badge, Rating } from "@/components/site/ui";
 
 const CANONICAL =
   "https://techescolhacerta.com.br/guia/melhores-celulares-ate-1500-reais";
+const HERO_IMG = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
+const PAGE_TITLE = "5 melhores celulares até R$ 1.500 em 2026";
+const PAGE_DESCRIPTION =
+  "Compare Galaxy A25 5G, Redmi Note 13 4G, Galaxy M35 5G, Poco M6 Pro e Moto G84. Veja qual combina com seu uso antes de comprar.";
 
 export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")({
   head: () => ({
     meta: [
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
-        title:
-          "Melhores celulares até 1500 reais em 2026 | Guia completo",
+        title: PAGE_TITLE,
       },
       {
         name: "description",
-        content:
-          "Guia dos melhores celulares até 1500 reais em 2026: modelos com boa câmera, bateria forte, tela de qualidade e bom custo-benefício para comprar sem errar.",
+        content: PAGE_DESCRIPTION,
       },
       {
         name: "keywords",
@@ -41,20 +47,19 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")(
       },
       {
         property: "og:title",
-        content: "Melhores celulares até 1500 reais em 2026",
+        content: PAGE_TITLE,
       },
       {
         property: "og:description",
-        content:
-          "Selecionamos os celulares mais interessantes até R$ 1.500 para quem quer economizar sem abrir mão de tela, bateria e desempenho.",
+        content: PAGE_DESCRIPTION,
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content:
-          "https://techescolhacerta.com.br/favicon.png",
+        content: HERO_IMG,
       },
+      { property: "twitter:image", content: HERO_IMG },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
@@ -63,14 +68,12 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "TechArticle",
-          headline: "Melhores celulares até 1500 reais em 2026",
-          description:
-            "Guia editorial dos melhores celulares custo-benefício de 2026 até R$ 1.500.",
+          headline: PAGE_TITLE,
+          description: PAGE_DESCRIPTION,
           author: { "@type": "Organization", name: "Tech Escolha Certa" },
           datePublished: "2026-06-01",
-          dateModified: "2026-06-01",
-          image:
-            "https://techescolhacerta.com.br/favicon.png",
+          dateModified: "2026-10-01",
+          image: HERO_IMG,
         }),
       },
     ],
@@ -281,7 +284,7 @@ function GuidePage() {
                 <Badge variant="teal">Guia de compra</Badge>
                 <span className="inline-flex items-center gap-1">
                   <CalendarDays className="h-3.5 w-3.5" />
-                  Atualizado em junho de 2026
+                  Atualizado em outubro de 2026
                 </span>
                 <span className="inline-flex items-center gap-1">
                   <Clock className="h-3.5 w-3.5" />
@@ -294,7 +297,7 @@ function GuidePage() {
               </div>
 
               <h1 className="mt-6 font-heading text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-                Melhores celulares até R$ 1.500 em 2026
+                5 melhores celulares até R$ 1.500 em 2026
               </h1>
 
               <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
@@ -492,6 +495,22 @@ function GuidePage() {
               </Link>
             </div>
           </div>
+
+          <PurchaseActions
+            className="mt-8"
+            options={[
+              {
+                productName: "Galaxy A35",
+                href: GALAXY_A35_AFFILIATE_URL,
+                label: "Ver Galaxy A35 no Mercado Livre",
+              },
+            ]}
+            pageType="guia"
+            placement="decision"
+            title="Se puder investir um pouco mais"
+            description="O Galaxy A35 é uma opção mais completa em tela, construção e longevidade. Compare o preço antes de aumentar o orçamento."
+            tone="dark"
+          />
         </div>
       </section>
     </main>
@@ -580,15 +599,13 @@ function PickCard({ pick }: { pick: Pick }) {
               <p className="mt-1 text-sm text-foreground">{pick.profile}</p>
             </div>
 
-            <a
-              href="/ofertas"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+            <Link
+              to="/ofertas"
               className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
             >
-              Ver oferta
+              Ver ofertas recomendadas
               <ArrowUpRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
 

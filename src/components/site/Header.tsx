@@ -15,6 +15,7 @@ const NAV = [
 ] as const;
 
 const FEATURED_LINKS = [
+  { to: "/guia/melhores-celulares-ate-1500-reais", label: "Celulares até R$ 1.500" },
   { to: "/melhores-celulares-ate-2000", label: "Celulares até R$ 2.000" },
   { to: "/melhores-celulares-ate-2500", label: "Celulares até R$ 2.500" },
   { to: "/melhores-celulares-samsung", label: "Melhores Samsung" },
