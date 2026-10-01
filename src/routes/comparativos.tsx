@@ -34,6 +34,15 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Galaxy A25 5G vs Redmi Note 13 4G",
+    summary:
+      "Compare os dois destaques até R$ 1.500 em 5G, câmera, desempenho, tela, bateria, carregamento e suporte.",
+    href: "/comparativo/galaxy-a25-vs-redmi-note-13",
+    family: "Samsung vs Xiaomi",
+    tag: "Até R$ 1.500",
+    bestFor: "Quem quer decidir entre mais longevidade e 5G ou tela maior e preço mais baixo.",
+  },
+  {
     title: "Redmi Note 13 Pro vs Redmi Note 14 Pro+",
     summary:
       "Compare tela, câmera, bateria, carregamento, desempenho e preço para decidir se vale pagar mais no modelo novo.",
@@ -125,9 +134,9 @@ const DECISION_GUIDES = [
   },
   {
     icon: Smartphone,
-    title: "Quero compra equilibrada",
-    text: "Veja os comparativos com Galaxy A55 para decidir entre segurança e ficha técnica.",
-    href: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
+    title: "Quero gastar até R$ 1.500",
+    text: "Compare Galaxy A25 5G e Redmi Note 13 4G antes de escolher a oferta.",
+    href: "/comparativo/galaxy-a25-vs-redmi-note-13",
   },
 ];
 
@@ -152,10 +161,10 @@ function ComparisonsPage() {
 
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
+                  href="/comparativo/galaxy-a25-vs-redmi-note-13"
                   className="inline-flex items-center gap-2 rounded-md bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-95"
                 >
-                  Ver comparativo Redmi <ArrowRight className="h-4 w-4" />
+                  Ver comparativo até R$ 1.500 <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
                   href="/comparativo/poco-x6-pro-vs-poco-x7-pro"
@@ -195,7 +204,7 @@ function ComparisonsPage() {
         <SectionHeader
           eyebrow="Em destaque"
           title="Comparativos que merecem prioridade agora"
-          description="Esses são os comparativos mais importantes para fortalecer os clusters Xiaomi e Poco."
+          description="Comece pelos duelos com maior impacto na decisão de compra, do custo-benefício aos modelos de performance."
         />
 
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
@@ -325,11 +334,11 @@ function ComparisonsPage() {
                 </span>
               </div>
               <h2 className="mt-3 font-heading text-2xl md:text-3xl font-bold text-white">
-                Comece pelos comparativos de Xiaomi e Poco.
+                Compare antes de abrir a oferta.
               </h2>
               <p className="mt-3 max-w-3xl text-sm md:text-base leading-relaxed text-slate-100">
-                Eles conectam os reviews mais recentes do site e ajudam o Google a entender melhor
-                os clusters de Redmi, Poco e custo-benefício.
+                O melhor modelo muda conforme orçamento, câmera, bateria e desempenho. Use os
+                vereditos por perfil para chegar à oferta com a decisão mais segura.
               </p>
             </div>
 

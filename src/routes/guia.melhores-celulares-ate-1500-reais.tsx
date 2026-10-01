@@ -15,6 +15,7 @@ import {
   Camera,
   Check,
   Gamepad2,
+  GitCompare,
   Wallet,
   Trophy,
   X,
@@ -391,6 +392,34 @@ function GuidePage() {
           {PICKS.map((pick) => (
             <PickCard key={pick.id} pick={pick} />
           ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-surface">
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+          <div className="flex items-start gap-4">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-cta/10 text-cta">
+              <GitCompare className="h-6 w-6" />
+            </span>
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
+                Duelo principal da faixa
+              </span>
+              <h2 className="mt-1 font-heading text-2xl font-bold text-foreground">
+                Galaxy A25 5G ou Redmi Note 13 4G?
+              </h2>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                Compare 5G, câmera, desempenho, tela, bateria e suporte antes de escolher os dois
+                modelos mais indicados deste ranking.
+              </p>
+            </div>
+          </div>
+          <Link
+            to="/comparativo/galaxy-a25-vs-redmi-note-13"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-sm font-bold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
+          >
+            Comparar os dois <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
