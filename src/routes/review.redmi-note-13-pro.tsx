@@ -3,42 +3,177 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 const CANONICAL = "https" + "://techescolhacerta.com.br/review/redmi-note-13-pro";
+const HERO_IMAGE =
+  "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp";
 
-const PAGE_TITLE = "Redmi Note 13 Pro 5G vale a pena em 2026? Veredito";
+const PAGE_TITLE = "Redmi Note 13 Pro 5G vale a pena em 2026? Review e problemas";
 const PAGE_DESCRIPTION =
-  "O Redmi Note 13 Pro 5G ainda vale a pena em 2026? Veja o veredito, os problemas, a câmera de 200 MP e quando escolher Galaxy A55 ou Poco X6 Pro.";
+  "Sim, o Redmi Note 13 Pro 5G ainda vale a pena pelo conjunto de tela, câmera e carga rápida. Veja problemas, versão correta e preço antes de comprar.";
+
+const PROS = [
+  "Tela AMOLED de alta qualidade com ótima fluidez",
+  "Carregamento rápido muito acima de vários concorrentes",
+  "Boa performance para aplicativos, redes sociais e multitarefa",
+  "Excelente custo-benefício quando aparece em promoção",
+  "Câmera principal de alta resolução com bons resultados durante o dia",
+  "Ótima escolha para quem quer ficha técnica forte pelo preço",
+];
+
+const CONS = [
+  "Interface pode não agradar quem prefere sistema mais limpo",
+  "Pode vir com apps pré-instalados em excesso",
+  "Câmera noturna fica abaixo dos melhores Samsung",
+  "Atualizações e suporte tendem a ser menos previsíveis que Samsung",
+  "Experiência geral é menos refinada que Galaxy A55",
+];
+
+const FAQ = [
+  {
+    question: "O Redmi Note 13 Pro 5G vale a pena em 2026?",
+    answer:
+      "Sim. Ele ainda vale a pena em 2026 para quem busca tela AMOLED, bom desempenho, carregamento rápido e boa ficha técnica na faixa intermediária. Só vale comparar o preço com Galaxy A55, Poco X6 Pro e Redmi Note 14 Pro+ antes de decidir.",
+  },
+  {
+    question: "Redmi Note 13 Pro 5G ainda compensa em 2026?",
+    answer:
+      "Sim. O Redmi Note 13 Pro 5G ainda compensa em 2026 quando aparece com preço competitivo, principalmente para quem quer tela AMOLED, câmera principal forte, bom desempenho e carregamento rápido.",
+  },
+  {
+    question: "O Redmi Note 13 Pro 5G é bom?",
+    answer:
+      "Sim. O Redmi Note 13 Pro 5G é bom para uso diário, redes sociais, vídeos, multitarefa e jogos populares. Os principais destaques são a tela, o carregamento rápido e a câmera principal durante o dia.",
+  },
+  {
+    question: "Redmi Note 13 Pro 5G esquenta muito?",
+    answer:
+      "Em uso comum, o aquecimento não tende a ser o principal problema. Em jogos, gravação de vídeo ou uso intenso por períodos longos, o aparelho pode aquecer, como é comum em celulares intermediários sob carga elevada.",
+  },
+  {
+    question: "O Redmi Note 13 Pro 5G é melhor que o Galaxy A55?",
+    answer:
+      "Depende do perfil. O Redmi entrega mais ficha técnica e carregamento mais rápido. O Galaxy A55 oferece construção mais premium, software mais refinado e suporte mais previsível.",
+  },
+  {
+    question: "O Redmi Note 13 Pro 5G é bom para jogos?",
+    answer:
+      "Sim, ele roda bem jogos populares e tem bom desempenho para a categoria. Para jogos muito pesados, modelos Poco podem ser mais indicados.",
+  },
+  {
+    question: "A câmera do Redmi Note 13 Pro 5G é boa?",
+    answer:
+      "A câmera principal é boa durante o dia e entrega bastante detalhe. Em fotos noturnas, o resultado é correto, mas não é o ponto mais forte do aparelho.",
+  },
+];
 
 export const Route = createFileRoute("/review/redmi-note-13-pro")({
   head: () => ({
     meta: [
-      { name: "twitter:title", content: PAGE_TITLE },
-      { name: "twitter:description", content: PAGE_DESCRIPTION },
-      {
-        title: PAGE_TITLE,
-      },
-      {
-        name: "description",
-        content: PAGE_DESCRIPTION,
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
       {
         name: "keywords",
         content:
-          "Redmi Note 13 Pro 5G vale a pena em 2026, Redmi Note 13 Pro vale a pena, Redmi Note 13 Pro review, Redmi Note 13 Pro é bom, Redmi Note 13 Pro vs Galaxy A55, melhor Xiaomi custo-benefício",
+          "Redmi Note 13 Pro 5G vale a pena em 2026, Redmi Note 13 Pro vale a pena, Redmi Note 13 Pro review, problemas Redmi Note 13 Pro, Redmi Note 13 Pro é bom, Redmi Note 13 Pro vs Galaxy A55, melhor Xiaomi custo-benefício",
       },
-      {
-        property: "og:title",
-        content: PAGE_TITLE,
-      },
-      {
-        property: "og:description",
-        content: PAGE_DESCRIPTION,
-      },
-      {
-        property: "og:url",
-        content: CANONICAL,
-      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMAGE },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Redmi Note 13 Pro 5G",
+          image: [HERO_IMAGE],
+          description: PAGE_DESCRIPTION,
+          brand: { "@type": "Brand", name: "Xiaomi" },
+          url: CANONICAL,
+          review: {
+            "@type": "Review",
+            name: PAGE_TITLE,
+            author: {
+              "@type": "Organization",
+              name: "Tech Escolha Certa",
+              url: "https://techescolhacerta.com.br/sobre",
+            },
+            dateModified: "2026-10-02",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: 9,
+              bestRating: 10,
+              worstRating: 0,
+            },
+            positiveNotes: {
+              "@type": "ItemList",
+              itemListElement: PROS.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+            negativeNotes: {
+              "@type": "ItemList",
+              itemListElement: CONS.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: answer,
+            },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://techescolhacerta.com.br/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Celulares",
+              item: "https://techescolhacerta.com.br/celulares",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Review Redmi Note 13 Pro 5G",
+              item: CANONICAL,
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: ReviewRedmiNote13Pro,
 });
@@ -54,44 +189,31 @@ function ReviewRedmiNote13Pro() {
       ]}
       eyebrow="Análise editorial"
       title="Redmi Note 13 Pro 5G vale a pena em 2026?"
-      description="O Redmi Note 13 Pro 5G pode valer a pena em 2026 para quem busca tela AMOLED, câmera principal de 200 MP e recarga de 67 W. A escolha depende do preço frente ao Galaxy A55 e ao Poco X6 Pro. Esta análise se refere à versão 5G."
+      description="Sim — o Redmi Note 13 Pro 5G ainda vale a pena para quem busca tela AMOLED, câmera principal de 200 MP e recarga de 67 W. A escolha depende do preço frente ao Galaxy A35 e ao Poco X6 Pro. Esta análise se refere à versão 5G."
       updatedAt="Atualizado em outubro de 2026"
       readingTime="Leitura • 7 min"
       productName="Redmi Note 13 Pro 5G"
-      priceLabel="Ver no Mercado Livre"
+      priceLabel="Ver preço atual"
       overallScore="9.0"
-      verdictShort="O Redmi Note 13 Pro 5G vale a pena em 2026 se você quer tela excelente, desempenho forte, carregamento rápido e boa ficha técnica sem pagar preço de topo de linha. Ele só não é a melhor escolha para quem prioriza software mais limpo, suporte mais previsível e câmeras mais consistentes à noite."
+      verdictShort="Sim — o Redmi Note 13 Pro 5G vale a pena em 2026 se você quer tela excelente, desempenho forte, carregamento rápido e boa ficha técnica sem pagar preço de topo de linha. Ele só não é a melhor escolha para quem prioriza software mais limpo, suporte mais previsível e câmeras mais consistentes à noite."
       affiliateHref={REDMI_NOTE_13_PRO_AFFILIATE_URL}
       affiliate={{
-        title: "Conferir preço do Redmi Note 13 Pro 5G",
+        title: "Redmi Note 13 Pro 5G: confira oferta e versão",
         description:
-          "Veja o preço atualizado, parcelamento, disponibilidade e condições do Redmi Note 13 Pro 5G no Mercado Livre antes de comprar.",
-        buttonText: "Ver Redmi Note 13 Pro no Mercado Livre",
-        highlight: "Tela AMOLED • Câmera 200 MP • Carregamento rápido",
+          "Confira o preço atualizado e confirme no anúncio se é a versão 5G com Snapdragon 7s Gen 2. Compare também memória, garantia, frete e parcelamento.",
+        buttonText: "Conferir preço atual",
+        highlight: "Tela AMOLED 120 Hz • Câmera 200 MP • Carga de 67 W",
       }}
       decision={{
         bestFor:
           "Você quer tela de ótima qualidade, câmera principal forte e carregamento rápido pagando o mínimo possível.",
         caution:
-          "Você valoriza mais software previsível, proteção e suporte de longo prazo do que ficha técnica pelo preço.",
+          "você valoriza mais software previsível, proteção e suporte de longo prazo do que ficha técnica pelo preço.",
         comparisonHref: "/comparativo/galaxy-a35-vs-redmi-note-13-pro",
         comparisonLabel: "Comparar Redmi e Galaxy A35",
       }}
-      pros={[
-        "Tela AMOLED de alta qualidade com ótima fluidez",
-        "Carregamento rápido muito acima de vários concorrentes",
-        "Boa performance para aplicativos, redes sociais e multitarefa",
-        "Excelente custo-benefício quando aparece em promoção",
-        "Câmera principal de alta resolução com bons resultados durante o dia",
-        "Ótima escolha para quem quer ficha técnica forte pelo preço",
-      ]}
-      cons={[
-        "Interface pode não agradar quem prefere sistema mais limpo",
-        "Pode vir com apps pré-instalados em excesso",
-        "Câmera noturna fica abaixo dos melhores Samsung",
-        "Atualizações e suporte tendem a ser menos previsíveis que Samsung",
-        "Experiência geral é menos refinada que Galaxy A55",
-      ]}
+      pros={PROS}
+      cons={CONS}
       scores={[
         { label: "Tela", score: "9.3" },
         { label: "Desempenho", score: "8.9" },
@@ -113,6 +235,11 @@ function ReviewRedmiNote13Pro() {
         ["Sistema", "Android com HyperOS / MIUI, conforme atualização"],
       ]}
       sections={[
+        {
+          eyebrow: "Regra de compra",
+          title: "Quando o preço do Redmi Note 13 Pro 5G faz sentido",
+          text: "Compare sempre a versão 5G com a mesma memória e armazenamento. Se o Galaxy A35 estiver próximo de preço, ele pode ser mais seguro para software e proteção. Se o Poco X6 Pro custar parecido, ele é mais indicado para jogos. O Redmi faz mais sentido quando você prioriza tela, câmera principal e carga rápida pelo menor custo total.",
+        },
         {
           eyebrow: "Versão do aparelho",
           title: "Confira se o anúncio é do Redmi Note 13 Pro 5G",
@@ -170,43 +297,7 @@ function ReviewRedmiNote13Pro() {
         },
       ]}
       finalRecommendation="O Redmi Note 13 Pro 5G é uma excelente escolha para quem prioriza custo-benefício, tela de qualidade, bom desempenho e carregamento rápido. Se o foco for ficha técnica pelo menor preço, ele é um dos modelos mais fortes da categoria. Se você prioriza software mais refinado, suporte e experiência mais previsível, o Galaxy A55 pode fazer mais sentido."
-      faq={[
-        {
-          question: "O Redmi Note 13 Pro 5G vale a pena em 2026?",
-          answer:
-            "Sim. Ele ainda vale a pena em 2026 para quem busca tela AMOLED, bom desempenho, carregamento rápido e boa ficha técnica na faixa intermediária. Só vale comparar o preço com Galaxy A55, Poco X6 Pro e Redmi Note 14 Pro+ antes de decidir.",
-        },
-        {
-          question: "Redmi Note 13 Pro 5G ainda compensa em 2026?",
-          answer:
-            "Sim. O Redmi Note 13 Pro 5G ainda compensa em 2026 quando aparece com preço competitivo, principalmente para quem quer tela AMOLED, câmera principal forte, bom desempenho e carregamento rápido.",
-        },
-        {
-          question: "O Redmi Note 13 Pro 5G é bom?",
-          answer:
-            "Sim. O Redmi Note 13 Pro 5G é bom para uso diário, redes sociais, vídeos, multitarefa e jogos populares. Os principais destaques são a tela, o carregamento rápido e a câmera principal durante o dia.",
-        },
-        {
-          question: "Redmi Note 13 Pro 5G esquenta muito?",
-          answer:
-            "Em uso comum, o aquecimento não tende a ser o principal problema. Em jogos, gravação de vídeo ou uso intenso por períodos longos, o aparelho pode aquecer, como é comum em celulares intermediários sob carga elevada.",
-        },
-        {
-          question: "O Redmi Note 13 Pro 5G é melhor que o Galaxy A55?",
-          answer:
-            "Depende do perfil. O Redmi entrega mais ficha técnica e carregamento mais rápido. O Galaxy A55 oferece construção mais premium, software mais refinado e suporte mais previsível.",
-        },
-        {
-          question: "O Redmi Note 13 Pro 5G é bom para jogos?",
-          answer:
-            "Sim, ele roda bem jogos populares e tem bom desempenho para a categoria. Para jogos muito pesados, modelos Poco podem ser mais indicados.",
-        },
-        {
-          question: "A câmera do Redmi Note 13 Pro 5G é boa?",
-          answer:
-            "A câmera principal é boa durante o dia e entrega bastante detalhe. Em fotos noturnas, o resultado é correto, mas não é o ponto mais forte do aparelho.",
-        },
-      ]}
+      faq={FAQ}
       relatedLinks={[
         {
           label: "Review Redmi Note 14 Pro+ 5G",
