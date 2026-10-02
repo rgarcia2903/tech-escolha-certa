@@ -1,5 +1,6 @@
 import { POCO_X6_PRO_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -25,38 +26,91 @@ import {
 } from "lucide-react";
 import { Badge, Rating } from "@/components/site/ui";
 
+const CANONICAL = "https://techescolhacerta.com.br/comparativo/redmi-note-13-pro-vs-poco-x6-pro";
+const HERO_IMAGE = "https://techescolhacerta.com.br/images/products/poco-x6-pro-optimized.webp";
+const PAGE_TITLE = "Redmi Note 13 Pro vs Poco X6 Pro: qual comprar em 2026?";
+const PAGE_DESCRIPTION =
+  "Poco X6 Pro é melhor para jogos; Redmi Note 13 Pro vence em câmera. Compare desempenho, preço e diferenças para escolher o melhor Xiaomi em 2026.";
+
 export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-poco-x6-pro")({
   head: () => ({
     meta: [
-      {
-        title: "Redmi Note 13 Pro vs Poco X6 Pro: qual Xiaomi vale mais a pena em 2026?",
-      },
-      {
-        name: "description",
-        content:
-          "Redmi Note 13 Pro vs Poco X6 Pro: comparativo completo de desempenho, tela, bateria, câmeras, carregamento, custo-benefício e recomendação de compra em 2026.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
       {
         name: "keywords",
         content:
-          "Redmi Note 13 Pro vs Poco X6 Pro, Redmi Note 13 Pro ou Poco X6 Pro, Redmi Note 13 Pro vale a pena, Poco X6 Pro vale a pena, melhor Poco para jogos",
+          "Redmi Note 13 Pro vs Poco X6 Pro, Redmi Note 13 Pro ou Poco X6 Pro, qual comprar em 2026, melhor celular para jogos, melhor câmera Xiaomi",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMAGE },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: PAGE_TITLE,
+          description: PAGE_DESCRIPTION,
+          author: {
+            "@type": "Organization",
+            name: "Tech Escolha Certa",
+            url: "https://techescolhacerta.com.br/sobre",
+          },
+          publisher: { "@type": "Organization", name: "Tech Escolha Certa" },
+          datePublished: "2026-08-24",
+          dateModified: "2026-10-02",
+          mainEntityOfPage: CANONICAL,
+          image: HERO_IMAGE,
+        }),
       },
       {
-        property: "og:title",
-        content: "Redmi Note 13 Pro vs Poco X6 Pro: qual Xiaomi vale mais a pena em 2026?",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        }),
       },
       {
-        property: "og:description",
-        content:
-          "Comparamos Poco X6 Pro e Redmi Note 13 Pro em desempenho, bateria, tela, câmera e custo-benefício para mostrar qual comprar em 2026.",
-      },
-      {
-        property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp",
-      },
-      {
-        property: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://techescolhacerta.com.br/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Comparativos",
+              item: "https://techescolhacerta.com.br/comparativos",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Redmi Note 13 Pro vs Poco X6 Pro",
+              item: CANONICAL,
+            },
+          ],
+        }),
       },
     ],
   }),
@@ -150,7 +204,7 @@ const QUICK_SCORE = [
   {
     category: "Custo-benefício",
     winner: "Depende do preço",
-    reason: "X6 Pro compensa se estiver bem mais barato",
+    reason: "em preços próximos, escolha conforme câmera ou desempenho",
   },
 ];
 
@@ -243,14 +297,14 @@ function ComparisonPage() {
             </div>
 
             <h1 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-foreground text-balance">
-              Redmi Note 13 Pro vs Poco X6 Pro: qual Xiaomi vale mais a pena em 2026?
+              Redmi Note 13 Pro vs Poco X6 Pro: qual comprar em 2026?
             </h1>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              O Poco X6 Pro ainda é um intermediário muito forte, mas o Redmi Note 13 Pro se destaca
-              pela câmera principal de 200 MP, boa tela e bateria ligeiramente maior. Comparamos os
-              dois para mostrar quando priorizar fotografia e quando o desempenho do Poco faz mais
-              sentido.
+              <strong className="text-foreground">O Poco X6 Pro é melhor para jogos</strong> e uso
+              pesado; o{" "}
+              <strong className="text-foreground">Redmi Note 13 Pro é melhor para câmera</strong>e
+              uso equilibrado. Veja as diferenças e compare os preços antes de escolher.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -258,7 +312,7 @@ function ComparisonPage() {
                 <User className="h-3.5 w-3.5" /> Por Equipe Tech Escolha Certa
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em 2026
+                <CalendarDays className="h-3.5 w-3.5" /> Atualizado em outubro de 2026
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5" /> Leitura · 8 min
@@ -304,18 +358,18 @@ function ComparisonPage() {
                 Mais equilibrado
               </span>
               <p className="mt-2 text-sm text-muted-foreground">
-                O Redmi Note 13 Pro é a escolha mais completa. O Poco X6 Pro só leva vantagem se
-                estiver com preço bem menor.
+                Redmi Note 13 Pro para câmera; Poco X6 Pro para jogos. Em preços próximos, escolha
+                pelo seu uso principal.
               </p>
               <div className="mt-4 space-y-2">
                 <AffiliateButton
                   product={REDMI_NOTE_13_PRO}
-                  label="Ver Redmi Note 13 Pro no Mercado Livre"
+                  label="Conferir preço do Redmi Note 13 Pro"
                   variant="primary"
                 />
                 <AffiliateButton
                   product={POCO_X6}
-                  label="Ver Poco X6 Pro no Mercado Livre"
+                  label="Conferir preço do Poco X6 Pro"
                   variant="secondary"
                 />
               </div>
@@ -349,6 +403,38 @@ function ComparisonPage() {
                   title="Melhor para desempenho"
                   product="Poco X6 Pro"
                   text="Continua muito forte e pode ser compra melhor quando a diferença de preço for grande."
+                />
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-cta/30 bg-cta/5 p-5">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cta">
+                  Regra de compra
+                </span>
+                <h3 className="mt-2 font-heading text-xl font-bold text-foreground">
+                  Mesmo preço: escolha pelo uso; 15% de diferença: escolha o mais barato
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Em preços iguais ou próximos, compre o Poco X6 Pro para jogos e desempenho, ou o
+                  Redmi Note 13 Pro para câmera e entrada de 3,5 mm. Se um deles estiver cerca de
+                  15% mais barato, ele normalmente oferece o melhor custo-benefício, salvo se sua
+                  prioridade depender diretamente do ponto forte do outro modelo.
+                </p>
+                <PurchaseActions
+                  className="mt-4"
+                  options={[
+                    {
+                      productName: "Poco X6 Pro",
+                      href: POCO_X6_PRO_AFFILIATE_URL,
+                      label: "Conferir preço do Poco X6 Pro",
+                    },
+                    {
+                      productName: "Redmi Note 13 Pro",
+                      href: REDMI_NOTE_13_PRO_AFFILIATE_URL,
+                      label: "Conferir preço do Redmi Note 13 Pro",
+                    },
+                  ]}
+                  pageType="comparativo"
+                  placement="content"
                 />
               </div>
             </div>
@@ -495,13 +581,13 @@ function ComparisonPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {SPECS.map(([label, x6, x7], index) => (
+                  {SPECS.map(([label, x6, redmi13], index) => (
                     <tr key={label} className={index % 2 === 0 ? "bg-card" : "bg-surface"}>
                       <th scope="row" className="px-5 py-3 text-left font-semibold text-foreground">
                         {label}
                       </th>
                       <td className="px-5 py-3 text-muted-foreground">{x6}</td>
-                      <td className="px-5 py-3 text-muted-foreground">{x7}</td>
+                      <td className="px-5 py-3 text-muted-foreground">{redmi13}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -572,6 +658,34 @@ function ComparisonPage() {
             </div>
           </section>
 
+          <section className="rounded-2xl border border-border bg-surface p-6 md:p-8">
+            <SectionTitle eyebrow="Continue comparando" title="Veja as análises completas" />
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Confira os problemas e pontos fortes de cada aparelho. Para outras opções voltadas a
+              jogos, veja também o guia de celulares gamers até R$ 2.000.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <Link
+                to="/review/redmi-note-13-pro"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground transition hover:border-cta/40 hover:text-cta"
+              >
+                Review do Redmi Note 13 Pro
+              </Link>
+              <Link
+                to="/review/poco-x6-pro"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground transition hover:border-cta/40 hover:text-cta"
+              >
+                Review do Poco X6 Pro
+              </Link>
+              <Link
+                to="/guia/melhores-celulares-para-jogos-ate-2000"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground transition hover:border-cta/40 hover:text-cta"
+              >
+                Celulares para jogos até R$ 2.000
+              </Link>
+            </div>
+          </section>
+
           <section className="rounded-2xl border border-cta/30 bg-card p-6 md:p-8 shadow-soft ring-1 ring-cta/10">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div>
@@ -589,12 +703,12 @@ function ComparisonPage() {
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
                 <AffiliateButton
                   product={REDMI_NOTE_13_PRO}
-                  label="Ver Redmi Note 13 Pro no Mercado Livre"
+                  label="Conferir preço do Redmi Note 13 Pro"
                   variant="primary"
                 />
                 <AffiliateButton
                   product={POCO_X6}
-                  label="Ver Poco X6 Pro no Mercado Livre"
+                  label="Conferir preço do Poco X6 Pro"
                   variant="secondary"
                 />
               </div>
@@ -625,7 +739,7 @@ function ComparisonPage() {
             }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver no Mercado Livre <ArrowUpRight className="h-3.5 w-3.5" />
+            Ver preço atual <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
@@ -700,7 +814,7 @@ function ProductHero({ product, accent }: { product: typeof POCO_X6; accent: "te
           <div className="mt-4">
             <AffiliateButton
               product={product}
-              label={`Ver ${product.name} no Mercado Livre`}
+              label={`Conferir preço do ${product.name}`}
               variant={accent === "cta" ? "primary" : "secondary"}
             />
           </div>
