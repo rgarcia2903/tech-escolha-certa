@@ -14,17 +14,20 @@ import { ReviewCard } from "@/components/site/ReviewCard";
 import { SectionTitle } from "@/components/site/SectionTitle";
 
 const CANONICAL = "https" + "://techescolhacerta.com.br/melhores-celulares-xiaomi";
+const HERO_IMAGE = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
+const PAGE_TITLE = "Melhores celulares Xiaomi em 2026: qual comprar?";
+const PAGE_DESCRIPTION =
+  "Veja os melhores celulares Xiaomi de 2026: Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro e Poco X6 Pro, com indicação por perfil e preço.";
 
 export const Route = createFileRoute("/melhores-celulares-xiaomi")({
   head: () => ({
     meta: [
       {
-        title: "Melhor celular Xiaomi em 2026: qual comprar entre Redmi e Poco?",
+        title: PAGE_TITLE,
       },
       {
         name: "description",
-        content:
-          "Qual Xiaomi comprar em 2026? Compare Redmi e Poco para escolher o melhor modelo para uso geral, câmera, jogos, desempenho e preço.",
+        content: PAGE_DESCRIPTION,
       },
       {
         name: "keywords",
@@ -32,23 +35,110 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
           "melhores celulares Xiaomi 2026, melhor Xiaomi custo-benefício, Redmi Note 13 Pro, Redmi Note 14 Pro Plus, Poco X7 Pro, Poco X6 Pro",
       },
       {
+        property: "og:type",
+        content: "website",
+      },
+      {
         property: "og:title",
-        content: "Melhor celular Xiaomi em 2026 | Tech Escolha Certa",
+        content: PAGE_TITLE,
       },
       {
         property: "og:description",
-        content:
-          "Guia editorial com os Xiaomi que mais valem a pena, reviews completos e comparativos entre Redmi e Poco.",
+        content: PAGE_DESCRIPTION,
       },
       {
         property: "og:url",
         content: CANONICAL,
+      },
+      {
+        property: "og:image",
+        content: HERO_IMAGE,
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: PAGE_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: PAGE_DESCRIPTION,
+      },
+      {
+        name: "twitter:image",
+        content: HERO_IMAGE,
       },
     ],
     links: [
       {
         rel: "canonical",
         href: CANONICAL,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: PAGE_TITLE,
+          description: PAGE_DESCRIPTION,
+          url: CANONICAL,
+          inLanguage: "pt-BR",
+          dateModified: "2026-10-02",
+          image: HERO_IMAGE,
+          mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: ranking.length,
+            itemListElement: ranking.map((item, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: item.product,
+              url: `https://techescolhacerta.com.br${item.reviewHref}`,
+            })),
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: { "@type": "Answer", text: answer },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://techescolhacerta.com.br/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Guias de compra",
+              item: "https://techescolhacerta.com.br/guias-de-compra",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Melhores celulares Xiaomi",
+              item: CANONICAL,
+            },
+          ],
+        }),
       },
     ],
   }),
@@ -97,6 +187,34 @@ const ranking = [
     reviewHref: "/review/poco-x6-pro",
     affiliateHref: affiliateLinks.pocoX6Pro,
     affiliateProductName: "Poco X6 Pro",
+  },
+];
+
+const FAQS = [
+  {
+    question: "Quais são os melhores celulares Xiaomi em 2026?",
+    answer:
+      "Entre os melhores celulares Xiaomi em 2026 estão o Redmi Note 13 Pro 5G para equilíbrio, o Redmi Note 14 Pro+ para conjunto mais premium, o Poco X7 Pro para desempenho e o Poco X6 Pro quando aparece com preço promocional.",
+  },
+  {
+    question: "Qual Xiaomi tem melhor custo-benefício?",
+    answer:
+      "O Redmi Note 13 Pro 5G costuma ser a compra mais equilibrada quando aparece em promoção. Se o Poco X6 Pro estiver bem mais barato que o Poco X7 Pro, ele também pode ser uma excelente compra.",
+  },
+  {
+    question: "Redmi Note 14 Pro+ 5G vale a pena?",
+    answer:
+      "Vale para quem quer um Xiaomi mais completo, com carregamento de 120 W, proteção IP68 e acabamento superior. Se a diferença de preço for grande, o Redmi Note 13 Pro ainda pode ser mais racional.",
+  },
+  {
+    question: "Poco X7 Pro ou Poco X6 Pro?",
+    answer:
+      "O Poco X7 Pro é a escolha mais atual e completa. O Poco X6 Pro continua interessante quando aparece com preço mais agressivo.",
+  },
+  {
+    question: "Xiaomi é melhor que Samsung?",
+    answer:
+      "Xiaomi costuma entregar mais ficha técnica pelo preço. Samsung costuma entregar software mais refinado, suporte mais previsível e experiência mais consistente no longo prazo.",
   },
 ];
 
@@ -149,8 +267,8 @@ function MelhoresCelularesXiaomi() {
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
         eyebrow="Especial Xiaomi"
-        title="Qual é o melhor celular Xiaomi para comprar em 2026?"
-        description="O Redmi Note 13 Pro 5G é a escolha mais equilibrada para a maioria das pessoas, enquanto os modelos Poco fazem mais sentido para jogos e desempenho."
+        title="Melhores celulares Xiaomi em 2026: qual comprar?"
+        description="O Redmi Note 13 Pro 5G é a escolha mais equilibrada; o Poco X7 Pro é melhor para jogos. Compare quatro modelos por perfil antes de comprar."
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
@@ -201,12 +319,12 @@ function MelhoresCelularesXiaomi() {
           </>
         }
       >
-        <Link
-          to="/melhores-celulares-xiaomi-custo-beneficio"
+        <a
+          href="#ranking-xiaomi"
           className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
         >
-          Ver Xiaomi custo-benefício
-        </Link>
+          Ver ranking dos 4 melhores
+        </a>
 
         <Link
           to="/comparativos"
@@ -240,7 +358,7 @@ function MelhoresCelularesXiaomi() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+      <section id="ranking-xiaomi" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8">
         <SectionTitle
           eyebrow="Ranking Xiaomi"
           title="Os Xiaomi que mais valem a pena hoje"
@@ -379,7 +497,7 @@ function MelhoresCelularesXiaomi() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-slate-700">
-                Para a maioria das pessoas, o <strong>Redmi Note 13 Pro 5G</strong>é o Xiaomi mais
+                Para a maioria das pessoas, o <strong>Redmi Note 13 Pro 5G</strong> é o Xiaomi mais
                 equilibrado. Ele reúne tela AMOLED, câmera de alta resolução, bom desempenho,
                 bateria consistente e carregamento rápido por um preço normalmente mais competitivo.
               </p>
@@ -468,55 +586,12 @@ function MelhoresCelularesXiaomi() {
               </h2>
 
               <div className="mt-6 space-y-6">
-                <div>
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Quais são os melhores celulares Xiaomi em 2026?
-                  </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-700">
-                    Entre os melhores celulares Xiaomi em 2026 estão o Redmi Note 13 Pro 5G para
-                    equilíbrio, o Redmi Note 14 Pro+ para conjunto mais premium, o Poco X7 Pro para
-                    desempenho e o Poco X6 Pro quando aparece com preço promocional.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Qual Xiaomi tem melhor custo-benefício?
-                  </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-700">
-                    O Redmi Note 13 Pro 5G costuma ser a compra mais equilibrada quando aparece em
-                    promoção. Se o Poco X6 Pro estiver bem mais barato que o Poco X7 Pro, ele também
-                    pode ser uma excelente compra.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">
-                    Redmi Note 14 Pro+ 5G vale a pena?
-                  </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-700">
-                    Vale para quem quer um Xiaomi mais completo, com carregamento de 120 W, proteção
-                    IP68 e acabamento superior. Se a diferença de preço for grande, o Redmi Note 13
-                    Pro ainda pode ser mais racional.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">Poco X7 Pro ou Poco X6 Pro?</h3>
-                  <p className="mt-2 text-base leading-7 text-slate-700">
-                    O Poco X7 Pro é a escolha mais atual e completa. O Poco X6 Pro continua
-                    interessante quando aparece com preço mais agressivo.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">Xiaomi é melhor que Samsung?</h3>
-                  <p className="mt-2 text-base leading-7 text-slate-700">
-                    Xiaomi costuma entregar mais ficha técnica pelo preço. Samsung costuma entregar
-                    software mais refinado, suporte mais previsível e experiência mais consistente
-                    no longo prazo.
-                  </p>
-                </div>
+                {FAQS.map((item) => (
+                  <div key={item.question}>
+                    <h3 className="text-lg font-bold text-[#0F3F4A]">{item.question}</h3>
+                    <p className="mt-2 text-base leading-7 text-slate-700">{item.answer}</p>
+                  </div>
+                ))}
               </div>
             </section>
 

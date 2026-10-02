@@ -19,8 +19,7 @@ export const Route = createFileRoute("/guias-de-compra")({
       },
       {
         property: "og" + ":description",
-        content:
-          "Guias diretos para comparar produtos, escolher melhor e encontrar boas ofertas.",
+        content: "Guias diretos para comparar produtos, escolher melhor e encontrar boas ofertas.",
       },
       {
         property: "og" + ":url",
@@ -64,13 +63,6 @@ const guides = [
   },
 
   {
-    title: "Melhores celulares Xiaomi custo-benefício",
-    excerpt:
-      "Redmi e Poco com melhor equilíbrio entre preço, desempenho, bateria e compra inteligente.",
-    href: "/melhores-celulares-xiaomi-custo-beneficio",
-    tag: "Xiaomi custo-benefício",
-  },
-  {
     title: "Melhores celulares Samsung",
     excerpt:
       "Galaxy A, Galaxy S e os modelos Samsung que mais valem a pena para diferentes perfis.",
@@ -79,15 +71,13 @@ const guides = [
   },
   {
     title: "Melhores celulares para jogos até R$ 2.000",
-    excerpt:
-      "Opções para quem prioriza desempenho, tela fluida, bateria e estabilidade em jogos.",
+    excerpt: "Opções para quem prioriza desempenho, tela fluida, bateria e estabilidade em jogos.",
     href: "/guia/melhores-celulares-para-jogos-ate-2000",
     tag: "Jogos",
   },
   {
     title: "Melhores celulares até R$ 1.500",
-    excerpt:
-      "Escolhas mais acessíveis para quem precisa economizar sem comprar qualquer aparelho.",
+    excerpt: "Escolhas mais acessíveis para quem precisa economizar sem comprar qualquer aparelho.",
     href: "/guia/melhores-celulares-ate-1500-reais",
     tag: "Entrada",
   },
@@ -100,8 +90,7 @@ const guides = [
   },
   {
     title: "Melhores celulares até R$ 3.500",
-    excerpt:
-      "Celulares fortes para quem busca câmera melhor, desempenho alto e mais vida útil.",
+    excerpt: "Celulares fortes para quem busca câmera melhor, desempenho alto e mais vida útil.",
     href: "/guia/melhores-celulares-ate-3500-reais",
     tag: "Até R$ 3.500",
   },
@@ -126,8 +115,8 @@ function GuidesPage() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg text-hero-foreground/80">
-            Conteúdos práticos para escolher celulares por faixa de preço,
-            marca, desempenho, câmera, bateria e custo-benefício.
+            Conteúdos práticos para escolher celulares por faixa de preço, marca, desempenho,
+            câmera, bateria e custo-benefício.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -166,9 +155,7 @@ function GuidesPage() {
               {featuredGuide.title}
             </h2>
 
-            <p className="mt-3 text-muted-foreground">
-              {featuredGuide.excerpt}
-            </p>
+            <p className="mt-3 text-muted-foreground">{featuredGuide.excerpt}</p>
 
             <Link
               to={featuredGuide.href}
@@ -180,10 +167,7 @@ function GuidesPage() {
         </article>
 
         <div className="mt-12">
-          <SectionHeader
-            eyebrow="Mais guias"
-            title="Outros conteúdos para você"
-          />
+          <SectionHeader eyebrow="Mais guias" title="Outros conteúdos para você" />
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {guides.map((guide) => (
@@ -193,13 +177,9 @@ function GuidesPage() {
               >
                 <Badge variant="soft">{guide.tag}</Badge>
 
-                <h3 className="mt-3 font-heading text-lg font-semibold">
-                  {guide.title}
-                </h3>
+                <h3 className="mt-3 font-heading text-lg font-semibold">{guide.title}</h3>
 
-                <p className="mt-2 flex-1 text-sm text-muted-foreground">
-                  {guide.excerpt}
-                </p>
+                <p className="mt-2 flex-1 text-sm text-muted-foreground">{guide.excerpt}</p>
 
                 <Link
                   to={guide.href}
