@@ -29,40 +29,93 @@ import {
 } from "lucide-react";
 import { Badge, Rating } from "@/components/site/ui";
 
+const CANONICAL =
+  "https://techescolhacerta.com.br/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus";
+const HERO_IMAGE =
+  "https://techescolhacerta.com.br/images/products/redmi-note-14-pro-plus-optimized.webp";
+const PAGE_TITLE = "Redmi Note 13 Pro 5G vs 14 Pro+ 5G: qual comprar em 2026?";
+const PAGE_DESCRIPTION =
+  "O Redmi Note 14 Pro+ 5G vence no conjunto; o Note 13 Pro 5G pode valer mais pelo preço. Compare diferenças e descubra qual comprar em 2026.";
+
 export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus")({
   head: () => ({
     meta: [
-      {
-        title: "Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena em 2026?",
-      },
-      {
-        name: "description",
-        content:
-          "Redmi Note 13 Pro vs Redmi Note 14 Pro+: comparativo completo de tela, desempenho, câmera, bateria, carregamento, proteção e custo-benefício para decidir qual Xiaomi comprar em 2026.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
       {
         name: "keywords",
         content:
-          "Redmi Note 13 Pro vs Redmi Note 14 Pro Plus, Redmi Note 14 Pro Plus ou Redmi Note 13 Pro, melhor Redmi Note, comparativo Xiaomi, Redmi Note 14 Pro+ vale a pena",
+          "Redmi Note 13 Pro 5G vs Redmi Note 14 Pro Plus 5G, Redmi Note 14 Pro Plus ou Redmi Note 13 Pro, qual Redmi Note comprar, comparativo Xiaomi 2026",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMAGE },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: PAGE_TITLE,
+          description: PAGE_DESCRIPTION,
+          author: {
+            "@type": "Organization",
+            name: "Tech Escolha Certa",
+            url: "https://techescolhacerta.com.br/sobre",
+          },
+          publisher: { "@type": "Organization", name: "Tech Escolha Certa" },
+          datePublished: "2026-07-10",
+          dateModified: "2026-10-02",
+          mainEntityOfPage: CANONICAL,
+          image: HERO_IMAGE,
+        }),
       },
       {
-        property: "og:title",
-        content: "Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena em 2026?",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        }),
       },
       {
-        property: "og:description",
-        content:
-          "Comparamos Redmi Note 13 Pro e Redmi Note 14 Pro+ em câmera, tela, bateria, desempenho e custo-benefício para mostrar qual Xiaomi comprar.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://techescolhacerta.com.br/images/products/redmi-note-14-pro-plus-optimized.webp",
-      },
-      {
-        property: "twitter:image",
-        content:
-          "https://techescolhacerta.com.br/images/products/redmi-note-14-pro-plus-optimized.webp",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://techescolhacerta.com.br/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Comparativos",
+              item: "https://techescolhacerta.com.br/comparativos",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Redmi Note 13 Pro 5G vs Redmi Note 14 Pro+ 5G",
+              item: CANONICAL,
+            },
+          ],
+        }),
       },
     ],
   }),
@@ -239,13 +292,14 @@ function ComparisonPage() {
             </div>
 
             <h1 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-foreground text-balance">
-              Redmi Note 13 Pro vs Redmi Note 14 Pro+: qual vale mais a pena em 2026?
+              Redmi Note 13 Pro 5G vs Redmi Note 14 Pro+ 5G: qual comprar em 2026?
             </h1>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              O Redmi Note 13 Pro ficou conhecido pelo conjunto forte de tela, câmera e carregamento
-              rápido. O Redmi Note 14 Pro+ chega como opção mais completa, com chip mais atual, IP68
-              e carregamento de 120 W. Veja qual faz mais sentido para comprar agora.
+              <strong className="text-foreground">O Redmi Note 14 Pro+ 5G é o melhor</strong> no
+              conjunto, mas o Redmi Note 13 Pro 5G pode ser a compra mais inteligente quando custa
+              bem menos. Compare as diferenças e use a regra de preço para decidir sem pagar por
+              vantagens que você não vai usar.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -324,7 +378,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Redmi Note 14 Pro+ no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                  Conferir preço do Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href={REDMI13_AFFILIATE_URL}
@@ -338,7 +392,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Redmi Note 13 Pro no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                  Conferir preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
               <AffiliateRedirectNotice className="mt-3" />
@@ -373,6 +427,30 @@ function ComparisonPage() {
                   title="Melhor compra em promoção"
                   product="Redmi Note 13 Pro"
                   text="Continua forte se aparecer bem mais barato que o modelo novo."
+                />
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-cta/30 bg-cta/5 p-5">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cta">
+                  Regra de compra
+                </span>
+                <h3 className="mt-2 font-heading text-xl font-bold text-foreground">
+                  Compare a diferença percentual de preço
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Se o Redmi Note 14 Pro+ custar até cerca de 15% a mais, escolha o modelo novo por
+                  causa do IP68, carregamento de 120 W e chip mais atual. Acima de 20%, o Redmi Note
+                  13 Pro normalmente entrega melhor custo-benefício. Entre 15% e 20%, pague a
+                  diferença apenas se proteção e recarga rápida forem prioridades para você.
+                </p>
+                <PurchaseActions
+                  className="mt-4"
+                  options={[
+                    { productName: "Redmi Note 14 Pro+", href: REDMI14_AFFILIATE_URL },
+                    { productName: "Redmi Note 13 Pro", href: REDMI13_AFFILIATE_URL },
+                  ]}
+                  pageType="comparativo"
+                  placement="content"
                 />
               </div>
             </div>
@@ -598,6 +676,34 @@ function ComparisonPage() {
             </div>
           </section>
 
+          <section className="rounded-2xl border border-border bg-surface p-6 md:p-8">
+            <SectionTitle eyebrow="Continue comparando" title="Veja as análises completas" />
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Confira os pontos fortes, limitações e problemas de cada modelo antes de abrir a
+              oferta. Se desempenho em jogos for prioridade, compare também com o Poco X6 Pro.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <Link
+                to="/review/redmi-note-13-pro"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground transition hover:border-cta/40 hover:text-cta"
+              >
+                Review do Redmi Note 13 Pro 5G
+              </Link>
+              <Link
+                to="/review/redmi-note-14-pro-plus"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground transition hover:border-cta/40 hover:text-cta"
+              >
+                Review do Redmi Note 14 Pro+ 5G
+              </Link>
+              <Link
+                to="/comparativo/redmi-note-13-pro-vs-poco-x6-pro"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground transition hover:border-cta/40 hover:text-cta"
+              >
+                Redmi Note 13 Pro vs Poco X6 Pro
+              </Link>
+            </div>
+          </section>
+
           <section className="rounded-2xl border border-cta/30 bg-card p-6 md:p-8 shadow-soft ring-1 ring-cta/10">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div>
@@ -626,7 +732,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                 >
-                  Ver Redmi Note 14 Pro+ no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                  Conferir preço do Redmi Note 14 Pro+ <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
                   href={REDMI13_AFFILIATE_URL}
@@ -640,7 +746,7 @@ function ComparisonPage() {
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Redmi Note 13 Pro no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                  Conferir preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -670,7 +776,7 @@ function ComparisonPage() {
             }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver 14 Pro+ no Mercado Livre <ArrowUpRight className="h-3.5 w-3.5" />
+            Ver preço do 14 Pro+ <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
