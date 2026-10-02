@@ -2,30 +2,168 @@ import { REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
+const CANONICAL = "https://techescolhacerta.com.br/review/redmi-note-14-pro-plus";
+const HERO_IMAGE =
+  "https://techescolhacerta.com.br/images/products/redmi-note-14-pro-plus-optimized.webp";
+const PAGE_TITLE = "Redmi Note 14 Pro+ 5G vale a pena em 2026? Review e problemas";
+const PAGE_DESCRIPTION =
+  "Sim, o Redmi Note 14 Pro+ 5G vale a pena para quem prioriza IP68, tela AMOLED e carga de 120 W. Veja problemas, preço e quando comprar em 2026.";
+
+const PROS = [
+  "Tela AMOLED 1.5K de 120 Hz com excelente qualidade visual",
+  "Câmera principal de 200 MP com estabilização óptica",
+  "Carregamento HyperCharge de 120 W muito rápido",
+  "Boa bateria de 5.110 mAh para uso diário",
+  "Snapdragon 7s Gen 3 entrega desempenho sólido na categoria",
+  "Versões com bastante memória RAM e armazenamento",
+  "Construção mais robusta, com certificação IP68",
+];
+
+const CONS = [
+  "Preço pode ficar próximo de modelos Samsung mais equilibrados",
+  "Câmeras auxiliares são menos impressionantes que a principal",
+  "HyperOS pode não agradar quem prefere sistema mais limpo",
+  "Atualizações ainda tendem a ser menos previsíveis que Samsung",
+  "Pode não ser a melhor escolha para quem quer gastar pouco",
+];
+
+const FAQ = [
+  {
+    question: "O Redmi Note 14 Pro+ 5G vale a pena em 2026?",
+    answer:
+      "Sim. Ele vale a pena para quem quer um Xiaomi mais completo, com tela de alta qualidade, câmera principal de 200 MP, carregamento de 120 W, proteção IP68 e bom desempenho geral.",
+  },
+  {
+    question: "Quais são os problemas do Redmi Note 14 Pro+ 5G?",
+    answer:
+      "Os principais pontos de atenção são o preço, as câmeras auxiliares mais simples, o HyperOS com aplicativos pré-instalados e uma política de atualizações menos previsível que a da Samsung.",
+  },
+  {
+    question: "Qual a diferença entre Redmi Note 14 Pro+ e Redmi Note 13 Pro?",
+    answer:
+      "O Redmi Note 14 Pro+ traz Snapdragon 7s Gen 3, carregamento de 120 W, proteção IP68 e construção mais robusta. O Redmi Note 13 Pro pode compensar quando custa mais de 20% menos.",
+  },
+  {
+    question: "O Redmi Note 14 Pro+ 5G é bom para jogos?",
+    answer:
+      "Sim. O Snapdragon 7s Gen 3 e a tela de 120 Hz entregam boa experiência em jogos populares. Para jogos muito pesados, modelos da linha Poco ainda podem oferecer mais desempenho pelo preço.",
+  },
+  {
+    question: "A câmera do Redmi Note 14 Pro+ 5G é boa?",
+    answer:
+      "A câmera principal de 200 MP com OIS entrega boas fotos, principalmente durante o dia. As câmeras ultrawide e macro são mais simples, então o destaque real fica na lente principal.",
+  },
+  {
+    question: "Redmi Note 14 Pro+ ou Galaxy A55: qual escolher?",
+    answer:
+      "Escolha o Redmi Note 14 Pro+ se você prioriza carregamento rápido, tela e ficha técnica. Escolha o Galaxy A55 se prefere software mais refinado e atualizações mais previsíveis.",
+  },
+];
+
 export const Route = createFileRoute("/review/redmi-note-14-pro-plus")({
   head: () => ({
     meta: [
-      {
-        title: "Redmi Note 14 Pro+ 5G vale a pena em 2026? Review completo e honesto",
-      },
-      {
-        name: "description",
-        content:
-          "Redmi Note 14 Pro+ 5G vale a pena em 2026? Análise completa com tela, desempenho, câmera de 200 MP, bateria, carregamento de 120 W, pontos positivos, negativos e recomendação final.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
       {
         name: "keywords",
         content:
-          "Redmi Note 14 Pro+ 5G vale a pena, Redmi Note 14 Pro Plus review, Redmi Note 14 Pro+ é bom, Redmi Note 14 Pro Plus 5G, Xiaomi Redmi Note 14 Pro Plus, melhor Xiaomi custo-benefício",
+          "Redmi Note 14 Pro+ 5G vale a pena em 2026, Redmi Note 14 Pro Plus review, problemas Redmi Note 14 Pro+, Redmi Note 14 Pro+ é bom, Redmi Note 14 Pro Plus 5G",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMAGE },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Redmi Note 14 Pro+ 5G",
+          image: [HERO_IMAGE],
+          description: PAGE_DESCRIPTION,
+          brand: { "@type": "Brand", name: "Xiaomi" },
+          url: CANONICAL,
+          review: {
+            "@type": "Review",
+            name: PAGE_TITLE,
+            author: {
+              "@type": "Organization",
+              name: "Tech Escolha Certa",
+              url: "https://techescolhacerta.com.br/sobre",
+            },
+            dateModified: "2026-10-02",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: 9.2,
+              bestRating: 10,
+              worstRating: 0,
+            },
+            positiveNotes: {
+              "@type": "ItemList",
+              itemListElement: PROS.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+            negativeNotes: {
+              "@type": "ItemList",
+              itemListElement: CONS.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+          },
+        }),
       },
       {
-        property: "og:title",
-        content: "Redmi Note 14 Pro+ 5G vale a pena em 2026?",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: { "@type": "Answer", text: answer },
+          })),
+        }),
       },
       {
-        property: "og:description",
-        content:
-          "Análise editorial completa do Redmi Note 14 Pro+ 5G para descobrir se ele é uma boa compra em 2026.",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://techescolhacerta.com.br/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Celulares",
+              item: "https://techescolhacerta.com.br/celulares",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Review Redmi Note 14 Pro+ 5G",
+              item: CANONICAL,
+            },
+          ],
+        }),
       },
     ],
   }),
@@ -42,46 +180,32 @@ function ReviewRedmiNote14ProPlus() {
         { label: "Review Redmi Note 14 Pro+ 5G" },
       ]}
       eyebrow="Review completo"
-      title="Redmi Note 14 Pro+ 5G vale a pena em 2026? Review completo e honesto"
-      description="O Redmi Note 14 Pro+ 5G é uma das opções mais completas da linha Redmi para quem busca tela premium, câmera de alta resolução, bom desempenho, muita memória e carregamento extremamente rápido."
-      updatedAt="Atualizado em 2026"
+      title="Redmi Note 14 Pro+ 5G vale a pena em 2026?"
+      description="Sim — o Redmi Note 14 Pro+ 5G vale a pena para quem quer tela AMOLED 1.5K, proteção IP68 e carregamento de 120 W. O preço e as câmeras auxiliares são os principais pontos de atenção."
+      updatedAt="Atualizado em outubro de 2026"
       readingTime="Leitura • 8 min"
       productName="Redmi Note 14 Pro+ 5G"
-      priceLabel="Ver no Mercado Livre"
+      priceLabel="Ver preço atual"
       overallScore="9.2"
-      verdictShort="O Redmi Note 14 Pro+ 5G vale a pena para quem quer um Xiaomi intermediário premium, com tela de alto nível, câmera principal de 200 MP, carregamento de 120 W e bom desempenho geral. Ele não é o celular mais barato da linha, mas entrega um conjunto mais completo que o Redmi Note 13 Pro."
+      verdictShort="Sim — o Redmi Note 14 Pro+ 5G vale a pena para quem quer um Xiaomi intermediário premium com IP68, tela de alto nível, câmera principal de 200 MP e carregamento de 120 W. Ele perde atratividade quando custa muito mais que o Redmi Note 13 Pro."
       affiliateHref={REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL}
       affiliate={{
-        title: "Redmi Note 14 Pro+ 5G com preço atualizado",
+        title: "Redmi Note 14 Pro+ 5G: confira preço e versão",
         description:
-          "Confira preço, parcelamento e disponibilidade do Redmi Note 14 Pro+ 5G no Mercado Livre.",
-        buttonText: "Ver Redmi Note 14 Pro+ no Mercado Livre",
-        highlight: "200 MP com OIS • Snapdragon 7s Gen 3 • Carregamento 120 W",
+          "Confira se a oferta é do modelo 5G com Snapdragon 7s Gen 3, preço, parcelamento e disponibilidade.",
+        buttonText: "Conferir preço atual",
+        highlight: "IP68 • AMOLED 120 Hz • Câmera 200 MP • Carga de 120 W",
       }}
       decision={{
         bestFor:
-          "Você quer um Redmi mais completo, com câmera principal forte, proteção IP68 e recarga extremamente rápida.",
+          "Você quer um Redmi mais completo, com câmera principal forte, IP68 e recarga de 120 W, e ele custa até cerca de 15% a mais que o Note 13 Pro.",
         caution:
-          "A diferença de preço para o Redmi Note 13 Pro estiver alta; o modelo anterior pode entregar melhor custo-benefício.",
+          "A diferença para o Redmi Note 13 Pro passar de 20%; o modelo anterior normalmente entrega melhor custo-benefício.",
         comparisonHref: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
         comparisonLabel: "Comparar Note 14 Pro+ e Note 13 Pro",
       }}
-      pros={[
-        "Tela AMOLED 1.5K de 120 Hz com excelente qualidade visual",
-        "Câmera principal de 200 MP com estabilização óptica",
-        "Carregamento HyperCharge de 120 W muito rápido",
-        "Boa bateria de 5.110 mAh para uso diário",
-        "Snapdragon 7s Gen 3 entrega desempenho sólido na categoria",
-        "Versões com bastante memória RAM e armazenamento",
-        "Construção mais robusta, com certificação IP68",
-      ]}
-      cons={[
-        "Preço pode ficar próximo de modelos Samsung mais equilibrados",
-        "Câmeras auxiliares são menos impressionantes que a principal",
-        "HyperOS pode não agradar quem prefere sistema mais limpo",
-        "Atualizações ainda tendem a ser menos previsíveis que Samsung",
-        "Pode não ser a melhor escolha para quem quer gastar pouco",
-      ]}
+      pros={PROS}
+      cons={CONS}
       scores={[
         { label: "Tela", score: "9.5" },
         { label: "Desempenho", score: "9.1" },
@@ -140,35 +264,14 @@ function ReviewRedmiNote14ProPlus() {
           title: "Redmi Note 14 Pro+ ou Redmi Note 13 Pro?",
           text: "O Redmi Note 14 Pro+ faz mais sentido para quem quer um conjunto mais atual, carregamento muito mais rápido, melhor construção e desempenho mais moderno. Já o Redmi Note 13 Pro ainda pode ser melhor compra se estiver bem mais barato.",
         },
-      ]}
-      finalRecommendation="O Redmi Note 14 Pro+ 5G vale a pena para quem busca um Xiaomi intermediário premium, com tela excelente, câmera principal forte, bom desempenho, muita memória e carregamento extremamente rápido. Se o preço estiver próximo do Redmi Note 13 Pro, o modelo mais novo é mais interessante. Se a diferença de preço for grande, o Redmi Note 13 Pro ainda pode entregar melhor custo-benefício."
-      faq={[
         {
-          question: "O Redmi Note 14 Pro+ 5G vale a pena em 2026?",
-          answer:
-            "Sim. Ele vale a pena para quem quer um Xiaomi mais completo, com tela de alta qualidade, câmera principal de 200 MP, carregamento de 120 W e bom desempenho geral.",
-        },
-        {
-          question: "Qual a diferença entre Redmi Note 14 Pro+ e Redmi Note 13 Pro?",
-          answer:
-            "O Redmi Note 14 Pro+ traz um conjunto mais atual, com Snapdragon 7s Gen 3, carregamento de 120 W, melhor construção e recursos mais modernos. O Redmi Note 13 Pro pode compensar se estiver bem mais barato.",
-        },
-        {
-          question: "O Redmi Note 14 Pro+ 5G é bom para jogos?",
-          answer:
-            "Sim. O Snapdragon 7s Gen 3 e a tela de 120 Hz entregam boa experiência em jogos populares. Para jogos muito pesados, modelos da linha Poco ainda podem ser mais indicados.",
-        },
-        {
-          question: "A câmera do Redmi Note 14 Pro+ 5G é boa?",
-          answer:
-            "A câmera principal de 200 MP com OIS é boa e deve agradar quem fotografa bastante durante o dia. As câmeras auxiliares são mais simples, então o destaque real fica na lente principal.",
-        },
-        {
-          question: "Redmi Note 14 Pro+ ou Galaxy A55: qual escolher?",
-          answer:
-            "Escolha o Redmi Note 14 Pro+ se você prioriza carregamento rápido, tela e ficha técnica. Escolha o Galaxy A55 se você prefere software mais refinado, atualizações mais previsíveis e experiência mais equilibrada.",
+          eyebrow: "Preço e custo-benefício",
+          title: "Quando o Redmi Note 14 Pro+ é a melhor compra?",
+          text: "Use o Redmi Note 13 Pro como referência. Se o Note 14 Pro+ custar até cerca de 15% a mais, o IP68, a carga de 120 W e o chip mais atual justificam a diferença. Acima de 20%, o Note 13 Pro normalmente é a escolha mais racional. Entre 15% e 20%, pague mais apenas se proteção e recarga rápida forem prioridades.",
         },
       ]}
+      finalRecommendation="Sim — o Redmi Note 14 Pro+ 5G vale a pena para quem busca tela excelente, IP68, câmera principal forte, bom desempenho e carregamento extremamente rápido. A melhor compra acontece quando ele custa até cerca de 15% a mais que o Redmi Note 13 Pro. Acima de 20%, compare com atenção antes de pagar pela geração mais nova."
+      faq={FAQ}
       relatedLinks={[
         {
           label: "Review Redmi Note 13 Pro 5G",
