@@ -1,4 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import {
+  GALAXY_A35_AFFILIATE_URL,
+  GALAXY_M35_AFFILIATE_URL,
+  POCO_X6_PRO_AFFILIATE_URL,
+  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
+import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowUpRight,
   Battery,
@@ -16,9 +26,9 @@ import { Badge, Rating } from "@/components/site/ui";
 const CANONICAL =
   "https://techescolhacerta.com.br/guia/melhores-celulares-para-jogos-ate-2000";
 
-const PAGE_TITLE = "4 melhores celulares para jogos até R$ 2.000 em 2026";
+const PAGE_TITLE = "Melhores celulares para jogos até R$ 2.000 (2026): top 4";
 const PAGE_DESCRIPTION =
-  "Ranking atualizado com Poco X6 Pro, Galaxy M35, Galaxy A35 e Redmi Note 13 Pro 5G. Veja qual combina com cada perfil e confirme o preço atual.";
+  "Poco X6 Pro lidera o ranking até R$ 2.000. Compare Galaxy M35, Galaxy A35 e Redmi Note 13 Pro em desempenho, bateria e oferta atual.";
 
 export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-2000")({
   head: () => ({
@@ -52,7 +62,13 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/favicon.png",
+        content:
+          "https://techescolhacerta.com.br/images/products/poco-x6-pro-optimized.webp",
+      },
+      {
+        property: "twitter:image",
+        content:
+          "https://techescolhacerta.com.br/images/products/poco-x6-pro-optimized.webp",
       },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
@@ -62,9 +78,8 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "Melhores celulares para jogos até R$ 2.000 em 2026",
-          description:
-            "Guia editorial com os melhores celulares para jogos até R$ 2.000 em 2026.",
+          headline: PAGE_TITLE,
+          description: PAGE_DESCRIPTION,
           author: {
             "@type": "Organization",
             name: "Tech Escolha Certa",
@@ -74,7 +89,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
             name: "Tech Escolha Certa",
           },
           datePublished: "2026-06-02",
-          dateModified: "2026-10-01",
+          dateModified: "2026-10-02",
           mainEntityOfPage: CANONICAL,
         }),
       },
@@ -138,7 +153,8 @@ const phones = [
       "Pode aquecer em sessões longas",
       "Interface HyperOS pode não agradar todo mundo",
     ],
-    cta: "/review/poco-x6-pro",
+    analysisPath: "/review/poco-x6-pro",
+    affiliateHref: POCO_X6_PRO_AFFILIATE_URL,
   },
   {
     rank: "2º",
@@ -161,7 +177,8 @@ const phones = [
       "Mais pesado",
       "Desempenho inferior ao Poco X6 Pro em jogos pesados",
     ],
-    cta: "/melhores-celulares-samsung",
+    analysisPath: "/melhores-celulares-samsung",
+    affiliateHref: GALAXY_M35_AFFILIATE_URL,
   },
   {
     rank: "3º",
@@ -184,7 +201,8 @@ const phones = [
       "Carregamento de 25 W é lento",
       "Não é ideal para jogos pesados no máximo",
     ],
-    cta: "/review/galaxy-a35",
+    analysisPath: "/review/galaxy-a35",
+    affiliateHref: GALAXY_A35_AFFILIATE_URL,
   },
   {
     rank: "4º",
@@ -207,7 +225,8 @@ const phones = [
       "Câmeras secundárias simples",
       "Não é o mais indicado para jogos pesados",
     ],
-    cta: "/review/redmi-note-13-pro",
+    analysisPath: "/review/redmi-note-13-pro",
+    affiliateHref: REDMI_NOTE_13_PRO_AFFILIATE_URL,
   },
 ];
 
@@ -257,7 +276,7 @@ function GamingPhonesGuide() {
               </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">
-                4 melhores celulares para jogos até R$ 2.000 em 2026
+                Melhores celulares para jogos até R$ 2.000 em 2026
               </h1>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -326,6 +345,29 @@ function GamingPhonesGuide() {
               </p>
             </aside>
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+          <PurchaseActions
+            options={[
+              {
+                productName: "Poco X6 Pro",
+                href: POCO_X6_PRO_AFFILIATE_URL,
+                label: "Ver preço do Poco X6 Pro",
+              },
+              {
+                productName: "Galaxy M35 5G",
+                href: GALAXY_M35_AFFILIATE_URL,
+                label: "Ver preço do Galaxy M35",
+              },
+            ]}
+            pageType="guia"
+            placement="hero"
+            title="Comece pelas duas escolhas mais fortes"
+            description="Poco X6 Pro para desempenho e Galaxy M35 para bateria. Confirme se a oferta está dentro do limite de R$ 2.000."
+          />
         </div>
       </section>
 
@@ -429,18 +471,27 @@ function GamingPhonesGuide() {
                   </div>
 
                   <div className="mt-6 flex flex-wrap gap-3">
-                    <Link
-                      to={phone.cta}
+                    <a
+                      href={phone.affiliateHref}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      onClick={() =>
+                        trackAffiliateClick({
+                          productName: phone.name,
+                          pageType: "guia",
+                          ctaPlacement: "gaming_ranking",
+                        })
+                      }
                       className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
                     >
-                      Ver análise
+                      Ver preço no Mercado Livre
                       <ArrowUpRight className="h-4 w-4" />
-                    </Link>
+                    </a>
                     <Link
-                      to="/ofertas"
+                      to={phone.analysisPath}
                       className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                     >
-                      Ver ofertas
+                      Ver análise
                     </Link>
                   </div>
                 </div>
@@ -448,6 +499,8 @@ function GamingPhonesGuide() {
             </article>
           ))}
         </div>
+
+        <AffiliateRedirectNotice className="mt-6 rounded-xl border border-border bg-surface p-4" />
       </section>
 
       <section id="como-escolher" className="bg-surface">
@@ -543,16 +596,39 @@ function GamingPhonesGuide() {
               </p>
             </div>
 
-            <Link
-              to="/ofertas"
+            <a
+              href={POCO_X6_PRO_AFFILIATE_URL}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Poco X6 Pro",
+                  pageType: "guia",
+                  ctaPlacement: "gaming_conclusion",
+                })
+              }
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
             >
-              Ver ofertas
+              Ver preço do Poco X6 Pro
               <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
+          <AffiliateRedirectNotice className="mt-5 border-t border-border pt-5" />
         </div>
       </section>
+
+      <MobilePurchaseBar
+        options={[
+          {
+            productName: "Poco X6 Pro",
+            href: POCO_X6_PRO_AFFILIATE_URL,
+            label: "Ver preço",
+          },
+        ]}
+        pageType="guia"
+        title="Poco X6 Pro"
+        eyebrow="Melhor para jogos"
+      />
     </main>
   );
 }
