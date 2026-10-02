@@ -3,42 +3,186 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 const CANONICAL = "https" + "://techescolhacerta.com.br/review/poco-x6-pro";
+const HERO_IMAGE = "https://techescolhacerta.com.br/images/products/poco-x6-pro-optimized.webp";
 
-const PAGE_TITLE = "Poco X6 Pro vale a pena em 2026? Veja o veredito";
+const PAGE_TITLE = "Poco X6 Pro ainda vale a pena em 2026? Review e problemas";
 const PAGE_DESCRIPTION =
-  "O Poco X6 Pro ainda compensa em 2026 para desempenho e jogos? Veja problemas, pontos fortes e quando vale pagar mais no Poco X7 Pro.";
+  "Sim, o Poco X6 Pro ainda vale a pena para jogos se estiver mais barato que o X7 Pro. Veja desempenho, problemas, câmeras e o preço antes de comprar.";
+
+const PROS = [
+  "Desempenho muito forte para a categoria",
+  "Excelente opção para jogos e multitarefa",
+  "Tela AMOLED de 120 Hz com ótima definição",
+  "Carregamento rápido de 67 W",
+  "Bateria segura para um dia de uso",
+  "Versões com bastante armazenamento",
+];
+
+const CONS = [
+  "Câmeras secundárias são simples",
+  "Não é o melhor celular para fotos noturnas",
+  "HyperOS pode não agradar todo mundo",
+  "Atualizações menos previsíveis que Samsung",
+  "Pode aquecer em jogos pesados por muito tempo",
+];
+
+const FAQ = [
+  {
+    question: "Poco X6 Pro compensa em 2026?",
+    answer:
+      "Sim. O Poco X6 Pro compensa em 2026 se você busca desempenho, jogos, tela AMOLED e carregamento rápido por um preço competitivo. Só vale comparar com o Poco X7 Pro antes de comprar.",
+  },
+  {
+    question: "Poco X6 Pro vale a pena em 2026?",
+    answer:
+      "Vale a pena para quem prioriza potência e custo-benefício. Ele ainda é muito forte para uso diário e jogos, mas não é a melhor escolha para quem quer as melhores câmeras ou suporte de atualizações mais previsível.",
+  },
+  {
+    question: "Poco X6 Pro em 2026 ainda é uma boa compra?",
+    answer:
+      "Sim. O Poco X6 Pro em 2026 ainda é uma boa compra quando aparece com preço competitivo, principalmente para quem quer desempenho forte, jogos, tela AMOLED e carregamento rápido.",
+  },
+  {
+    question: "Poco X6 Pro é bom?",
+    answer:
+      "Sim. O Poco X6 Pro é muito bom para quem busca desempenho, jogos, tela AMOLED de 120 Hz e carregamento rápido. Os principais pontos de atenção são câmeras secundárias, fotos noturnas e aquecimento em uso pesado.",
+  },
+  {
+    question: "Quais são os principais problemas do Poco X6 Pro?",
+    answer:
+      "Os principais pontos negativos são câmeras auxiliares simples, desempenho apenas mediano em fotos noturnas, HyperOS que pode não agradar todo mundo e aquecimento em sessões longas de jogos.",
+  },
+  {
+    question: "Poco X6 Pro esquenta muito?",
+    answer:
+      "Pode aquecer em jogos pesados e uso intenso por bastante tempo. Em tarefas comuns, isso tende a ser menos relevante.",
+  },
+  {
+    question: "Poco X6 Pro é bom para jogos?",
+    answer:
+      "Sim. Ele é uma das melhores opções intermediárias para jogos, principalmente por causa do Dimensity 8300-Ultra, da tela AMOLED de 120 Hz e da boa capacidade de memória nas versões mais completas.",
+  },
+  {
+    question: "Poco X6 Pro ou Poco X7 Pro: qual escolher?",
+    answer:
+      "Se o Poco X7 Pro estiver pouco mais caro, ele tende a ser a escolha mais completa. Se o Poco X6 Pro estiver com desconto relevante, ele ainda pode ser o melhor custo-benefício.",
+  },
+  {
+    question: "A câmera do Poco X6 Pro é boa?",
+    answer:
+      "A câmera principal é boa para fotos de dia e registros casuais. Porém, câmeras auxiliares e fotos noturnas não são o ponto forte do aparelho.",
+  },
+];
 
 export const Route = createFileRoute("/review/poco-x6-pro")({
   head: () => ({
     meta: [
-      { name: "twitter:title", content: PAGE_TITLE },
-      { name: "twitter:description", content: PAGE_DESCRIPTION },
-      {
-        title: PAGE_TITLE,
-      },
-      {
-        name: "description",
-        content: PAGE_DESCRIPTION,
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
       {
         name: "keywords",
         content:
-          "Poco X6 Pro compensa em 2026, Poco X6 Pro vale a pena em 2026, Poco X6 Pro review, Poco X6 Pro é bom, Poco X6 Pro para jogos, Poco X6 Pro vs Poco X7 Pro",
+          "Poco X6 Pro compensa em 2026, Poco X6 Pro vale a pena em 2026, Poco X6 Pro review, problemas Poco X6 Pro, Poco X6 Pro é bom, Poco X6 Pro para jogos, Poco X6 Pro vs Poco X7 Pro",
       },
-      {
-        property: "og:title",
-        content: PAGE_TITLE,
-      },
-      {
-        property: "og:description",
-        content: PAGE_DESCRIPTION,
-      },
-      {
-        property: "og:url",
-        content: CANONICAL,
-      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMAGE },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Poco X6 Pro",
+          image: [HERO_IMAGE],
+          description: PAGE_DESCRIPTION,
+          brand: { "@type": "Brand", name: "POCO" },
+          url: CANONICAL,
+          review: {
+            "@type": "Review",
+            name: PAGE_TITLE,
+            author: {
+              "@type": "Organization",
+              name: "Tech Escolha Certa",
+              url: "https://techescolhacerta.com.br/sobre",
+            },
+            dateModified: "2026-10-02",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: 8.9,
+              bestRating: 10,
+              worstRating: 0,
+            },
+            positiveNotes: {
+              "@type": "ItemList",
+              itemListElement: PROS.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+            negativeNotes: {
+              "@type": "ItemList",
+              itemListElement: CONS.map((name, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name,
+              })),
+            },
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: answer,
+            },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://techescolhacerta.com.br/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Celulares",
+              item: "https://techescolhacerta.com.br/celulares",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Review Poco X6 Pro",
+              item: CANONICAL,
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: ReviewPocoX6Pro,
 });
@@ -53,45 +197,32 @@ function ReviewPocoX6Pro() {
         { label: "Review Poco X6 Pro" },
       ]}
       eyebrow="Análise editorial"
-      title="Poco X6 Pro vale a pena em 2026?"
-      description="O Poco X6 Pro pode valer a pena em 2026 para quem prioriza jogos e encontra uma oferta com economia relevante frente ao Poco X7 Pro. Compare versões equivalentes e considere as limitações das câmeras antes de decidir."
+      title="Poco X6 Pro ainda vale a pena em 2026?"
+      description="Sim — o Poco X6 Pro ainda vale a pena para quem prioriza jogos e encontra uma oferta claramente mais barata que o Poco X7 Pro. Compare versões equivalentes e considere as limitações das câmeras antes de decidir."
       updatedAt="Atualizado em outubro de 2026"
       readingTime="Leitura • 7 min"
       productName="Poco X6 Pro"
-      priceLabel="Ver no Mercado Livre"
+      priceLabel="Ver preço atual"
       overallScore="8.9"
-      verdictShort="O Poco X6 Pro compensa em 2026 se você quer potência, jogos, tela boa e carregamento rápido por um preço competitivo. Ele não é a melhor escolha para quem prioriza câmeras, acabamento premium ou atualizações mais previsíveis."
+      verdictShort="Sim — o Poco X6 Pro compensa em 2026 se você quer potência, jogos, tela boa e carregamento rápido por um preço competitivo. Ele não é a melhor escolha para quem prioriza câmeras, acabamento premium ou atualizações mais previsíveis."
       affiliateHref={POCO_X6_PRO_AFFILIATE_URL}
       affiliate={{
-        title: "Conferir preço do Poco X6 Pro",
+        title: "Poco X6 Pro: confira a oferta antes de decidir",
         description:
-          "Veja o preço atualizado, parcelamento, disponibilidade e condições do Poco X6 Pro no Mercado Livre antes de comprar.",
-        buttonText: "Ver Poco X6 Pro no Mercado Livre",
-        highlight: "Desempenho forte • Tela AMOLED • Foco em jogos",
+          "Confira o preço atualizado e compare com o Poco X7 Pro. O X6 Pro faz mais sentido quando a economia é relevante na mesma versão de memória.",
+        buttonText: "Conferir preço atual",
+        highlight: "Desempenho forte • Tela AMOLED 120 Hz • Carga de 67 W",
       }}
       decision={{
         bestFor:
           "Você prioriza jogos, velocidade e tela fluida, e encontrou uma diferença de preço relevante para o Poco X7 Pro.",
         caution:
-          "O Poco X7 Pro estiver próximo de preço ou câmera, acabamento e atualizações previsíveis pesarem mais na sua escolha.",
+          "o Poco X7 Pro estiver próximo de preço ou câmera, acabamento e atualizações previsíveis pesarem mais na sua escolha.",
         comparisonHref: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
         comparisonLabel: "Comparar X6 Pro e X7 Pro",
       }}
-      pros={[
-        "Desempenho muito forte para a categoria",
-        "Excelente opção para jogos e multitarefa",
-        "Tela AMOLED de 120 Hz com ótima definição",
-        "Carregamento rápido de 67 W",
-        "Bateria segura para um dia de uso",
-        "Versões com bastante armazenamento",
-      ]}
-      cons={[
-        "Câmeras secundárias são simples",
-        "Não é o melhor celular para fotos noturnas",
-        "HyperOS pode não agradar todo mundo",
-        "Atualizações menos previsíveis que Samsung",
-        "Pode aquecer em jogos pesados por muito tempo",
-      ]}
+      pros={PROS}
+      cons={CONS}
       scores={[
         { label: "Tela", score: "9.1" },
         { label: "Design e construção", score: "8.2" },
@@ -113,6 +244,11 @@ function ReviewPocoX6Pro() {
         ["Sistema", "HyperOS"],
       ]}
       sections={[
+        {
+          eyebrow: "Regra de compra",
+          title: "Quando o preço do Poco X6 Pro faz sentido",
+          text: "Use o Poco X7 Pro como referência, sempre comparando a mesma memória e armazenamento. Se a diferença final for pequena, o modelo mais novo tende a ser a compra mais segura. Se o X6 Pro estiver claramente mais barato, ele continua entregando excelente desempenho por real investido.",
+        },
         {
           eyebrow: "Critério de compra",
           title: "Compare o custo total da mesma versão",
@@ -180,53 +316,7 @@ function ReviewPocoX6Pro() {
         },
       ]}
       finalRecommendation="O Poco X6 Pro ainda compensa em 2026 para quem quer desempenho forte, tela AMOLED, boa bateria e carregamento rápido. Ele é especialmente indicado para jogos e uso pesado. A compra só fica menos atrativa se o Poco X7 Pro estiver próximo de preço ou se você priorizar câmeras, acabamento e atualizações mais previsíveis."
-      faq={[
-        {
-          question: "Poco X6 Pro compensa em 2026?",
-          answer:
-            "Sim. O Poco X6 Pro compensa em 2026 se você busca desempenho, jogos, tela AMOLED e carregamento rápido por um preço competitivo. Só vale comparar com o Poco X7 Pro antes de comprar.",
-        },
-        {
-          question: "Poco X6 Pro vale a pena em 2026?",
-          answer:
-            "Vale a pena para quem prioriza potência e custo-benefício. Ele ainda é muito forte para uso diário e jogos, mas não é a melhor escolha para quem quer as melhores câmeras ou suporte de atualizações mais previsível.",
-        },
-        {
-          question: "Poco X6 Pro em 2026 ainda é uma boa compra?",
-          answer:
-            "Sim. O Poco X6 Pro em 2026 ainda é uma boa compra quando aparece com preço competitivo, principalmente para quem quer desempenho forte, jogos, tela AMOLED e carregamento rápido.",
-        },
-        {
-          question: "Poco X6 Pro é bom?",
-          answer:
-            "Sim. O Poco X6 Pro é muito bom para quem busca desempenho, jogos, tela AMOLED de 120 Hz e carregamento rápido. Os principais pontos de atenção são câmeras secundárias, fotos noturnas e aquecimento em uso pesado.",
-        },
-        {
-          question: "Quais são os principais problemas do Poco X6 Pro?",
-          answer:
-            "Os principais pontos negativos são câmeras auxiliares simples, desempenho apenas mediano em fotos noturnas, HyperOS que pode não agradar todo mundo e aquecimento em sessões longas de jogos.",
-        },
-        {
-          question: "Poco X6 Pro esquenta muito?",
-          answer:
-            "Pode aquecer em jogos pesados e uso intenso por bastante tempo. Em tarefas comuns, isso tende a ser menos relevante.",
-        },
-        {
-          question: "Poco X6 Pro é bom para jogos?",
-          answer:
-            "Sim. Ele é uma das melhores opções intermediárias para jogos, principalmente por causa do Dimensity 8300-Ultra, da tela AMOLED de 120 Hz e da boa capacidade de memória nas versões mais completas.",
-        },
-        {
-          question: "Poco X6 Pro ou Poco X7 Pro: qual escolher?",
-          answer:
-            "Se o Poco X7 Pro estiver pouco mais caro, ele tende a ser a escolha mais completa. Se o Poco X6 Pro estiver com desconto relevante, ele ainda pode ser o melhor custo-benefício.",
-        },
-        {
-          question: "A câmera do Poco X6 Pro é boa?",
-          answer:
-            "A câmera principal é boa para fotos de dia e registros casuais. Porém, câmeras auxiliares e fotos noturnas não são o ponto forte do aparelho.",
-        },
-      ]}
+      faq={FAQ}
       relatedLinks={[
         {
           label: "Review Poco X7 Pro",
