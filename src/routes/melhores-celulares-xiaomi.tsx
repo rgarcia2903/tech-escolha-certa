@@ -1,82 +1,188 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  AlertTriangle,
+  ArrowRight,
+  BatteryCharging,
+  Camera,
+  Check,
+  ExternalLink,
+  Gamepad2,
+  ShieldCheck,
+  Smartphone,
+} from "lucide-react";
+
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { AuthorByline } from "@/components/site/AuthorByline";
+import { CategoryHero } from "@/components/site/CategoryHero";
+import { SectionTitle } from "@/components/site/SectionTitle";
 import {
   POCO_X6_PRO_AFFILIATE_URL,
   POCO_X7_PRO_AFFILIATE_URL,
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { AffiliateCTA } from "@/components/site/AffiliateCTA";
-import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
-import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { CategoryHero } from "@/components/site/CategoryHero";
-import { ReviewCard } from "@/components/site/ReviewCard";
-import { SectionTitle } from "@/components/site/SectionTitle";
 
-const CANONICAL = "https" + "://techescolhacerta.com.br/melhores-celulares-xiaomi";
+const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-xiaomi";
 const HERO_IMAGE = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
-const PAGE_TITLE = "Melhores celulares Xiaomi em 2026: qual comprar?";
+const PAGE_TITLE = "Melhor celular Xiaomi em 2026: 4 modelos para comprar";
 const PAGE_DESCRIPTION =
-  "Veja os melhores celulares Xiaomi de 2026: Redmi Note 13 Pro, Redmi Note 14 Pro+, Poco X7 Pro e Poco X6 Pro, com indicação por perfil e preço.";
+  "Compare Redmi Note 15 5G, Redmi Note 15 Pro 5G, POCO X8 Pro e Xiaomi 15T. Veja qual Xiaomi faz sentido para uso geral, jogos e câmera.";
+
+const CURRENT_PICKS = [
+  {
+    category: "Melhor para a maioria",
+    product: "Redmi Note 15 5G",
+    icon: Smartphone,
+    verdict:
+      "É o ponto de partida mais equilibrado para quem quer um Xiaomi atual sem subir para as linhas premium.",
+    strengths: [
+      "Tela AMOLED de 120 Hz",
+      "Câmera de 108 MP com OIS",
+      "Bateria de 5.520 mAh",
+      "Proteção IP65",
+    ],
+    caution:
+      "O Snapdragon 6 Gen 3 atende bem ao uso diário, mas o POCO X8 Pro é a escolha mais adequada para jogos pesados.",
+    specsHref: "https://www.mi.com/br/product/redmi-note-15-5g/",
+    storeHref:
+      "https://www.mibrasil.com.br/smartphone-redmi-note-15-5g-nfc-br-8-8gb-ram-virtual-256gb-prin-p54644",
+  },
+  {
+    category: "Melhor câmera e resistência",
+    product: "Redmi Note 15 Pro 5G",
+    icon: ShieldCheck,
+    verdict:
+      "Faz mais sentido para quem prioriza câmera principal, bateria grande e proteção contra água e quedas.",
+    strengths: [
+      "Câmera de 200 MP com OIS",
+      "Bateria de 6.580 mAh",
+      "Tela AMOLED 1.5K",
+      "Proteção IP68",
+    ],
+    caution:
+      "Confirme estoque e diferença de preço. Se estiver muito acima do Note 15 5G, o ganho pode não justificar a compra.",
+    specsHref: "https://www.mi.com/br/product/redmi-note-15-pro-5g/",
+    storeHref:
+      "https://www.mibrasil.com.br/smartphone-redmi-note15pro-5g-nfc-br-8-8gb-ram-virtual-512gb-prin-p54611",
+  },
+  {
+    category: "Melhor para jogos",
+    product: "POCO X8 Pro",
+    icon: Gamepad2,
+    verdict:
+      "É a escolha da lista para quem coloca desempenho, armazenamento rápido, refrigeração e bateria acima da câmera.",
+    strengths: [
+      "Dimensity 8500-Ultra",
+      "LPDDR5X e UFS 4.1",
+      "Bateria de 6.500 mAh",
+      "Carga de até 100 W",
+    ],
+    caution:
+      "A câmera não é o foco principal. Compare também garantia, origem do aparelho e carregador incluído no anúncio.",
+    specsHref: "https://www.mi.com/br/product/poco-x8-pro/",
+    storeHref:
+      "https://www.mibrasil.com.br/smartphone-poco-x8-pro-5g-nfc-br-12-12gb-ram-virtual-512gb-prin-p137149",
+  },
+  {
+    category: "Melhor experiência premium",
+    product: "Xiaomi 15T",
+    icon: Camera,
+    verdict:
+      "É o modelo para quem quer câmeras mais versáteis, acabamento superior e desempenho forte sem escolher um POCO.",
+    strengths: [
+      "Câmera tripla Leica",
+      "Dimensity 8400-Ultra",
+      "Tela AMOLED de 120 Hz",
+      "Bateria de 5.500 mAh",
+    ],
+    caution:
+      "O preço oficial é alto. Compare com celulares premium Samsung e Apple antes de decidir.",
+    specsHref: "https://www.mi.com/br/product/xiaomi-15t/",
+    storeHref: "https://www.mibrasil.com.br/smartphone-xiaomi-15t-5g-prin-p13612",
+  },
+] as const;
+
+const OLDER_DEALS = [
+  {
+    product: "POCO X7 Pro",
+    rule: "Considere se estiver pelo menos 20% abaixo do POCO X8 Pro equivalente.",
+    reason: "Ainda entrega desempenho forte, mas deixou de ser a geração atual.",
+    reviewHref: "/review/poco-x7-pro",
+    affiliateHref: POCO_X7_PRO_AFFILIATE_URL,
+  },
+  {
+    product: "Redmi Note 14 Pro+ 5G",
+    rule: "Considere se custar claramente menos que o Redmi Note 15 Pro 5G.",
+    reason: "Continua completo, mas perde sentido quando o sucessor fica próximo de preço.",
+    reviewHref: "/review/redmi-note-14-pro-plus",
+    affiliateHref: REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
+  },
+  {
+    product: "POCO X6 Pro",
+    rule: "Só vale com desconto forte diante do POCO X7 Pro e do POCO X8 Pro.",
+    reason: "O desempenho ainda é bom, mas a idade reduz o tempo de suporte restante.",
+    reviewHref: "/review/poco-x6-pro",
+    affiliateHref: POCO_X6_PRO_AFFILIATE_URL,
+  },
+  {
+    product: "Redmi Note 13 Pro 5G",
+    rule: "Só considere se a economia for grande diante do Redmi Note 15 5G.",
+    reason: "É uma alternativa de promoção, não o melhor Xiaomi atual para a maioria.",
+    reviewHref: "/review/redmi-note-13-pro",
+    affiliateHref: REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  },
+] as const;
+
+const FAQS = [
+  {
+    question: "Qual é o melhor celular Xiaomi em 2026?",
+    answer:
+      "Para a maioria das pessoas, o Redmi Note 15 5G é o ponto de partida mais equilibrado. O POCO X8 Pro é melhor para jogos, o Redmi Note 15 Pro 5G prioriza câmera e resistência, e o Xiaomi 15T oferece uma experiência mais premium.",
+  },
+  {
+    question: "Qual Xiaomi tem o melhor custo-benefício?",
+    answer:
+      "O custo-benefício depende do preço encontrado. Entre os modelos atuais, compare primeiro o Redmi Note 15 5G. Um aparelho antigo só entra na recomendação quando o desconto compensa a geração anterior e o menor tempo de suporte restante.",
+  },
+  {
+    question: "Qual é o melhor Xiaomi para jogos?",
+    answer:
+      "O POCO X8 Pro é a escolha mais direta desta lista para jogos por reunir Dimensity 8500-Ultra, memória LPDDR5X, armazenamento UFS 4.1, bateria de 6.500 mAh e sistema de refrigeração dedicado.",
+  },
+  {
+    question: "Vale comprar Xiaomi importado?",
+    answer:
+      "Pode valer pelo preço, mas é necessário conferir versão global, homologação, nota fiscal, garantia, reputação do vendedor, carregador e bandas de rede. A oferta nacional costuma custar mais, porém reduz parte desses riscos.",
+  },
+  {
+    question: "POCO X7 Pro e POCO X6 Pro ainda valem a pena?",
+    answer:
+      "Podem valer em promoção. O POCO X7 Pro precisa custar sensivelmente menos que o X8 Pro, e o X6 Pro exige um desconto ainda maior. Com preços próximos, escolha a geração mais nova.",
+  },
+] as const;
 
 export const Route = createFileRoute("/melhores-celulares-xiaomi")({
   head: () => ({
     meta: [
-      {
-        title: PAGE_TITLE,
-      },
-      {
-        name: "description",
-        content: PAGE_DESCRIPTION,
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
       {
         name: "keywords",
         content:
-          "melhores celulares Xiaomi 2026, melhor Xiaomi custo-benefício, Redmi Note 13 Pro, Redmi Note 14 Pro Plus, Poco X7 Pro, Poco X6 Pro",
+          "melhor celular Xiaomi 2026, melhores celulares Xiaomi, Redmi Note 15 5G, POCO X8 Pro, Xiaomi 15T",
       },
-      {
-        property: "og:type",
-        content: "website",
-      },
-      {
-        property: "og:title",
-        content: PAGE_TITLE,
-      },
-      {
-        property: "og:description",
-        content: PAGE_DESCRIPTION,
-      },
-      {
-        property: "og:url",
-        content: CANONICAL,
-      },
-      {
-        property: "og:image",
-        content: HERO_IMAGE,
-      },
-      {
-        name: "twitter:card",
-        content: "summary_large_image",
-      },
-      {
-        name: "twitter:title",
-        content: PAGE_TITLE,
-      },
-      {
-        name: "twitter:description",
-        content: PAGE_DESCRIPTION,
-      },
-      {
-        name: "twitter:image",
-        content: HERO_IMAGE,
-      },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: HERO_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: HERO_IMAGE },
     ],
-    links: [
-      {
-        rel: "canonical",
-        href: CANONICAL,
-      },
-    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
       {
         type: "application/ld+json",
@@ -87,16 +193,22 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
           description: PAGE_DESCRIPTION,
           url: CANONICAL,
           inLanguage: "pt-BR",
-          dateModified: "2026-10-02",
+          datePublished: "2026-06-11",
+          dateModified: "2026-10-13",
           image: HERO_IMAGE,
+          author: {
+            "@type": "Person",
+            name: "Ricardo Garcia",
+            url: "https://techescolhacerta.com.br/autor/ricardo-garcia",
+          },
           mainEntity: {
             "@type": "ItemList",
-            numberOfItems: ranking.length,
-            itemListElement: ranking.map((item, index) => ({
+            numberOfItems: CURRENT_PICKS.length,
+            itemListElement: CURRENT_PICKS.map((item, index) => ({
               "@type": "ListItem",
               position: index + 1,
               name: item.product,
-              url: `https://techescolhacerta.com.br${item.reviewHref}`,
+              url: item.specsHref,
             })),
           },
         }),
@@ -145,587 +257,413 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
   component: MelhoresCelularesXiaomi,
 });
 
-const affiliateLinks = {
-  redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
-  redmiNote14ProPlus: REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
-  pocoX7Pro: POCO_X7_PRO_AFFILIATE_URL,
-  pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
-};
-
-const ranking = [
-  {
-    category: "Melhor Xiaomi geral",
-    product: "Redmi Note 13 Pro 5G",
-    description:
-      "A escolha mais equilibrada para quem quer tela boa, câmera forte, carregamento rápido e preço competitivo.",
-    reviewHref: "/review/redmi-note-13-pro",
-    affiliateHref: affiliateLinks.redmiNote13Pro,
-    affiliateProductName: "Redmi Note 13 Pro",
-  },
-  {
-    category: "Melhor Xiaomi premium",
-    product: "Redmi Note 14 Pro+ 5G",
-    description:
-      "Modelo mais completo para quem quer câmera de 200 MP, IP68, construção melhor e carregamento de 120 W.",
-    reviewHref: "/review/redmi-note-14-pro-plus",
-    affiliateHref: affiliateLinks.redmiNote14ProPlus,
-    affiliateProductName: "Redmi Note 14 Pro+",
-  },
-  {
-    category: "Melhor Xiaomi para jogos",
-    product: "Poco X7 Pro",
-    description:
-      "A opção mais forte para quem quer desempenho, bateria grande, tela fluida e folga para os próximos anos.",
-    reviewHref: "/review/poco-x7-pro",
-    affiliateHref: affiliateLinks.pocoX7Pro,
-    affiliateProductName: "Poco X7 Pro",
-  },
-  {
-    category: "Melhor Xiaomi em promoção",
-    product: "Poco X6 Pro",
-    description: "Ainda faz muito sentido quando aparece bem mais barato que o Poco X7 Pro.",
-    reviewHref: "/review/poco-x6-pro",
-    affiliateHref: affiliateLinks.pocoX6Pro,
-    affiliateProductName: "Poco X6 Pro",
-  },
-];
-
-const FAQS = [
-  {
-    question: "Quais são os melhores celulares Xiaomi em 2026?",
-    answer:
-      "Entre os melhores celulares Xiaomi em 2026 estão o Redmi Note 13 Pro 5G para equilíbrio, o Redmi Note 14 Pro+ para conjunto mais premium, o Poco X7 Pro para desempenho e o Poco X6 Pro quando aparece com preço promocional.",
-  },
-  {
-    question: "Qual Xiaomi tem melhor custo-benefício?",
-    answer:
-      "O Redmi Note 13 Pro 5G costuma ser a compra mais equilibrada quando aparece em promoção. Se o Poco X6 Pro estiver bem mais barato que o Poco X7 Pro, ele também pode ser uma excelente compra.",
-  },
-  {
-    question: "Redmi Note 14 Pro+ 5G vale a pena?",
-    answer:
-      "Vale para quem quer um Xiaomi mais completo, com carregamento de 120 W, proteção IP68 e acabamento superior. Se a diferença de preço for grande, o Redmi Note 13 Pro ainda pode ser mais racional.",
-  },
-  {
-    question: "Poco X7 Pro ou Poco X6 Pro?",
-    answer:
-      "O Poco X7 Pro é a escolha mais atual e completa. O Poco X6 Pro continua interessante quando aparece com preço mais agressivo.",
-  },
-  {
-    question: "Xiaomi é melhor que Samsung?",
-    answer:
-      "Xiaomi costuma entregar mais ficha técnica pelo preço. Samsung costuma entregar software mais refinado, suporte mais previsível e experiência mais consistente no longo prazo.",
-  },
-];
-
-const comparisonCards = [
-  {
-    title: "Redmi Note 13 Pro vs Redmi Note 14 Pro+",
-    description:
-      "Compare os dois Redmi para entender se vale pagar mais no modelo novo ou economizar no Redmi Note 13 Pro.",
-    href: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
-    badge: "Redmi",
-  },
-  {
-    title: "Redmi Note 13 Pro vs Poco X6 Pro",
-    description: "Veja se vale mais escolher o Redmi equilibrado ou o Poco com foco em desempenho.",
-    href: "/comparativo/redmi-note-13-pro-vs-poco-x6-pro",
-    badge: "Redmi vs Poco",
-  },
-
-  {
-    title: "Poco X6 Pro vs Poco X7 Pro",
-    description: "Veja qual Poco compensa mais para jogos, bateria, desempenho e custo-benefício.",
-    href: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
-    badge: "Poco",
-  },
-  {
-    title: "Galaxy A35 vs Redmi Note 13 Pro",
-    description:
-      "Compare dois dos celulares mais disputados até R$ 2.000: proteção e software Samsung contra tela e carga rápida Xiaomi.",
-    href: "/comparativo/galaxy-a35-vs-redmi-note-13-pro",
-    badge: "Samsung vs Xiaomi",
-  },
-  {
-    title: "Galaxy A55 vs Redmi Note 13 Pro",
-    description:
-      "Samsung mais equilibrado ou Xiaomi com ficha técnica agressiva? Compare antes de comprar.",
-    href: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
-    badge: "Samsung vs Xiaomi",
-  },
-  {
-    title: "Galaxy A55 vs Poco X6 Pro",
-    description:
-      "Boa escolha para quem está entre estabilidade da Samsung e desempenho da linha Poco.",
-    href: "/comparativo/galaxy-a55-vs-poco-x6-pro",
-    badge: "Samsung vs Poco",
-  },
-];
-
 function MelhoresCelularesXiaomi() {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
-        eyebrow="Especial Xiaomi"
-        title="Melhores celulares Xiaomi em 2026: qual comprar?"
-        description="O Redmi Note 13 Pro 5G é a escolha mais equilibrada; o Poco X7 Pro é melhor para jogos. Compare quatro modelos por perfil antes de comprar."
+        eyebrow="Guia Xiaomi atualizado"
+        title="Melhor celular Xiaomi em 2026: qual comprar agora?"
+        description="Redmi Note 15 5G para a maioria, POCO X8 Pro para jogos, Note 15 Pro 5G para câmera e resistência, ou Xiaomi 15T para uma experiência premium."
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Escolha mais equilibrada
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D8B08A]">
+              Resposta direta
             </p>
-
-            <h2 className="mt-3 text-3xl font-bold text-white">Redmi Note 13 Pro 5G</h2>
-
+            <h2 className="mt-3 text-3xl font-bold text-white">Redmi Note 15 5G</h2>
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Continua sendo uma das compras mais inteligentes para quem quer tela AMOLED, câmera de
-              200 MP, bom desempenho e carregamento rápido sem pagar preço de topo de linha.
+              É a escolha inicial para a maioria. Se desempenho em jogos for prioridade, vá de POCO
+              X8 Pro. Para câmera e acabamento, compare com Note 15 Pro 5G e Xiaomi 15T.
             </p>
-
             <a
-              href={REDMI_NOTE_13_PRO_AFFILIATE_URL}
+              href="https://www.mi.com/br/product/redmi-note-15-5g/"
               target="_blank"
-              rel="nofollow sponsored noopener noreferrer"
-              onClick={() =>
-                trackAffiliateClick({
-                  productName: "Redmi Note 13 Pro",
-                  pageType: "guia",
-                  ctaPlacement: "hero",
-                })
-              }
-              className="mt-6 block rounded-full bg-[#B9774B] px-5 py-3 text-center text-sm font-bold text-white shadow-lg transition hover:brightness-105"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-105"
             >
-              Ver preço do Redmi Note 13 Pro
+              Conferir ficha oficial <ExternalLink className="h-4 w-4" />
             </a>
-
-            <AffiliateRedirectNotice className="mt-3" tone="dark" />
-
-            <div className="mt-4 grid gap-3">
-              <Link
-                to="/review/redmi-note-13-pro"
-                className="block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
-              >
-                Ver análise completa
-              </Link>
-
-              <Link
-                to="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
-                className="block rounded-full bg-white/10 px-5 py-3 text-center text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
-              >
-                Comparar com Redmi Note 14 Pro+
-              </Link>
-            </div>
           </>
         }
       >
         <a
-          href="#ranking-xiaomi"
+          href="#comparacao"
           className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
         >
-          Ver ranking dos 4 melhores
+          Comparar os 4 modelos
         </a>
-
-        <Link
-          to="/comparativos"
+        <a
+          href="#modelos-antigos"
           className="rounded-full bg-white/10 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
         >
-          Ver comparativos
-        </Link>
+          Ver antigos em promoção
+        </a>
       </CategoryHero>
 
-      <section className="mx-auto max-w-7xl px-6 pt-10 lg:px-8">
-        <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+      <div className="mx-auto max-w-7xl px-6 pt-8 lg:px-8">
+        <AuthorByline reviewedAt="13 de outubro de 2026" />
+
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
+            <p>
+              <strong>Análise documental:</strong> esta seleção foi produzida com fichas oficiais e
+              disponibilidade consultada no Brasil. O Tech Escolha Certa ainda não realizou testes
+              próprios nesses quatro aparelhos. Preços, estoque e itens da embalagem devem ser
+              confirmados no anúncio antes da compra.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-200 md:p-9">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-            Resposta rápida
+            Escolha em 30 segundos
           </p>
+          <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">Qual Xiaomi comprar em 2026?</h2>
 
-          <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-            Qual é o melhor celular da Xiaomi em 2026?
-          </h2>
-
-          <p className="mt-4 text-base leading-7 text-slate-700">
-            O melhor Xiaomi para a maioria das pessoas em 2026 é o Redmi Note 13 Pro 5G, porque
-            entrega bom equilíbrio entre tela AMOLED, câmera de 200 MP, desempenho, bateria,
-            carregamento rápido e preço competitivo.
-          </p>
-
-          <p className="mt-4 text-base leading-7 text-slate-700">
-            Para jogos e desempenho pesado, os modelos Poco fazem mais sentido: o Poco X7 Pro é a
-            opção mais atual, enquanto o Poco X6 Pro ainda compensa quando aparece em promoção. Para
-            quem quer um Xiaomi mais completo e premium, vale comparar com o Redmi Note 14 Pro+.
-          </p>
+          <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <QuickDecision
+              title="Uso geral"
+              product="Redmi Note 15 5G"
+              text="O conjunto mais equilibrado para redes sociais, vídeos, câmera e rotina."
+            />
+            <QuickDecision
+              title="Jogos"
+              product="POCO X8 Pro"
+              text="Prioriza chip, memória rápida, refrigeração e bateria."
+            />
+            <QuickDecision
+              title="Câmera e resistência"
+              product="Redmi Note 15 Pro 5G"
+              text="Câmera principal mais ambiciosa, IP68 e bateria maior."
+            />
+            <QuickDecision
+              title="Premium"
+              product="Xiaomi 15T"
+              text="Câmeras Leica, construção superior e desempenho forte."
+            />
+          </div>
         </div>
       </section>
 
-      <section id="ranking-xiaomi" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12 lg:px-8">
+      <section id="comparacao" className="mx-auto max-w-7xl scroll-mt-28 px-6 py-8 lg:px-8">
         <SectionTitle
-          eyebrow="Ranking Xiaomi"
-          title="Os Xiaomi que mais valem a pena hoje"
-          description="Seleção editorial para compra inteligente, considerando preço, desempenho, câmera, bateria, carregamento e experiência geral."
+          eyebrow="Ranking atual"
+          title="Os Xiaomi que fazem sentido hoje"
+          description="A ordem considera perfil de uso e disponibilidade no Brasil, não uma nota genérica. Consulte a ficha oficial e compare preço, garantia e armazenamento antes de comprar."
         />
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {ranking.map((item) => (
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          {CURRENT_PICKS.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.product}
+                className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#0F3F4A] text-white">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
+                      {item.category}
+                    </span>
+                    <h3 className="mt-1 text-2xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
+                  </div>
+                </div>
+
+                <p className="mt-5 text-base leading-7 text-slate-700">{item.verdict}</p>
+
+                <ul className="mt-5 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
+                  {item.strengths.map((strength) => (
+                    <li key={strength} className="flex items-start gap-2">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
+                      {strength}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-5 rounded-2xl bg-[#F7F2EB] p-4 text-sm leading-6 text-slate-700">
+                  <strong className="text-[#0F3F4A]">Atenção:</strong> {item.caution}
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href={item.specsHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#0F3F4A] px-5 py-2.5 text-sm font-bold text-white"
+                  >
+                    Ficha oficial <ExternalLink className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={item.storeHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-[#0F3F4A]"
+                  >
+                    Ver disponibilidade
+                  </a>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div className="border-b border-slate-200 p-7 md:p-9">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
+              Comparação rápida
+            </p>
+            <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
+              Diferenças que mudam a compra
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[760px] text-left text-sm">
+              <thead className="bg-[#0F3F4A] text-white">
+                <tr>
+                  <th className="px-6 py-4">Modelo</th>
+                  <th className="px-6 py-4">Melhor para</th>
+                  <th className="px-6 py-4">Principal vantagem</th>
+                  <th className="px-6 py-4">Principal limite</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 text-slate-700">
+                <ComparisonRow
+                  model="Redmi Note 15 5G"
+                  profile="Maioria das pessoas"
+                  strength="Equilíbrio entre tela, câmera, bateria e preço"
+                  limit="Não é o mais forte para jogos pesados"
+                />
+                <ComparisonRow
+                  model="Redmi Note 15 Pro 5G"
+                  profile="Câmera e durabilidade"
+                  strength="200 MP com OIS, IP68 e bateria de 6.580 mAh"
+                  limit="Pode perder custo-benefício se o preço subir demais"
+                />
+                <ComparisonRow
+                  model="POCO X8 Pro"
+                  profile="Jogos e desempenho"
+                  strength="Chip forte, memória rápida, refrigeração e carga de 100 W"
+                  limit="Câmeras são secundárias na proposta"
+                />
+                <ComparisonRow
+                  model="Xiaomi 15T"
+                  profile="Câmeras e uso premium"
+                  strength="Conjunto Leica e desempenho de categoria superior"
+                  limit="Preço exige comparação com outras marcas premium"
+                />
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <article className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
+            <BatteryCharging className="h-8 w-8 text-[#D8B08A]" />
+            <h2 className="mt-4 text-3xl font-bold">Não compare apenas o nome do aparelho</h2>
+            <p className="mt-4 text-base leading-7 text-slate-200">
+              A mesma linha pode ter versões 4G e 5G, capacidades diferentes e anúncios importados.
+              Confira o nome completo, memória, armazenamento, NFC, homologação, garantia e
+              carregador antes de fechar a compra.
+            </p>
+          </article>
+
+          <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <ShieldCheck className="h-8 w-8 text-[#8B5A2B]" />
+            <h2 className="mt-4 text-3xl font-bold text-[#0F3F4A]">Preço nacional ou importado?</h2>
+            <p className="mt-4 text-base leading-7 text-slate-700">
+              O importado pode ser mais barato, mas exige conferência extra de versão, nota fiscal,
+              garantia e reputação do vendedor. A oferta nacional tende a reduzir esses riscos. A
+              comparação só é justa quando armazenamento e condições de pós-venda são equivalentes.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="modelos-antigos" className="mx-auto max-w-7xl scroll-mt-28 px-6 py-12 lg:px-8">
+        <SectionTitle
+          eyebrow="Gerações anteriores"
+          title="Quando um Xiaomi antigo ainda vale a pena"
+          description="Os aparelhos abaixo deixaram de liderar o ranking. Eles continuam como alternativas de promoção, desde que a economia seja proporcional à idade e ao suporte restante."
+        />
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {OLDER_DEALS.map((item) => (
             <article
               key={item.product}
-              className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             >
-              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
-                {item.category}
-              </span>
-
-              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
-
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">{item.description}</p>
-
-              <div className="mt-5 grid gap-2">
+              <h3 className="text-xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">{item.reason}</p>
+              <p className="mt-4 rounded-2xl bg-[#F7F2EB] p-4 text-sm font-semibold leading-6 text-[#0F3F4A]">
+                Regra de compra: {item.rule}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   to={item.reviewHref}
-                  className="inline-flex items-center justify-center rounded-full bg-[#0F3F4A] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0F3F4A] px-4 py-2.5 text-sm font-bold text-white"
                 >
-                  Ver análise
+                  Ler análise <ArrowRight className="h-4 w-4" />
                 </Link>
-
                 <a
                   href={item.affiliateHref}
                   target="_blank"
-                  rel="noopener noreferrer sponsored"
+                  rel="nofollow sponsored noopener noreferrer"
                   onClick={() =>
                     trackAffiliateClick({
-                      productName: item.affiliateProductName,
+                      productName: item.product,
                       pageType: "guia",
-                      ctaPlacement: "ranking",
+                      ctaPlacement: "modelos_antigos",
                     })
                   }
-                  className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
+                  className="inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold text-[#0F3F4A]"
                 >
-                  Ver preço no Mercado Livre
+                  Conferir preço
                 </a>
               </div>
             </article>
           ))}
         </div>
 
-        <section className="mt-14 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-          <SectionTitle
-            eyebrow="Reviews Xiaomi"
-            title="Reviews completos dos principais modelos"
-            description="Leia a análise individual antes de decidir. Cada review traz pontos fortes, pontos fracos, ficha técnica e recomendação final."
-          />
+        <AffiliateRedirectNotice className="mt-5" />
+      </section>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <ReviewCard
-              title="Review Redmi Note 13 Pro 5G"
-              description="O Xiaomi mais equilibrado para quem quer custo-benefício."
-              href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro-optimized.webp"
-              score="9.0"
-              badge="Equilíbrio"
-            />
-
-            <ReviewCard
-              title="Review Redmi Note 14 Pro+ 5G"
-              description="Mais completo, com IP68, 200 MP e carregamento de 120 W."
-              href="/review/redmi-note-14-pro-plus"
-              image="/images/products/redmi-note-14-pro-plus-optimized.webp"
-              score="9.2"
-              badge="Premium"
-            />
-
-            <ReviewCard
-              title="Review Poco X7 Pro"
-              description="A melhor escolha da linha para desempenho, jogos e bateria."
-              href="/review/poco-x7-pro"
-              image="/images/products/poco-x7-pro-optimized.webp"
-              score="9.3"
-              badge="Performance"
-            />
-
-            <ReviewCard
-              title="Poco X6 Pro vale a pena em 2026?"
-              description="Ainda excelente se aparecer com preço bem mais baixo."
-              href="/review/poco-x6-pro"
-              image="/images/products/poco-x6-pro-optimized.webp"
-              score="9.2"
-              badge="Promoção"
-            />
+      <section className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+        <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-9">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
+            Fontes e atualização
+          </p>
+          <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">Como esta lista foi construída</h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-base leading-7 text-slate-700">
+            <p>
+              Conferimos especificações nas páginas oficiais da Xiaomi Brasil e verificamos a
+              presença dos modelos na loja oficial brasileira em 13 de outubro de 2026. A seleção
+              considera proposta, geração, disponibilidade, diferenças técnicas e risco de pagar
+              preço de aparelho atual em uma geração antiga.
+            </p>
+            <p>
+              Não publicamos preço fixo nesta página porque estoque, vendedor e origem mudam com
+              frequência. Uma recomendação pode mudar se o preço relativo entre os modelos mudar.
+            </p>
           </div>
-        </section>
 
-        <section className="mt-14 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+          <div className="mt-6 flex flex-wrap gap-3 text-sm font-bold">
+            {CURRENT_PICKS.map((item) => (
+              <a
+                key={item.product}
+                href={item.specsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-[#0F3F4A] hover:border-[#8B5A2B]"
+              >
+                Fonte: {item.product} <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            ))}
+          </div>
+
+          <p className="mt-6 text-sm leading-6 text-slate-600">
+            Consulte também nossa{" "}
+            <Link to="/como-avaliamos" className="font-bold text-[#8B5A2B] hover:underline">
+              metodologia editorial
+            </Link>{" "}
+            e a página do{" "}
+            <Link to="/autor/ricardo-garcia" className="font-bold text-[#8B5A2B] hover:underline">
+              autor responsável
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-9">
           <SectionTitle
-            eyebrow="Comparativos Xiaomi"
-            title="Compare antes de comprar"
-            description="Os comparativos ajudam a escolher entre modelos parecidos e evitam pagar mais por recursos que talvez você não use."
+            eyebrow="Dúvidas comuns"
+            title="Perguntas sobre celulares Xiaomi"
+            description="Respostas diretas para evitar escolher apenas pela ficha técnica ou pelo desconto exibido no anúncio."
           />
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {comparisonCards.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-2xl border border-slate-200 bg-[#F7F2EB] p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-[#8B5A2B] ring-1 ring-slate-200">
-                  {item.badge}
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold text-[#0F3F4A]">{item.title}</h3>
-
-                <p className="mt-2 text-sm leading-6 text-slate-700">{item.description}</p>
-
-                <a
-                  href={item.href}
-                  className="mt-5 inline-flex rounded-full bg-[#8B5A2B] px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
-                >
-                  Ver comparativo
-                </a>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {FAQS.map((item) => (
+              <article key={item.question} className="rounded-2xl bg-[#F7F2EB] p-6">
+                <h3 className="text-lg font-bold text-[#0F3F4A]">{item.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-700">{item.answer}</p>
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="mt-14 grid gap-8 lg:grid-cols-[1fr_340px]">
-          <article className="space-y-10">
-            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Resposta direta
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-                Qual é o melhor celular Xiaomi para comprar em 2026?
-              </h2>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                Para a maioria das pessoas, o <strong>Redmi Note 13 Pro 5G</strong> é o Xiaomi mais
-                equilibrado. Ele reúne tela AMOLED, câmera de alta resolução, bom desempenho,
-                bateria consistente e carregamento rápido por um preço normalmente mais competitivo.
-              </p>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                O <strong>Redmi Note 14 Pro+ 5G</strong> faz mais sentido para quem quer um conjunto
-                mais completo, com proteção IP68, carregamento de 120 W e melhor construção. Já o{" "}
-                <strong>Poco X7 Pro</strong> é a escolha mais indicada quando o foco principal é
-                desempenho, jogos e bateria.
-              </p>
-
-              <div className="mt-6 grid gap-5 md:grid-cols-3">
-                <div className="rounded-2xl bg-[#F7F2EB] p-5">
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">Melhor para a maioria</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Redmi Note 13 Pro 5G: melhor equilíbrio entre preço, tela, câmera, bateria e
-                    carregamento.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-[#F7F2EB] p-5">
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">Melhor mais completo</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Redmi Note 14 Pro+ 5G: melhor para quem quer acabamento, proteção e carregamento
-                    mais forte.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-[#F7F2EB] p-5">
-                  <h3 className="text-lg font-bold text-[#0F3F4A]">Melhor para jogos</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Poco X7 Pro: melhor escolha para performance, multitarefa, jogos e uso pesado.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Guia rápido de escolha
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-                Qual Xiaomi comprar em 2026?
-              </h2>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                A melhor escolha depende do seu perfil. Para uso geral, câmera e equilíbrio, o Redmi
-                Note 13 Pro 5G é o mais indicado. Para jogos e desempenho pesado, o Poco X7 Pro é a
-                escolha mais forte. Quem procura um conjunto mais premium pode preferir o Redmi Note
-                14 Pro+ 5G, enquanto o Poco X6 Pro continua interessante quando aparece com preço
-                promocional.
-              </p>
-            </section>
-
-            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Linha Redmi ou linha Poco
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-                Redmi é mais equilibrado; Poco é mais focado em desempenho
-              </h2>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                A linha Redmi costuma ser melhor para quem quer um celular completo para o dia a
-                dia: boa tela, câmera principal forte, bateria segura, carregamento rápido e preço
-                competitivo. É a opção mais lógica para quem usa redes sociais, vídeos, câmera,
-                WhatsApp, bancos, mapas e navegação.
-              </p>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                A linha Poco normalmente é mais indicada para quem prioriza potência. Ela faz mais
-                sentido para jogos, multitarefa pesada, uso intenso e quem quer o máximo de
-                desempenho possível pelo preço.
-              </p>
-            </section>
-
-            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Dúvidas comuns
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-                Como escolher o melhor Xiaomi para o seu perfil
-              </h2>
-
-              <div className="mt-6 space-y-6">
-                {FAQS.map((item) => (
-                  <div key={item.question}>
-                    <h3 className="text-lg font-bold text-[#0F3F4A]">{item.question}</h3>
-                    <p className="mt-2 text-base leading-7 text-slate-700">{item.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <AffiliateCTA
-              title="Melhores ofertas Xiaomi atualizadas"
-              description="Veja preços, parcelamento e disponibilidade dos celulares Xiaomi recomendados."
-              buttonText="Ver Redmi Note 13 Pro no Mercado Livre"
-              href={REDMI_NOTE_13_PRO_AFFILIATE_URL}
-              highlight="Redmi • Poco • Xiaomi"
-              productName="Redmi Note 13 Pro"
-              pageType="guia"
-            />
-
-            <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Recomendação editorial
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#F8FAFC]">
-                Xiaomi vale muito para quem prioriza ficha técnica.
-              </h2>
-
-              <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Se o objetivo for pagar menos por tela forte, carregamento rápido, bateria boa e
-                desempenho acima da média, Xiaomi continua sendo uma das marcas mais fortes. Só vale
-                comparar com Samsung quando software, suporte e câmera mais previsível forem
-                prioridades maiores.
-              </p>
-            </section>
-          </article>
-
-          <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
-            <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Links úteis
-              </p>
-
-              <div className="mt-5 space-y-3 text-sm">
-                <Link
-                  to="/review/redmi-note-13-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Redmi Note 13 Pro ainda compensa em 2026?
-                </Link>
-
-                <Link
-                  to="/review/redmi-note-14-pro-plus"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Review Redmi Note 14 Pro+ 5G
-                </Link>
-
-                <Link
-                  to="/review/poco-x7-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Review Poco X7 Pro
-                </Link>
-
-                <Link
-                  to="/review/poco-x6-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Poco X6 Pro compensa em 2026?
-                </Link>
-
-                <Link
-                  to="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Redmi Note 13 Pro vs Redmi Note 14 Pro+
-                </Link>
-
-                <Link
-                  to="/comparativo/redmi-note-13-pro-vs-poco-x6-pro"
-                  className="block font-bold text-[#8B5A2B] hover:text-[#0F3F4A]"
-                >
-                  Redmi Note 13 Pro vs Poco X6 Pro
-                </Link>
-
-                <Link
-                  to="/comparativo/poco-x6-pro-vs-poco-x7-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Poco X6 Pro vs Poco X7 Pro
-                </Link>
-
-                <Link
-                  to="/comparativo/galaxy-a35-vs-redmi-note-13-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Galaxy A35 vs Redmi Note 13 Pro
-                </Link>
-
-                <Link
-                  to="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Galaxy A55 vs Redmi Note 13 Pro
-                </Link>
-
-                <Link
-                  to="/melhores-celulares-custo-beneficio"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Melhores custo-benefício
-                </Link>
-
-                <Link to="/ofertas" className="block font-bold text-[#8B5A2B] hover:text-[#0F3F4A]">
-                  Ofertas Xiaomi recomendadas
-                </Link>
-
-                <Link to="/comparativos" className="block text-slate-700 hover:text-[#8B5A2B]">
-                  Todos os comparativos
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </section>
 
-      <MobilePurchaseBar
-        options={[
-          {
-            productName: "Redmi Note 13 Pro",
-            href: REDMI_NOTE_13_PRO_AFFILIATE_URL,
-            label: "Ver preço",
-            primary: true,
-          },
-        ]}
-        pageType="guia"
-        title="Redmi Note 13 Pro 5G"
-        eyebrow="Melhor Xiaomi geral"
-      />
+      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+        <div className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm md:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D8B08A]">
+            Conclusão
+          </p>
+          <h2 className="mt-2 text-3xl font-bold">Escolha pelo perfil e pelo preço real</h2>
+          <p className="mt-4 max-w-4xl text-base leading-7 text-slate-200">
+            Comece pelo Redmi Note 15 5G. Troque pelo POCO X8 Pro se jogos forem prioridade, pelo
+            Redmi Note 15 Pro 5G se câmera e resistência forem mais importantes, ou pelo Xiaomi 15T
+            se você procura uma experiência premium. Gerações antigas só entram quando o desconto é
+            grande e a garantia está clara.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/comparativos"
+              className="inline-flex items-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-sm font-bold text-white"
+            >
+              Ver comparativos <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/melhores-celulares-custo-beneficio"
+              className="inline-flex items-center rounded-full bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/20"
+            >
+              Ver celulares custo-benefício
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
+  );
+}
+
+function QuickDecision({ title, product, text }: { title: string; product: string; text: string }) {
+  return (
+    <article className="rounded-2xl bg-[#F7F2EB] p-5 ring-1 ring-slate-200">
+      <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">{title}</p>
+      <h3 className="mt-2 text-lg font-extrabold text-[#0F3F4A]">{product}</h3>
+      <p className="mt-2 text-sm leading-6 text-slate-700">{text}</p>
+    </article>
+  );
+}
+
+function ComparisonRow({
+  model,
+  profile,
+  strength,
+  limit,
+}: {
+  model: string;
+  profile: string;
+  strength: string;
+  limit: string;
+}) {
+  return (
+    <tr className="align-top">
+      <th className="px-6 py-5 font-bold text-[#0F3F4A]">{model}</th>
+      <td className="px-6 py-5">{profile}</td>
+      <td className="px-6 py-5">{strength}</td>
+      <td className="px-6 py-5">{limit}</td>
+    </tr>
   );
 }

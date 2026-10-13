@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, BadgeCheck, Calculator, FileCheck2, Scale, ShieldCheck } from "lucide-react";
+import { ArrowRight, BadgeCheck, FileCheck2, Scale, ShieldCheck, Tags } from "lucide-react";
 
 export const Route = createFileRoute("/como-avaliamos")({
   head: () => ({
@@ -8,13 +8,13 @@ export const Route = createFileRoute("/como-avaliamos")({
       {
         name: "description",
         content:
-          "Entenda como a Tech Escolha Certa calcula notas, compara celulares, consulta fontes oficiais e organiza recomendações de compra.",
+          "Entenda como o Tech Escolha Certa pesquisa especificações, diferencia análises documentais de testes próprios e organiza recomendações de compra.",
       },
       { property: "og:title", content: "Como avaliamos celulares | Tech Escolha Certa" },
       {
         property: "og:description",
         content:
-          "Metodologia editorial, critérios das notas e regras de transparência das recomendações da Tech Escolha Certa.",
+          "Metodologia editorial, fontes e regras de transparência das recomendações do Tech Escolha Certa.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://techescolhacerta.com.br/como-avaliamos" },
@@ -27,37 +27,37 @@ export const Route = createFileRoute("/como-avaliamos")({
 const CRITERIOS = [
   {
     label: "Desempenho",
-    weight: "20%",
+    weight: "Prioridade alta",
     description: "Chip, memória, armazenamento e consistência em tarefas pesadas.",
   },
   {
     label: "Tela",
-    weight: "15%",
+    weight: "Prioridade alta",
     description: "Qualidade do painel, brilho, resolução, fluidez e legibilidade.",
   },
   {
     label: "Câmeras",
-    weight: "15%",
+    weight: "Depende do perfil",
     description: "Conjunto principal, câmeras auxiliares, vídeo e consistência.",
   },
   {
     label: "Bateria e carga",
-    weight: "15%",
+    weight: "Prioridade alta",
     description: "Capacidade, eficiência, velocidade e praticidade de recarga.",
   },
   {
     label: "Software e suporte",
-    weight: "15%",
+    weight: "Prioridade alta",
     description: "Interface, atualizações, segurança e recursos úteis.",
   },
   {
     label: "Construção",
-    weight: "10%",
+    weight: "Depende do perfil",
     description: "Materiais, ergonomia e proteção contra água e poeira.",
   },
   {
     label: "Custo-benefício",
-    weight: "10%",
+    weight: "Decisivo",
     description: "O que o aparelho entrega diante do preço e dos rivais.",
   },
 ];
@@ -79,12 +79,12 @@ function ComoAvaliamosPage() {
             Metodologia editorial
           </span>
           <h1 className="mt-3 max-w-4xl font-heading text-4xl font-extrabold tracking-tight md:text-6xl">
-            Como calculamos as notas e recomendações
+            Como pesquisamos e recomendamos celulares
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-            As notas são indicadores editoriais para facilitar comparações. Elas não substituem a
-            ficha técnica, não representam uma medição laboratorial e não são alteradas por comissão
-            de afiliados.
+            Cada página informa se é uma análise documental ou se contém teste próprio. Não
+            apresentamos dados de laboratório sem medição identificada e não alteramos conclusões
+            por causa de comissão de afiliados.
           </p>
         </div>
       </header>
@@ -102,9 +102,9 @@ function ComoAvaliamosPage() {
             text="O melhor aparelho depende de uso, orçamento e prioridades; não existe vencedor universal."
           />
           <Principle
-            icon={Calculator}
-            title="Escala de 0 a 10"
-            text="A nota resume os critérios abaixo. Cinco estrelas são apenas uma representação visual da mesma avaliação."
+            icon={Tags}
+            title="Tipo de análise visível"
+            text="Conteúdo documental e teste próprio são identificados para o leitor saber de onde vem cada conclusão."
           />
           <Principle
             icon={ShieldCheck}
@@ -115,13 +115,13 @@ function ComoAvaliamosPage() {
 
         <section className="mt-12 rounded-3xl border border-border bg-card p-6 shadow-soft md:p-8">
           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
-            Peso de referência
+            Critérios editoriais
           </span>
-          <h2 className="mt-2 font-heading text-3xl font-bold">Os sete critérios da nota</h2>
+          <h2 className="mt-2 font-heading text-3xl font-bold">O que pesa na recomendação</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
-            Os pesos servem como referência geral. Em guias específicos, como celulares para jogos
-            ou para fotografia, o critério relacionado ao perfil recebe maior importância no
-            veredito.
+            Não existe uma nota universal capaz de resumir todos os compradores. O peso de cada
+            critério muda conforme o orçamento e o perfil, e o texto explica por que um aparelho foi
+            indicado ou descartado.
           </p>
           <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {CRITERIOS.map((item) => (

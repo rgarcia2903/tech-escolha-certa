@@ -91,9 +91,9 @@ const SEARCH_ITEMS = [
   {
     group: "Marcas e perfis",
     title: "Melhores Xiaomi, Redmi e Poco",
-    description: "Equilíbrio, câmera, jogos e desempenho",
+    description: "Modelos atuais para uso geral, câmera e jogos",
     to: "/melhores-celulares-xiaomi",
-    keywords: "xiaomi redmi poco",
+    keywords: "xiaomi redmi poco note 15 x8 pro 15t",
     icon: Smartphone,
   },
   {

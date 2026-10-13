@@ -4,6 +4,7 @@ import { ArrowRight, Headphones, PlugZap, ShieldCheck, Smartphone, Sparkles } fr
 export const Route = createFileRoute("/acessorios")({
   head: () => ({
     meta: [
+      { name: "robots", content: "noindex, follow" },
       { title: "Acessórios de tecnologia — Guias e recomendações | Tech Escolha Certa" },
       {
         name: "description",
@@ -40,7 +41,8 @@ function AcessoriosPage() {
               Acessórios úteis para melhorar seu celular, setup e rotina
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-200">
-              Aqui vamos reunir fones, carregadores, cabos, suportes, hubs USB-C e periféricos que realmente valem a compra — sem indicar produto só porque está barato.
+              Aqui vamos reunir fones, carregadores, cabos, suportes, hubs USB-C e periféricos que
+              realmente valem a compra — sem indicar produto só porque está barato.
             </p>
           </div>
 
@@ -92,7 +94,9 @@ function AcessoriosPage() {
                 Estamos organizando os guias de acessórios
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                Enquanto os reviews completos dessa categoria são preparados, você pode começar pelas ofertas e guias de celulares já revisados. Assim o site não vira uma página sem saída.
+                Enquanto os reviews completos dessa categoria são preparados, você pode começar
+                pelas ofertas e guias de celulares já revisados. Assim o site não vira uma página
+                sem saída.
               </p>
             </div>
 
@@ -103,7 +107,9 @@ function AcessoriosPage() {
                 </span>
                 <div>
                   <p className="text-sm font-bold text-[#0F3F4A]">Compra consciente</p>
-                  <p className="text-sm text-slate-600">Priorize utilidade, compatibilidade e garantia.</p>
+                  <p className="text-sm text-slate-600">
+                    Priorize utilidade, compatibilidade e garantia.
+                  </p>
                 </div>
               </div>
 
