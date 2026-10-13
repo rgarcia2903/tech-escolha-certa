@@ -7,9 +7,6 @@ import { SiteSearch } from "@/components/site/SiteSearch";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/celulares", label: "Celulares" },
-  { to: "/notebooks", label: "Notebooks" },
-  { to: "/smartwatches", label: "Smartwatches" },
-  { to: "/acessorios", label: "Acessórios" },
   { to: "/comparativos", label: "Comparativos" },
   { to: "/guias-de-compra", label: "Guias de Compra" },
 ] as const;
@@ -18,8 +15,8 @@ const FEATURED_LINKS = [
   { to: "/guia/melhores-celulares-ate-1500-reais", label: "Celulares até R$ 1.500" },
   { to: "/melhores-celulares-ate-2000", label: "Celulares até R$ 2.000" },
   { to: "/melhores-celulares-ate-2500", label: "Celulares até R$ 2.500" },
-  { to: "/melhores-celulares-samsung", label: "Melhores Samsung" },
-  { to: "/review/redmi-note-13-pro", label: "Redmi Note 13 Pro" },
+  { to: "/melhores-celulares-custo-beneficio", label: "Melhores custo-benefício" },
+  { to: "/melhores-celulares-xiaomi", label: "Melhores Xiaomi" },
 ] as const;
 
 export function Header() {
@@ -42,7 +39,7 @@ export function Header() {
               Tech <span className="text-cta">Escolha Certa</span>
             </span>
             <span className="hidden text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:block">
-              Guias, reviews e comparativos
+              Celulares sem compra errada
             </span>
           </span>
         </Link>

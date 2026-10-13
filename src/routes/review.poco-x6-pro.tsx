@@ -110,9 +110,9 @@ export const Route = createFileRoute("/review/poco-x6-pro")({
             "@type": "Review",
             name: PAGE_TITLE,
             author: {
-              "@type": "Organization",
-              name: "Tech Escolha Certa",
-              url: "https://techescolhacerta.com.br/sobre",
+              "@type": "Person",
+              name: "Ricardo Garcia",
+              url: "https://techescolhacerta.com.br/autor/ricardo-garcia",
             },
             dateModified: "2026-10-02",
             reviewRating: {

@@ -1,9 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, BatteryCharging, BriefcaseBusiness, Cpu, GraduationCap, Laptop, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  BatteryCharging,
+  BriefcaseBusiness,
+  Cpu,
+  GraduationCap,
+  Laptop,
+  ShieldCheck,
+} from "lucide-react";
 
 export const Route = createFileRoute("/notebooks")({
   head: () => ({
     meta: [
+      { name: "robots", content: "noindex, follow" },
       { title: "Notebooks — Guias e recomendações | Tech Escolha Certa" },
       {
         name: "description",
@@ -40,7 +49,8 @@ function NotebooksPage() {
               Notebooks para estudar, trabalhar e comprar sem errar
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-200">
-              A categoria de notebooks está sendo organizada com foco em compra prática: desempenho real, memória, SSD, tela, bateria e durabilidade — sem ficar preso só à ficha técnica.
+              A categoria de notebooks está sendo organizada com foco em compra prática: desempenho
+              real, memória, SSD, tela, bateria e durabilidade — sem ficar preso só à ficha técnica.
             </p>
           </div>
 
@@ -92,7 +102,8 @@ function NotebooksPage() {
                 Ainda estamos montando os rankings de notebooks
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                Enquanto isso, deixamos esta página com caminhos claros para continuar navegando. A ideia é evitar uma categoria vazia e preparar espaço para futuros guias de notebook.
+                Enquanto isso, deixamos esta página com caminhos claros para continuar navegando. A
+                ideia é evitar uma categoria vazia e preparar espaço para futuros guias de notebook.
               </p>
             </div>
 

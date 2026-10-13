@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, ShieldCheck, Twitter, Youtube } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 const LINKS_EDITORIAIS = [
   { to: "/celulares", label: "Celulares" },
@@ -16,6 +16,7 @@ const GUIAS = [
   { to: "/melhores-celulares-ate-2000", label: "Melhores celulares até R$ 2.000" },
   { to: "/melhores-celulares-ate-2500", label: "Melhores celulares até R$ 2.500" },
   { to: "/melhores-celulares-samsung", label: "Melhores celulares Samsung" },
+  { to: "/melhores-celulares-xiaomi", label: "Melhores celulares Xiaomi" },
 ];
 
 const REVIEWS = [
@@ -35,6 +36,7 @@ const COMPARATIVOS = [
 
 const INSTITUCIONAL = [
   { to: "/sobre", label: "Sobre" },
+  { to: "/autor/ricardo-garcia", label: "Autor" },
   { to: "/como-avaliamos", label: "Como avaliamos" },
   { to: "/contato", label: "Contato" },
   { to: "/transparencia", label: "Transparência" },
@@ -64,9 +66,9 @@ export function Footer() {
             </Link>
 
             <p className="mt-5 text-sm leading-7 text-slate-300">
-              Portal independente de análises, comparativos e recomendações de tecnologia. Ajudamos
-              você a comprar celulares, notebooks, smartwatches e acessórios com mais clareza,
-              contexto e segurança.
+              Portal independente de análises, comparativos e guias de compra de celulares.
+              Organizamos especificações, preços e diferenças entre modelos para ajudar você a
+              decidir com mais clareza.
             </p>
 
             <div className="mt-6 rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
@@ -78,32 +80,6 @@ export function Footer() {
                   por compras realizadas através dos nossos links, sem custo adicional para você.
                 </p>
               </div>
-            </div>
-
-            <div className="mt-6 flex gap-3 text-slate-300">
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#8B5A2B]"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#8B5A2B]"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="rounded-xl bg-white/8 p-2 transition hover:bg-white/12 hover:text-[#8B5A2B]"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
             </div>
           </div>
 

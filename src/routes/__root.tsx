@@ -207,7 +207,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           name: "description",
           content:
-            "Compare celulares, notebooks e smartwatches antes de comprar. Reviews reais, rankings atualizados e os melhores modelos custo-benefício de 2026.",
+            "Compare celulares antes de comprar. Análises transparentes, rankings atualizados e os modelos custo-benefício que fazem sentido em 2026.",
         },
 
         {

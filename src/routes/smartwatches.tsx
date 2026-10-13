@@ -1,9 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Activity, ArrowRight, Battery, BellRing, ShieldCheck, Smartphone, Watch } from "lucide-react";
+import {
+  Activity,
+  ArrowRight,
+  Battery,
+  BellRing,
+  ShieldCheck,
+  Smartphone,
+  Watch,
+} from "lucide-react";
 
 export const Route = createFileRoute("/smartwatches")({
   head: () => ({
     meta: [
+      { name: "robots", content: "noindex, follow" },
       { title: "Smartwatches — Guias e melhores modelos | Tech Escolha Certa" },
       {
         name: "description",
@@ -40,7 +49,8 @@ function SmartwatchesPage() {
               Smartwatches para acompanhar saúde, rotina e notificações
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-200">
-              Vamos reunir modelos que fazem sentido para Android e iPhone, avaliando bateria, conforto, notificações, esportes, sensores e custo-benefício real.
+              Vamos reunir modelos que fazem sentido para Android e iPhone, avaliando bateria,
+              conforto, notificações, esportes, sensores e custo-benefício real.
             </p>
           </div>
 
@@ -92,7 +102,8 @@ function SmartwatchesPage() {
                 Em breve, rankings de smartwatches por perfil
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                A categoria está pronta para receber guias completos. Enquanto isso, mantemos caminhos claros para ofertas, guias e recomendações já publicadas no site.
+                A categoria está pronta para receber guias completos. Enquanto isso, mantemos
+                caminhos claros para ofertas, guias e recomendações já publicadas no site.
               </p>
             </div>
 

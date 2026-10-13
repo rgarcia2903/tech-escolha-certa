@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { AlertTriangle, ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { AuthorByline } from "@/components/site/AuthorByline";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
@@ -169,6 +170,21 @@ export function ReviewTemplate({
             </a>
 
             <AffiliateRedirectNotice className="mt-3" tone="dark" />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pt-8 lg:px-8">
+        <AuthorByline reviewedAt={updatedAt.replace(/^Atualizado em\s*/i, "")} />
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
+            <p>
+              <strong>Análise documental:</strong> esta página compara ficha técnica, proposta,
+              preço relativo e alternativas. Quando não houver um teste próprio identificado, as
+              observações de uso representam uma avaliação editorial baseada em especificações e
+              fontes consultadas, não uma medição feita pelo site.
+            </p>
           </div>
         </div>
       </section>

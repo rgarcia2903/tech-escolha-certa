@@ -52,6 +52,7 @@ import { Route as ComparativoGalaxyA55VsRedmiNote13ProRouteImport } from './rout
 import { Route as ComparativoGalaxyA55VsPocoX6ProRouteImport } from './routes/comparativo.galaxy-a55-vs-poco-x6-pro'
 import { Route as ComparativoGalaxyA35VsRedmiNote13ProRouteImport } from './routes/comparativo.galaxy-a35-vs-redmi-note-13-pro'
 import { Route as ComparativoGalaxyA25VsRedmiNote13RouteImport } from './routes/comparativo.galaxy-a25-vs-redmi-note-13'
+import { Route as AutorRicardoGarciaRouteImport } from './routes/autor.ricardo-garcia'
 
 const TransparenciaRoute = TransparenciaRouteImport.update({
   id: '/transparencia',
@@ -288,6 +289,11 @@ const ComparativoGalaxyA25VsRedmiNote13Route =
     path: '/comparativo/galaxy-a25-vs-redmi-note-13',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AutorRicardoGarciaRoute = AutorRicardoGarciaRouteImport.update({
+  id: '/autor/ricardo-garcia',
+  path: '/autor/ricardo-garcia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -312,6 +318,7 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/transparencia': typeof TransparenciaRoute
+  '/autor/ricardo-garcia': typeof AutorRicardoGarciaRoute
   '/comparativo/galaxy-a25-vs-redmi-note-13': typeof ComparativoGalaxyA25VsRedmiNote13Route
   '/comparativo/galaxy-a35-vs-redmi-note-13-pro': typeof ComparativoGalaxyA35VsRedmiNote13ProRoute
   '/comparativo/galaxy-a55-vs-poco-x6-pro': typeof ComparativoGalaxyA55VsPocoX6ProRoute
@@ -357,6 +364,7 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/transparencia': typeof TransparenciaRoute
+  '/autor/ricardo-garcia': typeof AutorRicardoGarciaRoute
   '/comparativo/galaxy-a25-vs-redmi-note-13': typeof ComparativoGalaxyA25VsRedmiNote13Route
   '/comparativo/galaxy-a35-vs-redmi-note-13-pro': typeof ComparativoGalaxyA35VsRedmiNote13ProRoute
   '/comparativo/galaxy-a55-vs-poco-x6-pro': typeof ComparativoGalaxyA55VsPocoX6ProRoute
@@ -403,6 +411,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/transparencia': typeof TransparenciaRoute
+  '/autor/ricardo-garcia': typeof AutorRicardoGarciaRoute
   '/comparativo/galaxy-a25-vs-redmi-note-13': typeof ComparativoGalaxyA25VsRedmiNote13Route
   '/comparativo/galaxy-a35-vs-redmi-note-13-pro': typeof ComparativoGalaxyA35VsRedmiNote13ProRoute
   '/comparativo/galaxy-a55-vs-poco-x6-pro': typeof ComparativoGalaxyA55VsPocoX6ProRoute
@@ -450,6 +459,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/termos-de-uso'
     | '/transparencia'
+    | '/autor/ricardo-garcia'
     | '/comparativo/galaxy-a25-vs-redmi-note-13'
     | '/comparativo/galaxy-a35-vs-redmi-note-13-pro'
     | '/comparativo/galaxy-a55-vs-poco-x6-pro'
@@ -495,6 +505,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/termos-de-uso'
     | '/transparencia'
+    | '/autor/ricardo-garcia'
     | '/comparativo/galaxy-a25-vs-redmi-note-13'
     | '/comparativo/galaxy-a35-vs-redmi-note-13-pro'
     | '/comparativo/galaxy-a55-vs-poco-x6-pro'
@@ -540,6 +551,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/termos-de-uso'
     | '/transparencia'
+    | '/autor/ricardo-garcia'
     | '/comparativo/galaxy-a25-vs-redmi-note-13'
     | '/comparativo/galaxy-a35-vs-redmi-note-13-pro'
     | '/comparativo/galaxy-a55-vs-poco-x6-pro'
@@ -586,6 +598,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
   TransparenciaRoute: typeof TransparenciaRoute
+  AutorRicardoGarciaRoute: typeof AutorRicardoGarciaRoute
   ComparativoGalaxyA25VsRedmiNote13Route: typeof ComparativoGalaxyA25VsRedmiNote13Route
   ComparativoGalaxyA35VsRedmiNote13ProRoute: typeof ComparativoGalaxyA35VsRedmiNote13ProRoute
   ComparativoGalaxyA55VsPocoX6ProRoute: typeof ComparativoGalaxyA55VsPocoX6ProRoute
@@ -912,6 +925,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComparativoGalaxyA25VsRedmiNote13RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/autor/ricardo-garcia': {
+      id: '/autor/ricardo-garcia'
+      path: '/autor/ricardo-garcia'
+      fullPath: '/autor/ricardo-garcia'
+      preLoaderRoute: typeof AutorRicardoGarciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -939,6 +959,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,
   TransparenciaRoute: TransparenciaRoute,
+  AutorRicardoGarciaRoute: AutorRicardoGarciaRoute,
   ComparativoGalaxyA25VsRedmiNote13Route:
     ComparativoGalaxyA25VsRedmiNote13Route,
   ComparativoGalaxyA35VsRedmiNote13ProRoute:

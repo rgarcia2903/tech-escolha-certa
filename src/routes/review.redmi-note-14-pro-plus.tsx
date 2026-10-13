@@ -96,9 +96,9 @@ export const Route = createFileRoute("/review/redmi-note-14-pro-plus")({
             "@type": "Review",
             name: PAGE_TITLE,
             author: {
-              "@type": "Organization",
-              name: "Tech Escolha Certa",
-              url: "https://techescolhacerta.com.br/sobre",
+              "@type": "Person",
+              name: "Ricardo Garcia",
+              url: "https://techescolhacerta.com.br/autor/ricardo-garcia",
             },
             dateModified: "2026-10-02",
             reviewRating: {

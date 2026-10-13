@@ -11,7 +11,7 @@ export const Route = createFileRoute("/guias-de-compra")({
       {
         name: "description",
         content:
-          "Guias práticos para comprar celulares, notebooks, smartwatches e acessórios sem errar. Veja rankings por preço, marca e perfil de uso.",
+          "Guias práticos para comprar celulares sem errar. Veja rankings por preço, marca e perfil de uso.",
       },
       {
         property: "og" + ":title",

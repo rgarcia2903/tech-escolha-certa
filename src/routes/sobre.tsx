@@ -27,52 +27,56 @@ export const Route = createFileRoute("/sobre")({
     <InfoLayout
       eyebrow="Sobre"
       title="Tecnologia explicada de forma simples para comprar melhor"
-      intro="O Tech Escolha Certa é um portal editorial independente criado para ajudar você a escolher celulares, notebooks, acessórios e outros produtos de tecnologia com mais segurança."
+      intro="O Tech Escolha Certa é um portal editorial independente focado em ajudar você a escolher celulares com mais segurança."
     >
       <p>
-        Nosso objetivo é transformar fichas técnicas, comparativos e diferenças
-        entre modelos em recomendações claras, diretas e úteis para o dia a dia.
+        Nosso objetivo é transformar fichas técnicas, comparativos e diferenças entre modelos em
+        recomendações claras, diretas e úteis para o dia a dia.
       </p>
 
       <p>
-        Produzimos reviews, guias de compra, rankings e comparativos pensando em
-        pessoas que querem comprar bem, evitar arrependimento e entender qual
-        produto faz mais sentido para o próprio uso.
+        O projeto é editado por{" "}
+        <Link to="/autor/ricardo-garcia" className="font-semibold text-cta hover:underline">
+          Ricardo Garcia
+        </Link>
+        , responsável pela pesquisa, conferência das fontes, organização das comparações e
+        publicação dos conteúdos.
       </p>
 
       <p>
-        Não somos uma loja e não vendemos produtos diretamente. Quando indicamos
-        uma oferta, o usuário é direcionado para a loja parceira responsável pela
-        venda, preço, entrega, garantia e atendimento.
+        Produzimos reviews, guias de compra, rankings e comparativos pensando em pessoas que querem
+        comprar bem, evitar arrependimento e entender qual produto faz mais sentido para o próprio
+        uso.
       </p>
 
       <p>
-        Algumas páginas podem conter links afiliados. Isso significa que podemos
-        receber comissão caso você compre por meio desses links, sem custo extra
-        para você. Essa possibilidade não altera nossa lógica editorial: buscamos
-        recomendar produtos que façam sentido de verdade.
+        Não somos uma loja e não vendemos produtos diretamente. Quando indicamos uma oferta, o
+        usuário é direcionado para a loja parceira responsável pela venda, preço, entrega, garantia
+        e atendimento.
       </p>
 
       <p>
-        Nossa prioridade é responder perguntas práticas: qual celular vale mais a
-        pena, qual modelo tem melhor custo-benefício, qual é melhor para jogos,
-        qual câmera entrega mais segurança e quais escolhas devem ser evitadas.
+        Algumas páginas podem conter links afiliados. Isso significa que podemos receber comissão
+        caso você compre por meio desses links, sem custo extra para você. Essa possibilidade não
+        altera nossa lógica editorial: buscamos recomendar produtos que façam sentido de verdade.
+      </p>
+
+      <p>
+        Nossa prioridade é responder perguntas práticas: qual celular vale mais a pena, qual modelo
+        tem melhor custo-benefício, qual é melhor para jogos, qual câmera entrega mais segurança e
+        quais escolhas devem ser evitadas.
       </p>
 
       <p>
         Para entender melhor como funcionam os links afiliados, acesse nossa{" "}
-        <Link
-          to="/divulgacao-de-afiliados"
-          className="font-semibold text-cta hover:underline"
-        >
+        <Link to="/divulgacao-de-afiliados" className="font-semibold text-cta hover:underline">
           Divulgação de Afiliados
         </Link>
         .
       </p>
 
       <p>
-        Para sugerir um produto, comparativo ou guia, fale com a gente pela página
-        de{" "}
+        Para sugerir um produto, comparativo ou guia, fale com a gente pela página de{" "}
         <Link to="/contato" className="font-semibold text-cta hover:underline">
           contato
         </Link>
