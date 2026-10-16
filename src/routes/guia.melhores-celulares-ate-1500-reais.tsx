@@ -1,72 +1,205 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { PurchaseActions } from "@/components/site/PurchaseActions";
-import {
-  GALAXY_A25_AFFILIATE_URL,
-  GALAXY_A35_AFFILIATE_URL,
-  GALAXY_M35_AFFILIATE_URL,
-  REDMI_NOTE_13_4G_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
-import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowUpRight,
-  Award,
-  Battery,
-  Camera,
+  BatteryCharging,
   Check,
-  Gamepad2,
-  GitCompare,
-  Wallet,
+  CircleDollarSign,
+  Cpu,
+  ShieldCheck,
+  Smartphone,
   Trophy,
   X,
-  Sparkles,
-  ChevronDown,
-  ShieldCheck,
-  CalendarDays,
-  Clock,
-  User,
 } from "lucide-react";
-import { Badge, Rating } from "@/components/site/ui";
 
-const CANONICAL =
-  "https://techescolhacerta.com.br/guia/melhores-celulares-ate-1500-reais";
-const HERO_IMG = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
-const PAGE_TITLE = "5 melhores celulares até R$ 1.500 em 2026";
+import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
+import { AuthorByline } from "@/components/site/AuthorByline";
+import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
+import { PurchaseActions } from "@/components/site/PurchaseActions";
+import { Badge } from "@/components/site/ui";
+import {
+  GALAXY_A17_5G_AFFILIATE_URL,
+  GALAXY_A36_5G_AFFILIATE_URL,
+  MOTO_G56_5G_AFFILIATE_URL,
+  MOTO_G86_5G_AFFILIATE_URL,
+  REDMI_NOTE_15_5G_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
+import { trackAffiliateClick } from "@/lib/analytics";
+
+const CANONICAL = "https://techescolhacerta.com.br/guia/melhores-celulares-ate-1500-reais";
+const PAGE_TITLE = "Melhor celular até R$ 1.500 em 2026: top 5";
 const PAGE_DESCRIPTION =
-  "Compare Galaxy A25 5G, Redmi Note 13 4G, Galaxy M35 5G, Poco M6 Pro e Moto G84. Veja qual combina com seu uso antes de comprar.";
+  "Compare Moto G86, Galaxy A36, Redmi Note 15, Moto G56 e Galaxy A17. Veja qual vale a pena e o preço máximo para comprar sem errar.";
+
+const phones = [
+  {
+    position: 1,
+    id: "moto-g86",
+    name: "Moto G86 5G",
+    category: "Melhor geral em promoção",
+    priceRule: "compre somente se o preço final ficar em até R$ 1.500",
+    verdict:
+      "É o conjunto mais completo da lista quando entra no orçamento. A tela pOLED de alta definição, a câmera com estabilização e a resistência reforçada entregam uma experiência acima da média da faixa.",
+    idealFor: "Quem quer tela, câmera, resistência e desempenho equilibrados no mesmo aparelho.",
+    specs: ["Tela pOLED 1.5K de 120 Hz", "Bateria de 5.200 mAh", "Proteção IP68 e IP69"],
+    strengths: [
+      "Câmera principal de 50 MP com OIS",
+      "8 GB de RAM física e 256 GB",
+      "Construção mais resistente que a média",
+    ],
+    cautions: [
+      "Fora de promoção costuma ultrapassar R$ 1.500",
+      "Carregamento de 33 W é apenas mediano",
+    ],
+    actionHref: MOTO_G86_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Moto G86 5G",
+  },
+  {
+    position: 2,
+    id: "galaxy-a36",
+    name: "Galaxy A36 5G",
+    category: "Melhor Samsung",
+    priceRule: "excelente compra até R$ 1.500; acima disso compare o Moto G86",
+    verdict:
+      "É a escolha mais segura para quem prioriza tela AMOLED, atualizações e experiência Samsung. O suporte prolongado aumenta a vida útil e ajuda a compensar um desempenho que não é voltado a jogos pesados.",
+    idealFor: "Uso diário, fotos, vídeos e quem pretende ficar vários anos com o aparelho.",
+    specs: ["Tela Super AMOLED de 120 Hz", "Bateria de 5.000 mAh", "Proteção IP67"],
+    strengths: [
+      "Seis gerações de Android e seis anos de segurança",
+      "Câmera principal com OIS",
+      "Carregamento de até 45 W",
+    ],
+    cautions: [
+      "Confirme se a oferta é de 128 GB ou 256 GB",
+      "Não é a melhor opção para jogos pesados",
+    ],
+    actionHref: GALAXY_A36_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Galaxy A36 5G",
+  },
+  {
+    position: 3,
+    id: "redmi-note-15",
+    name: "Redmi Note 15 5G",
+    category: "Melhor tela e bateria",
+    priceRule: "boa compra até R$ 1.500 na versão de 8 GB e 256 GB",
+    verdict:
+      "É a opção mais fácil de recomendar para vídeos, redes sociais e autonomia. A combinação de tela AMOLED, bateria grande e bastante armazenamento é forte, desde que o anúncio seja realmente da versão 5G.",
+    idealFor: "Consumo de conteúdo, rotina intensa, fotos diurnas e jogos leves.",
+    specs: ["Tela AMOLED de 120 Hz", "Bateria de 5.520 mAh", "8 GB de RAM e 256 GB"],
+    strengths: [
+      "Boa autonomia e carregamento de 45 W",
+      "Câmera principal de 108 MP",
+      "Proteção IP65",
+    ],
+    cautions: ["Não confunda com o Redmi Note 15 4G", "O foco é equilíbrio, não desempenho gamer"],
+    actionHref: REDMI_NOTE_15_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Redmi Note 15 5G",
+  },
+  {
+    position: 4,
+    id: "moto-g56",
+    name: "Moto G56 5G",
+    category: "Melhor custo-benefício",
+    priceRule: "priorize até R$ 1.300; perto de R$ 1.500 escolha um dos três acima",
+    verdict:
+      "Faz sentido para quem quer 256 GB, resistência e câmera competente gastando menos. Ele perde em qualidade de tela para os modelos OLED, por isso o desconto precisa ser real.",
+    idealFor: "Trabalho externo, estudo, aplicativos do dia a dia e quem busca resistência.",
+    specs: ["Tela Full HD+ de 120 Hz", "Bateria de 5.200 mAh", "Proteção IP68 e IP69"],
+    strengths: [
+      "8 GB de RAM física e 256 GB",
+      "Câmera Sony de 50 MP",
+      "Boa resistência para a faixa de preço",
+    ],
+    cautions: [
+      "A tela LCD tem contraste inferior ao AMOLED",
+      "Perde valor se o Moto G86 estiver próximo de preço",
+    ],
+    actionHref: MOTO_G56_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Moto G56 5G",
+  },
+  {
+    position: 5,
+    id: "galaxy-a17",
+    name: "Galaxy A17 5G",
+    category: "Melhor para economizar",
+    priceRule: "vale a pena até R$ 1.000; acima disso compare o Moto G56",
+    verdict:
+      "É a compra básica da lista. A tela AMOLED, a câmera com estabilização e o suporte longo são diferenciais, mas a configuração de memória precisa ser conferida com cuidado.",
+    idealFor: "WhatsApp, bancos, redes sociais, vídeos e uso básico com 5G.",
+    specs: ["Tela Super AMOLED de 90 Hz", "Bateria de 5.000 mAh", "Câmera principal com OIS"],
+    strengths: [
+      "Tela acima da média dos aparelhos de entrada",
+      "Suporte prolongado da Samsung",
+      "Preço competitivo em promoções",
+    ],
+    cautions: [
+      "Evite pagar caro em versões com pouca RAM",
+      "Não é indicado para jogos pesados ou multitarefa intensa",
+    ],
+    actionHref: GALAXY_A17_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Galaxy A17 5G",
+  },
+];
+
+const quickPicks = [
+  ["Melhor geral em oferta", "Moto G86 5G"],
+  ["Melhor Samsung", "Galaxy A36 5G"],
+  ["Tela e bateria", "Redmi Note 15 5G"],
+  ["Custo-benefício", "Moto G56 5G"],
+  ["Até R$ 1.000", "Galaxy A17 5G"],
+];
+
+const faq = [
+  {
+    question: "Qual é o melhor celular até R$ 1.500 em 2026?",
+    answer:
+      "O Moto G86 5G é o melhor conjunto se o preço final ficar em até R$ 1.500. Se ele ultrapassar o teto, Galaxy A36 5G e Redmi Note 15 5G são escolhas mais racionais, conforme suporte ou bateria sejam a prioridade.",
+  },
+  {
+    question: "Galaxy A36 ou Moto G86: qual comprar?",
+    answer:
+      "Escolha o Galaxy A36 para suporte de software mais longo e ecossistema Samsung. Escolha o Moto G86 para uma combinação mais forte de tela, resistência e câmera. O preço final deve desempatar.",
+  },
+  {
+    question: "Redmi Note 15 5G vale a pena até R$ 1.500?",
+    answer:
+      "Sim, principalmente na versão de 8 GB e 256 GB. Ele oferece boa tela e autonomia, mas confira se o anúncio é realmente da versão 5G e se o vendedor tem boa reputação.",
+  },
+  {
+    question: "Celular até R$ 1.500 roda jogos pesados?",
+    answer:
+      "Roda com ajustes, mas esta faixa não entrega a mesma estabilidade de um modelo gamer. Moto G86 é o mais capaz deste ranking; para prioridade total em jogos, compare o guia específico de celulares para jogos até R$ 2.000.",
+  },
+  {
+    question: "O que conferir no anúncio antes de comprar?",
+    answer:
+      "Confirme modelo exato, 5G ou 4G, RAM física, armazenamento, garantia, reputação do vendedor, frete, parcelamento e preço final. Não trate RAM virtual como memória física.",
+  },
+];
 
 export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")({
   head: () => ({
     meta: [
-      { name: "twitter:title", content: PAGE_TITLE },
-      { name: "twitter:description", content: PAGE_DESCRIPTION },
-      {
-        title: PAGE_TITLE,
-      },
-      {
-        name: "description",
-        content: PAGE_DESCRIPTION,
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
       {
         name: "keywords",
         content:
-          "melhores celulares até 1500 reais, melhor celular até 1500, celular custo benefício 2026, Redmi Note 13, Galaxy A25, Moto G84, Galaxy M35, Poco M6 Pro",
+          "melhor celular até 1500 reais 2026, melhores celulares até 1500, celular custo-benefício, Moto G86, Galaxy A36, Redmi Note 15 5G",
       },
-      {
-        property: "og:title",
-        content: PAGE_TITLE,
-      },
-      {
-        property: "og:description",
-        content: PAGE_DESCRIPTION,
-      },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: HERO_IMG,
+        content: "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
       },
-      { property: "twitter:image", content: HERO_IMG },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      {
+        name: "twitter:image",
+        content: "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+      },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
@@ -74,13 +207,44 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "TechArticle",
+          "@type": "Article",
           headline: PAGE_TITLE,
           description: PAGE_DESCRIPTION,
-          author: { "@type": "Organization", name: "Tech Escolha Certa" },
           datePublished: "2026-06-01",
-          dateModified: "2026-10-01",
-          image: HERO_IMG,
+          dateModified: "2026-10-16",
+          mainEntityOfPage: CANONICAL,
+          author: {
+            "@type": "Person",
+            name: "Ricardo Garcia",
+            url: "https://techescolhacerta.com.br/autor/ricardo-garcia",
+          },
+          publisher: { "@type": "Organization", name: "Tech Escolha Certa" },
+          image: "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Melhores celulares até R$ 1.500 em 2026",
+          itemListElement: phones.map((phone) => ({
+            "@type": "ListItem",
+            position: phone.position,
+            name: phone.name,
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
         }),
       },
     ],
@@ -88,614 +252,453 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")(
   component: GuidePage,
 });
 
-type Pick = {
-  id: string;
-  category: string;
-  icon: typeof Award;
-  badge: { variant: "cta" | "teal" | "default"; label: string };
-  name: string;
-  image: string;
-  rating: number;
-  price: string;
-  short: string;
-  review: string;
-  profile: string;
-  pros: string[];
-  cons: string[];
-  affiliateUrl?: string;
-};
-
-const PICKS: Pick[] = [
-  {
-    id: "melhor-geral",
-    category: "Melhor escolha geral",
-    icon: Award,
-    badge: { variant: "cta", label: "Recomendado" },
-    name: "Samsung Galaxy A25 5G",
-    image:
-      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.6,
-    price: "até R$ 1.500",
-    short:
-      "A escolha mais equilibrada da faixa: tela AMOLED 120 Hz, 5G, boa câmera principal e experiência Samsung mais completa.",
-    review:
-      "O Galaxy A25 5G é uma das escolhas mais seguras para quem quer gastar até R$ 1.500. Ele entrega tela Super AMOLED de 120 Hz, desempenho suficiente para redes sociais, vídeos, banco, mapas e jogos leves, além de câmera principal competente para fotos do dia a dia. O grande diferencial está no conjunto: interface estável, bom suporte de atualizações e acabamento mais confiável que muitos rivais da mesma faixa.",
-    profile:
-      "Quem quer um celular equilibrado, confiável e com boa tela para usar por vários anos.",
-    pros: [
-      "Tela Super AMOLED 120 Hz",
-      "Boa câmera principal para o preço",
-      "5G",
-      "Interface Samsung madura",
-    ],
-    cons: [
-      "Carregamento poderia ser mais rápido",
-      "Não é o melhor para jogos pesados",
-    ],
-    affiliateUrl: GALAXY_A25_AFFILIATE_URL,
-  },
-  {
-    id: "melhor-custo-beneficio",
-    category: "Melhor custo-benefício",
-    icon: Wallet,
-    badge: { variant: "teal", label: "Custo-benefício" },
-    name: "Redmi Note 13 4G",
-    image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.5,
-    price: "até R$ 1.500",
-    short:
-      "Uma das melhores compras para quem prioriza tela AMOLED, bateria forte e preço agressivo.",
-    review:
-      "O Redmi Note 13 4G costuma ser muito competitivo abaixo de R$ 1.500. Ele se destaca pela tela AMOLED de 120 Hz, bateria de longa duração e carregamento rápido. É um aparelho excelente para consumo de conteúdo, WhatsApp, Instagram, YouTube, navegação e uso comum. Para quem não faz questão de 5G, pode entregar mais sensação de fluidez e tela melhor que muitos modelos básicos vendidos na mesma faixa.",
-    profile:
-      "Quem quer gastar menos e ainda levar tela bonita, boa bateria e uso diário fluido.",
-    pros: [
-      "Tela AMOLED 120 Hz",
-      "Boa autonomia de bateria",
-      "Carregamento rápido",
-      "Preço geralmente competitivo",
-    ],
-    cons: [
-      "Não tem 5G nesta versão",
-      "Câmeras secundárias simples",
-    ],
-    affiliateUrl: REDMI_NOTE_13_4G_AFFILIATE_URL,
-  },
-  {
-    id: "melhor-bateria",
-    category: "Melhor bateria",
-    icon: Battery,
-    badge: { variant: "default", label: "Bateria" },
-    name: "Samsung Galaxy M35 5G",
-    image:
-      "https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.4,
-    price: "quando abaixo de R$ 1.500",
-    short:
-      "Ideal para quem quer bateria acima da média, tela AMOLED e 5G sem passar do orçamento.",
-    review:
-      "O Galaxy M35 5G é uma alternativa forte quando aparece em promoção abaixo de R$ 1.500. O destaque é a bateria grande, que tende a aguentar um dia intenso com mais tranquilidade. Ele também traz tela AMOLED, 5G e desempenho adequado para rotina. É uma compra interessante para quem passa muito tempo fora de casa e prefere autonomia a design fino.",
-    profile:
-      "Quem trabalha fora, usa muito redes sociais, mapas, vídeos e não quer depender de tomada.",
-    pros: [
-      "Bateria acima da média",
-      "Tela AMOLED",
-      "5G",
-      "Bom pacote para uso diário",
-    ],
-    cons: [
-      "Pode ser mais pesado",
-      "Vale mais quando está em promoção",
-    ],
-    affiliateUrl: GALAXY_M35_AFFILIATE_URL,
-  },
-  {
-    id: "melhor-para-jogos-leves",
-    category: "Melhor para jogos leves",
-    icon: Gamepad2,
-    badge: { variant: "teal", label: "Desempenho" },
-    name: "Poco M6 Pro",
-    image:
-      "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.3,
-    price: "até R$ 1.500",
-    short:
-      "Boa opção para quem quer desempenho honesto, tela fluida e carregamento rápido gastando pouco.",
-    review:
-      "O Poco M6 Pro entra como opção interessante para quem quer um celular barato com boa fluidez. Ele não é um aparelho gamer pesado, mas roda bem jogos leves e populares com ajustes moderados. Também chama atenção pelo carregamento rápido e pela tela de boa qualidade. É uma escolha mais indicada para quem aceita abrir mão de 5G em troca de desempenho e preço.",
-    profile:
-      "Quem joga casualmente, usa bastante redes sociais e quer resposta rápida no dia a dia.",
-    pros: [
-      "Boa fluidez pelo preço",
-      "Carregamento rápido",
-      "Tela agradável para vídeos e jogos",
-      "Preço competitivo",
-    ],
-    cons: [
-      "Não é ideal para jogos pesados",
-      "Pode não ter 5G dependendo da versão",
-    ],
-  },
-  {
-    id: "melhor-camera",
-    category: "Melhor para fotos simples",
-    icon: Camera,
-    badge: { variant: "default", label: "Câmera" },
-    name: "Motorola Moto G84",
-    image:
-      "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.2,
-    price: "quando abaixo de R$ 1.500",
-    short:
-      "Uma alternativa interessante quando aparece em promoção, com boa tela, design leve e câmera principal com OIS.",
-    review:
-      "O Moto G84 continua sendo uma opção interessante quando encontrado abaixo de R$ 1.500. Ele tem design leve, boa tela pOLED e câmera principal com estabilização óptica, algo importante para fotos com menos tremido. O desempenho é suficiente para uso comum e a interface da Motorola agrada quem prefere uma experiência mais limpa.",
-    profile:
-      "Quem quer um celular leve, bonito, com boa tela e câmera principal estável para fotos do cotidiano.",
-    pros: [
-      "Tela pOLED de boa qualidade",
-      "Câmera principal com OIS",
-      "Design leve",
-      "Interface limpa",
-    ],
-    cons: [
-      "Depende muito do preço promocional",
-      "Atualizações costumam ser menos fortes que Samsung",
-    ],
-  },
-];
-
-const QUICK_RANKING = [
-  ["Melhor geral", "Galaxy A25 5G"],
-  ["Melhor custo-benefício", "Redmi Note 13 4G"],
-  ["Melhor bateria", "Galaxy M35 5G"],
-  ["Melhor para jogos leves", "Poco M6 Pro"],
-  ["Melhor câmera simples", "Moto G84"],
-];
-
-const FAQS = [
-  {
-    question: "Qual é o melhor celular até R$ 1.500 em 2026?",
-    answer:
-      "Para a maioria das pessoas, o Galaxy A25 5G é a escolha mais equilibrada até R$ 1.500 por combinar tela AMOLED 120 Hz, 5G, boa câmera principal e experiência Samsung mais madura.",
-  },
-  {
-    question: "Vale a pena comprar celular Xiaomi até R$ 1.500?",
-    answer:
-      "Vale, principalmente quando o foco é tela, bateria e carregamento rápido. O Redmi Note 13 4G é uma boa opção, mas quem faz questão de 5G deve comparar com modelos Samsung ou Motorola.",
-  },
-  {
-    question: "Celular até R$ 1.500 roda jogos?",
-    answer:
-      "Roda jogos leves e populares, como Free Fire, Roblox, Subway Surfers e alguns jogos competitivos com gráficos reduzidos. Para jogos pesados, é melhor subir para modelos como Poco X6 Pro ou Galaxy A55.",
-  },
-  {
-    question: "O que priorizar em um celular até R$ 1.500?",
-    answer:
-      "Priorize tela AMOLED, pelo menos 6 GB de RAM, 128 GB ou 256 GB de armazenamento, bateria de 5.000 mAh, boa política de atualizações e câmera principal com boa estabilização.",
-  },
-];
-
 function GuidePage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  useEffect(() => {
-    document.documentElement.classList.add("scroll-smooth");
-    return () => document.documentElement.classList.remove("scroll-smooth");
-  }, []);
-
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
-      <section className="relative overflow-hidden bg-surface">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+    <main className="min-h-screen overflow-x-hidden bg-background">
+      <section className="relative overflow-hidden border-b border-border bg-surface">
+        <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-cta/10 blur-[120px]" />
+        <div className="absolute -bottom-40 -left-32 h-[26rem] w-[26rem] rounded-full bg-teal/10 blur-[120px]" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-                <Badge variant="teal">Guia de compra</Badge>
-                <span className="inline-flex items-center gap-1">
-                  <CalendarDays className="h-3.5 w-3.5" />
-                  Atualizado em outubro de 2026
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <Clock className="h-3.5 w-3.5" />
-                  9 min de leitura
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <User className="h-3.5 w-3.5" />
-                  Tech Escolha Certa
-                </span>
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="cta">Guia de compra</Badge>
+                <Badge variant="soft">Atualizado em outubro de 2026</Badge>
               </div>
 
-              <h1 className="mt-6 font-heading text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-                5 melhores celulares até R$ 1.500 em 2026
+              <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">
+                Melhor celular até R$ 1.500 em 2026
               </h1>
 
-              <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                Selecionamos os celulares que fazem mais sentido para quem quer
-                gastar até R$ 1.500 sem cair em modelos fracos. O foco aqui é
-                equilíbrio: tela boa, bateria forte, desempenho honesto, câmera
-                confiável e bom custo-benefício.
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                O Moto G86 é a melhor compra se uma oferta o colocar dentro do teto. Galaxy A36 e
+                Redmi Note 15 são as alternativas mais seguras; Moto G56 e Galaxy A17 servem para
+                economizar.
+              </p>
+
+              <AuthorByline reviewedAt="16 de outubro de 2026" className="mt-6" />
+              <p className="mt-3 text-xs text-muted-foreground">
+                Análise documental independente • preços e estoque mudam diariamente
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#ranking"
-                  className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-sm font-bold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
                 >
-                  Ver ranking
+                  Ver o ranking
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#como-escolher"
-                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-soft transition-all hover:bg-surface"
+                  href="#tabela"
+                  className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-5 py-3 text-sm font-bold text-foreground transition hover:bg-secondary"
                 >
-                  Como escolher
+                  Comparar os cinco
                 </a>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-border bg-card p-6 shadow-elevated">
+            <aside className="rounded-2xl border border-border bg-card p-6 shadow-soft">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cta/10 text-cta">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-cta/10 text-cta">
                   <Trophy className="h-6 w-6" />
-                </div>
+                </span>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    Resumo rápido
-                  </span>
-                  <h2 className="font-heading text-2xl font-bold">
-                    Escolha certa por perfil
-                  </h2>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                    Resposta rápida
+                  </p>
+                  <h2 className="text-2xl font-bold text-foreground">Melhor por perfil</h2>
                 </div>
               </div>
 
               <div className="mt-6 space-y-3">
-                {QUICK_RANKING.map(([label, model]) => (
+                {quickPicks.map(([label, product]) => (
                   <div
                     key={label}
-                    className="flex items-center justify-between gap-4 rounded-xl bg-surface/70 px-4 py-3"
+                    className="flex items-center justify-between gap-4 rounded-xl bg-surface px-4 py-3"
                   >
                     <span className="text-sm text-muted-foreground">{label}</span>
-                    <span className="text-sm font-semibold text-foreground text-right">
-                      {model}
-                    </span>
+                    <strong className="text-right text-sm text-foreground">{product}</strong>
                   </div>
                 ))}
               </div>
 
-              <p className="mt-5 text-xs text-muted-foreground leading-relaxed">
-                Os preços variam bastante. A recomendação é usar esta lista como
-                referência editorial e conferir a oferta atual antes de comprar.
+              <p className="mt-5 text-xs leading-5 text-muted-foreground">
+                A regra é simples: se o preço final passar de R$ 1.500, não compre por este guia.
+                Compare as opções da faixa seguinte.
               </p>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section id="ranking" className="mx-auto max-w-7xl px-6 lg:px-8 py-14 md:py-20">
-        <div className="mb-10 max-w-3xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">
-            Ranking
-          </span>
-          <h2 className="mt-3 font-heading text-3xl md:text-4xl font-bold">
-            Top celulares até R$ 1.500
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+          <PurchaseActions
+            options={[
+              {
+                productName: "Moto G86 5G",
+                href: MOTO_G86_5G_AFFILIATE_URL,
+                label: "Ver oferta do Moto G86",
+              },
+              {
+                productName: "Galaxy A36 5G",
+                href: GALAXY_A36_5G_AFFILIATE_URL,
+                label: "Ver oferta do Galaxy A36",
+              },
+            ]}
+            pageType="guia"
+            placement="hero"
+            title="Comece pelos dois modelos mais completos"
+            description="Só avance se o preço final, com frete e juros, permanecer em até R$ 1.500."
+          />
+        </div>
+      </section>
+
+      <section id="tabela" className="mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">Comparação</p>
+          <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+            Qual celular comprar até R$ 1.500
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            A lista abaixo prioriza aparelhos que entregam boa experiência real
-            pelo preço. Não é só ficha técnica: consideramos equilíbrio, risco
-            de compra, vida útil e facilidade de recomendação.
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            Os valores são limites editoriais, não preços garantidos. Eles impedem que uma oferta
+            aparentemente boa coloque um aparelho inferior perto demais de um modelo melhor.
           </p>
         </div>
 
-        <div className="space-y-12">
-          {PICKS.map((pick) => (
-            <PickCard key={pick.id} pick={pick} />
-          ))}
+        <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[760px] text-left text-sm">
+              <thead className="bg-surface text-foreground">
+                <tr>
+                  <th className="px-5 py-4 font-bold">Posição</th>
+                  <th className="px-5 py-4 font-bold">Modelo</th>
+                  <th className="px-5 py-4 font-bold">Melhor para</th>
+                  <th className="px-5 py-4 font-bold">Regra de compra</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {phones.map((phone) => (
+                  <tr key={phone.name}>
+                    <td className="px-5 py-4 font-bold text-cta">{phone.position}º</td>
+                    <td className="px-5 py-4 font-bold text-foreground">{phone.name}</td>
+                    <td className="px-5 py-4 text-muted-foreground">{phone.category}</td>
+                    <td className="px-5 py-4 text-muted-foreground">{phone.priceRule}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
-          <div className="flex items-start gap-4">
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-cta/10 text-cta">
-              <GitCompare className="h-6 w-6" />
-            </span>
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
-                Duelo principal da faixa
-              </span>
-              <h2 className="mt-1 font-heading text-2xl font-bold text-foreground">
-                Galaxy A25 5G ou Redmi Note 13 4G?
-              </h2>
-              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                Compare 5G, câmera, desempenho, tela, bateria e suporte antes de escolher os dois
-                modelos mais indicados deste ranking.
-              </p>
-            </div>
+      <section id="ranking" className="border-y border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">Ranking</p>
+            <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+              Os 5 melhores celulares até R$ 1.500
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              A ordem considera o conjunto e também o preço máximo aceitável. Não usamos notas
+              inventadas: cada recomendação tem condição de compra, vantagem e perda explícitas.
+            </p>
           </div>
+
+          <div className="mt-10 space-y-7">
+            {phones.map((phone) => (
+              <article
+                id={phone.id}
+                key={phone.name}
+                className="rounded-2xl border border-border bg-card p-6 shadow-soft md:p-8"
+              >
+                <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
+                  <div className="max-w-3xl">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="grid h-8 w-8 place-items-center rounded-full bg-cta text-xs font-extrabold text-cta-foreground">
+                        {phone.position}
+                      </span>
+                      <Badge variant="cta">{phone.category}</Badge>
+                    </div>
+                    <h3 className="mt-4 text-2xl font-bold text-foreground md:text-3xl">
+                      {phone.name}
+                    </h3>
+                    <p className="mt-2 text-sm font-semibold text-cta">
+                      Regra de compra: {phone.priceRule}
+                    </p>
+                    <p className="mt-5 leading-relaxed text-muted-foreground">{phone.verdict}</p>
+                    <p className="mt-3 text-sm text-foreground">
+                      <strong>Indicado para:</strong> {phone.idealFor}
+                    </p>
+                  </div>
+
+                  <div className="grid min-w-72 gap-2 sm:grid-cols-3 lg:grid-cols-1">
+                    {phone.specs.map((spec) => (
+                      <div
+                        key={spec}
+                        className="rounded-xl bg-surface px-4 py-3 text-sm text-foreground"
+                      >
+                        {spec}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-7 grid gap-6 border-t border-border pt-6 md:grid-cols-2">
+                  <div>
+                    <p className="text-sm font-bold text-foreground">Pontos fortes</p>
+                    <ul className="mt-3 space-y-2">
+                      {phone.strengths.map((item) => (
+                        <li key={item} className="flex gap-2 text-sm text-muted-foreground">
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-foreground">Pontos de atenção</p>
+                    <ul className="mt-3 space-y-2">
+                      {phone.cautions.map((item) => (
+                        <li key={item} className="flex gap-2 text-sm text-muted-foreground">
+                          <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <a
+                  href={phone.actionHref}
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: phone.name,
+                      pageType: "guia",
+                      ctaPlacement: "ranking",
+                    })
+                  }
+                  className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-sm font-bold text-cta-foreground transition hover:-translate-y-0.5 hover:brightness-105"
+                >
+                  {phone.actionLabel}
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <AffiliateRedirectNotice className="mt-6 rounded-xl border border-border bg-card p-4" />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">Como escolher</p>
+          <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+            O que conferir antes de pagar
+          </h2>
+        </div>
+
+        <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <CriteriaCard
+            icon={<CircleDollarSign className="h-5 w-5" />}
+            title="Preço final"
+            text="Some frete e juros. Se passar de R$ 1.500, compare o guia da faixa seguinte em vez de forçar a compra."
+          />
+          <CriteriaCard
+            icon={<Cpu className="h-5 w-5" />}
+            title="RAM física"
+            text="Prefira 8 GB quando possível. RAM Boost ou RAM virtual não substitui memória física e não deve decidir a compra."
+          />
+          <CriteriaCard
+            icon={<BatteryCharging className="h-5 w-5" />}
+            title="Bateria e carga"
+            text="Compare capacidade, carregamento e se o carregador acompanha o produto. Número maior isolado não conta toda a história."
+          />
+          <CriteriaCard
+            icon={<ShieldCheck className="h-5 w-5" />}
+            title="Vendedor e garantia"
+            text="Confirme reputação, nota fiscal, versão brasileira ou global, prazo de entrega e cobertura de garantia."
+          />
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
           <Link
-            to="/comparativo/galaxy-a25-vs-redmi-note-13"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-sm font-bold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
+            to="/melhores-celulares-custo-beneficio"
+            className="rounded-2xl border border-border bg-card p-5 font-bold text-foreground shadow-soft transition hover:-translate-y-0.5 hover:border-cta/40"
           >
-            Comparar os dois <ArrowUpRight className="h-4 w-4" />
+            Ver custo-benefício por faixa
+          </Link>
+          <Link
+            to="/guia/melhores-celulares-para-jogos-ate-2000"
+            className="rounded-2xl border border-border bg-card p-5 font-bold text-foreground shadow-soft transition hover:-translate-y-0.5 hover:border-cta/40"
+          >
+            Comparar celulares para jogos
+          </Link>
+          <Link
+            to="/melhores-celulares-ate-2000"
+            className="rounded-2xl border border-border bg-card p-5 font-bold text-foreground shadow-soft transition hover:-translate-y-0.5 hover:border-cta/40"
+          >
+            Subir o orçamento para R$ 2.000
           </Link>
         </div>
       </section>
 
-      <section id="como-escolher" className="bg-surface">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-          <div className="max-w-3xl">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
-              Guia rápido
-            </span>
-            <h2 className="mt-3 font-heading text-3xl md:text-4xl font-bold">
-              Como escolher um celular até R$ 1.500
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Nessa faixa de preço, o melhor celular não é necessariamente o que
-              tem mais megapixels ou mais memória no anúncio. O ideal é buscar o
-              conjunto mais equilibrado.
+      <section className="border-y border-border bg-surface">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 md:py-20">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
+              Transparência
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-foreground">Como montamos a lista</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Esta é uma análise documental, não um teste próprio de laboratório. Comparamos
+              especificações oficiais, configuração de memória, suporte, garantia, geração e faixa
+              de preço. Os limites são referências editoriais e precisam ser confirmados no dia.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            <CriteriaCard
-              icon={ShieldCheck}
-              title="Priorize segurança de compra"
-              text="Prefira marcas com assistência, boas atualizações e modelos conhecidos. Isso reduz risco de comprar aparelho problemático."
-            />
-            <CriteriaCard
-              icon={Battery}
-              title="Bateria importa muito"
-              text="Procure modelos com 5.000 mAh ou mais. Para a maioria das pessoas, autonomia vale mais que pequenos ganhos de câmera."
-            />
-            <CriteriaCard
-              icon={Sparkles}
-              title="Tela boa muda a experiência"
-              text="AMOLED ou pOLED com 90 Hz/120 Hz deixa o uso mais agradável em redes sociais, vídeos e navegação."
-            />
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+            <h3 className="text-lg font-bold text-foreground">Fontes oficiais</h3>
+            <ul className="mt-4 space-y-3 text-sm">
+              {[
+                [
+                  "Motorola Brasil — Moto G86 5G",
+                  "https://www.motorola.com.br/smartphone-moto-g86-5g-256gb/p",
+                ],
+                [
+                  "Samsung Brasil — Galaxy A36 5G",
+                  "https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a36-5g-awesome-black-128gb-sm-a366ezkbzto/",
+                ],
+                [
+                  "Xiaomi Brasil — Redmi Note 15 5G",
+                  "https://www.mi.com/br/product/redmi-note-15-5g/specs/",
+                ],
+                [
+                  "Motorola Brasil — Moto G56 5G",
+                  "https://www.motorola.com.br/smartphone-moto-g56-5g-256gb/p",
+                ],
+                [
+                  "Samsung Brasil — Galaxy A17 5G",
+                  "https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a17-5g-gray-128gb-sm-a176bzaozto/",
+                ],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-cta hover:underline"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 border-t border-border pt-4 text-xs leading-5 text-muted-foreground">
+              Todos os botões de preço são links afiliados do Mercado Livre e podem gerar comissão
+              sem custo adicional. As fichas oficiais acima são apenas fontes.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 lg:px-8 py-14 md:py-20">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">
               Perguntas frequentes
-            </span>
-            <h2 className="mt-3 font-heading text-3xl md:text-4xl font-bold">
-              Dúvidas comuns antes de comprar
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Respostas diretas para evitar escolhas ruins na faixa de até
-              R$ 1.500.
             </p>
+            <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+              Respostas antes da compra
+            </h2>
           </div>
-
           <div className="space-y-3">
-            {FAQS.map((faq, index) => (
-              <div
-                key={faq.question}
-                className="rounded-2xl border border-border bg-card shadow-soft"
+            {faq.map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-2xl border border-border bg-card p-5 shadow-soft"
               >
-                <button
-                  type="button"
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-                >
-                  <span className="font-semibold text-foreground">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`h-4 w-4 shrink-0 transition-transform ${
-                      openFaq === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openFaq === index && (
-                  <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-foreground">
+                  {item.question}
+                  <Smartphone className="h-5 w-5 shrink-0 text-cta transition group-open:rotate-6" />
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.answer}</p>
+              </details>
             ))}
           </div>
         </div>
-      </section>
 
-      <section className="bg-foreground text-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 md:py-16">
-          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+        <div className="mt-12 rounded-2xl border border-cta/30 bg-card p-6 shadow-soft ring-1 ring-cta/10 md:p-8">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="font-heading text-3xl font-bold">
-                Quer comparar com modelos mais fortes?
-              </h2>
-              <p className="mt-3 max-w-2xl text-background/75">
-                Se o orçamento puder subir um pouco, veja também nossa lista de
-                celulares até R$ 2.000 e os reviews dos intermediários mais
-                buscados.
+              <h2 className="text-2xl font-bold text-foreground">Conclusão: qual comprar?</h2>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
+                Comece pelo Moto G86 e confirme se ele cabe no teto. Se não couber, escolha Galaxy
+                A36 para suporte, Redmi Note 15 para tela e bateria, Moto G56 para economizar ou
+                Galaxy A17 para uso básico perto de R$ 1.000.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/melhores-celulares-ate-2000"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground"
-              >
-                Ver até R$ 2.000
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/review/galaxy-a55"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/20 px-5 py-3 text-sm font-semibold text-background"
-              >
-                Review Galaxy A55
-              </Link>
-            </div>
+            <a
+              href={MOTO_G86_5G_AFFILIATE_URL}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Moto G86 5G",
+                  pageType: "guia",
+                  ctaPlacement: "conclusion",
+                })
+              }
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-sm font-bold text-cta-foreground transition hover:-translate-y-0.5 hover:brightness-105"
+            >
+              Conferir Moto G86
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
           </div>
-
-          <PurchaseActions
-            className="mt-8"
-            options={[
-              {
-                productName: "Galaxy A35",
-                href: GALAXY_A35_AFFILIATE_URL,
-                label: "Ver Galaxy A35 no Mercado Livre",
-              },
-            ]}
-            pageType="guia"
-            placement="decision"
-            title="Se puder investir um pouco mais"
-            description="O Galaxy A35 é uma opção mais completa em tela, construção e longevidade. Compare o preço antes de aumentar o orçamento."
-            tone="dark"
-          />
+          <AffiliateRedirectNotice className="mt-5 border-t border-border pt-5" />
         </div>
       </section>
+
+      <MobilePurchaseBar
+        options={[
+          {
+            productName: "Moto G86 5G",
+            href: MOTO_G86_5G_AFFILIATE_URL,
+            label: "Moto G86",
+          },
+          {
+            productName: "Galaxy A36 5G",
+            href: GALAXY_A36_5G_AFFILIATE_URL,
+            label: "Galaxy A36",
+          },
+        ]}
+        pageType="guia"
+        title="Melhores até R$ 1.500"
+        eyebrow="Confira o preço atual"
+      />
     </main>
   );
 }
 
 function CriteriaCard({
-  icon: Icon,
+  icon,
   title,
   text,
 }: {
-  icon: typeof ShieldCheck;
+  icon: React.ReactNode;
   title: string;
   text: string;
 }) {
   return (
     <article className="rounded-2xl border border-border bg-card p-6 shadow-soft">
-      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal/10 text-teal">
-        <Icon className="h-5 w-5" />
-      </div>
-      <h3 className="mt-5 font-heading text-xl font-bold text-foreground">
-        {title}
-      </h3>
-      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-        {text}
-      </p>
+      <div className="grid h-11 w-11 place-items-center rounded-xl bg-cta/10 text-cta">{icon}</div>
+      <h3 className="mt-5 text-xl font-bold text-foreground">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p>
     </article>
-  );
-}
-
-function PickCard({ pick }: { pick: Pick }) {
-  const Icon = pick.icon;
-
-  return (
-    <section id={pick.id} className="scroll-mt-24">
-      <div className="mb-5 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cta/10 text-cta">
-          <Icon className="h-5 w-5" />
-        </div>
-        <div>
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
-            {pick.category}
-          </span>
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-            {pick.name}
-          </h2>
-        </div>
-      </div>
-
-      <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:shadow-elevated">
-        <div className="grid md:grid-cols-2 w-full">
-          <div className="relative aspect-[4/3] md:aspect-auto bg-surface overflow-hidden">
-            <img
-              src={pick.image}
-              alt={pick.name}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.04]"
-            />
-            <div className="absolute top-4 left-4">
-              <Badge variant={pick.badge.variant}>{pick.badge.label}</Badge>
-            </div>
-          </div>
-          <div className="p-6 md:p-8 flex flex-col">
-            <div className="flex items-center justify-between gap-3">
-              <Rating value={pick.rating} />
-              <div className="text-right">
-                <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
-                  Faixa indicada
-                </span>
-                <span className="font-heading text-xl font-bold text-foreground">
-                  {pick.price}
-                </span>
-              </div>
-            </div>
-            <p className="mt-4 text-sm text-muted-foreground italic border-l-2 border-teal/40 pl-3">
-              "{pick.short}"
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              {pick.review}
-            </p>
-
-            <div className="mt-5 rounded-xl bg-surface/60 p-4">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                Ideal para
-              </span>
-              <p className="mt-1 text-sm text-foreground">{pick.profile}</p>
-            </div>
-
-            {pick.affiliateUrl ? (
-              <a
-                href={pick.affiliateUrl}
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                onClick={() =>
-                  trackAffiliateClick({
-                    productName: pick.name,
-                    pageType: "guia",
-                    ctaPlacement: "ranking",
-                  })
-                }
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
-              >
-                Ver preço no Mercado Livre
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
-            ) : (
-              <Link
-                to="/ofertas"
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-sm font-semibold text-foreground shadow-soft transition-all hover:bg-secondary hover:-translate-y-0.5"
-              >
-                Ver alternativas disponíveis
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            )}
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 border-t border-border">
-          <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-border">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-teal">
-              Pontos fortes
-            </span>
-            <ul className="mt-3 space-y-2">
-              {pick.pros.map((p) => (
-                <li key={p} className="flex gap-2 text-sm text-muted-foreground">
-                  <Check className="h-4 w-4 shrink-0 text-teal mt-0.5" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="p-6 md:p-8">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-cta">
-              Pontos de atenção
-            </span>
-            <ul className="mt-3 space-y-2">
-              {pick.cons.map((c) => (
-                <li key={c} className="flex gap-2 text-sm text-muted-foreground">
-                  <X className="h-4 w-4 shrink-0 text-cta mt-0.5" />
-                  <span>{c}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </article>
-    </section>
   );
 }

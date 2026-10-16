@@ -20,6 +20,7 @@ import {
   POCO_X7_PRO_AFFILIATE_URL,
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
+  REDMI_NOTE_15_5G_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
 
@@ -45,8 +46,8 @@ const CURRENT_PICKS = [
     caution:
       "O Snapdragon 6 Gen 3 atende bem ao uso diário, mas o POCO X8 Pro é a escolha mais adequada para jogos pesados.",
     specsHref: "https://www.mi.com/br/product/redmi-note-15-5g/",
-    storeHref:
-      "https://www.mibrasil.com.br/smartphone-redmi-note-15-5g-nfc-br-8-8gb-ram-virtual-256gb-prin-p54644",
+    storeHref: REDMI_NOTE_15_5G_AFFILIATE_URL,
+    storeIsAffiliate: true,
   },
   {
     category: "Melhor câmera e resistência",
@@ -65,6 +66,7 @@ const CURRENT_PICKS = [
     specsHref: "https://www.mi.com/br/product/redmi-note-15-pro-5g/",
     storeHref:
       "https://www.mibrasil.com.br/smartphone-redmi-note15pro-5g-nfc-br-8-8gb-ram-virtual-512gb-prin-p54611",
+    storeIsAffiliate: false,
   },
   {
     category: "Melhor para jogos",
@@ -83,6 +85,7 @@ const CURRENT_PICKS = [
     specsHref: "https://www.mi.com/br/product/poco-x8-pro/",
     storeHref:
       "https://www.mibrasil.com.br/smartphone-poco-x8-pro-5g-nfc-br-12-12gb-ram-virtual-512gb-prin-p137149",
+    storeIsAffiliate: false,
   },
   {
     category: "Melhor experiência premium",
@@ -100,6 +103,7 @@ const CURRENT_PICKS = [
       "O preço oficial é alto. Compare com celulares premium Samsung e Apple antes de decidir.",
     specsHref: "https://www.mi.com/br/product/xiaomi-15t/",
     storeHref: "https://www.mibrasil.com.br/smartphone-xiaomi-15t-5g-prin-p13612",
+    storeIsAffiliate: false,
   },
 ] as const;
 
@@ -194,7 +198,7 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
           url: CANONICAL,
           inLanguage: "pt-BR",
           datePublished: "2026-06-11",
-          dateModified: "2026-10-13",
+          dateModified: "2026-10-16",
           image: HERO_IMAGE,
           author: {
             "@type": "Person",
@@ -276,13 +280,21 @@ function MelhoresCelularesXiaomi() {
               X8 Pro. Para câmera e acabamento, compare com Note 15 Pro 5G e Xiaomi 15T.
             </p>
             <a
-              href="https://www.mi.com/br/product/redmi-note-15-5g/"
+              href={REDMI_NOTE_15_5G_AFFILIATE_URL}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow sponsored noopener noreferrer"
+              onClick={() =>
+                trackAffiliateClick({
+                  productName: "Redmi Note 15 5G",
+                  pageType: "guia",
+                  ctaPlacement: "hero",
+                })
+              }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-105"
             >
-              Conferir ficha oficial <ExternalLink className="h-4 w-4" />
+              Conferir preço atual <ExternalLink className="h-4 w-4" />
             </a>
+            <AffiliateRedirectNotice tone="dark" className="mt-3" />
           </>
         }
       >
@@ -301,7 +313,7 @@ function MelhoresCelularesXiaomi() {
       </CategoryHero>
 
       <div className="mx-auto max-w-7xl px-6 pt-8 lg:px-8">
-        <AuthorByline reviewedAt="13 de outubro de 2026" />
+        <AuthorByline reviewedAt="16 de outubro de 2026" />
 
         <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
           <div className="flex items-start gap-3">
@@ -403,16 +415,32 @@ function MelhoresCelularesXiaomi() {
                   <a
                     href={item.storeHref}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel={
+                      item.storeIsAffiliate
+                        ? "nofollow sponsored noopener noreferrer"
+                        : "noopener noreferrer"
+                    }
+                    onClick={
+                      item.storeIsAffiliate
+                        ? () =>
+                            trackAffiliateClick({
+                              productName: item.product,
+                              pageType: "guia",
+                              ctaPlacement: "ranking_atual",
+                            })
+                        : undefined
+                    }
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-[#0F3F4A]"
                   >
-                    Ver disponibilidade
+                    {item.storeIsAffiliate ? "Conferir preço" : "Ver disponibilidade"}
                   </a>
                 </div>
               </article>
             );
           })}
         </div>
+
+        <AffiliateRedirectNotice className="mt-5" />
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">

@@ -3,7 +3,12 @@ import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNoti
 import { AuthorByline } from "@/components/site/AuthorByline";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
-import { POCO_X6_PRO_AFFILIATE_URL, POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
+import {
+  MOTO_G86_5G_AFFILIATE_URL,
+  POCO_X6_PRO_AFFILIATE_URL,
+  POCO_X7_PRO_AFFILIATE_URL,
+  REDMI_NOTE_15_5G_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
 import {
   ArrowUpRight,
@@ -80,7 +85,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
             name: "Tech Escolha Certa",
           },
           datePublished: "2026-06-02",
-          dateModified: "2026-10-14",
+          dateModified: "2026-10-16",
           mainEntityOfPage: CANONICAL,
         }),
       },
@@ -209,9 +214,9 @@ const phones = [
       "Não é indicado para gráficos máximos em jogos pesados",
       "Carregamento de 33 W é apenas mediano",
     ],
-    actionHref: "https://www.motorola.com.br/smartphone-moto-g86-5g-256gb/p",
-    actionLabel: "Ver ficha oficial do Moto G86",
-    isAffiliate: false,
+    actionHref: MOTO_G86_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Moto G86",
+    isAffiliate: true,
     secondaryPath: "/celulares",
     secondaryLabel: "Ver outros celulares",
   },
@@ -235,9 +240,9 @@ const phones = [
       "Exige reduzir gráficos em títulos pesados",
       "Não substitui POCO X7 Pro ou X6 Pro para foco total em jogos",
     ],
-    actionHref: "https://www.mi.com/br/product/redmi-note-15-5g/",
-    actionLabel: "Ver ficha oficial do Redmi Note 15 5G",
-    isAffiliate: false,
+    actionHref: REDMI_NOTE_15_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Redmi Note 15 5G",
+    isAffiliate: true,
     secondaryPath: "/melhores-celulares-xiaomi",
     secondaryLabel: "Ver guia Xiaomi",
   },
@@ -298,7 +303,7 @@ function GamingPhonesGuide() {
                 antes de decidir.
               </p>
 
-              <AuthorByline reviewedAt="14 de outubro de 2026" className="mt-6" />
+              <AuthorByline reviewedAt="16 de outubro de 2026" className="mt-6" />
               <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
                 <span>Leitura • 9 min</span>
                 <span>Análise documental independente</span>
@@ -597,7 +602,7 @@ function GamingPhonesGuide() {
                 </li>
               </ul>
               <p className="mt-5 border-t border-border pt-4 text-xs leading-5 text-muted-foreground">
-                Imagens de divulgação dos fabricantes. Os botões de preço dos modelos POCO são
+                Imagens de divulgação dos fabricantes. Todos os botões de preço do ranking são
                 afiliados; os links de ficha oficial não geram comissão.
               </p>
             </div>
