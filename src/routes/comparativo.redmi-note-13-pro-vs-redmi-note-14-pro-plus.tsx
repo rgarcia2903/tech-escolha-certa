@@ -57,7 +57,7 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       { name: "twitter:image", content: HERO_IMAGE },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -191,7 +191,11 @@ const QUICK_SCORE = [
     reason: "processamento mais atual e conjunto mais refinado",
   },
   { category: "Bateria e carga", winner: "Redmi Note 14 Pro+", reason: "5.110 mAh e 120 W" },
-  { category: "Preço", winner: "Redmi Note 13 Pro", reason: "costuma aparecer mais barato" },
+  {
+    category: "Preço",
+    winner: "Depende da oferta",
+    reason: "Compare versões equivalentes e o total na loja",
+  },
   {
     category: "Custo-benefício",
     winner: "Depende do preço",
@@ -435,13 +439,12 @@ function ComparisonPage() {
                   Regra de compra
                 </span>
                 <h3 className="mt-2 font-heading text-xl font-bold text-foreground">
-                  Compare a diferença percentual de preço
+                  Compare o custo total e os recursos
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Se o Redmi Note 14 Pro+ custar até cerca de 15% a mais, escolha o modelo novo por
-                  causa do IP68, carregamento de 120 W e chip mais atual. Acima de 20%, o Redmi Note
-                  13 Pro normalmente entrega melhor custo-benefício. Entre 15% e 20%, pague a
-                  diferença apenas se proteção e recarga rápida forem prioridades para você.
+                  Compare o preço final da mesma configuração. Proteção IP68, recarga de 120 W e
+                  chip são diferenças a ponderar; não há percentual universal que determine a melhor
+                  compra. Compare também modelos posteriores.
                 </p>
                 <PurchaseActions
                   className="mt-4"
@@ -811,7 +814,7 @@ function ProductHero({ product, accent }: { product: typeof REDMI13; accent: "te
             <Rating value={product.rating} />
           </div>
           <div className="mt-4 font-heading text-lg font-bold text-foreground">
-            Preço atualizado no Mercado Livre
+            Consultar preço na loja
           </div>
           <span className="text-[11px] text-muted-foreground">
             Consulte valor, estoque e condições

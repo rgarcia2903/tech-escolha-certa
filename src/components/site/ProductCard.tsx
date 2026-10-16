@@ -39,14 +39,6 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className="font-heading text-[17px] font-semibold leading-tight text-foreground">
           {product.name}
         </h3>
-        <div className="mt-2 flex items-center gap-2">
-          <Rating value={product.rating} />
-          {product.reviews ? (
-            <span className="text-xs text-muted-foreground">
-              {product.reviews.toLocaleString("pt-BR")} avaliações
-            </span>
-          ) : null}
-        </div>
         {product.summary && (
           <p className="mt-3 border-l-2 border-teal/40 pl-3 text-[13px] italic text-muted-foreground line-clamp-2">
             “{product.summary}”
@@ -57,24 +49,26 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="mt-5 flex items-end justify-between gap-3 border-t border-border pt-4">
           <div>
             <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
-              A partir de
+              Condições na loja
             </span>
             <span className="font-heading text-[1.35rem] font-bold leading-tight text-foreground">
-              {product.price}
+              Consultar na loja
             </span>
             <span className="ml-1 text-[10px] text-muted-foreground">*pode variar</span>
           </div>
         </div>
 
-        <a
-          href={product.href ?? "#"}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          className="group/btn mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
-        >
-          Ver oferta
-          <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-        </a>
+        {product.href && (
+          <a
+            href={product.href}
+            target="_blank"
+            rel="nofollow sponsored noopener noreferrer"
+            className="group/btn mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
+          >
+            Ver oferta
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+          </a>
+        )}
       </div>
     </article>
   );

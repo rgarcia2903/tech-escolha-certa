@@ -1,3 +1,7 @@
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { ACTIVE_OFFER_PRODUCT_IDS } from "@/lib/editorial-policy";
+import { getOfferByUrl } from "@/lib/product-catalog";
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import {
   GALAXY_A25_AFFILIATE_URL,
   GALAXY_A35_AFFILIATE_URL,
@@ -34,12 +38,12 @@ export const Route = createFileRoute("/ofertas")({
   head: () => ({
     meta: [
       {
-        title: "Ofertas de celulares no Mercado Livre | Tech Escolha Certa",
+        title: "Opções de compra de celulares na Amazon e no Mercado Livre | Tech Escolha Certa",
       },
       {
         name: "description",
         content:
-          "Compare celulares por orçamento e encontre ofertas verificadas de Galaxy A25, Redmi Note 13 4G, Galaxy M35 e outros modelos no Mercado Livre.",
+          "Pesquise opções de compra por modelo na Amazon e no Mercado Livre. Confira variante, preço e condições diretamente em cada loja.",
       },
       {
         name: "keywords",
@@ -48,7 +52,7 @@ export const Route = createFileRoute("/ofertas")({
       },
       {
         property: "og:title",
-        content: "Ofertas de celulares no Mercado Livre",
+        content: "Opções de compra de celulares na Amazon e no Mercado Livre",
       },
       {
         property: "og:description",
@@ -58,7 +62,6 @@ export const Route = createFileRoute("/ofertas")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: CANONICAL },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: OfertasPage,
 });
@@ -66,7 +69,7 @@ export const Route = createFileRoute("/ofertas")({
 const budgetOffers = [
   {
     name: "Samsung Galaxy A25 5G",
-    badge: "Melhor escolha geral",
+    badge: "Alternativa para comparar",
     summary: "Tela AMOLED 120 Hz, 5G e experiência Samsung equilibrada para o uso diário.",
     caution: "Confirme se a versão anunciada tem a memória e a cor que você deseja.",
     href: GALAXY_A25_AFFILIATE_URL,
@@ -80,7 +83,7 @@ const budgetOffers = [
   },
   {
     name: "Samsung Galaxy M35 5G",
-    badge: "Melhor bateria",
+    badge: "Alternativa para comparar",
     summary: "Bateria de 6.000 mAh, tela AMOLED e 5G para quem passa mais tempo longe da tomada.",
     caution: "É um aparelho mais pesado e vale mais quando estiver abaixo de R$ 1.500.",
     href: GALAXY_M35_AFFILIATE_URL,
@@ -89,8 +92,8 @@ const budgetOffers = [
 
 const offers = [
   {
-    name: "Redmi Note 13 Pro 5G 256GB",
-    badge: "Melhor custo-benefício Xiaomi",
+    name: "Redmi Note 13 Pro 5G",
+    badge: "Alternativa para comparar",
     segment: "Intermediário",
     rating: 4.5,
     image: "/images/products/redmi-note-13-pro-optimized.webp",
@@ -105,8 +108,8 @@ const offers = [
     comparison: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
   },
   {
-    name: "Poco X7 Pro 5G 512GB",
-    badge: "Melhor para desempenho",
+    name: "Poco X7 Pro 5G",
+    badge: "Alternativa para comparar",
     segment: "Performance",
     rating: 4.6,
     image: "/images/products/poco-x7-pro-optimized.webp",
@@ -121,8 +124,8 @@ const offers = [
     comparison: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
   },
   {
-    name: "Redmi Note 14 Pro+ 5G 512GB",
-    badge: "Mais premium da lista",
+    name: "Redmi Note 14 Pro+ 5G",
+    badge: "Alternativa para comparar",
     segment: "Intermediário premium",
     rating: 4.6,
     image: "/images/products/redmi-note-14-pro-plus-optimized.webp",
@@ -137,7 +140,7 @@ const offers = [
     comparison: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
   },
   {
-    name: "Poco X6 Pro 5G 512GB",
+    name: "Poco X6 Pro 5G",
     badge: "Gamer custo-benefício",
     segment: "Performance",
     rating: 4.5,
@@ -153,7 +156,7 @@ const offers = [
     comparison: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
   },
   {
-    name: "Samsung Galaxy A55 5G 256GB",
+    name: "Samsung Galaxy A55 5G",
     badge: "Samsung mais equilibrado",
     segment: "Compra segura",
     rating: 4.6,
@@ -169,7 +172,7 @@ const offers = [
     comparison: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
   },
   {
-    name: "Samsung Galaxy A35 5G 256GB",
+    name: "Samsung Galaxy A35 5G",
     badge: "Samsung custo-benefício",
     segment: "Intermediário",
     rating: 4.4,
@@ -185,7 +188,7 @@ const offers = [
     comparison: "/comparativo-galaxy-a55-vs-galaxy-a35",
   },
   {
-    name: "Samsung Galaxy S24 5G 256GB",
+    name: "Samsung Galaxy S24 5G",
     badge: "Android premium equilibrado",
     segment: "Premium",
     rating: 4.8,
@@ -201,7 +204,7 @@ const offers = [
     comparison: "/comparativo/iphone-15-vs-galaxy-s24",
   },
   {
-    name: "Apple iPhone 15 128GB",
+    name: "Apple iPhone 15",
     badge: "Câmera e ecossistema Apple",
     segment: "Premium",
     rating: 4.7,
@@ -271,8 +274,8 @@ function OfertasPage() {
             <div>
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="cta">Escolha guiada</Badge>
-                <Badge variant="soft">Mercado Livre</Badge>
-                <Badge variant="soft">Links afiliados validados</Badge>
+                <Badge variant="soft">Amazon e Mercado Livre</Badge>
+                <Badge variant="soft">Links fornecidos · confira a versão</Badge>
               </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">
@@ -296,7 +299,7 @@ function OfertasPage() {
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <BadgeCheck className="h-3.5 w-3.5 text-teal" />
-                  Compra final no Mercado Livre
+                  Compra final na loja escolhida
                 </span>
               </div>
 
@@ -312,7 +315,7 @@ function OfertasPage() {
                   href="#ofertas-ate-1500"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver ofertas até R$ 1.500
+                  Pesquisar com orçamento de R$ 1.500
                 </a>
               </div>
             </div>
@@ -353,21 +356,18 @@ function OfertasPage() {
         </div>
       </section>
 
-      <section
-        id="ofertas-ate-1500"
-        className="scroll-mt-28 border-b border-border bg-background"
-      >
+      <section id="ofertas-ate-1500" className="scroll-mt-28 border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">
-              Ofertas diretas e verificadas
+              Opções de compra por modelo
             </p>
             <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
-              Três boas escolhas até R$ 1.500
+              Três alternativas anteriores para comparar
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Comece pelos modelos com oferta disponível. Cada opção atende a um perfil diferente,
-              e o preço final deve ser confirmado no Mercado Livre antes da compra.
+              Comece pelos modelos com oferta disponível. Cada opção atende a um perfil diferente, e
+              o preço final deve ser confirmado no Mercado Livre antes da compra.
             </p>
           </div>
 
@@ -379,7 +379,9 @@ function OfertasPage() {
               >
                 <div className="flex items-center justify-between gap-3">
                   <Badge variant={index === 0 ? "cta" : "soft"}>{offer.badge}</Badge>
-                  <span className="text-xs font-semibold text-teal">Até R$ 1.500</span>
+                  <span className="text-xs font-semibold text-teal">
+                    Preço no orçamento não confirmado
+                  </span>
                 </div>
 
                 <h3 className="mt-5 text-xl font-bold text-foreground">{offer.name}</h3>
@@ -423,7 +425,8 @@ function OfertasPage() {
                 Em dúvida entre Galaxy A25 e Redmi Note 13?
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Veja qual ganha em 5G, câmera, desempenho, tela e carregamento antes de abrir a oferta.
+                Veja qual ganha em 5G, câmera, desempenho, tela e carregamento antes de abrir a
+                oferta.
               </p>
             </div>
             <Link
@@ -436,6 +439,11 @@ function OfertasPage() {
         </div>
       </section>
 
+      <EditorialSelection
+        productIds={ACTIVE_OFFER_PRODUCT_IDS}
+        pageType="ofertas"
+        title="Modelos para consultar nas lojas"
+      />
       <PhoneDecisionFinder pageType="ofertas" showOfferMobileBar />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
@@ -468,8 +476,9 @@ function OfertasPage() {
             Quer ver todas as opções antes de decidir?
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            Cada card deixa claro para quem o aparelho faz sentido, quando comparar outro modelo e
-            onde aprofundar a análise. O preço e o estoque são confirmados no Mercado Livre.
+            Cada cartão apresenta uma alternativa de geração anterior e deixa claro para quem o
+            aparelho faz sentido, quando comparar outro modelo e onde aprofundar a análise. Não há
+            preço ou estoque conferido pelo site; consulte a loja e compare a mesma versão.
           </p>
         </div>
 
@@ -495,7 +504,6 @@ function OfertasPage() {
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-bold text-foreground">{offer.name}</h3>
-                  <Rating value={offer.rating} />
                 </div>
 
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -528,23 +536,11 @@ function OfertasPage() {
                 </div>
 
                 <div className="mt-6 flex flex-col gap-3">
-                  <a
-                    href={offer.href}
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    onClick={() =>
-                      trackAffiliateClick({
-                        productName: offer.name,
-                        pageType: "ofertas",
-                        destination: "mercado_livre",
-                        ctaPlacement: "offer_card",
-                      })
-                    }
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
-                  >
-                    {offer.priceLabel}
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
+                  <ProductPurchaseOptions
+                    productId={getOfferByUrl(offer.href)!.productId}
+                    pageType="ofertas"
+                    placement="offer_card"
+                  />
 
                   <div className="grid gap-3 sm:grid-cols-2">
                     <Link

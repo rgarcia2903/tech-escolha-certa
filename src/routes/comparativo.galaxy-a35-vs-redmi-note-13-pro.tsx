@@ -66,7 +66,6 @@ export const Route = createFileRoute("/comparativo/galaxy-a35-vs-redmi-note-13-p
       },
       { property: "og:url", content: CANONICAL },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: ComparisonPage,
 });
@@ -130,7 +129,11 @@ const QUICK_SCORE = [
     winner: "Redmi Note 13 Pro",
     reason: "pequena vantagem de ficha técnica e eficiência",
   },
-  { category: "Câmera", winner: "Depende do perfil", reason: "Redmi em detalhe; A35 em vídeo e consistência" },
+  {
+    category: "Câmera",
+    winner: "Depende do perfil",
+    reason: "Redmi em detalhe; A35 em vídeo e consistência",
+  },
   { category: "Bateria e carga", winner: "Redmi Note 13 Pro", reason: "67 W muda o dia a dia" },
   { category: "Software", winner: "Galaxy A35", reason: "One UI mais estável e suporte melhor" },
   { category: "Custo-benefício", winner: "Redmi Note 13 Pro", reason: "geralmente custa menos" },
@@ -596,8 +599,8 @@ function ComparisonPage() {
                   Galaxy A35 é mais seguro; Redmi é mais agressivo no preço.
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                  O Galaxy A35 é a escolha mais segura para quem prioriza IP67, One UI e suporte.
-                  O Redmi Note 13 Pro entrega tela mais definida, carga de 67 W e ficha técnica mais
+                  O Galaxy A35 é a escolha mais segura para quem prioriza IP67, One UI e suporte. O
+                  Redmi Note 13 Pro entrega tela mais definida, carga de 67 W e ficha técnica mais
                   forte quando os dois aparecem por preço semelhante.
                 </p>
               </div>
@@ -693,7 +696,7 @@ function ProductHero({ product, accent }: { product: typeof GALAXY; accent: "tea
             <Rating value={product.rating} />
           </div>
           <div className="mt-4 font-heading text-lg font-bold text-foreground">
-            Preço atualizado no Mercado Livre
+            Consultar preço na loja
           </div>
           <span className="text-[11px] text-muted-foreground">
             Consulte valor, estoque e condições

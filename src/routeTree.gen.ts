@@ -33,8 +33,10 @@ import { Route as AcessoriosRouteImport } from './routes/acessorios'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ReviewRedmiNote14ProPlusRouteImport } from './routes/review.redmi-note-14-pro-plus'
 import { Route as ReviewRedmiNote13ProRouteImport } from './routes/review.redmi-note-13-pro'
+import { Route as ReviewRedmiNote13RouteImport } from './routes/review.redmi-note-13'
 import { Route as ReviewPocoX7ProRouteImport } from './routes/review.poco-x7-pro'
 import { Route as ReviewPocoX6ProRouteImport } from './routes/review.poco-x6-pro'
+import { Route as ReviewPocoX6RouteImport } from './routes/review.poco-x6'
 import { Route as ReviewIphone15RouteImport } from './routes/review.iphone-15'
 import { Route as ReviewGalaxyS24RouteImport } from './routes/review.galaxy-s24'
 import { Route as ReviewGalaxyA55RouteImport } from './routes/review.galaxy-a55'
@@ -181,6 +183,11 @@ const ReviewRedmiNote13ProRoute = ReviewRedmiNote13ProRouteImport.update({
   path: '/review/redmi-note-13-pro',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReviewRedmiNote13Route = ReviewRedmiNote13RouteImport.update({
+  id: '/review/redmi-note-13',
+  path: '/review/redmi-note-13',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewPocoX7ProRoute = ReviewPocoX7ProRouteImport.update({
   id: '/review/poco-x7-pro',
   path: '/review/poco-x7-pro',
@@ -189,6 +196,11 @@ const ReviewPocoX7ProRoute = ReviewPocoX7ProRouteImport.update({
 const ReviewPocoX6ProRoute = ReviewPocoX6ProRouteImport.update({
   id: '/review/poco-x6-pro',
   path: '/review/poco-x6-pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewPocoX6Route = ReviewPocoX6RouteImport.update({
+  id: '/review/poco-x6',
+  path: '/review/poco-x6',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewIphone15Route = ReviewIphone15RouteImport.update({
@@ -336,8 +348,10 @@ export interface FileRoutesByFullPath {
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
   '/review/iphone-15': typeof ReviewIphone15Route
+  '/review/poco-x6': typeof ReviewPocoX6Route
   '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/poco-x7-pro': typeof ReviewPocoX7ProRoute
+  '/review/redmi-note-13': typeof ReviewRedmiNote13Route
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
   '/review/redmi-note-14-pro-plus': typeof ReviewRedmiNote14ProPlusRoute
 }
@@ -382,8 +396,10 @@ export interface FileRoutesByTo {
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
   '/review/iphone-15': typeof ReviewIphone15Route
+  '/review/poco-x6': typeof ReviewPocoX6Route
   '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/poco-x7-pro': typeof ReviewPocoX7ProRoute
+  '/review/redmi-note-13': typeof ReviewRedmiNote13Route
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
   '/review/redmi-note-14-pro-plus': typeof ReviewRedmiNote14ProPlusRoute
 }
@@ -429,8 +445,10 @@ export interface FileRoutesById {
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
   '/review/iphone-15': typeof ReviewIphone15Route
+  '/review/poco-x6': typeof ReviewPocoX6Route
   '/review/poco-x6-pro': typeof ReviewPocoX6ProRoute
   '/review/poco-x7-pro': typeof ReviewPocoX7ProRoute
+  '/review/redmi-note-13': typeof ReviewRedmiNote13Route
   '/review/redmi-note-13-pro': typeof ReviewRedmiNote13ProRoute
   '/review/redmi-note-14-pro-plus': typeof ReviewRedmiNote14ProPlusRoute
 }
@@ -477,8 +495,10 @@ export interface FileRouteTypes {
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
     | '/review/iphone-15'
+    | '/review/poco-x6'
     | '/review/poco-x6-pro'
     | '/review/poco-x7-pro'
+    | '/review/redmi-note-13'
     | '/review/redmi-note-13-pro'
     | '/review/redmi-note-14-pro-plus'
   fileRoutesByTo: FileRoutesByTo
@@ -523,8 +543,10 @@ export interface FileRouteTypes {
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
     | '/review/iphone-15'
+    | '/review/poco-x6'
     | '/review/poco-x6-pro'
     | '/review/poco-x7-pro'
+    | '/review/redmi-note-13'
     | '/review/redmi-note-13-pro'
     | '/review/redmi-note-14-pro-plus'
   id:
@@ -569,8 +591,10 @@ export interface FileRouteTypes {
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
     | '/review/iphone-15'
+    | '/review/poco-x6'
     | '/review/poco-x6-pro'
     | '/review/poco-x7-pro'
+    | '/review/redmi-note-13'
     | '/review/redmi-note-13-pro'
     | '/review/redmi-note-14-pro-plus'
   fileRoutesById: FileRoutesById
@@ -616,8 +640,10 @@ export interface RootRouteChildren {
   ReviewGalaxyA55Route: typeof ReviewGalaxyA55Route
   ReviewGalaxyS24Route: typeof ReviewGalaxyS24Route
   ReviewIphone15Route: typeof ReviewIphone15Route
+  ReviewPocoX6Route: typeof ReviewPocoX6Route
   ReviewPocoX6ProRoute: typeof ReviewPocoX6ProRoute
   ReviewPocoX7ProRoute: typeof ReviewPocoX7ProRoute
+  ReviewRedmiNote13Route: typeof ReviewRedmiNote13Route
   ReviewRedmiNote13ProRoute: typeof ReviewRedmiNote13ProRoute
   ReviewRedmiNote14ProPlusRoute: typeof ReviewRedmiNote14ProPlusRoute
 }
@@ -792,6 +818,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewRedmiNote13ProRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/review/redmi-note-13': {
+      id: '/review/redmi-note-13'
+      path: '/review/redmi-note-13'
+      fullPath: '/review/redmi-note-13'
+      preLoaderRoute: typeof ReviewRedmiNote13RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/review/poco-x7-pro': {
       id: '/review/poco-x7-pro'
       path: '/review/poco-x7-pro'
@@ -804,6 +837,13 @@ declare module '@tanstack/react-router' {
       path: '/review/poco-x6-pro'
       fullPath: '/review/poco-x6-pro'
       preLoaderRoute: typeof ReviewPocoX6ProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review/poco-x6': {
+      id: '/review/poco-x6'
+      path: '/review/poco-x6'
+      fullPath: '/review/poco-x6'
+      preLoaderRoute: typeof ReviewPocoX6RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/review/iphone-15': {
@@ -987,8 +1027,10 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewGalaxyA55Route: ReviewGalaxyA55Route,
   ReviewGalaxyS24Route: ReviewGalaxyS24Route,
   ReviewIphone15Route: ReviewIphone15Route,
+  ReviewPocoX6Route: ReviewPocoX6Route,
   ReviewPocoX6ProRoute: ReviewPocoX6ProRoute,
   ReviewPocoX7ProRoute: ReviewPocoX7ProRoute,
+  ReviewRedmiNote13Route: ReviewRedmiNote13Route,
   ReviewRedmiNote13ProRoute: ReviewRedmiNote13ProRoute,
   ReviewRedmiNote14ProPlusRoute: ReviewRedmiNote14ProPlusRoute,
 }

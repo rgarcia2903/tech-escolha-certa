@@ -22,6 +22,7 @@ export function AffiliateLink({
       onClick={(event) => {
         trackAffiliateClick({
           productName,
+          href: props.href,
           pageType,
           destination,
         });

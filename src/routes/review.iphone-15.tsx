@@ -1,3 +1,5 @@
+import { documentaryArticle } from "@/lib/editorial-schema";
+import { ReviewContext } from "@/components/site/ReviewContext";
 import { IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -55,6 +57,18 @@ export const Route = createFileRoute("/review/iphone-15")({
       {
         property: "twitter:image",
         content: HERO_IMG,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          documentaryArticle(
+            "iphone-15",
+            "iphone 15: análise documental",
+            "Análise documental: perfil, limites, configuração e alternativas antes de comprar.",
+          ),
+        ),
       },
     ],
   }),
@@ -152,6 +166,7 @@ function ReviewPage() {
 
   return (
     <article className="bg-background">
+      <ReviewContext productId="iphone-15" />
       {/* Reading progress */}
       <div
         className="fixed left-0 top-0 z-50 h-[3px] bg-cta transition-[width] duration-150"
@@ -231,13 +246,13 @@ function ReviewPage() {
             <div className="relative mt-4 flex items-center justify-between rounded-2xl border border-border bg-card p-4 shadow-soft">
               <div>
                 <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
-                  Nota geral
+                  Avaliação documental
                 </span>
                 <div className="mt-1 flex items-end gap-2">
                   <span className="font-heading text-3xl font-bold leading-none text-foreground">
-                    {(overall * 2).toFixed(1)}
+                    {"Análise editorial"}
                   </span>
-                  <span className="text-sm text-muted-foreground">/10</span>
+                  <span className="text-sm text-muted-foreground">documental</span>
                 </div>
                 <ScoreMethodLink className="mt-2" />
               </div>
@@ -473,11 +488,11 @@ function ReviewPage() {
             score={4.7}
             paragraphs={[
               "O sensor principal de 48 MP com OIS de segunda geração é o grande motivo para escolher o iPhone 15 hoje. Em luz boa, as fotos saem com cores neutras, contraste equilibrado e textura de pele realista — sem o exagero de saturação típico do Android. À noite, o modo Noturno automático estende exposições de até 3 segundos com estabilização eficiente, recuperando detalhe em ambientes de bar e rua sem ruído excessivo.",
-              "O zoom digital de 2x, gerado por crop do sensor de 48 MP, entrega qualidade próxima de uma teleobjetiva dedicada — útil para retratos. A ultrawide de 12 MP é honesta em luz boa, mas perde nitidez nas bordas à noite. O ponto alto, porém, é o vídeo: 4K Dolby Vision a 60 fps com áudio espacial é o melhor pacote da faixa, sem rival direto no Android.",
+              "O zoom digital de 2x, gerado por crop do sensor de 48 MP, entrega qualidade próxima de uma teleobjetiva dedicada — útil para retratos. A ultrawide de 12 MP é honesta em luz boa, mas perde nitidez nas bordas à noite. O ponto alto, porém, é o vídeo: 4K Dolby Vision a 60 fps com gravação de áudio em estéreo é um recurso relevante para comparar com modelos atuais.",
             ]}
             bullets={[
               "Modo Noturno consistente até 3s de exposição",
-              "Vídeo 4K Dolby Vision 60 fps + áudio espacial",
+              "Vídeo 4K Dolby Vision 60 fps + áudio estéreo",
               "Sem teleobjetiva dedicada (limite do modelo padrão)",
             ]}
           />
@@ -526,15 +541,13 @@ function ReviewPage() {
               entrega <strong>tela LTPO 120 Hz</strong>, carregamento de 25 W e mais armazenamento
               em algumas versões, recursos de IA generativa nativos — vantagens reais no dia a dia.
               O iPhone 15 devolve com câmera mais previsível em vídeo, fluidez de iOS, integração
-              com Mac/iPad e uma curva de revenda historicamente favorável. O S24 costuma aparecer
-              mais barato — diferença que pesa, mas que para quem já vive no ecossistema Apple
-              raramente compensa a migração.
+              com Mac/iPad. Compare o preço final das versões equivalentes e considere o custo de
+              uma eventual mudança de ecossistema; não há preço atual verificado nesta análise.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {COMPARES.map((c) => (
-                <Link
+                <div
                   key={c.title}
-                  to="/comparativos"
                   className="group rounded-2xl border border-border bg-card p-5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-card"
                 >
                   <Badge variant="teal">VS</Badge>
@@ -543,9 +556,15 @@ function ReviewPage() {
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{c.note}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-foreground group-hover:text-cta">
-                    Ver comparativo <ArrowRight className="h-4 w-4" />
+                    {c.title.includes("Galaxy") ? (
+                      <Link to="/comparativo/iphone-15-vs-galaxy-s24" className="underline">
+                        Ver este comparativo
+                      </Link>
+                    ) : (
+                      "Referência contextual · sem artigo dedicado"
+                    )}
                   </span>
-                </Link>
+                </div>
               ))}
             </div>
           </section>
@@ -706,7 +725,7 @@ function AnalysisBlock({
             Nota
           </span>
           <span className="font-heading text-lg font-bold leading-none text-foreground">
-            {score.toFixed(1)}
+            {"Sem medição própria"}
           </span>
         </div>
       </div>

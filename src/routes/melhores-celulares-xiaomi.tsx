@@ -1,3 +1,6 @@
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   AlertTriangle,
@@ -26,14 +29,15 @@ import { trackAffiliateClick } from "@/lib/analytics";
 
 const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-xiaomi";
 const HERO_IMAGE = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
-const PAGE_TITLE = "Melhor celular Xiaomi em 2026: 4 modelos para comprar";
+const PAGE_TITLE = "Celular Xiaomi em 2026: modelos e versões para comparar";
 const PAGE_DESCRIPTION =
   "Compare Redmi Note 15 5G, Redmi Note 15 Pro 5G, POCO X8 Pro e Xiaomi 15T. Veja qual Xiaomi faz sentido para uso geral, jogos e câmera.";
 
 const CURRENT_PICKS = [
   {
-    category: "Melhor para a maioria",
+    category: "Perfil para comparar",
     product: "Redmi Note 15 5G",
+    productId: "redmi-note-15-5g",
     icon: Smartphone,
     verdict:
       "É o ponto de partida mais equilibrado para quem quer um Xiaomi atual sem subir para as linhas premium.",
@@ -50,8 +54,9 @@ const CURRENT_PICKS = [
     storeIsAffiliate: true,
   },
   {
-    category: "Melhor câmera e resistência",
+    category: "Perfil para comparar",
     product: "Redmi Note 15 Pro 5G",
+    productId: "redmi-note-15-pro-5g",
     icon: ShieldCheck,
     verdict:
       "Faz mais sentido para quem prioriza câmera principal, bateria grande e proteção contra água e quedas.",
@@ -69,8 +74,9 @@ const CURRENT_PICKS = [
     storeIsAffiliate: false,
   },
   {
-    category: "Melhor para jogos",
+    category: "Perfil para comparar",
     product: "POCO X8 Pro",
+    productId: "poco-x8-pro",
     icon: Gamepad2,
     verdict:
       "É a escolha da lista para quem coloca desempenho, armazenamento rápido, refrigeração e bateria acima da câmera.",
@@ -88,8 +94,9 @@ const CURRENT_PICKS = [
     storeIsAffiliate: false,
   },
   {
-    category: "Melhor experiência premium",
+    category: "Perfil para comparar",
     product: "Xiaomi 15T",
+    productId: "xiaomi-15t",
     icon: Camera,
     verdict:
       "É o modelo para quem quer câmeras mais versáteis, acabamento superior e desempenho forte sem escolher um POCO.",
@@ -110,7 +117,8 @@ const CURRENT_PICKS = [
 const OLDER_DEALS = [
   {
     product: "POCO X7 Pro",
-    rule: "Considere se estiver pelo menos 20% abaixo do POCO X8 Pro equivalente.",
+    productId: "poco-x7-pro",
+    rule: "Compare o preço final e a configuração com o POCO X8 Pro antes de escolher.",
     reason: "Ainda entrega desempenho forte, mas deixou de ser a geração atual.",
     reviewHref: "/review/poco-x7-pro",
     affiliateHref: POCO_X7_PRO_AFFILIATE_URL,
@@ -124,6 +132,7 @@ const OLDER_DEALS = [
   },
   {
     product: "POCO X6 Pro",
+    productId: "poco-x6-pro",
     rule: "Só vale com desconto forte diante do POCO X7 Pro e do POCO X8 Pro.",
     reason: "O desempenho ainda é bom, mas a idade reduz o tempo de suporte restante.",
     reviewHref: "/review/poco-x6-pro",
@@ -186,7 +195,7 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       { name: "twitter:image", content: HERO_IMAGE },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -276,8 +285,9 @@ function MelhoresCelularesXiaomi() {
             </p>
             <h2 className="mt-3 text-3xl font-bold text-white">Redmi Note 15 5G</h2>
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              É a escolha inicial para a maioria. Se desempenho em jogos for prioridade, vá de POCO
-              X8 Pro. Para câmera e acabamento, compare com Note 15 Pro 5G e Xiaomi 15T.
+              É um candidato para uso cotidiano, com preço e variante a conferir. Se desempenho em
+              jogos for prioridade, vá de POCO X8 Pro. Para câmera e acabamento, compare com Note 15
+              Pro 5G e Xiaomi 15T.
             </p>
             <a
               href={REDMI_NOTE_15_5G_AFFILIATE_URL}
@@ -308,9 +318,11 @@ function MelhoresCelularesXiaomi() {
           href="#modelos-antigos"
           className="rounded-full bg-white/10 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
         >
-          Ver antigos em promoção
+          Comparar modelos anteriores
         </a>
       </CategoryHero>
+      <EditorialSelection selection="xiaomi" />
+      <LegacySelectionNotice />
 
       <div className="mx-auto max-w-7xl px-6 pt-8 lg:px-8">
         <AuthorByline reviewedAt="16 de outubro de 2026" />
@@ -435,6 +447,12 @@ function MelhoresCelularesXiaomi() {
                     {item.storeIsAffiliate ? "Conferir preço" : "Ver disponibilidade"}
                   </a>
                 </div>
+                <ProductPurchaseOptions
+                  productId={item.productId}
+                  pageType="guia"
+                  placement="ranking_stores"
+                  className="mt-5"
+                />
               </article>
             );
           })}

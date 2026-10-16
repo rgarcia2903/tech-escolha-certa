@@ -1,4 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   ArrowUpRight,
@@ -19,20 +22,21 @@ import {
 } from "lucide-react";
 import { Badge, Rating } from "@/components/site/ui";
 
-const CANONICAL =
-  "https://techescolhacerta.com.br/melhores-celulares-ate-2000";
+const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-ate-2000";
 
 export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")({
+  beforeLoad: () => {
+    throw redirect({ to: "/melhores-celulares-ate-2000", statusCode: 301 });
+  },
   head: () => ({
     meta: [
       {
-        title:
-          "Melhores celulares até 2000 reais em 2026 | Guia editorial completo",
+        title: "Melhores celulares até 2000 reais em 2026 | Guia editorial completo",
       },
       {
         name: "description",
         content:
-          "Guia editorial dos melhores celulares até 2000 reais em 2026: Galaxy A35, Redmi Note 13, Poco X6, Moto G84 e Galaxy M35 testados em câmera, bateria e desempenho.",
+          "Guia editorial dos melhores celulares até 2000 reais em 2026: Galaxy A35, Redmi Note 13, Poco X6, Moto G84 e Galaxy M35 comparados por ficha técnica, câmera, bateria e desempenho.",
       },
       {
         name: "keywords",
@@ -52,11 +56,10 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")(
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content:
-          "https://techescolhacerta.com.br/favicon.png",
+        content: "https://techescolhacerta.com.br/favicon.png",
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -64,12 +67,10 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")(
           "@context": "https://schema.org",
           "@type": "TechArticle",
           headline: "Melhores celulares até 2000 reais em 2026",
-          description:
-            "Guia editorial dos melhores celulares intermediários de 2026 até R$ 2.000.",
+          description: "Guia editorial dos melhores celulares intermediários de 2026 até R$ 2.000.",
           author: { "@type": "Organization", name: "Tech Escolha Certa" },
           datePublished: "2026-05-15",
-          image:
-            "https://techescolhacerta.com.br/favicon.png",
+          image: "https://techescolhacerta.com.br/favicon.png",
         }),
       },
     ],
@@ -83,6 +84,7 @@ type Pick = {
   icon: typeof Award;
   badge: { variant: "cta" | "teal" | "default"; label: string };
   name: string;
+  productId: string;
   image: string;
   rating: number;
   price: string;
@@ -96,18 +98,19 @@ type Pick = {
 const PICKS: Pick[] = [
   {
     id: "melhor-geral",
-    category: "Melhor escolha geral",
+    category: "Perfil para comparar",
     icon: Award,
     badge: { variant: "cta", label: "Recomendado" },
     name: "Samsung Galaxy A35 5G",
+    productId: "galaxy-a35",
     image:
       "https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=1200&q=80",
     rating: 4.6,
-    price: "R$ 1.899",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "O equilíbrio mais maduro até R$ 2.000: tela AMOLED 120 Hz, certificação IP67 e quatro anos de atualizações Samsung.",
     review:
-      "O Galaxy A35 5G é o intermediário mais bem resolvido da faixa. A tela Super AMOLED de 6,6\" com 1000 nits brilha bem ao sol, o Exynos 1380 entrega uma One UI fluida e a câmera principal de 50 MP com OIS produz fotos confiáveis em qualquer luz. O grande diferencial é a soma: chassi com Gorilla Glass Victus+, certificação IP67 contra água e poeira (raríssima no preço) e quatro versões de Android garantidas pela Samsung.",
+      'O Galaxy A35 5G é o intermediário mais bem resolvido da faixa. A tela Super AMOLED de 6,6" com 1000 nits brilha bem ao sol, o Exynos 1380 entrega uma One UI fluida e a câmera principal de 50 MP com OIS produz fotos confiáveis em qualquer luz. O grande diferencial é a soma: chassi com Gorilla Glass Victus+, certificação IP67 contra água e poeira (raríssima no preço) e quatro versões de Android garantidas pela Samsung.',
     profile:
       "Quem quer um celular maduro para usar 3 a 4 anos, com bom acabamento e sem se preocupar com suporte de software.",
     pros: [
@@ -116,21 +119,19 @@ const PICKS: Pick[] = [
       "4 grandes atualizações de Android",
       "Câmera principal estabilizada (OIS)",
     ],
-    cons: [
-      "Carregamento de 25 W abaixo dos rivais chineses",
-      "Exynos 1380 perde no gaming pesado",
-    ],
+    cons: ["Carregamento de 25 W abaixo dos rivais chineses", "Exynos 1380 perde no gaming pesado"],
   },
   {
     id: "melhor-custo-beneficio",
-    category: "Melhor custo-benefício",
+    category: "Perfil para comparar",
     icon: Wallet,
     badge: { variant: "teal", label: "Custo-benefício" },
     name: "Xiaomi Redmi Note 13 5G",
+    productId: "redmi-note-13-5g",
     image:
       "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1200&q=80",
     rating: 4.6,
-    price: "R$ 1.499",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "Difícil bater: AMOLED 120 Hz, 5G, câmera de 108 MP e carga de 33 W por menos de R$ 1.500.",
     review:
@@ -141,27 +142,25 @@ const PICKS: Pick[] = [
       "Câmera principal de 108 MP",
       "Carregamento turbo de 33 W",
       "Tela AMOLED 120 Hz com 1800 nits",
-      "Preço imbatível para a ficha",
+      "Compare ficha técnica e preço final",
     ],
-    cons: [
-      "HyperOS com bloatware pré-instalado",
-      "Apenas 2 anos de atualizações Android",
-    ],
+    cons: ["HyperOS com bloatware pré-instalado", "Apenas 2 anos de atualizações Android"],
   },
   {
     id: "melhor-bateria",
-    category: "Melhor bateria",
+    category: "Perfil para comparar",
     icon: Battery,
     badge: { variant: "default", label: "Autonomia" },
     name: "Samsung Galaxy M35 5G",
+    productId: "galaxy-m35-5g",
     image:
       "https://images.unsplash.com/photo-1610792516775-01de03eae630?auto=format&fit=crop&w=1200&q=80",
     rating: 4.5,
-    price: "R$ 1.799",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "Bateria de 6.000 mAh combinada ao Exynos 1380 entrega dois dias completos de uso moderado sem suor.",
     review:
-      "Quando o assunto é autonomia pura, o Galaxy M35 5G é imbatível na faixa. Os 6.000 mAh somados à eficiência do Exynos 1380 (5 nm) e ao painel Super AMOLED+ com refresh adaptativo entregam facilmente 9 a 10 horas de tela ativa — o que se traduz em dois dias completos de uso moderado e um dia e meio para usuário pesado. O carregamento de 25 W cobre 0–50% em cerca de 35 minutos, suficiente para a proposta.",
+      "Quando o assunto é autonomia pura, o Galaxy M35 5G é imbatível na faixa. Os 6.000 mAh somados à eficiência do Exynos 1380 (5 nm) e ao painel Super AMOLED+ com refresh adaptativo sugerem uma proposta voltada à autonomia; duração real depende do uso e não foi medida pelo site. O carregamento anunciado é de 25 W; o tempo real depende das condições.",
     profile:
       "Quem viaja, fica longe de tomada por longos períodos ou simplesmente odeia depender do carregador.",
     pros: [
@@ -170,25 +169,23 @@ const PICKS: Pick[] = [
       "4 anos de atualizações Samsung",
       "Hot swap entre 5G e Wi-Fi sem queda",
     ],
-    cons: [
-      "Acabamento traseiro em plástico",
-      "Carga de 25 W é apenas correta",
-    ],
+    cons: ["Acabamento traseiro em plástico", "Carga de 25 W é apenas correta"],
   },
   {
     id: "melhor-gaming",
-    category: "Melhor para gaming",
+    category: "Perfil para comparar",
     icon: Gamepad2,
     badge: { variant: "default", label: "Performance" },
     name: "Poco X6 5G",
+    productId: "poco-x6-5g",
     image:
       "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1200&q=80",
     rating: 4.6,
-    price: "R$ 1.999",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "Snapdragon 7s Gen 2 e tela CrystalRes AMOLED 1.5K colocam o X6 acima de qualquer rival até R$ 2.000 em desempenho.",
     review:
-      "Se o seu uso envolve jogos pesados e fluidez no Instagram, o Poco X6 5G é a escolha óbvia até R$ 2.000. O Snapdragon 7s Gen 2 (4 nm) entrega desempenho equivalente a um celular de R$ 3.000 da geração passada, sustenta 60 fps estáveis em Genshin Impact em médio e a tela CrystalRes AMOLED de 6,67\" com 1.5K de resolução, 120 Hz e 1800 nits é referência na faixa. Carga turbo de 67 W completa 0–100% em ~45 minutos.",
+      'Se o seu uso envolve jogos pesados e fluidez no Instagram, o Poco X6 5G é a escolha óbvia até R$ 2.000. O Snapdragon 7s Gen 2 (4 nm) entrega desempenho equivalente a um celular de R$ 3.000 da geração passada, pode atender jogos, com ajustes e desempenho dependentes do título e das condições e a tela CrystalRes AMOLED de 6,67" com 1.5K de resolução, 120 Hz e 1800 nits é referência na faixa. A carga anunciada é de 67 W; não há medição própria do tempo de recarga.',
     profile:
       "Gamers mobile e usuários intensivos que querem o máximo de hardware sem ultrapassar R$ 2.000.",
     pros: [
@@ -197,25 +194,23 @@ const PICKS: Pick[] = [
       "Carga turbo de 67 W",
       "12 GB de RAM em algumas SKUs",
     ],
-    cons: [
-      "Câmera ultrawide de qualidade modesta",
-      "HyperOS com publicidade em alguns apps",
-    ],
+    cons: ["Câmera ultrawide de qualidade modesta", "HyperOS com publicidade em alguns apps"],
   },
   {
     id: "melhor-camera",
-    category: "Melhor câmera",
+    category: "Perfil para comparar",
     icon: Camera,
     badge: { variant: "default", label: "Foto e vídeo" },
     name: "Motorola Moto G84 5G",
+    productId: "moto-g84-5g",
     image:
       "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1200&q=80",
     rating: 4.5,
-    price: "R$ 1.699",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "Sensor Sony LYTIA com OIS e calibração Pantone — cores fiéis e vídeo 1080p estabilizado de verdade.",
     review:
-      "O Moto G84 5G é o intermediário com a calibração de cor mais bem resolvida da categoria até R$ 2.000. A parceria com a Pantone se traduz em tons de pele realistas e céu sem aquele exagero de saturação típico dos rivais chineses. O sensor principal Sony LYTIA de 50 MP com OIS captura vídeo 1080p a 60 fps com estabilização eficiente, e a tela pOLED de 6,55\" com 120 Hz tem brilho e contraste muito acima do esperado para o preço.",
+      "O Moto G84 5G é o intermediário com a calibração de cor mais bem resolvida da categoria até R$ 2.000. A ficha do modelo e os formatos de vídeo precisam ser conferidos no fabricante. Não atribuímos ao G84 recursos de câmera ou experiências de outros modelos da linha.",
     profile:
       "Quem fotografa o dia a dia, redes sociais e família, e valoriza cores naturais sem precisar editar.",
     pros: [
@@ -224,19 +219,56 @@ const PICKS: Pick[] = [
       "Design fino e leve (167 g)",
       "Android quase puro, sem bloatware",
     ],
-    cons: [
-      "Bateria de 5.000 mAh entrega só um dia",
-      "Snapdragon 6s Gen 1 limita gaming pesado",
-    ],
+    cons: ["Bateria de 5.000 mAh entrega só um dia", "Snapdragon 6s Gen 1 limita gaming pesado"],
   },
 ];
 
 const TABLE = [
-  { label: "Galaxy A35 5G", price: "R$ 1.899", screen: "AMOLED 6,6\" 120 Hz", chip: "Exynos 1380", camera: "50 MP OIS", battery: "5.000 mAh / 25 W", updates: "4 anos" },
-  { label: "Redmi Note 13 5G", price: "R$ 1.499", screen: "AMOLED 6,67\" 120 Hz", chip: "Dimensity 6080", camera: "108 MP", battery: "5.000 mAh / 33 W", updates: "2 anos" },
-  { label: "Galaxy M35 5G", price: "R$ 1.799", screen: "AMOLED+ 6,6\" 120 Hz", chip: "Exynos 1380", camera: "50 MP OIS", battery: "6.000 mAh / 25 W", updates: "4 anos" },
-  { label: "Poco X6 5G", price: "R$ 1.999", screen: "AMOLED 6,67\" 1.5K 120 Hz", chip: "Snapdragon 7s Gen 2", camera: "64 MP OIS", battery: "5.100 mAh / 67 W", updates: "3 anos" },
-  { label: "Moto G84 5G", price: "R$ 1.699", screen: "pOLED 6,55\" 120 Hz", chip: "Snapdragon 6s Gen 1", camera: "50 MP OIS Pantone", battery: "5.000 mAh / 30 W", updates: "3 anos" },
+  {
+    label: "Galaxy A35 5G",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED 6,6" 120 Hz',
+    chip: "Exynos 1380",
+    camera: "50 MP OIS",
+    battery: "5.000 mAh / 25 W",
+    updates: "4 anos",
+  },
+  {
+    label: "Redmi Note 13 5G",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED 6,67" 120 Hz',
+    chip: "Dimensity 6080",
+    camera: "108 MP",
+    battery: "5.000 mAh / 33 W",
+    updates: "2 anos",
+  },
+  {
+    label: "Galaxy M35 5G",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED+ 6,6" 120 Hz',
+    chip: "Exynos 1380",
+    camera: "50 MP OIS",
+    battery: "6.000 mAh / 25 W",
+    updates: "4 anos",
+  },
+  {
+    label: "Poco X6 5G",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED 6,67" 1.5K 120 Hz',
+    chip: "Snapdragon 7s Gen 2",
+    camera: "64 MP OIS",
+    battery: "5.100 mAh / 67 W",
+    updates: "3 anos",
+  },
+  {
+    label: "Moto G84 5G",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'pOLED 6,55" 120 Hz',
+    chip: "Snapdragon 6s Gen 1",
+    camera: "50 MP OIS Pantone",
+    battery: "5.000 mAh / 30 W",
+    updates: "3 anos",
+  },
 ];
 
 const TIPS = [
@@ -273,7 +305,7 @@ const FAQ = [
   },
   {
     q: "Intermediário roda jogos pesados como Genshin Impact?",
-    a: "Depende do processador. Snapdragon 7s Gen 2 (Poco X6) sustenta 60 fps em médio. Dimensity 6080 e Snapdragon 6s Gen 1 rodam em baixo com quedas frequentes. Para gaming sério, o Poco X6 é a única escolha clara até R$ 2.000.",
+    a: "Depende do processador. Snapdragon 7s Gen 2 (Poco X6) pode atender jogos com ajustes; não há medição própria de FPS nesta análise. A compatibilidade e a estabilidade dependem do processador, do jogo e das configurações. Para gaming sério, compare o Poco X6 com candidatos de gerações posteriores, sem presumir preço no teto.",
   },
   {
     q: "Galaxy A35 ou M35: qual escolher?",
@@ -281,7 +313,7 @@ const FAQ = [
   },
   {
     q: "Compensa esperar Black Friday para comprar?",
-    a: "Modelos lançados há 8+ meses (como Redmi Note 13 e Moto G84) caem 15-20% em datas promocionais. Se não há urgência, vale esperar — especialmente para Galaxy A35 e Poco X6, que costumam ter desconto agressivo.",
+    a: "Não há histórico de preços autorizado nesta página. Compare o preço final da mesma versão e as condições da loja; não presumimos descontos futuros.",
   },
 ];
 
@@ -318,7 +350,9 @@ function GuidePage() {
         <div className="container-tec py-16 md:py-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Link to="/" className="hover:text-foreground">Home</Link>
+              <Link to="/" className="hover:text-foreground">
+                Home
+              </Link>
               <span>/</span>
               <span>Guia de compra</span>
               <span>/</span>
@@ -332,16 +366,23 @@ function GuidePage() {
               Melhores celulares até 2000 reais em 2026
             </h1>
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              Testamos os intermediários mais relevantes do ano para indicar, sem
-              rodeios, qual smartphone até R$ 2.000 entrega o melhor pacote em
-              câmera, bateria, desempenho e longevidade. Cinco categorias, cinco
-              vencedores.
+              Esta análise documental compara intermediários por câmera, bateria, desempenho e
+              suporte. As referências históricas abaixo exigem conferência de preço; não há
+              comprovação de que os modelos estejam no teto de R$ 2.000.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5"><User className="h-4 w-4" /> Equipe Tech Escolha Certa</span>
-              <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-4 w-4" /> Maio de 2026</span>
-              <span className="inline-flex items-center gap-1.5"><Clock className="h-4 w-4" /> 13 min de leitura</span>
-              <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-teal" /> Análise independente</span>
+              <span className="inline-flex items-center gap-1.5">
+                <User className="h-4 w-4" /> Equipe Tech Escolha Certa
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CalendarDays className="h-4 w-4" /> Maio de 2026
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-4 w-4" /> 13 min de leitura
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-teal" /> Análise independente
+              </span>
             </div>
           </div>
         </div>
@@ -351,32 +392,34 @@ function GuidePage() {
         <div className="grid lg:grid-cols-[1fr_280px] gap-12">
           <article className="max-w-3xl space-y-16">
             {/* Intro */}
+            <EditorialSelection selection="ate-2000" />
+            <LegacySelectionNotice />
             <div id="introducao" className="space-y-5 text-muted-foreground leading-relaxed">
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
                 Como escolhemos os melhores celulares até R$ 2.000
               </h2>
               <p>
-                A faixa entre R$ 1.300 e R$ 2.000 é a mais disputada do mercado
-                brasileiro — e onde a maior parte das vendas acontece. É também
-                onde aparecem mais armadilhas de marketing: telas com brilho
-                exagerado no papel, câmeras com 200 MP que rendem fotos modestas
-                e baterias enormes presas a processadores ineficientes.
+                A faixa entre R$ 1.300 e R$ 2.000 é a mais disputada do mercado brasileiro — e onde
+                a maior parte das vendas acontece. É também onde aparecem mais armadilhas de
+                marketing: telas com brilho exagerado no papel, câmeras com 200 MP que rendem fotos
+                modestas e baterias enormes presas a processadores ineficientes.
               </p>
               <p>
-                Para este guia, analisamos mais de 15 lançamentos entre 2024 e
-                2026 considerando cinco critérios objetivos: <strong className="text-foreground">qualidade
-                real da tela</strong> (brilho medido, refresh adaptativo, calibração),
-                <strong className="text-foreground"> desempenho sustentado</strong> (não apenas pico de
-                benchmark), <strong className="text-foreground">câmera em cenários reais</strong> (baixa luz,
-                vídeo, retratos), <strong className="text-foreground">autonomia comprovada</strong> e
-                <strong className="text-foreground"> tempo garantido de atualizações</strong>. Preço de
-                referência considera lojas oficiais e principais marketplaces
-                em maio de 2026.
+                Para este guia, analisamos mais de 15 lançamentos entre 2024 e 2026 considerando
+                cinco critérios objetivos:{" "}
+                <strong className="text-foreground">qualidade real da tela</strong> (brilho medido,
+                refresh adaptativo, calibração),
+                <strong className="text-foreground"> desempenho sustentado</strong> (não apenas pico
+                de benchmark), <strong className="text-foreground">câmera em cenários reais</strong>{" "}
+                (baixa luz, vídeo, retratos),{" "}
+                <strong className="text-foreground">autonomia comprovada</strong> e
+                <strong className="text-foreground"> tempo garantido de atualizações</strong>. Preço
+                de referência considera lojas oficiais e principais marketplaces em maio de 2026.
               </p>
               <p>
-                Os links de oferta são afiliados. Você paga o mesmo preço e nós
-                recebemos uma comissão que mantém esta análise independente.
-                Nenhum fabricante pagou pela posição neste guia.
+                Os links de oferta são afiliados. Você paga o mesmo preço e nós recebemos uma
+                comissão que mantém esta análise independente. Nenhum fabricante pagou pela posição
+                neste guia.
               </p>
             </div>
 
@@ -491,7 +534,10 @@ function GuidePage() {
             </section>
 
             {/* Recommendation summary */}
-            <section id="resumo" className="rounded-3xl border border-cta/30 bg-gradient-to-br from-cta/5 to-teal/5 p-8 md:p-10">
+            <section
+              id="resumo"
+              className="rounded-3xl border border-cta/30 bg-gradient-to-br from-cta/5 to-teal/5 p-8 md:p-10"
+            >
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-cta" />
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
@@ -502,14 +548,19 @@ function GuidePage() {
                 O veredito final
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Se a sua prioridade é <strong className="text-foreground">durar 4 anos com IP67 e bom acabamento</strong>,
+                Se a sua prioridade é{" "}
+                <strong className="text-foreground">durar 4 anos com IP67 e bom acabamento</strong>,
                 escolha o <strong className="text-foreground">Galaxy A35 5G</strong>. Para
-                <strong className="text-foreground"> extrair o máximo de hardware pelo menor preço</strong>, o
-                <strong className="text-foreground"> Redmi Note 13 5G</strong> não tem rival. Quem precisa de bateria infinita
-                deve olhar o <strong className="text-foreground">Galaxy M35 5G</strong>; quem joga, o
+                <strong className="text-foreground">
+                  {" "}
+                  extrair o máximo de hardware pelo menor preço
+                </strong>
+                , o<strong className="text-foreground"> Redmi Note 13 5G</strong> não tem rival.
+                Quem precisa de bateria infinita deve olhar o{" "}
+                <strong className="text-foreground">Galaxy M35 5G</strong>; quem joga, o
                 <strong className="text-foreground"> Poco X6 5G</strong>; e quem fotografa muito, o
-                <strong className="text-foreground"> Moto G84 5G</strong>. Cinco escolhas, cinco perfis — e
-                nenhuma escolha errada dentro do orçamento de R$ 2.000.
+                <strong className="text-foreground"> Moto G84 5G</strong>. Cinco escolhas, cinco
+                perfis — e nenhuma escolha errada dentro do orçamento de R$ 2.000.
               </p>
             </section>
           </article>
@@ -522,16 +573,36 @@ function GuidePage() {
                   Neste guia
                 </span>
                 <nav className="mt-3 space-y-2 text-sm">
-                  <a href="#introducao" className="block text-muted-foreground hover:text-foreground">Como escolhemos</a>
+                  <a
+                    href="#introducao"
+                    className="block text-muted-foreground hover:text-foreground"
+                  >
+                    Como escolhemos
+                  </a>
                   {PICKS.map((p) => (
-                    <a key={p.id} href={`#${p.id}`} className="block text-muted-foreground hover:text-foreground">
+                    <a
+                      key={p.id}
+                      href={`#${p.id}`}
+                      className="block text-muted-foreground hover:text-foreground"
+                    >
                       {p.category}
                     </a>
                   ))}
-                  <a href="#comparativo" className="block text-muted-foreground hover:text-foreground">Tabela comparativa</a>
-                  <a href="#dicas" className="block text-muted-foreground hover:text-foreground">Dicas de compra</a>
-                  <a href="#faq" className="block text-muted-foreground hover:text-foreground">FAQ</a>
-                  <a href="#resumo" className="block text-muted-foreground hover:text-foreground">Resumo final</a>
+                  <a
+                    href="#comparativo"
+                    className="block text-muted-foreground hover:text-foreground"
+                  >
+                    Tabela comparativa
+                  </a>
+                  <a href="#dicas" className="block text-muted-foreground hover:text-foreground">
+                    Dicas de compra
+                  </a>
+                  <a href="#faq" className="block text-muted-foreground hover:text-foreground">
+                    FAQ
+                  </a>
+                  <a href="#resumo" className="block text-muted-foreground hover:text-foreground">
+                    Resumo final
+                  </a>
                 </nav>
               </div>
               <div className="rounded-2xl border border-cta/30 bg-card p-5 shadow-soft">
@@ -542,7 +613,9 @@ function GuidePage() {
                   </span>
                 </div>
                 <p className="mt-2 font-heading font-semibold text-foreground">Galaxy A35 5G</p>
-                <p className="mt-1 text-xs text-muted-foreground">Melhor escolha geral 2026</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Alternativa para uso cotidiano 2026
+                </p>
                 <a
                   href="#melhor-geral"
                   className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-cta hover:underline"
@@ -591,14 +664,11 @@ function PickBlock({ pick }: { pick: Pick }) {
           </div>
           <div className="p-6 md:p-8 flex flex-col">
             <div className="flex items-center justify-between gap-3">
-              <Rating value={pick.rating} />
               <div className="text-right">
                 <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
-                  A partir de
+                  Preço atual
                 </span>
-                <span className="font-heading text-xl font-bold text-foreground">
-                  {pick.price}
-                </span>
+                <span className="font-heading text-xl font-bold text-foreground">{pick.price}</span>
               </div>
             </div>
             <p className="mt-4 text-sm text-muted-foreground italic border-l-2 border-teal/40 pl-3">
@@ -613,15 +683,12 @@ function PickBlock({ pick }: { pick: Pick }) {
               <p className="mt-1 text-sm text-foreground">{pick.profile}</p>
             </div>
 
-            <a
-              href="/ofertas"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
-            >
-              Ver oferta
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+            <ProductPurchaseOptions
+              productId={pick.productId}
+              pageType="guia"
+              placement="legacy_guide"
+              className="mt-5"
+            />
           </div>
         </div>
 
@@ -657,11 +724,3 @@ function PickBlock({ pick }: { pick: Pick }) {
     </section>
   );
 }
-
-
-
-
-
-
-
-

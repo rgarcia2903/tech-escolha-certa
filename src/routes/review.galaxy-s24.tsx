@@ -1,3 +1,5 @@
+import { documentaryArticle } from "@/lib/editorial-schema";
+import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_S24_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -60,20 +62,11 @@ export const Route = createFileRoute("/review/galaxy-s24")({
       { property: "og:image", content: HERO_IMG },
       { property: "twitter:image", content: HERO_IMG },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: PAGE_TITLE,
-          description: PAGE_DESCRIPTION,
-          author: { "@type": "Organization", name: "Tech Escolha Certa" },
-          datePublished: "2026-05-12",
-          dateModified: "2026-10-01",
-          image: HERO_IMG,
-        }),
+        children: JSON.stringify(documentaryArticle("galaxy-s24", PAGE_TITLE, PAGE_DESCRIPTION)),
       },
     ],
   }),
@@ -198,6 +191,7 @@ function ReviewPage() {
 
   return (
     <article className="bg-background">
+      <ReviewContext productId="galaxy-s24" />
       <div
         className="fixed left-0 top-0 z-50 h-[3px] bg-cta transition-[width] duration-150"
         style={{ width: `${progress}%` }}
@@ -277,13 +271,13 @@ function ReviewPage() {
             <div className="relative mt-4 flex items-center justify-between rounded-2xl border border-border bg-card p-4 shadow-soft">
               <div>
                 <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
-                  Nota geral
+                  Avaliação documental
                 </span>
                 <div className="mt-1 flex items-end gap-2">
                   <span className="font-heading text-3xl font-bold leading-none text-foreground">
-                    {(overall * 2).toFixed(1)}
+                    {"Análise editorial"}
                   </span>
-                  <span className="text-sm text-muted-foreground">/10</span>
+                  <span className="text-sm text-muted-foreground">documental</span>
                 </div>
                 <ScoreMethodLink className="mt-2" />
               </div>
@@ -610,9 +604,8 @@ function ReviewPage() {
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {COMPARES.map((c) => (
-                <Link
+                <div
                   key={c.title}
-                  to="/comparativo/iphone-15-vs-galaxy-s24"
                   className="group rounded-2xl border border-border bg-card p-5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-card"
                 >
                   <Badge variant="teal">VS</Badge>
@@ -621,9 +614,15 @@ function ReviewPage() {
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{c.note}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-foreground group-hover:text-cta">
-                    Ver comparativo <ArrowRight className="h-4 w-4" />
+                    {c.title.includes("iPhone") ? (
+                      <Link to="/comparativo/iphone-15-vs-galaxy-s24" className="underline">
+                        Ver este comparativo
+                      </Link>
+                    ) : (
+                      "Referência contextual · sem artigo dedicado"
+                    )}
                   </span>
-                </Link>
+                </div>
               ))}
             </div>
           </section>
@@ -802,7 +801,7 @@ function AnalysisBlock({
             Nota
           </span>
           <span className="font-heading text-lg font-bold leading-none text-foreground">
-            {score.toFixed(1)}
+            {"Sem medição própria"}
           </span>
         </div>
       </div>

@@ -13,9 +13,41 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { PRODUCTS } from "@/lib/product-catalog";
 import { trackSiteSearchSelection } from "@/lib/analytics";
 
 const SEARCH_ITEMS = [
+  ...PRODUCTS.map((product) => ({
+    group: "Modelos e versões",
+    title: product.name,
+    description: product.summary,
+    to:
+      product.reviewPath ??
+      `/melhores-celulares-${product.brand === "Samsung" ? "samsung" : product.brand === "Xiaomi" || product.brand === "POCO" ? "xiaomi" : "custo-beneficio"}`,
+    keywords: `${product.brand} ${product.connectivity} ${product.editorialStatus}`,
+    icon: Smartphone,
+  })),
+  ...[
+    ["Galaxy A25 5G vs Redmi Note 13 4G", "/comparativo/galaxy-a25-vs-redmi-note-13"],
+    ["Galaxy A35 vs Redmi Note 13 Pro 5G", "/comparativo/galaxy-a35-vs-redmi-note-13-pro"],
+    ["Galaxy A55 vs Galaxy A35", "/comparativo-galaxy-a55-vs-galaxy-a35"],
+    ["Galaxy A55 vs Redmi Note 13 Pro 5G", "/comparativo/galaxy-a55-vs-redmi-note-13-pro"],
+    ["Galaxy A55 vs POCO X6 Pro", "/comparativo/galaxy-a55-vs-poco-x6-pro"],
+    ["POCO X6 Pro vs POCO X7 Pro", "/comparativo/poco-x6-pro-vs-poco-x7-pro"],
+    ["Redmi Note 13 Pro vs POCO X6 Pro", "/comparativo/redmi-note-13-pro-vs-poco-x6-pro"],
+    [
+      "Redmi Note 13 Pro vs Redmi Note 14 Pro+",
+      "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
+    ],
+    ["iPhone 15 vs Galaxy S24", "/comparativo/iphone-15-vs-galaxy-s24"],
+  ].map(([title, to]) => ({
+    group: "Comparativos",
+    title,
+    to,
+    description: "Comparação de modelos e versões específicos",
+    keywords: "versus comparar diferenças",
+    icon: GitCompareArrows,
+  })),
   {
     group: "Comece por aqui",
     title: "Celulares",
@@ -170,7 +202,14 @@ const SEARCH_ITEMS = [
   },
 ] as const;
 
-const GROUPS = ["Comece por aqui", "Guias por orçamento", "Marcas e perfis", "Reviews"] as const;
+const GROUPS = [
+  "Comece por aqui",
+  "Guias por orçamento",
+  "Marcas e perfis",
+  "Reviews",
+  "Modelos e versões",
+  "Comparativos",
+] as const;
 
 export function SiteSearch() {
   const [open, setOpen] = useState(false);

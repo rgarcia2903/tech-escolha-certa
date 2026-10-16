@@ -26,7 +26,6 @@ export const Route = createFileRoute("/guias-de-compra")({
         content: CANONICAL,
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: GuidesPage,
 });

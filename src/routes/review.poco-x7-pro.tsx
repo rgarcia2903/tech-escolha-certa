@@ -1,3 +1,4 @@
+import { documentaryArticle } from "@/lib/editorial-schema";
 import { POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
@@ -26,6 +27,18 @@ export const Route = createFileRoute("/review/poco-x7-pro")({
         property: "og:description",
         content:
           "Análise editorial completa do Poco X7 Pro para descobrir se ele é uma das melhores compras para quem prioriza desempenho e custo-benefício.",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          documentaryArticle(
+            "poco-x7-pro",
+            "poco x7 pro: análise documental",
+            "Análise documental: perfil, limites, configuração e alternativas antes de comprar.",
+          ),
+        ),
       },
     ],
   }),

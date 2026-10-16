@@ -1,3 +1,5 @@
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
   GALAXY_A35_AFFILIATE_URL,
   GALAXY_A55_AFFILIATE_URL,
@@ -50,12 +52,7 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
         content: "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
       },
     ],
-    links: [
-      {
-        rel: "canonical",
-        href: "https://techescolhacerta.com.br/melhores-celulares-samsung",
-      },
-    ],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -85,10 +82,10 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
           mainEntity: [
             {
               "@type": "Question",
-              name: "Qual é o melhor celular Samsung em 2026?",
+              name: "Qual é uma alternativa Samsung de geração anterior?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Para a maioria das pessoas, o Galaxy A55 5G é o melhor celular Samsung em 2026 por equilibrar tela, bateria, construção, câmeras, desempenho e suporte de atualizações.",
+                text: "A escolha depende do perfil e de condições comerciais conferidas. Compare os candidatos atuais acima; A35, A55 e S24 permanecem como referências de gerações anteriores.",
               },
             },
             {
@@ -123,16 +120,16 @@ const affiliateLinks = {
 
 const ranking = [
   {
-    category: "Melhor Samsung geral",
+    category: "Perfil para comparar",
     product: "Galaxy A55 5G",
     description:
-      "O Samsung mais equilibrado para a maioria das pessoas: boa tela, boa bateria, construção premium, IP67 e experiência confiável.",
+      "Uma alternativa Samsung de geração anterior: boa tela, boa bateria, construção premium, IP67 e experiência confiável.",
     reviewHref: "/review/galaxy-a55",
     affiliateHref: affiliateLinks.galaxyA55,
     affiliateProductName: "Galaxy A55",
   },
   {
-    category: "Melhor Samsung premium",
+    category: "Perfil para comparar",
     product: "Galaxy S24",
     description:
       "Top de linha compacto com excelente câmera, desempenho premium, recursos de IA e vários anos de atualização.",
@@ -141,7 +138,7 @@ const ranking = [
     affiliateProductName: "Galaxy S24",
   },
   {
-    category: "Melhor Samsung custo-benefício",
+    category: "Perfil para comparar",
     product: "Galaxy A35 5G",
     description:
       "Ótima escolha para quem quer economizar sem abrir mão da experiência Samsung, tela AMOLED, 5G e IP67.",
@@ -167,11 +164,11 @@ const samsungProfiles = [
 ];
 
 const comparisonRows = [
-  ["Melhor geral", "Galaxy A55 5G"],
+  ["Perfil de uso cotidiano", "Galaxy A55 5G"],
   ["Melhor premium", "Galaxy S24"],
   ["Melhor custo-benefício", "Galaxy A35 5G"],
   ["Melhor para fotos", "Galaxy S24"],
-  ["Melhor para a maioria", "Galaxy A55 5G"],
+  ["Uso cotidiano a comparar", "Galaxy A55 5G"],
   ["Mais barato recomendado", "Galaxy A35 5G"],
 ];
 
@@ -186,7 +183,7 @@ function MelhoresCelularesSamsung() {
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Melhor Samsung geral
+              Alternativa Samsung anterior
             </p>
 
             <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A55 5G</h2>
@@ -237,6 +234,8 @@ function MelhoresCelularesSamsung() {
           Ver até R$ 2.500
         </Link>
       </CategoryHero>
+      <EditorialSelection selection="samsung" />
+      <LegacySelectionNotice />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
@@ -306,7 +305,7 @@ function MelhoresCelularesSamsung() {
 
             <ReviewCard
               title="Review Galaxy A55 5G"
-              description="O Samsung mais equilibrado para a maioria das pessoas."
+              description="Uma alternativa Samsung de geração anterior."
               href="/review/galaxy-a55"
               image="/images/products/galaxy-a55-optimized.webp"
               score="9.0"
@@ -478,7 +477,7 @@ function MelhoresCelularesSamsung() {
 
               <div className="mt-5 space-y-4 text-sm text-slate-700">
                 <div>
-                  <span className="block text-slate-500">Melhor geral</span>
+                  <span className="block text-slate-500">Perfil de uso cotidiano</span>
                   <strong className="text-[#0F3F4A]">Galaxy A55 5G</strong>
                 </div>
 
@@ -508,7 +507,7 @@ function MelhoresCelularesSamsung() {
         ]}
         pageType="guia"
         title="Galaxy A55 5G"
-        eyebrow="Melhor Samsung geral"
+        eyebrow="Alternativa Samsung anterior"
       />
     </main>
   );

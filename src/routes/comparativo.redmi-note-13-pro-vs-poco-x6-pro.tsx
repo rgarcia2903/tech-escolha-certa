@@ -52,7 +52,7 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-poco-x6-
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       { name: "twitter:image", content: HERO_IMAGE },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -411,13 +411,13 @@ function ComparisonPage() {
                   Regra de compra
                 </span>
                 <h3 className="mt-2 font-heading text-xl font-bold text-foreground">
-                  Mesmo preço: escolha pelo uso; 15% de diferença: escolha o mais barato
+                  Compare preço, configuração e perfil de uso
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   Em preços iguais ou próximos, compre o Poco X6 Pro para jogos e desempenho, ou o
                   Redmi Note 13 Pro para câmera e entrada de 3,5 mm. Se um deles estiver cerca de
-                  15% mais barato, ele normalmente oferece o melhor custo-benefício, salvo se sua
-                  prioridade depender diretamente do ponto forte do outro modelo.
+                  mais barato, pondere se a economia compensa os recursos para sua prioridade
+                  depender diretamente do ponto forte do outro modelo.
                 </p>
                 <PurchaseActions
                   className="mt-4"
@@ -806,7 +806,7 @@ function ProductHero({ product, accent }: { product: typeof POCO_X6; accent: "te
             <Rating value={product.rating} />
           </div>
           <div className="mt-4 font-heading text-lg font-bold text-foreground">
-            Preço atualizado no Mercado Livre
+            Consultar preço na loja
           </div>
           <span className="text-[11px] text-muted-foreground">
             Consulte valor, estoque e condições

@@ -36,10 +36,10 @@ const FEATURED_COMPARISONS = [
   {
     title: "Galaxy A25 5G vs Redmi Note 13 4G",
     summary:
-      "Compare os dois destaques até R$ 1.500 em 5G, câmera, desempenho, tela, bateria, carregamento e suporte.",
+      "Compare duas alternativas anteriores, com preço a conferir em 5G, câmera, desempenho, tela, bateria, carregamento e suporte.",
     href: "/comparativo/galaxy-a25-vs-redmi-note-13",
     family: "Samsung vs Xiaomi",
-    tag: "Até R$ 1.500",
+    tag: "Preço no teto não confirmado",
     bestFor: "Quem quer decidir entre mais longevidade e 5G ou tela maior e preço mais baixo.",
   },
   {
@@ -77,10 +77,10 @@ const ALL_COMPARISONS = [
   {
     title: "Galaxy A35 vs Redmi Note 13 Pro",
     summary:
-      "Compare os dois favoritos até R$ 2.000 em tela, câmera, desempenho, bateria, software e carregamento.",
+      "Compare duas alternativas anteriores, com preço a conferir em tela, câmera, desempenho, bateria, software e carregamento.",
     href: "/comparativo/galaxy-a35-vs-redmi-note-13-pro",
     family: "Samsung vs Xiaomi",
-    tag: "Até R$ 2.000",
+    tag: "Preço no teto não confirmado",
     bestFor: "Quem quer decidir entre proteção e software Samsung ou mais ficha técnica Xiaomi.",
   },
   {

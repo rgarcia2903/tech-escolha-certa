@@ -1,3 +1,6 @@
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUpRight,
@@ -26,7 +29,7 @@ import {
 import { trackAffiliateClick } from "@/lib/analytics";
 
 const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-custo-beneficio";
-const PAGE_TITLE = "Melhor celular custo-benefício em 2026: 6 opções";
+const PAGE_TITLE = "Celular custo-benefício em 2026: compare por perfil";
 const PAGE_DESCRIPTION =
   "Galaxy A17, Redmi Note 15, Moto G86, POCO X7 Pro, Edge 60 Pro ou S25 FE? Veja qual celular vale mais a pena em cada orçamento.";
 
@@ -35,8 +38,9 @@ const phones = [
     position: 1,
     id: "galaxy-a17",
     name: "Galaxy A17 5G",
-    category: "Melhor até R$ 1.000",
-    priceRule: "vale a pena até R$ 1.000 na versão 128 GB",
+    productId: "galaxy-a17-5g",
+    category: "Perfil para comparar",
+    priceRule: "Consultar na loja; preço no orçamento não confirmado",
     verdict:
       "É a compra econômica mais segura para WhatsApp, redes sociais, vídeos e aplicativos bancários. A tela AMOLED e o suporte prolongado pesam mais que a potência bruta.",
     idealFor: "Uso básico, estudos e quem quer gastar o mínimo sem abrir mão do 5G.",
@@ -57,8 +61,9 @@ const phones = [
     position: 2,
     id: "redmi-note-15",
     name: "Redmi Note 15 5G",
-    category: "Melhor até R$ 1.500",
-    priceRule: "boa compra até R$ 1.500 na versão 8 GB/256 GB",
+    productId: "redmi-note-15-5g",
+    category: "Perfil para comparar",
+    priceRule: "Consultar na loja; preço no orçamento não confirmado",
     verdict:
       "Entrega um conjunto atual de tela, bateria e armazenamento para quem quer mais conforto que um aparelho básico, sem pagar pela potência dos modelos gamer.",
     idealFor: "Redes sociais, vídeos, fotos diurnas, jogos leves e uso diário intenso.",
@@ -75,8 +80,9 @@ const phones = [
     position: 3,
     id: "moto-g86",
     name: "Moto G86 5G",
-    category: "Mais equilibrado até R$ 2.000",
-    priceRule: "faz sentido até R$ 1.800; compare alternativas acima disso",
+    productId: "moto-g86-5g",
+    category: "Perfil para comparar",
+    priceRule: "Consultar na loja; preço no orçamento não confirmado",
     verdict:
       "É a escolha equilibrada para quem valoriza tela, câmera, resistência e uso diário. Não lidera em desempenho, mas evita compromissos graves no conjunto.",
     idealFor: "Quem quer um celular completo, resistente e fácil de usar.",
@@ -93,8 +99,9 @@ const phones = [
     position: 4,
     id: "poco-x7-pro",
     name: "POCO X7 Pro",
-    category: "Melhor desempenho pelo preço",
-    priceRule: "excelente negócio até R$ 2.200; acima disso compare o Edge 60 Pro",
+    productId: "poco-x7-pro",
+    category: "Perfil para comparar",
+    priceRule: "Consultar na loja; preço no orçamento não confirmado",
     verdict:
       "É a escolha mais forte para jogos e desempenho. O preço precisa compensar a garantia e a procedência do anúncio, especialmente em unidades importadas.",
     idealFor: "Jogos pesados, emulação, multitarefa e quem prioriza velocidade.",
@@ -111,8 +118,9 @@ const phones = [
     position: 5,
     id: "edge-60-pro",
     name: "Motorola Edge 60 Pro",
-    category: "Melhor intermediário premium",
-    priceRule: "boa compra até R$ 2.700, principalmente com garantia nacional",
+    productId: "edge-60-pro",
+    category: "Perfil para comparar",
+    priceRule: "Consultar na loja; preço no orçamento não confirmado",
     verdict:
       "Tem o conjunto mais completo entre desempenho, câmeras, bateria, carregamento e resistência. É mais racional que o POCO quando os dois aparecem pelo mesmo preço e a garantia importa.",
     idealFor:
@@ -134,10 +142,11 @@ const phones = [
     position: 6,
     id: "galaxy-s25-fe",
     name: "Galaxy S25 FE",
-    category: "Melhor Samsung premium em promoção",
-    priceRule: "vale a pena até R$ 3.000; acima disso compare gerações mais novas",
+    productId: "galaxy-s25-fe",
+    category: "Perfil para comparar",
+    priceRule: "Consultar na loja; preço no orçamento não confirmado",
     verdict:
-      "É a melhor escolha para quem prioriza câmeras, acabamento, recursos premium e muitos anos de atualização. Só é custo-benefício quando a promoção aproxima o preço dos intermediários.",
+      "É um candidato para câmeras, acabamento e suporte. Compare com o S26 FE e outras alternativas pela configuração e pelo preço final verificado.",
     idealFor: "Fotos e vídeos, trabalho, longevidade de software e ecossistema Samsung.",
     specs: ["Exynos 2400", "Tela AMOLED de 120 Hz", "Câmera teleobjetiva com zoom óptico"],
     strengths: [
@@ -158,9 +167,9 @@ const phones = [
 ];
 
 const quickPicks = [
-  ["Até R$ 1.000", "Galaxy A17 5G"],
-  ["Até R$ 1.500", "Redmi Note 15 5G"],
-  ["Equilíbrio até R$ 2.000", "Moto G86 5G"],
+  ["Uso básico · preço a conferir", "Galaxy A17 5G"],
+  ["Uso cotidiano · preço a conferir", "Redmi Note 15 5G"],
+  ["Uso misto · preço a conferir", "Moto G86 5G"],
   ["Desempenho", "POCO X7 Pro"],
   ["Premium equilibrado", "Edge 60 Pro"],
   ["Câmeras e suporte", "Galaxy S25 FE"],
@@ -214,7 +223,7 @@ export const Route = createFileRoute("/melhores-celulares-custo-beneficio")({
         content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -337,6 +346,8 @@ function CustoBeneficioPage() {
           </div>
         </div>
       </section>
+      <EditorialSelection selection="general" />
+      <LegacySelectionNotice />
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
@@ -355,8 +366,8 @@ function CustoBeneficioPage() {
             ]}
             pageType="guia"
             placement="hero"
-            title="As duas compras mais equilibradas até R$ 2.000"
-            description="Compare preço, memória, vendedor, frete e garantia antes de decidir entre Redmi Note 15 e Moto G86."
+            title="Compare Redmi Note 15 e Moto G86"
+            description="Compare a mesma configuração e confira preço, versão, garantia, vendedor e frete na loja."
           />
         </div>
       </section>
@@ -407,8 +418,8 @@ function CustoBeneficioPage() {
               Os 6 celulares que mais valem a pena
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              A ordem segue o orçamento, do mais barato ao mais completo. Não atribuímos notas
-              numéricas porque preço, perfil de uso e garantia mudam a decisão.
+              A ordem agrupa perfis de uso; não representa uma classificação por preço atual. Não
+              atribuímos notas numéricas porque preço, perfil de uso e garantia mudam a decisão.
             </p>
           </div>
 
@@ -507,6 +518,12 @@ function CustoBeneficioPage() {
                     {phone.internalLabel}
                   </Link>
                 </div>
+                <ProductPurchaseOptions
+                  productId={phone.productId}
+                  pageType="guia"
+                  placement="ranking_stores"
+                  className="mt-5"
+                />
               </article>
             ))}
           </div>
@@ -565,9 +582,9 @@ function CustoBeneficioPage() {
             <h2 className="mt-3 text-3xl font-bold text-foreground">Como montamos esta lista</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               Esta é uma análise documental, não um teste próprio de laboratório. Comparamos
-              especificações oficiais, faixa de preço observada, suporte, garantia, geração do
-              produto e avaliações publicadas por veículos especializados. Os limites de compra são
-              referências editoriais e devem ser confirmados no dia.
+              especificações oficiais, orçamento de referência, sem preço atual confirmado, suporte,
+              garantia, geração do produto e avaliações publicadas por veículos especializados. Os
+              limites de compra são referências editoriais e devem ser confirmados no dia.
             </p>
           </div>
 
@@ -652,9 +669,9 @@ function CustoBeneficioPage() {
             <div>
               <h2 className="text-2xl font-bold text-foreground">Conclusão: qual comprar?</h2>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
-                Até R$ 1.000, escolha o Galaxy A17. Até R$ 1.500, Redmi Note 15 5G. Para equilíbrio,
-                Moto G86. Para jogos, POCO X7 Pro. Acima disso, Edge 60 Pro entrega o pacote mais
-                completo e Galaxy S25 FE vence em câmeras e suporte prolongado.
+                Sem preços conferidos, compare Galaxy A17 e Redmi Note 15 5G para uso cotidiano.
+                Para equilíbrio, Moto G86. Para jogos, POCO X7 Pro. Acima disso, Edge 60 Pro entrega
+                o pacote mais completo e Galaxy S25 FE vence em câmeras e suporte prolongado.
               </p>
             </div>
             <a
@@ -683,7 +700,7 @@ function CustoBeneficioPage() {
           {
             productName: "Redmi Note 15 5G",
             href: REDMI_NOTE_15_5G_AFFILIATE_URL,
-            label: "Até R$ 1.500",
+            label: "Uso cotidiano",
           },
           {
             productName: "POCO X7 Pro",
@@ -692,8 +709,8 @@ function CustoBeneficioPage() {
           },
         ]}
         pageType="guia"
-        title="Escolha por orçamento"
-        eyebrow="Ofertas no Mercado Livre"
+        title="Redmi Note 15 5G e POCO X7 Pro"
+        eyebrow="Opções por perfil · preço a conferir"
       />
     </main>
   );

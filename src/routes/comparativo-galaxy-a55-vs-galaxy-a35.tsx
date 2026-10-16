@@ -31,7 +31,7 @@ export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       { name: "twitter:image", content: HERO_IMG },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -249,7 +249,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
 
             <div className="mt-6 space-y-3">
               <div className="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700 ring-1 ring-slate-200">
-                Mais barato
+                Compare o preço final
               </div>
 
               <div className="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700 ring-1 ring-slate-200">
@@ -257,7 +257,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               </div>
 
               <div className="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700 ring-1 ring-slate-200">
-                Ótima compra até R$ 2.000
+                Alternativa anterior · preço a conferir
               </div>
             </div>
 

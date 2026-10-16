@@ -1,3 +1,4 @@
+import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, ChevronRight, ShieldCheck, Sparkles } from "lucide-react";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
@@ -34,7 +35,6 @@ export const Route = createFileRoute("/celulares")({
         content: CANONICAL,
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: CelularesPage,
 });
@@ -131,22 +131,22 @@ const comparisons = [
 
 const rankings = [
   {
-    category: "Melhor celular premium",
+    category: "Alternativa de geração anterior",
     product: "Galaxy S24",
     href: "/review/galaxy-s24",
   },
   {
-    category: "Melhor Samsung custo-benefício",
+    category: "Alternativa de geração anterior",
     product: "Galaxy A35",
     href: "/review/galaxy-a35",
   },
   {
-    category: "Melhor intermediário premium",
+    category: "Alternativa de geração anterior",
     product: "Galaxy A55",
     href: "/review/galaxy-a55",
   },
   {
-    category: "Melhor Xiaomi custo-benefício",
+    category: "Alternativa de geração anterior",
     product: "Redmi Note 13 Pro",
     href: "/review/redmi-note-13-pro",
   },
@@ -210,6 +210,7 @@ function CelularesPage() {
       </EditorialHero>
 
       <PhoneDecisionFinder pageType="celulares" />
+      <EditorialSelection selection="general" pageType="celulares" />
 
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-4 px-6 py-6 md:grid-cols-3 lg:px-8">

@@ -127,8 +127,53 @@
 
 @utility hero-gradient {
   background:
-    radial-gradient(60% 80% at 80% 0%, color-mix(in oklab, var(--cta) 12%, transparent), transparent 60%),
-    radial-gradient(50% 70% at 0% 100%, color-mix(in oklab, var(--teal) 10%, transparent), transparent 60%),
+    radial-gradient(
+      60% 80% at 80% 0%,
+      color-mix(in oklab, var(--cta) 12%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 70% at 0% 100%,
+      color-mix(in oklab, var(--teal) 10%, transparent),
+      transparent 60%
+    ),
     linear-gradient(180deg, var(--background), var(--surface));
 }
 
+/* The menu and dialog must stay usable above mobile purchase controls. */
+body:has([data-mobile-menu="open"]) [data-mobile-purchase],
+body:has([role="dialog"][data-state="open"]) [data-mobile-purchase] {
+  display: none;
+}
+html {
+  scroll-padding-top: 8rem;
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #8b5a2b;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Allow grid columns and long product names to shrink on narrow screens. */
+main .grid > *,
+article .grid > * {
+  min-width: 0;
+}
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}

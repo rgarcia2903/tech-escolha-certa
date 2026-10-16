@@ -1,3 +1,4 @@
+import { documentaryArticle } from "@/lib/editorial-schema";
 import { REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
@@ -41,7 +42,7 @@ const FAQ = [
   {
     question: "Qual a diferença entre Redmi Note 14 Pro+ e Redmi Note 13 Pro?",
     answer:
-      "O Redmi Note 14 Pro+ traz Snapdragon 7s Gen 3, carregamento de 120 W, proteção IP68 e construção mais robusta. O Redmi Note 13 Pro pode compensar quando custa mais de 20% menos.",
+      "O Redmi Note 14 Pro+ traz Snapdragon 7s Gen 3, carregamento de 120 W, proteção IP68 e construção mais robusta. O Redmi Note 13 Pro pode compensar se a economia justificar abrir mão das diferenças de proteção e recarga.",
   },
   {
     question: "O Redmi Note 14 Pro+ 5G é bom para jogos?",
@@ -80,51 +81,13 @@ export const Route = createFileRoute("/review/redmi-note-14-pro-plus")({
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       { name: "twitter:image", content: HERO_IMAGE },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Redmi Note 14 Pro+ 5G",
-          image: [HERO_IMAGE],
-          description: PAGE_DESCRIPTION,
-          brand: { "@type": "Brand", name: "Xiaomi" },
-          url: CANONICAL,
-          review: {
-            "@type": "Review",
-            name: PAGE_TITLE,
-            author: {
-              "@type": "Person",
-              name: "Ricardo Garcia",
-              url: "https://techescolhacerta.com.br/autor/ricardo-garcia",
-            },
-            dateModified: "2026-10-02",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: 9.2,
-              bestRating: 10,
-              worstRating: 0,
-            },
-            positiveNotes: {
-              "@type": "ItemList",
-              itemListElement: PROS.map((name, index) => ({
-                "@type": "ListItem",
-                position: index + 1,
-                name,
-              })),
-            },
-            negativeNotes: {
-              "@type": "ItemList",
-              itemListElement: CONS.map((name, index) => ({
-                "@type": "ListItem",
-                position: index + 1,
-                name,
-              })),
-            },
-          },
-        }),
+        children: JSON.stringify(
+          documentaryArticle("redmi-note-14-pro-plus", PAGE_TITLE, PAGE_DESCRIPTION),
+        ),
       },
       {
         type: "application/ld+json",
@@ -198,9 +161,9 @@ function ReviewRedmiNote14ProPlus() {
       }}
       decision={{
         bestFor:
-          "Você quer um Redmi mais completo, com câmera principal forte, IP68 e recarga de 120 W, e ele custa até cerca de 15% a mais que o Note 13 Pro.",
+          "Você quer um Redmi mais completo, com câmera principal forte, IP68 e recarga de 120 W, e a diferença de preço compensa esses recursos para você.",
         caution:
-          "A diferença para o Redmi Note 13 Pro passar de 20%; o modelo anterior normalmente entrega melhor custo-benefício.",
+          "A diferença de preço não compensar os recursos adicionais no seu uso. Compare anúncios equivalentes.",
         comparisonHref: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
         comparisonLabel: "Comparar Note 14 Pro+ e Note 13 Pro",
       }}
@@ -267,10 +230,10 @@ function ReviewRedmiNote14ProPlus() {
         {
           eyebrow: "Preço e custo-benefício",
           title: "Quando o Redmi Note 14 Pro+ é a melhor compra?",
-          text: "Use o Redmi Note 13 Pro como referência. Se o Note 14 Pro+ custar até cerca de 15% a mais, o IP68, a carga de 120 W e o chip mais atual justificam a diferença. Acima de 20%, o Note 13 Pro normalmente é a escolha mais racional. Entre 15% e 20%, pague mais apenas se proteção e recarga rápida forem prioridades.",
+          text: "Compare o custo total da mesma configuração. IP68, recarga de 120 W e chip são diferenças a ponderar, sem um percentual universal de preço que determine o vencedor. Compare também candidatos posteriores.",
         },
       ]}
-      finalRecommendation="Sim — o Redmi Note 14 Pro+ 5G vale a pena para quem busca tela excelente, IP68, câmera principal forte, bom desempenho e carregamento extremamente rápido. A melhor compra acontece quando ele custa até cerca de 15% a mais que o Redmi Note 13 Pro. Acima de 20%, compare com atenção antes de pagar pela geração mais nova."
+      finalRecommendation="Sim — o Redmi Note 14 Pro+ 5G vale a pena para quem busca tela excelente, IP68, câmera principal forte, bom desempenho e carregamento extremamente rápido. A decisão depende da diferença de preço e da importância dos recursos no seu uso, incluindo alternativas posteriores."
       faq={FAQ}
       relatedLinks={[
         {

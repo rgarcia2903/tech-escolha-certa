@@ -1,598 +1,160 @@
-"use client";
-
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
-  ArrowRight,
-  ArrowUpRight,
-  Camera,
-  Check,
-  CircleAlert,
-  Gauge,
-  ShieldCheck,
-  Smartphone,
-  Sparkles,
-  WalletCards,
-} from "lucide-react";
+  BUDGETS,
+  getFinderCandidates,
+  PRICE_UNCONFIRMED_NOTICE,
+  type BudgetId,
+  type Profile,
+} from "@/lib/editorial-policy";
+import { getOffers } from "@/lib/product-catalog";
+import { trackFinderChoice } from "@/lib/analytics";
+import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
+import { MobilePurchaseBar } from "./MobilePurchaseBar";
 
-import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
-import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
-import {
-  GALAXY_A25_AFFILIATE_URL,
-  GALAXY_A35_AFFILIATE_URL,
-  GALAXY_A55_AFFILIATE_URL,
-  GALAXY_M35_AFFILIATE_URL,
-  GALAXY_S24_AFFILIATE_URL,
-  IPHONE_15_AFFILIATE_URL,
-  POCO_X6_PRO_AFFILIATE_URL,
-  POCO_X7_PRO_AFFILIATE_URL,
-  REDMI_NOTE_13_4G_AFFILIATE_URL,
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
-  REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
-import { trackAffiliateClick, trackFinderChoice } from "@/lib/analytics";
-
-type Budget = "ate-1500" | "ate-2000" | "ate-3000" | "premium";
-type Priority = "equilibrio" | "desempenho" | "camera";
-
-const FINDER_STORAGE_KEY = "tech-escolha-certa:phone-finder";
-
-type Recommendation = {
-  productName: string;
-  shortName: string;
-  badge: string;
-  verdict: string;
-  strengths: [string, string, string];
-  caution: string;
-  image?: string;
-  affiliateHref: string;
-  reviewHref: string;
-  reviewHash?: string;
-  reviewLabel?: string;
-  compareHref: string;
-  compareHash?: string;
-  compareLabel: string;
-};
-
-const budgets: Array<{ value: Budget; label: string; detail: string }> = [
-  { value: "ate-1500", label: "Até R$ 1.500", detail: "Quero gastar menos" },
-  { value: "ate-2000", label: "Até R$ 2.000", detail: "Quero economizar" },
-  { value: "ate-3000", label: "Até R$ 3.000", detail: "Quero subir de nível" },
-  { value: "premium", label: "Premium", detail: "Quero a melhor experiência" },
+const STORAGE_KEY = "tech-escolha-certa:phone-finder";
+const PROFILES: { id: Profile; label: string }[] = [
+  { id: "equilibrio", label: "Uso cotidiano e equilíbrio" },
+  { id: "desempenho", label: "Jogos e desempenho" },
+  { id: "camera", label: "Câmeras e vídeo" },
 ];
-
-const priorities: Array<{
-  value: Priority;
-  label: string;
-  detail: string;
-  icon: typeof ShieldCheck;
-}> = [
-  {
-    value: "equilibrio",
-    label: "Equilíbrio e segurança",
-    detail: "Boa experiência em tudo",
-    icon: ShieldCheck,
-  },
-  {
-    value: "desempenho",
-    label: "Jogos e velocidade",
-    detail: "Mais potência e fluidez",
-    icon: Gauge,
-  },
-  {
-    value: "camera",
-    label: "Câmera e acabamento",
-    detail: "Fotos e experiência premium",
-    icon: Camera,
-  },
-];
-
-function isBudget(value: unknown): value is Budget {
-  return budgets.some((option) => option.value === value);
-}
-
-function isPriority(value: unknown): value is Priority {
-  return priorities.some((option) => option.value === value);
-}
-
-function persistFinderChoice(budget: Budget, priority: Priority) {
-  if (typeof window === "undefined") return;
-
-  try {
-    window.sessionStorage.setItem(FINDER_STORAGE_KEY, JSON.stringify({ budget, priority }));
-  } catch {
-    // A recomendação continua funcionando quando o navegador bloqueia armazenamento.
-  }
-}
-
-const recommendations: Record<`${Budget}:${Priority}`, Recommendation> = {
-  "ate-1500:equilibrio": {
-    productName: "Samsung Galaxy A25 5G",
-    shortName: "Galaxy A25",
-    badge: "Escolha equilibrada até R$ 1.500",
-    verdict:
-      "É a indicação mais segura da faixa para quem quer tela AMOLED, 5G e uma experiência Samsung equilibrada sem gastar além do necessário.",
-    strengths: ["Tela AMOLED 120 Hz", "Conectividade 5G", "Software Samsung"],
-    caution: "Confirme a memória e a cor do anúncio antes de finalizar a compra.",
-    affiliateHref: GALAXY_A25_AFFILIATE_URL,
-    reviewHref: "/guia/melhores-celulares-ate-1500-reais",
-    reviewHash: "melhor-geral",
-    reviewLabel: "Ver análise no guia",
-    compareHref: "/guia/melhores-celulares-ate-1500-reais",
-    compareHash: "ranking",
-    compareLabel: "Comparar opções até R$ 1.500",
-  },
-  "ate-1500:desempenho": {
-    productName: "Samsung Galaxy M35 5G",
-    shortName: "Galaxy M35",
-    badge: "Desempenho e bateria até R$ 1.500",
-    verdict:
-      "É a opção mais forte entre as ofertas verificadas para quem quer boa autonomia, tela AMOLED e desempenho consistente no uso diário.",
-    strengths: ["Bateria de 6.000 mAh", "Tela AMOLED 120 Hz", "Conectividade 5G"],
-    caution: "É um aparelho mais pesado e vale mais quando estiver realmente abaixo de R$ 1.500.",
-    image: "/images/products/galaxy-m35-optimized.webp",
-    affiliateHref: GALAXY_M35_AFFILIATE_URL,
-    reviewHref: "/guia/melhores-celulares-ate-1500-reais",
-    reviewHash: "melhor-bateria",
-    reviewLabel: "Ver análise no guia",
-    compareHref: "/guia/melhores-celulares-ate-1500-reais",
-    compareHash: "ranking",
-    compareLabel: "Comparar opções até R$ 1.500",
-  },
-  "ate-1500:camera": {
-    productName: "Redmi Note 13 4G",
-    shortName: "Redmi Note 13 4G",
-    badge: "Tela e câmera pelo menor preço",
-    verdict:
-      "Faz sentido para quem prioriza tela AMOLED, câmera principal competente e carregamento rápido, sem necessidade de conectividade 5G.",
-    strengths: ["Tela AMOLED 120 Hz", "Câmera principal de 108 MP", "Carga rápida de 33 W"],
-    caution: "Esta versão é 4G; escolha um Galaxy A25 ou M35 se o 5G for indispensável.",
-    affiliateHref: REDMI_NOTE_13_4G_AFFILIATE_URL,
-    reviewHref: "/guia/melhores-celulares-ate-1500-reais",
-    reviewHash: "melhor-custo-beneficio",
-    reviewLabel: "Ver análise no guia",
-    compareHref: "/guia/melhores-celulares-ate-1500-reais",
-    compareHash: "ranking",
-    compareLabel: "Comparar opções até R$ 1.500",
-  },
-  "ate-2000:equilibrio": {
-    productName: "Galaxy A35 5G",
-    shortName: "Galaxy A35",
-    badge: "Escolha segura até R$ 2.000",
-    verdict:
-      "É a indicação mais equilibrada para quem quer boa tela, bateria confiável, resistência e uma experiência Samsung previsível.",
-    strengths: ["Tela Super AMOLED", "Proteção IP67", "Software confiável"],
-    caution: "Se jogos pesados forem prioridade, compare com o Poco X6 Pro.",
-    image: "/images/products/galaxy-a35-optimized.webp",
-    affiliateHref: GALAXY_A35_AFFILIATE_URL,
-    reviewHref: "/review/galaxy-a35",
-    compareHref: "/comparativo-galaxy-a55-vs-galaxy-a35",
-    compareLabel: "Comparar A35 e A55",
-  },
-  "ate-2000:desempenho": {
-    productName: "Poco X6 Pro",
-    shortName: "Poco X6 Pro",
-    badge: "Mais desempenho até R$ 2.000",
-    verdict:
-      "Faz mais sentido para quem prioriza jogos, velocidade e tela fluida, especialmente quando aparece bem abaixo do Poco X7 Pro.",
-    strengths: ["Processador potente", "Tela AMOLED 120 Hz", "Carregamento rápido"],
-    caution: "O conjunto de câmeras e o acabamento não são os principais motivos para comprá-lo.",
-    image: "/images/products/poco-x6-pro-optimized.webp",
-    affiliateHref: POCO_X6_PRO_AFFILIATE_URL,
-    reviewHref: "/review/poco-x6-pro",
-    compareHref: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
-    compareLabel: "Comparar X6 Pro e X7 Pro",
-  },
-  "ate-2000:camera": {
-    productName: "Redmi Note 13 Pro 5G",
-    shortName: "Redmi Note 13 Pro",
-    badge: "Mais ficha técnica pelo preço",
-    verdict:
-      "É uma escolha forte para quem quer tela de alta qualidade, câmera principal de 200 MP e carregamento rápido sem entrar na faixa premium.",
-    strengths: ["Câmera de 200 MP", "Tela AMOLED", "Carga rápida de 67 W"],
-    caution: "A experiência de software pode exigir mais ajustes do que em um Galaxy.",
-    image: "/images/products/redmi-note-13-pro-optimized.webp",
-    affiliateHref: REDMI_NOTE_13_PRO_AFFILIATE_URL,
-    reviewHref: "/review/redmi-note-13-pro",
-    compareHref: "/comparativo/galaxy-a35-vs-redmi-note-13-pro",
-    compareLabel: "Comparar Redmi e Galaxy A35",
-  },
-  "ate-3000:equilibrio": {
-    productName: "Galaxy A55 5G",
-    shortName: "Galaxy A55",
-    badge: "Melhor equilíbrio até R$ 3.000",
-    verdict:
-      "É a compra mais conservadora para quem valoriza acabamento, câmera consistente, software refinado e uso tranquilo por vários anos.",
-    strengths: ["Construção premium", "Boa câmera", "Experiência Samsung"],
-    caution: "Quem prioriza desempenho bruto pode encontrar mais potência no Poco X7 Pro.",
-    image: "/images/products/galaxy-a55-optimized.webp",
-    affiliateHref: GALAXY_A55_AFFILIATE_URL,
-    reviewHref: "/review/galaxy-a55",
-    compareHref: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
-    compareLabel: "Comparar A55 e Redmi",
-  },
-  "ate-3000:desempenho": {
-    productName: "Poco X7 Pro",
-    shortName: "Poco X7 Pro",
-    badge: "Performance e bateria",
-    verdict:
-      "É a recomendação para quem quer muita velocidade, jogos exigentes e bateria forte sem pagar o preço de um flagship tradicional.",
-    strengths: ["Dimensity 8400-Ultra", "Bateria grande", "Tela AMOLED 120 Hz"],
-    caution: "Câmera e acabamento ficam atrás de opções mais equilibradas como o Galaxy A55.",
-    image: "/images/products/poco-x7-pro-optimized.webp",
-    affiliateHref: POCO_X7_PRO_AFFILIATE_URL,
-    reviewHref: "/review/poco-x7-pro",
-    compareHref: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
-    compareLabel: "Comparar X7 Pro e X6 Pro",
-  },
-  "ate-3000:camera": {
-    productName: "Redmi Note 14 Pro+ 5G",
-    shortName: "Redmi Note 14 Pro+",
-    badge: "Redmi mais completo",
-    verdict:
-      "Entrega câmera principal de 200 MP, proteção IP68, tela forte e carregamento muito rápido para quem quer uma ficha técnica completa.",
-    strengths: ["Câmera de 200 MP", "Proteção IP68", "Carregamento de 120 W"],
-    caution: "Confirme se o preço atual cabe na faixa; promoções e estoque mudam rapidamente.",
-    image: "/images/products/redmi-note-14-pro-plus-optimized.webp",
-    affiliateHref: REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
-    reviewHref: "/review/redmi-note-14-pro-plus",
-    compareHref: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
-    compareLabel: "Comparar os dois Redmi",
-  },
-  "premium:equilibrio": {
-    productName: "Galaxy S24",
-    shortName: "Galaxy S24",
-    badge: "Premium compacto e completo",
-    verdict:
-      "É a escolha mais equilibrada para quem quer desempenho de topo, boas câmeras, acabamento premium e um aparelho compacto.",
-    strengths: ["Câmeras consistentes", "Desempenho premium", "Suporte prolongado"],
-    caution:
-      "A bateria é adequada, mas o tamanho compacto limita a capacidade frente a aparelhos maiores.",
-    image: "/images/products/galaxy-s24-optimized.webp",
-    affiliateHref: GALAXY_S24_AFFILIATE_URL,
-    reviewHref: "/review/galaxy-s24",
-    compareHref: "/comparativo/iphone-15-vs-galaxy-s24",
-    compareLabel: "Comparar Galaxy S24 e iPhone 15",
-  },
-  "premium:desempenho": {
-    productName: "Galaxy S24",
-    shortName: "Galaxy S24",
-    badge: "Flagship Android equilibrado",
-    verdict:
-      "Combina desempenho de alto nível com câmeras, acabamento e software mais completos do que celulares focados apenas em potência.",
-    strengths: ["Desempenho de topo", "Galaxy AI", "Tela premium"],
-    caution:
-      "Se a prioridade for somente jogos e autonomia, o Poco X7 Pro custa menos e merece comparação.",
-    image: "/images/products/galaxy-s24-optimized.webp",
-    affiliateHref: GALAXY_S24_AFFILIATE_URL,
-    reviewHref: "/review/galaxy-s24",
-    compareHref: "/comparativo/iphone-15-vs-galaxy-s24",
-    compareLabel: "Comparar Galaxy S24 e iPhone 15",
-  },
-  "premium:camera": {
-    productName: "iPhone 15",
-    shortName: "iPhone 15",
-    badge: "Câmera e ecossistema Apple",
-    verdict:
-      "Faz sentido para quem valoriza vídeo, câmera consistente, acabamento e integração com outros produtos Apple.",
-    strengths: ["Vídeos excelentes", "Desempenho forte", "Ecossistema Apple"],
-    caution: "Tela de 60 Hz e carregamento mais lento podem pesar contra o Galaxy S24.",
-    image: "/images/products/iphone-15-optimized.webp",
-    affiliateHref: IPHONE_15_AFFILIATE_URL,
-    reviewHref: "/review/iphone-15",
-    compareHref: "/comparativo/iphone-15-vs-galaxy-s24",
-    compareLabel: "Comparar iPhone 15 e Galaxy S24",
-  },
-};
-
-type PhoneDecisionFinderProps = {
-  pageType?: "home" | "celulares" | "ofertas";
-  showOfferMobileBar?: boolean;
-};
-
 export function PhoneDecisionFinder({
   pageType = "home",
   showOfferMobileBar = false,
-}: PhoneDecisionFinderProps) {
-  const [budget, setBudget] = useState<Budget>("ate-1500");
-  const [priority, setPriority] = useState<Priority>("equilibrio");
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const budgetRef = useRef<Budget>("ate-1500");
-  const priorityRef = useRef<Priority>("equilibrio");
-
+}: {
+  pageType?: "home" | "celulares" | "ofertas";
+  showOfferMobileBar?: boolean;
+}) {
+  const [budget, setBudget] = useState<BudgetId>("ate-1500");
+  const [profile, setProfile] = useState<Profile>("equilibrio");
+  const [interacted, setInteracted] = useState(false);
   useEffect(() => {
     try {
-      const storedChoice = window.sessionStorage.getItem(FINDER_STORAGE_KEY);
-
-      if (!storedChoice) return;
-
-      const parsedChoice = JSON.parse(storedChoice) as {
-        budget?: unknown;
-        priority?: unknown;
-      };
-
-      if (!isBudget(parsedChoice.budget) || !isPriority(parsedChoice.priority)) {
-        window.sessionStorage.removeItem(FINDER_STORAGE_KEY);
-        return;
+      const stored = JSON.parse(sessionStorage.getItem(STORAGE_KEY) ?? "null");
+      if (
+        stored &&
+        BUDGETS.some((b) => b.id === stored.budget) &&
+        PROFILES.some((p) => p.id === (stored.profile ?? stored.priority))
+      ) {
+        setBudget(stored.budget);
+        setProfile(stored.profile ?? stored.priority);
       }
-
-      budgetRef.current = parsedChoice.budget;
-      priorityRef.current = parsedChoice.priority;
-      setBudget(parsedChoice.budget);
-      setPriority(parsedChoice.priority);
-      setHasInteracted(true);
     } catch {
-      // Mantém os padrões quando a sessão está indisponível ou contém dados inválidos.
+      /* O seletor funciona sem armazenamento. */
     }
   }, []);
-
-  const recommendation = useMemo(
-    () => recommendations[`${budget}:${priority}`],
-    [budget, priority],
+  function choose(nextBudget: BudgetId, nextProfile: Profile, step: string, choice: string) {
+    setBudget(nextBudget);
+    setProfile(nextProfile);
+    setInteracted(true);
+    try {
+      sessionStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({ budget: nextBudget, profile: nextProfile }),
+      );
+    } catch {
+      /* Sem persistência quando bloqueada. */
+    }
+    trackFinderChoice({ step, choice, recommendation: "candidates_price_unconfirmed" });
+  }
+  const products = getFinderCandidates(budget, profile);
+  const firstWithOffer = products.find(
+    (product) => product.editorialStatus !== "evaluate" && getOffers(product.id).length,
   );
-
-  const changeBudget = (value: Budget) => {
-    budgetRef.current = value;
-    setBudget(value);
-    setHasInteracted(true);
-    persistFinderChoice(value, priorityRef.current);
-    trackFinderChoice({
-      step: "orcamento",
-      choice: value,
-      recommendation: recommendations[`${value}:${priority}`].shortName,
-    });
-  };
-
-  const changePriority = (value: Priority) => {
-    priorityRef.current = value;
-    setPriority(value);
-    setHasInteracted(true);
-    persistFinderChoice(budgetRef.current, value);
-    trackFinderChoice({
-      step: "prioridade",
-      choice: value,
-      recommendation: recommendations[`${budget}:${value}`].shortName,
-    });
-  };
-
   return (
     <section id="escolha-rapida" className="scroll-mt-32 bg-[#0F3F4A] py-12 text-white md:py-16">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#D7A77E] ring-1 ring-white/15">
-            <Sparkles className="h-3.5 w-3.5" />
-            Escolha guiada
-          </div>
-          <h2 className="mt-4 text-3xl font-extrabold text-white md:text-4xl">
-            Encontre uma boa escolha em menos de 30 segundos
-          </h2>
-          <p className="mt-4 text-base leading-7 text-slate-200 md:text-lg">
-            Selecione quanto pretende gastar e o que mais importa. Nós mostramos a indicação mais
-            coerente, o ponto de atenção e a comparação que vale fazer antes da compra.
-          </p>
-        </div>
-
-        <div className="mt-8 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
-          <div className="rounded-3xl bg-white p-6 text-slate-900 shadow-2xl md:p-8">
+      <div className="container-tec">
+        <p className="text-xs font-semibold uppercase tracking-widest text-[#D7A77E]">
+          Escolha guiada
+        </p>
+        <h2 className="mt-3 text-3xl font-bold text-white">Compare celulares pelo seu perfil</h2>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-200">
+          Escolha um orçamento de referência e a prioridade. Apresentamos candidatos para pesquisar;
+          sem preço verificado, nenhum deles é garantido dentro do teto selecionado.
+        </p>
+        <div className="mt-7 grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="rounded-3xl bg-white p-6 text-slate-900">
             <fieldset>
-              <legend className="flex items-center gap-3 text-lg font-extrabold text-[#0F3F4A]">
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-[#8B5A2B] text-sm text-white">
-                  1
-                </span>
-                Qual é o seu orçamento?
-              </legend>
-
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                {budgets.map((option) => {
-                  const selected = budget === option.value;
-
-                  return (
-                    <button
-                      key={option.value}
-                      type="button"
-                      aria-pressed={selected}
-                      onClick={() => changeBudget(option.value)}
-                      className={`rounded-2xl border p-4 text-left transition ${
-                        selected
-                          ? "border-[#8B5A2B] bg-[#FFF8F1] ring-2 ring-[#8B5A2B]/20"
-                          : "border-slate-200 bg-white hover:border-[#8B5A2B]/50 hover:bg-[#F7F2EB]"
-                      }`}
-                    >
-                      <span className="flex items-center justify-between gap-2">
-                        <WalletCards className="h-4 w-4 text-[#8B5A2B]" />
-                        {selected && <Check className="h-4 w-4 text-[#8B5A2B]" />}
-                      </span>
-                      <span className="mt-3 block text-sm font-bold text-[#0F3F4A]">
-                        {option.label}
-                      </span>
-                      <span className="mt-1 block text-xs leading-5 text-slate-500">
-                        {option.detail}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </fieldset>
-
-            <fieldset className="mt-7 border-t border-slate-200 pt-7">
-              <legend className="flex items-center gap-3 text-lg font-extrabold text-[#0F3F4A]">
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-[#8B5A2B] text-sm text-white">
-                  2
-                </span>
-                O que mais importa?
-              </legend>
-
-              <div className="mt-4 grid gap-3">
-                {priorities.map((option) => {
-                  const selected = priority === option.value;
-                  const Icon = option.icon;
-
-                  return (
-                    <button
-                      key={option.value}
-                      type="button"
-                      aria-pressed={selected}
-                      onClick={() => changePriority(option.value)}
-                      className={`flex items-center gap-4 rounded-2xl border p-4 text-left transition ${
-                        selected
-                          ? "border-[#8B5A2B] bg-[#FFF8F1] ring-2 ring-[#8B5A2B]/20"
-                          : "border-slate-200 bg-white hover:border-[#8B5A2B]/50 hover:bg-[#F7F2EB]"
-                      }`}
-                    >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#F7F2EB] text-[#8B5A2B]">
-                        <Icon className="h-5 w-5" />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-bold text-[#0F3F4A]">
-                          {option.label}
-                        </span>
-                        <span className="mt-1 block text-xs text-slate-500">{option.detail}</span>
-                      </span>
-                      {selected && <Check className="h-5 w-5 shrink-0 text-[#8B5A2B]" />}
-                    </button>
-                  );
-                })}
-              </div>
-            </fieldset>
-
-            <p className="mt-6 flex items-start gap-2 text-xs leading-5 text-slate-500">
-              <CircleAlert className="mt-0.5 h-4 w-4 shrink-0" />
-              Preços mudam. A faixa escolhida orienta a recomendação, mas o valor atual deve ser
-              confirmado antes da compra.
-            </p>
-          </div>
-
-          <article
-            key={`${budget}:${priority}`}
-            aria-live="polite"
-            className="overflow-hidden rounded-3xl bg-[#F7F2EB] text-slate-900 shadow-2xl ring-1 ring-white/15"
-          >
-            <div className="grid h-full md:grid-cols-[220px_1fr]">
-              <div className="flex min-h-64 items-center justify-center bg-white p-6 md:min-h-full">
-                {recommendation.image ? (
-                  <img
-                    src={recommendation.image}
-                    alt={recommendation.productName}
-                    className="h-56 w-full object-contain md:h-80"
-                  />
-                ) : (
-                  <div className="flex max-w-48 flex-col items-center text-center">
-                    <span className="grid h-20 w-20 place-items-center rounded-3xl bg-[#F7F2EB] text-[#8B5A2B] ring-1 ring-[#8B5A2B]/20">
-                      <Smartphone className="h-10 w-10" />
-                    </span>
-                    <strong className="mt-5 text-lg text-[#0F3F4A]">
-                      {recommendation.productName}
-                    </strong>
-                    <span className="mt-2 text-xs leading-5 text-slate-500">
-                      Veja as imagens reais e a versão disponível no anúncio.
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              <div className="flex flex-col p-6 md:p-8">
-                <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#0F3F4A] px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-white">
-                  <ShieldCheck className="h-3.5 w-3.5 text-[#D7A77E]" />
-                  {recommendation.badge}
-                </div>
-
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#8B5A2B]">
-                  Nossa indicação para você
-                </p>
-                <h3 className="mt-2 text-3xl font-extrabold text-[#0F3F4A]">
-                  {recommendation.productName}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-slate-700">{recommendation.verdict}</p>
-
-                <ul className="mt-5 grid gap-2 sm:grid-cols-3 md:grid-cols-1 xl:grid-cols-3">
-                  {recommendation.strengths.map((strength) => (
-                    <li
-                      key={strength}
-                      className="flex items-center gap-2 rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[#0F3F4A] ring-1 ring-slate-200"
-                    >
-                      <Check className="h-3.5 w-3.5 shrink-0 text-[#8B5A2B]" />
-                      {strength}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-                  <p className="flex items-start gap-2 text-xs leading-5 text-amber-950">
-                    <CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                    <span>
-                      <strong>Ponto de atenção:</strong> {recommendation.caution}
-                    </span>
-                  </p>
-                </div>
-
-                <div className="mt-auto grid gap-3 pt-6 sm:grid-cols-2">
-                  <a
-                    href={recommendation.affiliateHref}
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    onClick={() =>
-                      trackAffiliateClick({
-                        productName: recommendation.shortName,
-                        pageType,
-                        ctaPlacement: "decision_finder",
-                      })
-                    }
-                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:-translate-y-0.5 hover:brightness-105"
+              <legend className="font-bold">1. Orçamento de referência</legend>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+                {BUDGETS.map((b) => (
+                  <button
+                    type="button"
+                    key={b.id}
+                    aria-pressed={budget === b.id}
+                    onClick={() => choose(b.id, profile, "orcamento", b.id)}
+                    className={`min-h-11 rounded-xl border px-4 py-3 text-left text-sm ${budget === b.id ? "border-[#8B5A2B] bg-[#FFF8F1] font-bold" : "border-slate-200"}`}
                   >
-                    Ver preço atual <ArrowUpRight className="h-4 w-4" />
-                  </a>
+                    {b.label}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
+            <fieldset className="mt-6">
+              <legend className="font-bold">2. O que mais importa?</legend>
+              <div className="mt-3 grid gap-2">
+                {PROFILES.map((p) => (
+                  <button
+                    type="button"
+                    key={p.id}
+                    aria-pressed={profile === p.id}
+                    onClick={() => choose(budget, p.id, "prioridade", p.id)}
+                    className={`min-h-11 rounded-xl border px-4 py-3 text-left text-sm ${profile === p.id ? "border-[#8B5A2B] bg-[#FFF8F1] font-bold" : "border-slate-200"}`}
+                  >
+                    {p.label}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
+            <p className="mt-5 text-xs leading-5 text-slate-600">{PRICE_UNCONFIRMED_NOTICE}</p>
+          </div>
+          <div aria-live="polite" aria-atomic="false" className="space-y-4">
+            {products.map((product) => (
+              <article key={product.id} className="rounded-3xl bg-[#F7F2EB] p-6 text-slate-900">
+                <p className="text-xs font-semibold text-[#8B5A2B]">
+                  {product.editorialStatus === "evaluate"
+                    ? "Em avaliação editorial"
+                    : "Candidato para comparar · preço no teto não confirmado"}
+                </p>
+                <h3 className="mt-2 text-2xl font-bold">{product.name}</h3>
+                <p className="mt-3 text-sm leading-6">{product.summary}</p>
+                <p className="mt-3 text-xs leading-5 text-slate-600">{product.caution}</p>
+                {product.editorialStatus !== "evaluate" && (
+                  <ProductPurchaseOptions
+                    productId={product.id}
+                    pageType={pageType}
+                    placement="decision_finder"
+                    className="mt-4"
+                  />
+                )}
+                {product.reviewPath && (
                   <Link
-                    to={recommendation.reviewHref}
-                    hash={recommendation.reviewHash}
+                    to={product.reviewPath}
                     onClick={() =>
                       trackFinderChoice({
                         step: "resultado",
                         choice: "review",
-                        recommendation: recommendation.shortName,
+                        recommendation: product.id,
                       })
                     }
-                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-center text-sm font-bold text-[#0F3F4A] transition hover:border-[#8B5A2B] hover:text-[#8B5A2B]"
+                    className="mt-4 inline-block text-sm font-semibold underline"
                   >
-                    {recommendation.reviewLabel ?? "Ler análise"} <ArrowRight className="h-4 w-4" />
+                    Ler análise de {product.name}
                   </Link>
-                </div>
-
-                <Link
-                  to={recommendation.compareHref}
-                  hash={recommendation.compareHash}
-                  onClick={() =>
-                    trackFinderChoice({
-                      step: "resultado",
-                      choice: "comparativo",
-                      recommendation: recommendation.shortName,
-                    })
-                  }
-                  className="mt-4 text-center text-sm font-semibold text-[#0F3F4A] underline decoration-[#8B5A2B]/40 underline-offset-4 transition hover:text-[#8B5A2B]"
-                >
-                  {recommendation.compareLabel}
-                </Link>
-
-                <AffiliateRedirectNotice className="mt-5 border-t border-slate-200 pt-4" />
-              </div>
-            </div>
-          </article>
+                )}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
-
-      {showOfferMobileBar && hasInteracted && (
+      {showOfferMobileBar && interacted && firstWithOffer && (
         <MobilePurchaseBar
           options={[
-            {
-              productName: recommendation.shortName,
-              href: recommendation.affiliateHref,
-              label: "Ver preço atual",
-              primary: true,
-            },
+            { productName: firstWithOffer.name, href: getOffers(firstWithOffer.id)[0].url },
           ]}
-          pageType="ofertas"
-          title={`Sua indicação: ${recommendation.shortName}`}
-          eyebrow="Resultado da escolha"
-          reserveSpace={false}
+          pageType={pageType}
+          title={`Comparar: ${firstWithOffer.name}`}
+          reserveSpace
         />
       )}
     </section>

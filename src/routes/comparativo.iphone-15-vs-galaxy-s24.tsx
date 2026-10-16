@@ -175,9 +175,9 @@ const ROWS: Row[] = [
   {
     label: "Faixa de preço",
     icon: Wallet,
-    a: "Geralmente mais caro",
-    b: "Geralmente mais barato",
-    winner: "b",
+    a: "Consultar preço e versão na loja",
+    b: "Consultar preço e versão na loja",
+    winner: "tie",
   },
 ];
 
@@ -351,7 +351,7 @@ function VersusPage() {
 
             <div className="rounded-2xl border border-cta/30 bg-card p-5 shadow-soft ring-1 ring-cta/10">
               <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cta">
-                Ofertas atualizadas
+                Opções de compra
               </span>
               <div className="mt-4 space-y-3">
                 <OfferLine name="iPhone 15" affiliateHref={IPHONE_15_AFFILIATE_URL} variant="cta" />
@@ -725,7 +725,7 @@ function HeroSide({
           {name}
         </span>
         <span className="inline-flex items-center gap-1 rounded-md bg-background/90 px-2 py-1 text-[11px] font-semibold text-foreground backdrop-blur">
-          <Star className="h-3 w-3 fill-cta text-cta" /> {(rating * 2).toFixed(1)}/10
+          <Star className="h-3 w-3 fill-cta text-cta" /> {"Comparação editorial"}/10
         </span>
       </div>
     </div>

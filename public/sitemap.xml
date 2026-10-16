@@ -1,14 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://techescolhacerta.com.br</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/celulares</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/melhores-celulares-custo-beneficio</loc>
@@ -20,6 +22,7 @@
     <loc>https://techescolhacerta.com.br/melhores-celulares-samsung</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/melhores-celulares-xiaomi</loc>
@@ -31,20 +34,23 @@
     <loc>https://techescolhacerta.com.br/melhores-celulares-ate-2000</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/melhores-celulares-ate-2500</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/review/galaxy-a55</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/review/galaxy-a35</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -52,16 +58,17 @@
     <loc>https://techescolhacerta.com.br/review/galaxy-s24</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/review/redmi-note-13-pro</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/comparativo/galaxy-a35-vs-redmi-note-13-pro</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -69,10 +76,11 @@
     <loc>https://techescolhacerta.com.br/comparativo/galaxy-a55-vs-redmi-note-13-pro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/comparativo-galaxy-a55-vs-galaxy-a35</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -83,7 +91,7 @@
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/comparativos</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -91,6 +99,7 @@
     <loc>https://techescolhacerta.com.br/ofertas</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/sobre</loc>
@@ -106,6 +115,7 @@
     <loc>https://techescolhacerta.com.br/transparencia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/divulgacao-de-afiliados</loc>
@@ -116,64 +126,64 @@
     <loc>https://techescolhacerta.com.br/como-avaliamos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/autor/ricardo-garcia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://techescolhacerta.com.br/review/redmi-note-14-pro-plus</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://techescolhacerta.com.br/review/poco-x7-pro</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://techescolhacerta.com.br/comparativo/poco-x6-pro-vs-poco-x7-pro</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://techescolhacerta.com.br/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/comparativo/redmi-note-13-pro-vs-poco-x6-pro</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/review/poco-x6-pro</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/review/iphone-15</loc>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/comparativo/galaxy-a55-vs-poco-x6-pro</loc>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/comparativo/iphone-15-vs-galaxy-s24</loc>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/comparativo/galaxy-a25-vs-redmi-note-13</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -183,9 +193,11 @@
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/guia/melhores-celulares-ate-3000-reais</loc>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/guia/melhores-celulares-ate-3500-reais</loc>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://techescolhacerta.com.br/guia/melhores-celulares-para-jogos-ate-2000</loc>

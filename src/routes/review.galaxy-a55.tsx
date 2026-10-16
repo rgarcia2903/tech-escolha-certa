@@ -1,3 +1,5 @@
+import { documentaryArticle } from "@/lib/editorial-schema";
+import { ReviewContext } from "@/components/site/ReviewContext";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
@@ -42,7 +44,12 @@ export const Route = createFileRoute("/review/galaxy-a55")({
         content: CANONICAL,
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(documentaryArticle("galaxy-a55", PAGE_TITLE, PAGE_DESCRIPTION)),
+      },
+    ],
   }),
   component: ReviewGalaxyA55,
 });
@@ -89,6 +96,7 @@ const specs = [
 function ReviewGalaxyA55() {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
+      <ReviewContext productId="galaxy-a55" />
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-[#0B2D35] via-[#114B59] to-[#071E25] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]" />
 
@@ -135,12 +143,12 @@ function ReviewGalaxyA55() {
 
           <div className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Nota geral
+              Avaliação documental
             </p>
 
-            <div className="mt-4 flex items-end gap-2">
-              <span className="text-6xl font-extrabold text-white">9.0</span>
-              <span className="pb-2 text-lg text-slate-200">/10</span>
+            <div className="mt-4 flex flex-wrap items-end gap-2">
+              <span className="text-3xl font-extrabold text-white">Análise</span>
+              <span className="pb-2 text-lg text-slate-200">documental</span>
             </div>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
@@ -248,21 +256,14 @@ function ReviewGalaxyA55() {
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">Notas por categoria</h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Critérios por categoria</h2>
 
             <div className="mt-6 space-y-4">
               {scores.map(([label, score]) => (
                 <div key={label}>
                   <div className="mb-2 flex items-center justify-between">
                     <span className="font-semibold text-slate-800">{label}</span>
-                    <span className="font-bold text-[#0F3F4A]">{score}/10</span>
-                  </div>
-
-                  <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                    <div
-                      className="h-full rounded-full bg-[#8B5A2B]"
-                      style={{ width: `${Number(score) * 10}%` }}
-                    />
+                    <span className="font-bold text-[#0F3F4A]">avaliação documental</span>
                   </div>
                 </div>
               ))}

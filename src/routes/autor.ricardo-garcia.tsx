@@ -21,7 +21,7 @@ export const Route = createFileRoute("/autor/ricardo-garcia")({
       },
       { property: "og:url", content: CANONICAL },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",

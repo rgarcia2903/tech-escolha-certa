@@ -61,11 +61,8 @@ export function Badge({
 }
 
 export function Rating({ value }: { value: number }) {
+  void value;
   return (
-    <div className="inline-flex items-center gap-1 text-sm text-foreground">
-      <Star className="h-4 w-4 fill-cta text-cta" />
-      <span className="font-semibold">{(value * 2).toFixed(1)}</span>
-      <span className="text-muted-foreground">/10</span>
-    </div>
+    <span className="text-xs text-muted-foreground">Avaliação editorial · sem medição própria</span>
   );
 }

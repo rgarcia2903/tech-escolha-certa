@@ -1,3 +1,5 @@
+import { documentaryArticle } from "@/lib/editorial-schema";
+import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -32,50 +34,11 @@ export const Route = createFileRoute("/review/galaxy-a35")({
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       { name: "twitter:image", content: HERO_IMG },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Samsung Galaxy A35 5G",
-          image: [HERO_IMG],
-          description: PAGE_DESCRIPTION,
-          brand: { "@type": "Brand", name: "Samsung" },
-          review: {
-            "@type": "Review",
-            name: PAGE_TITLE,
-            author: {
-              "@type": "Team",
-              name: "Equipe Tech Escolha Certa",
-              url: "https://techescolhacerta.com.br/sobre",
-            },
-            dateModified: "2026-10-01",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: 8.7,
-              bestRating: 10,
-              worstRating: 0,
-            },
-            positiveNotes: {
-              "@type": "ItemList",
-              itemListElement: pros.map((name, index) => ({
-                "@type": "ListItem",
-                position: index + 1,
-                name,
-              })),
-            },
-            negativeNotes: {
-              "@type": "ItemList",
-              itemListElement: contras.map((name, index) => ({
-                "@type": "ListItem",
-                position: index + 1,
-                name,
-              })),
-            },
-          },
-        }),
+        children: JSON.stringify(documentaryArticle("galaxy-a35", PAGE_TITLE, PAGE_DESCRIPTION)),
       },
     ],
   }),
@@ -83,7 +46,7 @@ export const Route = createFileRoute("/review/galaxy-a35")({
 });
 
 const destaques = [
-  ["Melhor para", "Quem quer um Samsung equilibrado até R$ 2.000"],
+  ["Melhor para", "Quem compara Samsung de geração anterior; preço atual a conferir"],
   ["Ponto forte", "Tela Super AMOLED, bateria e compra segura"],
   ["Ponto fraco", "Carregamento poderia ser mais rápido"],
   ["Veredito", "Um dos melhores intermediários custo-benefício da Samsung"],
@@ -115,6 +78,7 @@ const contras = [
 function ReviewGalaxyA35() {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
+      <ReviewContext productId="galaxy-a35" />
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-[#0B2D35] via-[#114B59] to-[#071E25] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]" />
 
@@ -163,12 +127,12 @@ function ReviewGalaxyA35() {
             </div>
 
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Nota geral
+              Avaliação documental
             </p>
 
-            <div className="mt-4 flex items-end gap-2">
-              <span className="text-6xl font-extrabold text-white">8.7</span>
-              <span className="pb-2 text-lg text-slate-200">/10</span>
+            <div className="mt-4 flex flex-wrap items-end gap-2">
+              <span className="text-3xl font-extrabold text-white">Análise</span>
+              <span className="pb-2 text-lg text-slate-200">documental</span>
             </div>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
@@ -274,21 +238,14 @@ function ReviewGalaxyA35() {
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">Notas por categoria</h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Critérios por categoria</h2>
 
             <div className="mt-6 space-y-4">
               {notas.map(([categoria, nota]) => (
                 <div key={categoria}>
                   <div className="mb-2 flex items-center justify-between">
                     <span className="font-semibold text-slate-800">{categoria}</span>
-                    <span className="font-bold text-[#0F3F4A]">{nota}/10</span>
-                  </div>
-
-                  <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                    <div
-                      className="h-full rounded-full bg-[#8B5A2B]"
-                      style={{ width: `${Number(nota) * 10}%` }}
-                    />
+                    <span className="font-bold text-[#0F3F4A]">avaliação documental</span>
                   </div>
                 </div>
               ))}
@@ -433,7 +390,9 @@ function ReviewGalaxyA35() {
               Veredito
             </p>
 
-            <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">Compra segura até R$ 2.000</h2>
+            <h2 className="mt-2 text-2xl font-bold text-[#0F3F4A]">
+              Conferir versão, preço e condições
+            </h2>
 
             <p className="mt-3 text-sm leading-6 text-slate-700">
               O Galaxy A35 é ideal para quem quer um Samsung equilibrado, com boa tela, bateria
