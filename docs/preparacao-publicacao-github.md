@@ -1,6 +1,6 @@
 # Preparação de publicação pelo GitHub
 
-Data: 16/10/2026. A publicação e o envio da branch estão suspensos por instrução do responsável. Não há PR remoto desta preparação. O corpo para revisão está preparado em `work/pr-description.md`.
+Data: 16/10/2026. O responsável autorizou o envio somente da branch de modernização e a abertura de PR para main após confirmar os comandos no painel. A publicação em produção e o merge continuam não autorizados. O corpo de revisão está preparado em `work/pr-description.md`.
 
 ## Base e preservação
 
@@ -27,17 +27,20 @@ TypeScript, build cliente/servidor, 14 testes e 375 referências internas passar
 
 Os resultados finais e comandos constam no corpo de PR preparado em `work/pr-description.md`. Artefatos, logs, cópias de segurança e capturas ficam em `work/`, ignorado pelo Git. Não há instalação de dependências; o worktree utiliza uma cópia isolada das dependências já existentes, também ignorada.
 
-## Cloudflare: confirmação necessária antes de qualquer push
+## Cloudflare: configuração confirmada pelo responsável
 
-O responsável confirmou `main` como branch de produção, builds não produtivos ativos, Worker Previews ainda não configurado e builds globais não desativados. Portanto, enviar uma branch pode iniciar um build automaticamente. Isso não prova que o site público será atualizado.
+- Repositório: `rgarcia2903/tech-escolha-certa`; produção: `main`.
+- Builds de branches não produtivas: ativos; Worker Previews: não configurado.
+- Build command: `npm run build`.
+- Deploy command de produção: `npx wrangler deploy`.
+- Version command para branches não produtivas: `npx wrangler versions upload`.
+- Root directory: `/`.
 
-No fluxo legado, um comando como `wrangler versions upload` cria uma versão sem promovê-la à produção. Entretanto, o comando não produtivo pode ser personalizado; um comando que execute `wrangler deploy` no Worker de produção pode publicar. Também é necessário revisar o comando de build e scripts invocados para excluir publicações embutidas. O modelo legado não garante isolamento de recursos de produção.
+O responsável confirmou esses valores no painel e autorizou o push somente da branch `codex/modernizacao-tech-escolha-certa-2026-10-16`. O script de build local compila Vite e não invoca deploy; não há workflows GitHub Actions no código enviado. O Version command cria uma versão sem promovê-la à produção. O modelo legado não garante isolamento dos recursos de produção, e o build automático da Cloudflare deve ser acompanhado após o envio.
 
-Antes de enviar, confirmar o texto exato de Build command e Non-production branch deploy command/Preview command, incluindo os scripts chamados. Não são necessários tokens para esta conferência visual no painel. Não alterar configurações por conta própria.
+O nome do Worker em `wrangler.jsonc` foi corrigido de `tanstack-start-app` para `tech-escolha-certa`, preservando as demais configurações. Isso alinha o artefato ao serviço existente; não foi alterada configuração no painel da Cloudflare. Nenhum `wrangler deploy` manual é autorizado. Se surgir indicação de deploy de produção no build não produtivo, interromper as ações e informar o responsável.
 
-Um PR em rascunho não impede que o push dispare a integração. Não usar `[skip ci]` ou o nome da branch como garantia de bloqueio.
-
-Caminho após confirmação e nova autorização: enviar somente esta branch, abrir PR para `main`, revisar diff e checks, e manter o PR sem merge. Se for exigida ausência total de builds, o responsável precisará bloquear previamente os builds não produtivos na Cloudflare; essa configuração não foi alterada aqui.
+O PR deve permanecer sem merge e sem auto-merge. O envio não contém alterações de domínio, credenciais ou configurações remotas. Os resultados remotos devem ser relatados separadamente dos testes locais.
 
 Referências oficiais:
 
