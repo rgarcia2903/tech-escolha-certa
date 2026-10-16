@@ -15,7 +15,14 @@ import { AuthorByline } from "@/components/site/AuthorByline";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { Badge } from "@/components/site/ui";
-import { POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
+import {
+  EDGE_60_PRO_AFFILIATE_URL,
+  GALAXY_A17_5G_AFFILIATE_URL,
+  GALAXY_S25_FE_AFFILIATE_URL,
+  MOTO_G86_5G_AFFILIATE_URL,
+  POCO_X7_PRO_AFFILIATE_URL,
+  REDMI_NOTE_15_5G_AFFILIATE_URL,
+} from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
 
 const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-custo-beneficio";
@@ -40,10 +47,9 @@ const phones = [
       "Suporte longo da Samsung",
     ],
     cautions: ["4 GB de RAM limitam multitarefa", "Não é indicado para jogos pesados"],
-    actionHref:
-      "https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a17-5g-gray-128gb-sm-a176bzaozto/",
-    actionLabel: "Ver ficha oficial do Galaxy A17",
-    isAffiliate: false,
+    actionHref: GALAXY_A17_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Galaxy A17 5G",
+    isAffiliate: true,
     internalPath: "/melhores-celulares-samsung" as const,
     internalLabel: "Ver guia Samsung",
   },
@@ -59,9 +65,9 @@ const phones = [
     specs: ["Tela AMOLED de 120 Hz", "Bateria de 5.520 mAh", "Carregamento de 45 W"],
     strengths: ["Boa autonomia", "Tela fluida", "256 GB é a configuração mais interessante"],
     cautions: ["Não é focado em jogos pesados", "Confirme se o anúncio é da versão 5G"],
-    actionHref: "https://www.mi.com/br/product/redmi-note-15-5g/",
-    actionLabel: "Ver ficha oficial do Redmi Note 15",
-    isAffiliate: false,
+    actionHref: REDMI_NOTE_15_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Redmi Note 15 5G",
+    isAffiliate: true,
     internalPath: "/melhores-celulares-xiaomi" as const,
     internalLabel: "Ver guia Xiaomi",
   },
@@ -77,9 +83,9 @@ const phones = [
     specs: ["Tela pOLED 1.5K de 120 Hz", "Bateria de 5.200 mAh", "Proteção IP68 e IP69"],
     strengths: ["Bom conjunto geral", "Câmera principal com OIS", "Resistência acima da média"],
     cautions: ["Desempenho abaixo do POCO X7 Pro", "Carregamento de 33 W é apenas mediano"],
-    actionHref: "https://www.motorola.com.br/smartphone-moto-g86-5g-256gb/p",
-    actionLabel: "Ver ficha oficial do Moto G86",
-    isAffiliate: false,
+    actionHref: MOTO_G86_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Moto G86 5G",
+    isAffiliate: true,
     internalPath: "/guia/melhores-celulares-para-jogos-ate-2000" as const,
     internalLabel: "Comparar para jogos",
   },
@@ -118,9 +124,9 @@ const phones = [
       "12 GB de RAM física",
     ],
     cautions: ["Tela curva exige mais cuidado", "Suporte de software menor que o da Samsung"],
-    actionHref: "https://www.motorola.com.br/smartphone-motorola-edge-60-pro-5g-256gb/p",
-    actionLabel: "Ver ficha oficial do Edge 60 Pro",
-    isAffiliate: false,
+    actionHref: EDGE_60_PRO_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Edge 60 Pro",
+    isAffiliate: true,
     internalPath: "/melhores-celulares-ate-2500" as const,
     internalLabel: "Ver opções até R$ 2.500",
   },
@@ -143,10 +149,9 @@ const phones = [
       "Bateria menor que a dos rivais",
       "Carregador rápido pode ser vendido separadamente",
     ],
-    actionHref:
-      "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-navy-256gb-sm-s731bdbkzto/",
-    actionLabel: "Ver ficha oficial do Galaxy S25 FE",
-    isAffiliate: false,
+    actionHref: GALAXY_S25_FE_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Galaxy S25 FE",
+    isAffiliate: true,
     internalPath: "/melhores-celulares-samsung" as const,
     internalLabel: "Ver guia Samsung",
   },
@@ -219,7 +224,7 @@ export const Route = createFileRoute("/melhores-celulares-custo-beneficio")({
           headline: PAGE_TITLE,
           description: PAGE_DESCRIPTION,
           datePublished: "2026-09-25",
-          dateModified: "2026-10-14",
+          dateModified: "2026-10-16",
           mainEntityOfPage: CANONICAL,
           author: {
             "@type": "Person",
@@ -284,7 +289,7 @@ function CustoBeneficioPage() {
                 uma experiência mais completa.
               </p>
 
-              <AuthorByline reviewedAt="14 de outubro de 2026" className="mt-6" />
+              <AuthorByline reviewedAt="16 de outubro de 2026" className="mt-6" />
               <p className="mt-3 text-xs text-muted-foreground">
                 Análise documental independente • preços e estoque mudam diariamente
               </p>
@@ -338,15 +343,20 @@ function CustoBeneficioPage() {
           <PurchaseActions
             options={[
               {
-                productName: "POCO X7 Pro",
-                href: POCO_X7_PRO_AFFILIATE_URL,
-                label: "Conferir preço do POCO X7 Pro",
+                productName: "Redmi Note 15 5G",
+                href: REDMI_NOTE_15_5G_AFFILIATE_URL,
+                label: "Ver Redmi Note 15",
+              },
+              {
+                productName: "Moto G86 5G",
+                href: MOTO_G86_5G_AFFILIATE_URL,
+                label: "Ver Moto G86",
               },
             ]}
             pageType="guia"
             placement="hero"
-            title="Prioriza desempenho? Comece pelo POCO X7 Pro"
-            description="Considere a compra até R$ 2.200 e confira versão, garantia, vendedor, frete e preço final."
+            title="As duas compras mais equilibradas até R$ 2.000"
+            description="Compare preço, memória, vendedor, frete e garantia antes de decidir entre Redmi Note 15 e Moto G86."
           />
         </div>
       </section>
@@ -600,8 +610,8 @@ function CustoBeneficioPage() {
               ))}
             </ul>
             <p className="mt-5 border-t border-border pt-4 text-xs leading-5 text-muted-foreground">
-              O botão de preço do POCO X7 Pro é afiliado e pode gerar comissão sem custo adicional.
-              Os links para fichas oficiais não geram comissão.
+              Todos os botões de preço desta página são afiliados e podem gerar comissão sem custo
+              adicional. Os links para fichas oficiais servem como fontes e não geram comissão.
             </p>
           </div>
         </div>
@@ -671,14 +681,19 @@ function CustoBeneficioPage() {
       <MobilePurchaseBar
         options={[
           {
+            productName: "Redmi Note 15 5G",
+            href: REDMI_NOTE_15_5G_AFFILIATE_URL,
+            label: "Até R$ 1.500",
+          },
+          {
             productName: "POCO X7 Pro",
             href: POCO_X7_PRO_AFFILIATE_URL,
-            label: "Ver preço",
+            label: "Desempenho",
           },
         ]}
         pageType="guia"
-        title="POCO X7 Pro"
-        eyebrow="Melhor desempenho pelo preço"
+        title="Escolha por orçamento"
+        eyebrow="Ofertas no Mercado Livre"
       />
     </main>
   );
