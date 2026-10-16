@@ -13,12 +13,6 @@ export const Route = createFileRoute("/divulgacao-de-afiliados")({
           "Entenda como funcionam os links afiliados do Tech Escolha Certa, nossa política editorial e como podemos receber comissão por compras realizadas por links indicados.",
       },
     ],
-    links: [
-      {
-        rel: "canonical",
-        href: "https://techescolhacerta.com.br/divulgacao-de-afiliados",
-      },
-    ],
   }),
   component: DivulgacaoDeAfiliados,
 });
@@ -39,9 +33,9 @@ function DivulgacaoDeAfiliados() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-100">
-            O Tech Escolha Certa participa de programas de afiliados. Isso
-            significa que podemos receber comissão quando você compra um produto
-            por meio de alguns links publicados no site.
+            O Tech Escolha Certa participa de programas de afiliados. Isso significa que podemos
+            receber comissão quando você compra um produto por meio de alguns links publicados no
+            site.
           </p>
         </div>
       </section>
@@ -49,59 +43,49 @@ function DivulgacaoDeAfiliados() {
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1fr_340px] lg:px-8">
         <article className="space-y-8">
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Como funcionam os links afiliados
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Como funcionam os links afiliados</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Alguns links de produtos publicados no Tech Escolha Certa levam
-              para lojas parceiras, como o Mercado Livre. Quando você clica em
-              um desses links e realiza uma compra, o site pode receber uma
-              comissão.
+              Alguns links de produtos publicados no Tech Escolha Certa levam para lojas parceiras,
+              como o Mercado Livre. Quando você clica em um desses links e realiza uma compra, o
+              site pode receber uma comissão.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Essa comissão não altera o preço final para você. O valor, as
-              condições de pagamento, o prazo de entrega, a garantia e a
-              responsabilidade pela venda são definidos pela loja ou vendedor.
+              Essa comissão não altera o preço final para você. O valor, as condições de pagamento,
+              o prazo de entrega, a garantia e a responsabilidade pela venda são definidos pela loja
+              ou vendedor.
             </p>
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Nossa política editorial
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Nossa política editorial</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              As recomendações do Tech Escolha Certa são feitas com base em
-              análise editorial, ficha técnica, posicionamento de mercado,
-              custo-benefício, experiência esperada de uso e comparação com
-              modelos concorrentes.
+              As recomendações do Tech Escolha Certa são feitas com base em análise editorial, ficha
+              técnica, posicionamento de mercado, custo-benefício, experiência esperada de uso e
+              comparação com modelos concorrentes.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              A existência de comissão afiliada não garante que um produto será
-              recomendado. Também podemos citar produtos sem link afiliado quando
-              eles forem relevantes para a comparação ou para a decisão de compra.
+              A existência de comissão afiliada não garante que um produto será recomendado. Também
+              podemos citar produtos sem link afiliado quando eles forem relevantes para a
+              comparação ou para a decisão de compra.
             </p>
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">
-              Responsabilidade pela compra
-            </h2>
+            <h2 className="text-3xl font-bold text-[#0F3F4A]">Responsabilidade pela compra</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              Antes de finalizar uma compra, recomendamos conferir preço,
-              reputação do vendedor, avaliações do anúncio, prazo de entrega,
-              política de troca, garantia, versão do produto, memória,
-              armazenamento, cor e condições de parcelamento.
+              Antes de finalizar uma compra, recomendamos conferir preço, reputação do vendedor,
+              avaliações do anúncio, prazo de entrega, política de troca, garantia, versão do
+              produto, memória, armazenamento, cor e condições de parcelamento.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-700">
-              O Tech Escolha Certa não vende produtos diretamente, não processa
-              pagamentos e não controla estoque, entrega ou atendimento das
-              lojas parceiras.
+              O Tech Escolha Certa não vende produtos diretamente, não processa pagamentos e não
+              controla estoque, entrega ou atendimento das lojas parceiras.
             </p>
           </section>
 
@@ -109,14 +93,13 @@ function DivulgacaoDeAfiliados() {
             <h2 className="text-3xl font-bold text-white">Por que usamos afiliados?</h2>
 
             <p className="mt-4 text-base leading-7 text-slate-100">
-              Os links afiliados ajudam a manter o projeto ativo, permitindo a
-              criação de reviews, comparativos e guias gratuitos para quem está
-              pesquisando antes de comprar.
+              Os links afiliados ajudam a manter o projeto ativo, permitindo a criação de reviews,
+              comparativos e guias gratuitos para quem está pesquisando antes de comprar.
             </p>
 
             <p className="mt-4 text-base leading-7 text-slate-100">
-              Nosso objetivo é ajudar você a escolher melhor, evitando compras
-              ruins, promessas exageradas e decisões baseadas apenas em marketing.
+              Nosso objetivo é ajudar você a escolher melhor, evitando compras ruins, promessas
+              exageradas e decisões baseadas apenas em marketing.
             </p>
           </section>
         </article>
@@ -132,9 +115,7 @@ function DivulgacaoDeAfiliados() {
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
                   Resumo
                 </p>
-                <h2 className="text-xl font-bold text-[#0F3F4A]">
-                  Transparência primeiro
-                </h2>
+                <h2 className="text-xl font-bold text-[#0F3F4A]">Transparência primeiro</h2>
               </div>
             </div>
 
@@ -149,9 +130,7 @@ function DivulgacaoDeAfiliados() {
           <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
             <div className="flex items-center gap-3">
               <ShieldCheck className="h-5 w-5 text-[#0F3F4A]" />
-              <h3 className="text-lg font-bold text-[#0F3F4A]">
-                Leia também
-              </h3>
+              <h3 className="text-lg font-bold text-[#0F3F4A]">Leia também</h3>
             </div>
 
             <div className="mt-5 space-y-3 text-sm">

@@ -41,15 +41,6 @@ export function ReviewCard({
           </span>
         </div>
 
-        {score && (
-          <div className="absolute right-5 top-5 rounded-2xl bg-[#071E25]/90 px-3 py-2 text-white shadow-lg backdrop-blur-md">
-            <div className="flex items-center gap-1">
-              <Star className="h-3.5 w-3.5 fill-current text-[#8B5A2B]" />
-              <span className="text-sm font-bold">{score}</span>
-            </div>
-          </div>
-        )}
-
         {badge && (
           <div className="absolute bottom-5 left-5">
             <span className="rounded-full bg-[#8B5A2B] px-3 py-1 text-xs font-semibold text-white shadow-lg">
@@ -73,10 +64,3 @@ export function ReviewCard({
     </Link>
   );
 }
-
-
-
-
-
-
-

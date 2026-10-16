@@ -113,7 +113,7 @@ export const Route = createFileRoute("/comparativo/galaxy-a25-vs-redmi-note-13")
         content: "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -172,7 +172,7 @@ function GalaxyA25VsRedmiNote13Page() {
           <div className="max-w-4xl">
             <div className="flex flex-wrap gap-2">
               <Badge variant="cta">Comparativo direto</Badge>
-              <Badge variant="soft">Até R$ 1.500</Badge>
+              <Badge variant="soft">Preço no teto não confirmado</Badge>
               <Badge variant="teal">Samsung vs Xiaomi</Badge>
             </div>
 
@@ -441,8 +441,8 @@ function GalaxyA25VsRedmiNote13Page() {
                 Ainda em dúvida sobre o orçamento?
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-200">
-                Veja o ranking completo até R$ 1.500 ou compare todas as ofertas verificadas antes
-                de decidir.
+                Veja o ranking completo até R$ 1.500 ou compare todas as opções de compra antes de
+                decidir.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">

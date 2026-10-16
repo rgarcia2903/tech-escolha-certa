@@ -1,3 +1,5 @@
+import { getOfferByUrl } from "@/lib/product-catalog";
+import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
 import { ExternalLink, ShieldCheck, ShoppingBag } from "lucide-react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -13,7 +15,7 @@ type AffiliateCTAProps = {
 };
 
 export function AffiliateCTA({
-  title = "Melhor oferta encontrada",
+  title = "Consulte as opções de compra",
   description = "Confira preço atualizado, disponibilidade e condições diretamente na loja.",
   buttonText = "Ver produto no Mercado Livre",
   href,
@@ -21,6 +23,7 @@ export function AffiliateCTA({
   productName,
   pageType = "guia",
 }: AffiliateCTAProps) {
+  const offer = getOfferByUrl(href);
   return (
     <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-[#0B2D35] via-[#114B59] to-[#071E25] p-8 text-white shadow-xl">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]" />
@@ -45,24 +48,35 @@ export function AffiliateCTA({
           </div>
 
           <div className="w-full max-w-sm">
-            <a
-              href={href}
-              target="_blank"
-              rel="nofollow sponsored noopener noreferrer"
-              onClick={() =>
-                trackAffiliateClick({
-                  productName: productName ?? title,
-                  pageType,
-                  ctaPlacement: "content",
-                })
-              }
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#8B5A2B] px-6 py-4 text-sm font-bold text-white shadow-lg transition hover:brightness-95"
-            >
-              {buttonText}
-              <ExternalLink className="h-4 w-4" />
-            </a>
+            {offer ? (
+              <ProductPurchaseOptions
+                productId={offer.productId}
+                pageType={pageType}
+                placement="content"
+                tone="dark"
+              />
+            ) : (
+              <>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      productName: productName ?? title,
+                      pageType,
+                      ctaPlacement: "content",
+                    })
+                  }
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#8B5A2B] px-6 py-4 text-sm font-bold text-white shadow-lg transition hover:brightness-95"
+                >
+                  {buttonText}
+                  <ExternalLink className="h-4 w-4" />
+                </a>
 
-            <AffiliateRedirectNotice className="mt-3" tone="dark" />
+                <AffiliateRedirectNotice className="mt-3" tone="dark" />
+              </>
+            )}
 
             <div className="mt-4 flex items-start gap-3 rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8B5A2B]" />

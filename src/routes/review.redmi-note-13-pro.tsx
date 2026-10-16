@@ -1,3 +1,4 @@
+import { documentaryArticle } from "@/lib/editorial-schema";
 import { REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
@@ -85,51 +86,13 @@ export const Route = createFileRoute("/review/redmi-note-13-pro")({
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       { name: "twitter:image", content: HERO_IMAGE },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Redmi Note 13 Pro 5G",
-          image: [HERO_IMAGE],
-          description: PAGE_DESCRIPTION,
-          brand: { "@type": "Brand", name: "Xiaomi" },
-          url: CANONICAL,
-          review: {
-            "@type": "Review",
-            name: PAGE_TITLE,
-            author: {
-              "@type": "Person",
-              name: "Ricardo Garcia",
-              url: "https://techescolhacerta.com.br/autor/ricardo-garcia",
-            },
-            dateModified: "2026-10-02",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: 9,
-              bestRating: 10,
-              worstRating: 0,
-            },
-            positiveNotes: {
-              "@type": "ItemList",
-              itemListElement: PROS.map((name, index) => ({
-                "@type": "ListItem",
-                position: index + 1,
-                name,
-              })),
-            },
-            negativeNotes: {
-              "@type": "ItemList",
-              itemListElement: CONS.map((name, index) => ({
-                "@type": "ListItem",
-                position: index + 1,
-                name,
-              })),
-            },
-          },
-        }),
+        children: JSON.stringify(
+          documentaryArticle("redmi-note-13-pro", PAGE_TITLE, PAGE_DESCRIPTION),
+        ),
       },
       {
         type: "application/ld+json",

@@ -76,6 +76,8 @@ export function Header() {
           <button
             type="button"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
             className="rounded-xl p-2 text-foreground transition hover:bg-secondary lg:hidden"
             onClick={() => setOpen((v) => !v)}
           >
@@ -105,7 +107,11 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background shadow-lg lg:hidden">
+        <div
+          id="mobile-navigation"
+          data-mobile-menu="open"
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-background shadow-lg lg:hidden"
+        >
           <nav className="container-tec flex flex-col gap-1 py-4">
             {NAV.map((n) => (
               <Link

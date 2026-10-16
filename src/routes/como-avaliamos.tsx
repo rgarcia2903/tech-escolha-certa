@@ -19,7 +19,6 @@ export const Route = createFileRoute("/como-avaliamos")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://techescolhacerta.com.br/como-avaliamos" },
     ],
-    links: [{ rel: "canonical", href: "https://techescolhacerta.com.br/como-avaliamos" }],
   }),
   component: ComoAvaliamosPage,
 });
@@ -90,6 +89,25 @@ function ComoAvaliamosPage() {
       </header>
 
       <div className="container-tec py-14">
+        <section className="mb-8 rounded-2xl border border-border bg-card p-6">
+          <h2 className="text-2xl font-bold">Regras editoriais e comerciais · outubro de 2026</h2>
+          <p className="mt-3 text-sm leading-7">
+            As seleções partem de identidade do aparelho, perfil de uso, suporte, fontes técnicas e
+            condições comerciais. Sem preço atual verificado, um modelo é candidato para comparar,
+            não oferta confirmada dentro de um orçamento. A existência de um link ou comissão não
+            define sua posição.
+          </p>
+          <p className="mt-3 text-sm leading-7">
+            Notas preservadas em análises antigas são avaliações editoriais, não avaliações de
+            compradores ou medições de laboratório. A revisão de contexto não significa novo teste.
+            A janela de suporte começa na data oficial de referência, não na compra.
+          </p>
+          <p className="mt-3 text-sm leading-7">
+            Comparamos opções Amazon e Mercado Livre por modelo. Se a variante comercial não foi
+            confirmada, informamos essa limitação e não declaramos equivalência de memória,
+            condição, preço ou garantia entre lojas.
+          </p>
+        </section>
         <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           <Principle
             icon={FileCheck2}

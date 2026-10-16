@@ -1,3 +1,7 @@
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacyBudget1500References } from "@/components/site/LegacyBudget1500References";
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { getProductByName } from "@/lib/product-catalog";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUpRight,
@@ -26,17 +30,17 @@ import {
 import { trackAffiliateClick } from "@/lib/analytics";
 
 const CANONICAL = "https://techescolhacerta.com.br/guia/melhores-celulares-ate-1500-reais";
-const PAGE_TITLE = "Melhor celular até R$ 1.500 em 2026: top 5";
+const PAGE_TITLE = "Celulares até R$ 1.500 em 2026: candidatos e critérios";
 const PAGE_DESCRIPTION =
-  "Compare Moto G86, Galaxy A36, Redmi Note 15, Moto G56 e Galaxy A17. Veja qual vale a pena e o preço máximo para comprar sem errar.";
+  "Compare Moto G86, Galaxy A36, Redmi Note 15, Moto G56 e Galaxy A17. Compare recursos e confira se o preço final cabe no orçamento.";
 
 const phones = [
   {
     position: 1,
     id: "moto-g86",
     name: "Moto G86 5G",
-    category: "Melhor geral em promoção",
-    priceRule: "compre somente se o preço final ficar em até R$ 1.500",
+    category: "Tela, câmera e resistência",
+    priceRule: "Preço no orçamento não confirmado; consulte o total na loja",
     verdict:
       "É o conjunto mais completo da lista quando entra no orçamento. A tela pOLED de alta definição, a câmera com estabilização e a resistência reforçada entregam uma experiência acima da média da faixa.",
     idealFor: "Quem quer tela, câmera, resistência e desempenho equilibrados no mesmo aparelho.",
@@ -47,7 +51,7 @@ const phones = [
       "Construção mais resistente que a média",
     ],
     cautions: [
-      "Fora de promoção costuma ultrapassar R$ 1.500",
+      "Confirme se o preço final, com frete, cabe no orçamento",
       "Carregamento de 33 W é apenas mediano",
     ],
     actionHref: MOTO_G86_5G_AFFILIATE_URL,
@@ -57,8 +61,8 @@ const phones = [
     position: 2,
     id: "galaxy-a36",
     name: "Galaxy A36 5G",
-    category: "Melhor Samsung",
-    priceRule: "excelente compra até R$ 1.500; acima disso compare o Moto G86",
+    category: "Em avaliação editorial",
+    priceRule: "Preço no orçamento não confirmado; consulte o total na loja",
     verdict:
       "É a escolha mais segura para quem prioriza tela AMOLED, atualizações e experiência Samsung. O suporte prolongado aumenta a vida útil e ajuda a compensar um desempenho que não é voltado a jogos pesados.",
     idealFor: "Uso diário, fotos, vídeos e quem pretende ficar vários anos com o aparelho.",
@@ -79,8 +83,8 @@ const phones = [
     position: 3,
     id: "redmi-note-15",
     name: "Redmi Note 15 5G",
-    category: "Melhor tela e bateria",
-    priceRule: "boa compra até R$ 1.500 na versão de 8 GB e 256 GB",
+    category: "Tela e bateria",
+    priceRule: "Preço no orçamento não confirmado; consulte o total na loja",
     verdict:
       "É a opção mais fácil de recomendar para vídeos, redes sociais e autonomia. A combinação de tela AMOLED, bateria grande e bastante armazenamento é forte, desde que o anúncio seja realmente da versão 5G.",
     idealFor: "Consumo de conteúdo, rotina intensa, fotos diurnas e jogos leves.",
@@ -98,8 +102,8 @@ const phones = [
     position: 4,
     id: "moto-g56",
     name: "Moto G56 5G",
-    category: "Melhor custo-benefício",
-    priceRule: "priorize até R$ 1.300; perto de R$ 1.500 escolha um dos três acima",
+    category: "Em avaliação editorial",
+    priceRule: "Preço no orçamento não confirmado; consulte o total na loja",
     verdict:
       "Faz sentido para quem quer 256 GB, resistência e câmera competente gastando menos. Ele perde em qualidade de tela para os modelos OLED, por isso o desconto precisa ser real.",
     idealFor: "Trabalho externo, estudo, aplicativos do dia a dia e quem busca resistência.",
@@ -120,8 +124,8 @@ const phones = [
     position: 5,
     id: "galaxy-a17",
     name: "Galaxy A17 5G",
-    category: "Melhor para economizar",
-    priceRule: "vale a pena até R$ 1.000; acima disso compare o Moto G56",
+    category: "Uso básico",
+    priceRule: "Preço no orçamento não confirmado; consulte o total na loja",
     verdict:
       "É a compra básica da lista. A tela AMOLED, a câmera com estabilização e o suporte longo são diferenciais, mas a configuração de memória precisa ser conferida com cuidado.",
     idealFor: "WhatsApp, bancos, redes sociais, vídeos e uso básico com 5G.",
@@ -129,7 +133,7 @@ const phones = [
     strengths: [
       "Tela acima da média dos aparelhos de entrada",
       "Suporte prolongado da Samsung",
-      "Preço competitivo em promoções",
+      "Compare o custo final e o suporte restante",
     ],
     cautions: [
       "Evite pagar caro em versões com pouca RAM",
@@ -141,11 +145,11 @@ const phones = [
 ];
 
 const quickPicks = [
-  ["Melhor geral em oferta", "Moto G86 5G"],
-  ["Melhor Samsung", "Galaxy A36 5G"],
+  ["Tela, câmera e resistência", "Moto G86 5G"],
+  ["Em avaliação editorial", "Galaxy A36 5G"],
   ["Tela e bateria", "Redmi Note 15 5G"],
-  ["Custo-benefício", "Moto G56 5G"],
-  ["Até R$ 1.000", "Galaxy A17 5G"],
+  ["Em avaliação editorial", "Moto G56 5G"],
+  ["Uso básico", "Galaxy A17 5G"],
 ];
 
 const faq = [
@@ -201,7 +205,6 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")(
         content: "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
       {
         type: "application/ld+json",
@@ -272,9 +275,9 @@ function GuidePage() {
               </h1>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                O Moto G86 é a melhor compra se uma oferta o colocar dentro do teto. Galaxy A36 e
-                Redmi Note 15 são as alternativas mais seguras; Moto G56 e Galaxy A17 servem para
-                economizar.
+                Compare Moto G86, Redmi Note 15 e Galaxy A17 conforme seu perfil e confira o preço
+                final antes de escolher. Galaxy A36 e Moto G56 permanecem visíveis para avaliação
+                editorial; nenhum modelo tem preço confirmado no teto de R$ 1.500.
               </p>
 
               <AuthorByline reviewedAt="16 de outubro de 2026" className="mt-6" />
@@ -333,26 +336,17 @@ function GuidePage() {
         </div>
       </section>
 
+      <EditorialSelection selection="ate-1500" />
       <section className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
-          <PurchaseActions
-            options={[
-              {
-                productName: "Moto G86 5G",
-                href: MOTO_G86_5G_AFFILIATE_URL,
-                label: "Ver oferta do Moto G86",
-              },
-              {
-                productName: "Galaxy A36 5G",
-                href: GALAXY_A36_5G_AFFILIATE_URL,
-                label: "Ver oferta do Galaxy A36",
-              },
-            ]}
+          <ProductPurchaseOptions
+            productId="moto-g86-5g"
             pageType="guia"
-            placement="hero"
-            title="Comece pelos dois modelos mais completos"
-            description="Só avance se o preço final, com frete e juros, permanecer em até R$ 1.500."
+            placement="budget_1500_hero"
           />
+          <a href="#galaxy-a36" className="mt-4 inline-block font-semibold underline">
+            Comparar os recursos do Galaxy A36 · em avaliação
+          </a>
         </div>
       </section>
 
@@ -471,22 +465,29 @@ function GuidePage() {
                   </div>
                 </div>
 
-                <a
-                  href={phone.actionHref}
-                  target="_blank"
-                  rel="nofollow sponsored noopener noreferrer"
-                  onClick={() =>
-                    trackAffiliateClick({
-                      productName: phone.name,
-                      pageType: "guia",
-                      ctaPlacement: "ranking",
-                    })
-                  }
-                  className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-sm font-bold text-cta-foreground transition hover:-translate-y-0.5 hover:brightness-105"
-                >
-                  {phone.actionLabel}
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
+                {getProductByName(phone.name)!.editorialStatus !== "evaluate" ? (
+                  <ProductPurchaseOptions
+                    productId={getProductByName(phone.name)!.id}
+                    pageType="guia"
+                    placement="budget_1500_ranking"
+                    className="mt-7"
+                  />
+                ) : (
+                  <div className="mt-7 rounded-xl border border-border p-4 text-sm">
+                    <p>
+                      Modelo preservado do PR #43, em avaliação editorial. Os links permanecem
+                      cadastrados; a aprovação comercial ainda está pendente.
+                    </p>
+                    <a
+                      href={getProductByName(phone.name)!.officialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-block underline"
+                    >
+                      Consultar fonte oficial de {phone.name}
+                    </a>
+                  </div>
+                )}
               </article>
             ))}
           </div>
@@ -600,8 +601,9 @@ function GuidePage() {
               ))}
             </ul>
             <p className="mt-5 border-t border-border pt-4 text-xs leading-5 text-muted-foreground">
-              Todos os botões de preço são links afiliados do Mercado Livre e podem gerar comissão
-              sem custo adicional. As fichas oficiais acima são apenas fontes.
+              Os botões de compra da Amazon e do Mercado Livre são afiliados e podem gerar comissão
+              sem custo adicional. As fichas oficiais acima são apenas fontes; não confirmam
+              anúncios.
             </p>
           </div>
         </div>
@@ -640,7 +642,8 @@ function GuidePage() {
               <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
                 Comece pelo Moto G86 e confirme se ele cabe no teto. Se não couber, escolha Galaxy
                 A36 para suporte, Redmi Note 15 para tela e bateria, Moto G56 para economizar ou
-                Galaxy A17 para uso básico perto de R$ 1.000.
+                Galaxy A17 para uso básico. A36 e G56 dependem de avaliação editorial antes da
+                ativação comercial.
               </p>
             </div>
             <a
@@ -664,22 +667,23 @@ function GuidePage() {
         </div>
       </section>
 
+      <section className="container-tec py-10">
+        <details className="rounded-2xl border border-border bg-card p-5">
+          <summary className="cursor-pointer text-xl font-bold">
+            Referências anteriores preservadas: A25, Note 13 4G, M35, POCO M6 Pro e Moto G84
+          </summary>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Conteúdo histórico para comparação, sem preço ou estoque atual verificado. A seleção
+            atual e os critérios compartilhados estão acima.
+          </p>
+          <LegacyBudget1500References />
+        </details>
+      </section>
       <MobilePurchaseBar
-        options={[
-          {
-            productName: "Moto G86 5G",
-            href: MOTO_G86_5G_AFFILIATE_URL,
-            label: "Moto G86",
-          },
-          {
-            productName: "Galaxy A36 5G",
-            href: GALAXY_A36_5G_AFFILIATE_URL,
-            label: "Galaxy A36",
-          },
-        ]}
+        options={[{ productName: "Moto G86 5G", href: MOTO_G86_5G_AFFILIATE_URL }]}
         pageType="guia"
-        title="Melhores até R$ 1.500"
-        eyebrow="Confira o preço atual"
+        title="Moto G86 5G · conferir versão"
+        eyebrow="Consultar preço na loja"
       />
     </main>
   );

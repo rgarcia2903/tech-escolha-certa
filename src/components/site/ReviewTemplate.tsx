@@ -1,3 +1,6 @@
+import { ReviewContext } from "./ReviewContext";
+import { getOfferByUrl } from "@/lib/product-catalog";
+import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
 import { Link } from "@tanstack/react-router";
 import { AlertTriangle, ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
@@ -140,12 +143,12 @@ export function ReviewTemplate({
 
           <div className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur-md">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Nota geral
+              Contexto editorial
             </p>
 
-            <div className="mt-4 flex items-end gap-2">
-              <span className="text-6xl font-extrabold text-white">{overallScore}</span>
-              <span className="pb-2 text-lg text-slate-200">/10</span>
+            <div className="mt-4 flex flex-wrap items-end gap-2">
+              <span className="text-3xl font-extrabold text-white">{"Análise"}</span>
+              <span className="pb-2 text-lg text-slate-200">documental</span>
             </div>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">{verdictShort}</p>
@@ -174,6 +177,18 @@ export function ReviewTemplate({
         </div>
       </section>
 
+      {getOfferByUrl(affiliateHref) && (
+        <ReviewContext productId={getOfferByUrl(affiliateHref)!.productId} />
+      )}
+      {getOfferByUrl(affiliateHref) && (
+        <div className="container-tec py-4">
+          <ProductPurchaseOptions
+            productId={getOfferByUrl(affiliateHref)!.productId}
+            pageType="review"
+            placement="after_verdict"
+          />
+        </div>
+      )}
       <section className="mx-auto max-w-7xl px-6 pt-8 lg:px-8">
         <AuthorByline reviewedAt={updatedAt.replace(/^Atualizado em\s*/i, "")} />
         <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
@@ -190,7 +205,7 @@ export function ReviewTemplate({
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1fr_340px] lg:px-8">
-        <article className="space-y-10">
+        <article className="min-w-0 space-y-10">
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Veredito rápido
@@ -243,32 +258,10 @@ export function ReviewTemplate({
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">Notas por categoria</h2>
-
-            <div className="mt-6 space-y-4">
-              {scores.map(({ label, score }) => (
-                <div key={label}>
-                  <div className="mb-2 flex items-center justify-between">
-                    <span className="font-semibold text-slate-800">{label}</span>
-                    <span className="font-bold text-[#0F3F4A]">{score}/10</span>
-                  </div>
-
-                  <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                    <div
-                      className="h-full rounded-full bg-[#8B5A2B]"
-                      style={{ width: `${Number(score) * 10}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
             <h2 className="text-3xl font-bold text-[#0F3F4A]">Ficha técnica</h2>
 
             <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-slate-200">
-              <table className="w-full border-collapse text-left text-sm">
+              <table className="w-full table-fixed border-collapse break-words text-left text-sm">
                 <tbody className="divide-y divide-slate-200 bg-white">
                   {specs.map(([label, value]) => (
                     <tr key={label}>
@@ -378,7 +371,7 @@ export function ReviewTemplate({
         ]}
         pageType="review"
         title={productName}
-        eyebrow="Preço atualizado"
+        eyebrow="Consultar preço na loja"
       />
     </main>
   );

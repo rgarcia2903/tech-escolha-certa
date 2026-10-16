@@ -1,3 +1,5 @@
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
   GALAXY_A55_AFFILIATE_URL,
   POCO_X6_PRO_AFFILIATE_URL,
@@ -15,7 +17,7 @@ import { SectionTitle } from "@/components/site/SectionTitle";
 
 const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-ate-2500";
 const HERO_IMG = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
-const PAGE_TITLE = "3 melhores celulares até R$ 2.500 em 2026";
+const PAGE_TITLE = "Celulares até R$ 2.500 em 2026: como comparar";
 const PAGE_DESCRIPTION =
   "Compare Galaxy A55, Redmi Note 13 Pro e Poco X6 Pro. Veja qual é melhor para câmera, jogos ou uso equilibrado e confira o preço atual.";
 
@@ -38,7 +40,6 @@ export const Route = createFileRoute("/melhores-celulares-ate-2500")({
       { property: "og:image", content: HERO_IMG },
       { property: "twitter:image", content: HERO_IMG },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: MelhoresCelularesAte2500,
 });
@@ -51,7 +52,7 @@ const affiliateLinks = {
 
 const ranking = [
   {
-    category: "Melhor geral até R$ 2.500",
+    category: "Perfil para comparar",
     product: "Galaxy A55 5G",
     description: "O intermediário premium mais equilibrado para a maioria das pessoas.",
     reviewHref: "/review/galaxy-a55",
@@ -59,7 +60,7 @@ const ranking = [
     affiliateProductName: "Galaxy A55",
   },
   {
-    category: "Melhor Xiaomi até R$ 2.500",
+    category: "Perfil para comparar",
     product: "Redmi Note 13 Pro 5G",
     description: "Excelente tela, carregamento rápido e ficha técnica forte.",
     reviewHref: "/review/redmi-note-13-pro",
@@ -67,7 +68,7 @@ const ranking = [
     affiliateProductName: "Redmi Note 13 Pro",
   },
   {
-    category: "Melhor performance",
+    category: "Perfil para comparar",
     product: "Poco X6 Pro",
     description: "Excelente escolha para jogos e alto desempenho.",
     reviewHref: "/review/poco-x6-pro",
@@ -81,13 +82,13 @@ function MelhoresCelularesAte2500() {
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
         eyebrow="Especial até R$ 2.500"
-        title="3 melhores celulares até R$ 2.500 para comprar em 2026"
-        description="Selecionamos os smartphones mais equilibrados até R$ 2.500 considerando tela, desempenho, câmera, bateria, software e experiência real de uso."
+        title="Celulares até R$ 2.500: como comparar em 2026"
+        description="Compare candidatos por perfil e referências de gerações anteriores. Preço e disponibilidade no orçamento precisam ser confirmados na loja."
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Melhor escolha geral
+              Alternativa para uso cotidiano
             </p>
 
             <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A55 5G</h2>
@@ -138,6 +139,8 @@ function MelhoresCelularesAte2500() {
           Ver até R$ 2.000
         </Link>
       </CategoryHero>
+      <EditorialSelection selection="ate-2500" />
+      <LegacySelectionNotice />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
@@ -349,7 +352,7 @@ function MelhoresCelularesAte2500() {
         ]}
         pageType="guia"
         title="Galaxy A55 5G"
-        eyebrow="Melhor até R$ 2.500"
+        eyebrow="Alternativa anterior · preço a conferir"
       />
     </main>
   );

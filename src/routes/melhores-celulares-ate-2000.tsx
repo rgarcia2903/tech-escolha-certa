@@ -1,3 +1,5 @@
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
   GALAXY_A35_AFFILIATE_URL,
   POCO_X6_PRO_AFFILIATE_URL,
@@ -18,19 +20,18 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
   head: () => ({
     meta: [
       {
-        title: "Melhores celulares até R$ 2.000 em 2026: os modelos que mais valem a pena",
+        title: "Celulares até R$ 2.000 em 2026: candidatos e critérios",
       },
       {
         name: "description",
         content:
-          "Veja os melhores celulares até R$ 2.000 para comprar em 2026. Galaxy A35, Redmi Note 13 Pro, Poco X6 Pro e outros modelos com foco em custo-benefício.",
+          "Compare candidatos por perfil e alternativas antigas. Preço e disponibilidade dentro de R$ 2.000 dependem da oferta e não foram verificados.",
       },
       {
         property: "og:url",
         content: CANONICAL,
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
   }),
   component: MelhoresCelularesAte2000,
 });
@@ -43,7 +44,7 @@ const affiliateLinks = {
 
 const ranking = [
   {
-    category: "Melhor geral até R$ 2.000",
+    category: "Perfil para comparar",
     product: "Galaxy A35 5G",
     description: "Excelente equilíbrio entre tela, bateria, software e confiabilidade.",
     reviewHref: "/review/galaxy-a35",
@@ -51,7 +52,7 @@ const ranking = [
     affiliateProductName: "Galaxy A35",
   },
   {
-    category: "Melhor Xiaomi até R$ 2.000",
+    category: "Perfil para comparar",
     product: "Redmi Note 13 Pro 5G",
     description: "Tela AMOLED forte, carregamento rápido e ótimo conjunto geral.",
     reviewHref: "/review/redmi-note-13-pro",
@@ -59,7 +60,7 @@ const ranking = [
     affiliateProductName: "Redmi Note 13 Pro",
   },
   {
-    category: "Melhor para jogos",
+    category: "Perfil para comparar",
     product: "Poco X6 Pro",
     description: "Ótima performance para quem prioriza jogos e desempenho.",
     reviewHref: "/review/poco-x6-pro",
@@ -73,20 +74,20 @@ function MelhoresCelularesAte2000() {
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
         eyebrow="Especial até R$ 2.000"
-        title="Os melhores celulares até R$ 2.000 para comprar em 2026"
-        description="Selecionamos os smartphones que mais valem a pena até R$ 2.000 considerando desempenho, bateria, tela, software e experiência real de uso."
+        title="Celulares até R$ 2.000: como comparar em 2026"
+        description="Compare os candidatos atuais e as análises anteriores por perfil. Sem preço verificado, nenhum modelo é garantido dentro do teto."
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Melhor escolha geral
+              Alternativa para uso cotidiano
             </p>
 
             <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A35 5G</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Um dos celulares mais equilibrados da faixa até R$ 2.000 para quem quer segurança,
-              bateria e experiência Samsung consistente.
+              Alternativa de geração anterior para comparar, sem preço atual confirmado no teto.
+              Avalie segurança, bateria e experiência Samsung consistente.
             </p>
 
             <a
@@ -130,6 +131,8 @@ function MelhoresCelularesAte2000() {
           Ver até R$ 2.500
         </Link>
       </CategoryHero>
+      <EditorialSelection selection="ate-2000" />
+      <LegacySelectionNotice />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
@@ -315,7 +318,7 @@ function MelhoresCelularesAte2000() {
         ]}
         pageType="guia"
         title="Galaxy A35 5G"
-        eyebrow="Melhor até R$ 2.000"
+        eyebrow="Alternativa anterior · preço a conferir"
       />
     </main>
   );

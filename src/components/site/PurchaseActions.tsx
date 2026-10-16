@@ -1,3 +1,5 @@
+import { getOfferByUrl } from "@/lib/product-catalog";
+import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -31,6 +33,24 @@ export function PurchaseActions({
   className,
 }: PurchaseActionsProps) {
   const dark = tone === "dark";
+  const singleOffer = options.length === 1 ? getOfferByUrl(options[0].href) : undefined;
+  if (singleOffer)
+    return (
+      <div
+        className={cn(
+          "rounded-2xl border border-border p-4",
+          dark ? "bg-[#071E25] text-white" : "bg-card",
+          className,
+        )}
+      >
+        <ProductPurchaseOptions
+          productId={singleOffer.productId}
+          pageType={pageType}
+          placement={placement}
+          tone={tone}
+        />
+      </div>
+    );
 
   return (
     <div
@@ -50,7 +70,7 @@ export function PurchaseActions({
               dark ? "text-[#D7A77E]" : "text-cta",
             )}
           >
-            Ofertas atualizadas
+            Opções de compra
           </span>
           <p
             className={cn(
@@ -88,6 +108,7 @@ export function PurchaseActions({
                 onClick={() =>
                   trackAffiliateClick({
                     productName: option.productName,
+                    href: option.href,
                     pageType,
                     ctaPlacement: placement,
                   })

@@ -1,3 +1,6 @@
+import { HOME_PRODUCT_IDS } from "@/lib/editorial-policy";
+import { getProduct } from "@/lib/product-catalog";
+import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronRight, ShieldCheck, Smartphone, Star } from "lucide-react";
 
@@ -41,33 +44,15 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const featuredPicks = [
-  {
-    category: "Melhor Xiaomi geral",
-    product: "Redmi Note 13 Pro 5G",
-    description: "Equilíbrio forte entre tela AMOLED, câmera de 200 MP, bateria e custo-benefício.",
-    href: "/review/redmi-note-13-pro",
-  },
-  {
-    category: "Melhor Xiaomi premium",
-    product: "Redmi Note 14 Pro+ 5G",
-    description: "Mais completo para quem quer câmera forte, IP68 e carregamento de 120 W.",
-    href: "/review/redmi-note-14-pro-plus",
-  },
-  {
-    category: "Melhor performance",
-    product: "Poco X7 Pro",
-    description: "Escolha mais forte para jogos, multitarefa pesada, bateria e velocidade.",
-    href: "/review/poco-x7-pro",
-  },
-  {
-    category: "Mais equilibrado",
-    product: "Galaxy A55 5G",
-    description:
-      "Boa escolha para quem quer câmera, acabamento, One UI e segurança no longo prazo.",
-    href: "/review/galaxy-a55",
-  },
-];
+const featuredPicks = HOME_PRODUCT_IDS.map((id) => {
+  const model = getProduct(id)!;
+  return {
+    category: "Candidato por perfil · confira preço e versão",
+    product: model.name,
+    description: model.summary,
+    href: model.reviewPath ?? `/ofertas#modelo-${model.id}`,
+  };
+});
 
 const mainHubs = [
   {
@@ -153,6 +138,7 @@ function HomePage() {
       </CategoryHero>
 
       <PhoneDecisionFinder />
+      <EditorialSelection selection="general" pageType="home" />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
@@ -175,8 +161,8 @@ function HomePage() {
         <section className="mt-14">
           <SectionTitle
             eyebrow="Escolhas editoriais"
-            title="Os celulares que mais valem a pena hoje"
-            description="Seleção editorial focada em experiência real, custo-benefício, desempenho e longevidade."
+            title="Modelos para começar sua comparação"
+            description="Candidatos por perfil, com análise documental e preço a consultar. Sem vencedor universal ou estoque presumido."
           />
 
           <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -216,7 +202,7 @@ function HomePage() {
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <ReviewCard
               title="Review Redmi Note 14 Pro+ 5G"
-              description="Xiaomi mais completo da linha Redmi, com 200 MP, IP68 e 120 W."
+              description="Alternativa de geração anterior com 200 MP, IP68 e 120 W. Compare também modelos posteriores."
               href="/review/redmi-note-14-pro-plus"
               image="/images/products/redmi-note-14-pro-plus-optimized.webp"
               score="9.2"
@@ -252,7 +238,7 @@ function HomePage() {
 
             <ReviewCard
               title="Review Galaxy A55 5G"
-              description="O Samsung mais equilibrado para a maioria das pessoas."
+              description="Uma alternativa Samsung de geração anterior."
               href="/review/galaxy-a55"
               image="/images/products/galaxy-a55-optimized.webp"
               score="9.0"
@@ -355,7 +341,7 @@ function HomePage() {
             </section>
 
             <AffiliateCTA
-              title="Ofertas atualizadas dos celulares recomendados"
+              title="Opções de compra dos celulares recomendados"
               description="Veja preço, parcelamento e disponibilidade dos modelos mais recomendados do momento."
               buttonText="Ver Galaxy A55 no Mercado Livre"
               href={GALAXY_A55_AFFILIATE_URL}

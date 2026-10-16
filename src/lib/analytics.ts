@@ -1,7 +1,13 @@
+import { getOfferByUrl, getProductByName } from "./product-catalog";
+
 type AffiliateClickParams = {
   productName: string;
   pageType: string;
   destination?: string;
+  productId?: string;
+  variantId?: string;
+  offerId?: string;
+  href?: string;
   ctaPlacement?: string;
 };
 
@@ -14,15 +20,24 @@ declare global {
 export function trackAffiliateClick({
   productName,
   pageType,
-  destination = "mercado_livre",
+  destination,
+  productId,
+  variantId,
+  offerId,
+  href,
   ctaPlacement = "unspecified",
 }: AffiliateClickParams) {
   if (typeof window === "undefined") return;
 
+  const offer = href ? getOfferByUrl(href) : undefined;
+  const model = getProductByName(productName);
   window.gtag?.("event", "affiliate_click", {
     product_name: productName,
     page_type: pageType,
-    destination,
+    destination: destination ?? offer?.store ?? "mercado_livre",
+    product_id: productId ?? offer?.productId ?? model?.id ?? "legacy_unmapped",
+    variant_id: variantId ?? offer?.variantId ?? model?.variants[0].id ?? "commercial_unconfirmed",
+    offer_id: offerId ?? offer?.id ?? "legacy_unmapped",
     cta_placement: ctaPlacement,
     page_path: window.location.pathname,
   });

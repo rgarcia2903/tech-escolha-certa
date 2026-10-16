@@ -16,7 +16,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { trackPageView } from "@/lib/analytics";
 
-if (import.meta.env.DEV) {
+if (import.meta.env.DEV && typeof window !== "undefined") {
   import("@axe-core/react").then((axe) => {
     axe.default(React, ReactDOM, 1000);
   });
@@ -169,7 +169,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     const canonicalPath =
       pathname === "/guia/melhores-celulares-ate-2000-reais"
         ? "/melhores-celulares-ate-2000"
-        : pathname;
+        : pathname === "/melhores-celulares-xiaomi-custo-beneficio"
+          ? "/melhores-celulares-xiaomi"
+          : pathname.replace(/\/$/, "") || "/";
     const canonicalUrl = `https://techescolhacerta.com.br${canonicalPath === "/" ? "" : canonicalPath}`;
 
     return {

@@ -1,3 +1,4 @@
+import { AMAZON_DISCLOSURE } from "@/lib/product-catalog";
 import { Link } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 
@@ -48,6 +49,7 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-[#0B2D35] text-white">
       <div className="container-tec py-14">
+        <p className="mb-6 text-xs leading-6 text-slate-300">{AMAZON_DISCLOSURE}</p>
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr]">
           <div className="max-w-md">
             <Link to="/" className="flex items-center gap-3 font-heading font-bold">

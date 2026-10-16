@@ -1,3 +1,6 @@
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { AuthorByline } from "@/components/site/AuthorByline";
@@ -28,7 +31,7 @@ const CANONICAL = "https://techescolhacerta.com.br/guia/melhores-celulares-para-
 
 const PAGE_TITLE = "Melhor celular para jogos até R$ 2.000 em 2026: ranking";
 const PAGE_DESCRIPTION =
-  "POCO X7 Pro é o mais potente se estiver até R$ 2.000. Compare POCO X6 Pro, Moto G86 e Redmi Note 15 5G antes de comprar.";
+  "Compare candidatos para jogos com preço a conferir no teto desejado. Compare POCO X6 Pro, Moto G86 e Redmi Note 15 5G antes de comprar.";
 
 export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-2000")({
   head: () => ({
@@ -66,7 +69,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
         content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -145,11 +148,12 @@ const phones = [
   {
     rank: "1º",
     name: "POCO X7 Pro",
-    badge: "Mais potente",
-    price: "compre se estiver até R$ 2.000",
+    productId: "poco-x7-pro",
+    badge: "Perfil para comparar",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     image: "/images/products/poco-x7-pro-optimized.webp",
     summary:
-      "É o aparelho mais forte desta seleção, mas só pertence a um guia de até R$ 2.000 quando uma promoção realmente o coloca dentro do teto. O Dimensity 8400-Ultra, a memória rápida e a bateria grande formam o melhor conjunto para jogos.",
+      "É uma referência anterior desta seleção, mas só pertence a um guia de até R$ 2.000 quando uma promoção realmente o coloca dentro do teto. O Dimensity 8400-Ultra, a memória rápida e a bateria grande são recursos relevantes para comparar em jogos.",
     bestFor: "Jogos pesados, emulação, multitarefa e quem quer mais folga de desempenho.",
     pros: [
       "Dimensity 8400-Ultra é o chip mais forte da lista",
@@ -171,8 +175,9 @@ const phones = [
   {
     rank: "2º",
     name: "POCO X6 Pro",
-    badge: "Melhor em promoção",
-    price: "faz sentido quando bem abaixo do X7 Pro",
+    productId: "poco-x6-pro",
+    badge: "Perfil para comparar",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     image: "/images/products/poco-x6-pro-optimized.webp",
     summary:
       "Continua muito rápido para jogos, mas é um modelo mais antigo. A compra só é racional quando custa claramente menos que o POCO X7 Pro na mesma capacidade de armazenamento.",
@@ -197,8 +202,9 @@ const phones = [
   {
     rank: "3º",
     name: "Moto G86 5G",
-    badge: "Mais equilibrado",
-    price: "boa compra quando cai abaixo de R$ 2.000",
+    productId: "moto-g86-5g",
+    badge: "Perfil para comparar",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     image: "/images/products/moto-g86-optimized.webp",
     summary:
       "Não disputa potência bruta com os dois POCO, mas oferece um conjunto mais equilibrado para quem joga e também valoriza tela, resistência, câmera e uso diário.",
@@ -223,8 +229,9 @@ const phones = [
   {
     rank: "4º",
     name: "Redmi Note 15 5G",
-    badge: "Mais novo e econômico",
-    price: "alternativa atual abaixo do teto em promoções",
+    productId: "redmi-note-15-5g",
+    badge: "Perfil para comparar",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     image: "/images/products/redmi-note-15-5g-optimized.webp",
     summary:
       "É uma escolha atual para jogos leves e intermediários. O Snapdragon 6 Gen 3 não concorre com os chips dos POCO, mas a bateria de 5.520 mAh, a tela AMOLED e o carregamento de 45 W formam um pacote coerente.",
@@ -259,7 +266,7 @@ const faq = [
   {
     question: "Qual é o melhor celular para jogos até R$ 2.000 em 2026?",
     answer:
-      "O POCO X7 Pro é o mais potente quando uma promoção o coloca em até R$ 2.000. Fora de promoção, POCO X6 Pro e Moto G86 costumam ser alternativas mais realistas. O preço precisa ser confirmado no dia da compra.",
+      "O POCO X7 Pro é um candidato se uma oferta confirmada couber no orçamento; compare também o X8 Pro. Fora de promoção, POCO X6 Pro e Moto G86 costumam ser alternativas mais realistas. O preço precisa ser confirmado no dia da compra.",
   },
   {
     question: "Celular até R$ 2.000 roda Genshin Impact?",
@@ -298,7 +305,7 @@ function GamingPhonesGuide() {
               </h1>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                O POCO X7 Pro é a melhor compra para jogos se uma promoção o colocar dentro do
+                O POCO X7 Pro é um candidato para jogos se uma oferta verificada o colocar dentro do
                 limite. Se ele passar de R$ 2.000, compare POCO X6 Pro, Moto G86 e Redmi Note 15 5G
                 antes de decidir.
               </p>
@@ -361,6 +368,8 @@ function GamingPhonesGuide() {
           </div>
         </div>
       </section>
+      <EditorialSelection selection="games" />
+      <LegacySelectionNotice />
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
@@ -492,6 +501,13 @@ function GamingPhonesGuide() {
                   </div>
                 </div>
               </div>
+
+              <ProductPurchaseOptions
+                productId={phone.productId}
+                pageType="guia"
+                placement="ranking_stores"
+                className="mt-5"
+              />
             </article>
           ))}
         </div>

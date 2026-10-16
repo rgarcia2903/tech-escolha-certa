@@ -1,5 +1,4 @@
-import { ArrowUpRight, ShieldCheck } from "lucide-react";
-
+import { getOfferByUrl, getOffers, getProduct, STORE_LABELS } from "@/lib/product-catalog";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
@@ -9,82 +8,103 @@ type MobilePurchaseOption = {
   label?: string;
   primary?: boolean;
 };
-
-type MobilePurchaseBarProps = {
+type Props = {
   options: MobilePurchaseOption[];
-  pageType: "review" | "comparativo" | "guia" | "ofertas" | "home";
+  pageType: string;
   title: string;
   eyebrow?: string;
   reserveSpace?: boolean;
 };
-
 export function MobilePurchaseBar({
   options,
   pageType,
   title,
-  eyebrow = "Preço atualizado",
+  eyebrow = "Opções de compra",
   reserveSpace = true,
-}: MobilePurchaseBarProps) {
-  const singleOption = options.length === 1;
-
+}: Props) {
+  const single = options.length === 1 ? getOfferByUrl(options[0].href) : undefined;
+  const offers = single ? getOffers(single.productId) : [];
   return (
     <>
       <aside
+        data-mobile-purchase
         aria-label="Opções de compra"
-        className="fixed inset-x-0 bottom-0 z-[60] border-t border-white/10 bg-[#071E25]/96 shadow-[0_-12px_30px_rgba(7,30,37,0.25)] backdrop-blur-xl lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-[40] border-t border-white/10 bg-[#071E25] text-white shadow-xl lg:hidden"
       >
         <div className="mx-auto max-w-7xl px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3">
-          <div className={cn(singleOption && "flex items-center gap-3")}>
-            <div className={cn("min-w-0", singleOption && "flex-1")}>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-[#D7A77E]">
-                {eyebrow}
-              </span>
-              <span className="mt-0.5 block truncate text-sm font-bold text-white">{title}</span>
-              <span className="mt-0.5 flex items-center gap-1 text-[10px] text-slate-300">
-                <ShieldCheck className="h-3 w-3 shrink-0 text-[#D7A77E]" aria-hidden />
-                Link afiliado · compra no Mercado Livre
-              </span>
-            </div>
-
-            <div
-              className={cn("grid gap-2", singleOption ? "w-[42%] shrink-0" : "mt-2 grid-cols-2")}
-            >
-              {options.map((option, index) => {
-                const primary = option.primary ?? index === 0;
-
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-[#D7A77E]">
+            {eyebrow}
+          </p>
+          <p className="mt-1 truncate text-sm font-bold">{title}</p>
+          {single && offers.length > 1 ? (
+            <details className="group relative mt-2">
+              <summary className="cursor-pointer rounded-xl bg-[#8B5A2B] px-4 py-3 text-center text-sm font-bold focus-visible:outline-2">
+                Ver opções de compra
+              </summary>
+              <div className="absolute inset-x-0 bottom-full mb-2 rounded-xl border border-white/20 bg-[#071E25] p-3 shadow-xl">
+                <p className="mb-2 text-xs leading-5">
+                  Versões podem variar entre lojas. Confira memória, condição e preço no anúncio.
+                  Links afiliados.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {offers.map((offer) => (
+                    <a
+                      key={offer.id}
+                      href={offer.url}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      className="rounded-xl bg-[#8B5A2B] px-3 py-3 text-center text-xs font-bold"
+                      onClick={() =>
+                        trackAffiliateClick({
+                          productName: getProduct(offer.productId)!.name,
+                          productId: offer.productId,
+                          variantId: offer.variantId,
+                          offerId: offer.id,
+                          destination: offer.store,
+                          pageType,
+                          ctaPlacement: "mobile_sticky",
+                        })
+                      }
+                    >
+                      {STORE_LABELS[offer.store]}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </details>
+          ) : (
+            <div className={cn("mt-2 grid gap-2", options.length > 1 && "grid-cols-2")}>
+              {options.map((option) => {
+                const offer = getOfferByUrl(option.href);
                 return (
                   <a
-                    key={`${option.productName}-${option.href}`}
+                    key={option.href}
                     href={option.href}
                     target="_blank"
                     rel="nofollow sponsored noopener noreferrer"
+                    className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[#8B5A2B] px-3 py-3 text-center text-xs font-bold"
                     onClick={() =>
                       trackAffiliateClick({
                         productName: option.productName,
+                        href: option.href,
                         pageType,
                         ctaPlacement: "mobile_sticky",
                       })
                     }
-                    className={cn(
-                      "inline-flex min-h-11 items-center justify-center gap-1 rounded-xl px-3 py-2 text-center text-xs font-bold transition",
-                      primary
-                        ? "bg-[#B9774B] text-white shadow-lg hover:brightness-105"
-                        : "border border-white/20 bg-white/10 text-white hover:bg-white/15",
-                    )}
                   >
-                    {option.label ?? "Ver preço"}
-                    <ArrowUpRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                    {option.label ?? option.productName} ·{" "}
+                    {offer ? STORE_LABELS[offer.store] : "Loja"}
                   </a>
                 );
               })}
             </div>
-          </div>
+          )}
+          <p className="mt-2 text-[10px] leading-4 text-slate-300">
+            Links afiliados · Confira versão e preço na loja
+          </p>
         </div>
       </aside>
-
-      {reserveSpace && (
-        <div className={cn(singleOption ? "h-24" : "h-32", "lg:hidden")} aria-hidden />
-      )}
+      {reserveSpace && <div className="h-40 lg:hidden" aria-hidden />}
     </>
   );
 }

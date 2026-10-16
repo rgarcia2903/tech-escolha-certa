@@ -1,3 +1,6 @@
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { EditorialSelection } from "@/components/site/EditorialSelection";
+import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
@@ -19,20 +22,18 @@ import {
 } from "lucide-react";
 import { Badge, Rating } from "@/components/site/ui";
 
-const CANONICAL =
-  "https://techescolhacerta.com.br/guia/melhores-celulares-ate-3000-reais";
+const CANONICAL = "https://techescolhacerta.com.br/guia/melhores-celulares-ate-3000-reais";
 
 export const Route = createFileRoute("/guia/melhores-celulares-ate-3000-reais")({
   head: () => ({
     meta: [
       {
-        title:
-          "Melhores celulares até 3000 reais em 2026 | Guia editorial completo",
+        title: "Melhores celulares até 3000 reais em 2026 | Guia editorial completo",
       },
       {
         name: "description",
         content:
-          "Guia editorial dos melhores celulares até 3000 reais em 2026: Galaxy A55, Redmi Note 13 Pro, Poco X6 Pro e Motorola Edge 50 Neo testados em câmera, bateria e desempenho.",
+          "Guia editorial dos melhores celulares até 3000 reais em 2026: Galaxy A55, Redmi Note 13 Pro, Poco X6 Pro e Motorola Edge 50 Neo comparados por ficha técnica, câmera, bateria e desempenho.",
       },
       {
         name: "keywords",
@@ -56,7 +57,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3000-reais")(
           "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80",
       },
     ],
-    links: [{ rel: "canonical", href: CANONICAL }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -83,6 +84,7 @@ type Pick = {
   icon: typeof Award;
   badge: { variant: "cta" | "teal" | "default"; label: string };
   name: string;
+  productId: string;
   image: string;
   rating: number;
   price: string;
@@ -96,18 +98,19 @@ type Pick = {
 const PICKS: Pick[] = [
   {
     id: "melhor-geral",
-    category: "Melhor escolha geral",
+    category: "Perfil para comparar",
     icon: Award,
     badge: { variant: "cta", label: "Recomendado" },
     name: "Samsung Galaxy A55",
+    productId: "galaxy-a55",
     image:
       "https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=1200&q=80",
     rating: 4.7,
-    price: "R$ 2.499",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "O equilíbrio mais maduro da faixa: tela AMOLED 120 Hz, construção em alumínio e quatro anos de atualizações garantidas.",
     review:
-      "O Galaxy A55 é o intermediário que mais se aproxima da experiência de um top de linha no dia a dia. A tela Super AMOLED de 6,6\" com 1000 nits brilha bem ao sol, o Exynos 1480 entrega fluidez consistente na One UI 6 e a câmera principal de 50 MP com OIS produz fotos confiáveis em qualquer luz. O grande diferencial é o suporte: a Samsung promete quatro versões de Android e cinco anos de patches de segurança, algo raro nessa faixa de preço.",
+      'O Galaxy A55 é o intermediário que mais se aproxima da experiência de um top de linha no dia a dia. A tela Super AMOLED de 6,6" com 1000 nits brilha bem ao sol, o Exynos 1480 entrega fluidez consistente na One UI 6 e a câmera principal de 50 MP com OIS produz fotos confiáveis em qualquer luz. O grande diferencial é o suporte: a Samsung promete quatro versões de Android e cinco anos de patches de segurança, algo raro nessa faixa de preço.',
     profile:
       "Quem quer um celular para usar de 3 a 4 anos sem se preocupar, com bom acabamento e ecossistema confiável.",
     pros: [
@@ -116,21 +119,19 @@ const PICKS: Pick[] = [
       "Construção em alumínio com Gorilla Glass Victus+",
       "Câmera principal estabilizada (OIS)",
     ],
-    cons: [
-      "Carregamento de 25 W abaixo da concorrência",
-      "Exynos 1480 perde em benchmarks puros",
-    ],
+    cons: ["Carregamento de 25 W abaixo da concorrência", "Exynos 1480 perde em benchmarks puros"],
   },
   {
     id: "melhor-custo-beneficio",
-    category: "Melhor custo-benefício",
+    category: "Perfil para comparar",
     icon: Wallet,
     badge: { variant: "teal", label: "Custo-benefício" },
     name: "Xiaomi Redmi Note 13 Pro",
+    productId: "redmi-note-13-pro",
     image:
       "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1200&q=80",
     rating: 4.6,
-    price: "R$ 1.899",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "O intermediário que entrega ficha técnica de top de linha por menos de R$ 2.000 — câmera de 200 MP e carga turbo de 67 W.",
     review:
@@ -141,27 +142,25 @@ const PICKS: Pick[] = [
       "Câmera principal de 200 MP com OIS",
       "Carregamento turbo de 67 W",
       "Tela AMOLED 1.5K com 1800 nits de pico",
-      "Preço imbatível para a ficha técnica",
+      "Compare a ficha técnica e o preço final",
     ],
-    cons: [
-      "MIUI/HyperOS com bloatware pré-instalado",
-      "Apenas 3 anos de atualizações",
-    ],
+    cons: ["MIUI/HyperOS com bloatware pré-instalado", "Apenas 3 anos de atualizações"],
   },
   {
     id: "melhor-camera",
-    category: "Melhor câmera",
+    category: "Perfil para comparar",
     icon: Camera,
     badge: { variant: "default", label: "Foto e vídeo" },
     name: "Motorola Edge 50 Neo",
+    productId: "edge-50-neo",
     image:
       "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1200&q=80",
     rating: 4.6,
-    price: "R$ 2.799",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "Conjunto fotográfico afinado pela Pantone com sensor Sony LYT-700C — cores fiéis e vídeo 4K estabilizado de verdade.",
     review:
-      "O Edge 50 Neo é o intermediário com a calibração de cor mais bem resolvida da categoria. A parceria com a Pantone se traduz em tons de pele realistas e céu sem aquele exagero de saturação típico dos rivais. O sensor principal Sony LYT-700C de 50 MP com OIS captura vídeo 4K a 30 fps com estabilização eletrônica suave, e a tela pOLED de 6,4\" com 120 Hz e 3000 nits de pico é referência na faixa.",
+      'O Edge 50 Neo é o intermediário com a calibração de cor mais bem resolvida da categoria. A parceria com a Pantone se traduz em tons de pele realistas e céu sem aquele exagero de saturação típico dos rivais. O sensor principal Sony LYT-700C de 50 MP com OIS captura vídeo 4K a 30 fps com estabilização eletrônica suave, e a tela pOLED de 6,4" com 120 Hz e 3000 nits de pico é referência na faixa.',
     profile:
       "Criadores de conteúdo casuais e quem valoriza fotos com cores naturais sem precisar editar.",
     pros: [
@@ -177,18 +176,19 @@ const PICKS: Pick[] = [
   },
   {
     id: "melhor-bateria",
-    category: "Melhor bateria",
+    category: "Perfil para comparar",
     icon: Battery,
     badge: { variant: "default", label: "Autonomia" },
     name: "Samsung Galaxy M55",
+    productId: "galaxy-m55",
     image:
       "https://images.unsplash.com/photo-1610792516775-01de03eae630?auto=format&fit=crop&w=1200&q=80",
     rating: 4.5,
-    price: "R$ 2.299",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "Bateria de 5.000 mAh combinada ao Snapdragon 7 Gen 1 entrega dois dias completos de uso moderado sem suor.",
     review:
-      "Quando o assunto é autonomia pura, poucos rivais batem o Galaxy M55. A bateria de 5.000 mAh somada à eficiência do Snapdragon 7 Gen 1 (4 nm) e ao painel AMOLED com refresh adaptativo entrega facilmente 8 a 9 horas de tela ativa — o que se traduz em um dia e meio para usuário pesado e dois dias completos no uso moderado. O carregamento de 45 W ainda completa 100% em pouco mais de uma hora.",
+      "Quando o assunto é autonomia pura, poucos rivais batem o Galaxy M55. A bateria de 5.000 mAh somada à eficiência do Snapdragon 7 Gen 1 (4 nm) e ao painel AMOLED com refresh adaptativo tem proposta de autonomia; não há medição própria de duração nesta página. O tempo de recarga precisa ser conferido em teste identificado.",
     profile:
       "Quem viaja, fica longe de tomada por longos períodos ou simplesmente odeia depender do carregador.",
     pros: [
@@ -197,46 +197,80 @@ const PICKS: Pick[] = [
       "Tela Super AMOLED+ 120 Hz",
       "4 anos de atualizações Samsung",
     ],
-    cons: [
-      "Acabamento traseiro em plástico",
-      "Sem certificação IP de água",
-    ],
+    cons: ["Acabamento traseiro em plástico", "Sem certificação IP de água"],
   },
   {
     id: "melhor-gaming",
-    category: "Melhor para gaming",
+    category: "Perfil para comparar",
     icon: Gamepad2,
     badge: { variant: "default", label: "Performance" },
     name: "Poco X6 Pro",
+    productId: "poco-x6-pro",
     image:
       "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1200&q=80",
     rating: 4.7,
-    price: "R$ 2.599",
+    price: "Consultar na loja; preço no orçamento não confirmado",
     short:
       "Dimensity 8300-Ultra coloca o Poco X6 Pro no patamar de top de linha em jogos pesados, com câmara de vapor dedicada.",
     review:
-      "Se o seu uso envolve Genshin Impact, Wuthering Waves ou Call of Duty Mobile no máximo, o Poco X6 Pro é a escolha óbvia até R$ 3.000. O MediaTek Dimensity 8300-Ultra entrega performance equivalente a um Snapdragon 8+ Gen 1, sustenta 60 fps estáveis em jogos pesados graças à câmara de vapor LiquidCool 4.0, e a tela CrystalRes AMOLED de 6,67\" com 120 Hz e resposta ao toque de 2160 Hz garante latência mínima.",
-    profile:
-      "Gamers mobile que querem desempenho de top de linha sem pagar R$ 5.000.",
+      'Se o seu uso envolve Genshin Impact, Wuthering Waves ou Call of Duty Mobile no máximo, o Poco X6 Pro é uma alternativa de geração anterior até R$ 3.000. O MediaTek Dimensity 8300-Ultra entrega performance equivalente a um Snapdragon 8+ Gen 1, tem proposta de alto desempenho; estabilidade e temperatura exigem medição específica, e a tela CrystalRes AMOLED de 6,67" com 120 Hz e resposta ao toque de 2160 Hz garante latência mínima.',
+    profile: "Gamers mobile que querem desempenho de top de linha sem pagar R$ 5.000.",
     pros: [
       "Dimensity 8300-Ultra de nível flagship",
       "Câmara de vapor para sessões longas",
       "Tela 1.5K AMOLED com 2160 Hz de toque",
       "Carregamento turbo de 67 W",
     ],
-    cons: [
-      "Câmera ultrawide de qualidade modesta",
-      "HyperOS com publicidade em alguns apps",
-    ],
+    cons: ["Câmera ultrawide de qualidade modesta", "HyperOS com publicidade em alguns apps"],
   },
 ];
 
 const TABLE = [
-  { label: "Galaxy A55", price: "R$ 2.499", screen: "AMOLED 6,6\" 120 Hz", chip: "Exynos 1480", camera: "50 MP OIS", battery: "5.000 mAh / 25 W", updates: "4 anos" },
-  { label: "Redmi Note 13 Pro", price: "R$ 1.899", screen: "AMOLED 6,67\" 120 Hz", chip: "Snapdragon 7s Gen 2", camera: "200 MP OIS", battery: "5.100 mAh / 67 W", updates: "3 anos" },
-  { label: "Edge 50 Neo", price: "R$ 2.799", screen: "pOLED 6,4\" 120 Hz", chip: "Dimensity 7300", camera: "50 MP OIS Pantone", battery: "4.310 mAh / 68 W", updates: "5 anos" },
-  { label: "Galaxy M55", price: "R$ 2.299", screen: "AMOLED+ 6,7\" 120 Hz", chip: "Snapdragon 7 Gen 1", camera: "50 MP OIS", battery: "5.000 mAh / 45 W", updates: "4 anos" },
-  { label: "Poco X6 Pro", price: "R$ 2.599", screen: "AMOLED 6,67\" 120 Hz", chip: "Dimensity 8300-Ultra", camera: "64 MP OIS", battery: "5.000 mAh / 67 W", updates: "3 anos" },
+  {
+    label: "Galaxy A55",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED 6,6" 120 Hz',
+    chip: "Exynos 1480",
+    camera: "50 MP OIS",
+    battery: "5.000 mAh / 25 W",
+    updates: "4 anos",
+  },
+  {
+    label: "Redmi Note 13 Pro",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED 6,67" 120 Hz',
+    chip: "Snapdragon 7s Gen 2",
+    camera: "200 MP OIS",
+    battery: "5.100 mAh / 67 W",
+    updates: "3 anos",
+  },
+  {
+    label: "Edge 50 Neo",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'pOLED 6,4" 120 Hz',
+    chip: "Dimensity 7300",
+    camera: "50 MP OIS Pantone",
+    battery: "4.310 mAh / 68 W",
+    updates: "5 anos",
+  },
+  {
+    label: "Galaxy M55",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED+ 6,7" 120 Hz',
+    chip: "Snapdragon 7 Gen 1",
+    camera: "50 MP OIS",
+    battery: "5.000 mAh / 45 W",
+    updates: "4 anos",
+  },
+  {
+    label: "Poco X6 Pro",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    screen: 'AMOLED 6,67" 120 Hz',
+    chip: "Dimensity 8300-Ultra",
+    camera: "64 MP OIS",
+    battery: "5.000 mAh / 67 W",
+    updates: "3 anos",
+  },
 ];
 
 const TIPS = [
@@ -273,7 +307,7 @@ const FAQ = [
   },
   {
     q: "Intermediário aguenta jogos pesados como Genshin Impact?",
-    a: "Sim, mas escolha bem o processador. Dimensity 8300-Ultra (Poco X6 Pro) e Snapdragon 7+ Gen 2 sustentam 60 fps em configurações altas. Exynos 1480 e Snapdragon 7s Gen 2 rodam em médio com algumas quedas.",
+    a: "Sim, mas escolha bem o processador. Dimensity 8300-Ultra (Poco X6 Pro) e Snapdragon 7+ Gen 2 são candidatos para jogos; a taxa de quadros depende do título e das condições. Exynos 1480 e Snapdragon 7s Gen 2 rodam em médio com algumas quedas.",
   },
   {
     q: "Qual a diferença entre Galaxy A55 e M55?",
@@ -323,7 +357,9 @@ function Page() {
         <div className="container-tec py-16 md:py-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Link to="/" className="hover:text-foreground">Home</Link>
+              <Link to="/" className="hover:text-foreground">
+                Home
+              </Link>
               <span>/</span>
               <span>Guia de compra</span>
               <span>/</span>
@@ -337,15 +373,23 @@ function Page() {
               Melhores celulares até 3000 reais em 2026
             </h1>
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              Testamos os intermediários premium do ano para indicar, sem rodeios,
-              qual smartphone até R$ 3.000 entrega o melhor pacote em câmera,
-              bateria, desempenho e longevidade. Cinco categorias, cinco vencedores.
+              Comparamos documentalmente intermediários premium, sem testes próprios, para discutir
+              qual smartphone até R$ 3.000 entrega o melhor pacote em câmera, bateria, desempenho e
+              longevidade. Cinco categorias, cinco vencedores.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5"><User className="h-4 w-4" /> Equipe Tech Escolha Certa</span>
-              <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-4 w-4" /> Maio de 2026</span>
-              <span className="inline-flex items-center gap-1.5"><Clock className="h-4 w-4" /> 14 min de leitura</span>
-              <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-teal" /> Análise independente</span>
+              <span className="inline-flex items-center gap-1.5">
+                <User className="h-4 w-4" /> Equipe Tech Escolha Certa
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CalendarDays className="h-4 w-4" /> Maio de 2026
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-4 w-4" /> 14 min de leitura
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-teal" /> Análise independente
+              </span>
             </div>
           </div>
         </div>
@@ -355,32 +399,34 @@ function Page() {
         <div className="grid lg:grid-cols-[1fr_280px] gap-12">
           <article className="max-w-3xl space-y-16">
             {/* Intro */}
+            <EditorialSelection selection="ate-3000" />
+            <LegacySelectionNotice />
             <div id="introducao" className="space-y-5 text-muted-foreground leading-relaxed">
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
                 Como escolhemos os melhores celulares até R$ 3.000
               </h2>
               <p>
-                A faixa entre R$ 1.500 e R$ 3.000 é a mais disputada do mercado
-                brasileiro — e também a mais confusa. É onde os fabricantes
-                colocam suas melhores telas, processadores eficientes e câmeras
-                competentes, mas também onde mais aparecem armadilhas de
-                marketing.
+                A faixa entre R$ 1.500 e R$ 3.000 é a mais disputada do mercado brasileiro — e
+                também a mais confusa. É onde os fabricantes colocam suas melhores telas,
+                processadores eficientes e câmeras competentes, mas também onde mais aparecem
+                armadilhas de marketing.
               </p>
               <p>
-                Para este guia, analisamos mais de 20 lançamentos entre 2024 e
-                2026 considerando cinco critérios objetivos: <strong className="text-foreground">qualidade
-                real da tela</strong> (brilho medido, refresh adaptativo, calibração),
-                <strong className="text-foreground"> desempenho sustentado</strong> (não apenas pico de
-                benchmark), <strong className="text-foreground">câmera em cenários reais</strong> (baixa luz,
-                vídeo, retratos), <strong className="text-foreground">autonomia comprovada</strong> e
-                <strong className="text-foreground"> tempo garantido de atualizações</strong>. Preço de
-                referência considera lojas oficiais e principais marketplaces
-                em maio de 2026.
+                Para este guia, analisamos mais de 20 lançamentos entre 2024 e 2026 considerando
+                cinco critérios objetivos:{" "}
+                <strong className="text-foreground">qualidade real da tela</strong> (brilho medido,
+                refresh adaptativo, calibração),
+                <strong className="text-foreground"> desempenho sustentado</strong> (não apenas pico
+                de benchmark), <strong className="text-foreground">câmera em cenários reais</strong>{" "}
+                (baixa luz, vídeo, retratos),{" "}
+                <strong className="text-foreground">autonomia comprovada</strong> e
+                <strong className="text-foreground"> tempo garantido de atualizações</strong>. Preço
+                de referência considera lojas oficiais e principais marketplaces em maio de 2026.
               </p>
               <p>
-                Os links de oferta são afiliados. Você paga o mesmo preço e nós
-                recebemos uma comissão que mantém esta análise independente.
-                Nenhum fabricante pagou pela posição neste guia.
+                Os links de oferta são afiliados. Você paga o mesmo preço e nós recebemos uma
+                comissão que mantém esta análise independente. Nenhum fabricante pagou pela posição
+                neste guia.
               </p>
             </div>
 
@@ -495,7 +541,10 @@ function Page() {
             </section>
 
             {/* Recommendation summary */}
-            <section id="resumo" className="rounded-3xl border border-cta/30 bg-gradient-to-br from-cta/5 to-teal/5 p-8 md:p-10">
+            <section
+              id="resumo"
+              className="rounded-3xl border border-cta/30 bg-gradient-to-br from-cta/5 to-teal/5 p-8 md:p-10"
+            >
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-cta" />
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cta">
@@ -506,14 +555,19 @@ function Page() {
                 O veredito final
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Se a sua prioridade é <strong className="text-foreground">durar 4 anos sem dor de cabeça</strong>,
-                escolha o <strong className="text-foreground">Galaxy A55</strong>. Para
-                <strong className="text-foreground"> extrair o máximo de hardware pelo menor preço</strong>, o
-                <strong className="text-foreground"> Redmi Note 13 Pro</strong> não tem rival. Quem fotografa muito
-                deve olhar o <strong className="text-foreground">Motorola Edge 50 Neo</strong>; quem joga, o
-                <strong className="text-foreground"> Poco X6 Pro</strong>; e quem precisa de bateria infinita,
-                o <strong className="text-foreground">Galaxy M55</strong>. Cinco escolhas, cinco perfis — e
-                nenhuma escolha errada dentro do orçamento de R$ 3.000.
+                Se a sua prioridade é{" "}
+                <strong className="text-foreground">durar 4 anos sem dor de cabeça</strong>, escolha
+                o <strong className="text-foreground">Galaxy A55</strong>. Para
+                <strong className="text-foreground">
+                  {" "}
+                  extrair o máximo de hardware pelo menor preço
+                </strong>
+                , o<strong className="text-foreground"> Redmi Note 13 Pro</strong> não tem rival.
+                Quem fotografa muito deve olhar o{" "}
+                <strong className="text-foreground">Motorola Edge 50 Neo</strong>; quem joga, o
+                <strong className="text-foreground"> Poco X6 Pro</strong>; e quem precisa de bateria
+                infinita, o <strong className="text-foreground">Galaxy M55</strong>. Cinco escolhas,
+                cinco perfis — e nenhuma escolha errada dentro do orçamento de R$ 3.000.
               </p>
             </section>
           </article>
@@ -526,16 +580,36 @@ function Page() {
                   Neste guia
                 </span>
                 <nav className="mt-3 space-y-2 text-sm">
-                  <a href="#introducao" className="block text-muted-foreground hover:text-foreground">Como escolhemos</a>
+                  <a
+                    href="#introducao"
+                    className="block text-muted-foreground hover:text-foreground"
+                  >
+                    Como escolhemos
+                  </a>
                   {PICKS.map((p) => (
-                    <a key={p.id} href={`#${p.id}`} className="block text-muted-foreground hover:text-foreground">
+                    <a
+                      key={p.id}
+                      href={`#${p.id}`}
+                      className="block text-muted-foreground hover:text-foreground"
+                    >
                       {p.category}
                     </a>
                   ))}
-                  <a href="#comparativo" className="block text-muted-foreground hover:text-foreground">Tabela comparativa</a>
-                  <a href="#dicas" className="block text-muted-foreground hover:text-foreground">Dicas de compra</a>
-                  <a href="#faq" className="block text-muted-foreground hover:text-foreground">FAQ</a>
-                  <a href="#resumo" className="block text-muted-foreground hover:text-foreground">Resumo final</a>
+                  <a
+                    href="#comparativo"
+                    className="block text-muted-foreground hover:text-foreground"
+                  >
+                    Tabela comparativa
+                  </a>
+                  <a href="#dicas" className="block text-muted-foreground hover:text-foreground">
+                    Dicas de compra
+                  </a>
+                  <a href="#faq" className="block text-muted-foreground hover:text-foreground">
+                    FAQ
+                  </a>
+                  <a href="#resumo" className="block text-muted-foreground hover:text-foreground">
+                    Resumo final
+                  </a>
                 </nav>
               </div>
               <div className="rounded-2xl border border-cta/30 bg-card p-5 shadow-soft">
@@ -546,7 +620,9 @@ function Page() {
                   </span>
                 </div>
                 <p className="mt-2 font-heading font-semibold text-foreground">Galaxy A55</p>
-                <p className="mt-1 text-xs text-muted-foreground">Melhor escolha geral 2026</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Alternativa para uso cotidiano 2026
+                </p>
                 <a
                   href="#melhor-geral"
                   className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-cta hover:underline"
@@ -595,14 +671,11 @@ function PickBlock({ pick }: { pick: Pick }) {
           </div>
           <div className="p-6 md:p-8 flex flex-col">
             <div className="flex items-center justify-between gap-3">
-              <Rating value={pick.rating} />
               <div className="text-right">
                 <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
-                  A partir de
+                  Preço atual
                 </span>
-                <span className="font-heading text-xl font-bold text-foreground">
-                  {pick.price}
-                </span>
+                <span className="font-heading text-xl font-bold text-foreground">{pick.price}</span>
               </div>
             </div>
             <p className="mt-4 text-sm text-muted-foreground italic border-l-2 border-teal/40 pl-3">
@@ -617,15 +690,12 @@ function PickBlock({ pick }: { pick: Pick }) {
               <p className="mt-1 text-sm text-foreground">{pick.profile}</p>
             </div>
 
-            <a
-              href="/ofertas"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition-all hover:brightness-105 hover:-translate-y-0.5 hover:shadow-elevated"
-            >
-              Ver oferta
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+            <ProductPurchaseOptions
+              productId={pick.productId}
+              pageType="guia"
+              placement="legacy_guide"
+              className="mt-5"
+            />
           </div>
         </div>
 
@@ -661,10 +731,3 @@ function PickBlock({ pick }: { pick: Pick }) {
     </section>
   );
 }
-
-
-
-
-
-
-

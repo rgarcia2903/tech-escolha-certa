@@ -689,7 +689,7 @@ function ProductHero({ product, accent }: { product: typeof GALAXY; accent: "tea
             <Rating value={product.rating} />
           </div>
           <div className="mt-4 font-heading text-lg font-bold text-foreground">
-            Preço atualizado no Mercado Livre
+            Consultar preço na loja
           </div>
           <span className="text-[11px] text-muted-foreground">
             Consulte valor, estoque e condições
