@@ -33,7 +33,7 @@ TARGETS = {
         "pattern": r"\b(?:galaxy\s*)?s\s*25\s*fe\b|\bsm\s*s731[a-z0-9]*\b", "exclude": r"\b(?:s\s*24|ultra|s\s*25\s*plus)\b",
     },
 }
-NEGATIVE = re.compile(r"\b(?:logo|icon|icons|favicon|wordmark|brandmark|sprite|banner|lifestyle|logotipo)\b")
+NEGATIVE = re.compile(r"\b(?:logo|icon|icons|favicon|wordmark|brandmark|sprite|banner|lifestyle|logotipo|thumb|thumbnail)\b")
 
 
 def normalized(value):
@@ -122,7 +122,9 @@ def select(model, html, base):
         if reason:
             rejected.append({**item, "reason": reason})
         else:
-            item["score"] = 2 * bool(re.search(r"\b(?:front|back|rear|frente|traseira|pdp|hero)\b", normalized(item["url"] + " " + item["description"]))) + (item["origin"] != "social-meta")
+            dimensions = re.search(r"(?:Q\d+_)?(\d{3,5})_(\d{3,5})", urlsplit(item["url"]).query)
+            resolution = int(dimensions[1]) * int(dimensions[2]) / 100_000_000 if dimensions else 0
+            item["score"] = 2 * bool(re.search(r"\b(?:front|frontside|back|backside|rear|frente|traseira|pdp|hero)\b", normalized(item["url"] + " " + item["description"]))) + (10 if item["origin"] == "download-link" else 1 if item["origin"] != "social-meta" else 0) + min(resolution, 0.9)
             item["view"] = ("front" if re.search(r"\b(?:front(?:side)?|frente)\b", normalized(item["url"] + " " + item["description"])) else "rear" if re.search(r"\b(?:back(?:side)?|rear|traseira)\b", normalized(item["url"] + " " + item["description"])) else "pair" if re.search(r"\b(?:pdp|hero)\b", normalized(item["url"] + " " + item["description"])) else "unspecified")
             accepted.append(item)
     accepted.sort(key=lambda item: item["score"], reverse=True)
