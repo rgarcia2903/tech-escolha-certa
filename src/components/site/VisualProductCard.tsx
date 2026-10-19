@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
 import { getOffers, type Product } from "@/lib/product-catalog";
 import { PRODUCT_VISUAL_FACTS } from "@/lib/product-media";
 import { ProductMedia } from "./ProductMedia";
@@ -93,12 +92,12 @@ export function VisualProductCard({
           </p>
         </details>
         {showReviewLink && product.reviewPath && (
-          <Link
-            to={product.reviewPath}
+          <a
+            href={product.reviewPath}
             className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-[#0F3F4A] underline"
           >
             Ver análise completa
-          </Link>
+          </a>
         )}
         {children}
       </div>
