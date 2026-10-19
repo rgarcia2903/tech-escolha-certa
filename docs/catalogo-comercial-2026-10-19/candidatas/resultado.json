@@ -41,6 +41,22 @@
             "description": " pressbox",
             "origin": "download-link",
             "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g56-5G_FRONTSIDE_Black-Oyster.png",
+            "reason": "Redirect outside configured official hosts"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g56-5G_BACKSIDE_-Black-Oyster.png",
+            "reason": "Redirect outside configured official hosts"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g56-5G_PDP-HERO_Black-Oyster.png",
+            "reason": "Redirect outside configured official hosts"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g56-5G_PDP-HERO_Dazzling-Blue.png",
+            "reason": "Redirect outside configured official hosts"
           }
         ],
         "status": "parsed",
@@ -237,38 +253,38 @@
     "candidates": [
       {
         "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
-        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161291/moto-g56-5g_frontside_gray-mist.png",
-        "identityEvidence": "moto g56 5G_FRONTSIDE_Gray Mist moto g56 5G_FRONTSIDE_Gray Mist",
+        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161296/moto-g56-5g_pdp-hero_black-oyster.png",
+        "identityEvidence": "moto g56 5G_PDP HERO_Black Oyster moto g56 5G_PDP HERO_Black Oyster",
         "origin": "download-link",
         "artifactFile": "moto-g56-5g-1.webp",
         "width": 1440,
         "height": 1440,
-        "originalSha256": "8c5559be585137b69985bba352ab0be154d981a71cf1d4041d35b83397858b08",
-        "sha256": "8f32ff2de2f7e705df1336187f30ad7fce8c7849b3e30c30ed2102e7694624ec",
+        "originalSha256": "c51a29968df21257ecf8375c55c23f07d026fb8c7f2e3cad9b6a72cee480b782",
+        "sha256": "15673f4f43894043266975b707c123788f3017a1b8c7d78bd9b0db74e38726e6",
         "status": "downloaded-unreviewed"
       },
       {
         "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
-        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161294/moto-g56-5g_backside_gray-mist.png",
-        "identityEvidence": "moto g56 5G_BACKSIDE_Gray Mist moto g56 5G_BACKSIDE_Gray Mist",
+        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161295/moto-g56-5g_pdp-hero_dazzling-blue.png",
+        "identityEvidence": "moto g56 5G_PDP HERO_Dazzling Blue moto g56 5G_PDP HERO_Dazzling Blue",
         "origin": "download-link",
         "artifactFile": "moto-g56-5g-2.webp",
         "width": 1440,
         "height": 1440,
-        "originalSha256": "f3bda617b45a5f3a8112b35d1dead1b38a757baf52b97df904c70a499dd639a6",
-        "sha256": "101356cf9444c990e36c9478d20ce21fe10bd05d3f3050c0a6a16461255ae13a",
+        "originalSha256": "c8cd68c2b6961e0cbb88401a8cdbed982b0359a8c6b4157891f72d705104ca94",
+        "sha256": "61d93b671f5654b32836308f11cb350a2082bb8b2768a47aae8cd61fd9e3ccc2",
         "status": "downloaded-unreviewed"
       },
       {
-        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
-        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161297/moto-g56-5g_pdp-hero_gray-mist.png",
-        "identityEvidence": "moto g56 5G_PDP HERO_Gray Mist moto g56 5G_PDP HERO_Gray Mist",
-        "origin": "download-link",
+        "sourcePage": "https://motorolanews.com/br/pressbox/moto-g-family/moto-g56-5g/",
+        "imageUrl": "https://media.motorolanewsbr.fiestic.com/2025/07/08061737/moto-g56-5G-1.jpg",
+        "identityEvidence": "moto g56 5G ",
+        "origin": "src",
         "artifactFile": "moto-g56-5g-3.webp",
         "width": 1440,
-        "height": 1440,
-        "originalSha256": "91b3975ce6e4f36883330e510913e471f8416efa4317767bcda874fe219c59f3",
-        "sha256": "207abcee9df45f0683c5094944640114067441c18c419b7e7ebd7a9874d96c50",
+        "height": 960,
+        "originalSha256": "6a8f21dbc7dd2d094845e9cee7d87c5a13ed73218da2e3d4e88ef3fabfca8c08",
+        "sha256": "3b81acb4f1b7670e9401df2926c143ee1bb461300cd1290daaf9d08b81d9cc6c",
         "status": "downloaded-unreviewed"
       }
     ],
@@ -318,6 +334,22 @@
             "description": " pressbox",
             "origin": "download-link",
             "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g86-5G_SPELLBOUND_FRONT-SIDE.png",
+            "reason": "Redirect outside configured official hosts"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g86-5G_SPELLBOUND_BACKSIDE.png",
+            "reason": "Redirect outside configured official hosts"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g86-5G_SPELLBOUND_PDP-HERO.png",
+            "reason": "Redirect outside configured official hosts"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/moto-g86-5G_GOLDEN-CYPRESS_PDP-HERO.png",
+            "reason": "Redirect outside configured official hosts"
           }
         ],
         "status": "parsed",
@@ -333,38 +365,26 @@
     "candidates": [
       {
         "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
-        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161267/moto-g86-5g_golden-cypress_front-side.png",
-        "identityEvidence": "moto g86 5G_GOLDEN CYPRESS_FRONT SIDE moto g86 5G_GOLDEN CYPRESS_FRONT SIDE",
+        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161274/moto-g86-5g_spellbound_pdp-hero.png",
+        "identityEvidence": "moto g86 5G_SPELLBOUND_PDP HERO moto g86 5G_SPELLBOUND_PDP HERO",
         "origin": "download-link",
         "artifactFile": "moto-g86-5g-1.webp",
         "width": 1440,
         "height": 1440,
-        "originalSha256": "9a83842149e9e5eccd33e7fb4e9e60c28099e7d86943b40770164f8f6722d3e4",
-        "sha256": "2c6b03c26ea7427a0056520b852ab6585e4d4883173fabd834f276b90eebcb0c",
+        "originalSha256": "7f2458e8ac20f41de82cfe50c84855638dc88aaf6b14c988e0f50b19abaaeb55",
+        "sha256": "6afd8fc068b3aa00c7925b35c86ff5c32e364ec55ed240d42430b230db88deb9",
         "status": "downloaded-unreviewed"
       },
       {
         "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
-        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161264/moto-g86-5g_chrysanthemum_backside.png",
-        "identityEvidence": "moto g86 5G_CHRYSANTHEMUM_BACKSIDE moto g86 5G_CHRYSANTHEMUM_BACKSIDE",
+        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161270/moto-g86-5g_spellbound_front-side.png",
+        "identityEvidence": "moto g86 5G_SPELLBOUND_FRONT SIDE moto g86 5G_SPELLBOUND_FRONT SIDE",
         "origin": "download-link",
         "artifactFile": "moto-g86-5g-2.webp",
         "width": 1440,
         "height": 1440,
-        "originalSha256": "d7f5e1d8a0c713bb560413dea0e9c841e5914ea4b58585cbf6990feec3d67a93",
-        "sha256": "a8f4bc05d03edf2f79919bb3e3f02c387fb84abb2c7342f2d640e0a6fe366ed6",
-        "status": "downloaded-unreviewed"
-      },
-      {
-        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
-        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161265/moto-g86-5g_chrysanthemum_pdp-hero.png",
-        "identityEvidence": "moto g86 5G_CHRYSANTHEMUM_PDP HERO moto g86 5G_CHRYSANTHEMUM_PDP HERO",
-        "origin": "download-link",
-        "artifactFile": "moto-g86-5g-3.webp",
-        "width": 1440,
-        "height": 1440,
-        "originalSha256": "f512ed3530406c80ad838903e7adf404a7a2a4c53d8cde509c9b6868c18fcb0e",
-        "sha256": "5e9cc0ea34177ea861e9847734b425a9ff6bc51cf4791b8ede15776f2a3025b0",
+        "originalSha256": "572c5855f38f91b455532fce6b9c763fcbd86a3a7b9c7ed5a41044482c138ed8",
+        "sha256": "631a589dfe86bc3f66173a8f25b8b8c7fd89832a7fb8b887acd8bca9a9fd88c8",
         "status": "downloaded-unreviewed"
       }
     ],
@@ -709,35 +729,39 @@
             "description": " ",
             "origin": "data-src",
             "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-thumb-549153374?$104_104_PNG$",
+            "reason": "Insufficient dimensions or non-product aspect ratio"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-thumb-549153384?$104_104_PNG$",
+            "reason": "Insufficient dimensions or non-product aspect ratio"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-thumb-549153375?$104_104_PNG$",
+            "reason": "Insufficient dimensions or non-product aspect ratio"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-thumb-549153376?$104_104_PNG$",
+            "reason": "Insufficient dimensions or non-product aspect ratio"
           }
         ],
         "status": "parsed",
-        "exactCandidates": 38
+        "exactCandidates": 21
       }
     ],
     "candidates": [
       {
         "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
-        "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153383?$Q90_2052_1641_JPG$",
+        "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153383?$1164_776_PNG$",
         "identityEvidence": "Galaxy S25 FE Front Jetblack  ",
-        "origin": "data-src",
+        "origin": "src",
         "artifactFile": "galaxy-s25-fe-1.webp",
-        "width": 1440,
-        "height": 1152,
-        "originalSha256": "5c3f67c029737cbf9d49a6d522fbf9cfe89dd845f25d4dd47cced4b27d9d846e",
-        "sha256": "0efab28b8c0e69bc8464ef30c7b5e938c07193e1a3383a9f08e0f08ca29f646c",
-        "status": "downloaded-unreviewed"
-      },
-      {
-        "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
-        "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153366?$Q90_2052_1641_JPG$",
-        "identityEvidence": "Galaxy S25 FE Back Jetblack  ",
-        "origin": "data-src",
-        "artifactFile": "galaxy-s25-fe-2.webp",
-        "width": 1440,
-        "height": 1152,
-        "originalSha256": "d6966f92ecb3fa4dd67a6aec6306100bd9fe88c24ccf8d6c00bea74f12138cb8",
-        "sha256": "8b771919a6adf032c16262bb44039a33344d1ee64d1b8093ec8a2b7102119449",
+        "width": 1164,
+        "height": 776,
+        "originalSha256": "6e4fdd904ec5093befa82807f834441d8becb43797cacc3150378c4562eb80fd",
+        "sha256": "20bb897eb30b31109b09b3ac7f19ce31cf97f93b1d6df7df3914e37d4a3abda3",
         "status": "downloaded-unreviewed"
       },
       {
@@ -745,7 +769,7 @@
         "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153366?$Q90_1368_1094_F_JPG$",
         "identityEvidence": "Galaxy S25 FE Back Jetblack  ",
         "origin": "data-src",
-        "artifactFile": "galaxy-s25-fe-3.webp",
+        "artifactFile": "galaxy-s25-fe-2.webp",
         "width": 1368,
         "height": 1094,
         "originalSha256": "f448a5a2c6c8e5554a00ccf494196d7ca533fc836c821b71e6ea8ca2c6eb0c3c",
