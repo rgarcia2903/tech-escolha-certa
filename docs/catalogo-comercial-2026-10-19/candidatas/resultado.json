@@ -1,0 +1,25 @@
+[
+  {
+    "model": "moto-g56-5g",
+    "sourcePage": "https://motorolanews.com/br/pressbox/moto-g-family/moto-g56-5g/",
+    "status": "error",
+    "imageUrl": null,
+    "error": "403 Client Error: Forbidden for url: https://motorolanews.com/br/pressbox/moto-g-family/moto-g56-5g/"
+  },
+  {
+    "model": "moto-g86-5g",
+    "sourcePage": "https://www.motorola.com.br/smartphone-moto-g86-5g-256gb/p",
+    "status": "no-suitable-public-preview",
+    "imageUrl": null
+  },
+  {
+    "model": "galaxy-s25-fe",
+    "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+    "status": "downloaded-unreviewed",
+    "imageUrl": "https://resources.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/logo-square-letter.png",
+    "file": "docs/catalogo-comercial-2026-10-19/candidatas/galaxy-s25-fe-candidata.webp",
+    "width": 500,
+    "height": 500,
+    "sha256": "1fffa9f2ae8ad64a42557baeb4eff9c26f07b8350e8566d378d3187755f74ae4"
+  }
+]
