@@ -97,7 +97,7 @@ export function VisualProductCard({
             to={product.reviewPath}
             className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-[#0F3F4A] underline"
           >
-            Ler análise de {product.name}
+            Ver análise completa
           </Link>
         )}
         {children}
