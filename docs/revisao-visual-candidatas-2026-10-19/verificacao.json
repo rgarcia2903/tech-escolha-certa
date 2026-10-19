@@ -1,0 +1,128 @@
+{
+  "baseCommit": "2467ea1adf99736f17880a470165c8e0b65deaf2",
+  "automatedTests": 48,
+  "typescript": "passed",
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 6
+  },
+  "build": "passed; existing bundle size warning",
+  "links": {
+    "registeredRoutes": 46,
+    "internalReferences": 377,
+    "sitemapUrls": 37,
+    "brokenLinks": 0
+  },
+  "visual": {
+    "routes": 47,
+    "layouts": 56,
+    "widths": [
+      360,
+      390,
+      768,
+      1440
+    ],
+    "runtimeErrors": [],
+    "accessibility": [
+      {
+        "path": "/",
+        "violations": []
+      },
+      {
+        "path": "/ofertas",
+        "violations": []
+      },
+      {
+        "path": "/melhores-celulares-custo-beneficio",
+        "violations": []
+      },
+      {
+        "path": "/review/redmi-note-14-pro-plus",
+        "violations": []
+      },
+      {
+        "path": "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
+        "violations": []
+      }
+    ],
+    "blockedExternalResourceConsoleMessages": 210,
+    "externalRequestsSent": 0
+  },
+  "photos": {
+    "models": [
+      "galaxy-a36-5g",
+      "redmi-note-15-5g",
+      "edge-60-pro",
+      "galaxy-a17-5g"
+    ],
+    "loadedOccurrences": 58,
+    "fallbackChecks": [
+      "galaxy-a36-5g",
+      "redmi-note-15-5g",
+      "edge-60-pro",
+      "galaxy-a17-5g"
+    ]
+  },
+  "captures": {
+    "layouts": [
+      {
+        "page": "home",
+        "width": 390,
+        "firstCard": 677,
+        "firstStore": 1317.5,
+        "beforeFirstStore": 1844.5,
+        "height": 24184
+      },
+      {
+        "page": "ofertas",
+        "width": 390,
+        "firstCard": 701,
+        "firstStore": 1341.5,
+        "beforeFirstStore": 4574.5,
+        "height": 25605
+      },
+      {
+        "page": "ranking",
+        "width": 390,
+        "firstCard": 936.5,
+        "firstStore": 1577,
+        "beforeFirstStore": 2132,
+        "height": 22358
+      },
+      {
+        "page": "home",
+        "width": 1440,
+        "firstCard": 570,
+        "firstStore": 1285,
+        "beforeFirstStore": 1428.5,
+        "height": 11302
+      },
+      {
+        "page": "ofertas",
+        "width": 1440,
+        "firstCard": 582,
+        "firstStore": 1297,
+        "beforeFirstStore": 2595.25,
+        "height": 11425
+      },
+      {
+        "page": "ranking",
+        "width": 1440,
+        "firstCard": 817,
+        "firstStore": 1532,
+        "beforeFirstStore": 1506.5,
+        "height": 13819
+      }
+    ],
+    "simulated_clicks": 62,
+    "store_requests_sent": 0,
+    "errors": []
+  },
+  "preservation": {
+    "srcAndPublicUnchangedFromBase": true,
+    "affiliateUrls": 26,
+    "newRendersActivated": 0,
+    "workingModels": 4,
+    "totalPriorityModels": 7
+  }
+}
