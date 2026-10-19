@@ -3,7 +3,7 @@ name: Validar galeria e primeiro review
 on:
   push:
     branches: [feat/galeria-reviews-prioridade-2026-10-19]
-    paths: [.github/workflows/validar-review-galeria.yml]
+    paths: [.github/workflows/validar-review-galeria.yml, tests/product-media.test.tsx, src/components/site/VisualProductCard.tsx]
   workflow_dispatch:
 
 permissions:
