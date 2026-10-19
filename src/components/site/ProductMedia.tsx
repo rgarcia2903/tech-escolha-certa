@@ -11,44 +11,6 @@ type Props = Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> & {
   compact?: boolean;
 };
 
-// Imagens de catálogo selecionadas apenas na branch de revisão visual.
-// Não promover esta branch sem verificar as condições de publicação das imagens.
-const CATALOG_PREVIEW = {
-  "moto-g56-5g": {
-    src: "/images/products/catalogo/moto-g56-5g.webp",
-    alt: "Moto G56 5G Black Oyster — frente e traseira",
-    author: "Motorola",
-    sourceUrl: "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
-    licenseUrl: "https://www.motorola.com/us/en/legal/terms-of-use",
-    licenseLabel: "Fonte do fabricante",
-    changes: "Imagem de catálogo redimensionada; demonstração na branch de revisão.",
-    kind: "official-render" as const,
-    width: 1440, height: 1440,
-  },
-  "moto-g86-5g": {
-    src: "/images/products/catalogo/moto-g86-5g.webp",
-    alt: "Moto G86 5G Spellbound — frente e traseira",
-    author: "Motorola",
-    sourceUrl: "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
-    licenseUrl: "https://www.motorola.com/us/en/legal/terms-of-use",
-    licenseLabel: "Fonte do fabricante",
-    changes: "Modelo Moto G86 5G comum (não Power); demonstração na branch de revisão.",
-    kind: "official-render" as const,
-    width: 1440, height: 1440,
-  },
-  "galaxy-s25-fe": {
-    src: "/images/products/catalogo/galaxy-s25-fe.webp",
-    alt: "Galaxy S25 FE Jetblack — frente e traseira",
-    author: "Samsung",
-    sourceUrl: "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
-    licenseUrl: "https://www.samsung.com/br/info/legal/",
-    licenseLabel: "Fonte do fabricante",
-    changes: "Imagem de catálogo redimensionada; demonstração na branch de revisão.",
-    kind: "official-render" as const,
-    width: 1440, height: 1152,
-  },
-} as const;
-
 /** Never renders an unapproved or mismatched photograph. No stock phone lookalikes. */
 export function ProductMedia({
   productId,
@@ -66,7 +28,7 @@ export function ProductMedia({
     : name
       ? getProductByName(name)
       : productForImage(src);
-  const photo = product ? (getApprovedPhoto(product.id) ?? CATALOG_PREVIEW[product.id as keyof typeof CATALOG_PREVIEW]) : undefined;
+  const photo = product ? getApprovedPhoto(product.id) : undefined;
   const [failedSrc, setFailedSrc] = useState<string>();
   const imageRef = useRef<HTMLImageElement>(null);
   useEffect(() => {
@@ -80,7 +42,7 @@ export function ProductMedia({
   return (
     <div
       data-product-media={product?.id ?? "unidentified"}
-      data-photo-status={available ? (photo?.kind === "official-render" ? "catalog-preview" : "approved") : photo ? "failed" : "pending"}
+      data-photo-status={available ? "approved" : photo ? "failed" : "pending"}
       aria-hidden={decorative || undefined}
       className={cn("product-media", compact && "product-media-compact", className)}
     >
