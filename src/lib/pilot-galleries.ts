@@ -1,0 +1,56 @@
+// Galerias recebidas do responsável e preparadas para a branch piloto.
+// Os arquivos WebP correspondentes devem ser importados antes de publicar.
+export const PILOT_GALLERIES: Record<string, {src:string; alt:string}[]> = {
+  "galaxy-a17-5g": [
+    { src: "/images/products/gallery/galaxy-a17-5g/01-principal.webp", alt: "galaxy a17 5g — vista principal" },
+    { src: "/images/products/gallery/galaxy-a17-5g/02-detalhe.webp", alt: "galaxy a17 5g — imagem 2" },
+    { src: "/images/products/gallery/galaxy-a17-5g/03-detalhe.webp", alt: "galaxy a17 5g — imagem 3" },
+    { src: "/images/products/gallery/galaxy-a17-5g/04-detalhe.webp", alt: "galaxy a17 5g — imagem 4" },
+    { src: "/images/products/gallery/galaxy-a17-5g/05-detalhe.webp", alt: "galaxy a17 5g — imagem 5" },
+    { src: "/images/products/gallery/galaxy-a17-5g/06-detalhe.webp", alt: "galaxy a17 5g — imagem 6" },
+  ],
+  "redmi-note-15-5g": [
+    { src: "/images/products/gallery/redmi-note-15-5g/01-principal.webp", alt: "redmi note 15 5g — vista principal" },
+    { src: "/images/products/gallery/redmi-note-15-5g/02-detalhe.webp", alt: "redmi note 15 5g — imagem 2" },
+    { src: "/images/products/gallery/redmi-note-15-5g/03-detalhe.webp", alt: "redmi note 15 5g — imagem 3" },
+    { src: "/images/products/gallery/redmi-note-15-5g/04-detalhe.webp", alt: "redmi note 15 5g — imagem 4" },
+    { src: "/images/products/gallery/redmi-note-15-5g/05-detalhe.webp", alt: "redmi note 15 5g — imagem 5" },
+    { src: "/images/products/gallery/redmi-note-15-5g/06-detalhe.webp", alt: "redmi note 15 5g — imagem 6" },
+  ],
+  "edge-60-pro": [
+    { src: "/images/products/gallery/edge-60-pro/01-principal.webp", alt: "edge 60 pro — vista principal" },
+    { src: "/images/products/gallery/edge-60-pro/02-detalhe.webp", alt: "edge 60 pro — imagem 2" },
+    { src: "/images/products/gallery/edge-60-pro/03-detalhe.webp", alt: "edge 60 pro — imagem 3" },
+    { src: "/images/products/gallery/edge-60-pro/04-detalhe.webp", alt: "edge 60 pro — imagem 4" },
+    { src: "/images/products/gallery/edge-60-pro/05-detalhe.webp", alt: "edge 60 pro — imagem 5" },
+    { src: "/images/products/gallery/edge-60-pro/06-detalhe.webp", alt: "edge 60 pro — imagem 6" },
+    { src: "/images/products/gallery/edge-60-pro/07-detalhe.webp", alt: "edge 60 pro — imagem 7" },
+    { src: "/images/products/gallery/edge-60-pro/08-detalhe.webp", alt: "edge 60 pro — imagem 8" },
+    { src: "/images/products/gallery/edge-60-pro/09-detalhe.webp", alt: "edge 60 pro — imagem 9" },
+    { src: "/images/products/gallery/edge-60-pro/10-detalhe.webp", alt: "edge 60 pro — imagem 10" },
+  ],
+  "moto-g56-5g": [
+    { src: "/images/products/gallery/moto-g56-5g/01-principal.webp", alt: "moto g56 5g — vista principal" },
+    { src: "/images/products/gallery/moto-g56-5g/02-detalhe.webp", alt: "moto g56 5g — imagem 2" },
+    { src: "/images/products/gallery/moto-g56-5g/03-detalhe.webp", alt: "moto g56 5g — imagem 3" },
+    { src: "/images/products/gallery/moto-g56-5g/04-detalhe.webp", alt: "moto g56 5g — imagem 4" },
+    { src: "/images/products/gallery/moto-g56-5g/05-detalhe.webp", alt: "moto g56 5g — imagem 5" },
+    { src: "/images/products/gallery/moto-g56-5g/06-detalhe.webp", alt: "moto g56 5g — imagem 6" },
+    { src: "/images/products/gallery/moto-g56-5g/07-detalhe.webp", alt: "moto g56 5g — imagem 7" },
+  ],
+  "moto-g86-5g": [
+    { src: "/images/products/gallery/moto-g86-5g/01-principal.webp", alt: "moto g86 5g — vista principal" },
+    { src: "/images/products/gallery/moto-g86-5g/02-detalhe.webp", alt: "moto g86 5g — imagem 2" },
+    { src: "/images/products/gallery/moto-g86-5g/03-detalhe.webp", alt: "moto g86 5g — imagem 3" },
+    { src: "/images/products/gallery/moto-g86-5g/04-detalhe.webp", alt: "moto g86 5g — imagem 4" },
+    { src: "/images/products/gallery/moto-g86-5g/05-detalhe.webp", alt: "moto g86 5g — imagem 5" },
+    { src: "/images/products/gallery/moto-g86-5g/06-detalhe.webp", alt: "moto g86 5g — imagem 6" },
+  ],
+  "galaxy-s25-fe": [
+    { src: "/images/products/gallery/galaxy-s25-fe/01-principal.webp", alt: "galaxy s25 fe — vista principal" },
+    { src: "/images/products/gallery/galaxy-s25-fe/02-detalhe.webp", alt: "galaxy s25 fe — imagem 2" },
+    { src: "/images/products/gallery/galaxy-s25-fe/03-detalhe.webp", alt: "galaxy s25 fe — imagem 3" },
+    { src: "/images/products/gallery/galaxy-s25-fe/04-detalhe.webp", alt: "galaxy s25 fe — imagem 4" },
+    { src: "/images/products/gallery/galaxy-s25-fe/05-detalhe.webp", alt: "galaxy s25 fe — imagem 5" },
+  ],
+};
