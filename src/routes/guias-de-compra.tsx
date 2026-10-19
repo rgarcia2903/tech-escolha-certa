@@ -1,3 +1,4 @@
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SectionHeader, Badge } from "@/components/site/ui";
@@ -139,7 +140,7 @@ function GuidesPage() {
       <section className="container-tec py-14 md:py-20">
         <article className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-card md:grid-cols-2">
           <div className="aspect-[4/3] bg-surface md:aspect-auto">
-            <img
+            <ProductMedia
               src="/images/products/phones-hero-optimized.webp"
               alt={featuredGuide.title}
               loading="lazy"

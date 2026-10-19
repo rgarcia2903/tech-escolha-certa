@@ -1,0 +1,26 @@
+name: Validar vitrine de sete modelos
+
+on:
+  push:
+    branches: [codex/vitrine-fotos-reais-2026-10-19, release/vitrine-visual-2026-10-19]
+    paths: [.github/workflows/validar-vitrine-sete-modelos.yml, tests/product-media.test.tsx, src/components/site/ProductMedia.tsx]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npx tsc --noEmit
+      - run: npm run build
+      - run: npm run check:links

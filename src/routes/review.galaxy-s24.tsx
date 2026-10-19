@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_S24_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -59,8 +61,8 @@ export const Route = createFileRoute("/review/galaxy-s24")({
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMG },
-      { property: "twitter:image", content: HERO_IMG },
+      { property: "og:image", content: getSocialImage(HERO_IMG) },
+      { property: "twitter:image", content: getSocialImage(HERO_IMG) },
     ],
 
     scripts: [
@@ -260,7 +262,7 @@ function ReviewPage() {
           </div>
           <div className="relative lg:col-span-5">
             <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-cta/20 via-cta/5 to-teal/15 blur-3xl" />
-            <img
+            <ProductMedia
               src={HERO_IMG}
               alt="Samsung Galaxy S24 em vista frontal e traseira"
               width={1200}

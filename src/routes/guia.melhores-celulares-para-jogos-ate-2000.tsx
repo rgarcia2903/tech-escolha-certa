@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
@@ -62,11 +64,15 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        ),
       },
       {
         property: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        ),
       },
     ],
 
@@ -415,7 +421,7 @@ function GamingPhonesGuide() {
             >
               <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[280px] bg-surface">
-                  <img
+                  <ProductMedia
                     src={phone.image}
                     alt={phone.name}
                     loading="lazy"

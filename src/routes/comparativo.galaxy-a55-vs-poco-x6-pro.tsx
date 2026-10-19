@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { GALAXY_A55_AFFILIATE_URL, POCO_X6_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
@@ -64,11 +66,11 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-poco-x6-pro")({
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: HERO_IMG,
+        content: getSocialImage(HERO_IMG),
       },
       {
         property: "twitter:image",
-        content: HERO_IMG,
+        content: getSocialImage(HERO_IMG),
       },
     ],
 
@@ -85,7 +87,7 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-poco-x6-pro")({
           datePublished: "2026-05-15",
           dateModified: "2026-10-01",
           mainEntityOfPage: CANONICAL,
-          image: HERO_IMG,
+          image: getSocialImage(HERO_IMG),
         }),
       },
     ],
@@ -697,7 +699,7 @@ function ProductHero({ product, accent }: { product: typeof GALAXY; accent: "tea
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
       <div className="grid gap-5 sm:grid-cols-2 sm:items-center">
-        <img
+        <ProductMedia
           src={product.image}
           alt={product.name}
           width={800}

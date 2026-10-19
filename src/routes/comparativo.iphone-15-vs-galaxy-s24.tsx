@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { GALAXY_S24_AFFILIATE_URL, IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -49,11 +51,15 @@ export const Route = createFileRoute("/comparativo/iphone-15-vs-galaxy-s24")({
       },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/iphone-15-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/iphone-15-optimized.webp",
+        ),
       },
       {
         property: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/galaxy-s24-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/galaxy-s24-optimized.webp",
+        ),
       },
     ],
   }),
@@ -718,7 +724,12 @@ function HeroSide({
 }) {
   return (
     <div className="relative aspect-square overflow-hidden bg-surface">
-      <img src={image} alt={name} className="h-full w-full object-contain p-2" loading="eager" />
+      <ProductMedia
+        src={image}
+        alt={name}
+        className="h-full w-full object-contain p-2"
+        loading="eager"
+      />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/90 via-background/15 to-transparent" />
       <div className={`absolute bottom-3 ${align === "left" ? "left-3" : "right-3"} space-y-1`}>
         <span className="block rounded-md bg-background/90 px-2 py-1 text-[11px] font-semibold text-foreground backdrop-blur">
@@ -852,7 +863,7 @@ function SidePanel({
       }`}
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-surface">
-        <img
+        <ProductMedia
           src={data.image}
           alt={data.name}
           loading="lazy"
@@ -965,7 +976,7 @@ function ProfileCard({
       className={`overflow-hidden rounded-2xl border bg-card shadow-soft ring-1 ${ring} transition-all duration-300 hover:-translate-y-0.5 hover:shadow-elevated`}
     >
       <div className="relative aspect-[16/9] overflow-hidden">
-        <img src={image} alt="" loading="lazy" className="h-full w-full object-cover" />
+        <ProductMedia src={image} alt="" loading="lazy" className="h-full w-full object-cover" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
       </div>
       <div className="p-6">

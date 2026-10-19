@@ -1,0 +1,55 @@
+{
+  "baseCommit": "bd2252b5b25c13e38c78cf47fd52b1e09dd75a1d",
+  "newProfessionalProductImages": 0,
+  "retainedLicensedPhotoModels": [
+    "galaxy-a36-5g",
+    "redmi-note-15-5g",
+    "edge-60-pro",
+    "galaxy-a17-5g"
+  ],
+  "photoChecks": 58,
+  "fallbackChecks": 4,
+  "browserRoutes": 47,
+  "responsiveLayouts": 56,
+  "browserErrors": [],
+  "accessibility": [
+    {
+      "path": "/",
+      "violations": []
+    },
+    {
+      "path": "/ofertas",
+      "violations": []
+    },
+    {
+      "path": "/melhores-celulares-custo-beneficio",
+      "violations": []
+    },
+    {
+      "path": "/review/redmi-note-14-pro-plus",
+      "violations": []
+    },
+    {
+      "path": "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
+      "violations": []
+    }
+  ],
+  "simulatedAffiliateClicks": 62,
+  "storeRequestsSent": 0,
+  "affiliateUrlsPreserved": 26,
+  "unitTests": {
+    "node": 30,
+    "python": 8
+  },
+  "typecheck": "passed",
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 6
+  },
+  "build": "passed; existing bundle size warning",
+  "internalLinks": {
+    "checked": 377,
+    "broken": 0
+  },
+  "deployment": "none"
+}

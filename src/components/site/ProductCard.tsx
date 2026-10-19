@@ -1,3 +1,4 @@
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { Badge, Rating } from "./ui";
 import { ArrowUpRight } from "lucide-react";
 
@@ -22,7 +23,8 @@ export function ProductCard({ product }: { product: Product }) {
       }`}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-surface">
-        <img
+        <ProductMedia
+          name={product.name}
           src={product.image}
           alt={product.name}
           loading="lazy"

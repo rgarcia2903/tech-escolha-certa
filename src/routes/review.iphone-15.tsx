@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
 import { IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -52,11 +54,11 @@ export const Route = createFileRoute("/review/iphone-15")({
       },
       {
         property: "og:image",
-        content: HERO_IMG,
+        content: getSocialImage(HERO_IMG),
       },
       {
         property: "twitter:image",
-        content: HERO_IMG,
+        content: getSocialImage(HERO_IMG),
       },
     ],
     scripts: [
@@ -235,7 +237,7 @@ function ReviewPage() {
           </div>
           <div className="relative lg:col-span-5">
             <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-cta/20 via-cta/5 to-teal/15 blur-3xl" />
-            <img
+            <ProductMedia
               src={HERO_IMG}
               alt="iPhone 15 em vista frontal e traseira"
               width={1200}

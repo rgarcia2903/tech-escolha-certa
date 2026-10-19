@@ -1,0 +1,764 @@
+[
+  {
+    "model": "moto-g56-5g",
+    "status": "candidates-require-identity-and-rights-review",
+    "attempts": [
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
+        "rejected": [
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_26-768x512.png",
+            "description": "",
+            "origin": "social-meta",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/themes/motorola/images/logo.png?v=1788557625",
+            "description": "Global Blog ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/themes/motorola/images/logo-high-contrast.png?v=1788557625",
+            "description": "Global Blog ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/pressbox-download/",
+            "description": " Press Box",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/themes/motorola/images/logo-no-spacing.png?v=1778341650",
+            "description": "Global Blog ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/pressbox-download/",
+            "description": " pressbox",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          }
+        ],
+        "status": "parsed",
+        "exactCandidates": 25
+      },
+      {
+        "sourcePage": "https://motorolanews.com/br/pressbox/moto-g-family/moto-g56-5g/",
+        "rejected": [
+          {
+            "url": "https://motorolanews.com/br/wp-content/themes/motorola/images/logo.png?v=1788557625",
+            "description": "Brasil ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/themes/motorola/images/logo-high-contrast.png?v=1788557625",
+            "description": "Brasil ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/br/pressbox-download/",
+            "description": " Press Box",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/themes/motorola/images/logo-no-spacing.png?v=1778341650",
+            "description": "Brasil ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/br/pressbox-download/",
+            "description": " pressbox",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/wpfdcat/671/lisfestyle",
+            "description": " Download all                                             ",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_30-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46356/2025_motorola-g_bogota_gallery-shoot_30.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_30 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_30",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46356/2025_motorola-g_bogota_gallery-shoot_30.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_25-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46355/2025_motorola-g_bogota_gallery-shoot_25.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_25 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_25",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46355/2025_motorola-g_bogota_gallery-shoot_25.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_19-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46351/2025_motorola-g_bogota_gallery-shoot_19.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_19 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_19",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46351/2025_motorola-g_bogota_gallery-shoot_19.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_17-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46354/2025_motorola-g_bogota_gallery-shoot_17.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_17 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_17",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46354/2025_motorola-g_bogota_gallery-shoot_17.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_16-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46348/2025_motorola-g_bogota_gallery-shoot_16.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_16 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_16",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46348/2025_motorola-g_bogota_gallery-shoot_16.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_11-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46353/2025_motorola-g_bogota_gallery-shoot_11.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_11 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_11",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46353/2025_motorola-g_bogota_gallery-shoot_11.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_9-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46352/2025_motorola-g_bogota_gallery-shoot_9.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_9 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_9",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46352/2025_motorola-g_bogota_gallery-shoot_9.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/wp-content/uploads/sites/7/2025/07/2025_MOTOROLA-G_BOGOTA_GALLERY-SHOOT_7-300x300.png",
+            "description": " ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46359/2025_motorola-g_bogota_gallery-shoot_7.png",
+            "description": "2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_7 2025_MOTOROLA G_BOGOTA_GALLERY SHOOT_7",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/br/download/671/lisfestyle/46359/2025_motorola-g_bogota_gallery-shoot_7.png",
+            "description": " Download",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          }
+        ],
+        "status": "parsed",
+        "exactCandidates": 6
+      }
+    ],
+    "candidates": [
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
+        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161287/moto-g56-5g_frontside_black-oyster.png",
+        "identityEvidence": "moto g56 5G_FRONTSIDE_Black Oyster moto g56 5G_FRONTSIDE_Black Oyster",
+        "origin": "download-link",
+        "artifactFile": "moto-g56-5g-1.webp",
+        "width": 1440,
+        "height": 1440,
+        "originalSha256": "681e82cbd8ad44c85c0863c23335ba294280aade3e09f44c5b45a18177962031",
+        "sha256": "24575bbc2a1d849e1438b8aa590c4015ee34ff90c82846f6b4314d10c513f041",
+        "status": "downloaded-unreviewed"
+      },
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
+        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161288/moto-g56-5g_backside_-black-oyster.png",
+        "identityEvidence": "moto g56 5G_BACKSIDE_ Black Oyster moto g56 5G_BACKSIDE_ Black Oyster",
+        "origin": "download-link",
+        "artifactFile": "moto-g56-5g-2.webp",
+        "width": 1440,
+        "height": 1440,
+        "originalSha256": "31f574720faca4d37b7f4c0867262fc57ef0df6c435ced8baacd569ec80650a9",
+        "sha256": "7e5f9189f1740ddb39b516f7af51f6907292fb5f6f7c34ac90c1b5fbc09575f3",
+        "status": "downloaded-unreviewed"
+      },
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
+        "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161296/moto-g56-5g_pdp-hero_black-oyster.png",
+        "identityEvidence": "moto g56 5G_PDP HERO_Black Oyster moto g56 5G_PDP HERO_Black Oyster",
+        "origin": "download-link",
+        "artifactFile": "moto-g56-5g-3.webp",
+        "width": 1440,
+        "height": 1440,
+        "originalSha256": "c51a29968df21257ecf8375c55c23f07d026fb8c7f2e3cad9b6a72cee480b782",
+        "sha256": "15673f4f43894043266975b707c123788f3017a1b8c7d78bd9b0db74e38726e6",
+        "status": "downloaded-unreviewed"
+      }
+    ],
+    "permissionStatus": "unverified",
+    "visualReviewStatus": "required",
+    "siteAssetsChanged": false
+  },
+  {
+    "model": "moto-g86-5g",
+    "status": "candidates-require-identity-and-rights-review",
+    "attempts": [
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
+        "rejected": [
+          {
+            "url": "https://motorolanews.com/wp-content/uploads/2025/05/Blog_Image_3.png",
+            "description": "",
+            "origin": "social-meta",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/themes/motorola/images/logo.png?v=1788557625",
+            "description": "Global Blog ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/themes/motorola/images/logo-high-contrast.png?v=1788557625",
+            "description": "Global Blog ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/pressbox-download/",
+            "description": " Press Box",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://motorolanews.com/wp-content/themes/motorola/images/logo-no-spacing.png?v=1778341650",
+            "description": "Global Blog ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://motorolanews.com/pressbox-download/",
+            "description": " pressbox",
+            "origin": "download-link",
+            "reason": "missing-exact-model-evidence"
+          }
+        ],
+        "status": "parsed",
+        "exactCandidates": 26
+      },
+      {
+        "sourcePage": "https://www.motorola.com.br/smartphone-moto-g86-5g-256gb/p",
+        "rejected": [],
+        "status": "parsed",
+        "exactCandidates": 0
+      }
+    ],
+    "candidates": [
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
+        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161270/moto-g86-5g_spellbound_front-side.png",
+        "identityEvidence": "moto g86 5G_SPELLBOUND_FRONT SIDE moto g86 5G_SPELLBOUND_FRONT SIDE",
+        "origin": "download-link",
+        "artifactFile": "moto-g86-5g-1.webp",
+        "width": 1440,
+        "height": 1440,
+        "originalSha256": "572c5855f38f91b455532fce6b9c763fcbd86a3a7b9c7ed5a41044482c138ed8",
+        "sha256": "631a589dfe86bc3f66173a8f25b8b8c7fd89832a7fb8b887acd8bca9a9fd88c8",
+        "status": "downloaded-unreviewed"
+      },
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
+        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161273/moto-g86-5g_spellbound_backside.png",
+        "identityEvidence": "moto g86 5G_SPELLBOUND_BACKSIDE moto g86 5G_SPELLBOUND_BACKSIDE",
+        "origin": "download-link",
+        "artifactFile": "moto-g86-5g-2.webp",
+        "width": 1440,
+        "height": 1440,
+        "originalSha256": "b171f148e292af2ceffa64f12d1cec5d63cd9b2f236572c16f54202e520c95c0",
+        "sha256": "f1b475475c58bc72de54dec25aa59573f1f67c23bff2f16726e60e91e94a8728",
+        "status": "downloaded-unreviewed"
+      },
+      {
+        "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
+        "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161274/moto-g86-5g_spellbound_pdp-hero.png",
+        "identityEvidence": "moto g86 5G_SPELLBOUND_PDP HERO moto g86 5G_SPELLBOUND_PDP HERO",
+        "origin": "download-link",
+        "artifactFile": "moto-g86-5g-3.webp",
+        "width": 1440,
+        "height": 1440,
+        "originalSha256": "7f2458e8ac20f41de82cfe50c84855638dc88aaf6b14c988e0f50b19abaaeb55",
+        "sha256": "6afd8fc068b3aa00c7925b35c86ff5c32e364ec55ed240d42430b230db88deb9",
+        "status": "downloaded-unreviewed"
+      }
+    ],
+    "permissionStatus": "unverified",
+    "visualReviewStatus": "required",
+    "siteAssetsChanged": false
+  },
+  {
+    "model": "galaxy-s25-fe",
+    "status": "candidates-require-identity-and-rights-review",
+    "attempts": [
+      {
+        "sourcePage": "https://www.samsungmobilepress.com/media-assets/galaxy-s25-fe",
+        "rejected": [
+          {
+            "url": "https://api.samsungmobilepress.com/api/v1/file/BCDE1BF372C85CC7A71C6550C34C9029CE30B6918F0A97B11223C2319F9F66BDAABDFD2A5A70CB4E520EC11C769B60292EB69857B9E6149243CCAB2FA134C63A13672B76A9D93B01EC9954C1DD8791677B976390DC400D1E27CB26333D8F8A70284B822E6347FB4AE2F52133087E5E688D9B01C1D62B95E0B3347B9EA4A7333D",
+            "description": "Media Assets - Product Image ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/facebook.png",
+            "description": "facebook ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/facebook_gray.png",
+            "description": "facebook-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/x.png",
+            "description": "x ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/x_gray.png",
+            "description": "x-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/linkedin.png",
+            "description": "linkedin ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/linkedin_gray.png",
+            "description": "linkedin-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/reddit.png",
+            "description": "reddit ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/reddit_gray.png",
+            "description": "reddit-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/link.png",
+            "description": "copy-link ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/link_gray.png",
+            "description": "copy-link-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/top_arrow.png",
+            "description": "top_arrow ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/rss.png",
+            "description": "rss ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/rss_gray.png",
+            "description": "rss-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/youtube.png",
+            "description": "youtube ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/youtube_gray.png",
+            "description": "youtube-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/instagram.png",
+            "description": "instagram ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/instagram_gray.png",
+            "description": "instagram-gray ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/select_arrow.png",
+            "description": "select_arrow ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/logo.png",
+            "description": "logo ",
+            "origin": "src",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/see_all_arrow.png",
+            "description": "see_all_arrow ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/search.png",
+            "description": "search ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsungmobilepress.com/asset/image/menu.png",
+            "description": "menu ",
+            "origin": "src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://api.samsungmobilepress.com/api/v1/file/BCDE1BF372C85CC7A71C6550C34C9029CE30B6918F0A97B11223C2319F9F66BDAABDFD2A5A70CB4E520EC11C769B60292EB69857B9E6149243CCAB2FA134C63A13672B76A9D93B01EC9954C1DD8791677B976390DC400D1E27CB26333D8F8A70284B822E6347FB4AE2F52133087E5E688D9B01C1D62B95E0B3347B9EA4A7333D",
+            "description": "",
+            "origin": "social-meta",
+            "reason": "missing-exact-model-evidence"
+          }
+        ],
+        "status": "parsed",
+        "exactCandidates": 0
+      },
+      {
+        "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+        "rejected": [
+          {
+            "url": "https://resources.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/logo-square-letter.png",
+            "description": "",
+            "origin": "social-meta",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-thumb-549153384",
+            "description": "Galaxy S25 FE",
+            "origin": "structured-product",
+            "reason": "not-product-image"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/s2602/gnb/GNB-L1_Menu_Galaxy-Smartphone_88x88.png?$LazyLoad_Home_PNG$",
+            "description": "Galaxy S26 Ultra ",
+            "origin": "data-src",
+            "reason": "different-model-or-variant"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/s2602/gnb/GNB-L1_Menu_Galaxy-Smartphone_88x88.png?$ORIGIN_PNG$",
+            "description": "Galaxy S26 Ultra ",
+            "origin": "data-src",
+            "reason": "different-model-or-variant"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/f2607/gnb/GNB-L1_Shop_Galaxy-Z-Fold8_88x88.png?$LazyLoad_Home_PNG$",
+            "description": "Galaxy Z Fold8 ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/f2607/gnb/GNB-L1_Shop_Galaxy-Z-Fold8_88x88.png?$ORIGIN_PNG$",
+            "description": "Galaxy Z Fold8 ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/f2607/gnb/GNB-L1_Shop_Galaxy-Z-Fold8-U_88x88.png?$LazyLoad_Home_PNG$",
+            "description": "Galaxy Z Fold8 Ultra ",
+            "origin": "data-src",
+            "reason": "different-model-or-variant"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/f2607/gnb/GNB-L1_Shop_Galaxy-Z-Fold8-U_88x88.png?$ORIGIN_PNG$",
+            "description": "Galaxy Z Fold8 Ultra ",
+            "origin": "data-src",
+            "reason": "different-model-or-variant"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/GNB_TS12-Ultra_88x88_asset.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "different-model-or-variant"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/GNB_TS12-Ultra_88x88_asset.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "different-model-or-variant"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/f2607/gnb/GNB-L1_Shop_Galaxy-Watch-U2_88x88.png?$LazyLoad_Home_PNG$",
+            "description": "Galaxy Watch Ultra2 ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/f2607/gnb/GNB-L1_Shop_Galaxy-Watch-U2_88x88.png?$ORIGIN_PNG$",
+            "description": "Galaxy Watch Ultra2 ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/revamp/gnb/shop/23108__0006_Vision-AI-TV.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/revamp/gnb/shop/23108__0006_Vision-AI-TV.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/QN55LS03HEGXZD_GNB_88x88.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/QN55LS03HEGXZD_GNB_88x88.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/UN55M75HAGXZD_GNB_88x88.png?$LazyLoad_Home_PNG$",
+            "description": "Mini LED ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/UN55M75HAGXZD_GNB_88x88.png?$ORIGIN_PNG$",
+            "description": "Mini LED ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-42-18-759.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-42-18-759.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-42-29-487.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-42-29-487.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/revamp/gnb/shop/23108__0004_Geladeira-462L.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/revamp/gnb/shop/23108__0004_Geladeira-462L.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-42-59-120.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-42-59-120.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-43-18-662.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/gnb/image-2025-11-06-11-43-18-662.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/revamp/gnb/shop/23108__0003_ar-condiconado.png?$LazyLoad_Home_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://images.samsung.com/is/image/samsung/assets/br/revamp/gnb/shop/23108__0003_ar-condiconado.png?$ORIGIN_PNG$",
+            "description": " ",
+            "origin": "data-src",
+            "reason": "missing-exact-model-evidence"
+          },
+          {
+            "url": "https://www.samsung.com/br/support/model/SM-S731BZKKZTO/#downloads",
+            "reason": "Not a supported raster MIME type"
+          }
+        ],
+        "status": "parsed",
+        "exactCandidates": 12
+      }
+    ],
+    "candidates": [
+      {
+        "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+        "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153383?$Q90_2052_1641_JPG$",
+        "identityEvidence": "Galaxy S25 FE Front Jetblack  ",
+        "origin": "data-src",
+        "artifactFile": "galaxy-s25-fe-1.webp",
+        "width": 1440,
+        "height": 1152,
+        "originalSha256": "5c3f67c029737cbf9d49a6d522fbf9cfe89dd845f25d4dd47cced4b27d9d846e",
+        "sha256": "0efab28b8c0e69bc8464ef30c7b5e938c07193e1a3383a9f08e0f08ca29f646c",
+        "status": "downloaded-unreviewed"
+      },
+      {
+        "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+        "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153366?$Q90_2052_1641_JPG$",
+        "identityEvidence": "Galaxy S25 FE Back Jetblack  ",
+        "origin": "data-src",
+        "artifactFile": "galaxy-s25-fe-2.webp",
+        "width": 1440,
+        "height": 1152,
+        "originalSha256": "d6966f92ecb3fa4dd67a6aec6306100bd9fe88c24ccf8d6c00bea74f12138cb8",
+        "sha256": "8b771919a6adf032c16262bb44039a33344d1ee64d1b8093ec8a2b7102119449",
+        "status": "downloaded-unreviewed"
+      },
+      {
+        "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+        "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153367?$Q90_2052_1641_JPG$",
+        "identityEvidence": "Galaxy S25 FE BackL30 Jetblack  ",
+        "origin": "data-src",
+        "artifactFile": "galaxy-s25-fe-3.webp",
+        "width": 1440,
+        "height": 1152,
+        "originalSha256": "1b600d08954d70fbe689712e9c13874bd148a1789032c55056b9e729ebae8a6f",
+        "sha256": "7d265f6a6c6feefeab6aa90c1a06c19555d54d8bf3d259d4899451a579194ee2",
+        "status": "downloaded-unreviewed"
+      }
+    ],
+    "permissionStatus": "unverified",
+    "visualReviewStatus": "required",
+    "siteAssetsChanged": false
+  }
+]

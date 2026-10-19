@@ -10,6 +10,7 @@ type Props = {
   placement?: string;
   tone?: "light" | "dark";
   className?: string;
+  compact?: boolean;
 };
 export function ProductPurchaseOptions({
   productId,
@@ -18,46 +19,104 @@ export function ProductPurchaseOptions({
   placement = "content",
   tone = "light",
   className,
+  compact = false,
 }: Props) {
   const product = getProduct(productId);
   if (!product) return null;
   const offers = getOffers(productId, variantId);
   const dark = tone === "dark";
-  return (
-    <div className={cn("space-y-3", className)}>
-      {offers.length ? (
-        <>
-          <p className={cn("text-xs leading-5", dark ? "text-slate-200" : "text-muted-foreground")}>
+  const storeButtons = (
+    <div className={cn("grid gap-2", !compact && "sm:grid-cols-2")}>
+      {offers.map((offer) => (
+        <a
+          key={offer.id}
+          href={offer.url}
+          target="_blank"
+          rel="nofollow sponsored noopener noreferrer"
+          aria-label={`Comprar ${product.name} ${offer.store === "amazon" ? "na" : "no"} ${STORE_LABELS[offer.store]} — conferir versão no anúncio`}
+          onClick={() =>
+            trackAffiliateClick({
+              productName: product.name,
+              productId,
+              variantId: offer.variantId,
+              offerId: offer.id,
+              destination: offer.store,
+              pageType,
+              ctaPlacement: placement,
+            })
+          }
+          data-store={offer.store}
+          data-product-id={productId}
+          data-offer-id={offer.id}
+          className={cn(
+            "offer-button inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-4 py-3 text-center text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2",
+            offer.store === "amazon" ? "offer-button-amazon" : "offer-button-meli",
+          )}
+        >
+          Comprar {offer.store === "amazon" ? "na" : "no"} {STORE_LABELS[offer.store]}
+          <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
+        </a>
+      ))}
+    </div>
+  );
+  const officialLink = product.officialUrl && (
+    <a
+      href={product.officialUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(
+        "inline-block min-h-6 text-xs underline underline-offset-4",
+        dark ? "text-slate-200" : "text-[#0F3F4A]",
+      )}
+    >
+      Ficha e informações oficiais de {product.name}
+    </a>
+  );
+  if (compact && offers.length)
+    return (
+      <div className={cn("space-y-3", className)}>
+        <p className="text-xs leading-5 text-slate-600">
+          Links afiliados · confira preço e versão na loja.
+        </p>
+        {storeButtons}
+        <details className="rounded-xl border border-slate-200 px-3 py-2 text-xs leading-5 text-slate-700">
+          <summary className="cursor-pointer font-semibold">Variante a conferir na loja</summary>
+          <p className="mt-2">
             Opções para {product.name}. A versão comercial não foi confirmada; confira RAM,
             armazenamento, região e condição em cada anúncio. As lojas podem oferecer versões
             diferentes.
           </p>
-          <div className="grid gap-2 sm:grid-cols-2">
-            {offers.map((offer) => (
-              <a
-                key={offer.id}
-                href={offer.url}
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                aria-label={`Comprar ${product.name} na ${STORE_LABELS[offer.store]} — conferir versão no anúncio`}
-                onClick={() =>
-                  trackAffiliateClick({
-                    productName: product.name,
-                    productId,
-                    variantId: offer.variantId,
-                    offerId: offer.id,
-                    destination: offer.store,
-                    pageType,
-                    ctaPlacement: placement,
-                  })
-                }
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#8B5A2B] px-4 py-3 text-center text-sm font-bold text-white transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B5A2B]"
-              >
-                Comprar {offer.store === "amazon" ? "na" : "no"} {STORE_LABELS[offer.store]}{" "}
-                <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
-              </a>
-            ))}
-          </div>
+          <p className="mt-2">
+            Links afiliados: podemos receber comissão por compras qualificadas, sem custo adicional.
+            Preço, estoque, frete e vendedor são consultados na loja.
+          </p>
+          {offers.some((offer) => offer.store === "amazon") && (
+            <p className="mt-2">{AMAZON_DISCLOSURE}</p>
+          )}
+          <div className="mt-2">{officialLink}</div>
+        </details>
+      </div>
+    );
+  return (
+    <div className={cn("space-y-3", className)}>
+      {offers.length ? (
+        <>
+          <details
+            className={cn(
+              "rounded-xl border p-3 text-xs leading-5",
+              dark ? "border-white/20 text-slate-200" : "border-slate-200 text-slate-700",
+            )}
+          >
+            <summary className="cursor-pointer font-semibold">Variante a conferir na loja</summary>
+            <p
+              className={cn("text-xs leading-5", dark ? "text-slate-200" : "text-muted-foreground")}
+            >
+              Opções para {product.name}. A versão comercial não foi confirmada; confira RAM,
+              armazenamento, região e condição em cada anúncio. As lojas podem oferecer versões
+              diferentes.
+            </p>
+          </details>
+          {storeButtons}
           <p className={cn("text-xs leading-5", dark ? "text-slate-200" : "text-muted-foreground")}>
             Links afiliados: podemos receber comissão por compras qualificadas, sem custo adicional.
             Preço, estoque, frete e vendedor são consultados na loja.
@@ -77,19 +136,7 @@ export function ProductPurchaseOptions({
             : "Ainda não há link de compra cadastrado para este modelo. A ficha oficial é uma fonte técnica, não uma oferta."}
         </p>
       )}
-      {product.officialUrl && (
-        <a
-          href={product.officialUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cn(
-            "inline-block min-h-6 text-xs underline underline-offset-4",
-            dark ? "text-slate-200" : "text-[#0F3F4A]",
-          )}
-        >
-          Ficha e informações oficiais de {product.name}
-        </a>
-      )}
+      {officialLink}
     </div>
   );
 }

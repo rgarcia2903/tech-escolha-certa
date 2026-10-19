@@ -9,7 +9,7 @@ import {
 } from "@/lib/editorial-policy";
 import { getOffers } from "@/lib/product-catalog";
 import { trackFinderChoice } from "@/lib/analytics";
-import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
+import { VisualProductCard } from "./VisualProductCard";
 import { MobilePurchaseBar } from "./MobilePurchaseBar";
 
 const STORAGE_KEY = "tech-escolha-certa:phone-finder";
@@ -61,6 +61,31 @@ export function PhoneDecisionFinder({
   const firstWithOffer = products.find(
     (product) => product.editorialStatus !== "evaluate" && getOffers(product.id).length,
   );
+  const renderCandidate = (product: (typeof products)[number]) => (
+    <VisualProductCard
+      key={product.id}
+      product={product}
+      pageType={pageType}
+      placement="decision_finder"
+      showReviewLink={false}
+    >
+      {product.reviewPath && (
+        <Link
+          to={product.reviewPath}
+          onClick={() =>
+            trackFinderChoice({
+              step: "resultado",
+              choice: "review",
+              recommendation: product.id,
+            })
+          }
+          className="mt-4 inline-block text-sm font-semibold underline"
+        >
+          Ler análise de {product.name}
+        </Link>
+      )}
+    </VisualProductCard>
+  );
   return (
     <section id="escolha-rapida" className="scroll-mt-32 bg-[#0F3F4A] py-12 text-white md:py-16">
       <div className="container-tec">
@@ -108,42 +133,25 @@ export function PhoneDecisionFinder({
             </fieldset>
             <p className="mt-5 text-xs leading-5 text-slate-600">{PRICE_UNCONFIRMED_NOTICE}</p>
           </div>
-          <div aria-live="polite" aria-atomic="false" className="space-y-4">
-            {products.map((product) => (
-              <article key={product.id} className="rounded-3xl bg-[#F7F2EB] p-6 text-slate-900">
-                <p className="text-xs font-semibold text-[#8B5A2B]">
-                  {product.editorialStatus === "evaluate"
-                    ? "Em avaliação editorial"
-                    : "Candidato para comparar · preço no teto não confirmado"}
-                </p>
-                <h3 className="mt-2 text-2xl font-bold">{product.name}</h3>
-                <p className="mt-3 text-sm leading-6">{product.summary}</p>
-                <p className="mt-3 text-xs leading-5 text-slate-600">{product.caution}</p>
-                {product.editorialStatus !== "evaluate" && (
-                  <ProductPurchaseOptions
-                    productId={product.id}
-                    pageType={pageType}
-                    placement="decision_finder"
-                    className="mt-4"
-                  />
-                )}
-                {product.reviewPath && (
-                  <Link
-                    to={product.reviewPath}
-                    onClick={() =>
-                      trackFinderChoice({
-                        step: "resultado",
-                        choice: "review",
-                        recommendation: product.id,
-                      })
-                    }
-                    className="mt-4 inline-block text-sm font-semibold underline"
-                  >
-                    Ler análise de {product.name}
-                  </Link>
-                )}
-              </article>
-            ))}
+          <div
+            aria-live="polite"
+            aria-atomic="false"
+            className="grid content-start items-start gap-4 md:grid-cols-2"
+          >
+            {products.slice(0, 2).map(renderCandidate)}
+            {products.length > 2 && (
+              <details
+                key={`${budget}:${profile}`}
+                className="rounded-2xl bg-white p-4 text-slate-900 md:col-span-2"
+              >
+                <summary className="cursor-pointer text-sm font-bold text-[#0F3F4A]">
+                  Comparar outras {products.length - 2} opções deste perfil
+                </summary>
+                <div className="mt-4 grid items-start gap-4 md:grid-cols-2">
+                  {products.slice(2).map(renderCandidate)}
+                </div>
+              </details>
+            )}
           </div>
         </div>
       </div>

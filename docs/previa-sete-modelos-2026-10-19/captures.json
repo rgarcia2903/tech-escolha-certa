@@ -1,0 +1,55 @@
+{
+  "layouts": [
+    {
+      "page": "home",
+      "width": 390,
+      "firstCard": 677,
+      "firstStore": 1317.5,
+      "beforeFirstStore": 1844.5,
+      "height": 24478
+    },
+    {
+      "page": "ofertas",
+      "width": 390,
+      "firstCard": 701,
+      "firstStore": 1341.5,
+      "beforeFirstStore": 4574.5,
+      "height": 25899
+    },
+    {
+      "page": "ranking",
+      "width": 390,
+      "firstCard": 936.5,
+      "firstStore": 1577,
+      "beforeFirstStore": 2132,
+      "height": 22505
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "firstCard": 570,
+      "firstStore": 1285,
+      "beforeFirstStore": 1428.5,
+      "height": 11430
+    },
+    {
+      "page": "ofertas",
+      "width": 1440,
+      "firstCard": 582,
+      "firstStore": 1297,
+      "beforeFirstStore": 2595.25,
+      "height": 11553
+    },
+    {
+      "page": "ranking",
+      "width": 1440,
+      "firstCard": 817,
+      "firstStore": 1532,
+      "beforeFirstStore": 1506.5,
+      "height": 13883
+    }
+  ],
+  "simulated_clicks": 62,
+  "store_requests_sent": 0,
+  "errors": []
+}

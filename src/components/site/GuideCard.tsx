@@ -1,3 +1,4 @@
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
@@ -24,17 +25,17 @@ export function GuideCard({
       className="group block overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-[#071E25]">
-        <img
+        <ProductMedia
           src={image}
           alt={title}
           loading="lazy"
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+        <div className="pointer-events-none absolute inset-0" />
 
         <div className="absolute left-5 top-5">
-          <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-md ring-1 ring-white/20">
+          <span className="rounded-full bg-[#0F3F4A] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-md ring-1 ring-white/20">
             {category}
           </span>
         </div>
@@ -63,10 +64,3 @@ export function GuideCard({
     </Link>
   );
 }
-
-
-
-
-
-
-

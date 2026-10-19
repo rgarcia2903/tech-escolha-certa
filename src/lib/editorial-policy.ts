@@ -47,6 +47,16 @@ export const HOME_PRODUCT_IDS = [
   "poco-x7-pro",
   "edge-60-pro",
 ] as const;
+// Seven current dual-store models; evaluation status still controls purchase CTAs.
+export const STOREFRONT_PRODUCT_IDS = [
+  "galaxy-a17-5g",
+  "galaxy-a36-5g",
+  "redmi-note-15-5g",
+  "moto-g56-5g",
+  "moto-g86-5g",
+  "edge-60-pro",
+  "galaxy-s25-fe",
+] as const;
 export const ACTIVE_OFFER_PRODUCT_IDS = [
   "galaxy-a17-5g",
   "redmi-note-15-5g",
