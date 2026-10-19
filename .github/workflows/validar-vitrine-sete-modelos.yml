@@ -2,8 +2,8 @@ name: Validar vitrine de sete modelos
 
 on:
   push:
-    branches: [codex/vitrine-fotos-reais-2026-10-19]
-    paths: [.github/workflows/validar-vitrine-sete-modelos.yml, tests/product-media.test.tsx]
+    branches: [codex/vitrine-fotos-reais-2026-10-19, release/vitrine-visual-2026-10-19]
+    paths: [.github/workflows/validar-vitrine-sete-modelos.yml, tests/product-media.test.tsx, src/components/site/ProductMedia.tsx]
   workflow_dispatch:
 
 permissions:
