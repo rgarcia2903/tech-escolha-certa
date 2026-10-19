@@ -1,6 +1,7 @@
 import { ProductMedia } from "@/components/site/ProductMedia";
+import { ProductGallery } from "@/components/site/ProductGallery";
 import { ReviewContext } from "./ReviewContext";
-import { getOfferByUrl } from "@/lib/product-catalog";
+import { getOfferByUrl, getProductByName } from "@/lib/product-catalog";
 import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
 import { Link } from "@tanstack/react-router";
 import { AlertTriangle, ArrowUpRight } from "lucide-react";
@@ -138,12 +139,19 @@ export function ReviewTemplate({
           </div>
 
           <div className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur-md">
-            <ProductMedia
-              name={productName}
-              src={image}
-              loading="eager"
-              className="mb-5 aspect-[4/3] w-full rounded-2xl"
-            />
+            {getProductByName(productName) ? (
+              <ProductGallery
+                productId={getProductByName(productName)!.id}
+                productName={productName}
+              />
+            ) : (
+              <ProductMedia
+                name={productName}
+                src={image}
+                loading="eager"
+                className="mb-5 aspect-[4/3] w-full rounded-2xl"
+              />
+            )}
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Contexto editorial
             </p>
