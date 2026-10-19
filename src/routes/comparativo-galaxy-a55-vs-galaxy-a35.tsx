@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { GALAXY_A35_AFFILIATE_URL, GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -26,10 +28,10 @@ export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMG },
+      { property: "og:image", content: getSocialImage(HERO_IMG) },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
-      { name: "twitter:image", content: HERO_IMG },
+      { name: "twitter:image", content: getSocialImage(HERO_IMG) },
     ],
 
     scripts: [
@@ -42,7 +44,7 @@ export const Route = createFileRoute("/comparativo-galaxy-a55-vs-galaxy-a35")({
               "@type": "Article",
               headline: PAGE_TITLE,
               description: PAGE_DESCRIPTION,
-              image: [HERO_IMG],
+              image: getSocialImage([HERO_IMG]),
               dateModified: "2026-09-20",
               mainEntityOfPage: CANONICAL,
               author: {
@@ -177,7 +179,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <img
+            <ProductMedia
               src="/images/products/galaxy-a55-optimized.webp"
               alt="Samsung Galaxy A55 5G"
               width="512"
@@ -228,7 +230,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
           </div>
 
           <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <img
+            <ProductMedia
               src="/images/products/galaxy-a35-optimized.webp"
               alt="Samsung Galaxy A35 5G"
               width="512"

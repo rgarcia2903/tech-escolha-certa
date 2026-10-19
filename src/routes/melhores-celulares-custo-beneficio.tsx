@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
@@ -214,13 +216,17 @@ export const Route = createFileRoute("/melhores-celulares-custo-beneficio")({
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        ),
       },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
         name: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        ),
       },
     ],
 
@@ -385,7 +391,12 @@ function CustoBeneficioPage() {
         </div>
 
         <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
-          <div className="overflow-x-auto">
+          <div
+            className="overflow-x-auto"
+            role="region"
+            aria-label="Tabela comparativa: deslize para ver todas as colunas"
+            tabIndex={0}
+          >
             <table className="w-full min-w-[760px] text-left text-sm">
               <thead className="bg-surface text-foreground">
                 <tr>
@@ -430,6 +441,10 @@ function CustoBeneficioPage() {
                 key={phone.name}
                 className="rounded-2xl border border-border bg-card p-6 shadow-soft md:p-8"
               >
+                <ProductMedia
+                  name={phone.name}
+                  className="mb-6 aspect-[16/9] w-full rounded-2xl md:aspect-[3/1]"
+                />
                 <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
                   <div className="max-w-3xl">
                     <div className="flex flex-wrap items-center gap-2">
@@ -462,31 +477,35 @@ function CustoBeneficioPage() {
                   </div>
                 </div>
 
-                <div className="mt-7 grid gap-6 border-t border-border pt-6 md:grid-cols-2">
-                  <div>
-                    <p className="text-sm font-bold text-foreground">Pontos fortes</p>
-                    <ul className="mt-3 space-y-2">
-                      {phone.strengths.map((item) => (
-                        <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <details className="mt-6 rounded-2xl border border-slate-200 p-4">
+                  <summary className="cursor-pointer text-sm font-bold text-[#0F3F4A]">
+                    Vantagens e limitações em detalhe
+                  </summary>
+                  <div className="mt-7 grid gap-6 border-t border-border pt-6 md:grid-cols-2">
+                    <div>
+                      <p className="text-sm font-bold text-foreground">Pontos fortes</p>
+                      <ul className="mt-3 space-y-2">
+                        {phone.strengths.map((item) => (
+                          <li key={item} className="flex gap-2 text-sm text-muted-foreground">
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-foreground">Pontos de atenção</p>
+                      <ul className="mt-3 space-y-2">
+                        {phone.cautions.map((item) => (
+                          <li key={item} className="flex gap-2 text-sm text-muted-foreground">
+                            <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">Pontos de atenção</p>
-                    <ul className="mt-3 space-y-2">
-                      {phone.cautions.map((item) => (
-                        <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                          <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
+                </details>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <a
                     href={phone.actionHref}

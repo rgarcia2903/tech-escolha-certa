@@ -99,7 +99,7 @@ function HomePage() {
         hideImageOnMobile
         aside={
           <>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-white/20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white ring-1 ring-white/20">
               <ShieldCheck className="h-3.5 w-3.5" />
               Escolha rápida
             </div>
@@ -137,8 +137,24 @@ function HomePage() {
         </Link>
       </CategoryHero>
 
-      <PhoneDecisionFinder />
       <EditorialSelection selection="general" pageType="home" />
+      <nav className="container-tec pb-10" aria-label="Escolher por orçamento">
+        <h2 className="mb-4 text-xl font-bold text-[#0F3F4A]">Qual é o seu orçamento?</h2>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+          {categoryLinks
+            .filter((item) => item.title.startsWith("Até"))
+            .map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-center text-sm font-bold text-[#0F3F4A]"
+              >
+                {item.title}
+              </Link>
+            ))}
+        </div>
+      </nav>
+      <PhoneDecisionFinder />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
@@ -351,7 +367,7 @@ function HomePage() {
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#8B5A2B] ring-1 ring-white/20">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white ring-1 ring-white/20">
                 <Star className="h-3.5 w-3.5" />
                 Filosofia editorial
               </div>

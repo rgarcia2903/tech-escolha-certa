@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { POCO_X6_PRO_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
@@ -46,11 +48,11 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-poco-x6-
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMAGE },
+      { property: "og:image", content: getSocialImage(HERO_IMAGE) },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
-      { name: "twitter:image", content: HERO_IMAGE },
+      { name: "twitter:image", content: getSocialImage(HERO_IMAGE) },
     ],
 
     scripts: [
@@ -70,7 +72,7 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-poco-x6-
           datePublished: "2026-08-24",
           dateModified: "2026-10-02",
           mainEntityOfPage: CANONICAL,
-          image: HERO_IMAGE,
+          image: getSocialImage(HERO_IMAGE),
         }),
       },
       {
@@ -787,7 +789,7 @@ function ProductHero({ product, accent }: { product: typeof POCO_X6; accent: "te
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
       <div className="grid gap-5 sm:grid-cols-2 sm:items-center">
-        <img
+        <ProductMedia
           src={product.image}
           alt={product.name}
           width={800}

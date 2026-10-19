@@ -1,0 +1,95 @@
+import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
+import type { Product } from "@/lib/product-catalog";
+import { PRODUCT_VISUAL_FACTS } from "@/lib/product-media";
+import { ProductMedia } from "./ProductMedia";
+import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
+
+export function VisualProductCard({
+  product,
+  pageType,
+  placement,
+  id,
+  children,
+  showReviewLink = true,
+}: {
+  product: Product;
+  pageType: string;
+  placement: string;
+  id?: string;
+  children?: ReactNode;
+  showReviewLink?: boolean;
+}) {
+  const visual = PRODUCT_VISUAL_FACTS[product.id];
+  const status =
+    product.editorialStatus === "evaluate"
+      ? "Em avaliação editorial"
+      : product.editorialStatus === "previous_generation"
+        ? "Alternativa de geração anterior"
+        : "Candidato para comparar";
+  return (
+    <article
+      id={id}
+      data-visual-product={product.id}
+      className="visual-product-card scroll-mt-32 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft"
+    >
+      <ProductMedia productId={product.id} className="aspect-[4/3] w-full" />
+      <div className="flex min-w-0 flex-1 flex-col p-5 md:p-6">
+        <p className="text-[11px] font-bold uppercase tracking-wider text-[#8B5A2B]">{status}</p>
+        <h3 className="mt-2 text-xl font-bold text-[#0F3F4A]">{product.name}</h3>
+        <div className="mt-3 flex flex-wrap gap-2 text-xs text-[#0F3F4A]">
+          <span className="rounded-full bg-[#EEF4F2] px-3 py-1">
+            {visual?.profile ?? product.brand}
+          </span>
+          <span className="rounded-full border border-slate-200 px-3 py-1">
+            {product.connectivity === "unconfirmed"
+              ? "Conectividade a conferir"
+              : product.connectivity}
+          </span>
+        </div>
+        <p className="mt-4 text-sm leading-6 text-slate-700">{product.summary}</p>
+        {visual && (
+          <ul className="mt-4 grid gap-2 text-xs text-slate-700">
+            {visual.facts.map((fact) => (
+              <li key={fact} className="border-l-2 border-[#8B5A2B]/40 pl-3">
+                {fact}
+              </li>
+            ))}
+          </ul>
+        )}
+        <p className="mt-4 rounded-xl bg-[#F7F2EB] p-3 text-xs leading-5 text-slate-700">
+          <strong>Atenção: </strong>
+          {product.caution}
+        </p>
+        {product.editorialStatus !== "evaluate" ? (
+          <ProductPurchaseOptions
+            productId={product.id}
+            pageType={pageType}
+            placement={placement}
+            className="mt-5"
+          />
+        ) : (
+          product.officialUrl && (
+            <a
+              href={product.officialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex min-h-11 items-center text-sm underline"
+            >
+              Consultar fonte oficial
+            </a>
+          )
+        )}
+        {showReviewLink && product.reviewPath && (
+          <Link
+            to={product.reviewPath}
+            className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-[#0F3F4A] underline"
+          >
+            Ler análise de {product.name}
+          </Link>
+        )}
+        {children}
+      </div>
+    </article>
+  );
+}

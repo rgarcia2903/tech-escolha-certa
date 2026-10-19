@@ -1,3 +1,4 @@
+import { getSocialImage } from "@/lib/product-media";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
@@ -75,11 +76,11 @@ export const Route = createFileRoute("/review/redmi-note-14-pro-plus")({
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMAGE },
+      { property: "og:image", content: getSocialImage(HERO_IMAGE) },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
-      { name: "twitter:image", content: HERO_IMAGE },
+      { name: "twitter:image", content: getSocialImage(HERO_IMAGE) },
     ],
 
     scripts: [

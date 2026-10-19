@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacyBudget1500References } from "@/components/site/LegacyBudget1500References";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
@@ -196,13 +198,17 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")(
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+        ),
       },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
         name: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+        ),
       },
     ],
     scripts: [
@@ -222,7 +228,9 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-1500-reais")(
             url: "https://techescolhacerta.com.br/autor/ricardo-garcia",
           },
           publisher: { "@type": "Organization", name: "Tech Escolha Certa" },
-          image: "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+          image: getSocialImage(
+            "https://techescolhacerta.com.br/images/products/moto-g86-optimized.webp",
+          ),
         }),
       },
       {
@@ -363,7 +371,12 @@ function GuidePage() {
         </div>
 
         <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
-          <div className="overflow-x-auto">
+          <div
+            className="overflow-x-auto"
+            role="region"
+            aria-label="Tabela comparativa: deslize para ver todas as colunas"
+            tabIndex={0}
+          >
             <table className="w-full min-w-[760px] text-left text-sm">
               <thead className="bg-surface text-foreground">
                 <tr>
@@ -408,6 +421,10 @@ function GuidePage() {
                 key={phone.name}
                 className="rounded-2xl border border-border bg-card p-6 shadow-soft md:p-8"
               >
+                <ProductMedia
+                  name={phone.name}
+                  className="mb-6 aspect-[16/9] w-full rounded-2xl md:aspect-[3/1]"
+                />
                 <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
                   <div className="max-w-3xl">
                     <div className="flex flex-wrap items-center gap-2">

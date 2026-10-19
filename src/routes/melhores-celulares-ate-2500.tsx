@@ -1,3 +1,4 @@
+import { getSocialImage } from "@/lib/product-media";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
@@ -37,8 +38,8 @@ export const Route = createFileRoute("/melhores-celulares-ate-2500")({
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMG },
-      { property: "twitter:image", content: HERO_IMG },
+      { property: "og:image", content: getSocialImage(HERO_IMG) },
+      { property: "twitter:image", content: getSocialImage(HERO_IMG) },
     ],
   }),
   component: MelhoresCelularesAte2500,
@@ -288,7 +289,7 @@ function MelhoresCelularesAte2500() {
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D7A77E]">
                 Recomendação editorial
               </p>
 

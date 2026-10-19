@@ -70,7 +70,7 @@
   --accent: oklch(0.97 0.005 247);
   --accent-foreground: oklch(0.22 0.04 264);
 
-  --cta: oklch(0.66 0.09 55);
+  --cta: #8b5a2b;
   --cta-foreground: oklch(1 0 0);
 
   --teal: oklch(0.48 0.06 210);
@@ -176,4 +176,65 @@ h2,
 h3,
 p {
   overflow-wrap: break-word;
+}
+
+/* Shared product visuals reserve space before photographs load. */
+.product-media {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 10rem;
+  background: radial-gradient(ellipse at 50% 40%, #fff 0%, #edf3f1 65%, #e4edeb 100%);
+  color: #0f3f4a;
+}
+.product-media img {
+  width: 100%;
+  object-fit: contain;
+}
+.product-media-compact {
+  min-height: 7rem;
+}
+.product-media-compact > div {
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+.comparison-visual {
+  max-width: 52rem;
+  margin-inline: auto;
+}
+.comparison-visual .product-media {
+  max-height: 16rem;
+}
+.visual-product-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.visual-product-card .product-media {
+  max-height: 16rem;
+}
+.visual-product-card details p {
+  margin-top: 0.5rem;
+}
+:where(a, button, summary, input):focus-visible {
+  outline: 3px solid #b77946;
+  outline-offset: 4px;
+}
+summary {
+  min-height: 2rem;
+  align-content: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

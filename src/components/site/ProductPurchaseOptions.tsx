@@ -27,11 +27,21 @@ export function ProductPurchaseOptions({
     <div className={cn("space-y-3", className)}>
       {offers.length ? (
         <>
-          <p className={cn("text-xs leading-5", dark ? "text-slate-200" : "text-muted-foreground")}>
-            Opções para {product.name}. A versão comercial não foi confirmada; confira RAM,
-            armazenamento, região e condição em cada anúncio. As lojas podem oferecer versões
-            diferentes.
-          </p>
+          <details
+            className={cn(
+              "rounded-xl border p-3 text-xs leading-5",
+              dark ? "border-white/20 text-slate-200" : "border-slate-200 text-slate-700",
+            )}
+          >
+            <summary className="cursor-pointer font-semibold">Variante a conferir na loja</summary>
+            <p
+              className={cn("text-xs leading-5", dark ? "text-slate-200" : "text-muted-foreground")}
+            >
+              Opções para {product.name}. A versão comercial não foi confirmada; confira RAM,
+              armazenamento, região e condição em cada anúncio. As lojas podem oferecer versões
+              diferentes.
+            </p>
+          </details>
           <div className="grid gap-2 sm:grid-cols-2">
             {offers.map((offer) => (
               <a
@@ -51,6 +61,9 @@ export function ProductPurchaseOptions({
                     ctaPlacement: placement,
                   })
                 }
+                data-store={offer.store}
+                data-product-id={productId}
+                data-offer-id={offer.id}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#8B5A2B] px-4 py-3 text-center text-sm font-bold text-white transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B5A2B]"
               >
                 Comprar {offer.store === "amazon" ? "na" : "no"} {STORE_LABELS[offer.store]}{" "}

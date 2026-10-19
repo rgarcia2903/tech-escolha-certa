@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
@@ -56,7 +58,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")(
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/favicon.png",
+        content: getSocialImage("https://techescolhacerta.com.br/favicon.png"),
       },
     ],
 
@@ -70,7 +72,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-2000-reais")(
           description: "Guia editorial dos melhores celulares intermediários de 2026 até R$ 2.000.",
           author: { "@type": "Organization", name: "Tech Escolha Certa" },
           datePublished: "2026-05-15",
-          image: "https://techescolhacerta.com.br/favicon.png",
+          image: getSocialImage("https://techescolhacerta.com.br/favicon.png"),
         }),
       },
     ],
@@ -389,8 +391,8 @@ function GuidePage() {
       </section>
 
       <section className="container-tec py-14 md:py-20">
-        <div className="grid lg:grid-cols-[1fr_280px] gap-12">
-          <article className="max-w-3xl space-y-16">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_280px] gap-12">
+          <article className="min-w-0 max-w-3xl space-y-16">
             {/* Intro */}
             <EditorialSelection selection="ate-2000" />
             <LegacySelectionNotice />
@@ -439,7 +441,12 @@ function GuidePage() {
                 </h2>
               </div>
               <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
-                <div className="overflow-x-auto">
+                <div
+                  className="overflow-x-auto"
+                  role="region"
+                  aria-label="Tabela comparativa: deslize para ver todas as colunas"
+                  tabIndex={0}
+                >
                   <table className="w-full text-sm">
                     <thead className="bg-surface text-left">
                       <tr className="text-xs uppercase tracking-wider text-muted-foreground">
@@ -652,7 +659,7 @@ function PickBlock({ pick }: { pick: Pick }) {
       <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:shadow-elevated">
         <div className="grid md:grid-cols-2">
           <div className="relative aspect-[4/3] md:aspect-auto bg-surface overflow-hidden">
-            <img
+            <ProductMedia
               src={pick.image}
               alt={pick.name}
               loading="lazy"

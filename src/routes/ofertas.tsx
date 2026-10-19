@@ -1,3 +1,4 @@
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { ACTIVE_OFFER_PRODUCT_IDS } from "@/lib/editorial-policy";
 import { getOfferByUrl } from "@/lib/product-catalog";
@@ -384,6 +385,7 @@ function OfertasPage() {
                   </span>
                 </div>
 
+                <ProductMedia name={offer.name} className="mt-4 aspect-[4/3] w-full rounded-2xl" />
                 <h3 className="mt-5 text-xl font-bold text-foreground">{offer.name}</h3>
                 <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
                   {offer.summary}
@@ -489,7 +491,7 @@ function OfertasPage() {
               className="overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition hover:-translate-y-0.5 hover:shadow-elevated"
             >
               <div className="relative aspect-[4/3] bg-surface">
-                <img
+                <ProductMedia
                   src={offer.image}
                   alt={offer.name}
                   loading="lazy"

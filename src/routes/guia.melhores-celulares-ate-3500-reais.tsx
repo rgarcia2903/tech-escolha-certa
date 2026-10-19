@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { getProductByName } from "@/lib/product-catalog";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
@@ -49,7 +51,9 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3500-reais")(
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        ),
       },
     ],
 
@@ -376,7 +380,7 @@ function BestPhones3500Guide() {
             >
               <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[280px] bg-surface">
-                  <img
+                  <ProductMedia
                     src={phone.image}
                     alt={phone.name}
                     loading="lazy"

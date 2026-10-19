@@ -1,0 +1,126 @@
+import { ProductCard } from "../src/components/site/ProductCard";
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { renderToStaticMarkup } from "react-dom/server";
+import { readFileSync, readdirSync } from "node:fs";
+import { PRODUCTS } from "../src/lib/product-catalog";
+import {
+  PRODUCT_PHOTOS,
+  COMPARISON_PRODUCTS,
+  getApprovedPhoto,
+  productForImage,
+  getSocialImage,
+} from "../src/lib/product-media";
+import { ProductMedia } from "../src/components/site/ProductMedia";
+import { VisualProductCard } from "../src/components/site/VisualProductCard";
+
+test("unlicensed existing assets are preserved but never displayed as product photographs", () => {
+  for (const product of PRODUCTS) {
+    const html = renderToStaticMarkup(<ProductMedia productId={product.id} />);
+    const photo = getApprovedPhoto(product.id);
+    if (!photo) {
+      assert.ok(!html.includes("<img"));
+      assert.ok(html.includes("Foto indisponível"));
+    }
+    assert.ok(html.includes(product.name));
+  }
+});
+test("media identity uses exact catalog paths and never substitutes 4G, 5G, Pro or Pro+", () => {
+  for (const p of PRODUCTS.filter((p) => p.image)) assert.equal(productForImage(p.image)?.id, p.id);
+  assert.equal(productForImage("/images/products/redmi-note-13.webp"), undefined);
+  const html = renderToStaticMarkup(
+    <ProductMedia
+      productId="redmi-note-13-4g"
+      src="/images/products/redmi-note-13-pro-optimized.webp"
+    />,
+  );
+  assert.ok(html.includes('data-product-media="redmi-note-13-4g"'));
+  assert.ok(!html.includes("<img"));
+  assert.equal(new Set(PRODUCT_PHOTOS.map((p) => p.src)).size, PRODUCT_PHOTOS.length);
+});
+test("approval fails closed when licensing or dimensions are absent", () => {
+  const pending = PRODUCT_PHOTOS[0];
+  const original = { ...pending };
+  try {
+    pending.status = "approved";
+    assert.equal(getApprovedPhoto(pending.productId), undefined);
+  } finally {
+    Object.assign(pending, original);
+  }
+});
+test("comparison pairs resolve distinct exact models for all nine existing URLs", () => {
+  assert.equal(Object.keys(COMPARISON_PRODUCTS).length, 9);
+  for (const pair of Object.values(COMPARISON_PRODUCTS)) {
+    assert.notEqual(pair[0], pair[1]);
+    for (const id of pair) assert.ok(PRODUCTS.some((p) => p.id === id));
+  }
+});
+test("visual cards retain both commercial destinations and do not activate evaluation models", () => {
+  const html = renderToStaticMarkup(
+    <VisualProductCard
+      product={PRODUCTS.find((p) => p.id === "galaxy-a17-5g")!}
+      pageType="home"
+      placement="test"
+    />,
+  );
+  assert.ok(html.includes('href="https://meli.la/33rVhq6"'));
+  assert.ok(html.includes('href="https://link.amazon/B0hrqiKuQ"'));
+  assert.ok(html.includes("Variante a conferir na loja"));
+  assert.ok(html.includes('rel="nofollow sponsored noopener noreferrer"'));
+  const evaluation = renderToStaticMarkup(
+    <VisualProductCard
+      product={PRODUCTS.find((p) => p.id === "galaxy-a36-5g")!}
+      pageType="home"
+      placement="test"
+    />,
+  );
+  assert.ok(!evaluation.includes("meli.la"));
+  assert.ok(!evaluation.includes("link.amazon"));
+});
+test("all legacy JSX photo renderers use the central licensing gate", () => {
+  for (const directory of ["src/routes", "src/components/site"]) {
+    for (const file of readdirSync(directory).filter(
+      (f) => f.endsWith(".tsx") && f !== "ProductMedia.tsx",
+    ))
+      assert.ok(!readFileSync(`${directory}/${file}`, "utf8").includes("<img"), file);
+  }
+});
+
+test("social metadata cannot present generated product assets as real photographs", () => {
+  for (const p of PRODUCTS.filter((p) => p.image))
+    assert.equal(
+      getSocialImage(`https://techescolhacerta.com.br${p.image}`),
+      "https://techescolhacerta.com.br/favicon.png",
+    );
+  assert.equal(
+    getSocialImage("https://techescolhacerta.com.br/favicon.png"),
+    "https://techescolhacerta.com.br/favicon.png",
+  );
+});
+
+test("schema image arrays are also guarded instead of bypassing the photograph policy", () => {
+  assert.deepEqual(
+    getSocialImage([
+      "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp",
+      "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp",
+    ]),
+    ["https://techescolhacerta.com.br/favicon.png"],
+  );
+});
+
+test("an ambiguous legacy Note 13 name cannot borrow the Pro photograph", () => {
+  const html = renderToStaticMarkup(
+    <ProductCard
+      product={{
+        name: "Xiaomi Redmi Note 13",
+        image: "/images/products/redmi-note-13-pro-optimized.webp",
+        rating: 0,
+        price: "Consultar na loja",
+        description: "Modelo não especificado",
+      }}
+    />,
+  );
+  assert.ok(html.includes('data-product-media="unidentified"'));
+  assert.ok(!html.includes('data-product-media="redmi-note-13-pro"'));
+  assert.ok(!html.includes("<img"));
+});

@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { GALAXY_A35_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ComponentType } from "react";
@@ -58,11 +60,15 @@ export const Route = createFileRoute("/comparativo/galaxy-a35-vs-redmi-note-13-p
       },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp",
+        ),
       },
       {
         property: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp",
+        ),
       },
       { property: "og:url", content: CANONICAL },
     ],
@@ -677,7 +683,7 @@ function ProductHero({ product, accent }: { product: typeof GALAXY; accent: "tea
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
       <div className="grid gap-5 sm:grid-cols-2 sm:items-center">
-        <img
+        <ProductMedia
           src={product.image}
           alt={product.name}
           width={800}

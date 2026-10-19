@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -29,10 +31,10 @@ export const Route = createFileRoute("/review/galaxy-a35")({
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMG },
+      { property: "og:image", content: getSocialImage(HERO_IMG) },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
-      { name: "twitter:image", content: HERO_IMG },
+      { name: "twitter:image", content: getSocialImage(HERO_IMG) },
     ],
 
     scripts: [
@@ -116,7 +118,7 @@ function ReviewGalaxyA35() {
 
           <div className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
             <div className="mb-6 overflow-hidden rounded-2xl bg-white p-4">
-              <img
+              <ProductMedia
                 src="/images/products/galaxy-a35-optimized.webp"
                 alt="Samsung Galaxy A35 5G"
                 width="512"

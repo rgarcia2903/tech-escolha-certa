@@ -59,7 +59,7 @@ export function Footer() {
 
               <span className="leading-none">
                 <span className="block text-lg tracking-tight">
-                  Tech <span className="text-[#8B5A2B]">Escolha Certa</span>
+                  Tech <span className="text-[#D7A77E]">Escolha Certa</span>
                 </span>
                 <span className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
                   Guia editorial de tecnologia
@@ -75,7 +75,7 @@ export function Footer() {
 
             <div className="mt-6 rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
               <div className="flex items-start gap-3">
-                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8B5A2B]" />
+                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#D7A77E]" />
 
                 <p className="text-xs leading-6 text-slate-300">
                   Trabalhamos com curadoria editorial e links afiliados. Podemos receber comissão
@@ -95,7 +95,7 @@ export function Footer() {
 
         <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-[1fr_1fr]">
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#8B5A2B]">
+            <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D7A77E]">
               Institucional
             </h3>
 
@@ -143,7 +143,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#8B5A2B]">{title}</h3>
+      <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D7A77E]">{title}</h3>
 
       <ul className="mt-4 space-y-3 text-sm text-slate-300">
         {links.map((item) => (

@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import {
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
@@ -51,11 +53,11 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMAGE },
+      { property: "og:image", content: getSocialImage(HERO_IMAGE) },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
-      { name: "twitter:image", content: HERO_IMAGE },
+      { name: "twitter:image", content: getSocialImage(HERO_IMAGE) },
     ],
 
     scripts: [
@@ -75,7 +77,7 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
           datePublished: "2026-07-10",
           dateModified: "2026-10-02",
           mainEntityOfPage: CANONICAL,
-          image: HERO_IMAGE,
+          image: getSocialImage(HERO_IMAGE),
         }),
       },
       {
@@ -795,7 +797,7 @@ function ProductHero({ product, accent }: { product: typeof REDMI13; accent: "te
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
       <div className="grid gap-5 sm:grid-cols-2 sm:items-center">
-        <img
+        <ProductMedia
           src={product.image}
           alt={product.name}
           width={800}
