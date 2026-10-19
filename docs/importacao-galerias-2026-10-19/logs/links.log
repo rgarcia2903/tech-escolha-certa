@@ -1,0 +1,11 @@
+
+> check:links
+> node scripts/check-project.mjs
+
+{
+  "registeredRoutes": 48,
+  "literalInternalLinksChecked": 387,
+  "sitemapUrls": 37,
+  "brokenLinks": 0,
+  "canonicalOwner": "root only"
+}

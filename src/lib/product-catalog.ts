@@ -94,6 +94,7 @@ export const PRODUCTS: Product[] = [
     {
       officialUrl:
         "https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a17-5g-gray-128gb-sm-a176bzaozto/",
+      reviewPath: "/review/galaxy-a17-5g",
     },
   ),
   product(
@@ -103,6 +104,7 @@ export const PRODUCTS: Product[] = [
     "evaluate",
     "Candidato para uso cotidiano e suporte; compare com o A37 antes de decidir.",
     {
+      reviewPath: "/review/galaxy-a36-5g",
       officialUrl:
         "https://news.samsung.com/br/o-seu-primeiro-smartphone-galaxy-com-ai-samsung-apresenta-galaxy-a56-a36-e-a26-com-evolucao-da-inteligencia-artificial",
     },
@@ -114,6 +116,7 @@ export const PRODUCTS: Product[] = [
     "candidate",
     "Tela AMOLED de 120 Hz, Snapdragon 6 Gen 3 e bateria de 5.520 mAh para uso cotidiano.",
     {
+      reviewPath: "/review/redmi-note-15-5g",
       image: image("redmi-note-15-5g"),
       officialUrl: "https://www.mi.com/br/product/redmi-note-15-5g/specs/",
       caution:
@@ -126,7 +129,8 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "evaluate",
     "Candidato econômico; a posição depende da versão, do preço e do suporte brasileiro.",
-    { officialUrl: "https://www.motorola.com.br/smartphone-moto-g56-5g-256gb/p" },
+    {
+      reviewPath: "/review/moto-g56-5g", officialUrl: "https://www.motorola.com.br/smartphone-moto-g56-5g-256gb/p" },
   ),
   product(
     "moto-g86-5g",
@@ -135,6 +139,7 @@ export const PRODUCTS: Product[] = [
     "candidate",
     "Opção para uso misto, tela e resistência; compare com os POCO para jogos pesados.",
     {
+      reviewPath: "/review/moto-g86-5g",
       image: image("moto-g86"),
       officialUrl: "https://www.motorola.com.br/smartphone-moto-g86-5g-256gb/p",
     },
@@ -145,7 +150,8 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "candidate",
     "Conjunto de câmeras, recarga e desempenho para uso misto; compare também com o Edge 70 Pro.",
-    { officialUrl: "https://www.motorola.com.br/smartphone-motorola-edge-60-pro-5g-256gb/p" },
+    {
+      reviewPath: "/review/edge-60-pro", officialUrl: "https://www.motorola.com.br/smartphone-motorola-edge-60-pro-5g-256gb/p" },
   ),
   product(
     "galaxy-s25-fe",
@@ -154,6 +160,7 @@ export const PRODUCTS: Product[] = [
     "candidate",
     "Alternativa premium por condições de compra; compare o custo total com o S26 FE.",
     {
+      reviewPath: "/review/galaxy-s25-fe",
       officialUrl:
         "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-navy-256gb-sm-s731bdbkzto/",
     },

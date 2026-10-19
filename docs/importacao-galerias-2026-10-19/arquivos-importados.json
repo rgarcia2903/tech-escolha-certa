@@ -1,0 +1,202 @@
+[
+  {
+    "path": "public/images/products/gallery/galaxy-a17-5g/01-principal.webp",
+    "bytes": 17036,
+    "sha256": "45739ed690a3d3e4ba403e839742f1578748859eb3f16234317b9f5e7f29ced2"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-a17-5g/02-detalhe.webp",
+    "bytes": 7132,
+    "sha256": "e7548854e403d79bf984a64e0fb839ff96c4749d762322131b68eecf7633361b"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-a17-5g/03-detalhe.webp",
+    "bytes": 9058,
+    "sha256": "4893d15a738d4519fb332284dcdf4817d9e6260f55da72b138f391b792d682cd"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-a17-5g/04-detalhe.webp",
+    "bytes": 2996,
+    "sha256": "57a6e451418163b20d3b1732d331738e345282fa185d86ce2b30a411de63c70c"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-a17-5g/05-detalhe.webp",
+    "bytes": 3206,
+    "sha256": "63746352a84c7892210743092c4733750dcd337554056df46f9f606cdc4fa7d1"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-a17-5g/06-detalhe.webp",
+    "bytes": 9942,
+    "sha256": "d4dd6f49f43a9ab6de0ae6717dc1865a895c45a8b33514048791c68126c58c75"
+  },
+  {
+    "path": "public/images/products/gallery/redmi-note-15-5g/01-principal.webp",
+    "bytes": 15946,
+    "sha256": "66516f99ffd1ca35c2cd795a445b6a3078cb523519a3c42069e32f710cb5183a"
+  },
+  {
+    "path": "public/images/products/gallery/redmi-note-15-5g/02-detalhe.webp",
+    "bytes": 110460,
+    "sha256": "583b717a8f48ca66872436e536f464c9ab7ca3150c6d20ab770944a589812de4"
+  },
+  {
+    "path": "public/images/products/gallery/redmi-note-15-5g/03-detalhe.webp",
+    "bytes": 84256,
+    "sha256": "2c42ccfaab4cf9d079e326c1f23e741bd9aff65813e041b731d3704894db3306"
+  },
+  {
+    "path": "public/images/products/gallery/redmi-note-15-5g/04-detalhe.webp",
+    "bytes": 26816,
+    "sha256": "222f6eb54ae090f87ff1f8d6eb9ada24e1d905841f6b25bce49a608cd3ca12a4"
+  },
+  {
+    "path": "public/images/products/gallery/redmi-note-15-5g/05-detalhe.webp",
+    "bytes": 80926,
+    "sha256": "1ea225414896d288c77c6bfbea30af7375b328ee115c3ec2763d5939bd41e6e0"
+  },
+  {
+    "path": "public/images/products/gallery/redmi-note-15-5g/06-detalhe.webp",
+    "bytes": 28260,
+    "sha256": "467d78a02cb024f2c5f14fbad17ac0a4589fcb70a896156f7810b1f088094844"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/01-principal.webp",
+    "bytes": 74242,
+    "sha256": "2f333ee26782c2fc01a0ac6edfec25c85241c727152644250c43b527d57b61d8"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/02-detalhe.webp",
+    "bytes": 92874,
+    "sha256": "541788f3f7a3abd9e196f83c575e71a3cb4fffe78129a44f894f4cab80feefa7"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/03-detalhe.webp",
+    "bytes": 119348,
+    "sha256": "d8df38924758d8c28e1b6446a88126b8d93cd8513f12fd594b9a3ec7a8a53c77"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/04-detalhe.webp",
+    "bytes": 58582,
+    "sha256": "f56dec814e855c39f6b596d93ece8b5341dadb02a369d7112ce2640124b0787a"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/05-detalhe.webp",
+    "bytes": 42088,
+    "sha256": "c4a6ec7b2f3e1d12b8c2e44b79dcf6ec449d812a72a8709123cc0afc3953c235"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/06-detalhe.webp",
+    "bytes": 62040,
+    "sha256": "9cf629f5c6f741e7610feb8fe844ae3e6ffd27bf1732c9b1e7c4c232d7383643"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/07-detalhe.webp",
+    "bytes": 14020,
+    "sha256": "4e4a5b4b55939c2f779bd1d099b196fe4e60c755fa198aaee4cbc65258ad6044"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/08-detalhe.webp",
+    "bytes": 74946,
+    "sha256": "755b9749122e2160a4904d34803d937727c1f53f32d13c795b0ebaa7bc51e68b"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/09-detalhe.webp",
+    "bytes": 74116,
+    "sha256": "90a5ecc2fafcdce6e1f32e19abbbaa3bce1364a27748d2ba7f6994c71701ec62"
+  },
+  {
+    "path": "public/images/products/gallery/edge-60-pro/10-detalhe.webp",
+    "bytes": 98878,
+    "sha256": "a464f36f7e1eb3b784dd11314208a1e8be117a3b610b1315a7198187b915b130"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g56-5g/01-principal.webp",
+    "bytes": 38368,
+    "sha256": "894da1e97ba9eb643eec0b5775da8b73f6a31d9ec3d795d6cd9a6b7bfbca7374"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g56-5g/02-detalhe.webp",
+    "bytes": 14002,
+    "sha256": "ff8f8418f9ef79790c4103b1eac62c1fd16d55843b80ed8993ab42a9eb6063d1"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g56-5g/03-detalhe.webp",
+    "bytes": 36360,
+    "sha256": "5b11dd0f11265c3dbaca14f90580cecfa6dc58fe8667a847485d07dea523cd57"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g56-5g/04-detalhe.webp",
+    "bytes": 32992,
+    "sha256": "2b38e1b1a1c8672c6466bd65840bdd111062051c3a28065507aa68c2365c3e54"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g56-5g/05-detalhe.webp",
+    "bytes": 25304,
+    "sha256": "5d8344ed82142b000c5581fbd7e0ea7deb51c12c0bc2c5fa8cd2e3e3c9f1ea7a"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g56-5g/06-detalhe.webp",
+    "bytes": 10706,
+    "sha256": "74f5241d65c6c76ac33afa72cb4525317f611253a41244a93d36b9c8aae923f5"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g56-5g/07-detalhe.webp",
+    "bytes": 68678,
+    "sha256": "939878a40d59745b1313d27dfb5af78aaffbc4fc3f825db1023002fa23f37152"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g86-5g/01-principal.webp",
+    "bytes": 46256,
+    "sha256": "e16f767eca626b35ccfa87bf7799a88421b3171abf5be205f40808b946066fb7"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g86-5g/02-detalhe.webp",
+    "bytes": 57628,
+    "sha256": "78d9501b33b4d8e2b698d0388859e081683ec9b9d2212c2ab2e4c748c8b0e243"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g86-5g/03-detalhe.webp",
+    "bytes": 45330,
+    "sha256": "4bd602ba88ac7395df3794242cbc3a1b62cf6d4f59611eb7ecb83bea2d31a1d9"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g86-5g/04-detalhe.webp",
+    "bytes": 36838,
+    "sha256": "2869e596f757f6e045724bd4534f7c997e3750a01fb9aa85472257dcf79e9dd9"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g86-5g/05-detalhe.webp",
+    "bytes": 8062,
+    "sha256": "025e6157c996eb6bfbfc5ec42a765ad8fe0c01c575e75ded6694534f256d3f00"
+  },
+  {
+    "path": "public/images/products/gallery/moto-g86-5g/06-detalhe.webp",
+    "bytes": 83122,
+    "sha256": "633b93ebc3c24111f450967a4a5f6326a19ea9af4e965541ae51814fac434b7f"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-s25-fe/01-principal.webp",
+    "bytes": 14910,
+    "sha256": "3d978d7727b084b0d5505e8b61087b69964db3f98ecb2dca86c3822a1630faf3"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-s25-fe/02-detalhe.webp",
+    "bytes": 6506,
+    "sha256": "0ec8380dfbb63c407748bc8a2cbf3b789472ef4665d7da068f7b515bd2b409c3"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-s25-fe/03-detalhe.webp",
+    "bytes": 7926,
+    "sha256": "23b8643228709face83522bc4a902610d7bfa80eb81e07df680d4e751c42180e"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-s25-fe/04-detalhe.webp",
+    "bytes": 3448,
+    "sha256": "94b7ac2d340aab9eb6602e8e54b8b4ccdd42ef731c390b5b6265e9b3c2abe154"
+  },
+  {
+    "path": "public/images/products/gallery/galaxy-s25-fe/05-detalhe.webp",
+    "bytes": 3604,
+    "sha256": "455e9e425c72130b93fd905aaf8c90f2f3f4158f943a40e04e9862c2fa4e4138"
+  }
+]

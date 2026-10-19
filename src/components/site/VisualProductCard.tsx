@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
 import { getOffers, type Product } from "@/lib/product-catalog";
 import { PRODUCT_VISUAL_FACTS } from "@/lib/product-media";
 import { ProductMedia } from "./ProductMedia";
@@ -43,7 +42,7 @@ export function VisualProductCard({
             <p className="mt-1 text-xs text-slate-600">Amazon e Mercado Livre</p>
           )}
       </header>
-      <ProductMedia productId={product.id} className="w-full" />
+      <ProductMedia productId={product.id} usePilotGallery className="w-full" />
       <div className="flex min-w-0 flex-1 flex-col p-5 md:p-6">
         <div className="mt-3 flex flex-wrap gap-2 text-xs text-[#0F3F4A]">
           <span className="rounded-full bg-[#EEF4F2] px-3 py-1">
@@ -93,12 +92,12 @@ export function VisualProductCard({
           </p>
         </details>
         {showReviewLink && product.reviewPath && (
-          <Link
-            to={product.reviewPath}
+          <a
+            href={product.reviewPath}
             className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-[#0F3F4A] underline"
           >
-            Ler análise de {product.name}
-          </Link>
+            Ver análise completa
+          </a>
         )}
         {children}
       </div>
