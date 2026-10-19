@@ -94,6 +94,7 @@ export const PRODUCTS: Product[] = [
     {
       officialUrl:
         "https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a17-5g-gray-128gb-sm-a176bzaozto/",
+      reviewPath: "/review/galaxy-a17-5g",
     },
   ),
   product(
