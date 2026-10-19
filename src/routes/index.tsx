@@ -2,7 +2,7 @@ import { HOME_PRODUCT_IDS } from "@/lib/editorial-policy";
 import { getProduct } from "@/lib/product-catalog";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronRight, ShieldCheck, Smartphone, Star } from "lucide-react";
+import { ArrowRight, ChevronRight, Smartphone, Star } from "lucide-react";
 
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { CategoryHero } from "@/components/site/CategoryHero";
@@ -93,48 +93,24 @@ function HomePage() {
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <CategoryHero
         eyebrow="Portal editorial de tecnologia"
-        title="Encontre o celular certo sem perder horas comparando."
-        description="Informe seu orçamento e prioridade para chegar a uma recomendação clara. Depois, confira a análise, compare as alternativas e consulte o preço atual."
+        title="Encontre seu próximo celular."
+        description="Compare modelos por perfil e consulte preços na Amazon e no Mercado Livre."
         image="/images/products/phones-hero-optimized.webp"
         hideImageOnMobile
-        aside={
-          <>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white ring-1 ring-white/20">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              Escolha rápida
-            </div>
-
-            <h2 className="mt-4 text-3xl font-bold text-white">
-              Descubra sua melhor opção em 30 segundos
-            </h2>
-
-            <p className="mt-4 text-sm leading-6 text-slate-200">
-              Escolha a faixa de preço e o que mais importa. Você recebe uma indicação direta, o
-              principal ponto de atenção e a comparação que vale fazer.
-            </p>
-
-            <a
-              href="#escolha-rapida"
-              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
-            >
-              Começar escolha guiada
-            </a>
-          </>
-        }
       >
         <a
-          href="#escolha-rapida"
+          href="#selecao-editorial"
           className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
         >
-          Escolher meu celular
+          Ver celulares
         </a>
 
-        <Link
-          to="/comparativos"
+        <a
+          href="#escolha-rapida"
           className="rounded-full bg-white/10 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
         >
-          Ver comparativos
-        </Link>
+          Escolher por perfil
+        </a>
       </CategoryHero>
 
       <EditorialSelection selection="general" pageType="home" />

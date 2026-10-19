@@ -26,7 +26,9 @@ export function CategoryHero({
       <div className="absolute inset-0 bg-gradient-to-br from-[#0B2D35] via-[#114B59] to-[#071E25]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,167,126,0.16),transparent_55%)]" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-12 md:py-16 lg:grid-cols-[1fr_380px] lg:px-8">
+      <div
+        className={`relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-8 md:py-12 lg:px-8 ${aside ? "lg:grid-cols-[1fr_380px]" : ""}`}
+      >
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#D7A77E]">
             {eyebrow}

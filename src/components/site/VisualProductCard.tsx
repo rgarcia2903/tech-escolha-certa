@@ -58,6 +58,7 @@ export function VisualProductCard({
         )}
         {product.editorialStatus !== "evaluate" ? (
           <ProductPurchaseOptions
+            compact
             productId={product.id}
             pageType={pageType}
             placement={placement}

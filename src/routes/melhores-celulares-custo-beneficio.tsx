@@ -286,7 +286,7 @@ function CustoBeneficioPage() {
         <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-cta/10 blur-[120px]" />
         <div className="absolute -bottom-40 -left-32 h-[26rem] w-[26rem] rounded-full bg-teal/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
+        <div className="relative mx-auto max-w-7xl px-6 py-8 lg:px-8 md:py-12">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2">
@@ -311,10 +311,10 @@ function CustoBeneficioPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#ranking"
+                  href="#selecao-editorial"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-sm font-bold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
                 >
-                  Ver os 6 escolhidos
+                  Ver celulares e preços
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
@@ -326,7 +326,7 @@ function CustoBeneficioPage() {
               </div>
             </div>
 
-            <aside className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+            <aside className="hidden rounded-2xl border border-border bg-card p-6 shadow-soft lg:block">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cta">
                 Resposta direta
               </p>

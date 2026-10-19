@@ -270,7 +270,7 @@ function OfertasPage() {
         <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-cta/10 blur-[120px]" />
         <div className="absolute -bottom-40 -left-32 h-[26rem] w-[26rem] rounded-full bg-teal/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
+        <div className="relative mx-auto max-w-7xl px-6 py-8 lg:px-8 md:py-12">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2">
@@ -280,13 +280,11 @@ function OfertasPage() {
               </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">
-                A oferta certa começa pelo celular certo
+                Compare celulares nas lojas
               </h1>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Escolha seu orçamento e o que mais importa. Em poucos segundos, você recebe uma
-                indicação direta, vê o principal ponto de atenção e compara antes de consultar o
-                preço atual.
+                Escolha o modelo e consulte preço, versão e condições na Amazon e no Mercado Livre.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
@@ -306,22 +304,22 @@ function OfertasPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#escolha-rapida"
+                  href="#selecao-editorial"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
                 >
-                  Encontrar minha oferta
+                  Ver modelos e preços
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#ofertas-ate-1500"
+                  href="#escolha-rapida"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Pesquisar com orçamento de R$ 1.500
+                  Escolher por orçamento
                 </a>
               </div>
             </div>
 
-            <aside className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+            <aside className="hidden rounded-2xl border border-border bg-card p-6 shadow-soft lg:block">
               <div className="flex items-center gap-3">
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-cta/10 text-cta">
                   <Zap className="h-6 w-6" />
@@ -356,6 +354,12 @@ function OfertasPage() {
           </div>
         </div>
       </section>
+
+      <EditorialSelection
+        productIds={ACTIVE_OFFER_PRODUCT_IDS}
+        pageType="ofertas"
+        title="Modelos para consultar nas lojas"
+      />
 
       <section id="ofertas-ate-1500" className="scroll-mt-28 border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
@@ -441,11 +445,6 @@ function OfertasPage() {
         </div>
       </section>
 
-      <EditorialSelection
-        productIds={ACTIVE_OFFER_PRODUCT_IDS}
-        pageType="ofertas"
-        title="Modelos para consultar nas lojas"
-      />
       <PhoneDecisionFinder pageType="ofertas" showOfferMobileBar />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
