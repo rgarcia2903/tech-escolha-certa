@@ -1,0 +1,87 @@
+name: Coletar candidatos de imagens oficiais
+
+on:
+  push:
+    branches: [codex/vitrine-fotos-reais-2026-10-19]
+    paths: [.github/workflows/coletar-imagens-catalogo.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/vitrine-fotos-reais-2026-10-19
+      - name: Instalar bibliotecas
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pillow
+      - name: Obter uma imagem candidata de cada pagina oficial
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python - <<'PY'
+          import requests, os, re, io, hashlib, json
+          from PIL import Image
+          from bs4 import BeautifulSoup
+          from urllib.parse import urljoin, urlparse
+          targets = {
+            'moto-g56-5g': 'https://motorolanews.com/br/pressbox/moto-g-family/moto-g56-5g/',
+            'moto-g86-5g': 'https://www.motorola.com.br/smartphone-moto-g86-5g-256gb/p',
+            'galaxy-s25-fe': 'https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/',
+          }
+          s=requests.Session()
+          s.headers.update({'User-Agent':'Mozilla/5.0 (compatible; TechEscolhaCertaCatalogReview/1.0)'})
+          folder='docs/catalogo-comercial-2026-10-19/candidatas'
+          os.makedirs(folder,exist_ok=True)
+          report=[]
+          for slug,url in targets.items():
+            rec={'model':slug,'sourcePage':url,'status':'pending','imageUrl':None}
+            try:
+              page=s.get(url,timeout=25);page.raise_for_status()
+              soup=BeautifulSoup(page.content,'html.parser')
+              candidates=[]
+              for key in ('og:image','twitter:image'):
+                for meta in soup.find_all('meta'):
+                  if meta.get('property')==key or meta.get('name')==key:
+                    candidate=meta.get('content')
+                    if candidate: candidates.append(urljoin(url,candidate))
+              for img in soup.find_all('img'):
+                for key in ('data-src','src'):
+                  candidate=img.get(key)
+                  if candidate and any(z in str(candidate).lower() for z in (slug.replace('-',''),slug.replace('-','_'),slug.replace('-',' '),'hero','product')):
+                    candidates.append(urljoin(url,candidate))
+              for candidate in dict.fromkeys(candidates):
+                try:
+                  if not candidate.startswith('https://'): continue
+                  r=s.get(candidate,timeout=25);r.raise_for_status()
+                  if len(r.content)>14000000 or len(r.content)<3000:continue
+                  img=Image.open(io.BytesIO(r.content));img.load()
+                  if img.width<450 or img.height<450:continue
+                  if img.width>img.height*3:continue
+                  img.thumbnail((1200,1200))
+                  img=img.convert('RGB')
+                  target=f'{folder}/{slug}-candidata.webp'
+                  img.save(target,'WEBP',quality=86,method=5)
+                  rec.update(status='downloaded-unreviewed',imageUrl=candidate,file=target,width=img.width,height=img.height,sha256=hashlib.sha256(open(target,'rb').read()).hexdigest())
+                  break
+                except Exception as exc: rec['lastCandidateError']=str(exc)[:250]
+              if rec['status']=='pending': rec['status']='no-suitable-public-preview'
+            except Exception as exc:rec['status']='error';rec['error']=str(exc)[:300]
+            report.append(rec)
+          with open(f'{folder}/resultado.json','w') as f:json.dump(report,f,ensure_ascii=False,indent=2)
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          PY
+      - name: Guardar arquivos candidatos para revisao, sem habilita-los no site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/catalogo-comercial-2026-10-19/candidatas/
+          if ! git diff --cached --quiet; then
+            git commit -m "Coleta imagens candidatas oficiais para revisao visual"
+            git push origin HEAD:codex/vitrine-fotos-reais-2026-10-19
+          fi
+# Não ativa arquivos sem revisão da identidade do aparelho e das condições de uso.
