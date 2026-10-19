@@ -1,0 +1,52 @@
+
+> test
+> node scripts/run-tests.mjs && node work/tests/catalog-and-purchase.test.mjs && node work/tests/product-media.test.mjs
+
+✔ 18 Mercado Livre and 8 Amazon addresses preserve exact model identity and original bytes (2.453961ms)
+✔ product and variant IDs are unique; every offer resolves to its own product's variant (2.422635ms)
+✔ unconfirmed commercial variant cannot satisfy an editorial 8/256 BR variant (0.690234ms)
+✔ 4G, 5G, Pro, Pro+ and generation distinctions never share offer identity (0.243783ms)
+✔ budgets return documented candidates without asserting a verified price (5.27879ms)
+✔ generic model purchase options expose two original URLs with store labels, security and disclosure (70.72136ms)
+✔ explicit variant and unrelated models do not silently fall back to another offer (7.048201ms)
+✔ legacy PurchaseActions adds both stores only for one identified product, limiting comparative overload (25.574472ms)
+✔ mobile single-product dual-store UI is collapsed and notices identify actual store (5.190823ms)
+✔ offline analytics events distinguish store/product/variant/offer and do not report purchases (0.612009ms)
+✔ no redirect intentionally changes a phone model; canonicals have one centralized owner (2.663128ms)
+✔ documentary schema does not fabricate ratings or laboratory experience (0.332519ms)
+✔ PR #43 export names remain compatible without duplicating offers (0.640564ms)
+✔ PR #43 candidates remain shared while evaluation models stay unapproved (0.174744ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 193.716391
+Modelos com fotografias reais locais aprovadas: 4
+✔ unlicensed existing assets are preserved but never displayed as product photographs (252.979247ms)
+✔ media identity uses exact catalog paths and never substitutes 4G, 5G, Pro or Pro+ (6.201811ms)
+✔ approval fails closed when licensing or dimensions are absent (1.303683ms)
+✔ approved A36 photograph renders local bytes and linked ShareAlike attribution only for A36 (69.407064ms)
+✔ A17 5G renders its own authorized photo while unlicensed remaining models stay neutral (16.338602ms)
+✔ comparison pairs resolve distinct exact models for all nine existing URLs (1.244154ms)
+✔ visual cards retain both commercial destinations and do not activate evaluation models (21.806867ms)
+✔ all legacy JSX photo renderers use the central licensing gate (13.812082ms)
+✔ social metadata cannot present generated product assets as real photographs (1.089482ms)
+✔ Redmi Note 15 5G and Edge 60 Pro retain licensed media and use pilot covers in storefront with both stores (61.455912ms)
+✔ schema image arrays are also guarded instead of bypassing the photograph policy (1.154146ms)
+✔ an ambiguous legacy Note 13 name cannot borrow the Pro photograph (3.304008ms)
+✔ licensed imports have exact documented provenance and intact local WebP bytes (9.181567ms)
+✔ storefront prioritizes models with two stores without activating evaluation products (9.26377ms)
+✔ commercial partner renders support their own license without borrowing a CC license (0.889937ms)
+✔ shared storefront rejects store-only, expired or incomplete partner permissions (0.786134ms)
+✔ all 40 pilot assets exist and six storefront covers match their exact gallery model (157.866041ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 695.20758

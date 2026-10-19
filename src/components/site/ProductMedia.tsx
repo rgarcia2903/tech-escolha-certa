@@ -3,15 +3,17 @@ import { Smartphone } from "lucide-react";
 import { getProduct, getProductByName } from "@/lib/product-catalog";
 import { getApprovedPhoto, productForImage } from "@/lib/product-media";
 import { cn } from "@/lib/utils";
+import { PILOT_GALLERIES } from "@/lib/pilot-galleries";
 
 type Props = Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> & {
   productId?: string;
   name?: string;
   src?: string;
   compact?: boolean;
+  usePilotGallery?: boolean;
 };
 
-/** Never renders an unapproved or mismatched photograph. No stock phone lookalikes. */
+/** Licensed media by default; supplied pilot covers require an explicit storefront opt-in. */
 export function ProductMedia({
   productId,
   name,
@@ -20,6 +22,7 @@ export function ProductMedia({
   className,
   loading = "lazy",
   compact = false,
+  usePilotGallery = false,
   ...props
 }: Props) {
   void alt; // Approved captions describe the actual file, never a caller's marketing text.
@@ -39,6 +42,31 @@ export function ProductMedia({
   const available = photo && failedSrc !== photo.src;
   const label = product?.name ?? name ?? "Celulares para comparar";
   const decorative = props["aria-hidden"] === true || props["aria-hidden"] === "true";
+  const pilot = usePilotGallery && product ? PILOT_GALLERIES[product.id]?.[0] : undefined;
+  if (pilot) {
+    return (
+      <div
+        data-product-media={product!.id}
+        data-photo-status="pilot"
+        aria-hidden={decorative || undefined}
+        className={cn("product-media", compact && "product-media-compact", className)}
+      >
+        <figure className="product-photo">
+          <div className="product-photo-stage">
+            <img
+              src={pilot.src}
+              alt={decorative ? "" : `${product!.name} — vista principal`}
+              loading={loading}
+              decoding="async"
+              fetchPriority={loading === "eager" ? "high" : "auto"}
+              className="product-photo-image"
+            />
+          </div>
+          <figcaption className="product-photo-credit">Imagem fornecida para o piloto.</figcaption>
+        </figure>
+      </div>
+    );
+  }
   return (
     <div
       data-product-media={product?.id ?? "unidentified"}

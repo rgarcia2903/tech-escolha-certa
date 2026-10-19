@@ -1,0 +1,446 @@
+{
+  "reviews": [
+    {
+      "path": "/review/galaxy-a17-5g",
+      "viewport": 1440,
+      "galleryImages": 7,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/galaxy-a36-5g",
+      "viewport": 1440,
+      "galleryImages": 1,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 0,
+      "overflow": false
+    },
+    {
+      "path": "/review/redmi-note-15-5g",
+      "viewport": 1440,
+      "galleryImages": 7,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/edge-60-pro",
+      "viewport": 1440,
+      "galleryImages": 11,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/moto-g56-5g",
+      "viewport": 1440,
+      "galleryImages": 7,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 0,
+      "overflow": false
+    },
+    {
+      "path": "/review/moto-g86-5g",
+      "viewport": 1440,
+      "galleryImages": 6,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/galaxy-s25-fe",
+      "viewport": 1440,
+      "galleryImages": 5,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/galaxy-a17-5g",
+      "viewport": 390,
+      "galleryImages": 7,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/galaxy-a36-5g",
+      "viewport": 390,
+      "galleryImages": 1,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 0,
+      "overflow": false
+    },
+    {
+      "path": "/review/redmi-note-15-5g",
+      "viewport": 390,
+      "galleryImages": 7,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/edge-60-pro",
+      "viewport": 390,
+      "galleryImages": 11,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/moto-g56-5g",
+      "viewport": 390,
+      "galleryImages": 7,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 0,
+      "overflow": false
+    },
+    {
+      "path": "/review/moto-g86-5g",
+      "viewport": 390,
+      "galleryImages": 6,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    },
+    {
+      "path": "/review/galaxy-s25-fe",
+      "viewport": 390,
+      "galleryImages": 5,
+      "allDecoded": true,
+      "controlsPassed": true,
+      "seoPassed": true,
+      "storeButtons": 2,
+      "overflow": false
+    }
+  ],
+  "storefront": [
+    {
+      "path": "/",
+      "viewport": 1440,
+      "primaryImagesPassed": [
+        "galaxy-a17-5g",
+        "galaxy-a36-5g",
+        "redmi-note-15-5g",
+        "edge-60-pro",
+        "moto-g56-5g",
+        "moto-g86-5g",
+        "galaxy-s25-fe"
+      ],
+      "overflow": false
+    },
+    {
+      "path": "/ofertas",
+      "viewport": 1440,
+      "primaryImagesPassed": [
+        "galaxy-a17-5g",
+        "galaxy-a36-5g",
+        "redmi-note-15-5g",
+        "edge-60-pro",
+        "moto-g56-5g",
+        "moto-g86-5g",
+        "galaxy-s25-fe"
+      ],
+      "overflow": false
+    },
+    {
+      "path": "/celulares",
+      "viewport": 1440,
+      "primaryImagesPassed": [
+        "galaxy-a17-5g",
+        "galaxy-a36-5g",
+        "redmi-note-15-5g",
+        "edge-60-pro",
+        "moto-g56-5g",
+        "moto-g86-5g",
+        "galaxy-s25-fe"
+      ],
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "viewport": 390,
+      "primaryImagesPassed": [
+        "galaxy-a17-5g",
+        "galaxy-a36-5g",
+        "redmi-note-15-5g",
+        "edge-60-pro",
+        "moto-g56-5g",
+        "moto-g86-5g",
+        "galaxy-s25-fe"
+      ],
+      "overflow": false
+    },
+    {
+      "path": "/ofertas",
+      "viewport": 390,
+      "primaryImagesPassed": [
+        "galaxy-a17-5g",
+        "galaxy-a36-5g",
+        "redmi-note-15-5g",
+        "edge-60-pro",
+        "moto-g56-5g",
+        "moto-g86-5g",
+        "galaxy-s25-fe"
+      ],
+      "overflow": false
+    },
+    {
+      "path": "/celulares",
+      "viewport": 390,
+      "primaryImagesPassed": [
+        "galaxy-a17-5g",
+        "galaxy-a36-5g",
+        "redmi-note-15-5g",
+        "edge-60-pro",
+        "moto-g56-5g",
+        "moto-g86-5g",
+        "galaxy-s25-fe"
+      ],
+      "overflow": false
+    }
+  ],
+  "affiliateClicks": 138,
+  "errors": [],
+  "assets": [
+    {
+      "path": "public/images/products/gallery/galaxy-a17-5g/01-principal.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-a17-5g/02-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-a17-5g/03-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-a17-5g/04-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-a17-5g/05-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-a17-5g/06-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/redmi-note-15-5g/01-principal.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/redmi-note-15-5g/02-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/redmi-note-15-5g/03-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/redmi-note-15-5g/04-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/redmi-note-15-5g/05-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/redmi-note-15-5g/06-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/01-principal.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/02-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/03-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/04-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/05-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/06-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/07-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/08-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/09-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/edge-60-pro/10-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g56-5g/01-principal.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g56-5g/02-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g56-5g/03-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g56-5g/04-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g56-5g/05-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g56-5g/06-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g56-5g/07-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g86-5g/01-principal.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g86-5g/02-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g86-5g/03-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g86-5g/04-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g86-5g/05-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/moto-g86-5g/06-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-s25-fe/01-principal.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-s25-fe/02-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-s25-fe/03-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-s25-fe/04-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    },
+    {
+      "path": "public/images/products/gallery/galaxy-s25-fe/05-detalhe.webp",
+      "status": 200,
+      "sha256Matches": true
+    }
+  ],
+  "navigation": [
+    {
+      "viewport": 1440,
+      "storefrontToReviewToCatalog": true,
+      "mobileMenu": false
+    },
+    {
+      "viewport": 390,
+      "storefrontToReviewToCatalog": true,
+      "mobileMenu": true
+    }
+  ]
+}

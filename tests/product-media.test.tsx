@@ -148,7 +148,7 @@ test("social metadata cannot present generated product assets as real photograph
   );
 });
 
-test("Redmi Note 15 5G and Edge 60 Pro use distinct approved photographs and preserve both stores", () => {
+test("Redmi Note 15 5G and Edge 60 Pro retain licensed media and use pilot covers in storefront with both stores", () => {
   for (const id of ["redmi-note-15-5g", "edge-60-pro"]) {
     const photo = getApprovedPhoto(id);
     assert.ok(photo, id);
@@ -161,9 +161,12 @@ test("Redmi Note 15 5G and Edge 60 Pro use distinct approved photographs and pre
         placement="test"
       />,
     );
-    assert.ok(html.includes(`src="${photo.src}"`));
-    assert.ok(html.includes(`href="${photo.licenseUrl}"`));
-    assert.ok(html.includes(`href="${photo.sourceUrl}"`));
+    assert.ok(html.includes(`src="/images/products/gallery/${id}/01-principal.webp"`));
+    assert.ok(html.includes('data-photo-status="pilot"'));
+    const licensed = renderToStaticMarkup(<ProductMedia productId={id} />);
+    assert.ok(licensed.includes(`src="${photo.src}"`));
+    assert.ok(licensed.includes(`href="${photo.licenseUrl}"`));
+    assert.ok(licensed.includes(`href="${photo.sourceUrl}"`));
     assert.ok(html.includes('data-store="amazon"'));
     assert.ok(html.includes('data-store="mercado_livre"'));
   }
@@ -305,4 +308,26 @@ test("shared storefront rejects store-only, expired or incomplete partner permis
       false,
     );
   assert.equal(hasCompatibleMediaRights({ ...fixture, commercialRights: undefined }), false);
+});
+
+test("all 40 pilot assets exist and six storefront covers match their exact gallery model", async () => {
+  const { PILOT_GALLERIES } = await import("../src/lib/pilot-galleries");
+  const { ProductGallery } = await import("../src/components/site/ProductGallery");
+  let count = 0;
+  for (const [id, images] of Object.entries(PILOT_GALLERIES)) {
+    const product = PRODUCTS.find((p) => p.id === id)!;
+    const gallery = renderToStaticMarkup(<ProductGallery productId={id} productName={product.name} />);
+    for (const image of images) {
+      const bytes = readFileSync(`public${image.src}`);
+      assert.equal(bytes.toString("ascii", 0, 4), "RIFF");
+      assert.equal(bytes.toString("ascii", 8, 12), "WEBP");
+      assert.ok(gallery.includes(`src="${image.src}"`));
+      count++;
+    }
+    const card = renderToStaticMarkup(<VisualProductCard product={product} pageType="ofertas" placement="test" />);
+    assert.ok(card.includes(`src="${images[0].src}"`));
+    assert.ok(card.includes('data-photo-status="pilot"'));
+    assert.ok(!card.includes('rel="license'));
+  }
+  assert.equal(count, 40);
 });

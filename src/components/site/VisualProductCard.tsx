@@ -42,7 +42,7 @@ export function VisualProductCard({
             <p className="mt-1 text-xs text-slate-600">Amazon e Mercado Livre</p>
           )}
       </header>
-      <ProductMedia productId={product.id} className="w-full" />
+      <ProductMedia productId={product.id} usePilotGallery className="w-full" />
       <div className="flex min-w-0 flex-1 flex-col p-5 md:p-6">
         <div className="mt-3 flex flex-wrap gap-2 text-xs text-[#0F3F4A]">
           <span className="rounded-full bg-[#EEF4F2] px-3 py-1">

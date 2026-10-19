@@ -41,6 +41,8 @@ import { Route as ReviewIphone15RouteImport } from './routes/review.iphone-15'
 import { Route as ReviewGalaxyS24RouteImport } from './routes/review.galaxy-s24'
 import { Route as ReviewGalaxyA55RouteImport } from './routes/review.galaxy-a55'
 import { Route as ReviewGalaxyA35RouteImport } from './routes/review.galaxy-a35'
+import { Route as ReviewGalaxyA175gRouteImport } from './routes/review.galaxy-a17-5g'
+import { Route as ReviewProductIdRouteImport } from './routes/review.$productId'
 import { Route as GuiaMelhoresCelularesParaJogosAte2000RouteImport } from './routes/guia.melhores-celulares-para-jogos-ate-2000'
 import { Route as GuiaMelhoresCelularesAte3500ReaisRouteImport } from './routes/guia.melhores-celulares-ate-3500-reais'
 import { Route as GuiaMelhoresCelularesAte3000ReaisRouteImport } from './routes/guia.melhores-celulares-ate-3000-reais'
@@ -223,6 +225,16 @@ const ReviewGalaxyA35Route = ReviewGalaxyA35RouteImport.update({
   path: '/review/galaxy-a35',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReviewGalaxyA175gRoute = ReviewGalaxyA175gRouteImport.update({
+  id: '/review/galaxy-a17-5g',
+  path: '/review/galaxy-a17-5g',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewProductIdRoute = ReviewProductIdRouteImport.update({
+  id: '/review/$productId',
+  path: '/review/$productId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GuiaMelhoresCelularesParaJogosAte2000Route =
   GuiaMelhoresCelularesParaJogosAte2000RouteImport.update({
     id: '/guia/melhores-celulares-para-jogos-ate-2000',
@@ -344,6 +356,8 @@ export interface FileRoutesByFullPath {
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
   '/guia/melhores-celulares-ate-3500-reais': typeof GuiaMelhoresCelularesAte3500ReaisRoute
   '/guia/melhores-celulares-para-jogos-ate-2000': typeof GuiaMelhoresCelularesParaJogosAte2000Route
+  '/review/$productId': typeof ReviewProductIdRoute
+  '/review/galaxy-a17-5g': typeof ReviewGalaxyA175gRoute
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
@@ -392,6 +406,8 @@ export interface FileRoutesByTo {
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
   '/guia/melhores-celulares-ate-3500-reais': typeof GuiaMelhoresCelularesAte3500ReaisRoute
   '/guia/melhores-celulares-para-jogos-ate-2000': typeof GuiaMelhoresCelularesParaJogosAte2000Route
+  '/review/$productId': typeof ReviewProductIdRoute
+  '/review/galaxy-a17-5g': typeof ReviewGalaxyA175gRoute
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
@@ -441,6 +457,8 @@ export interface FileRoutesById {
   '/guia/melhores-celulares-ate-3000-reais': typeof GuiaMelhoresCelularesAte3000ReaisRoute
   '/guia/melhores-celulares-ate-3500-reais': typeof GuiaMelhoresCelularesAte3500ReaisRoute
   '/guia/melhores-celulares-para-jogos-ate-2000': typeof GuiaMelhoresCelularesParaJogosAte2000Route
+  '/review/$productId': typeof ReviewProductIdRoute
+  '/review/galaxy-a17-5g': typeof ReviewGalaxyA175gRoute
   '/review/galaxy-a35': typeof ReviewGalaxyA35Route
   '/review/galaxy-a55': typeof ReviewGalaxyA55Route
   '/review/galaxy-s24': typeof ReviewGalaxyS24Route
@@ -491,6 +509,8 @@ export interface FileRouteTypes {
     | '/guia/melhores-celulares-ate-3000-reais'
     | '/guia/melhores-celulares-ate-3500-reais'
     | '/guia/melhores-celulares-para-jogos-ate-2000'
+    | '/review/$productId'
+    | '/review/galaxy-a17-5g'
     | '/review/galaxy-a35'
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
@@ -539,6 +559,8 @@ export interface FileRouteTypes {
     | '/guia/melhores-celulares-ate-3000-reais'
     | '/guia/melhores-celulares-ate-3500-reais'
     | '/guia/melhores-celulares-para-jogos-ate-2000'
+    | '/review/$productId'
+    | '/review/galaxy-a17-5g'
     | '/review/galaxy-a35'
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
@@ -587,6 +609,8 @@ export interface FileRouteTypes {
     | '/guia/melhores-celulares-ate-3000-reais'
     | '/guia/melhores-celulares-ate-3500-reais'
     | '/guia/melhores-celulares-para-jogos-ate-2000'
+    | '/review/$productId'
+    | '/review/galaxy-a17-5g'
     | '/review/galaxy-a35'
     | '/review/galaxy-a55'
     | '/review/galaxy-s24'
@@ -636,6 +660,8 @@ export interface RootRouteChildren {
   GuiaMelhoresCelularesAte3000ReaisRoute: typeof GuiaMelhoresCelularesAte3000ReaisRoute
   GuiaMelhoresCelularesAte3500ReaisRoute: typeof GuiaMelhoresCelularesAte3500ReaisRoute
   GuiaMelhoresCelularesParaJogosAte2000Route: typeof GuiaMelhoresCelularesParaJogosAte2000Route
+  ReviewProductIdRoute: typeof ReviewProductIdRoute
+  ReviewGalaxyA175gRoute: typeof ReviewGalaxyA175gRoute
   ReviewGalaxyA35Route: typeof ReviewGalaxyA35Route
   ReviewGalaxyA55Route: typeof ReviewGalaxyA55Route
   ReviewGalaxyS24Route: typeof ReviewGalaxyS24Route
@@ -874,6 +900,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewGalaxyA35RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/review/galaxy-a17-5g': {
+      id: '/review/galaxy-a17-5g'
+      path: '/review/galaxy-a17-5g'
+      fullPath: '/review/galaxy-a17-5g'
+      preLoaderRoute: typeof ReviewGalaxyA175gRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review/$productId': {
+      id: '/review/$productId'
+      path: '/review/$productId'
+      fullPath: '/review/$productId'
+      preLoaderRoute: typeof ReviewProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guia/melhores-celulares-para-jogos-ate-2000': {
       id: '/guia/melhores-celulares-para-jogos-ate-2000'
       path: '/guia/melhores-celulares-para-jogos-ate-2000'
@@ -1023,6 +1063,8 @@ const rootRouteChildren: RootRouteChildren = {
     GuiaMelhoresCelularesAte3500ReaisRoute,
   GuiaMelhoresCelularesParaJogosAte2000Route:
     GuiaMelhoresCelularesParaJogosAte2000Route,
+  ReviewProductIdRoute: ReviewProductIdRoute,
+  ReviewGalaxyA175gRoute: ReviewGalaxyA175gRoute,
   ReviewGalaxyA35Route: ReviewGalaxyA35Route,
   ReviewGalaxyA55Route: ReviewGalaxyA55Route,
   ReviewGalaxyS24Route: ReviewGalaxyS24Route,
