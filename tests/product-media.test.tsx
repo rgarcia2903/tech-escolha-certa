@@ -23,14 +23,9 @@ test("unlicensed existing assets are preserved but never displayed as product ph
   for (const product of PRODUCTS) {
     const html = renderToStaticMarkup(<ProductMedia productId={product.id} />);
     const photo = getApprovedPhoto(product.id);
-    const catalogPreview = ["moto-g56-5g", "moto-g86-5g", "galaxy-s25-fe"].includes(product.id);
-    if (!photo && !catalogPreview) {
+    if (!photo) {
       assert.ok(!html.includes("<img"));
       assert.ok(html.includes("Foto indisponível"));
-    }
-    if (catalogPreview) {
-      assert.ok(html.includes('data-photo-status="catalog-preview"'));
-      assert.ok(html.includes(`src="/images/products/catalogo/${product.id}.webp"`));
     }
     assert.ok(html.includes(product.name));
   }
@@ -94,15 +89,12 @@ test("A17 5G renders its own authorized photo while unlicensed remaining models 
   assert.ok(html.includes(`href="${photo.sourceUrl}"`));
   assert.ok(html.includes(`href="${photo.licenseUrl}"`));
   assert.ok(html.includes("Captainmorlypogi1959"));
-  for (const id of ["moto-g56-5g", "moto-g86-5g", "galaxy-s25-fe"]) {
+  for (const id of ["moto-g56-5g", "moto-g86-5g", "galaxy-s25-fe", "galaxy-a17-4g"]) {
     assert.equal(getApprovedPhoto(id), undefined);
-    const preview = renderToStaticMarkup(<ProductMedia productId={id} />);
-    assert.ok(preview.includes('data-photo-status="catalog-preview"'));
-    assert.ok(preview.includes(`src="/images/products/catalogo/${id}.webp"`));
+    const pending = renderToStaticMarkup(<ProductMedia productId={id} />);
+    assert.ok(!pending.includes("<img"));
+    assert.ok(pending.includes("Foto indisponível"));
   }
-  const pending = renderToStaticMarkup(<ProductMedia productId="galaxy-a17-4g" />);
-  assert.ok(!pending.includes("<img"));
-  assert.ok(pending.includes("Foto indisponível"));
 });
 test("comparison pairs resolve distinct exact models for all nine existing URLs", () => {
   assert.equal(Object.keys(COMPARISON_PRODUCTS).length, 9);
