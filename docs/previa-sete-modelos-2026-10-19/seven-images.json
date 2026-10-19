@@ -1,0 +1,439 @@
+{
+  "commit": "d371e9f11ad279090ca152abff27690fd352ec84",
+  "images": [
+    {
+      "route": "/",
+      "viewport": 390,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 390,
+      "model": "galaxy-a36-5g",
+      "src": "/images/products/licensed/galaxy-a36-5g.webp",
+      "width": 462,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 390,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 390,
+      "model": "edge-60-pro",
+      "src": "/images/products/licensed/edge-60-pro.webp",
+      "width": 466,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 390,
+      "model": "moto-g56-5g",
+      "src": "/images/products/catalogo/moto-g56-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 390,
+      "model": "moto-g86-5g",
+      "src": "/images/products/catalogo/moto-g86-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 390,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 390,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 390,
+      "model": "galaxy-a36-5g",
+      "src": "/images/products/licensed/galaxy-a36-5g.webp",
+      "width": 462,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 390,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 390,
+      "model": "edge-60-pro",
+      "src": "/images/products/licensed/edge-60-pro.webp",
+      "width": 466,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 390,
+      "model": "moto-g56-5g",
+      "src": "/images/products/catalogo/moto-g56-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 390,
+      "model": "moto-g86-5g",
+      "src": "/images/products/catalogo/moto-g86-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 390,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 390,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 390,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 390,
+      "model": "edge-60-pro",
+      "src": "/images/products/licensed/edge-60-pro.webp",
+      "width": 466,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 390,
+      "model": "moto-g86-5g",
+      "src": "/images/products/catalogo/moto-g86-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 390,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-samsung",
+      "viewport": 390,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-samsung",
+      "viewport": 390,
+      "model": "galaxy-a36-5g",
+      "src": "/images/products/licensed/galaxy-a36-5g.webp",
+      "width": 462,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-samsung",
+      "viewport": 390,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-xiaomi",
+      "viewport": 390,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "model": "galaxy-a36-5g",
+      "src": "/images/products/licensed/galaxy-a36-5g.webp",
+      "width": 462,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "model": "edge-60-pro",
+      "src": "/images/products/licensed/edge-60-pro.webp",
+      "width": 466,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "model": "moto-g56-5g",
+      "src": "/images/products/catalogo/moto-g56-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "model": "moto-g86-5g",
+      "src": "/images/products/catalogo/moto-g86-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 1440,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 1440,
+      "model": "galaxy-a36-5g",
+      "src": "/images/products/licensed/galaxy-a36-5g.webp",
+      "width": 462,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 1440,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 1440,
+      "model": "edge-60-pro",
+      "src": "/images/products/licensed/edge-60-pro.webp",
+      "width": 466,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 1440,
+      "model": "moto-g56-5g",
+      "src": "/images/products/catalogo/moto-g56-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 1440,
+      "model": "moto-g86-5g",
+      "src": "/images/products/catalogo/moto-g86-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/ofertas",
+      "viewport": 1440,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 1440,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 1440,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 1440,
+      "model": "edge-60-pro",
+      "src": "/images/products/licensed/edge-60-pro.webp",
+      "width": 466,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 1440,
+      "model": "moto-g86-5g",
+      "src": "/images/products/catalogo/moto-g86-5g.webp",
+      "width": 1440,
+      "height": 1440,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-custo-beneficio",
+      "viewport": 1440,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-samsung",
+      "viewport": 1440,
+      "model": "galaxy-a17-5g",
+      "src": "/images/products/licensed/galaxy-a17-5g.webp",
+      "width": 720,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-samsung",
+      "viewport": 1440,
+      "model": "galaxy-a36-5g",
+      "src": "/images/products/licensed/galaxy-a36-5g.webp",
+      "width": 462,
+      "height": 960,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-samsung",
+      "viewport": 1440,
+      "model": "galaxy-s25-fe",
+      "src": "/images/products/catalogo/galaxy-s25-fe.webp",
+      "width": 1440,
+      "height": 1152,
+      "http": 200
+    },
+    {
+      "route": "/melhores-celulares-xiaomi",
+      "viewport": 1440,
+      "model": "redmi-note-15-5g",
+      "src": "/images/products/licensed/redmi-note-15-5g.webp",
+      "width": 960,
+      "height": 959,
+      "http": 200
+    }
+  ],
+  "extraRankings": [
+    {
+      "route": "/melhores-celulares-samsung",
+      "width": 390
+    },
+    {
+      "route": "/melhores-celulares-xiaomi",
+      "width": 390
+    },
+    {
+      "route": "/melhores-celulares-samsung",
+      "width": 1440
+    },
+    {
+      "route": "/melhores-celulares-xiaomi",
+      "width": 1440
+    }
+  ],
+  "errors": [],
+  "affiliateUrlsPreserved": true
+}
