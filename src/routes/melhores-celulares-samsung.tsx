@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
@@ -49,7 +51,9 @@ export const Route = createFileRoute("/melhores-celulares-samsung")({
       },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        ),
       },
     ],
 
@@ -250,6 +254,7 @@ function MelhoresCelularesSamsung() {
               key={item.product}
               className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
+              <ProductMedia name={item.product} className="mb-5 aspect-[4/3] w-full rounded-2xl" />
               <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
                 {item.category}
               </span>
@@ -399,7 +404,7 @@ function MelhoresCelularesSamsung() {
             />
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#B9774B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D7A77E]">
                 Recomendação editorial
               </p>
 

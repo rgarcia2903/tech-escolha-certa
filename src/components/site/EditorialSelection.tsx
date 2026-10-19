@@ -1,7 +1,7 @@
-import { Link } from "@tanstack/react-router";
 import { getSelection, PRICE_UNCONFIRMED_NOTICE, type Selection } from "@/lib/editorial-policy";
-import { getProduct } from "@/lib/product-catalog";
-import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
+import { getProduct, getOffers } from "@/lib/product-catalog";
+import { getApprovedPhoto } from "@/lib/product-media";
+import { VisualProductCard } from "./VisualProductCard";
 
 type Props = {
   selection?: Selection;
@@ -20,59 +20,39 @@ export function EditorialSelection({
   const products = productIds
     ? productIds.map((value) => getProduct(value)!).filter(Boolean)
     : getSelection(selection);
+  const rankedProducts = [...products].sort((a, b) => {
+    const rank = (id: string) =>
+      getProduct(id)?.editorialStatus === "evaluate"
+        ? 0
+        : new Set(getOffers(id).map((offer) => offer.store)).size;
+    return (
+      rank(b.id) - rank(a.id) || Number(!!getApprovedPhoto(b.id)) - Number(!!getApprovedPhoto(a.id))
+    );
+  });
   return (
-    <section id={id} className="container-tec scroll-mt-32 py-10">
+    <section id={id} className="container-tec scroll-mt-32 py-7">
       <p className="text-xs font-semibold uppercase tracking-widest text-cta">
-        Revisão editorial · outubro de 2026
+        Seleção de celulares
       </p>
       <h2 className="mt-2 text-2xl font-bold md:text-3xl">{title}</h2>
       <p className="mt-3 max-w-4xl text-sm leading-6 text-muted-foreground">
-        {PRICE_UNCONFIRMED_NOTICE}
+        Compare as opções e confira preço e versão na loja. Links afiliados.
       </p>
-      <div className="mt-6 grid gap-5 md:grid-cols-2">
-        {products.map((product) => (
-          <article
+      <details className="mt-2 max-w-4xl text-xs leading-5 text-muted-foreground">
+        <summary className="cursor-pointer underline underline-offset-4">
+          Sobre preços e disponibilidade
+        </summary>
+        <p>{PRICE_UNCONFIRMED_NOTICE}</p>
+      </details>
+      <div className="mt-6 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {rankedProducts.map((product) => (
+          <VisualProductCard
             key={product.id}
             id={`modelo-${product.id}`}
-            className="scroll-mt-32 rounded-3xl border border-border bg-card p-6 shadow-soft"
-          >
-            <p className="text-xs font-semibold text-cta">
-              {product.editorialStatus === "evaluate"
-                ? "Em avaliação editorial"
-                : product.editorialStatus === "previous_generation"
-                  ? "Alternativa de geração anterior"
-                  : "Candidato para comparar"}
-            </p>
-            <h3 className="mt-2 text-xl font-bold">{product.name}</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">{product.summary}</p>
-            <p className="mt-3 rounded-xl bg-secondary p-3 text-xs leading-5">{product.caution}</p>
-            {product.editorialStatus !== "evaluate" && (
-              <ProductPurchaseOptions
-                productId={product.id}
-                pageType={pageType}
-                placement="editorial_selection"
-                className="mt-5"
-              />
-            )}
-            {product.editorialStatus === "evaluate" && product.officialUrl && (
-              <a
-                className="mt-4 inline-block text-sm underline"
-                href={product.officialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Consultar fonte oficial
-              </a>
-            )}
-            {product.reviewPath && (
-              <Link
-                to={product.reviewPath}
-                className="mt-4 inline-block text-sm font-semibold text-[#0F3F4A] underline"
-              >
-                Ler análise de {product.name}
-              </Link>
-            )}
-          </article>
+            product={product}
+            pageType={pageType}
+            placement="editorial_selection"
+          />
         ))}
       </div>
     </section>

@@ -1,0 +1,49 @@
+name: Importar fotografia licenciada A36 (branch de testes)
+
+on:
+  push:
+    branches:
+      - codex/vitrine-fotos-reais-2026-10-19
+    paths:
+      - .github/workflows/importar-foto-a36.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter a branch de testes
+        uses: actions/checkout@v4
+        with:
+          ref: codex/vitrine-fotos-reais-2026-10-19
+          persist-credentials: true
+      - name: Baixar fotografia original da Wikimedia Commons
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest="public/images/products/licensed/galaxy-a36-5g-original.jpg"
+          mkdir -p "$(dirname "$dest")"
+          url='https://commons.wikimedia.org/wiki/Special:Redirect/file/Samsung_Galaxy_A36_5G_2025_%28cropped%29.jpg'
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --user-agent 'TechEscolhaCerta/1.0 (asset import)' "$url" -o "$dest"
+          test "$(stat -c%s "$dest")" -gt 10000
+          test "$(stat -c%s "$dest")" -lt 15000000
+          file --mime-type "$dest" | grep -q 'image/jpeg'
+          sha256sum "$dest"
+      - name: Salvar arquivo apenas na branch de testes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/products/licensed/galaxy-a36-5g-original.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "Adiciona fotografia original licenciada do Galaxy A36 5G (aguarda revisao visual)"
+            git push origin HEAD:codex/vitrine-fotos-reais-2026-10-19
+          fi
+
+# Fonte: https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A36_5G_2025_(cropped).jpg
+# Autor: Captainmorlypogi1959; recorte: Panam2014. Licenca: CC BY-SA 4.0.
+# IMPORTANTE: a imagem NAO e ativada nos cards ate que seja visualmente revisada.

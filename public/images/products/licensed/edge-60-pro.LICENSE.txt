@@ -1,0 +1,13 @@
+Motorola Edge 60 Pro (cropped).jpg
+Author: Meniirtjakarintan (original crop: Modular science)
+Source: https://commons.wikimedia.org/wiki/File:Motorola_Edge_60_Pro_(cropped).jpg
+Commons page revision consulted: 1255533206
+Original SHA-1 published by Commons: e2dbe88083f7223e45eb3ad0bb36550e8a64ae1e
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Files covered: edge-60-pro-original.jpg and edge-60-pro.webp.
+WebP changes by Tech Escolha Certa: applied EXIF orientation if present,
+proportionally resized to at most 960 pixels, converted to WebP (quality 85).
+No additional crop, retouching or AI generation. This derivative is distributed
+under CC BY-SA 4.0. Original authors do not endorse this site or affiliate links.

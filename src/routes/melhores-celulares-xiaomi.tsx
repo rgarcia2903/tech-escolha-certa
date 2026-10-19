@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
@@ -189,11 +191,11 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMAGE },
+      { property: "og:image", content: getSocialImage(HERO_IMAGE) },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
-      { name: "twitter:image", content: HERO_IMAGE },
+      { name: "twitter:image", content: getSocialImage(HERO_IMAGE) },
     ],
 
     scripts: [
@@ -208,7 +210,7 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi")({
           inLanguage: "pt-BR",
           datePublished: "2026-06-11",
           dateModified: "2026-10-16",
-          image: HERO_IMAGE,
+          image: getSocialImage(HERO_IMAGE),
           author: {
             "@type": "Person",
             name: "Ricardo Garcia",
@@ -300,7 +302,7 @@ function MelhoresCelularesXiaomi() {
                   ctaPlacement: "hero",
                 })
               }
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-105"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-105"
             >
               Conferir preço atual <ExternalLink className="h-4 w-4" />
             </a>
@@ -388,6 +390,10 @@ function MelhoresCelularesXiaomi() {
                 key={item.product}
                 className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
               >
+                <ProductMedia
+                  name={item.product}
+                  className="mb-5 aspect-[4/3] w-full rounded-2xl"
+                />
                 <div className="flex items-start gap-4">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#0F3F4A] text-white">
                     <Icon className="h-5 w-5" />
@@ -472,7 +478,12 @@ function MelhoresCelularesXiaomi() {
             </h2>
           </div>
 
-          <div className="overflow-x-auto">
+          <div
+            className="overflow-x-auto"
+            role="region"
+            aria-label="Tabela comparativa: deslize para ver todas as colunas"
+            tabIndex={0}
+          >
             <table className="w-full min-w-[760px] text-left text-sm">
               <thead className="bg-[#0F3F4A] text-white">
                 <tr>
@@ -517,7 +528,9 @@ function MelhoresCelularesXiaomi() {
         <div className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
             <BatteryCharging className="h-8 w-8 text-[#D8B08A]" />
-            <h2 className="mt-4 text-3xl font-bold">Não compare apenas o nome do aparelho</h2>
+            <h2 className="mt-4 text-3xl font-bold text-white">
+              Não compare apenas o nome do aparelho
+            </h2>
             <p className="mt-4 text-base leading-7 text-slate-200">
               A mesma linha pode ter versões 4G e 5G, capacidades diferentes e anúncios importados.
               Confira o nome completo, memória, armazenamento, NFC, homologação, garantia e
@@ -656,7 +669,9 @@ function MelhoresCelularesXiaomi() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D8B08A]">
             Conclusão
           </p>
-          <h2 className="mt-2 text-3xl font-bold">Escolha pelo perfil e pelo preço real</h2>
+          <h2 className="mt-2 text-3xl font-bold text-white">
+            Escolha pelo perfil e pelo preço real
+          </h2>
           <p className="mt-4 max-w-4xl text-base leading-7 text-slate-200">
             Comece pelo Redmi Note 15 5G. Troque pelo POCO X8 Pro se jogos forem prioridade, pelo
             Redmi Note 15 Pro 5G se câmera e resistência forem mais importantes, ou pelo Xiaomi 15T
@@ -666,7 +681,7 @@ function MelhoresCelularesXiaomi() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/comparativos"
-              className="inline-flex items-center gap-2 rounded-full bg-[#B9774B] px-5 py-3 text-sm font-bold text-white"
+              className="inline-flex items-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white"
             >
               Ver comparativos <ArrowRight className="h-4 w-4" />
             </Link>

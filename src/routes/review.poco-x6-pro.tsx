@@ -1,3 +1,4 @@
+import { getSocialImage } from "@/lib/product-media";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { POCO_X6_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
@@ -89,11 +90,11 @@ export const Route = createFileRoute("/review/poco-x6-pro")({
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: HERO_IMAGE },
+      { property: "og:image", content: getSocialImage(HERO_IMAGE) },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
-      { name: "twitter:image", content: HERO_IMAGE },
+      { name: "twitter:image", content: getSocialImage(HERO_IMAGE) },
     ],
 
     scripts: [

@@ -1,0 +1,174 @@
+{
+  "reviewedAt": "2026-10-19",
+  "baseCommit": "2467ea1adf99736f17880a470165c8e0b65deaf2",
+  "workflowRun": 39298422708,
+  "artifactId": 12207549309,
+  "artifactSha256": "15e82af5a857f8393ee5dcbb83ad87293b5678998c67277c8cac5e0e462219dc",
+  "reviewMethod": "ZIP obtido pelo conector GitHub Actions, extraído localmente; nove arquivos decodificados, hashes comparados e imagens individuais inspecionadas visualmente com view_image.",
+  "files": [
+    {
+      "model": "moto-g56-5g",
+      "file": "moto-g56-5g-1.webp",
+      "sha256": "24575bbc2a1d849e1438b8aa590c4015ee34ff90c82846f6b4314d10c513f041",
+      "width": 1440,
+      "height": 1440,
+      "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
+      "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161287/moto-g56-5g_frontside_black-oyster.png",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Frente isolada, enquadramento completo, câmera frontal central e tela em tons neutros. Bom detalhe, sem corte do aparelho.",
+      "preferredForFutureUse": false,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "moto-g56-5g",
+      "file": "moto-g56-5g-2.webp",
+      "sha256": "7e5f9189f1740ddb39b516f7af51f6907292fb5f6f7c34ac90c1b5fbc09575f3",
+      "width": 1440,
+      "height": 1440,
+      "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
+      "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161288/moto-g56-5g_backside_-black-oyster.png",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Traseira isolada Black Oyster, textura e módulo de câmeras visíveis; útil como vista complementar.",
+      "preferredForFutureUse": false,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "moto-g56-5g",
+      "file": "moto-g56-5g-3.webp",
+      "sha256": "15673f4f43894043266975b707c123788f3017a1b8c7d78bd9b0db74e38726e6",
+      "width": 1440,
+      "height": 1440,
+      "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g56-5g/",
+      "imageUrl": "https://motorolanews.com/download/707/moto-g-56-5g/161296/moto-g56-5g_pdp-hero_black-oyster.png",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Melhor opção: composição oficial com frente e traseira, perspectiva consistente, detalhes legíveis e fundo transparente.",
+      "preferredForFutureUse": true,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "moto-g86-5g",
+      "file": "moto-g86-5g-1.webp",
+      "sha256": "631a589dfe86bc3f66173a8f25b8b8c7fd89832a7fb8b887acd8bca9a9fd88c8",
+      "width": 1440,
+      "height": 1440,
+      "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
+      "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161270/moto-g86-5g_spellbound_front-side.png",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Frente isolada, bordas finas, câmera frontal central e papel de parede azulado; enquadramento completo.",
+      "preferredForFutureUse": false,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "moto-g86-5g",
+      "file": "moto-g86-5g-2.webp",
+      "sha256": "f1b475475c58bc72de54dec25aa59573f1f67c23bff2f16726e60e91e94a8728",
+      "width": 1440,
+      "height": 1440,
+      "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
+      "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161273/moto-g86-5g_spellbound_backside.png",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Traseira isolada Spellbound, textura, marca do aparelho e módulo de câmeras bem definidos.",
+      "preferredForFutureUse": false,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "moto-g86-5g",
+      "file": "moto-g86-5g-3.webp",
+      "sha256": "6afd8fc068b3aa00c7925b35c86ff5c32e364ec55ed240d42430b230db88deb9",
+      "width": 1440,
+      "height": 1440,
+      "sourcePage": "https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/",
+      "imageUrl": "https://motorolanews.com/download/706/moto-g-86-5g/161274/moto-g86-5g_spellbound_pdp-hero.png",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Melhor opção: hero oficial com frente e traseira, cor Spellbound consistente, fundo transparente e boa separação entre as vistas.",
+      "preferredForFutureUse": true,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "galaxy-s25-fe",
+      "file": "galaxy-s25-fe-1.webp",
+      "sha256": "0efab28b8c0e69bc8464ef30c7b5e938c07193e1a3383a9f08e0f08ca29f646c",
+      "width": 1440,
+      "height": 1152,
+      "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+      "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153383?$Q90_2052_1641_JPG$",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Melhor opção: apesar do rótulo Front na coleta, o arquivo já apresenta frente e traseira juntas, três câmeras traseiras, cor Jetblack e fundo branco limpo.",
+      "preferredForFutureUse": true,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "galaxy-s25-fe",
+      "file": "galaxy-s25-fe-2.webp",
+      "sha256": "8b771919a6adf032c16262bb44039a33344d1ee64d1b8093ec8a2b7102119449",
+      "width": 1440,
+      "height": 1152,
+      "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+      "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153366?$Q90_2052_1641_JPG$",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Traseira isolada, frontal ao observador, útil para conferir câmeras e cor, mas não mostra a tela.",
+      "preferredForFutureUse": false,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    },
+    {
+      "model": "galaxy-s25-fe",
+      "file": "galaxy-s25-fe-3.webp",
+      "sha256": "7d265f6a6c6feefeab6aa90c1a06c19555d54d8bf3d259d4899451a579194ee2",
+      "width": 1440,
+      "height": 1152,
+      "sourcePage": "https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s25-fe-jetblack-256gb-sm-s731bzkkzto/",
+      "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s731bzkkzto/gallery/br-galaxy-s25-fe-sm-s731-sm-s731bzkkzto-549153367?$Q90_2052_1641_JPG$",
+      "visualReviewStatus": "reviewed",
+      "visualAssessment": "Traseira em ângulo esquerdo, evidencia laterais e lentes; adequada como vista secundária.",
+      "preferredForFutureUse": false,
+      "modelIdentity": "Aparência compatível com o aparelho da fonte oficial e nome do download específico. No G86, origem identifica o modelo comum, sem Power; só a aparência externa não comprova diferenças internas entre variantes.",
+      "commercialUseStatus": "not-cleared",
+      "activated": false
+    }
+  ],
+  "modelsWithActiveImages": 4,
+  "activeModels": [
+    "galaxy-a17-5g",
+    "galaxy-a36-5g",
+    "redmi-note-15-5g",
+    "edge-60-pro"
+  ],
+  "newlyActivatedModels": [],
+  "rightsFindings": [
+    {
+      "models": [
+        "moto-g56-5g",
+        "moto-g86-5g"
+      ],
+      "source": "https://www.motorola.com/us/en/legal/terms-of-use",
+      "section": "Restrictions On Use Of Content",
+      "finding": "Permissão padrão para navegação pessoal não comercial; outros usos, incluindo incorporação em outro site e redistribuição, exigem consentimento escrito prévio. As páginas Press Box consultadas não fornecem licença específica que autorize o uso nesta vitrine de afiliados.",
+      "decision": "Não ativar sem autorização aplicável aos arquivos e ao site."
+    },
+    {
+      "models": [
+        "galaxy-s25-fe"
+      ],
+      "source": "https://www.samsung.com/br/shop/terms-and-conditions-of-sale/",
+      "section": "Nossa Loja Online",
+      "finding": "Materiais e conteúdo permitidos apenas para uso pessoal e não comercial; outras utilizações/reprodução são proibidas. A nota Legal da Samsung Brasil não concede licença comercial.",
+      "decision": "Não ativar o render obtido da galeria Samsung Brasil sem autorização específica."
+    }
+  ]
+}

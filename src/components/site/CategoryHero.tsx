@@ -19,32 +19,18 @@ export function CategoryHero({
   children,
   aside,
 }: CategoryHeroProps) {
+  void image;
+  void hideImageOnMobile;
   return (
     <section className="relative overflow-hidden border-b border-slate-200 bg-[#071E25] text-white">
-      {image ? (
-        <>
-          <img
-            src={image}
-            alt={title}
-            aria-hidden="true"
-            className={`absolute inset-0 h-full w-full object-cover opacity-35 ${
-              hideImageOnMobile ? "hidden md:block" : ""
-            }`}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071E25]/96 via-[#071E25]/88 to-[#071E25]/72" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(185,119,75,0.25),transparent_42%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#071E25]/90 to-transparent" />
-        </>
-      ) : (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0B2D35] via-[#114B59] to-[#071E25]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]" />
-        </>
-      )}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0B2D35] via-[#114B59] to-[#071E25]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,167,126,0.16),transparent_55%)]" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1fr_380px] lg:px-8">
+      <div
+        className={`relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-8 md:py-12 lg:px-8 ${aside ? "lg:grid-cols-[1fr_380px]" : ""}`}
+      >
         <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#8B5A2B]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#D7A77E]">
             {eyebrow}
           </p>
 
@@ -52,9 +38,7 @@ export function CategoryHero({
             {title}
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-            {description}
-          </p>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">{description}</p>
 
           {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
         </div>
@@ -68,10 +52,3 @@ export function CategoryHero({
     </section>
   );
 }
-
-
-
-
-
-
-

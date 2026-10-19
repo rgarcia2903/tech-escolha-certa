@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "node scripts/run-tests.mjs && node work/tests/catalog-and-purchase.test.mjs",
+    "test": "node scripts/run-tests.mjs && node work/tests/catalog-and-purchase.test.mjs && node work/tests/product-media.test.mjs",
     "check:links": "node scripts/check-project.mjs"
   },
   "dependencies": {

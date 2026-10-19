@@ -1,0 +1,62 @@
+name: Importar fotos licenciadas Redmi Note 15 e Edge 60 Pro
+
+on:
+  push:
+    branches:
+      - codex/vitrine-fotos-reais-2026-10-19
+    paths:
+      - .github/workflows/importar-fotos-redmi-edge.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: importar-fotos-redmi-edge-testes
+  cancel-in-progress: false
+
+jobs:
+  importar:
+    if: github.ref == 'refs/heads/codex/vitrine-fotos-reais-2026-10-19'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/vitrine-fotos-reais-2026-10-19
+          persist-credentials: true
+      - name: Baixar originais das fontes documentadas
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from urllib.parse import quote
+          candidates = json.loads(Path('docs/photo-candidates.json').read_text())
+          for product_id in ['redmi-note-15-5g', 'edge-60-pro']:
+              source = next(p for p in candidates if p['productId'] == product_id)
+              assert source['licenseUrl'] == 'https://creativecommons.org/licenses/by-sa/4.0/'
+              assert source['sourceUrl'].startswith('https://commons.wikimedia.org/wiki/File:')
+              destination = Path(f'public/images/products/licensed/{product_id}-original.jpg')
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              url = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/' + quote(source['file'], safe='')
+              subprocess.run(['curl', '--fail', '--location', '--retry', '3', '--connect-timeout', '20', '--max-time', '180', '--user-agent', 'TechEscolhaCerta/1.0 (licensed asset import)', url, '-o', str(destination)], check=True)
+              assert 10000 < destination.stat().st_size < 15000000, product_id
+              assert subprocess.check_output(['file', '--mime-type', '-b', str(destination)], text=True).strip() == 'image/jpeg'
+              assert destination.read_bytes()[:2] == b'\xff\xd8'
+              subprocess.run(['sha256sum', str(destination)], check=True)
+          PY
+      - name: Preservar apenas originais na branch de testes para revisão
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/products/licensed/redmi-note-15-5g-original.jpg public/images/products/licensed/edge-60-pro-original.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "Importa originais licenciados Redmi Note 15 5G e Edge 60 Pro para revisao"
+            git push origin HEAD:codex/vitrine-fotos-reais-2026-10-19
+          fi
+
+# Este workflow não aprova fotos, não cria PR, não faz merge e não executa deploy.
+# Autores/licenças: docs/photo-candidates.json. Revisão visual local obrigatória.

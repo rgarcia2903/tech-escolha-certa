@@ -33,3 +33,4 @@ dist-ssr
 
 # Local validation artifacts
 work/
+__pycache__/

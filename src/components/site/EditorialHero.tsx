@@ -29,9 +29,7 @@ export function EditorialHero({
             {title}
           </h1>
 
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
-            {description}
-          </p>
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">{description}</p>
 
           {children && <div className="mt-8">{children}</div>}
         </div>
@@ -45,10 +43,3 @@ export function EditorialHero({
     </section>
   );
 }
-
-
-
-
-
-
-

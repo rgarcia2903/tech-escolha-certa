@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ComparisonVisual } from "@/components/site/ComparisonVisual";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
@@ -103,14 +105,18 @@ export const Route = createFileRoute("/comparativo/galaxy-a25-vs-redmi-note-13")
       { property: "og:url", content: CANONICAL },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        ),
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: PAGE_DESCRIPTION },
       {
         name: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+        ),
       },
     ],
 
@@ -127,7 +133,9 @@ export const Route = createFileRoute("/comparativo/galaxy-a25-vs-redmi-note-13")
           author: { "@type": "Organization", name: "Tech Escolha Certa" },
           publisher: { "@type": "Organization", name: "Tech Escolha Certa" },
           mainEntityOfPage: CANONICAL,
-          image: "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+          image: getSocialImage(
+            "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
+          ),
         }),
       },
       {
@@ -218,6 +226,9 @@ function GalaxyA25VsRedmiNote13Page() {
           <ScoreMethodLink className="mt-3" />
         </div>
       </header>
+      <section className="container-tec py-8" aria-label="Celulares lado a lado">
+        <ComparisonVisual path="/comparativo/galaxy-a25-vs-redmi-note-13" />
+      </section>
 
       <section id="veredito" className="container-tec py-12 md:py-16">
         <div className="rounded-3xl border border-cta/25 bg-card p-6 shadow-elevated md:p-8">

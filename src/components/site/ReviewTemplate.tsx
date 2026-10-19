@@ -1,3 +1,4 @@
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { ReviewContext } from "./ReviewContext";
 import { getOfferByUrl } from "@/lib/product-catalog";
 import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
@@ -92,11 +93,6 @@ export function ReviewTemplate({
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200 bg-[#071E25] text-white">
-        <img
-          src={image}
-          alt={title}
-          className="absolute inset-0 h-full w-full object-cover opacity-35"
-        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071E25]/96 via-[#071E25]/88 to-[#071E25]/72" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(185,119,75,0.25),transparent_42%)]" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#071E25]/90 to-transparent" />
@@ -142,6 +138,12 @@ export function ReviewTemplate({
           </div>
 
           <div className="rounded-3xl bg-white/10 p-6 shadow-2xl ring-1 ring-white/20 backdrop-blur-md">
+            <ProductMedia
+              name={productName}
+              src={image}
+              loading="eager"
+              className="mb-5 aspect-[4/3] w-full rounded-2xl"
+            />
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Contexto editorial
             </p>
@@ -189,6 +191,23 @@ export function ReviewTemplate({
           />
         </div>
       )}
+      <nav className="container-tec flex flex-wrap gap-2 py-5" aria-label="Nesta análise">
+        {[
+          ["veredito", "Veredito"],
+          ["pontos", "Pontos positivos e negativos"],
+          ["ficha", "Ficha técnica"],
+          ["analise", "Análise por tema"],
+          ["perguntas", "Perguntas frequentes"],
+        ].map(([id, label]) => (
+          <a
+            key={id}
+            href={`#review-${id}`}
+            className="rounded-full border border-slate-200 bg-white px-4 py-3 text-xs font-bold text-[#0F3F4A]"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
       <section className="mx-auto max-w-7xl px-6 pt-8 lg:px-8">
         <AuthorByline reviewedAt={updatedAt.replace(/^Atualizado em\s*/i, "")} />
         <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
@@ -206,7 +225,10 @@ export function ReviewTemplate({
 
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1fr_340px] lg:px-8">
         <article className="min-w-0 space-y-10">
-          <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+          <section
+            id="review-veredito"
+            className="scroll-mt-28 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200"
+          >
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Veredito rápido
             </p>
@@ -225,7 +247,7 @@ export function ReviewTemplate({
             />
           </section>
 
-          <section className="grid gap-8 lg:grid-cols-2">
+          <section id="review-pontos" className="scroll-mt-28 grid gap-8 lg:grid-cols-2">
             <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
               <h2 className="text-2xl font-bold text-[#0F3F4A]">Pontos positivos</h2>
 
@@ -258,7 +280,9 @@ export function ReviewTemplate({
           </section>
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">Ficha técnica</h2>
+            <h2 id="review-ficha" className="scroll-mt-28 text-3xl font-bold text-[#0F3F4A]">
+              Ficha técnica
+            </h2>
 
             <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-slate-200">
               <table className="w-full table-fixed border-collapse break-words text-left text-sm">
@@ -274,9 +298,11 @@ export function ReviewTemplate({
             </div>
           </section>
 
-          {sections.map((section) => (
-            <AnalysisBlock key={section.title} {...section} />
-          ))}
+          <div id="review-analise" className="scroll-mt-28 space-y-8">
+            {sections.map((section) => (
+              <AnalysisBlock key={section.title} {...section} />
+            ))}
+          </div>
 
           <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
             <h2 className="text-3xl font-bold text-[#F8FAFC]">Recomendação final</h2>
@@ -297,7 +323,9 @@ export function ReviewTemplate({
           />
 
           <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-3xl font-bold text-[#0F3F4A]">Perguntas frequentes</h2>
+            <h2 id="review-perguntas" className="scroll-mt-28 text-3xl font-bold text-[#0F3F4A]">
+              Perguntas frequentes
+            </h2>
 
             <div className="mt-8 space-y-6">
               {faq.map((item) => (

@@ -10,15 +10,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <div className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <Header />
-      <main>{children}</main>
+      <div>{children}</div>
       <Footer />
     </div>
   );
 }
-
-
-
-
-
-
-

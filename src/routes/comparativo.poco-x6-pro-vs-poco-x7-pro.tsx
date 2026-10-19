@@ -1,3 +1,5 @@
+import { getSocialImage } from "@/lib/product-media";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { POCO_X6_PRO_AFFILIATE_URL, POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
@@ -52,11 +54,15 @@ export const Route = createFileRoute("/comparativo/poco-x6-pro-vs-poco-x7-pro")(
       },
       {
         property: "og:image",
-        content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        ),
       },
       {
         property: "twitter:image",
-        content: "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        content: getSocialImage(
+          "https://techescolhacerta.com.br/images/products/poco-x7-pro-optimized.webp",
+        ),
       },
     ],
   }),
@@ -674,7 +680,7 @@ function ProductHero({ product, accent }: { product: typeof POCO_X6; accent: "te
   return (
     <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-5 shadow-elevated">
       <div className="grid gap-5 sm:grid-cols-2 sm:items-center">
-        <img
+        <ProductMedia
           src={product.image}
           alt={product.name}
           width={800}

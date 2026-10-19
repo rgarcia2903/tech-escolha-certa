@@ -277,7 +277,7 @@ export function SiteSearch() {
 
                 return (
                   <CommandItem
-                    key={item.to}
+                    key={`${item.group}:${item.title}:${item.to}`}
                     value={`${item.title} ${item.description} ${item.keywords}`}
                     onSelect={() => selectResult(item)}
                     className="cursor-pointer rounded-xl px-3 py-3"

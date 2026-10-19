@@ -287,7 +287,7 @@ function CelularesPage() {
             </section>
 
             <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D7A77E]">
                 Curadoria editorial
               </p>
 
@@ -313,7 +313,7 @@ function CelularesPage() {
               <div className="mt-5 space-y-3">
                 {rankings.map((item) => (
                   <Link
-                    key={item.category}
+                    key={item.href}
                     to={item.href}
                     className="group flex items-center justify-between gap-3 rounded-2xl bg-[#F7F2EB] p-4 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-[#8B5A2B]/50"
                   >

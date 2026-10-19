@@ -1,3 +1,4 @@
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { Link } from "@tanstack/react-router";
@@ -523,7 +524,7 @@ function PickCard({ pick }: { pick: Pick }) {
       <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:shadow-elevated">
         <div className="grid md:grid-cols-2 w-full">
           <div className="relative aspect-[4/3] md:aspect-auto bg-surface overflow-hidden">
-            <img
+            <ProductMedia
               src={pick.image}
               alt={pick.name}
               loading="lazy"

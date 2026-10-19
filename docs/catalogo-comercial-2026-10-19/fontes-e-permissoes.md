@@ -1,0 +1,39 @@
+# Pesquisa de imagens de catálogo — 19/10/2026
+
+Base: `eab9fa891c6dcc7fc50d5e8d68c2c3499d41750b`. Escopo: sete modelos atuais prioritários com Amazon e Mercado Livre. O catálogo também possui Redmi Note 14 Pro+ nas duas lojas, de geração anterior; não foi promovido à seleção atual.
+
+**Resultado: nenhuma imagem oficial nova foi aprovada ou incorporada.** Foram encontrados materiais oficiais de boa qualidade, mas não uma permissão verificável que cubra a vitrine comercial, conversão para WebP e redistribuição local neste repositório. Isso não significa que os fabricantes nunca concedam autorização: significa que ela não está comprovada para este projeto. Não presumimos autorização por haver botão de download, crédito ou programa de afiliados.
+
+## Avaliação por modelo
+
+| Modelo | Fontes de catálogo consultadas | Autoria/titular indicado | Permissão aplicável comprovada? | Decisão |
+| --- | --- | --- | --- | --- |
+| Galaxy A17 5G | [Produto Samsung Brasil](https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a17-5g-gray-128gb-sm-a176bzaozto/), com vistas Front/Back Gray | Samsung; fotógrafo individual não indicado | Não. Página comercial identifica o modelo, mas não concede licença de reutilização | Manter foto Commons de Captainmorlypogi1959, CC BY-SA 4.0 |
+| Galaxy A36 5G | [Biblioteca Samsung](https://news.samsung.com/medialibrary/global/photo/59478), [lançamento Brasil](https://news.samsung.com/br/o-seu-primeiro-smartphone-galaxy-com-ai-samsung-apresenta-galaxy-a56-a36-e-a26-com-evolucao-da-inteligencia-artificial) | Samsung; fotógrafo individual não indicado | Não. Termos gerais limitam uso; a URL da biblioteca também redirecionou para a home na consulta | Manter foto Commons de Captainmorlypogi1959, recorte Panam2014, CC BY-SA 4.0 |
+| Redmi Note 15 5G | [Produto Xiaomi Global](https://www.mi.com/global/product/redmi-note-15-5g/), [Media Kit](https://www.mi.com/global/about/mediakit/) | Xiaomi; fotógrafo individual não indicado | Não. Media Kit consultado fornece contato de imprensa, sem licença comercial identificada | Manter foto Commons de Maksdroider, CC BY-SA 4.0 |
+| Moto G56 5G | [Press Box Brasil](https://motorolanews.com/br/pressbox/moto-g-family/moto-g56-5g/), BasicPack FRONTSIDE/BACKSIDE Black Oyster, Dill e Gray Mist | Motorola; fotógrafo individual não indicado | Não. Downloads disponíveis não comprovam permissão para este uso | Manter placeholder |
+| Moto G86 5G | [Press Box Global](https://motorolanews.com/pressbox/moto-g-family/moto-g86-5g/), SPELLBOUND/GOLDEN CYPRESS/COSMIC SKY/CHRYSANTHEMUM | Motorola; fotógrafo individual não indicado | Não | Manter placeholder. Atenção: [página brasileira](https://motorolanews.com/br/pressbox/moto-g-family/moto-g86-5g/) lista arquivos `moto-g86-power-5G`; não intercambiar Power e modelo comum |
+| Edge 60 Pro | [Press Box Brasil](https://motorolanews.com/br/pressbox/motorola-edge-family/motorola-edge-60-pro/), Frontside/Backside e Basic Pack | Motorola; fotógrafo individual não indicado | Não | Manter foto Commons de Meniirtjakarintan, recorte Modular science, CC BY-SA 4.0 |
+| Galaxy S25 FE | [Biblioteca Samsung](https://news.samsung.com/medialibrary/global/photo/60531/search/s25) | Samsung; fotógrafo individual não indicado | Não | Manter placeholder |
+
+As imagens oficiais não foram baixadas nem inspecionadas em resolução original, porque a etapa de direitos não foi aprovada. Os nomes acima são candidatos documentais, não validações finais de bytes, qualidade ou identidade visual. Nenhuma autoria individual foi inventada.
+
+## Evidências das condições de uso
+
+- [Samsung Newsroom Global — General Use and Restrictions](https://news.samsung.com/global/terms): permite acesso/cópia/download para fins pessoais, informativos e não comerciais; não constitui a licença necessária à vitrine proposta. O endereço `/br/terms` não ficou acessível na ferramenta; não inferimos uma exceção brasileira.
+- [Motorola — Restrictions On Use Of Content](https://www.motorola.com/us/en/legal/terms-of-use): limita a permissão padrão e exige consentimento escrito para outras utilizações, incluindo incorporação em outro site. As páginas Press Box consultadas exibem direitos reservados e não forneceram exceção explícita para uma vitrine de afiliados.
+- [Xiaomi — Intellectual property](https://www.mi.com/global/about/agreement/): estabelece restrições a cópia e distribuição de materiais protegidos sem consentimento. O [Media Kit](https://www.mi.com/global/about/mediakit/) fornece `global-pr@xiaomi.com` para consultas, sem uma autorização que possamos aplicar ao projeto. Nenhuma mensagem foi enviada.
+- [Apple — Depictions of Apple Products](https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html): há exigência de autorização escrita para fotos da Apple. O [guia de afiliados](https://www.apple.com/shop/Catalog/HongKong/Images/affiliates/Apple-Affiliate-Guidelines-2016.pdf), pp. 3 e 9, é condicionado a participação e aprovação no programa Apple e direcionamento a apple.com; não prova elegibilidade deste site com links Amazon/Mercado Livre. É documento antigo, não uma concessão atual ao projeto. Nenhum iPhone integra os sete prioritários.
+- [Amazon Associates — Participation Requirements / IP License](https://affiliate-program.amazon.com/help/operating/policies): o conteúdo de imagens de publicidade de produtos possui restrições de armazenamento. Não usamos imagens de anúncios como alternativa para arquivos WebP locais. Não assumimos que essa política americana define todo contrato brasileiro; a regra reforça que é necessário comprovar a licença efetivamente aplicável.
+
+## Alternativas livres
+
+Consultadas as categorias Commons de [A17](https://commons.wikimedia.org/wiki/Category:Samsung_Galaxy_A17_5G), [A36](https://commons.wikimedia.org/wiki/Category:Samsung_Galaxy_A36_5G), [Redmi Note 15 5G](https://commons.wikimedia.org/wiki/Category:Redmi_Note_15_5G) e [Edge 60 Pro](https://commons.wikimedia.org/wiki/Category:Motorola_Edge_60_Pro), além de buscas pelos demais modelos. Não foi identificada alternativa de catálogo superior com licença confirmada. Resultados “Taken with” mostram fotos feitas *com* o aparelho, não necessariamente *do* aparelho; foram descartados. A36 apresenta fotografias em loja e recortes; não renders oficiais. Arquivos de pares 4G/5G e embalagens do Redmi não foram adotados como foto individual.
+
+As quatro fontes efetivamente usadas, autoria, dimensões, alterações, hashes e evidências de licença permanecem em `src/lib/licensed-product-photos.json`, `docs/photo-candidates.json` e nos arquivos `.LICENSE.txt` junto aos WebPs em `public/images/products/licensed/`. Nenhum desses bytes ou registros de aprovação foi modificado nesta etapa. As imagens continuam sendo fotografias documentais, sem fundo removido, composição sintética ou alegação de fotografia de estúdio.
+
+## GitHub Actions e próximo passo técnico
+
+A tentativa de consultar workflows pelo CLI retornou exatamente `Get "https://api.github.com/repos/rgarcia2903/tech-escolha-certa/actions/workflows": Forbidden`. O Git por HTTPS continua disponível. Não foi usado endpoint alternativo nem contorno do bloqueio. Além disso, não houve arquivo elegível para importar: rodar um download não resolveria a ausência de autorização. Os três workflows anteriores de importação continuam intactos e nenhum novo workflow, PR ou deploy foi disparado.
+
+Para substituir as fotos por renders oficiais, é necessária permissão do titular que cubra este domínio/site comercial, afiliação Amazon/Mercado Livre, armazenamento e redistribuição no GitHub, adaptação para WebP e termos de atribuição. A permissão precisa identificar os arquivos/modelos e eventuais limites territoriais, de prazo e de canal. Sem esse documento ou licença pública equivalente, mantém-se a melhor opção legal existente.

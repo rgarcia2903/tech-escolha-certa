@@ -1,3 +1,4 @@
+import { ComparisonVisual } from "@/components/site/ComparisonVisual";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, GitCompare, Smartphone, Sparkles, Trophy, Zap } from "lucide-react";
 import { SectionHeader, Badge } from "@/components/site/ui";
@@ -215,7 +216,8 @@ function ComparisonsPage() {
             >
               <div className="absolute -right-20 -top-20 h-44 w-44 rounded-full bg-cta/10 blur-3xl" />
 
-              <div className="relative">
+              <ComparisonVisual path={comparison.href} />
+              <div className="relative mt-5">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge variant={index === 0 ? "cta" : "teal"}>Comparativo principal</Badge>
                   <span className="rounded-full bg-surface px-3 py-1 text-xs font-semibold text-muted-foreground">

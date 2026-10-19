@@ -1,3 +1,4 @@
+import { getSocialImage } from "@/lib/product-media";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   HeadContent,
@@ -256,7 +257,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
         {
           property: "og:image",
-          content: "https://techescolhacerta.com.br/favicon.png",
+          content: getSocialImage("https://techescolhacerta.com.br/favicon.png"),
         },
 
         {
@@ -277,7 +278,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
         {
           name: "twitter:image",
-          content: "https://techescolhacerta.com.br/favicon.png",
+          content: getSocialImage("https://techescolhacerta.com.br/favicon.png"),
         },
       ],
     };
