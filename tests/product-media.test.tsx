@@ -68,9 +68,31 @@ test("approved A36 photograph renders local bytes and linked ShareAlike attribut
   assert.ok(html.includes(`href="${photo.licenseUrl}"`));
   assert.ok(html.includes("Captainmorlypogi1959 (recorte: Panam2014)"));
   assert.ok(html.includes("Derivado sob CC BY-SA 4.0"));
-  for (const id of ["galaxy-a35", "galaxy-a37-5g", "galaxy-a17-5g"]) {
+  for (const id of ["galaxy-a35", "galaxy-a37-5g"]) {
     assert.equal(getApprovedPhoto(id), undefined);
     assert.ok(!renderToStaticMarkup(<ProductMedia productId={id} />).includes(photo.src));
+  }
+});
+
+test("A17 5G renders its own authorized photo while unlicensed remaining models stay neutral", () => {
+  const photo = getApprovedPhoto("galaxy-a17-5g");
+  assert.ok(photo);
+  const original = readFileSync("public/images/products/licensed/galaxy-a17-5g-original.jpg");
+  assert.equal(
+    createHash("sha1").update(original).digest("hex"),
+    "463678a590710bc6d4ef2155b6d6b0adea7349b0",
+  );
+  assert.equal(createHash("sha256").update(original).digest("hex"), photo.originalSha256);
+  const html = renderToStaticMarkup(<ProductMedia productId="galaxy-a17-5g" />);
+  assert.ok(html.includes(`src="${photo.src}"`));
+  assert.ok(html.includes(`href="${photo.sourceUrl}"`));
+  assert.ok(html.includes(`href="${photo.licenseUrl}"`));
+  assert.ok(html.includes("Captainmorlypogi1959"));
+  for (const id of ["moto-g56-5g", "moto-g86-5g", "galaxy-s25-fe", "galaxy-a17-4g"]) {
+    assert.equal(getApprovedPhoto(id), undefined);
+    const pending = renderToStaticMarkup(<ProductMedia productId={id} />);
+    assert.ok(!pending.includes("<img"));
+    assert.ok(pending.includes("Foto indisponível"));
   }
 });
 test("comparison pairs resolve distinct exact models for all nine existing URLs", () => {

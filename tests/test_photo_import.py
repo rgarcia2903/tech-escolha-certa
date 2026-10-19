@@ -17,6 +17,25 @@ spec.loader.exec_module(module)
 
 
 class ImportPhotoTest(unittest.TestCase):
+    def test_real_a17_matches_commons_and_webp_orientation(self):
+        original = ROOT / "public/images/products/licensed/galaxy-a17-5g-original.jpg"
+        self.assertEqual(hashlib.sha1(original.read_bytes()).hexdigest(), "463678a590710bc6d4ef2155b6d6b0adea7349b0")
+        with Image.open(original) as image:
+            self.assertEqual(image.format, "JPEG")
+            image.verify()
+        with Image.open(original) as image:
+            image.load()
+            self.assertEqual(image.size, (4032, 3024))
+            self.assertEqual(image.getexif().get(274), 6)
+            self.assertEqual(ImageOps.exif_transpose(image).size, (3024, 4032))
+        derived = ROOT / "public/images/products/licensed/galaxy-a17-5g.webp"
+        with Image.open(derived) as image:
+            image.load()
+            self.assertEqual(image.format, "WEBP")
+            self.assertEqual(image.size, (720, 960))
+            self.assertIsNone(image.getexif().get(274))
+        self.assertLess(derived.stat().st_size, original.stat().st_size / 10)
+
     def test_redmi_and_edge_match_commons_checksums_and_decode_as_optimized_webp(self):
         expected = {
             "redmi-note-15-5g": ((1874, 1872), "f26b45512a0f0dd521186231ae366a8c76210a01"),

@@ -52,5 +52,23 @@
     "originalSha256": "798c14af3cf006248371997e2200258bbe2e9c45f85e175d63edd538e738bffb",
     "sha256": "df489675c5dd38723464bf60ca1f0ad0b657e82ae2e998e4a59e722544ab0b7f",
     "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
+  },
+  {
+    "productId": "galaxy-a17-5g",
+    "kind": "photograph",
+    "status": "approved",
+    "src": "/images/products/licensed/galaxy-a17-5g.webp",
+    "width": 720,
+    "height": 960,
+    "alt": "Samsung Galaxy A17 5G fotografado em loja",
+    "author": "Captainmorlypogi1959",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A17_5G_2026_(4).jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "permissionEvidence": "Commons revisão 1188192752: Captainmorlypogi1959, CC BY-SA 4.0. Original obtido pelo GitHub Actions run 39288690168, commit bb2cbac. SHA-1 463678a590710bc6d4ef2155b6d6b0adea7349b0 coincide com a fonte. JPEG verificado e decodificado; inspeção visual confirma texto Galaxy A17 5G na tela do aparelho. EXIF 6 aplicado. Foto de expositor estrangeiro: preços fotografados não são ofertas atuais do site e não comprovam variante comercial.",
+    "reviewedBy": "Codex — inspeção visual e validação técnica nesta execução",
+    "reviewedAt": "2026-10-19",
+    "originalSha256": "ddfcb2306523d7b88f48ada126e422dce5a58e8c3ce971537023413183311b33",
+    "sha256": "aee11a2f2314c044d5b2ed487b77ae2b17574346eb11ee5e1e7943cc68a22d26",
+    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
   }
 ]
