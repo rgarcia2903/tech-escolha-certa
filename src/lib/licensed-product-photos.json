@@ -16,5 +16,41 @@
     "originalSha256": "3b3f7baa395d574333e366e59cff099b00dbf5033700691e2472ab6d087ad7a6",
     "sha256": "a2dfc17c75049318ffadd18b91c9a9e26ff5ca42b48e5fb5530db7fa5e77d9ad",
     "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
+  },
+  {
+    "productId": "redmi-note-15-5g",
+    "kind": "photograph",
+    "status": "approved",
+    "src": "/images/products/licensed/redmi-note-15-5g.webp",
+    "width": 960,
+    "height": 959,
+    "alt": "Traseira do Redmi Note 15 5G Glacier Blue",
+    "author": "Maksdroider",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:REDMI_Note_15_5G_back.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "permissionEvidence": "Fonte, autoria e CC BY-SA 4.0 confirmadas no Commons, revisão 1224141486. Original importado pelo GitHub Actions run 39286732434, commit 5a4c0be. SHA-1 coincide com o publicado na fonte; JPEG validado e inspecionado visualmente. Correspondência de modelo confirmada; a foto não comprova variante comercial do anúncio.",
+    "reviewedBy": "Codex — inspeção visual e validação técnica nesta execução",
+    "reviewedAt": "2026-10-19",
+    "originalSha256": "e8a169bd0cc5d582ac3e7f0758b7b4a37fe79cdd23f71f020c877558e66728c1",
+    "sha256": "e1f0b883498ecd3a8c9bf3c8c43707034c1576b24c6070cb709e58ac78660fe2",
+    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
+  },
+  {
+    "productId": "edge-60-pro",
+    "kind": "photograph",
+    "status": "approved",
+    "src": "/images/products/licensed/edge-60-pro.webp",
+    "width": 466,
+    "height": 960,
+    "alt": "Motorola Edge 60 Pro fotografado",
+    "author": "Meniirtjakarintan (recorte: Modular science)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Motorola_Edge_60_Pro_(cropped).jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "permissionEvidence": "Fonte, autoria e CC BY-SA 4.0 confirmadas no Commons, revisão 1255533206. Original importado pelo GitHub Actions run 39286732434, commit 5a4c0be. SHA-1 coincide com o publicado na fonte; JPEG validado e inspecionado visualmente. Correspondência de modelo confirmada; a foto não comprova variante comercial do anúncio.",
+    "reviewedBy": "Codex — inspeção visual e validação técnica nesta execução",
+    "reviewedAt": "2026-10-19",
+    "originalSha256": "798c14af3cf006248371997e2200258bbe2e9c45f85e175d63edd538e738bffb",
+    "sha256": "df489675c5dd38723464bf60ca1f0ad0b657e82ae2e998e4a59e722544ab0b7f",
+    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
   }
 ]

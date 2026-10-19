@@ -1,0 +1,13 @@
+REDMI Note 15 5G back.jpg
+Author: Maksdroider
+Source: https://commons.wikimedia.org/wiki/File:REDMI_Note_15_5G_back.jpg
+Commons page revision consulted: 1224141486
+Original SHA-1 published by Commons: f26b45512a0f0dd521186231ae366a8c76210a01
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Files covered: redmi-note-15-5g-original.jpg and redmi-note-15-5g.webp.
+WebP changes by Tech Escolha Certa: applied EXIF orientation if present,
+proportionally resized to at most 960 pixels, converted to WebP (quality 85).
+No additional crop, retouching or AI generation. This derivative is distributed
+under CC BY-SA 4.0. Original authors do not endorse this site or affiliate links.

@@ -17,6 +17,32 @@ spec.loader.exec_module(module)
 
 
 class ImportPhotoTest(unittest.TestCase):
+    def test_redmi_and_edge_match_commons_checksums_and_decode_as_optimized_webp(self):
+        expected = {
+            "redmi-note-15-5g": ((1874, 1872), "f26b45512a0f0dd521186231ae366a8c76210a01"),
+            "edge-60-pro": ((2723, 5610), "e2dbe88083f7223e45eb3ad0bb36550e8a64ae1e"),
+        }
+        records = json.loads((ROOT / "src/lib/licensed-product-photos.json").read_text())
+        for product_id, (dimensions, sha1) in expected.items():
+            with self.subTest(product=product_id):
+                record = next(p for p in records if p["productId"] == product_id)
+                original = ROOT / f"public/images/products/licensed/{product_id}-original.jpg"
+                derived = ROOT / ("public" + record["src"])
+                self.assertEqual(hashlib.sha1(original.read_bytes()).hexdigest(), sha1)
+                with Image.open(original) as image:
+                    self.assertEqual(image.format, "JPEG")
+                    image.verify()
+                with Image.open(original) as image:
+                    image.load()
+                    self.assertEqual(ImageOps.exif_transpose(image).size, dimensions)
+                with Image.open(derived) as image:
+                    image.load()
+                    self.assertEqual(image.format, "WEBP")
+                    self.assertEqual(image.size, (record["width"], record["height"]))
+                    self.assertEqual(max(image.size), 960)
+                    self.assertIsNone(image.getexif().get(274))
+                self.assertLess(derived.stat().st_size, original.stat().st_size)
+
     def test_real_a36_jpeg_and_webp_decode_with_correct_orientation_and_size(self):
         original = ROOT / "public/images/products/licensed/galaxy-a36-5g-original.jpg"
         derived = ROOT / "public/images/products/licensed/galaxy-a36-5g.webp"

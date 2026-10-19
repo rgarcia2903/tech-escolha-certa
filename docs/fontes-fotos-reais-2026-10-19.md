@@ -40,3 +40,25 @@ O levantamento acima é histórico. Nesta revisão, a fotografia do A36 foi obti
 - **Contagem atual:** **1 modelo** com fotografia real local aprovada. Redmi Note 15 5G e Edge 60 Pro continuam pendentes. Ativos antigos gerados por IA permanecem bloqueados como fotos.
 
 A integração utiliza o componente central `ProductMedia`; as seleções e o seletor guiado que já contêm o A36 passam a exibir seu WebP local. Nenhum hotlink é usado para carregar a imagem. Os links da legenda levam apenas à origem e à licença. A aprovação fotográfica não muda o status editorial/comercial do aparelho nem autoriza publicação.
+
+## Redmi Note 15 5G e Edge 60 Pro integrados — 19/10/2026
+
+Atualização posterior à seção do A36: **3 modelos** possuem fotografias locais aprovadas. O A36 foi preservado; Redmi e Edge deixaram de estar pendentes nesta revisão.
+
+Originais obtidos pelo [GitHub Actions run 39286732434](https://github.com/rgarcia2903/tech-escolha-certa/actions/runs/39286732434), workflow `.github/workflows/importar-fotos-redmi-edge.yml`, e preservados no commit `5a4c0be`. O download ocorreu no executor do GitHub, usando as fontes deste documento e de `docs/photo-candidates.json`, sem mudar a política de rede do Codex. O workflow não executa deploy nem habilita fotos automaticamente.
+
+| Modelo | Autoria e revisão da fonte consultada | JPEG local | WebP local | Redução |
+|---|---|---|---|---|
+| Redmi Note 15 5G | Maksdroider; Commons `oldid=1224141486` | 1.874 × 1.872; 430.690 bytes | 960 × 959; 64.336 bytes | 85,06% |
+| Motorola Edge 60 Pro | Meniirtjakarintan; recorte Modular science; Commons `oldid=1255533206` | 2.723 × 5.610; 3.332.796 bytes | 466 × 960; 42.960 bytes | 98,71% |
+
+Os originais são `public/images/products/licensed/{productId}-original.jpg`; os derivados usados na interface são `{productId}.webp`, no mesmo diretório. Cada par tem um arquivo `{productId}.LICENSE.txt`. **Original e derivado sob CC BY-SA 4.0**, conforme as páginas de origem já ligadas na tabela inicial. Os créditos, origem, link da licença e indicação de alterações também aparecem nas legendas.
+
+Validação dos JPEGs: assinatura, Pillow `verify()`, decodificação completa e dimensões conferidas. Além disso, o SHA-1 dos bytes locais coincide exatamente com o checksum publicado nos dados do Commons:
+
+- Redmi: `f26b45512a0f0dd521186231ae366a8c76210a01`.
+- Edge: `e2dbe88083f7223e45eb3ad0bb36550e8a64ae1e`.
+
+Inspeção visual: Redmi em vista traseira Glacier Blue, marca REDMI e módulo de câmera compatíveis com a fotografia documental do Note 15 5G; não foi associado ao Note 15 4G ou Pro. Edge em vista frontal com o próprio expositor identificado como “Motorola Edge 60 Pro”. Originais e WebPs foram vistos nesta execução. A correspondência visual foi combinada com a identificação da fonte e a igualdade dos checksums, sem inferir variante comercial, memória, vendedor, região ou disponibilidade dos anúncios.
+
+Alterações limitadas a tratamento de orientação quando aplicável, redimensionamento proporcional e WebP qualidade 85; sem novo recorte, retoque ou geração por IA. O EXIF 0 do Edge não exige rotação: os pixels já estão em retrato e as dimensões coincidem com a fonte. Hashes SHA-256 do original e do derivado, dimensões e evidências constam no registro de mídia. Nenhuma imagem depende de hotlink; as legendas ligam à fonte e licença sem endosso dos autores ao site.

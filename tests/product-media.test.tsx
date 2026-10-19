@@ -43,7 +43,9 @@ test("media identity uses exact catalog paths and never substitutes 4G, 5G, Pro 
   assert.equal(new Set(PRODUCT_PHOTOS.map((p) => p.src)).size, PRODUCT_PHOTOS.length);
 });
 test("approval fails closed when licensing or dimensions are absent", () => {
-  const pending = PRODUCT_PHOTOS.find((photo) => photo.kind === "generated")!;
+  const pending = PRODUCT_PHOTOS.find(
+    (photo) => photo.kind === "generated" && !getApprovedPhoto(photo.productId),
+  )!;
   const original = { ...pending };
   try {
     pending.status = "approved";
@@ -113,12 +115,37 @@ test("social metadata cannot present generated product assets as real photograph
   for (const p of PRODUCTS.filter((p) => p.image))
     assert.equal(
       getSocialImage(`https://techescolhacerta.com.br${p.image}`),
-      "https://techescolhacerta.com.br/favicon.png",
+      getApprovedPhoto(p.id)
+        ? `https://techescolhacerta.com.br${getApprovedPhoto(p.id)!.src}`
+        : "https://techescolhacerta.com.br/favicon.png",
     );
   assert.equal(
     getSocialImage("https://techescolhacerta.com.br/favicon.png"),
     "https://techescolhacerta.com.br/favicon.png",
   );
+});
+
+test("Redmi Note 15 5G and Edge 60 Pro use distinct approved photographs and preserve both stores", () => {
+  for (const id of ["redmi-note-15-5g", "edge-60-pro"]) {
+    const photo = getApprovedPhoto(id);
+    assert.ok(photo, id);
+    const original = readFileSync(`public/images/products/licensed/${id}-original.jpg`);
+    assert.equal(createHash("sha256").update(original).digest("hex"), photo.originalSha256);
+    const html = renderToStaticMarkup(
+      <VisualProductCard
+        product={PRODUCTS.find((p) => p.id === id)!}
+        pageType="ofertas"
+        placement="test"
+      />,
+    );
+    assert.ok(html.includes(`src="${photo.src}"`));
+    assert.ok(html.includes(`href="${photo.licenseUrl}"`));
+    assert.ok(html.includes(`href="${photo.sourceUrl}"`));
+    assert.ok(html.includes('data-store="amazon"'));
+    assert.ok(html.includes('data-store="mercado_livre"'));
+  }
+  for (const id of ["redmi-note-15-pro-5g", "edge-70-pro", "redmi-note-13-4g"])
+    assert.equal(getApprovedPhoto(id), undefined);
 });
 
 test("schema image arrays are also guarded instead of bypassing the photograph policy", () => {
