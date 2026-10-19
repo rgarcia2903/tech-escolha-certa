@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { getApprovedPhoto } from "@/lib/product-media";
+import { PILOT_GALLERIES } from "@/lib/pilot-galleries";
 
 export type GalleryImage = {
   src: string;
@@ -21,7 +22,8 @@ export function ProductGallery({
   const initial: GalleryImage[] = approved
     ? [{ src: approved.src, alt: approved.alt, credit: approved.author }]
     : [];
-  const all = [...initial, ...images].filter(
+  const pilot = PILOT_GALLERIES[productId] ?? [];
+  const all = [...pilot, ...initial, ...images].filter(
     (item, index, array) => array.findIndex((other) => other.src === item.src) === index,
   );
   const [index, setIndex] = useState(0);
