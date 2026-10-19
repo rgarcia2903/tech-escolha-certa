@@ -22,8 +22,8 @@ export function ProductGallery({
   const initial: GalleryImage[] = approved
     ? [{ src: approved.src, alt: approved.alt, credit: approved.author }]
     : [];
-  const pilot = PILOT_GALLERIES[productId] ?? [];
-  const all = [...pilot, ...initial, ...images].filter(
+  const pilot: GalleryImage[] = PILOT_GALLERIES[productId] ?? [];
+  const all: GalleryImage[] = [...pilot, ...initial, ...images].filter(
     (item, index, array) => array.findIndex((other) => other.src === item.src) === index,
   );
   const [index, setIndex] = useState(0);
