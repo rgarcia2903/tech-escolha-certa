@@ -1,4 +1,5 @@
 import { PRODUCTS } from "./product-catalog";
+import licensedPhotos from "./licensed-product-photos.json";
 
 export type ProductPhoto = {
   productId: string;
@@ -13,25 +14,34 @@ export type ProductPhoto = {
   permissionEvidence: string;
   changes: string;
   status: "approved" | "pending";
+  reviewedBy?: string;
+  reviewedAt?: string;
+  originalSha256?: string;
+  sha256?: string;
 };
 
 // An existing file or a manufacturer's product page does not establish a license.
 // Approve only after identity, permission and the downloaded asset are checked.
-export const PRODUCT_PHOTOS: ProductPhoto[] = PRODUCTS.filter((p) => p.image).map((p) => ({
-  productId: p.id,
-  kind: "generated",
-  src: p.image!,
-  width: 0,
-  height: 0,
-  alt: p.name,
-  author: "Gerada com ChatGPT, conforme informação do responsável",
-  sourceUrl: "",
-  licenseUrl: "",
-  permissionEvidence:
-    "Imagem gerada por IA. Não elegível como fotografia real do aparelho; não há validação visual de identidade.",
-  changes: "Arquivo anterior preservado; não habilitado na apresentação visual.",
-  status: "pending",
-}));
+export const PRODUCT_PHOTOS: ProductPhoto[] = [
+  ...(licensedPhotos as ProductPhoto[]),
+  ...PRODUCTS.filter((p) => p.image).map(
+    (p): ProductPhoto => ({
+      productId: p.id,
+      kind: "generated",
+      src: p.image!,
+      width: 0,
+      height: 0,
+      alt: p.name,
+      author: "Gerada com ChatGPT, conforme informação do responsável",
+      sourceUrl: "",
+      licenseUrl: "",
+      permissionEvidence:
+        "Imagem gerada por IA. Não elegível como fotografia real do aparelho; não há validação visual de identidade.",
+      changes: "Arquivo anterior preservado; não habilitado na apresentação visual.",
+      status: "pending",
+    }),
+  ),
+];
 
 export function getApprovedPhoto(productId: string): ProductPhoto | undefined {
   return PRODUCT_PHOTOS.find(
@@ -44,7 +54,12 @@ export function getApprovedPhoto(productId: string): ProductPhoto | undefined {
       p.sourceUrl &&
       p.author &&
       p.licenseUrl &&
-      p.permissionEvidence,
+      p.permissionEvidence &&
+      p.reviewedBy &&
+      p.reviewedAt &&
+      p.originalSha256?.match(/^[a-f0-9]{64}$/) &&
+      p.sha256?.match(/^[a-f0-9]{64}$/) &&
+      p.src.startsWith("/images/products/licensed/"),
   );
 }
 

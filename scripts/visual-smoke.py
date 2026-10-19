@@ -10,7 +10,7 @@ BASE=args.base_url.rstrip('/')
 assert urlsplit(BASE).hostname in ['127.0.0.1','localhost'], 'Local QA only'
 PAGES=[('home','/'),('celulares','/celulares'),('ofertas','/ofertas'),('custo-beneficio','/melhores-celulares-custo-beneficio'),('xiaomi','/melhores-celulares-xiaomi'),('samsung','/melhores-celulares-samsung'),('ate-1500','/guia/melhores-celulares-ate-1500-reais'),('ate-2000','/melhores-celulares-ate-2000'),('ate-2500','/melhores-celulares-ate-2500'),('ate-3000','/guia/melhores-celulares-ate-3000-reais'),('premium','/guia/melhores-celulares-ate-3500-reais'),('jogos','/guia/melhores-celulares-para-jogos-ate-2000'),('review','/review/redmi-note-14-pro-plus'),('comparativo','/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus')]
 async def main():
- result={'console_errors':[],'routes':[],'layouts':[],'errors':[],'accessibility':[],'affiliate_clicks':0,'external_requests_sent':0}
+ result={'console_errors':[],'routes':[],'layouts':[],'errors':[],'accessibility':[],'working_photo_models':[],'affiliate_clicks':0,'external_requests_sent':0}
  async with async_playwright() as p:
   browser=await p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
   context=await browser.new_context()
@@ -40,6 +40,8 @@ async def main():
     assert not overflow,(route,width,'overflow')
     assert await page.locator('h1').count()==1,(route,'h1')
     assert await page.locator('[data-photo-status="pending"] img').count()==0
+    photos=await page.locator('[data-photo-status="approved"] img').evaluate_all('async els => { for (const img of els) { img.loading="eager"; await img.decode(); if (!img.complete || img.naturalWidth === 0) throw new Error("Broken approved photograph: " + img.src); } return els.map(img => img.closest("[data-product-media]").dataset.productMedia); }')
+    result['working_photo_models']=sorted(set(result['working_photo_models']+photos))
     links=await page.locator('a[data-store]').evaluate_all('(els)=>els.map(e=>({store:e.dataset.store,product:e.dataset.productId,url:e.getAttribute("href"),rel:e.rel,text:e.textContent}))')
     for link in links:
      assert 'sponsored' in link['rel'] and 'noopener' in link['rel']

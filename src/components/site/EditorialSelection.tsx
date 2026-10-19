@@ -1,5 +1,5 @@
 import { getSelection, PRICE_UNCONFIRMED_NOTICE, type Selection } from "@/lib/editorial-policy";
-import { getProduct } from "@/lib/product-catalog";
+import { getProduct, getOffers } from "@/lib/product-catalog";
 import { VisualProductCard } from "./VisualProductCard";
 
 type Props = {
@@ -19,6 +19,13 @@ export function EditorialSelection({
   const products = productIds
     ? productIds.map((value) => getProduct(value)!).filter(Boolean)
     : getSelection(selection);
+  const rankedProducts = [...products].sort((a, b) => {
+    const rank = (id: string) =>
+      getProduct(id)?.editorialStatus === "evaluate"
+        ? 0
+        : new Set(getOffers(id).map((offer) => offer.store)).size;
+    return rank(b.id) - rank(a.id);
+  });
   return (
     <section id={id} className="container-tec scroll-mt-32 py-10">
       <p className="text-xs font-semibold uppercase tracking-widest text-cta">
@@ -29,7 +36,7 @@ export function EditorialSelection({
         {PRICE_UNCONFIRMED_NOTICE}
       </p>
       <div className="mt-6 grid items-start gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {products.map((product) => (
+        {rankedProducts.map((product) => (
           <VisualProductCard
             key={product.id}
             id={`modelo-${product.id}`}

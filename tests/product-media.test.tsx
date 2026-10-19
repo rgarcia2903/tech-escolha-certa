@@ -1,4 +1,8 @@
 import { ProductCard } from "../src/components/site/ProductCard";
+import { createHash } from "node:crypto";
+import licensedPhotos from "../src/lib/licensed-product-photos.json";
+import candidates from "../docs/photo-candidates.json";
+import { EditorialSelection } from "../src/components/site/EditorialSelection";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -123,4 +127,43 @@ test("an ambiguous legacy Note 13 name cannot borrow the Pro photograph", () => 
   assert.ok(html.includes('data-product-media="unidentified"'));
   assert.ok(!html.includes('data-product-media="redmi-note-13-pro"'));
   assert.ok(!html.includes("<img"));
+});
+
+test("licensed imports have exact documented provenance and intact local WebP bytes", () => {
+  const records = licensedPhotos as typeof PRODUCT_PHOTOS;
+  assert.equal(new Set(records.map((p) => p.productId)).size, records.length);
+  for (const photo of records) {
+    const candidate = candidates.find((p) => p.productId === photo.productId);
+    assert.ok(candidate, photo.productId);
+    assert.equal(photo.sourceUrl, candidate.sourceUrl);
+    assert.equal(photo.author, candidate.author);
+    assert.equal(photo.licenseUrl, candidate.licenseUrl);
+    assert.equal(photo.src, `/images/products/licensed/${photo.productId}.webp`);
+    const bytes = readFileSync(`public${photo.src}`);
+    assert.equal(bytes.toString("ascii", 0, 4), "RIFF");
+    assert.equal(bytes.toString("ascii", 8, 12), "WEBP");
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), photo.sha256);
+    if (photo.status === "approved") assert.ok(getApprovedPhoto(photo.productId));
+  }
+  console.log(
+    `Modelos com fotografias reais locais aprovadas: ${records.filter((p) => getApprovedPhoto(p.productId)).length}`,
+  );
+});
+
+test("storefront prioritizes models with two stores without activating evaluation products", () => {
+  const html = renderToStaticMarkup(
+    <EditorialSelection productIds={["galaxy-a36-5g", "redmi-note-15-5g"]} />,
+  );
+  assert.ok(
+    html.indexOf('data-visual-product="redmi-note-15-5g"') <
+      html.indexOf('data-visual-product="galaxy-a36-5g"'),
+  );
+  const card = renderToStaticMarkup(
+    <VisualProductCard
+      product={PRODUCTS.find((p) => p.id === "redmi-note-15-5g")!}
+      pageType="home"
+      placement="test"
+    />,
+  );
+  assert.ok(card.indexOf('data-store="amazon"') < card.indexOf("Resumo e ponto de atenção"));
 });

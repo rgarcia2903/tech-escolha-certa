@@ -47,20 +47,15 @@ export function VisualProductCard({
               : product.connectivity}
           </span>
         </div>
-        <p className="mt-4 text-sm leading-6 text-slate-700">{product.summary}</p>
         {visual && (
           <ul className="mt-4 grid gap-2 text-xs text-slate-700">
-            {visual.facts.map((fact) => (
+            {visual.facts.slice(0, 2).map((fact) => (
               <li key={fact} className="border-l-2 border-[#8B5A2B]/40 pl-3">
                 {fact}
               </li>
             ))}
           </ul>
         )}
-        <p className="mt-4 rounded-xl bg-[#F7F2EB] p-3 text-xs leading-5 text-slate-700">
-          <strong>Atenção: </strong>
-          {product.caution}
-        </p>
         {product.editorialStatus !== "evaluate" ? (
           <ProductPurchaseOptions
             productId={product.id}
@@ -80,6 +75,14 @@ export function VisualProductCard({
             </a>
           )
         )}
+        <details className="mt-4 rounded-xl bg-[#F7F2EB] p-3 text-xs leading-5 text-slate-700">
+          <summary className="cursor-pointer font-semibold">Resumo e ponto de atenção</summary>
+          <p>{product.summary}</p>
+          <p>
+            <strong>Atenção: </strong>
+            {product.caution}
+          </p>
+        </details>
         {showReviewLink && product.reviewPath && (
           <Link
             to={product.reviewPath}

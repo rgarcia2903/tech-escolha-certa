@@ -326,7 +326,7 @@ function GuidePage() {
               <div className="mt-6 space-y-3">
                 {quickPicks.map(([label, product]) => (
                   <div
-                    key={label}
+                    key={`${label}:${product}`}
                     className="flex items-center justify-between gap-4 rounded-xl bg-surface px-4 py-3"
                   >
                     <span className="text-sm text-muted-foreground">{label}</span>

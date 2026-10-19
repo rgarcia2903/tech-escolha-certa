@@ -1,4 +1,4 @@
-import type { ImgHTMLAttributes } from "react";
+import { useState, type ImgHTMLAttributes } from "react";
 import { Smartphone } from "lucide-react";
 import { getProduct, getProductByName } from "@/lib/product-catalog";
 import { getApprovedPhoto, productForImage } from "@/lib/product-media";
@@ -29,16 +29,18 @@ export function ProductMedia({
       ? getProductByName(name)
       : productForImage(src);
   const photo = product ? getApprovedPhoto(product.id) : undefined;
+  const [failedSrc, setFailedSrc] = useState<string>();
+  const available = photo && failedSrc !== photo.src;
   const label = product?.name ?? name ?? "Celulares para comparar";
   const decorative = props["aria-hidden"] === true || props["aria-hidden"] === "true";
   return (
     <div
       data-product-media={product?.id ?? "unidentified"}
-      data-photo-status={photo ? "approved" : "pending"}
+      data-photo-status={available ? "approved" : photo ? "failed" : "pending"}
       aria-hidden={decorative || undefined}
       className={cn("product-media", compact && "product-media-compact", className)}
     >
-      {photo ? (
+      {available ? (
         <figure className="flex h-full w-full flex-col">
           <img
             src={photo.src}
@@ -47,11 +49,30 @@ export function ProductMedia({
             height={photo.height}
             loading={loading}
             decoding="async"
+            onError={() => setFailedSrc(photo.src)}
             fetchPriority={loading === "eager" ? "high" : "auto"}
             className="min-h-0 flex-1 object-contain p-4"
           />
-          <figcaption className="break-all p-2 text-[10px] text-slate-600">
-            {photo.author} · {photo.licenseUrl} · {photo.sourceUrl} · {photo.changes}
+          <figcaption className="px-3 pb-3 text-[11px] leading-4 text-slate-600">
+            Foto: {photo.author} ·{" "}
+            <a
+              href={photo.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Origem
+            </a>{" "}
+            ·{" "}
+            <a
+              href={photo.licenseUrl}
+              target="_blank"
+              rel="license noopener noreferrer"
+              className="underline"
+            >
+              CC BY-SA 4.0
+            </a>{" "}
+            · {photo.changes}
           </figcaption>
         </figure>
       ) : (
