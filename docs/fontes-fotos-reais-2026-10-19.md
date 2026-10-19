@@ -24,3 +24,19 @@ Objetivo: substituir os placeholders visuais de celulares por fotografias do mod
 Ainda faltam fontes verificadas e fotos locais para Galaxy A17 5G, Moto G56 5G, Moto G86 5G, Galaxy S25 FE e demais modelos. Este levantamento **não** habilita fotos automaticamente e **não** comprova que downloads possam ser feitos pelo ambiente Codex, que apresentou bloqueio de proxy.
 
 Contexto: a branch visual original `codex/visual-tech-escolha-certa-2026-10-16` foi preservada no commit `19a07320cf9ff17fc08a553021e02d7b12408ede`.
+
+## Galaxy A36 5G integrado — 19/10/2026
+
+O levantamento acima é histórico. Nesta revisão, a fotografia do A36 foi obtida pelo workflow de importação do GitHub e adicionada à branch de testes no commit `67e463d`. O original foi inspecionado visualmente nesta execução e corresponde à fotografia frontal em loja da fonte documentada, também apresentada pelo responsável na conversa. A página de origem foi consultada novamente: [revisão consultada no Commons](https://commons.wikimedia.org/w/index.php?title=File:Samsung_Galaxy_A36_5G_2025_(cropped).jpg&oldid=1199353825).
+
+- **Autor:** Captainmorlypogi1959. **Recorte original:** Panam2014, conforme histórico do Commons de 28/07/2025.
+- **Licença do original e do derivado:** [Creative Commons Attribution-ShareAlike 4.0 International — CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Crédito, origem, licença e alterações aparecem junto à foto. Não há endosso dos autores ao site.
+- **Original local:** `public/images/products/licensed/galaxy-a36-5g-original.jpg`, 5.094.005 bytes. JPEG validado por assinatura, Pillow `verify()` e decodificação completa.
+- **Dimensões:** 6.416 × 3.091 pixels armazenados; orientação EXIF 6. Após aplicar a orientação: **3.091 × 6.416**, correspondendo às dimensões publicadas no Commons. Isso não é defeito do arquivo.
+- **SHA-256 do JPEG local:** `3b3f7baa395d574333e366e59cff099b00dbf5033700691e2472ab6d087ad7a6`.
+- **WebP local usado no site:** `public/images/products/licensed/galaxy-a36-5g.webp`, **462 × 960**, **36.502 bytes**, redução de **99,28%**. O JPEG completo é preservado para rastreabilidade, mas não é usado nos cards.
+- **Alterações:** orientação EXIF aplicada aos pixels; redimensionamento proporcional; conversão WebP qualidade 85, sem novo recorte, retoque ou geração por IA. O derivado é distribuído sob CC BY-SA 4.0. Hash do derivado e evidência de revisão estão em `src/lib/licensed-product-photos.json`.
+- **Identidade:** registro aprovado exclusivamente para `galaxy-a36-5g`. O metadado EXIF “Galaxy A56 5G” identifica a câmera utilizada para fotografar, e não o aparelho retratado. A foto não confirma RAM, armazenamento, cor de estoque, região, vendedor ou variante comercial de um anúncio.
+- **Contagem atual:** **1 modelo** com fotografia real local aprovada. Redmi Note 15 5G e Edge 60 Pro continuam pendentes. Ativos antigos gerados por IA permanecem bloqueados como fotos.
+
+A integração utiliza o componente central `ProductMedia`; as seleções e o seletor guiado que já contêm o A36 passam a exibir seu WebP local. Nenhum hotlink é usado para carregar a imagem. Os links da legenda levam apenas à origem e à licença. A aprovação fotográfica não muda o status editorial/comercial do aparelho nem autoriza publicação.

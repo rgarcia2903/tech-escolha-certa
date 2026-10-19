@@ -1,4 +1,4 @@
-import { useState, type ImgHTMLAttributes } from "react";
+import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import { Smartphone } from "lucide-react";
 import { getProduct, getProductByName } from "@/lib/product-catalog";
 import { getApprovedPhoto, productForImage } from "@/lib/product-media";
@@ -30,6 +30,12 @@ export function ProductMedia({
       : productForImage(src);
   const photo = product ? getApprovedPhoto(product.id) : undefined;
   const [failedSrc, setFailedSrc] = useState<string>();
+  const imageRef = useRef<HTMLImageElement>(null);
+  useEffect(() => {
+    // An SSR image can fail before React attaches its onError listener.
+    const image = imageRef.current;
+    if (photo && image?.complete && image.naturalWidth === 0) setFailedSrc(photo.src);
+  }, [photo]);
   const available = photo && failedSrc !== photo.src;
   const label = product?.name ?? name ?? "Celulares para comparar";
   const decorative = props["aria-hidden"] === true || props["aria-hidden"] === "true";
@@ -43,6 +49,7 @@ export function ProductMedia({
       {available ? (
         <figure className="flex h-full w-full flex-col">
           <img
+            ref={imageRef}
             src={photo.src}
             alt={decorative ? "" : photo.alt}
             width={photo.width}

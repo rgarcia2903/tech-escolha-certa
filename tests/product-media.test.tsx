@@ -43,13 +43,32 @@ test("media identity uses exact catalog paths and never substitutes 4G, 5G, Pro 
   assert.equal(new Set(PRODUCT_PHOTOS.map((p) => p.src)).size, PRODUCT_PHOTOS.length);
 });
 test("approval fails closed when licensing or dimensions are absent", () => {
-  const pending = PRODUCT_PHOTOS[0];
+  const pending = PRODUCT_PHOTOS.find((photo) => photo.kind === "generated")!;
   const original = { ...pending };
   try {
     pending.status = "approved";
     assert.equal(getApprovedPhoto(pending.productId), undefined);
   } finally {
     Object.assign(pending, original);
+  }
+});
+
+test("approved A36 photograph renders local bytes and linked ShareAlike attribution only for A36", () => {
+  const photo = getApprovedPhoto("galaxy-a36-5g");
+  assert.ok(photo);
+  assert.equal(photo.width, 462);
+  assert.equal(photo.height, 960);
+  const original = readFileSync("public/images/products/licensed/galaxy-a36-5g-original.jpg");
+  assert.equal(createHash("sha256").update(original).digest("hex"), photo.originalSha256);
+  const html = renderToStaticMarkup(<ProductMedia productId="galaxy-a36-5g" />);
+  assert.ok(html.includes('src="/images/products/licensed/galaxy-a36-5g.webp"'));
+  assert.ok(html.includes(`href="${photo.sourceUrl}"`));
+  assert.ok(html.includes(`href="${photo.licenseUrl}"`));
+  assert.ok(html.includes("Captainmorlypogi1959 (recorte: Panam2014)"));
+  assert.ok(html.includes("Derivado sob CC BY-SA 4.0"));
+  for (const id of ["galaxy-a35", "galaxy-a37-5g", "galaxy-a17-5g"]) {
+    assert.equal(getApprovedPhoto(id), undefined);
+    assert.ok(!renderToStaticMarkup(<ProductMedia productId={id} />).includes(photo.src));
   }
 });
 test("comparison pairs resolve distinct exact models for all nine existing URLs", () => {

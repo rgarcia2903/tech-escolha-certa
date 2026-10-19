@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "productId": "galaxy-a36-5g",
+    "kind": "photograph",
+    "status": "approved",
+    "src": "/images/products/licensed/galaxy-a36-5g.webp",
+    "width": 462,
+    "height": 960,
+    "alt": "Samsung Galaxy A36 5G fotografado em loja",
+    "author": "Captainmorlypogi1959 (recorte: Panam2014)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A36_5G_2025_(cropped).jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "permissionEvidence": "Origem confirmada na página Wikimedia Commons (revisão oldid=1199353825), autoria Captainmorlypogi1959, recorte Panam2014, CC BY-SA 4.0. JPEG obtido pelo workflow importar-foto-a36.yml e versionado no commit 67e463d; dimensões após EXIF 3091×6416. Inspeção visual do original local e correspondência com a fotografia documentada e apresentada pelo responsável. Não comprova variante comercial do anúncio.",
+    "reviewedBy": "Codex — inspeção visual e validação técnica nesta execução",
+    "reviewedAt": "2026-10-19",
+    "originalSha256": "3b3f7baa395d574333e366e59cff099b00dbf5033700691e2472ab6d087ad7a6",
+    "sha256": "a2dfc17c75049318ffadd18b91c9a9e26ff5ca42b48e5fb5530db7fa5e77d9ad",
+    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
+  }
+]

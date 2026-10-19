@@ -8,7 +8,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
-from PIL import Image
+from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("photo_import", ROOT / "scripts/import-product-photo.py")
@@ -17,6 +17,24 @@ spec.loader.exec_module(module)
 
 
 class ImportPhotoTest(unittest.TestCase):
+    def test_real_a36_jpeg_and_webp_decode_with_correct_orientation_and_size(self):
+        original = ROOT / "public/images/products/licensed/galaxy-a36-5g-original.jpg"
+        derived = ROOT / "public/images/products/licensed/galaxy-a36-5g.webp"
+        with Image.open(original) as image:
+            self.assertEqual(image.format, "JPEG")
+            image.verify()
+        with Image.open(original) as image:
+            image.load()
+            self.assertEqual(image.size, (6416, 3091))
+            self.assertEqual(image.getexif().get(274), 6)
+            self.assertEqual(ImageOps.exif_transpose(image).size, (3091, 6416))
+        with Image.open(derived) as image:
+            image.load()
+            self.assertEqual(image.format, "WEBP")
+            self.assertEqual(image.size, (462, 960))
+            self.assertIsNone(image.getexif().get(274))
+        self.assertLess(derived.stat().st_size, original.stat().st_size / 100)
+
     def test_stages_pending_and_preserves_original_and_derivative_hashes(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
