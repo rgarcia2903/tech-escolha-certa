@@ -8,6 +8,14 @@ for (const file of fs.readdirSync("src/routes").filter((file) => file.endsWith("
   const match = text.match(/createFileRoute\(\s*["']([^"']+)/);
   if (match) routes.add(match[1]);
 }
+function routeExists(value) {
+  if (routes.has(value)) return true;
+  const parts = value.split("/");
+  return [...routes].some((route) => {
+    const pattern = route.split("/");
+    return pattern.length === parts.length && pattern.some((segment) => segment.startsWith("$")) && pattern.every((segment, index) => segment.startsWith("$") ? Boolean(parts[index]) : segment === parts[index]);
+  });
+}
 function files(directory) {
   return fs
     .readdirSync(directory, { withFileTypes: true })
@@ -63,7 +71,7 @@ for (const file of files("src").filter(
         ].includes(property)
       ) {
         checked++;
-        if (!routes.has(value)) broken.push({ file, value });
+        if (!routeExists(value)) broken.push({ file, value });
       }
     }
     ts.forEachChild(node, visit);
