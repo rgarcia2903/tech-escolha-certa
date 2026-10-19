@@ -290,3 +290,58 @@ summary {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Retail presentation; colors identify destinations without implying endorsement. */
+.storefront-hero {
+  background: linear-gradient(110deg, #102738, #164657);
+}
+.storefront-chip {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ffffff40;
+  border-radius: 999px;
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.storefront-chip:hover {
+  background: #ffffff15;
+}
+.offer-button-amazon {
+  background: #ffcf63;
+  color: #182332;
+}
+.offer-button-meli {
+  background: #ffe600;
+  color: #182332;
+}
+.product-card-heading {
+  min-height: 7rem;
+  padding: 1.25rem 1.25rem 0.75rem;
+}
+.visual-product-card {
+  box-shadow: 0 2px 8px #142a3c08;
+  transition:
+    border-color 150ms,
+    box-shadow 150ms;
+}
+.visual-product-card:hover {
+  border-color: #a8b9c8;
+  box-shadow: 0 8px 24px #142a3c10;
+}
+.visual-product-card .product-photo-stage {
+  height: clamp(18rem, 27vw, 22rem);
+  padding: 1rem;
+}
+.visual-product-card .product-photo-credit {
+  min-height: 0;
+  padding: 0.625rem 1rem;
+}
+@media (min-width: 768px) {
+  .visual-product-card .product-photo-credit {
+    min-height: 5rem;
+  }
+}

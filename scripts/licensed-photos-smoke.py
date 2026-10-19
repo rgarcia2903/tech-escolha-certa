@@ -1,4 +1,5 @@
 """Verify every approved local photograph on every route that renders it."""
+import argparse
 import asyncio
 import json
 from pathlib import Path
@@ -6,7 +7,11 @@ import re
 from urllib.parse import urlsplit
 from playwright.async_api import async_playwright
 
-BASE = "http://127.0.0.1:5177"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--base-url", default="http://127.0.0.1:5177")
+args = parser.parse_args()
+BASE = args.base_url.rstrip("/")
+assert urlsplit(BASE).hostname in {"127.0.0.1", "localhost"}, "Local QA only"
 
 
 async def main():

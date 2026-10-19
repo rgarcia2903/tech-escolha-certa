@@ -30,9 +30,9 @@ export function EditorialSelection({
     );
   });
   return (
-    <section id={id} className="container-tec scroll-mt-32 py-10">
+    <section id={id} className="container-tec scroll-mt-32 py-7">
       <p className="text-xs font-semibold uppercase tracking-widest text-cta">
-        Revisão editorial · outubro de 2026
+        Seleção de celulares
       </p>
       <h2 className="mt-2 text-2xl font-bold md:text-3xl">{title}</h2>
       <p className="mt-3 max-w-4xl text-sm leading-6 text-muted-foreground">
@@ -44,7 +44,7 @@ export function EditorialSelection({
         </summary>
         <p>{PRICE_UNCONFIRMED_NOTICE}</p>
       </details>
-      <div className="mt-6 grid items-start gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-6 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
         {rankedProducts.map((product) => (
           <VisualProductCard
             key={product.id}

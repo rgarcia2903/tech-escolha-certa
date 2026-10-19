@@ -1,6 +1,6 @@
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
-import { ACTIVE_OFFER_PRODUCT_IDS } from "@/lib/editorial-policy";
+import { STOREFRONT_PRODUCT_IDS } from "@/lib/editorial-policy";
 import { getOfferByUrl } from "@/lib/product-catalog";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import {
@@ -23,14 +23,11 @@ import { Badge, Rating } from "@/components/site/ui";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUpRight,
-  BadgeCheck,
   CheckCircle2,
   CircleAlert,
-  Clock,
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Zap,
 } from "lucide-react";
 
 const CANONICAL = "https://techescolhacerta.com.br/ofertas";
@@ -266,97 +263,37 @@ const guides = [
 function OfertasPage() {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
-      <section className="relative overflow-hidden border-b border-border bg-surface">
-        <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-cta/10 blur-[120px]" />
-        <div className="absolute -bottom-40 -left-32 h-[26rem] w-[26rem] rounded-full bg-teal/10 blur-[120px]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-8 lg:px-8 md:py-12">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="cta">Escolha guiada</Badge>
-                <Badge variant="soft">Amazon e Mercado Livre</Badge>
-                <Badge variant="soft">Links fornecidos · confira a versão</Badge>
-              </div>
-
-              <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">
-                Compare celulares nas lojas
-              </h1>
-
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Escolha o modelo e consulte preço, versão e condições na Amazon e no Mercado Livre.
-              </p>
-
-              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-teal" />
-                  Curadoria editorial
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Clock className="h-3.5 w-3.5 text-cta" />
-                  Preços e estoque podem mudar
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <BadgeCheck className="h-3.5 w-3.5 text-teal" />
-                  Compra final na loja escolhida
-                </span>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#selecao-editorial"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
-                >
-                  Ver modelos e preços
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="#escolha-rapida"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
-                >
-                  Escolher por orçamento
-                </a>
-              </div>
-            </div>
-
-            <aside className="hidden rounded-2xl border border-border bg-card p-6 shadow-soft lg:block">
-              <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-cta/10 text-cta">
-                  <Zap className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Decisão sem enrolação
-                  </p>
-                  <h2 className="font-heading text-2xl font-bold text-foreground">
-                    Do perfil à compra em 3 passos
-                  </h2>
-                </div>
-              </div>
-
-              <ol className="mt-5 grid gap-3">
-                {[
-                  "Defina quanto pretende gastar",
-                  "Escolha sua prioridade de uso",
-                  "Confira a indicação e o concorrente",
-                ].map((step, index) => (
-                  <li key={step} className="flex items-center gap-3 text-sm text-foreground">
-                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-cta text-xs font-bold text-cta-foreground">
-                      {index + 1}
-                    </span>
-                    {step}
-                  </li>
-                ))}
-              </ol>
-
-              <AffiliateRedirectNotice className="mt-5 border-t border-border pt-5" />
-            </aside>
+      <section className="storefront-hero text-white">
+        <div className="container-tec py-7 md:py-9">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#BEE7EA]">
+            Amazon e Mercado Livre
+          </p>
+          <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+            Compare celulares nas lojas
+          </h1>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200 md:text-base">
+            Seu modelo, suas opções de compra. Confira preço, versão e disponibilidade diretamente
+            na loja.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a
+              href="#selecao-editorial"
+              className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#103A49]"
+            >
+              Ver modelos e preços <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </a>
+            <a href="#escolha-rapida" className="storefront-chip">
+              Escolher por orçamento
+            </a>
           </div>
+          <p className="mt-4 text-xs leading-5 text-slate-200">
+            Links afiliados · preços e estoque podem mudar · compra final na loja escolhida.
+          </p>
         </div>
       </section>
 
       <EditorialSelection
-        productIds={ACTIVE_OFFER_PRODUCT_IDS}
+        productIds={STOREFRONT_PRODUCT_IDS}
         pageType="ofertas"
         title="Modelos para consultar nas lojas"
       />

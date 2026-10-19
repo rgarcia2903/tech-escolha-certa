@@ -48,7 +48,10 @@ export function ProductPurchaseOptions({
           data-store={offer.store}
           data-product-id={productId}
           data-offer-id={offer.id}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#8B5A2B] px-4 py-3 text-center text-sm font-bold text-white transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B5A2B]"
+          className={cn(
+            "offer-button inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-4 py-3 text-center text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2",
+            offer.store === "amazon" ? "offer-button-amazon" : "offer-button-meli",
+          )}
         >
           Comprar {offer.store === "amazon" ? "na" : "no"} {STORE_LABELS[offer.store]}
           <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />

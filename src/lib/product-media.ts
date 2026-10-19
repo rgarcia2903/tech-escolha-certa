@@ -1,9 +1,20 @@
 import { PRODUCTS } from "./product-catalog";
 import licensedPhotos from "./licensed-product-photos.json";
+import commercialPhotos from "./commercial-product-photos.json";
 
 export type ProductPhoto = {
   productId: string;
-  kind: "photograph" | "generated";
+  kind: "photograph" | "official-render" | "generated";
+  licenseLabel?: string;
+  commercialRights?: {
+    rightsHolder: string;
+    evidenceUrl: string;
+    scope: "site-wide-two-store" | "amazon-only" | "mercado-livre-only";
+    hostLocally: boolean;
+    convertToWebp: boolean;
+    redistributeInRepository: boolean;
+    validUntil: string | null;
+  };
   src: string;
   width: number;
   height: number;
@@ -23,6 +34,7 @@ export type ProductPhoto = {
 // An existing file or a manufacturer's product page does not establish a license.
 // Approve only after identity, permission and the downloaded asset are checked.
 export const PRODUCT_PHOTOS: ProductPhoto[] = [
+  ...(commercialPhotos as ProductPhoto[]),
   ...(licensedPhotos as ProductPhoto[]),
   ...PRODUCTS.filter((p) => p.image).map(
     (p): ProductPhoto => ({
@@ -43,12 +55,37 @@ export const PRODUCT_PHOTOS: ProductPhoto[] = [
   ),
 ];
 
+// Partner licenses are supported independently of Creative Commons.
+// Store-restricted API content must use that store's official integration, never a shared card.
+export function hasCompatibleMediaRights(photo: ProductPhoto): boolean {
+  if (!photo.commercialRights)
+    return (
+      photo.kind === "photograph" &&
+      photo.licenseUrl === "https://creativecommons.org/licenses/by-sa/4.0/"
+    );
+  const rights = photo.commercialRights;
+  return !!(
+    typeof photo.licenseLabel === "string" &&
+    photo.licenseLabel.trim() &&
+    typeof rights.rightsHolder === "string" &&
+    rights.rightsHolder.trim() &&
+    /^https:\/\//.test(rights.evidenceUrl) &&
+    rights.scope === "site-wide-two-store" &&
+    rights.hostLocally === true &&
+    rights.convertToWebp === true &&
+    rights.redistributeInRepository === true &&
+    (rights.validUntil === null ||
+      (/^\d{4}-\d{2}-\d{2}T/.test(rights.validUntil) && Date.parse(rights.validUntil) > Date.now()))
+  );
+}
+
 export function getApprovedPhoto(productId: string): ProductPhoto | undefined {
   return PRODUCT_PHOTOS.find(
     (p) =>
       p.productId === productId &&
       p.status === "approved" &&
-      p.kind === "photograph" &&
+      (p.kind === "photograph" || p.kind === "official-render") &&
+      hasCompatibleMediaRights(p) &&
       p.width > 0 &&
       p.height > 0 &&
       p.sourceUrl &&

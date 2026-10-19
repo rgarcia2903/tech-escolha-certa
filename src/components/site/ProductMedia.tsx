@@ -63,7 +63,7 @@ export function ProductMedia({
             />
           </div>
           <figcaption className="product-photo-credit">
-            Foto: {photo.author} ·{" "}
+            {photo.kind === "official-render" ? "Imagem" : "Foto"}: {photo.author} ·{" "}
             <a
               href={photo.sourceUrl}
               target="_blank"
@@ -79,7 +79,7 @@ export function ProductMedia({
               rel="license noopener noreferrer"
               className="underline"
             >
-              CC BY-SA 4.0
+              {photo.licenseLabel ?? "CC BY-SA 4.0"}
             </a>{" "}
             <details className="product-photo-license">
               <summary>Tratamento da imagem</summary>

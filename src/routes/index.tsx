@@ -1,11 +1,11 @@
-import { HOME_PRODUCT_IDS } from "@/lib/editorial-policy";
+import { HOME_PRODUCT_IDS, STOREFRONT_PRODUCT_IDS } from "@/lib/editorial-policy";
 import { getProduct } from "@/lib/product-catalog";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronRight, Smartphone, Star } from "lucide-react";
 
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
-import { CategoryHero } from "@/components/site/CategoryHero";
+import { StorefrontHero } from "@/components/site/StorefrontHero";
 import { ComparisonCard } from "@/components/site/ComparisonCard";
 import { PhoneDecisionFinder } from "@/components/site/PhoneDecisionFinder";
 import { ReviewCard } from "@/components/site/ReviewCard";
@@ -90,30 +90,14 @@ const categoryLinks = [
 
 function HomePage() {
   return (
-    <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
-      <CategoryHero
-        eyebrow="Portal editorial de tecnologia"
-        title="Encontre seu próximo celular."
-        description="Compare modelos por perfil e consulte preços na Amazon e no Mercado Livre."
-        image="/images/products/phones-hero-optimized.webp"
-        hideImageOnMobile
-      >
-        <a
-          href="#selecao-editorial"
-          className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
-        >
-          Ver celulares
-        </a>
+    <main className="min-h-screen bg-[#F5F7FA] text-slate-900">
+      <StorefrontHero />
 
-        <a
-          href="#escolha-rapida"
-          className="rounded-full bg-white/10 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
-        >
-          Escolher por perfil
-        </a>
-      </CategoryHero>
-
-      <EditorialSelection selection="general" pageType="home" />
+      <EditorialSelection
+        productIds={STOREFRONT_PRODUCT_IDS}
+        pageType="home"
+        title="Encontre o celular para você"
+      />
       <nav className="container-tec pb-10" aria-label="Escolher por orçamento">
         <h2 className="mb-4 text-xl font-bold text-[#0F3F4A]">Qual é o seu orçamento?</h2>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">

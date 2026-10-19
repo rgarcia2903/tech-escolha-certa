@@ -12,6 +12,7 @@ import {
   PRODUCT_PHOTOS,
   COMPARISON_PRODUCTS,
   getApprovedPhoto,
+  hasCompatibleMediaRights,
   productForImage,
   getSocialImage,
 } from "../src/lib/product-media";
@@ -234,4 +235,74 @@ test("storefront prioritizes models with two stores without activating evaluatio
     />,
   );
   assert.ok(card.indexOf('data-store="amazon"') < card.indexOf("Resumo e ponto de atenção"));
+});
+
+test("commercial partner renders support their own license without borrowing a CC license", () => {
+  // A metadata fixture only: no render is downloaded or shipped by this test.
+  const fixture = {
+    ...getApprovedPhoto("galaxy-a36-5g")!,
+    kind: "official-render" as const,
+    licenseLabel: "Autorização comercial de teste",
+    commercialRights: {
+      rightsHolder: "Titular de teste",
+      evidenceUrl: "https://example.com/license",
+      scope: "site-wide-two-store" as const,
+      hostLocally: true,
+      convertToWebp: true,
+      redistributeInRepository: true,
+      validUntil: null,
+    },
+  };
+  PRODUCT_PHOTOS.unshift(fixture);
+  try {
+    assert.equal(getApprovedPhoto(fixture.productId), fixture);
+    const html = renderToStaticMarkup(<ProductMedia productId={fixture.productId} />);
+    assert.ok(html.includes("Autorização comercial de teste"));
+    assert.ok(html.includes("Imagem:"));
+  } finally {
+    PRODUCT_PHOTOS.shift();
+  }
+});
+
+test("shared storefront rejects store-only, expired or incomplete partner permissions", () => {
+  const fixture = {
+    ...getApprovedPhoto("galaxy-a36-5g")!,
+    kind: "official-render" as const,
+    licenseLabel: "Licença comercial",
+    commercialRights: {
+      rightsHolder: "Titular de teste",
+      evidenceUrl: "https://example.com/license",
+      scope: "site-wide-two-store" as const,
+      hostLocally: true,
+      convertToWebp: true,
+      redistributeInRepository: true,
+      validUntil: null as string | null,
+    },
+  };
+  assert.equal(hasCompatibleMediaRights(fixture), true);
+  for (const scope of ["amazon-only", "mercado-livre-only"] as const)
+    assert.equal(
+      hasCompatibleMediaRights({
+        ...fixture,
+        commercialRights: { ...fixture.commercialRights, scope },
+      }),
+      false,
+    );
+  for (const key of ["hostLocally", "convertToWebp", "redistributeInRepository"] as const)
+    assert.equal(
+      hasCompatibleMediaRights({
+        ...fixture,
+        commercialRights: { ...fixture.commercialRights, [key]: false },
+      }),
+      false,
+    );
+  for (const validUntil of ["2020-01-01T00:00:00Z", "invalid"])
+    assert.equal(
+      hasCompatibleMediaRights({
+        ...fixture,
+        commercialRights: { ...fixture.commercialRights, validUntil },
+      }),
+      false,
+    );
+  assert.equal(hasCompatibleMediaRights({ ...fixture, commercialRights: undefined }), false);
 });

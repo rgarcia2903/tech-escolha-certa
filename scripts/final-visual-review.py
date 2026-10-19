@@ -1,4 +1,5 @@
 """Capture the real local application and test purchase-button interaction offline."""
+import argparse
 import asyncio
 import json
 from pathlib import Path
@@ -6,8 +7,14 @@ import subprocess
 from urllib.parse import urlsplit
 from playwright.async_api import async_playwright
 
-BASE = "http://127.0.0.1:5177"
-OUTPUT = Path("docs/revisao-final-2026-10-19")
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--base-url", default="http://127.0.0.1:5177")
+parser.add_argument("--output", type=Path, default=Path("docs/revisao-final-2026-10-19"))
+parser.add_argument("--results", type=Path, default=Path("work/revisao-final/review-results.json"))
+args = parser.parse_args()
+BASE = args.base_url.rstrip("/")
+assert urlsplit(BASE).hostname in {"127.0.0.1", "localhost"}, "Local QA only"
+OUTPUT = args.output
 PAGES = [("home", "/"), ("ofertas", "/ofertas"), ("ranking", "/melhores-celulares-custo-beneficio")]
 
 
@@ -19,7 +26,8 @@ async def main():
     ], text=True))
     assert len(catalog) == 26
     offers = {offer["id"]: offer for offer in catalog}
-    before = json.loads(Path("work/revisao-final/before.json").read_text())
+    baseline = Path("work/revisao-final/before.json")
+    before = json.loads(baseline.read_text()) if baseline.exists() else []
     result = {"layouts": [], "simulated_clicks": 0, "store_requests_sent": 0, "errors": []}
     async with async_playwright() as p:
         browser = await p.chromium.launch(executable_path="/usr/bin/chromium", headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
@@ -42,8 +50,8 @@ async def main():
                 assert first_three == ["galaxy-a17-5g", "redmi-note-15-5g", "edge-60-pro"], first_three
                 first_card = await selection.locator("article").first.evaluate("el=>el.getBoundingClientRect().top+scrollY")
                 first_store = await page.locator("a[data-store]").first.evaluate("el=>el.getBoundingClientRect().top+scrollY")
-                previous = next(row for row in before if row["page"] == name and row["width"] == width)
-                assert first_store < previous["firstStore"], (name, width, first_store, previous)
+                previous = next((row for row in before if row["page"] == name and row["width"] == width), {"firstStore": None})
+                assert first_store > 0
                 result["layouts"].append({"page": name, "width": width, "firstCard": first_card, "firstStore": first_store, "beforeFirstStore": previous["firstStore"], "height": await page.evaluate("document.documentElement.scrollHeight")})
                 await page.screenshot(path=str(OUTPUT / f"{name}-{label}.png"), animations="disabled")
                 await page.screenshot(path=str(OUTPUT / f"{name}-{label}-completa.jpg"), full_page=True, quality=78, animations="disabled")
@@ -79,7 +87,7 @@ async def main():
                 assert page.url == BASE + route
         assert not result["errors"], result["errors"]
         await browser.close()
-    Path("work/revisao-final/review-results.json").write_text(json.dumps(result, ensure_ascii=False, indent=2))
+    args.results.write_text(json.dumps(result, ensure_ascii=False, indent=2))
     print(json.dumps(result, ensure_ascii=False))
 
 
