@@ -33,7 +33,7 @@ export function VisualProductCard({
       data-visual-product={product.id}
       className="visual-product-card scroll-mt-32 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft"
     >
-      <ProductMedia productId={product.id} className="aspect-[4/3] w-full" />
+      <ProductMedia productId={product.id} className="w-full" />
       <div className="flex min-w-0 flex-1 flex-col p-5 md:p-6">
         <p className="text-[11px] font-bold uppercase tracking-wider text-[#8B5A2B]">{status}</p>
         <h3 className="mt-2 text-xl font-bold text-[#0F3F4A]">{product.name}</h3>

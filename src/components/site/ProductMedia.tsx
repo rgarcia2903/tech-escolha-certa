@@ -47,20 +47,22 @@ export function ProductMedia({
       className={cn("product-media", compact && "product-media-compact", className)}
     >
       {available ? (
-        <figure className="flex h-full w-full flex-col">
-          <img
-            ref={imageRef}
-            src={photo.src}
-            alt={decorative ? "" : photo.alt}
-            width={photo.width}
-            height={photo.height}
-            loading={loading}
-            decoding="async"
-            onError={() => setFailedSrc(photo.src)}
-            fetchPriority={loading === "eager" ? "high" : "auto"}
-            className="min-h-0 flex-1 object-contain p-4"
-          />
-          <figcaption className="px-3 pb-3 text-[11px] leading-4 text-slate-600">
+        <figure className="product-photo">
+          <div className="product-photo-stage">
+            <img
+              ref={imageRef}
+              src={photo.src}
+              alt={decorative ? "" : photo.alt}
+              width={photo.width}
+              height={photo.height}
+              loading={loading}
+              decoding="async"
+              onError={() => setFailedSrc(photo.src)}
+              fetchPriority={loading === "eager" ? "high" : "auto"}
+              className="product-photo-image"
+            />
+          </div>
+          <figcaption className="product-photo-credit">
             Foto: {photo.author} ·{" "}
             <a
               href={photo.sourceUrl}
@@ -79,7 +81,10 @@ export function ProductMedia({
             >
               CC BY-SA 4.0
             </a>{" "}
-            · {photo.changes}
+            <details className="product-photo-license">
+              <summary>Tratamento da imagem</summary>
+              <p>{photo.changes}</p>
+            </details>
           </figcaption>
         </figure>
       ) : (
