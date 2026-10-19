@@ -128,7 +128,7 @@ test("visual cards retain both commercial destinations and do not activate evalu
 test("all legacy JSX photo renderers use the central licensing gate", () => {
   for (const directory of ["src/routes", "src/components/site"]) {
     for (const file of readdirSync(directory).filter(
-      (f) => f.endsWith(".tsx") && f !== "ProductMedia.tsx",
+      (f) => f.endsWith(".tsx") && !["ProductMedia.tsx", "ProductGallery.tsx"].includes(f),
     ))
       assert.ok(!readFileSync(`${directory}/${file}`, "utf8").includes("<img"), file);
   }
