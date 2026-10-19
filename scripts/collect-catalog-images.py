@@ -126,7 +126,12 @@ def select(model, html, base):
             item["view"] = ("front" if re.search(r"\b(?:front(?:side)?|frente)\b", normalized(item["url"] + " " + item["description"])) else "rear" if re.search(r"\b(?:back(?:side)?|rear|traseira)\b", normalized(item["url"] + " " + item["description"])) else "pair" if re.search(r"\b(?:pdp|hero)\b", normalized(item["url"] + " " + item["description"])) else "unspecified")
             accepted.append(item)
     accepted.sort(key=lambda item: item["score"], reverse=True)
-    unique = {item["url"]: item for item in reversed(accepted)}
+    unique = {}
+    for item in accepted:
+        parts = urlsplit(item["url"])
+        # Samsung's resize directives change resolution, not the source photograph.
+        key = parts.path if parts.hostname == "images.samsung.com" else item["url"]
+        if key not in unique: unique[key] = item
     ranked = sorted(unique.values(), key=lambda item: item["score"], reverse=True)
     varied = []
     for view in ["front", "rear", "pair"]:

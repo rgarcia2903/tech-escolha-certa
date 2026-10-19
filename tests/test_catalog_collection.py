@@ -51,6 +51,13 @@ class CatalogSelectionTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             handler.redirect_request(None, None, 302, "", {}, "https://example.com/image.jpg")
 
+    def test_samsung_resize_queries_do_not_duplicate_the_same_view(self):
+        html = '<img alt="Galaxy S25 FE Front" data-src="https://images.samsung.com/gallery/front.jpg?$Q90_2052_1641_JPG$"><img alt="Galaxy S25 FE Front" data-src="https://images.samsung.com/gallery/front.jpg?$Q90_1368_1094_JPG$"><img alt="Galaxy S25 FE Back" data-src="https://images.samsung.com/gallery/back.jpg?$Q90_2052_1641_JPG$">'
+        accepted, _ = module.select("galaxy-s25-fe", html, module.TARGETS["galaxy-s25-fe"]["pages"][0])
+        self.assertEqual(len(accepted), 2)
+        self.assertIn("2052_1641", accepted[0]["url"])
+        self.assertEqual([item["view"] for item in accepted], ["front", "rear"])
+
     def test_http_403_is_recorded_without_retry_or_bypass(self):
         calls = []
         def denied(url, hosts, limit):
