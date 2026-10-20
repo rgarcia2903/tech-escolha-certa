@@ -51,7 +51,7 @@ export function ProductMedia({
         aria-hidden={decorative || undefined}
         className={cn("product-media", compact && "product-media-compact", className)}
       >
-        <figure className="product-photo">
+        <figure className="product-photo relative">
           <div className="product-photo-stage">
             <img
               src={pilot.src}
@@ -62,7 +62,7 @@ export function ProductMedia({
               className="product-photo-image"
             />
           </div>
-          <figcaption className="product-photo-credit">Imagem fornecida para o piloto.</figcaption>
+          
         </figure>
       </div>
     );
@@ -90,7 +90,7 @@ export function ProductMedia({
               className="product-photo-image"
             />
           </div>
-          <figcaption className="product-photo-credit">
+          <details className="absolute bottom-2 right-2 z-10 max-w-[85%] text-xs"><summary aria-label="Créditos da imagem" className="ml-auto flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white/95 text-slate-600 shadow ring-1 ring-slate-200" title="Créditos da imagem">i</summary><figcaption className="rounded-lg bg-white p-3 text-slate-700 shadow-lg ring-1 ring-slate-200">
             {photo.kind === "official-render" ? "Imagem" : "Foto"}: {photo.author} ·{" "}
             <a
               href={photo.sourceUrl}
@@ -113,7 +113,7 @@ export function ProductMedia({
               <summary>Tratamento da imagem</summary>
               <p>{photo.changes}</p>
             </details>
-          </figcaption>
+          </figcaption></details>
         </figure>
       ) : (
         <div className="flex h-full w-full flex-col items-center justify-center gap-3 p-5 text-center">

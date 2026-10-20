@@ -1,0 +1,23 @@
+name: Validar ajuste das legendas
+on:
+  push:
+    branches: [fix/remover-legendas-cards-2026-10-20]
+    paths: [.github/workflows/validar-legendas.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npx tsc --noEmit
+      - run: npm run check:links
