@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductGallery } from "@/components/site/ProductGallery";
+import { DetailedReview } from "@/components/site/DetailedReview";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { getProduct } from "@/lib/product-catalog";
 
@@ -70,6 +71,7 @@ function GalaxyA17Review() {
           </dl>
           {product.officialUrl && <p className="mt-6 text-sm"><a className="underline" target="_blank" rel="noopener noreferrer" href={product.officialUrl}>Conferir especificações no fabricante</a></p>}
         </div>
+        <DetailedReview productId={product.id}/>
       </section>
     </main>
   );
