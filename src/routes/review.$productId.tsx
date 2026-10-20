@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductGallery } from "@/components/site/ProductGallery";
+import { DetailedReview } from "@/components/site/DetailedReview";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { getProduct } from "@/lib/product-catalog";
 
@@ -49,6 +50,7 @@ function PilotReview() {
           <article className="rounded-2xl bg-white p-6"><h2 className="text-2xl font-bold text-[#0F3F4A]">Pontos de atenção</h2><p className="mt-4 text-slate-700">{product.caution}</p></article>
           <article className="rounded-2xl bg-white p-6 md:col-span-2"><h2 className="text-2xl font-bold text-[#0F3F4A]">Ficha técnica e comparação</h2><dl className="mt-5 grid gap-4 sm:grid-cols-2"><div><dt className="font-bold">Modelo</dt><dd>{product.name}</dd></div><div><dt className="font-bold">Conectividade</dt><dd>{product.connectivity}</dd></div><div><dt className="font-bold">RAM / armazenamento</dt><dd>Confirme a variante no anúncio.</dd></div><div><dt className="font-bold">Preço e disponibilidade</dt><dd>Consulte as lojas.</dd></div></dl>{product.officialUrl && <a href={product.officialUrl} className="mt-6 inline-block underline" rel="noopener noreferrer" target="_blank">Especificações oficiais do fabricante</a>}</article>
         </div>
+        <DetailedReview productId={product.id}/>
       </section>
     </main>
   );
