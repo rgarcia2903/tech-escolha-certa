@@ -1,6 +1,14 @@
 // Galerias recebidas do responsável e preparadas para a branch piloto.
 // Os arquivos WebP correspondentes devem ser importados antes de publicar.
 export const PILOT_GALLERIES: Record<string, {src:string; alt:string}[]> = {
+  "galaxy-a36-5g": [
+    { src: "/images/products/gallery/galaxy-a36-5g/01-principal.webp", alt: "Galaxy A36 5G — vista principal frontal e traseira" },
+    { src: "/images/products/gallery/galaxy-a36-5g/02-detalhe.webp", alt: "Galaxy A36 5G — vista frontal" },
+    { src: "/images/products/gallery/galaxy-a36-5g/03-detalhe.webp", alt: "Galaxy A36 5G — vista frontal em perspectiva" },
+    { src: "/images/products/gallery/galaxy-a36-5g/04-detalhe.webp", alt: "Galaxy A36 5G — vista traseira" },
+    { src: "/images/products/gallery/galaxy-a36-5g/05-detalhe.webp", alt: "Galaxy A36 5G — vista traseira em perspectiva" },
+    { src: "/images/products/gallery/galaxy-a36-5g/06-detalhe.webp", alt: "Galaxy A36 5G — vista lateral" },
+  ],
   "galaxy-a17-5g": [
     { src: "/images/products/gallery/galaxy-a17-5g/01-principal.webp", alt: "galaxy a17 5g — vista principal" },
     { src: "/images/products/gallery/galaxy-a17-5g/02-detalhe.webp", alt: "galaxy a17 5g — imagem 2" },
