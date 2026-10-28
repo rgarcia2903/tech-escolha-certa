@@ -263,8 +263,9 @@ test("PR #43 candidates remain shared while evaluation models stay unapproved", 
     new Set(ids),
     new Set(["galaxy-a17-5g", "redmi-note-15-5g", "moto-g56-5g", "moto-g86-5g", "galaxy-a36-5g"]),
   );
-  for (const id of ["galaxy-a36-5g", "moto-g56-5g"])
-    assert.equal(getProduct(id)?.editorialStatus, "evaluate");
+  assert.equal(getProduct("galaxy-a36-5g")?.editorialStatus, "evaluate");
+  // Moto G56 ganhou review completo em outubro de 2026.
+  assert.equal(getProduct("moto-g56-5g")?.editorialStatus, "candidate");
   for (const id of ids) assert.equal(fitsVerifiedBudget(id, 1500), false);
 });
 

@@ -127,8 +127,8 @@ export const PRODUCTS: Product[] = [
     "moto-g56-5g",
     "Moto G56 5G",
     "Motorola",
-    "evaluate",
-    "Candidato econômico; a posição depende da versão, do preço e do suporte brasileiro.",
+    "candidate",
+    "Resistente (IP68/IP69), com 256 GB e bateria de 5.200 mAh; vale a pena só com desconto, por causa da tela LCD.",
     {
       reviewPath: "/review/moto-g56-5g", officialUrl: "https://www.motorola.com.br/smartphone-moto-g56-5g-256gb/p" },
   ),

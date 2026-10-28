@@ -86,6 +86,17 @@ for (const [, url] of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
   if (!routes.has(pathname)) broken.push({ file: "public/sitemap.xml", value: pathname });
 }
 assert.deepEqual(broken, [], "Internal destinations must resolve to a registered route");
+const sitemapPaths = new Set(
+  [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => new URL(url).pathname),
+);
+// Rotas que respondem 301 (public/_redirects) não entram no sitemap.
+const redirected = new Set(
+  fs.readFileSync("public/_redirects", "utf8").split("\n").map((line) => line.trim().split(/\s+/)[0]).filter(Boolean),
+);
+const missingFromSitemap = [...routes].filter(
+  (route) => /^\/(review|comparativo|guia)\//.test(route) && !route.includes("$") && !redirected.has(route) && !sitemapPaths.has(route),
+);
+assert.deepEqual(missingFromSitemap, [], "Review, comparativo e guia precisam estar em public/sitemap.xml");
 assert.equal(
   (fs.readFileSync("src/routes/__root.tsx", "utf8").match(/rel: "canonical"/g) ?? []).length,
   1,

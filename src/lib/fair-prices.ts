@@ -67,6 +67,34 @@ export const FAIR_PRICES = {
     alternativeSeenPrice: 2999,
     why: "o Galaxy S25 FE é mais recente e tem bateria maior; o S24 só compensa pelo tamanho compacto.",
   },
+  // Motorola: preços vistos na Amazon em 28/10/2026 (G56 R$ 1.369, G86 R$ 1.799, Edge 60 Pro R$ 2.699).
+  "moto-g56-5g": {
+    productName: "Moto G56 5G",
+    maxPrice: 1200,
+    checkedAt: CHECKED_AT,
+    alternativeName: "Galaxy A36 5G",
+    alternativeHref: links.GALAXY_A36_AMAZON_URL,
+    alternativeSeenPrice: 1348,
+    why: "pelo mesmo dinheiro, o A36 tem tela AMOLED, processador mais forte e seis anos de atualizações.",
+  },
+  "moto-g86-5g": {
+    productName: "Moto G86 5G",
+    maxPrice: 1900,
+    checkedAt: CHECKED_AT,
+    alternativeName: "Poco X7 Pro",
+    alternativeHref: links.POCO_X7_PRO_AMAZON_URL,
+    alternativeSeenPrice: 2266,
+    why: "chegando perto de R$ 2.000, o X7 Pro entrega bem mais desempenho para jogos.",
+  },
+  "edge-60-pro": {
+    productName: "Motorola Edge 60 Pro",
+    maxPrice: 2700,
+    checkedAt: CHECKED_AT,
+    alternativeName: "Galaxy S25 FE",
+    alternativeHref: links.GALAXY_S25_FE_AMAZON_URL,
+    alternativeSeenPrice: 2999,
+    why: "o S25 FE recebe atualizações por sete anos, contra três do Edge 60 Pro.",
+  },
 } satisfies Record<string, FairPrice>;
 
 export type FairPriceId = keyof typeof FAIR_PRICES;
