@@ -142,6 +142,7 @@ test("explicit variant and unrelated models do not silently fall back to another
     const html = renderToStaticMarkup(<ProductPurchaseOptions {...props} pageType="guia" />);
     assert.ok(!html.includes("meli.la"));
     assert.ok(!html.includes("link.amazon"));
+    assert.ok(!html.includes("amazon.com.br/dp"));
   }
 });
 test("legacy PurchaseActions adds both stores only for one identified product, limiting comparative overload", () => {
@@ -151,7 +152,7 @@ test("legacy PurchaseActions adds both stores only for one identified product, l
       pageType="review"
     />,
   );
-  assert.ok(html.includes("https://link.amazon/B0faslcvM"));
+  assert.ok(html.includes("https://www.amazon.com.br/dp/B0DSQZX1C5?tag=techescolha03-20"));
   const comparison = renderToStaticMarkup(
     <PurchaseActions
       options={[
@@ -173,7 +174,7 @@ test("mobile single-product dual-store UI is collapsed and notices identify actu
   );
   assert.ok(html.includes("<details"));
   assert.ok(!html.includes("<details open"));
-  assert.ok(html.includes("https://link.amazon/B0hrqiKuQ"));
+  assert.ok(html.includes("https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20"));
   const notice = renderToStaticMarkup(<AffiliateRedirectNotice store="amazon" />);
   assert.ok(notice.includes("Amazon"));
   assert.ok(!notice.includes("Mercado Livre"));
@@ -253,7 +254,7 @@ test("PR #43 export names remain compatible without duplicating offers", () => {
     assert.equal(current, legacy);
     assert.equal(getOfferByUrl(current)?.productId, id);
   }
-  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 26);
+  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 27);
 });
 
 test("PR #43 candidates remain shared while evaluation models stay unapproved", () => {
