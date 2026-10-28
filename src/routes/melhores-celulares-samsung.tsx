@@ -1,520 +1,344 @@
-import { storeLabelForUrl } from "@/lib/product-catalog";
-import { getSocialImage } from "@/lib/product-media";
-import { ProductMedia } from "@/components/site/ProductMedia";
-import { EditorialSelection } from "@/components/site/EditorialSelection";
-import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
-import {
-  GALAXY_A35_AFFILIATE_URL,
-  GALAXY_A55_AFFILIATE_URL,
-  GALAXY_S24_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { AffiliateCTA } from "@/components/site/AffiliateCTA";
-import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
-import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
-import { trackAffiliateClick } from "@/lib/analytics";
-import { CategoryHero } from "@/components/site/CategoryHero";
-import { ReviewCard } from "@/components/site/ReviewCard";
-import { SectionTitle } from "@/components/site/SectionTitle";
+import { BadgeCheck, CircleAlert } from "lucide-react";
+import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { FAIR_PRICES, formatBRL, type FairPriceId } from "@/lib/fair-prices";
+
+// Preços vistos na Amazon em 28/10/2026. Fichas: reviews do site, Samsung Newsroom Brasil
+// (Galaxy A57, lançado em 15/04/2026 a R$ 3.599) e Samsung Newsroom (S25 FE).
+const PAGE_TITLE = "Melhor celular Samsung em 2026: qual comprar e até quanto pagar";
+const PAGE_DESCRIPTION =
+  "Galaxy A17, A36, A57 ou S25 FE? Veja qual Samsung comprar em 2026 para cada orçamento, até quanto pagar e por que A55, A35 e S24 só valem com desconto.";
 
 export const Route = createFileRoute("/melhores-celulares-samsung")({
   head: () => ({
     meta: [
-      {
-        title: "Melhores celulares Samsung em 2026: guia completo para escolher o ideal",
-      },
-      {
-        name: "description",
-        content:
-          "Veja os melhores celulares Samsung para comprar em 2026. Galaxy S24, Galaxy A55, Galaxy A35 e outros modelos analisados com foco em custo-benefício, bateria, câmera, desempenho e atualizações.",
-      },
-      {
-        name: "keywords",
-        content:
-          "melhores celulares Samsung 2026, melhor Samsung custo-benefício, Galaxy A55, Galaxy A35, Galaxy S24, celular Samsung bom e barato",
-      },
-      {
-        property: "og:title",
-        content: "Melhores celulares Samsung em 2026",
-      },
-      {
-        property: "og:description",
-        content:
-          "Guia completo para escolher o melhor celular Samsung: premium, intermediário, custo-benefício e melhor opção para a maioria das pessoas.",
-      },
-      {
-        property: "og:type",
-        content: "article",
-      },
-      {
-        property: "og:url",
-        content: "https://techescolhacerta.com.br/melhores-celulares-samsung",
-      },
-      {
-        property: "og:image",
-        content: getSocialImage(
-          "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp",
-        ),
-      },
-    ],
-
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: "Melhores celulares Samsung em 2026",
-          description: "Guia editorial dos melhores celulares Samsung para comprar em 2026.",
-          author: {
-            "@type": "Organization",
-            name: "Tech Escolha Certa",
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "Tech Escolha Certa",
-          },
-          datePublished: "2026-06-02",
-          dateModified: "2026-06-02",
-          mainEntityOfPage: "https://techescolhacerta.com.br/melhores-celulares-samsung",
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "Qual é uma alternativa Samsung de geração anterior?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "A escolha depende do perfil e de condições comerciais conferidas. Compare os candidatos atuais acima; A35, A55 e S24 permanecem como referências de gerações anteriores.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Qual Samsung tem melhor custo-benefício?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "O Galaxy A35 5G costuma ser uma das melhores opções custo-benefício da Samsung, principalmente quando aparece em promoção abaixo dos modelos intermediários premium.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Vale a pena comprar Samsung em vez de Xiaomi?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Vale para quem prioriza software mais estável, atualizações mais previsíveis, assistência, resistência e experiência mais segura no longo prazo. Xiaomi e Poco podem entregar mais ficha técnica pelo preço.",
-              },
-            },
-          ],
-        }),
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
     ],
   }),
   component: MelhoresCelularesSamsung,
 });
 
-const affiliateLinks = {
-  galaxyA55: GALAXY_A55_AFFILIATE_URL,
-  galaxyS24: GALAXY_S24_AFFILIATE_URL,
-  galaxyA35: GALAXY_A35_AFFILIATE_URL,
-};
-
-const ranking = [
+const PICKS = [
   {
-    category: "Perfil para comparar",
-    product: "Galaxy A55 5G",
-    description:
-      "Uma alternativa Samsung de geração anterior: boa tela, boa bateria, construção premium, IP67 e experiência confiável.",
-    reviewHref: "/review/galaxy-a55",
-    affiliateHref: affiliateLinks.galaxyA55,
-    affiliateProductName: "Galaxy A55",
+    id: "galaxy-a36-5g",
+    badge: "Melhor custo-benefício",
+    name: "Galaxy A36 5G",
+    seenPrice: 1348,
+    version: "128 GB, 6 GB de RAM",
+    summary:
+      "Tela Super AMOLED de 6,7\" com 120 Hz, Snapdragon 6 Gen 3, câmera de 50 MP com estabilização óptica, IP67 e seis anos de atualizações.",
+    forWho: "Quem quer um Samsung completo para o dia a dia gastando menos de R$ 1.500.",
+    watchOut: "A versão mais barata tem 128 GB e 6 GB de RAM. O carregador de 45 W é vendido à parte.",
+    reviewPath: "/review/galaxy-a36-5g",
   },
   {
-    category: "Perfil para comparar",
-    product: "Galaxy S24",
-    description:
-      "Top de linha compacto com excelente câmera, desempenho premium, recursos de IA e vários anos de atualização.",
-    reviewHref: "/review/galaxy-s24",
-    affiliateHref: affiliateLinks.galaxyS24,
-    affiliateProductName: "Galaxy S24",
+    id: "galaxy-a57-5g",
+    badge: "Melhor intermediário",
+    name: "Galaxy A57 5G",
+    seenPrice: 1857,
+    version: "128 GB, 8 GB de RAM",
+    summary:
+      "O intermediário mais novo da Samsung: tela Super AMOLED+ de 120 Hz, câmeras de 50 + 12 + 5 MP, IP68, corpo de 6,9 mm e 179 g, e seis anos de atualizações.",
+    forWho: "Quem quer acabamento premium, resistência IP68 e suporte longo sem pagar preço de linha S.",
+    watchOut:
+      "Foi lançado a R$ 3.599 em abril de 2026. Na nossa checagem estava bem abaixo disso; confira a versão e o vendedor no anúncio.",
   },
   {
-    category: "Perfil para comparar",
-    product: "Galaxy A35 5G",
-    description:
-      "Ótima escolha para quem quer economizar sem abrir mão da experiência Samsung, tela AMOLED, 5G e IP67.",
-    reviewHref: "/review/galaxy-a35",
-    affiliateHref: affiliateLinks.galaxyA35,
-    affiliateProductName: "Galaxy A35",
+    id: "galaxy-s25-fe",
+    badge: "Melhor linha S acessível",
+    name: "Galaxy S25 FE",
+    seenPrice: 2999,
+    version: "128 GB, 8 GB de RAM",
+    summary:
+      "Tela Dynamic AMOLED 2X de 120 Hz, câmera tripla com teleobjetiva, IP68, bateria de 4.900 mAh e sete anos de atualizações.",
+    forWho: "Quem quer ficar muitos anos com o celular e quer câmera com zoom óptico.",
+    watchOut: "O processador é o mesmo do Galaxy S24, e a recarga de 45 W fica atrás de rivais.",
+    reviewPath: "/review/galaxy-s25-fe",
+  },
+  {
+    id: "galaxy-a17-5g",
+    badge: "Mais barato que vale a pena",
+    name: "Galaxy A17 5G",
+    seenPrice: 899,
+    version: "128 GB, 4 GB de RAM",
+    summary:
+      "Tela Super AMOLED de 6,7\" com 90 Hz, câmera de 50 MP com estabilização óptica, 5G, NFC, microSD e seis anos de atualizações.",
+    forWho: "Quem quer um celular básico confiável e com suporte longo, gastando menos de R$ 1.000.",
+    watchOut: "Desempenho de entrada e resistência só IP54. Se puder, a versão com 8 GB de RAM envelhece melhor.",
+    reviewPath: "/review/galaxy-a17-5g",
   },
 ];
 
-const samsungProfiles = [
-  {
-    title: "Compre o Galaxy A55 se você quer equilíbrio",
-    text: "É a melhor escolha para quem quer um celular completo, bonito, resistente e confiável para vários anos. Ele não é o mais barato nem o mais potente, mas entrega o conjunto mais seguro.",
-  },
-  {
-    title: "Compre o Galaxy S24 se você quer experiência premium",
-    text: "É indicado para quem quer câmera superior, desempenho topo de linha, tela excelente, recursos de IA e acabamento premium em um aparelho compacto.",
-  },
-  {
-    title: "Compre o Galaxy A35 se você quer economizar",
-    text: "É a opção mais racional para quem quer Samsung com boa tela, 5G, IP67 e uso diário fluido sem pagar o preço do A55.",
-  },
+const TABLE: [string, string, string, string, string][] = [
+  ["Preço visto (28/10)", formatBRL(899), formatBRL(1348), formatBRL(1857), formatBRL(2999)],
+  ["Tela", "AMOLED 90 Hz", "AMOLED 120 Hz", "AMOLED+ 120 Hz", "AMOLED 2X 120 Hz"],
+  ["Câmeras traseiras", "50 + 5 + 2 MP", "50 + 8 + 5 MP", "50 + 12 + 5 MP", "50 + 12 + 8 MP tele"],
+  ["Bateria", "5.000 mAh", "5.000 mAh", "5.000 mAh", "4.900 mAh"],
+  ["Proteção", "IP54", "IP67", "IP68", "IP68"],
+  ["Atualizações", "6 anos", "6 anos", "6 anos", "7 anos"],
 ];
 
-const comparisonRows = [
-  ["Perfil de uso cotidiano", "Galaxy A55 5G"],
-  ["Melhor premium", "Galaxy S24"],
-  ["Melhor custo-benefício", "Galaxy A35 5G"],
-  ["Melhor para fotos", "Galaxy S24"],
-  ["Uso cotidiano a comparar", "Galaxy A55 5G"],
-  ["Mais barato recomendado", "Galaxy A35 5G"],
+const OLDER: { id: FairPriceId; reviewPath: string }[] = [
+  { id: "galaxy-a55", reviewPath: "/review/galaxy-a55" },
+  { id: "galaxy-a35", reviewPath: "/review/galaxy-a35" },
+  { id: "galaxy-s24", reviewPath: "/review/galaxy-s24" },
+];
+
+const COMPARISONS = [
+  { to: "/comparativo-galaxy-a55-vs-galaxy-a35", label: "Galaxy A55 vs Galaxy A35" },
+  { to: "/comparativo/galaxy-a55-vs-redmi-note-13-pro", label: "Galaxy A55 vs Redmi Note 13 Pro" },
+  { to: "/comparativo/galaxy-a35-vs-redmi-note-13-pro", label: "Galaxy A35 vs Redmi Note 13 Pro" },
+  { to: "/comparativo/galaxy-a55-vs-poco-x6-pro", label: "Galaxy A55 vs Poco X6 Pro" },
+  { to: "/comparativo/iphone-15-vs-galaxy-s24", label: "iPhone 15 vs Galaxy S24" },
+  { to: "/comparativo/galaxy-a25-vs-redmi-note-13", label: "Galaxy A25 vs Redmi Note 13" },
+];
+
+const FAQ = [
+  {
+    question: "Qual o melhor celular Samsung em 2026?",
+    answer:
+      "Para a maioria das pessoas, o Galaxy A36 5G: tela AMOLED de 120 Hz, câmera com estabilização óptica, IP67 e seis anos de atualizações por menos de R$ 1.500. Com orçamento maior, o Galaxy A57 e o Galaxy S25 FE são as melhores escolhas.",
+  },
+  {
+    question: "Qual Samsung tem o melhor custo-benefício?",
+    answer:
+      "O Galaxy A36 5G. Ele custava praticamente o mesmo que intermediários de outras marcas na nossa checagem e tem suporte bem mais longo.",
+  },
+  {
+    question: "Ainda vale comprar Galaxy A55, A35 ou S24?",
+    answer:
+      "Só com desconto forte. Acima do teto indicado nesta página, os sucessores (A57, A36 e S25 FE) entregam mais e terão atualizações por mais tempo.",
+  },
+  {
+    question: "Samsung ou Motorola?",
+    answer:
+      "Samsung vence em tempo de atualização (seis a sete anos nos modelos atuais). Motorola costuma entregar mais tela, bateria e recarga pelo preço. Se você fica muitos anos com o celular, prefira Samsung.",
+  },
 ];
 
 function MelhoresCelularesSamsung() {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
-      <CategoryHero
-        eyebrow="Especial Samsung"
-        title="Os melhores celulares Samsung para comprar em 2026"
-        description="Selecionamos os modelos Samsung que mais valem a pena atualmente considerando experiência real, câmeras, bateria, desempenho, suporte, atualizações e custo-benefício."
-        image="/images/products/galaxy-a55-optimized.webp"
-        aside={
-          <>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Alternativa Samsung anterior
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A55 5G</h2>
-
-            <p className="mt-4 text-sm leading-6 text-slate-200">
-              Um dos celulares mais equilibrados da Samsung para quem quer ótima tela, boa bateria,
-              construção premium, IP67 e longa vida útil.
-            </p>
-
-            <a
-              href={GALAXY_A55_AFFILIATE_URL}
-              target="_blank"
-              rel="nofollow sponsored noopener noreferrer"
-              onClick={() =>
-                trackAffiliateClick({
-                  productName: "Galaxy A55",
-                  pageType: "guia",
-                  ctaPlacement: "hero",
-                })
-              }
-              className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
-            >
-              Ver preço do Galaxy A55
-            </a>
-
-            <AffiliateRedirectNotice className="mt-3" tone="dark" />
-
-            <Link
-              to="/review/galaxy-a55"
-              className="mt-3 block text-center text-sm font-semibold text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
-            >
-              Ler review completo
+      <section className="bg-[#0F3F4A] text-white">
+        <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+          <nav aria-label="Navegação" className="text-sm text-slate-300">
+            <Link to="/" className="underline">
+              Home
+            </Link>{" "}
+            /{" "}
+            <Link to="/celulares" className="underline">
+              Celulares
+            </Link>{" "}
+            / Samsung
+          </nav>
+          <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#F2C38B]">
+            Guia por marca · atualizado em outubro de 2026
+          </p>
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight !text-white sm:text-5xl">
+            Melhor celular Samsung em 2026: qual comprar
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
+            Resposta curta: o <strong className="text-white">Galaxy A36</strong> para a maioria das pessoas, o{" "}
+            <strong className="text-white">Galaxy A57</strong> para quem quer um intermediário premium, o{" "}
+            <strong className="text-white">Galaxy S25 FE</strong> para ficar muitos anos e o{" "}
+            <strong className="text-white">Galaxy A17</strong> para gastar menos de R$ 1.000.
+          </p>
+          <p className="mt-4 text-sm text-slate-300">
+            Análise documental com fichas oficiais e preços conferidos na Amazon em 28 de outubro de 2026.{" "}
+            <Link to="/divulgacao-de-afiliados" className="underline">
+              Usamos links de afiliado
             </Link>
-          </>
-        }
-      >
-        <Link
-          to="/melhores-celulares-custo-beneficio"
-          className="rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
-        >
-          Ver custo-benefício
-        </Link>
+            .
+          </p>
+        </div>
+      </section>
 
-        <Link
-          to="/melhores-celulares-ate-2500"
-          className="rounded-full bg-white/10 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
-        >
-          Ver até R$ 2.500
-        </Link>
-      </CategoryHero>
-      <EditorialSelection selection="samsung" />
-      <LegacySelectionNotice />
-
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <SectionTitle
-          eyebrow="Ranking rápido"
-          title="Os Samsung que mais valem a pena hoje"
-          description="Seleção editorial focada em experiência real, compra inteligente e menor risco de arrependimento."
-        />
-
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {ranking.map((item) => (
+      <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+        <div className="grid gap-6">
+          {PICKS.map((pick, index) => (
             <article
-              key={item.product}
-              className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              key={pick.id}
+              className="grid gap-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:grid-cols-[1fr_300px]"
             >
-              <ProductMedia name={item.product} className="mb-5 aspect-[4/3] w-full rounded-2xl" />
-              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
-                {item.category}
-              </span>
-
-              <h3 className="mt-3 text-xl font-extrabold text-[#0F3F4A]">{item.product}</h3>
-
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-700">{item.description}</p>
-
-              <div className="mt-5 grid gap-2">
-                <Link
-                  to={item.reviewHref}
-                  className="inline-flex items-center justify-center rounded-full bg-[#0F3F4A] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
-                >
-                  Ver análise
-                </Link>
-
-                <a
-                  href={item.affiliateHref}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                  onClick={() =>
-                    trackAffiliateClick({
-                      productName: item.affiliateProductName,
-                      pageType: "guia",
-                      ctaPlacement: "ranking",
-                    })
-                  }
-                  className="inline-flex items-center justify-center rounded-full bg-[#8B5A2B] px-4 py-2.5 text-sm font-bold text-white transition hover:brightness-95"
-                >
-                  Ver preço {storeLabelForUrl(item.affiliateHref)}
-                </a>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B5A2B]">
+                  {index + 1}. {pick.badge}
+                </p>
+                <h2 className="mt-2 text-2xl font-extrabold text-[#0F3F4A]">{pick.name}</h2>
+                <p className="mt-3 leading-7 text-slate-700">{pick.summary}</p>
+                <dl className="mt-4 space-y-2 text-sm leading-6">
+                  <div>
+                    <dt className="inline font-bold text-[#0F3F4A]">Para quem: </dt>
+                    <dd className="inline text-slate-700">{pick.forWho}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-bold text-[#0F3F4A]">Atenção: </dt>
+                    <dd className="inline text-slate-700">{pick.watchOut}</dd>
+                  </div>
+                </dl>
+                <p className="mt-4 rounded-2xl bg-[#FFF8EF] p-4 text-sm text-slate-700">
+                  <BadgeCheck className="mr-1 inline h-4 w-4 text-[#8B5A2B]" />
+                  Na nossa checagem, a versão de {pick.version} estava por cerca de{" "}
+                  <strong>{formatBRL(pick.seenPrice)}</strong> na Amazon.
+                </p>
+                {pick.reviewPath && (
+                  <Link to={pick.reviewPath} className="mt-4 inline-block font-semibold text-[#0F3F4A] underline">
+                    Ler o review completo do {pick.name}
+                  </Link>
+                )}
               </div>
+              <ProductPurchaseOptions productId={pick.id} pageType="guia" placement="brand_samsung" compact />
             </article>
           ))}
         </div>
 
-        <section className="mt-14 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-          <SectionTitle
-            eyebrow="Reviews Samsung"
-            title="Reviews mais importantes da linha Galaxy"
-            description="Análises completas dos principais celulares Samsung para diferentes perfis de compra."
-          />
-
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <ReviewCard
-              title="Review Galaxy S24"
-              description="Top de linha compacto da Samsung com IA, excelente câmera e desempenho premium."
-              href="/review/galaxy-s24"
-              image="/images/products/galaxy-s24-optimized.webp"
-              score="9.6"
-              badge="Premium"
-            />
-
-            <ReviewCard
-              title="Review Galaxy A55 5G"
-              description="Uma alternativa Samsung de geração anterior."
-              href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55-optimized.webp"
-              score="9.0"
-              badge="Intermediário premium"
-            />
-
-            <ReviewCard
-              title="Review Galaxy A35 5G"
-              description="Ótima escolha custo-benefício dentro do ecossistema Samsung."
-              href="/review/galaxy-a35"
-              image="/images/products/galaxy-a35-optimized.webp"
-              score="8.7"
-              badge="Custo-benefício"
-            />
-          </div>
-        </section>
-
-        <section className="mt-14 grid gap-8 lg:grid-cols-[1fr_340px]">
-          <article className="space-y-10">
-            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Linha Galaxy
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#0F3F4A]">
-                Qual Samsung vale mais a pena em 2026?
-              </h2>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                O <strong>Galaxy A55</strong> é a escolha mais equilibrada para a maioria das
-                pessoas. Ele combina boa tela, boa bateria, construção premium, resistência IP67,
-                câmeras confiáveis e software mais estável.
-              </p>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                O <strong>Galaxy S24</strong> é ideal para quem quer experiência premium, câmeras
-                superiores, recursos de IA e desempenho de topo de linha. Já o{" "}
-                <strong>Galaxy A35</strong> é excelente para economizar mantendo a experiência
-                Samsung.
-              </p>
-
-              <p className="mt-4 text-base leading-7 text-slate-700">
-                A Samsung continua sendo uma das marcas mais fortes para quem prioriza estabilidade,
-                assistência, atualizações, câmeras equilibradas e um celular confiável para usar por
-                vários anos.
-              </p>
-            </section>
-
-            <section className="grid gap-5 md:grid-cols-3">
-              {samsungProfiles.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
-                >
-                  <h3 className="text-xl font-bold text-[#0F3F4A]">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">{item.text}</p>
-                </article>
-              ))}
-            </section>
-
-            <section className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <SectionTitle
-                eyebrow="Escolha por perfil"
-                title="Qual Galaxy comprar?"
-                description="Resumo direto para escolher o Samsung certo sem se perder entre muitos modelos."
-              />
-
-              <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-slate-200">
-                {comparisonRows.map(([label, value], index) => (
-                  <div
-                    key={label}
-                    className={`grid grid-cols-[0.9fr_1.1fr] gap-4 px-4 py-3 text-sm ${
-                      index % 2 === 0 ? "bg-slate-50" : "bg-white"
-                    }`}
-                  >
-                    <span className="font-semibold text-slate-800">{label}</span>
-                    <span className="font-bold text-[#0F3F4A]">{value}</span>
-                  </div>
+        <section aria-labelledby="comparar" className="mt-14">
+          <h2 id="comparar" className="text-2xl font-extrabold text-[#0F3F4A] sm:text-3xl">
+            Comparação lado a lado
+          </h2>
+          <div className="mt-5 overflow-x-auto rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+            <table className="w-full min-w-[720px] text-left text-sm">
+              <thead className="bg-[#0F3F4A] text-white">
+                <tr>
+                  <th className="p-4"> </th>
+                  <th className="p-4">Galaxy A17</th>
+                  <th className="p-4">Galaxy A36</th>
+                  <th className="p-4">Galaxy A57</th>
+                  <th className="p-4">Galaxy S25 FE</th>
+                </tr>
+              </thead>
+              <tbody>
+                {TABLE.map(([label, ...values]) => (
+                  <tr key={label} className="border-t border-slate-100">
+                    <th scope="row" className="p-4 font-semibold text-[#0F3F4A]">
+                      {label}
+                    </th>
+                    {values.map((value, i) => (
+                      <td key={i} className="p-4 text-slate-700">
+                        {value}
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </div>
-            </section>
-
-            <AffiliateCTA
-              title="Melhores ofertas Samsung atualizadas"
-              description="Veja preço, parcelamento e disponibilidade dos celulares Samsung recomendados."
-              buttonText="Ver Galaxy A55 no Mercado Livre"
-              href={GALAXY_A55_AFFILIATE_URL}
-              highlight="Galaxy S24 • Galaxy A55 • Galaxy A35"
-              productName="Galaxy A55"
-              pageType="guia"
-            />
-
-            <section className="rounded-3xl bg-[#0F3F4A] p-8 text-white shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D7A77E]">
-                Recomendação editorial
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold text-[#F8FAFC]">
-                Samsung ainda é uma das escolhas mais seguras do mercado.
-              </h2>
-
-              <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                A combinação de software refinado, boa otimização, construção, suporte e
-                atualizações faz os Galaxy continuarem entre os aparelhos mais recomendados para uso
-                no longo prazo.
-              </p>
-
-              <p className="mt-4 max-w-4xl text-base leading-7 text-slate-100">
-                Se você quer comprar sem arriscar muito, o Galaxy A55 é a melhor recomendação geral.
-                Se quer economizar, vá de Galaxy A35. Se quer o melhor da Samsung em tamanho
-                compacto, escolha o Galaxy S24.
-              </p>
-            </section>
-          </article>
-
-          <div className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
-            <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Links úteis
-              </p>
-
-              <div className="mt-5 space-y-3 text-sm">
-                <Link to="/review/galaxy-a55" className="block text-slate-700 hover:text-[#8B5A2B]">
-                  Review Galaxy A55
-                </Link>
-
-                <Link to="/review/galaxy-a35" className="block text-slate-700 hover:text-[#8B5A2B]">
-                  Review Galaxy A35
-                </Link>
-
-                <Link to="/review/galaxy-s24" className="block text-slate-700 hover:text-[#8B5A2B]">
-                  Review Galaxy S24
-                </Link>
-
-                <Link
-                  to="/comparativo-galaxy-a55-vs-galaxy-a35"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Galaxy A55 vs Galaxy A35
-                </Link>
-
-                <Link
-                  to="/comparativo/galaxy-a55-vs-poco-x6-pro"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Galaxy A55 vs Poco X6 Pro
-                </Link>
-
-                <Link
-                  to="/melhores-celulares-custo-beneficio"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Melhores custo-benefício
-                </Link>
-
-                <Link
-                  to="/melhores-celulares-xiaomi"
-                  className="block text-slate-700 hover:text-[#8B5A2B]"
-                >
-                  Melhores celulares Xiaomi
-                </Link>
-              </div>
-            </div>
-
-            <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-                Resumo
-              </p>
-
-              <div className="mt-5 space-y-4 text-sm text-slate-700">
-                <div>
-                  <span className="block text-slate-500">Perfil de uso cotidiano</span>
-                  <strong className="text-[#0F3F4A]">Galaxy A55 5G</strong>
-                </div>
-
-                <div>
-                  <span className="block text-slate-500">Melhor premium</span>
-                  <strong className="text-[#0F3F4A]">Galaxy S24</strong>
-                </div>
-
-                <div>
-                  <span className="block text-slate-500">Melhor barato</span>
-                  <strong className="text-[#0F3F4A]">Galaxy A35 5G</strong>
-                </div>
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
         </section>
-      </section>
 
-      <MobilePurchaseBar
-        options={[
-          {
-            productName: "Galaxy A55",
-            href: GALAXY_A55_AFFILIATE_URL,
-            label: "Ver preço",
-            primary: true,
-          },
-        ]}
-        pageType="guia"
-        title="Galaxy A55 5G"
-        eyebrow="Alternativa Samsung anterior"
-      />
+        <section
+          aria-labelledby="antigos"
+          className="mt-14 rounded-3xl border-2 border-[#8B5A2B]/30 bg-[#FFF8EF] p-6 sm:p-8"
+        >
+          <h2 id="antigos" className="flex items-center gap-2 text-2xl font-bold text-[#0F3F4A]">
+            <CircleAlert className="h-6 w-6 text-[#8B5A2B]" /> Galaxy A55, A35 e S24: só com desconto
+          </h2>
+          <p className="mt-3 leading-7 text-slate-700">
+            Esses modelos ainda aparecem muito à venda, mas já têm sucessores. Acima destes valores, o modelo novo é a
+            compra melhor.
+          </p>
+          <ul className="mt-5 grid gap-4 sm:grid-cols-3">
+            {OLDER.map(({ id, reviewPath }) => {
+              const fp = FAIR_PRICES[id];
+              return (
+                <li key={id} className="rounded-2xl bg-white p-5 shadow-sm">
+                  <p className="font-bold text-[#0F3F4A]">{fp.productName}</p>
+                  <p className="mt-1 text-sm text-slate-700">
+                    Só vale abaixo de <strong>{formatBRL(fp.maxPrice)}</strong>. Acima disso, prefira o{" "}
+                    {fp.alternativeName}.
+                  </p>
+                  <Link to={reviewPath} className="mt-2 inline-block text-sm font-semibold text-[#0F3F4A] underline">
+                    Ver o veredito
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        <section aria-labelledby="outra-marca" className="mt-14">
+          <h2 id="outra-marca" className="text-2xl font-bold text-[#0F3F4A]">
+            Quando outra marca é melhor
+          </h2>
+          <ul className="mt-4 space-y-3 leading-7 text-slate-700">
+            <li>
+              <strong>Quer mais bateria e recarga rápida:</strong> veja o{" "}
+              <Link to="/review/edge-60-pro" className="font-semibold underline">
+                Motorola Edge 60 Pro
+              </Link>{" "}
+              ou o{" "}
+              <Link to="/review/moto-g86-5g" className="font-semibold underline">
+                Moto G86
+              </Link>
+              .
+            </li>
+            <li>
+              <strong>Joga muito:</strong> o{" "}
+              <Link to="/review/poco-x7-pro" className="font-semibold underline">
+                Poco X7 Pro
+              </Link>{" "}
+              tem mais desempenho pelo preço.
+            </li>
+            <li>
+              <strong>Quer carregador na caixa e bateria grande:</strong> compare com o{" "}
+              <Link to="/review/redmi-note-15-5g" className="font-semibold underline">
+                Redmi Note 15 5G
+              </Link>
+              .
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="faq" className="mt-14">
+          <h2 id="faq" className="text-2xl font-bold text-[#0F3F4A]">
+            Perguntas frequentes
+          </h2>
+          <div className="mt-5 space-y-3">
+            {FAQ.map((item) => (
+              <details key={item.question} className="rounded-2xl bg-white p-5 shadow-sm">
+                <summary className="cursor-pointer font-semibold text-[#0F3F4A]">{item.question}</summary>
+                <p className="mt-3 leading-7 text-slate-700">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="comparativos" className="mt-14">
+          <h2 id="comparativos" className="text-xl font-bold text-[#0F3F4A]">
+            Comparativos com Samsung
+          </h2>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            {COMPARISONS.map((c) => (
+              <li key={c.to}>
+                <Link to={c.to} className="text-sm font-semibold text-[#0F3F4A] underline">
+                  {c.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <p className="mt-10 text-sm text-slate-600">
+          Comprando na Black Friday?{" "}
+          <Link to="/black-friday-celulares" className="font-semibold underline">
+            Veja quanto cada celular custava antes da data
+          </Link>
+          . Também temos o guia de{" "}
+          <Link to="/melhores-celulares-motorola" className="font-semibold underline">
+            melhores celulares Motorola
+          </Link>{" "}
+          e de{" "}
+          <Link to="/melhores-celulares-xiaomi" className="font-semibold underline">
+            melhores Xiaomi
+          </Link>
+          .
+        </p>
+      </div>
     </main>
   );
 }
