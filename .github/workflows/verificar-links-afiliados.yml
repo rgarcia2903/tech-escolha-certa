@@ -11,6 +11,7 @@ on:
 permissions:
   contents: read
   issues: write
+  pull-requests: write
 
 jobs:
   verificar:
@@ -28,6 +29,11 @@ jobs:
       - name: Publicar relatório no resumo
         if: always()
         run: cat relatorio-links.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Comentar relatório no PR
+        if: always() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body-file relatorio-links.md
       - name: Abrir ou atualizar issue quando houver link com problema
         if: steps.check.outcome == 'failure' && github.event_name != 'pull_request'
         env:
