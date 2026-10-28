@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -24,7 +25,15 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
-      - run: npm test
+      - name: Testes
+        run: set -o pipefail; npm test 2>&1 | tee test-output.txt
+      - name: Comentar falha dos testes no PR
+        if: failure() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          { echo '### Falha nos testes'; echo '```'; tail -n 80 test-output.txt; echo '```'; } > comentario.md
+          gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body-file comentario.md
       # O build regenera src/routeTree.gen.ts; o tsc precisa vir depois.
       - run: npm run build
       - run: npx tsc --noEmit
