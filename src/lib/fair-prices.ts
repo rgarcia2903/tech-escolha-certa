@@ -72,7 +72,7 @@ export const FAIR_PRICES = {
 export type FairPriceId = keyof typeof FAIR_PRICES;
 
 export function formatBRL(value: number): string {
-  return `R$ ${value.toLocaleString("pt-BR", { maximumFractionDigits: 0 })}`;
+  return `R$\u00a0${value.toLocaleString("pt-BR", { maximumFractionDigits: 0 })}`;
 }
 
 /** Mês e ano da checagem, ex.: "outubro de 2026". */
