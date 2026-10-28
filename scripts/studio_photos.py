@@ -5,6 +5,8 @@ import sys
 from pathlib import Path
 from PIL import Image, ImageFilter, ImageOps
 from rembg import remove, new_session
+import numpy as np
+from scipy import ndimage
 
 session = new_session("isnet-general-use")
 src_dir = Path("public/images/products/licensed")
@@ -16,6 +18,16 @@ for f in inputs:
     im = ImageOps.exif_transpose(Image.open(f)).convert("RGB")
     cut = remove(im, session=session, post_process_mask=True)
     alpha = cut.split()[-1]
+    # Mantém só o maior objeto (o aparelho): descarta cabos, suportes e etiquetas soltas.
+    a = np.array(alpha)
+    labels, n = ndimage.label(a > 40)
+    if n > 1:
+        sizes = ndimage.sum(np.ones_like(a), labels, range(1, n + 1))
+        keep = labels == (int(np.argmax(sizes)) + 1)
+        keep = ndimage.binary_fill_holes(keep)
+        a = np.where(keep, a, 0).astype("uint8")
+        alpha = Image.fromarray(a)
+        cut.putalpha(alpha)
     box = alpha.point(lambda a: 255 if a > 40 else 0).getbbox()
     if not box:
         print("sem recorte", pid); continue

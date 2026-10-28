@@ -21,8 +21,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -q "rembg[cpu]" pillow
+      - run: pip install -q "rembg[cpu]" pillow scipy numpy
       - name: Buscar fotos livres dos modelos sem imagem
+        if: hashFiles('docs/photo-search2/results.json') == ''
         run: |
           python3 - <<'PY'
           import json, time, re, urllib.request, urllib.parse
