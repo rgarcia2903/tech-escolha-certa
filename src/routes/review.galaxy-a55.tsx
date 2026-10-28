@@ -1,4 +1,5 @@
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
+import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -145,6 +146,16 @@ function ReviewGalaxyA55() {
           </div>
 
           <div className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
+            <div className="mb-6 overflow-hidden rounded-2xl bg-white p-4">
+              <ProductMedia
+                productId="galaxy-a55"
+                alt="Samsung Galaxy A55 5G"
+                width="512"
+                height="512"
+                fetchPriority="high"
+                className="mx-auto h-48 w-full object-contain"
+              />
+            </div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
               Avaliação documental
             </p>

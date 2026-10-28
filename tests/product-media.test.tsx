@@ -69,7 +69,7 @@ test("approved A36 photograph renders local bytes and linked ShareAlike attribut
   assert.ok(html.includes(`href="${photo.licenseUrl}"`));
   assert.ok(html.includes("Captainmorlypogi1959 (recorte: Panam2014)"));
   assert.ok(html.includes("Derivado sob CC BY-SA 4.0"));
-  for (const id of ["galaxy-a35", "galaxy-a37-5g"]) {
+  for (const id of ["galaxy-a37-5g"]) {
     assert.equal(getApprovedPhoto(id), undefined);
     assert.ok(!renderToStaticMarkup(<ProductMedia productId={id} />).includes(photo.src));
   }
@@ -176,12 +176,18 @@ test("Redmi Note 15 5G and Edge 60 Pro retain licensed media and use pilot cover
 });
 
 test("schema image arrays are also guarded instead of bypassing the photograph policy", () => {
+  // Modelos sem foto licenciada continuam caindo no ícone do site.
   assert.deepEqual(
     getSocialImage([
-      "https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp",
-      "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp",
+      "https://techescolhacerta.com.br/images/products/poco-x6-pro-optimized.webp",
+      "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp",
     ]),
     ["https://techescolhacerta.com.br/favicon.png"],
+  );
+  // Modelos com foto licenciada usam a própria foto.
+  assert.deepEqual(
+    getSocialImage(["https://techescolhacerta.com.br/images/products/galaxy-a55-optimized.webp"]),
+    ["https://techescolhacerta.com.br/images/products/licensed/galaxy-a55.webp"],
   );
 });
 
