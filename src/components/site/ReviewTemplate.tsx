@@ -4,7 +4,7 @@ import { ReviewContext } from "./ReviewContext";
 import { getOfferByUrl, getProductByName, storeLabelForUrl } from "@/lib/product-catalog";
 import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
 import { Link } from "@tanstack/react-router";
-import { AlertTriangle, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AlternativeOffer } from "@/components/site/AlternativeOffer";
 import { FairPriceBox } from "@/components/site/FairPriceBox";
@@ -242,17 +242,6 @@ export function ReviewTemplate({
       </nav>
       <section className="mx-auto max-w-7xl px-6 pt-8 lg:px-8">
         <AuthorByline reviewedAt={updatedAt.replace(/^Atualizado em\s*/i, "")} />
-        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
-            <p>
-              <strong>Análise documental:</strong> esta página compara ficha técnica, proposta,
-              preço relativo e alternativas. Quando não houver um teste próprio identificado, as
-              observações de uso representam uma avaliação editorial baseada em especificações e
-              fontes consultadas, não uma medição feita pelo site.
-            </p>
-          </div>
-        </div>
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1fr_340px] lg:px-8">
