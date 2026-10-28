@@ -104,6 +104,8 @@ for (const link of links) {
   } catch (error) {
     row = { ...row, result: "NÃO VERIFICÁVEL", detail: String(error.message ?? error).slice(0, 100) };
   }
+  if (rule?.knownIssue && ["QUEBRADO", "PAUSADO", "MODELO ERRADO"].includes(row.result))
+    row = { ...row, result: "CONHECIDO", detail: `${row.result}: ${rule.knownIssue}` };
   results.push(row);
   console.log(`${row.result.padEnd(16)} ${row.name} — ${row.detail}`);
 }
@@ -112,7 +114,7 @@ const failing = results.filter((r) => ["QUEBRADO", "PAUSADO", "MODELO ERRADO"].i
 const report = [
   `# Verificação de links de afiliado — ${new Date().toISOString().slice(0, 10)}`,
   "",
-  `${results.length} links: ${results.filter((r) => r.result === "OK").length} OK, ${failing.length} com problema, ${results.filter((r) => r.result === "NÃO VERIFICÁVEL").length} não verificáveis.`,
+  `${results.length} links: ${results.filter((r) => r.result === "OK").length} OK, ${failing.length} com problema, ${results.filter((r) => r.result === "NÃO VERIFICÁVEL").length} não verificáveis (a Amazon bloqueia robôs; esses são conferidos manualmente), ${results.filter((r) => r.result === "CONHECIDO").length} problema(s) já conhecido(s).`,
   "",
   "| Resultado | Constante | Destino |",
   "| --- | --- | --- |",
