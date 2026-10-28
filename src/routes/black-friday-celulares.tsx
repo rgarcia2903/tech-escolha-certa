@@ -62,7 +62,7 @@ function BlackFridayPage() {
           <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#F2C38B]">
             Black Friday {BLACK_FRIDAY.year} · {BLACK_FRIDAY.date}
           </p>
-          <h1 className="mt-3 text-3xl font-extrabold leading-tight sm:text-5xl">
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight !text-white sm:text-5xl">
             Black Friday de celulares: quanto vale pagar em cada modelo
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
