@@ -25,47 +25,52 @@ import { MobilePurchaseBar } from "../src/components/site/MobilePurchaseBar";
 import { AffiliateRedirectNotice } from "../src/components/site/AffiliateRedirectNotice";
 import { trackAffiliateClick } from "../src/lib/analytics";
 
-const originalML = [
-  ["galaxy-a35", "https://meli.la/26WiZy6"],
+// Links conferidos um a um em 28/10/2026 (ver scripts/check-affiliate-links.mjs).
+const mercadoLivre = [
+  ["galaxy-a35", "https://meli.la/1onGZVV"],
   ["galaxy-a25-5g", "https://meli.la/16gypcb"],
-  ["galaxy-m35-5g", "https://meli.la/2C2R4iW"],
   ["galaxy-a55", "https://meli.la/2NMinTZ"],
-  ["galaxy-s24", "https://meli.la/1jcBPte"],
   ["iphone-15", "https://meli.la/2m3GhG6"],
-  ["poco-x6-pro", "https://meli.la/12mgwo6"],
-  ["poco-x7-pro", "https://meli.la/1Gu5Lut"],
+  ["poco-x6-pro", "https://meli.la/2hXCQMH"],
+  ["poco-x7-pro", "https://meli.la/1p5J4MW"],
   ["redmi-note-13-pro", "https://meli.la/1dksoic"],
   ["redmi-note-13-4g", "https://meli.la/1s5tD1G"],
   ["redmi-note-14-pro-plus", "https://meli.la/1at28cv"],
   ["galaxy-a17-5g", "https://meli.la/33rVhq6"],
   ["galaxy-a36-5g", "https://meli.la/2kdrQ2M"],
-  ["redmi-note-15-5g", "https://meli.la/1x3jBNo"],
+  ["redmi-note-15-5g", "https://meli.la/19RXcbF"],
   ["moto-g56-5g", "https://meli.la/2WiqRMo"],
   ["moto-g86-5g", "https://meli.la/2uZpELs"],
   ["edge-60-pro", "https://meli.la/1Az91Ky"],
   ["galaxy-s25-fe", "https://meli.la/1KKtEmb"],
 ];
-const userAmazon = [
-  ["galaxy-a17-5g", "https://link.amazon/B0hrqiKuQ"],
-  ["galaxy-a36-5g", "https://link.amazon/B0cRCXn3S"],
-  ["redmi-note-15-5g", "https://link.amazon/B0gQFVn5x"],
+const amazon = [
+  ["galaxy-a17-5g", "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20"],
+  ["galaxy-a36-5g", "https://www.amazon.com.br/dp/B0DYVNRG3B?tag=techescolha03-20"],
+  ["redmi-note-15-5g", "https://www.amazon.com.br/dp/B0G2BFZRGL?tag=techescolha03-20"],
   ["moto-g56-5g", "https://link.amazon/B0ewfAqbv"],
   ["moto-g86-5g", "https://link.amazon/B03tWVgr1"],
   ["edge-60-pro", "https://link.amazon/B09Sm06fg"],
   ["galaxy-s25-fe", "https://link.amazon/B03cMVNVL"],
-  ["redmi-note-14-pro-plus", "https://link.amazon/B0faslcvM"],
+  ["redmi-note-14-pro-plus", "https://www.amazon.com.br/dp/B0DSQZX1C5?tag=techescolha03-20"],
+  ["galaxy-s24", "https://www.amazon.com.br/dp/B0CQD9H9MG?tag=techescolha03-20"],
+  ["poco-x7-pro", "https://www.amazon.com.br/dp/B0DRD1SBSD?tag=techescolha03-20"],
+  ["galaxy-a57-5g", "https://www.amazon.com.br/dp/B0GVSVS9WH?tag=techescolha03-20"],
 ];
-test("18 Mercado Livre and 8 Amazon addresses preserve exact model identity and original bytes", () => {
-  assert.equal(OFFERS.length, 26);
+test("16 Mercado Livre and 11 Amazon addresses preserve exact model identity", () => {
+  assert.equal(OFFERS.length, 27);
   for (const [store, pairs] of [
-    ["mercado_livre", originalML],
-    ["amazon", userAmazon],
+    ["mercado_livre", mercadoLivre],
+    ["amazon", amazon],
   ] as const) {
     assert.equal(OFFERS.filter((offer) => offer.store === store).length, pairs.length);
     for (const [productId, url] of pairs) {
       const offer = OFFERS.find((item) => item.productId === productId && item.store === store);
       assert.equal(offer?.url, url);
-      assert.equal(new URL(url).search, "");
+      const parsed = new URL(url);
+      // Mercado Livre: encurtador sem parâmetros. Amazon: só a tag de associado.
+      if (parsed.hostname === "www.amazon.com.br") assert.equal(parsed.search, "?tag=techescolha03-20");
+      else assert.equal(parsed.search, "");
     }
   }
 });
@@ -100,7 +105,7 @@ test("4G, 5G, Pro, Pro+ and generation distinctions never share offer identity",
   assert.equal(getOffers("galaxy-s24-plus").length, 0);
   assert.notEqual(getOffers("redmi-note-13-pro")[0].url, getOffers("redmi-note-13-4g")[0].url);
   assert.equal(getProductByName("Redmi Note 13"), undefined);
-  assert.equal(getOfferByUrl("https://meli.la/1x3jBNo")?.productId, "redmi-note-15-5g");
+  assert.equal(getOfferByUrl("https://meli.la/19RXcbF")?.productId, "redmi-note-15-5g");
 });
 test("budgets return documented candidates without asserting a verified price", () => {
   for (const budget of BUDGETS)
@@ -118,7 +123,7 @@ test("generic model purchase options expose two original URLs with store labels,
   const html = renderToStaticMarkup(
     <ProductPurchaseOptions productId="redmi-note-15-5g" pageType="guia" />,
   );
-  for (const url of ["https://meli.la/1x3jBNo", "https://link.amazon/B0gQFVn5x"])
+  for (const url of ["https://meli.la/19RXcbF", "https://www.amazon.com.br/dp/B0G2BFZRGL?tag=techescolha03-20"])
     assert.ok(html.includes(`href="${url}"`));
   assert.ok(html.includes("Comprar na Amazon"));
   assert.ok(html.includes("Comprar no Mercado Livre"));

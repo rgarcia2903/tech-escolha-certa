@@ -7,7 +7,6 @@ import { PurchaseActions } from "@/components/site/PurchaseActions";
 import {
   GALAXY_A25_AFFILIATE_URL,
   GALAXY_A35_AFFILIATE_URL,
-  GALAXY_M35_AFFILIATE_URL,
   REDMI_NOTE_13_4G_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -35,7 +34,7 @@ const CANONICAL = "https://techescolhacerta.com.br/guia/melhores-celulares-ate-1
 const HERO_IMG = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
 const PAGE_TITLE = "Celulares até R$ 1.500 em 2026: candidatos e critérios";
 const PAGE_DESCRIPTION =
-  "Compare Galaxy A25 5G, Redmi Note 13 4G, Galaxy M35 5G, Poco M6 Pro e Moto G84. Veja qual combina com seu uso antes de comprar.";
+  "Compare Galaxy A25 5G, Redmi Note 13 4G, Poco M6 Pro e Moto G84. Veja qual combina com seu uso antes de comprar.";
 
 type Pick = {
   id: string;
@@ -108,26 +107,6 @@ const PICKS: Pick[] = [
     affiliateUrl: REDMI_NOTE_13_4G_AFFILIATE_URL,
   },
   {
-    id: "historico-melhor-bateria",
-    category: "Perfil para comparar",
-    icon: Battery,
-    badge: { variant: "default", label: "Bateria" },
-    name: "Samsung Galaxy M35 5G",
-    productId: "galaxy-m35-5g",
-    image:
-      "https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.4,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    short: "Ideal para quem quer bateria acima da média, tela AMOLED e 5G sem passar do orçamento.",
-    review:
-      "O Galaxy M35 5G é uma alternativa forte quando aparece em promoção abaixo de R$ 1.500. O destaque é a bateria grande, que tende a aguentar um dia intenso com mais tranquilidade. Ele também traz tela AMOLED, 5G e desempenho adequado para rotina. É uma compra interessante para quem passa muito tempo fora de casa e prefere autonomia a design fino.",
-    profile:
-      "Quem trabalha fora, usa muito redes sociais, mapas, vídeos e não quer depender de tomada.",
-    pros: ["Bateria acima da média", "Tela AMOLED", "5G", "Bom pacote para uso diário"],
-    cons: ["Pode ser mais pesado", "Vale mais quando está em promoção"],
-    affiliateUrl: GALAXY_M35_AFFILIATE_URL,
-  },
-  {
     id: "historico-melhor-para-jogos-leves",
     category: "Perfil para comparar",
     icon: Gamepad2,
@@ -185,7 +164,6 @@ const PICKS: Pick[] = [
 const QUICK_RANKING = [
   ["Perfil de uso cotidiano", "Galaxy A25 5G"],
   ["Melhor custo-benefício", "Redmi Note 13 4G"],
-  ["Perfil de autonomia", "Galaxy M35 5G"],
   ["Melhor para jogos leves", "Poco M6 Pro"],
   ["Melhor câmera simples", "Moto G84"],
 ];

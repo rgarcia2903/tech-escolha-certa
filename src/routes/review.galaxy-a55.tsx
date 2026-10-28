@@ -9,6 +9,8 @@ import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A57_AMAZON_URL } from "@/lib/affiliate-links";
+import { AlternativeOffer } from "@/components/site/AlternativeOffer";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a55";
 
@@ -208,6 +210,13 @@ function ReviewGalaxyA55() {
               affiliateHref={GALAXY_A55_AFFILIATE_URL}
               comparisonHref="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
               comparisonLabel="Comparar Galaxy A55 e Redmi"
+            />
+            <AlternativeOffer
+              className="mt-6"
+              fromProductName="Galaxy A55"
+              productName="Galaxy A57 5G"
+              href={GALAXY_A57_AMAZON_URL}
+              reason="Na nossa checagem de outubro de 2026, o Galaxy A57 novo custava menos que o A55 e é duas gerações mais novo, com mais anos de atualização pela frente. Compare antes de pagar mais pelo A55."
             />
           </section>
 
