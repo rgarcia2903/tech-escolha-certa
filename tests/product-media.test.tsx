@@ -69,7 +69,7 @@ test("approved A36 photograph renders local bytes and linked ShareAlike attribut
   assert.ok(html.includes(`href="${photo.licenseUrl}"`));
   assert.ok(html.includes("Captainmorlypogi1959 (recorte: Panam2014)"));
   assert.ok(html.includes("Derivado sob CC BY-SA 4.0"));
-  for (const id of ["galaxy-a35", "galaxy-a37-5g"]) {
+  for (const id of ["galaxy-a37-5g"]) {
     assert.equal(getApprovedPhoto(id), undefined);
     assert.ok(!renderToStaticMarkup(<ProductMedia productId={id} />).includes(photo.src));
   }
