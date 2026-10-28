@@ -1,0 +1,82 @@
+name: Buscar fotos livres no Wikimedia Commons
+
+# Busca candidatas com licença livre para os modelos listados e baixa os originais
+# para revisão humana. Não aprova fotos nem altera o site.
+on:
+  push:
+    branches: [feat/fotos-reviews-trafego]
+    paths: [.github/workflows/buscar-fotos-commons.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  buscar:
+    if: github.ref == 'refs/heads/feat/fotos-reviews-trafego'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Buscar e baixar candidatas
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, hashlib, time, urllib.request, urllib.parse, re
+          from pathlib import Path
+          UA = {"User-Agent": "TechEscolhaCerta/1.0 (https://techescolhacerta.com.br; busca de fotos licenciadas)"}
+          QUERIES = {
+            "galaxy-a55": ["Samsung Galaxy A55"],
+            "galaxy-a35": ["Samsung Galaxy A35"],
+            "galaxy-s24": ["Samsung Galaxy S24"],
+            "poco-x6-pro": ["Poco X6 Pro", "Xiaomi Poco X6 Pro"],
+            "redmi-note-13-pro": ["Redmi Note 13 Pro"],
+          }
+          OK = re.compile(r"^(CC BY(-SA)? [234]\.0|CC0|Public domain)", re.I)
+          def get(url):
+              req = urllib.request.Request(url, headers=UA)
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  return r.read()
+          out = {}
+          for pid, qs in QUERIES.items():
+              seen, cands = set(), []
+              for q in qs:
+                  params = {"action":"query","generator":"search","gsrnamespace":"6","gsrlimit":"25","gsrsearch":q,
+                            "prop":"imageinfo","iiprop":"url|size|extmetadata|sha1|mime","format":"json"}
+                  data = json.loads(get("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params)))
+                  for p in (data.get("query", {}).get("pages", {}) or {}).values():
+                      if p["title"] in seen: continue
+                      seen.add(p["title"])
+                      i = p["imageinfo"][0]; m = i.get("extmetadata", {})
+                      lic = (m.get("LicenseShortName") or {}).get("value", "")
+                      artist = re.sub(r"<[^>]+>", "", (m.get("Artist") or {}).get("value", "")).strip()
+                      cands.append({"title": p["title"], "width": i["width"], "height": i["height"], "mime": i["mime"],
+                                    "license": lic, "licenseUrl": (m.get("LicenseUrl") or {}).get("value", ""),
+                                    "artist": artist, "sha1": i["sha1"], "descriptionUrl": i["descriptionurl"], "url": i["url"],
+                                    "date": re.sub(r"<[^>]+>", "", (m.get("DateTimeOriginal") or {}).get("value", ""))[:30]})
+                  time.sleep(1)
+              good = [c for c in cands if c["mime"] == "image/jpeg" and OK.match(c["license"]) and min(c["width"], c["height"]) >= 700]
+              good.sort(key=lambda c: -c["width"] * c["height"])
+              out[pid] = {"all": cands, "downloaded": []}
+              d = Path(f"docs/photo-search/{pid}"); d.mkdir(parents=True, exist_ok=True)
+              for n, c in enumerate(good[:6], 1):
+                  thumb = c["url"]
+                  # Miniatura de 1200 px para revisão visual; o original é baixado na importação final.
+                  tq = "https://commons.wikimedia.org/w/thumb.php?" + urllib.parse.urlencode({"f": c["title"].split(":", 1)[1], "w": "1200"})
+                  try:
+                      b = get(tq)
+                  except Exception as e:
+                      print("falha", pid, c["title"], e); continue
+                  f = d / f"{n:02d}.jpg"; f.write_bytes(b)
+                  out[pid]["downloaded"].append({**c, "file": str(f)})
+                  time.sleep(1)
+              print(pid, len(cands), "candidatas,", len(out[pid]["downloaded"]), "baixadas")
+          Path("docs/photo-search/results.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
+          PY
+      - name: Salvar resultados na branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/photo-search
+          git commit -m "Candidatas de fotos livres para revisão" || exit 0
+          git push origin HEAD:feat/fotos-reviews-trafego
