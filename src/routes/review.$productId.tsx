@@ -3,7 +3,8 @@ import { ProductGallery } from "@/components/site/ProductGallery";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { getProduct } from "@/lib/product-catalog";
 
-const PILOT_IDS = new Set(["galaxy-a36-5g","redmi-note-15-5g","moto-g56-5g","moto-g86-5g","edge-60-pro","galaxy-s25-fe"]);
+// Galaxy S25 FE e Redmi Note 15 5G têm review completo em rota própria.
+const PILOT_IDS = new Set(["galaxy-a36-5g","moto-g56-5g","moto-g86-5g","edge-60-pro"]);
 
 function findPilot(productId: string) {
   return PILOT_IDS.has(productId) ? getProduct(productId) : undefined;
