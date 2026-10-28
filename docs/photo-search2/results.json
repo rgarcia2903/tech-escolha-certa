@@ -1,0 +1,37 @@
+{
+ "poco-x7-pro": [],
+ "galaxy-a57-5g": [
+  {
+   "title": "File:Samsung Galaxy A57 5G.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "OGCWiki",
+   "sha1": "a4ca33fe336cabca643b4031f788421731c4098d",
+   "width": 4592,
+   "height": 8160,
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A57_5G.jpg",
+   "file": "docs/photo-search2/galaxy-a57-5g/01.jpg"
+  },
+  {
+   "title": "File:Samsung Galaxy A57 5G about.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "茅野ふたば",
+   "sha1": "97a535bae1112059553a7d4931fefd2d573ce09b",
+   "width": 3024,
+   "height": 4032,
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A57_5G_about.jpg",
+   "file": "docs/photo-search2/galaxy-a57-5g/02.jpg"
+  },
+  {
+   "title": "File:Samsung Galaxy A57 5G rear.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "茅野ふたば",
+   "sha1": "84039f8beca3bae2b85460b0da2762d1491c0939",
+   "width": 3024,
+   "height": 4032,
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A57_5G_rear.jpg",
+   "file": "docs/photo-search2/galaxy-a57-5g/03.jpg"
+  }
+ ],
+ "redmi-note-13-pro": [],
+ "poco-x6-pro": []
+}
