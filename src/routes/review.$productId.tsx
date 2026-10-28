@@ -1,25 +1,39 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ProductGallery } from "@/components/site/ProductGallery";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { getProduct } from "@/lib/product-catalog";
 
 const PILOT_IDS = new Set(["galaxy-a36-5g","redmi-note-15-5g","moto-g56-5g","moto-g86-5g","edge-60-pro","galaxy-s25-fe"]);
 
+function findPilot(productId: string) {
+  return PILOT_IDS.has(productId) ? getProduct(productId) : undefined;
+}
+
 export const Route = createFileRoute("/review/$productId")({
+  // Modelo inexistente responde 404 (antes respondia 200 e era indexado como soft 404).
+  loader: ({ params }) => {
+    if (!findPilot(params.productId)) throw notFound();
+  },
   component: PilotReview,
+  notFoundComponent: ReviewNotFound,
   head: ({ params }) => {
-    const p = PILOT_IDS.has(params.productId) ? getProduct(params.productId) : undefined;
+    const p = findPilot(params.productId);
+    if (!p) return { meta: [{ title: "Review não encontrado | Tech Escolha Certa" }, { name: "robots", content: "noindex, follow" }] };
     return { meta: [
-      { title: p ? `${p.name}: análise completa e onde comprar | Tech Escolha Certa` : "Análise de celular | Tech Escolha Certa" },
-      { name: "description", content: p ? `Fotos, análise editorial e alternativas de compra do ${p.name}.` : "Análises de celulares." },
+      { title: `${p.name}: análise completa e onde comprar | Tech Escolha Certa` },
+      { name: "description", content: `Fotos, análise editorial e alternativas de compra do ${p.name}.` },
     ] };
   },
 });
 
+function ReviewNotFound() {
+  return <main className="container-tec py-16"><h1 className="text-3xl font-bold">Review não disponível</h1><Link to="/celulares" className="mt-4 inline-block underline">Ver celulares</Link></main>;
+}
+
 function PilotReview() {
   const { productId } = Route.useParams();
-  const product = PILOT_IDS.has(productId) ? getProduct(productId) : undefined;
-  if (!product) return <main className="container-tec py-16"><h1 className="text-3xl font-bold">Review não disponível</h1><Link to="/celulares" className="mt-4 inline-block underline">Ver celulares</Link></main>;
+  const product = findPilot(productId);
+  if (!product) return <ReviewNotFound />;
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">

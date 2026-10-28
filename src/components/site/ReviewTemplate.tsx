@@ -1,11 +1,12 @@
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductGallery } from "@/components/site/ProductGallery";
 import { ReviewContext } from "./ReviewContext";
-import { getOfferByUrl, getProductByName } from "@/lib/product-catalog";
+import { getOfferByUrl, getProductByName, storeLabelForUrl } from "@/lib/product-catalog";
 import { ProductPurchaseOptions } from "./ProductPurchaseOptions";
 import { Link } from "@tanstack/react-router";
 import { AlertTriangle, ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
+import { AlternativeOffer } from "@/components/site/AlternativeOffer";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { AuthorByline } from "@/components/site/AuthorByline";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
@@ -62,6 +63,13 @@ export type ReviewTemplateProps = {
     label: string;
     to: string;
   }[];
+  /** Sucessor ou concorrente que é a compra mais sensata hoje (modelo fora de linha ou caro). */
+  alternative?: {
+    productName: string;
+    href: string;
+    reason: string;
+    reviewHref?: string;
+  };
 };
 
 export function ReviewTemplate({
@@ -90,6 +98,7 @@ export function ReviewTemplate({
   finalRecommendation,
   faq,
   relatedLinks = [],
+  alternative,
 }: ReviewTemplateProps) {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
@@ -197,6 +206,11 @@ export function ReviewTemplate({
             pageType="review"
             placement="after_verdict"
           />
+        </div>
+      )}
+      {alternative && (
+        <div className="container-tec py-4">
+          <AlternativeOffer fromProductName={productName} {...alternative} />
         </div>
       )}
       <nav className="container-tec flex flex-wrap gap-2 py-5" aria-label="Nesta análise">
@@ -369,7 +383,7 @@ export function ReviewTemplate({
               }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver no Mercado Livre
+              Ver {storeLabelForUrl(affiliateHref)}
               <ArrowUpRight className="h-4 w-4" />
             </a>
 

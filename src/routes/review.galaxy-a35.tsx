@@ -3,6 +3,8 @@ import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A36_AMAZON_URL } from "@/lib/affiliate-links";
+import { AlternativeOffer } from "@/components/site/AlternativeOffer";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
@@ -204,6 +206,14 @@ function ReviewGalaxyA35() {
               affiliateHref={GALAXY_A35_AFFILIATE_URL}
               comparisonHref="/comparativo-galaxy-a55-vs-galaxy-a35"
               comparisonLabel="Comparar Galaxy A35 e A55"
+            />
+            <AlternativeOffer
+              className="mt-6"
+              fromProductName="Galaxy A35"
+              productName="Galaxy A36 5G"
+              href={GALAXY_A36_AMAZON_URL}
+              reason="Na nossa checagem de outubro de 2026, o Galaxy A36 novo custava bem menos que o A35 e é a geração seguinte. Para a maioria das pessoas, ele é a compra mais sensata hoje."
+              reviewHref="/review/galaxy-a36-5g"
             />
           </section>
 

@@ -1,3 +1,4 @@
+import { storeLabelForUrl } from "@/lib/product-catalog";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { GALAXY_S24_AFFILIATE_URL, IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -213,7 +214,7 @@ const PROFILES = [
     ],
     productName: "Galaxy S24",
     affiliateHref: GALAXY_S24_AFFILIATE_URL,
-    cta: "Ver Galaxy S24 no Mercado Livre",
+    cta: "Ver Galaxy S24 na Amazon",
     accent: "teal" as const,
   },
 ];
@@ -663,7 +664,7 @@ function VersusPage() {
                 }
                 className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
               >
-                Ver Galaxy S24 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                Ver Galaxy S24 na Amazon <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
             <AffiliateRedirectNotice className="mt-4" />
@@ -700,7 +701,7 @@ function VersusPage() {
             }
             className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-3 py-2.5 text-xs font-semibold text-foreground"
           >
-            Galaxy S24 no Mercado Livre
+            Galaxy S24 na Amazon
           </a>
         </div>
       </div>
@@ -775,7 +776,7 @@ function OfferLine({
             : "border border-border bg-background text-foreground hover:bg-secondary"
         }`}
       >
-        Ver no Mercado Livre <ArrowUpRight className="h-3.5 w-3.5" />
+        Ver {storeLabelForUrl(affiliateHref)} <ArrowUpRight className="h-3.5 w-3.5" />
       </a>
     </div>
   );

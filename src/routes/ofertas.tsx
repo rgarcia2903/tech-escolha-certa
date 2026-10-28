@@ -7,7 +7,6 @@ import {
   GALAXY_A25_AFFILIATE_URL,
   GALAXY_A35_AFFILIATE_URL,
   GALAXY_A55_AFFILIATE_URL,
-  GALAXY_M35_AFFILIATE_URL,
   GALAXY_S24_AFFILIATE_URL,
   IPHONE_15_AFFILIATE_URL,
   POCO_X6_PRO_AFFILIATE_URL,
@@ -78,13 +77,6 @@ const budgetOffers = [
     summary: "Tela AMOLED, boa bateria e carregamento rápido para quem não faz questão de 5G.",
     caution: "Este modelo é 4G; escolha outra opção se o 5G for indispensável.",
     href: REDMI_NOTE_13_4G_AFFILIATE_URL,
-  },
-  {
-    name: "Samsung Galaxy M35 5G",
-    badge: "Alternativa para comparar",
-    summary: "Bateria de 6.000 mAh, tela AMOLED e 5G para quem passa mais tempo longe da tomada.",
-    caution: "É um aparelho mais pesado e vale mais quando estiver abaixo de R$ 1.500.",
-    href: GALAXY_M35_AFFILIATE_URL,
   },
 ];
 
@@ -191,7 +183,7 @@ const offers = [
     segment: "Premium",
     rating: 4.8,
     image: "/images/products/galaxy-s24-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
+    priceLabel: "Conferir preço na Amazon",
     description:
       "Combina desempenho de topo, boas câmeras, acabamento premium e suporte prolongado em um corpo compacto.",
     bestFor: "Quem quer uma experiência Android premium completa e prefere celular compacto.",

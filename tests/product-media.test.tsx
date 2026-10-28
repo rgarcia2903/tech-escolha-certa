@@ -112,7 +112,7 @@ test("visual cards retain both commercial destinations and do not activate evalu
     />,
   );
   assert.ok(html.includes('href="https://meli.la/33rVhq6"'));
-  assert.ok(html.includes('href="https://link.amazon/B0hrqiKuQ"'));
+  assert.ok(html.includes('href="https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20"'));
   assert.ok(html.includes("Variante a conferir na loja"));
   assert.ok(html.includes('rel="nofollow sponsored noopener noreferrer"'));
   const evaluation = renderToStaticMarkup(
@@ -124,6 +124,7 @@ test("visual cards retain both commercial destinations and do not activate evalu
   );
   assert.ok(!evaluation.includes("meli.la"));
   assert.ok(!evaluation.includes("link.amazon"));
+  assert.ok(!evaluation.includes("amazon.com.br/dp"));
 });
 test("all legacy JSX photo renderers use the central licensing gate", () => {
   for (const directory of ["src/routes", "src/components/site"]) {

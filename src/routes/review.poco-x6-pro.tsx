@@ -1,6 +1,7 @@
 import { getSocialImage } from "@/lib/product-media";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { POCO_X6_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { POCO_X7_PRO_AMAZON_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
@@ -168,6 +169,13 @@ function ReviewPocoX6Pro() {
       overallScore="8.9"
       verdictShort="Sim — o Poco X6 Pro compensa em 2026 se você quer potência, jogos, tela boa e carregamento rápido por um preço competitivo. Ele não é a melhor escolha para quem prioriza câmeras, acabamento premium ou atualizações mais previsíveis."
       affiliateHref={POCO_X6_PRO_AFFILIATE_URL}
+      alternative={{
+        productName: "Poco X7 Pro",
+        href: POCO_X7_PRO_AMAZON_URL,
+        reason:
+          "Na nossa checagem de outubro de 2026, o Poco X7 Pro novo estava mais barato que o X6 Pro e é a geração mais nova, com bateria maior. Se o X6 Pro não estiver claramente abaixo, prefira o X7 Pro.",
+        reviewHref: "/review/poco-x7-pro",
+      }}
       affiliate={{
         title: "Poco X6 Pro: confira a oferta antes de decidir",
         description:

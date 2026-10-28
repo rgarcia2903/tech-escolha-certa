@@ -3,6 +3,8 @@ import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_S24_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_S25_FE_AMAZON_URL } from "@/lib/affiliate-links";
+import { AlternativeOffer } from "@/components/site/AlternativeOffer";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -253,7 +255,7 @@ function ReviewPage() {
                 {
                   productName: "Galaxy S24",
                   href: GALAXY_S24_AFFILIATE_URL,
-                  label: "Ver Galaxy S24 no Mercado Livre",
+                  label: "Ver Galaxy S24 na Amazon",
                 },
               ]}
               pageType="review"
@@ -345,7 +347,7 @@ function ReviewPage() {
                 }
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
               >
-                Ver Galaxy S24 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                Ver Galaxy S24 na Amazon <ArrowUpRight className="h-4 w-4" />
               </a>
               <AffiliateRedirectNotice className="mt-3" />
               <Link
@@ -384,6 +386,14 @@ function ReviewPage() {
               affiliateHref={GALAXY_S24_AFFILIATE_URL}
               comparisonHref="/comparativo/iphone-15-vs-galaxy-s24"
               comparisonLabel="Comparar Galaxy S24 e iPhone 15"
+            />
+            <AlternativeOffer
+              className="mt-6"
+              fromProductName="Galaxy S24"
+              productName="Galaxy S25 FE"
+              href={GALAXY_S25_FE_AMAZON_URL}
+              reason="Na nossa checagem de outubro de 2026, o S24 novo estava bem mais caro que o Galaxy S25 FE, que é mais recente e tem bateria maior. Se você não faz questão do tamanho compacto do S24, o S25 FE é a escolha mais sensata."
+              reviewHref="/review/galaxy-s25-fe"
             />
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -700,7 +710,7 @@ function ReviewPage() {
                     }
                     className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                   >
-                    Ver Galaxy S24 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                    Ver Galaxy S24 na Amazon <ArrowUpRight className="h-4 w-4" />
                   </a>
                   <Link
                     to="/comparativo/iphone-15-vs-galaxy-s24"

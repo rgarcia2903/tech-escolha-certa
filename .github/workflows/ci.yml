@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Testes
+        run: set -o pipefail; npm test 2>&1 | tee test-output.txt
+      - name: Comentar falha dos testes no PR
+        if: failure() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          { echo '### Falha nos testes'; echo '```'; tail -n 80 test-output.txt; echo '```'; } > comentario.md
+          gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body-file comentario.md
+      # O build regenera src/routeTree.gen.ts; o tsc precisa vir depois.
+      - run: npm run build
+      - run: npx tsc --noEmit
+      - run: npm run check:links

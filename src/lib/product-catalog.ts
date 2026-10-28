@@ -456,9 +456,7 @@ export type Offer = {
 const ml: [string, string][] = [
   ["galaxy-a35", links.GALAXY_A35_AFFILIATE_URL],
   ["galaxy-a25-5g", links.GALAXY_A25_AFFILIATE_URL],
-  ["galaxy-m35-5g", links.GALAXY_M35_AFFILIATE_URL],
   ["galaxy-a55", links.GALAXY_A55_AFFILIATE_URL],
-  ["galaxy-s24", links.GALAXY_S24_AFFILIATE_URL],
   ["iphone-15", links.IPHONE_15_AFFILIATE_URL],
   ["poco-x6-pro", links.POCO_X6_PRO_AFFILIATE_URL],
   ["poco-x7-pro", links.POCO_X7_PRO_AFFILIATE_URL],
@@ -482,6 +480,9 @@ const amazon: [string, string][] = [
   ["edge-60-pro", links.EDGE_60_PRO_AMAZON_URL],
   ["galaxy-s25-fe", links.GALAXY_S25_FE_AMAZON_URL],
   ["redmi-note-14-pro-plus", links.REDMI_NOTE_14_PRO_PLUS_AMAZON_URL],
+  ["galaxy-s24", links.GALAXY_S24_AFFILIATE_URL],
+  ["poco-x7-pro", links.POCO_X7_PRO_AMAZON_URL],
+  ["galaxy-a57-5g", links.GALAXY_A57_AMAZON_URL],
 ];
 function offer(productId: string, store: Store, url: string, legacy = false): Offer {
   return {
@@ -499,7 +500,8 @@ function offer(productId: string, store: Store, url: string, legacy = false): Of
   };
 }
 export const OFFERS: Offer[] = [
-  ...ml.map(([id, url], index) => offer(id, "mercado_livre", url, index < 11)),
+  // Todos os destinos foram conferidos em 28/10/2026 (scripts/check-affiliate-links.mjs).
+  ...ml.map(([id, url]) => offer(id, "mercado_livre", url)),
   ...amazon.map(([id, url]) => offer(id, "amazon", url)),
 ];
 export function getProduct(id: string): Product | undefined {
@@ -520,6 +522,10 @@ export const STORE_LABELS: Record<Store, string> = {
   amazon: "Amazon",
   mercado_livre: "Mercado Livre",
 };
+/** Loja com preposição a partir do endereço do link: "na Amazon" ou "no Mercado Livre". */
+export function storeLabelForUrl(url: string): string {
+  return /amazon\.com\.br|link\.amazon|amzn\.to/.test(url) ? "na Amazon" : "no Mercado Livre";
+}
 export const AMAZON_DISCLOSURE =
   "Como participante do Programa de Associados da Amazon, sou remunerado pelas compras qualificadas efetuadas.";
 

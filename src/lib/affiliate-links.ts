@@ -1,18 +1,17 @@
-export const GALAXY_A35_AFFILIATE_URL = "https://meli.la/26WiZy6";
+export const GALAXY_A35_AFFILIATE_URL = "https://meli.la/1onGZVV";
 
 export const GALAXY_A25_AFFILIATE_URL = "https://meli.la/16gypcb";
 
-export const GALAXY_M35_AFFILIATE_URL = "https://meli.la/2C2R4iW";
-
 export const GALAXY_A55_AFFILIATE_URL = "https://meli.la/2NMinTZ";
 
-export const GALAXY_S24_AFFILIATE_URL = "https://meli.la/1jcBPte";
+// Sem oferta nova ativa no Mercado Livre em 28/10/2026: Galaxy S24 vendido pela Amazon.
+export const GALAXY_S24_AFFILIATE_URL = "https://www.amazon.com.br/dp/B0CQD9H9MG?tag=techescolha03-20";
 
 export const IPHONE_15_AFFILIATE_URL = "https://meli.la/2m3GhG6";
 
-export const POCO_X6_PRO_AFFILIATE_URL = "https://meli.la/12mgwo6";
+export const POCO_X6_PRO_AFFILIATE_URL = "https://meli.la/2hXCQMH";
 
-export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/1Gu5Lut";
+export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/1p5J4MW";
 
 export const REDMI_NOTE_13_PRO_AFFILIATE_URL = "https://meli.la/1dksoic";
 
@@ -25,7 +24,7 @@ export const REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL = "https://meli.la/1at28cv";
 // ou ofertas. O cadastro não confirma a atribuição de comissão.
 export const GALAXY_A17_AFFILIATE_URL = "https://meli.la/33rVhq6";
 
-export const REDMI_NOTE_15_5G_AFFILIATE_URL = "https://meli.la/1x3jBNo";
+export const REDMI_NOTE_15_5G_AFFILIATE_URL = "https://meli.la/19RXcbF";
 
 export const MOTO_G86_AFFILIATE_URL = "https://meli.la/2uZpELs";
 
@@ -40,17 +39,21 @@ export const MOTO_G56_AFFILIATE_URL = "https://meli.la/2WiqRMo";
 
 // Endereços originais gerados pelo usuário no programa Amazon Associados.
 // Não inferir ASIN, variante ou atribuição pelo código do encurtador.
-export const GALAXY_A17_AMAZON_URL = "https://link.amazon/B0hrqiKuQ";
-export const GALAXY_A36_AMAZON_URL = "https://link.amazon/B0cRCXn3S";
-export const REDMI_NOTE_15_5G_AMAZON_URL = "https://link.amazon/B0gQFVn5x";
+export const GALAXY_A17_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20";
+export const GALAXY_A36_AMAZON_URL = "https://www.amazon.com.br/dp/B0DYVNRG3B?tag=techescolha03-20";
+export const REDMI_NOTE_15_5G_AMAZON_URL = "https://www.amazon.com.br/dp/B0G2BFZRGL?tag=techescolha03-20";
 export const MOTO_G56_AMAZON_URL = "https://link.amazon/B0ewfAqbv";
 export const MOTO_G86_AMAZON_URL = "https://link.amazon/B03tWVgr1";
 export const EDGE_60_PRO_AMAZON_URL = "https://link.amazon/B09Sm06fg";
 export const GALAXY_S25_FE_AMAZON_URL = "https://link.amazon/B03cMVNVL";
-export const REDMI_NOTE_14_PRO_PLUS_AMAZON_URL = "https://link.amazon/B0faslcvM";
+export const REDMI_NOTE_14_PRO_PLUS_AMAZON_URL = "https://www.amazon.com.br/dp/B0DSQZX1C5?tag=techescolha03-20";
 
 // Compatibilidade com os nomes usados no PR #43; sem novas ofertas ou URLs.
 export const GALAXY_A17_5G_AFFILIATE_URL = GALAXY_A17_AFFILIATE_URL;
 export const GALAXY_A36_5G_AFFILIATE_URL = GALAXY_A36_AFFILIATE_URL;
 export const MOTO_G56_5G_AFFILIATE_URL = MOTO_G56_AFFILIATE_URL;
 export const MOTO_G86_5G_AFFILIATE_URL = MOTO_G86_AFFILIATE_URL;
+
+// Alternativas recomendadas nos reviews de modelos fora de linha ou caros (28/10/2026).
+export const POCO_X7_PRO_AMAZON_URL = "https://www.amazon.com.br/dp/B0DRD1SBSD?tag=techescolha03-20";
+export const GALAXY_A57_AMAZON_URL = "https://www.amazon.com.br/dp/B0GVSVS9WH?tag=techescolha03-20";
