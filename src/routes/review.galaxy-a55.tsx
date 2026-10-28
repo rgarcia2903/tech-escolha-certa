@@ -1,3 +1,4 @@
+import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -11,12 +12,12 @@ import { trackAffiliateClick } from "@/lib/analytics";
 import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { GALAXY_A57_AMAZON_URL } from "@/lib/affiliate-links";
 import { AlternativeOffer } from "@/components/site/AlternativeOffer";
+import { FairPriceBox } from "@/components/site/FairPriceBox";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a55";
 
-const PAGE_TITLE = "Galaxy A55 vale a pena em 2026? Veja o veredito";
-const PAGE_DESCRIPTION =
-  "O Galaxy A55 ainda vale a pena em 2026? Veja o veredito, seus principais problemas e quando escolher o A35, o Poco X6 Pro ou um Galaxy mais novo.";
+const PAGE_TITLE = fairPriceTitle("galaxy-a55");
+const PAGE_DESCRIPTION = fairPriceDescription("galaxy-a55");
 
 export const Route = createFileRoute("/review/galaxy-a55")({
   head: () => ({
@@ -211,6 +212,7 @@ function ReviewGalaxyA55() {
               comparisonHref="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
               comparisonLabel="Comparar Galaxy A55 e Redmi"
             />
+            <FairPriceBox id="galaxy-a55" className="mt-6" />
             <AlternativeOffer
               className="mt-6"
               fromProductName="Galaxy A55"

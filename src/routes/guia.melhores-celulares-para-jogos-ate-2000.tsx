@@ -31,9 +31,9 @@ import { Badge } from "@/components/site/ui";
 
 const CANONICAL = "https://techescolhacerta.com.br/guia/melhores-celulares-para-jogos-ate-2000";
 
-const PAGE_TITLE = "Melhor celular para jogos até R$ 2.000 em 2026: ranking";
+const PAGE_TITLE = "Melhor celular para jogos até R$ 2.000 em 2026: top 3 e qual comprar";
 const PAGE_DESCRIPTION =
-  "Compare candidatos para jogos com preço a conferir no teto desejado. Compare POCO X6 Pro, Moto G86 e Redmi Note 15 5G antes de comprar.";
+  "Moto G86, Redmi Note 15 5G ou POCO X6 Pro? Ranking de 2026 por desempenho em jogos, tela e bateria, com o veredito de cada um e onde comprar.";
 
 export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-2000")({
   head: () => ({

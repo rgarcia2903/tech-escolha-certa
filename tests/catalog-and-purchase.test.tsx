@@ -267,3 +267,16 @@ test("PR #43 candidates remain shared while evaluation models stay unapproved", 
     assert.equal(getProduct(id)?.editorialStatus, "evaluate");
   for (const id of ids) assert.equal(fitsVerifiedBudget(id, 1500), false);
 });
+
+test("fair prices point to a real offer of the alternative and keep titles short", async () => {
+  const { FAIR_PRICES, fairPriceTitle, fairPriceDescription } = await import("../src/lib/fair-prices");
+  for (const [id, fp] of Object.entries(FAIR_PRICES)) {
+    const offer = getOfferByUrl(fp.alternativeHref);
+    assert.ok(offer, `alternativa sem oferta no catálogo: ${id}`);
+    assert.ok(fp.maxPrice < fp.alternativeSeenPrice, `teto acima do preço da alternativa: ${id}`);
+    const title = fairPriceTitle(id as keyof typeof FAIR_PRICES);
+    assert.ok(title.length <= 65, `título longo (${title.length}): ${title}`);
+    assert.ok(title.includes("R$"), title);
+    assert.ok(fairPriceDescription(id as keyof typeof FAIR_PRICES).length <= 200);
+  }
+});

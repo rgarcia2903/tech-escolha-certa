@@ -1,3 +1,4 @@
+import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
@@ -5,6 +6,7 @@ import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_S24_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { GALAXY_S25_FE_AMAZON_URL } from "@/lib/affiliate-links";
 import { AlternativeOffer } from "@/components/site/AlternativeOffer";
+import { FairPriceBox } from "@/components/site/FairPriceBox";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -37,9 +39,8 @@ import { Badge, Rating } from "@/components/site/ui";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-s24";
 const HERO_IMG = "https://techescolhacerta.com.br/images/products/galaxy-s24-optimized.webp";
-const PAGE_TITLE = "Galaxy S24 vale a pena em 2026? Veja o veredito";
-const PAGE_DESCRIPTION =
-  "O Galaxy S24 ainda vale a pena em 2026? Veja problemas, bateria, câmeras, Galaxy AI e quando comparar com o iPhone 15 antes de comprar.";
+const PAGE_TITLE = fairPriceTitle("galaxy-s24");
+const PAGE_DESCRIPTION = fairPriceDescription("galaxy-s24");
 
 export const Route = createFileRoute("/review/galaxy-s24")({
   head: () => ({
@@ -387,6 +388,7 @@ function ReviewPage() {
               comparisonHref="/comparativo/iphone-15-vs-galaxy-s24"
               comparisonLabel="Comparar Galaxy S24 e iPhone 15"
             />
+            <FairPriceBox id="galaxy-s24" className="mt-6" />
             <AlternativeOffer
               className="mt-6"
               fromProductName="Galaxy S24"
