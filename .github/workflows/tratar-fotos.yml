@@ -1,11 +1,8 @@
 name: Tratar fotos licenciadas (fundo branco)
 
 # Busca fotos livres adicionais no Commons e gera versões com fundo branco para revisão.
-# Não altera o site: grava em docs/ na própria branch.
+# Não altera o site: grava em docs/ na branch em que for executado (nunca rodar na main).
 on:
-  push:
-    branches: [feat/fotos-estudio]
-    paths: [.github/workflows/tratar-fotos.yml, scripts/studio_photos.py]
   workflow_dispatch:
 
 permissions:
@@ -13,7 +10,6 @@ permissions:
 
 jobs:
   tratar:
-    if: github.ref == 'refs/heads/feat/fotos-estudio'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -68,4 +64,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/studio docs/photo-search2
           git commit -m "Versões com fundo branco para revisão" || exit 0
-          git push origin HEAD:feat/fotos-estudio
+          git push origin HEAD:${{ github.ref_name }}

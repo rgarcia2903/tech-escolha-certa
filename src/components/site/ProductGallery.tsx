@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Expand, Smartphone, X } from "lucide-react";
 import { getApprovedPhoto } from "@/lib/product-media";
 import { PILOT_GALLERIES } from "@/lib/pilot-galleries";
 
@@ -44,8 +44,17 @@ export function ProductGallery({
 
   if (!current) {
     return (
-      <section aria-label={`Galeria de ${productName}`} className="rounded-2xl bg-white p-5 text-center text-slate-600">
-        Fotos do aparelho serão adicionadas nesta análise.
+      <section
+        aria-label={`Galeria de ${productName}`}
+        className="flex flex-col items-center justify-center gap-2 rounded-2xl bg-white px-5 py-8 text-center"
+      >
+        <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[#0F3F4A]/5 text-[#0F3F4A]">
+          <Smartphone className="h-8 w-8" aria-hidden="true" />
+        </span>
+        <span className="text-base font-bold text-[#0F3F4A]">{productName}</span>
+        <span className="max-w-64 text-xs leading-5 text-slate-600">
+          Veja as fotos oficiais e as cores disponíveis no anúncio da loja.
+        </span>
       </section>
     );
   }
