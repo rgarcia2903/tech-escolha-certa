@@ -40,18 +40,18 @@
     "kind": "photograph",
     "status": "approved",
     "src": "/images/products/licensed/edge-60-pro.webp",
-    "width": 466,
-    "height": 960,
+    "width": 720,
+    "height": 900,
     "alt": "Motorola Edge 60 Pro fotografado",
     "author": "Meniirtjakarintan (recorte: Modular science)",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Motorola_Edge_60_Pro_(cropped).jpg",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "permissionEvidence": "Fonte, autoria e CC BY-SA 4.0 confirmadas no Commons, revisão 1255533206. Original importado pelo GitHub Actions run 39286732434, commit 5a4c0be. SHA-1 coincide com o publicado na fonte; JPEG validado e inspecionado visualmente. Correspondência de modelo confirmada; a foto não comprova variante comercial do anúncio.",
-    "reviewedBy": "Codex — inspeção visual e validação técnica nesta execução",
-    "reviewedAt": "2026-10-19",
+    "reviewedBy": "Claude — inspeção visual e validação técnica nesta execução",
+    "reviewedAt": "2026-10-28",
     "originalSha256": "798c14af3cf006248371997e2200258bbe2e9c45f85e175d63edd538e738bffb",
-    "sha256": "df489675c5dd38723464bf60ca1f0ad0b657e82ae2e998e4a59e722544ab0b7f",
-    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
+    "sha256": "0b474e7a5ec99d673db58abd499f581f8888654829a95086ab5c3d63344467f7",
+    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0. Fundo removido automaticamente e substituído por branco, aparelho recortado e centralizado (28/10/2026)."
   },
   {
     "productId": "galaxy-a17-5g",
@@ -59,17 +59,17 @@
     "status": "approved",
     "src": "/images/products/licensed/galaxy-a17-5g.webp",
     "width": 720,
-    "height": 960,
+    "height": 900,
     "alt": "Samsung Galaxy A17 5G fotografado em loja",
     "author": "Captainmorlypogi1959",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A17_5G_2026_(4).jpg",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "permissionEvidence": "Commons revisão 1188192752: Captainmorlypogi1959, CC BY-SA 4.0. Original obtido pelo GitHub Actions run 39288690168, commit bb2cbac. SHA-1 463678a590710bc6d4ef2155b6d6b0adea7349b0 coincide com a fonte. JPEG verificado e decodificado; inspeção visual confirma texto Galaxy A17 5G na tela do aparelho. EXIF 6 aplicado. Foto de expositor estrangeiro: preços fotografados não são ofertas atuais do site e não comprovam variante comercial.",
-    "reviewedBy": "Codex — inspeção visual e validação técnica nesta execução",
-    "reviewedAt": "2026-10-19",
+    "reviewedBy": "Claude — inspeção visual e validação técnica nesta execução",
+    "reviewedAt": "2026-10-28",
     "originalSha256": "ddfcb2306523d7b88f48ada126e422dce5a58e8c3ce971537023413183311b33",
-    "sha256": "aee11a2f2314c044d5b2ed487b77ae2b17574346eb11ee5e1e7943cc68a22d26",
-    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0."
+    "sha256": "4e1a14ca87b2b0e129f69ebce5c173b27f00abb7be4cf85a0cb20ae10dd09ccc",
+    "changes": "Orientação EXIF aplicada; redimensionada e convertida para WebP. Derivado sob CC BY-SA 4.0. Fundo removido automaticamente e substituído por branco, aparelho recortado e centralizado (28/10/2026)."
   },
   {
     "productId": "galaxy-a55",
@@ -77,7 +77,7 @@
     "status": "approved",
     "src": "/images/products/licensed/galaxy-a55.webp",
     "width": 720,
-    "height": 962,
+    "height": 900,
     "alt": "Samsung Galaxy A55 5G em expositor de loja, com o nome do modelo na tela",
     "author": "Captainmorlypogi1959",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A55_5G_2024.jpg",
@@ -86,8 +86,8 @@
     "reviewedBy": "Claude — inspeção visual e validação técnica nesta execução",
     "reviewedAt": "2026-10-28",
     "originalSha256": "a2893d39ab2940ace5efd2b987af4234423b6a21c1e08bc25046905c9eebf037",
-    "sha256": "d56d1c28f83aca6dd87e0d8fef68f31f31566e8b8e456c7e3a3377eef401f757",
-    "changes": "Renderização de 1200 px do Commons, orientação EXIF aplicada, redimensionada para 720 px e convertida para WebP. Derivado sob CC BY-SA 4.0."
+    "sha256": "8a361f70319c5ff32a8348b737de5a6efae79f13f877a65a6e0cf674a7097a71",
+    "changes": "Renderização de 1200 px do Commons, orientação EXIF aplicada, redimensionada para 720 px e convertida para WebP. Derivado sob CC BY-SA 4.0. Fundo removido automaticamente e substituído por branco, aparelho recortado e centralizado (28/10/2026)."
   },
   {
     "productId": "galaxy-a35",
@@ -95,7 +95,7 @@
     "status": "approved",
     "src": "/images/products/licensed/galaxy-a35.webp",
     "width": 720,
-    "height": 962,
+    "height": 900,
     "alt": "Samsung Galaxy A35 5G em expositor de loja, com o nome do modelo na tela",
     "author": "Captainmorlypogi1959",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A35_5G_2024_(1).jpg",
@@ -104,8 +104,8 @@
     "reviewedBy": "Claude — inspeção visual e validação técnica nesta execução",
     "reviewedAt": "2026-10-28",
     "originalSha256": "470dc7797939408b927f38030367b9041a73c4797a7f0ad2bba395f67c675ec3",
-    "sha256": "d97f5b1a22693dde0ae6ada5edb0059e8172495d731bd676df65ff5e2213de98",
-    "changes": "Renderização de 1200 px do Commons, orientação EXIF aplicada, redimensionada para 720 px e convertida para WebP. Derivado sob CC BY-SA 4.0."
+    "sha256": "b7079a6e26a0a7328d66bfc1a467081560e17a0fcfdb46c31d526432df1a2f5a",
+    "changes": "Renderização de 1200 px do Commons, orientação EXIF aplicada, redimensionada para 720 px e convertida para WebP. Derivado sob CC BY-SA 4.0. Fundo removido automaticamente e substituído por branco, aparelho recortado e centralizado (28/10/2026)."
   },
   {
     "productId": "galaxy-s24",
@@ -113,7 +113,7 @@
     "status": "approved",
     "src": "/images/products/licensed/galaxy-s24.webp",
     "width": 720,
-    "height": 960,
+    "height": 900,
     "alt": "Samsung Galaxy S24 em expositor de loja, com o nome do modelo na tela",
     "author": "Ganesh Mohan T",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S24_01.jpg",
@@ -122,7 +122,25 @@
     "reviewedBy": "Claude — inspeção visual e validação técnica nesta execução",
     "reviewedAt": "2026-10-28",
     "originalSha256": "88751b8c8a9cab2c06f3f36658364ed8702c1a303df5f4b42ad85dcf49c4506e",
-    "sha256": "44ea4ab2c470adcddecf77045503796aca82c1ef6bfa2b4f87070a7caf33e93c",
-    "changes": "Renderização de 1200 px do Commons, orientação EXIF aplicada, redimensionada para 720 px e convertida para WebP. Derivado sob CC BY-SA 4.0."
+    "sha256": "ad94bd3644fd11f0fd8cead3c6976e37df282501dfbc1268e756a91069a80f70",
+    "changes": "Renderização de 1200 px do Commons, orientação EXIF aplicada, redimensionada para 720 px e convertida para WebP. Derivado sob CC BY-SA 4.0. Fundo removido automaticamente e substituído por branco, aparelho recortado e centralizado (28/10/2026)."
+  },
+  {
+    "productId": "galaxy-a57-5g",
+    "kind": "photograph",
+    "status": "approved",
+    "src": "/images/products/licensed/galaxy-a57-5g.webp",
+    "width": 720,
+    "height": 900,
+    "alt": "Samsung Galaxy A57 5G, com o nome do modelo na tela",
+    "author": "OGCWiki",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A57_5G.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "permissionEvidence": "Commons: OGCWiki, CC BY-SA 4.0 (consultado em 28/10/2026 pela API do Commons). Arquivo original SHA-1 a4ca33fe336cabca643b4031f788421731c4098d (4592x8160); renderização de 1200 px obtida pelo GitHub Actions. Inspeção visual confirma \"Galaxy A57 5G\" na tela.",
+    "reviewedBy": "Claude — inspeção visual e validação técnica nesta execução",
+    "reviewedAt": "2026-10-28",
+    "originalSha256": "2bec633d5981bb84a89ecbaf198960bd2e010344014810b7fff0c456ada979d4",
+    "sha256": "07d09212f88e7db95ae56f439f800dfc586f25fb42ccbcf6c9b5c34b757d7824",
+    "changes": "Renderização de 1200 px do Commons; redimensionada e convertida para WebP. Fundo removido automaticamente e substituído por branco, aparelho recortado e centralizado (28/10/2026). Derivado sob CC BY-SA 4.0."
   }
 ]

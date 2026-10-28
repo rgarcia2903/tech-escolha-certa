@@ -1,0 +1,67 @@
+name: Tratar fotos licenciadas (fundo branco)
+
+# Busca fotos livres adicionais no Commons e gera versões com fundo branco para revisão.
+# Não altera o site: grava em docs/ na branch em que for executado (nunca rodar na main).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tratar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q "rembg[cpu]" pillow scipy numpy
+      - name: Buscar fotos livres dos modelos sem imagem
+        if: hashFiles('docs/photo-search2/results.json') == ''
+        run: |
+          python3 - <<'PY'
+          import json, time, re, urllib.request, urllib.parse
+          from pathlib import Path
+          UA = {"User-Agent": "TechEscolhaCerta/1.0 (https://techescolhacerta.com.br; busca de fotos licenciadas)"}
+          WANT = {
+            "poco-x7-pro": (["Poco X7 Pro", "Xiaomi Poco X7 Pro"], ["x7 pro"]),
+            "galaxy-a57-5g": (["Samsung Galaxy A57"], ["a57"]),
+            "redmi-note-13-pro": (["Redmi Note 13 Pro", "Xiaomi Redmi Note 13 Pro 5G"], ["note 13 pro"]),
+            "poco-x6-pro": (["Poco X6 Pro", "POCO X6 Pro 5G"], ["x6 pro"]),
+          }
+          OK = re.compile(r"^CC BY-SA 4\.0$")
+          def get(u):
+              with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60) as r: return r.read()
+          found = {}
+          for pid, (qs, must) in WANT.items():
+              seen, keep = set(), []
+              for q in qs:
+                  p = {"action":"query","generator":"search","gsrnamespace":"6","gsrlimit":"40","gsrsearch":q,"prop":"imageinfo","iiprop":"url|size|extmetadata|sha1|mime","format":"json"}
+                  data = json.loads(get("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(p)))
+                  for pg in (data.get("query", {}).get("pages", {}) or {}).values():
+                      t = pg["title"]
+                      if t in seen or not all(m in t.lower() for m in must): continue
+                      seen.add(t); i = pg["imageinfo"][0]; m = i.get("extmetadata", {})
+                      lic = (m.get("LicenseShortName") or {}).get("value", "")
+                      if i["mime"] != "image/jpeg" or not OK.match(lic): continue
+                      keep.append({"title": t, "license": lic, "artist": re.sub(r"<[^>]+>", "", (m.get("Artist") or {}).get("value", "")).strip(), "sha1": i["sha1"], "width": i["width"], "height": i["height"], "descriptionUrl": i["descriptionurl"]})
+                  time.sleep(1)
+              d = Path(f"docs/photo-search2/{pid}"); d.mkdir(parents=True, exist_ok=True)
+              for n, c in enumerate(keep[:4], 1):
+                  b = get("https://commons.wikimedia.org/w/thumb.php?" + urllib.parse.urlencode({"f": c["title"].split(":", 1)[1], "w": "1200"}))
+                  (d / f"{n:02d}.jpg").write_bytes(b); c["file"] = str(d / f"{n:02d}.jpg"); time.sleep(1)
+              found[pid] = keep[:4]
+              print(pid, len(keep), "fotos com o modelo no título e CC BY-SA 4.0")
+          Path("docs/photo-search2/results.json").write_text(json.dumps(found, ensure_ascii=False, indent=1))
+          PY
+      - name: Remover fundo e centralizar em branco
+        run: python3 scripts/studio_photos.py
+      - name: Salvar para revisão
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/studio docs/photo-search2
+          git commit -m "Versões com fundo branco para revisão" || exit 0
+          git push origin HEAD:${{ github.ref_name }}
