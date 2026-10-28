@@ -7,6 +7,8 @@ import { Link } from "@tanstack/react-router";
 import { AlertTriangle, ArrowUpRight } from "lucide-react";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
 import { AlternativeOffer } from "@/components/site/AlternativeOffer";
+import { FairPriceBox } from "@/components/site/FairPriceBox";
+import type { FairPriceId } from "@/lib/fair-prices";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { AuthorByline } from "@/components/site/AuthorByline";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
@@ -63,6 +65,8 @@ export type ReviewTemplateProps = {
     label: string;
     to: string;
   }[];
+  /** Teto de preço editorial (src/lib/fair-prices.ts). */
+  fairPriceId?: FairPriceId;
   /** Sucessor ou concorrente que é a compra mais sensata hoje (modelo fora de linha ou caro). */
   alternative?: {
     productName: string;
@@ -99,6 +103,7 @@ export function ReviewTemplate({
   faq,
   relatedLinks = [],
   alternative,
+  fairPriceId,
 }: ReviewTemplateProps) {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
@@ -206,6 +211,11 @@ export function ReviewTemplate({
             pageType="review"
             placement="after_verdict"
           />
+        </div>
+      )}
+      {fairPriceId && (
+        <div className="container-tec py-4">
+          <FairPriceBox id={fairPriceId} />
         </div>
       )}
       {alternative && (

@@ -1,3 +1,4 @@
+import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
@@ -5,6 +6,7 @@ import { ReviewContext } from "@/components/site/ReviewContext";
 import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { GALAXY_A36_AMAZON_URL } from "@/lib/affiliate-links";
 import { AlternativeOffer } from "@/components/site/AlternativeOffer";
+import { FairPriceBox } from "@/components/site/FairPriceBox";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
@@ -15,9 +17,8 @@ import { trackAffiliateClick } from "@/lib/analytics";
 
 const CANONICAL = "https://techescolhacerta.com.br/review/galaxy-a35";
 const HERO_IMG = "https://techescolhacerta.com.br/images/products/galaxy-a35-optimized.webp";
-const PAGE_TITLE = "Galaxy A35 5G vale a pena em 2026? Veja o veredito";
-const PAGE_DESCRIPTION =
-  "O Galaxy A35 5G ainda vale a pena em 2026? Veja o veredito, os principais problemas e quando escolher Galaxy A55 ou Redmi Note 13 Pro.";
+const PAGE_TITLE = fairPriceTitle("galaxy-a35");
+const PAGE_DESCRIPTION = fairPriceDescription("galaxy-a35");
 
 export const Route = createFileRoute("/review/galaxy-a35")({
   head: () => ({
@@ -207,6 +208,7 @@ function ReviewGalaxyA35() {
               comparisonHref="/comparativo-galaxy-a55-vs-galaxy-a35"
               comparisonLabel="Comparar Galaxy A35 e A55"
             />
+            <FairPriceBox id="galaxy-a35" className="mt-6" />
             <AlternativeOffer
               className="mt-6"
               fromProductName="Galaxy A35"

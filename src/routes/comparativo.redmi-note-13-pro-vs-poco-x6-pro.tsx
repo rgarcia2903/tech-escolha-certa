@@ -1,3 +1,4 @@
+import { FairPriceBox } from "@/components/site/FairPriceBox";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { POCO_X6_PRO_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -32,7 +33,7 @@ const CANONICAL = "https://techescolhacerta.com.br/comparativo/redmi-note-13-pro
 const HERO_IMAGE = "https://techescolhacerta.com.br/images/products/poco-x6-pro-optimized.webp";
 const PAGE_TITLE = "Redmi Note 13 Pro vs Poco X6 Pro: qual comprar em 2026?";
 const PAGE_DESCRIPTION =
-  "Poco X6 Pro é melhor para jogos; Redmi Note 13 Pro vence em câmera. Compare desempenho, preço e diferenças para escolher o melhor Xiaomi em 2026.";
+  "Poco X6 Pro para jogos, Redmi Note 13 Pro para câmera. Mas hoje o Poco X7 Pro novo pode sair mais em conta que os dois: veja o veredito e até quanto vale pagar por cada um.";
 
 export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-poco-x6-pro")({
   head: () => ({
@@ -440,6 +441,11 @@ function ComparisonPage() {
                 />
               </div>
             </div>
+          </section>
+
+          <section id="preco-justo" aria-label="Preço justo" className="grid gap-4 md:grid-cols-2">
+            <FairPriceBox id="redmi-note-13-pro" pageType="comparativo" />
+            <FairPriceBox id="poco-x6-pro" pageType="comparativo" />
           </section>
 
           <section id="placar" className="scroll-mt-24">

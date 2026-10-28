@@ -1,3 +1,4 @@
+import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { POCO_X6_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -8,9 +9,8 @@ import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 const CANONICAL = "https" + "://techescolhacerta.com.br/review/poco-x6-pro";
 const HERO_IMAGE = "https://techescolhacerta.com.br/images/products/poco-x6-pro-optimized.webp";
 
-const PAGE_TITLE = "Poco X6 Pro ainda vale a pena em 2026? Review e problemas";
-const PAGE_DESCRIPTION =
-  "Sim, o Poco X6 Pro ainda vale a pena para jogos se estiver mais barato que o X7 Pro. Veja desempenho, problemas, câmeras e o preço antes de comprar.";
+const PAGE_TITLE = fairPriceTitle("poco-x6-pro");
+const PAGE_DESCRIPTION = fairPriceDescription("poco-x6-pro");
 
 const PROS = [
   "Desempenho muito forte para a categoria",
@@ -169,6 +169,7 @@ function ReviewPocoX6Pro() {
       overallScore="8.9"
       verdictShort="Sim — o Poco X6 Pro compensa em 2026 se você quer potência, jogos, tela boa e carregamento rápido por um preço competitivo. Ele não é a melhor escolha para quem prioriza câmeras, acabamento premium ou atualizações mais previsíveis."
       affiliateHref={POCO_X6_PRO_AFFILIATE_URL}
+      fairPriceId="poco-x6-pro"
       alternative={{
         productName: "Poco X7 Pro",
         href: POCO_X7_PRO_AMAZON_URL,

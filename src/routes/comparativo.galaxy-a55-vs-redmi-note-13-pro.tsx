@@ -1,3 +1,4 @@
+import { FairPriceBox } from "@/components/site/FairPriceBox";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { GALAXY_A55_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -35,12 +36,12 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-redmi-note-13-p
   head: () => ({
     meta: [
       {
-        title: "Galaxy A55 vs Redmi Note 13 Pro: qual vale mais a pena em 2026?",
+        title: "Galaxy A55 vs Redmi Note 13 Pro em 2026: qual comprar?",
       },
       {
         name: "description",
         content:
-          "Galaxy A55 vs Redmi Note 13 Pro: comparativo completo de câmera, tela, desempenho, bateria, construção, custo-benefício e recomendação de compra em 2026.",
+          "Galaxy A55 vence em atualizações e resistência; o Redmi Note 13 Pro, em câmera e carga rápida. Veja o veredito e até quanto vale pagar por cada um, já que ambos são de 2024.",
       },
       {
         name: "keywords",
@@ -49,7 +50,7 @@ export const Route = createFileRoute("/comparativo/galaxy-a55-vs-redmi-note-13-p
       },
       {
         property: "og:title",
-        content: "Galaxy A55 vs Redmi Note 13 Pro: qual vale mais a pena em 2026?",
+        content: "Galaxy A55 vs Redmi Note 13 Pro em 2026: qual comprar?",
       },
       {
         property: "og:description",
@@ -227,7 +228,7 @@ function ComparisonPage() {
             </div>
 
             <h1 className="mt-4 font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-foreground text-balance">
-              Galaxy A55 vs Redmi Note 13 Pro: qual vale mais a pena em 2026?
+              Galaxy A55 vs Redmi Note 13 Pro em 2026: qual comprar?
             </h1>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
@@ -366,6 +367,11 @@ function ComparisonPage() {
                 />
               </div>
             </div>
+          </section>
+
+          <section id="preco-justo" aria-label="Preço justo" className="grid gap-4 md:grid-cols-2">
+            <FairPriceBox id="galaxy-a55" pageType="comparativo" />
+            <FairPriceBox id="redmi-note-13-pro" pageType="comparativo" />
           </section>
 
           <section id="placar" className="scroll-mt-24">

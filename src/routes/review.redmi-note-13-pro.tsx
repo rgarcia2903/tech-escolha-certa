@@ -1,3 +1,4 @@
+import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
@@ -9,9 +10,8 @@ const CANONICAL = "https" + "://techescolhacerta.com.br/review/redmi-note-13-pro
 const HERO_IMAGE =
   "https://techescolhacerta.com.br/images/products/redmi-note-13-pro-optimized.webp";
 
-const PAGE_TITLE = "Redmi Note 13 Pro 5G vale a pena em 2026? Review e problemas";
-const PAGE_DESCRIPTION =
-  "Sim, o Redmi Note 13 Pro 5G ainda vale a pena pelo conjunto de tela, câmera e carga rápida. Veja problemas, versão correta e preço antes de comprar.";
+const PAGE_TITLE = fairPriceTitle("redmi-note-13-pro");
+const PAGE_DESCRIPTION = fairPriceDescription("redmi-note-13-pro");
 
 const PROS = [
   "Tela AMOLED de alta qualidade com ótima fluidez",
@@ -162,6 +162,7 @@ function ReviewRedmiNote13Pro() {
       overallScore="9.0"
       verdictShort="Sim — o Redmi Note 13 Pro 5G vale a pena em 2026 se você quer tela excelente, desempenho forte, carregamento rápido e boa ficha técnica sem pagar preço de topo de linha. Ele só não é a melhor escolha para quem prioriza software mais limpo, suporte mais previsível e câmeras mais consistentes à noite."
       affiliateHref={REDMI_NOTE_13_PRO_AFFILIATE_URL}
+      fairPriceId="redmi-note-13-pro"
       alternative={{
         productName: "Redmi Note 15 5G",
         href: REDMI_NOTE_15_5G_AMAZON_URL,
