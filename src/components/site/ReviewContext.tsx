@@ -1,27 +1,33 @@
 import { Link } from "@tanstack/react-router";
 import { getProduct } from "@/lib/product-catalog";
+
+/**
+ * Transparência em uma linha: o método fica disponível sem competir com o veredito
+ * e o botão de compra. O texto completo abre ao clicar.
+ */
 export function ReviewContext({ productId }: { productId: string }) {
   const product = getProduct(productId);
   if (!product) return null;
   return (
-    <aside className="container-tec my-6" aria-label="Contexto editorial da análise">
-      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
-        <p>
-          <strong>Análise documental · revisão de contexto em outubro de 2026.</strong> Esta página
-          preserva a análise de {product.name}. Sem teste próprio documentado, observações são
-          avaliações editoriais, não medições do site.
+    <aside className="container-tec my-4" aria-label="Contexto editorial da análise">
+      <details className="group rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs leading-5 text-slate-600">
+        <summary className="cursor-pointer list-none font-semibold text-[#0F3F4A]">
+          Análise documental · revisada em outubro de 2026 ·{" "}
+          <span className="underline group-open:no-underline">como avaliamos</span>
+        </summary>
+        <p className="mt-2">
+          Esta página analisa o {product.name} com base em ficha técnica, fontes públicas e
+          comparação com alternativas. Não fizemos teste de laboratório próprio; as observações são
+          avaliações editoriais.
         </p>
         <p className="mt-2">
-          {product.caution} As conclusões são editoriais, não avaliações de compradores ou
-          resultados de laboratório. Não há preço ou estoque atual verificado.
+          {product.caution} Preço e estoque mudam com frequência: confira o valor final e a versão
+          (memória e 4G/5G) na loja antes de comprar.
         </p>
-        <Link
-          to="/melhores-celulares-custo-beneficio"
-          className="mt-2 inline-block font-semibold underline"
-        >
-          Compare também os candidatos da seleção atual
+        <Link to="/como-avaliamos" className="mt-2 inline-block font-semibold underline">
+          Ver o método completo
         </Link>
-      </div>
+      </details>
     </aside>
   );
 }

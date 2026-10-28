@@ -2,7 +2,7 @@ import { getProduct, getOffers, type Product } from "./product-catalog";
 
 export const EDITORIAL_REVIEW_DATE = "2026-10-16";
 export const PRICE_UNCONFIRMED_NOTICE =
-  "Não há preços atuais verificados pelo site. Os modelos abaixo são candidatos para comparar, não ofertas confirmadas dentro do orçamento. Confira o total na loja antes de escolher.";
+  "Preços mudam todo dia: confira o valor final na loja antes de comprar.";
 export const BUDGETS = [
   { id: "ate-1500", label: "Até R$ 1.500", ceiling: 1500 },
   { id: "ate-2000", label: "Até R$ 2.000", ceiling: 2000 },

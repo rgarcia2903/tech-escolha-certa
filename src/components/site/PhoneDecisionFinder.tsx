@@ -94,8 +94,8 @@ export function PhoneDecisionFinder({
         </p>
         <h2 className="mt-3 text-3xl font-bold text-white">Compare celulares pelo seu perfil</h2>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-200">
-          Escolha um orçamento de referência e a prioridade. Apresentamos candidatos para pesquisar;
-          sem preço verificado, nenhum deles é garantido dentro do teto selecionado.
+          Escolha o orçamento e o que mais importa para você. Mostramos os modelos que fazem mais
+          sentido nesse perfil, com o link para conferir o preço de hoje.
         </p>
         <div className="mt-7 grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="rounded-3xl bg-white p-6 text-slate-900">
