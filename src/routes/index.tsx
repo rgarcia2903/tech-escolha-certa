@@ -93,6 +93,16 @@ function HomePage() {
     <main className="min-h-screen bg-[#F5F7FA] text-slate-900">
       <StorefrontHero />
 
+      <div className="container-tec pt-6">
+        <Link
+          to="/black-friday-celulares"
+          className="flex flex-col gap-1 rounded-2xl bg-[#0F3F4A] px-5 py-4 text-white shadow-sm transition hover:brightness-110 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <span className="font-bold">Black Friday: veja quanto cada celular custava antes da data</span>
+          <span className="text-sm text-slate-200 underline">Evite desconto falso →</span>
+        </Link>
+      </div>
+
       <EditorialSelection
         productIds={STOREFRONT_PRODUCT_IDS}
         pageType="home"

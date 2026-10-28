@@ -281,3 +281,17 @@ test("fair prices point to a real offer of the alternative and keep titles short
     assert.ok(fairPriceDescription(id as keyof typeof FAIR_PRICES).length <= 200);
   }
 });
+
+test("Black Friday reference prices point to products with offers", async () => {
+  const { BUDGET_GROUPS, AVOID, ceilingFor } = await import("../src/lib/black-friday");
+  const { FAIR_PRICES } = await import("../src/lib/fair-prices");
+  for (const group of BUDGET_GROUPS)
+    for (const item of group.items) {
+      assert.ok(getProduct(item.productId), `produto inexistente: ${item.productId}`);
+      assert.ok(getOffers(item.productId).length > 0, `sem oferta: ${item.productId}`);
+      assert.ok(item.referencePrice > 0);
+    }
+  assert.equal(ceilingFor("moto-g56-5g"), 1200);
+  assert.equal(ceilingFor("galaxy-s25-fe"), undefined);
+  for (const { id } of AVOID) assert.ok(FAIR_PRICES[id]);
+});
