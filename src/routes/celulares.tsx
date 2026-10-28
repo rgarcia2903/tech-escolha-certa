@@ -101,6 +101,12 @@ const guides = [
     highlight: "Redmi e Poco",
   },
   {
+    title: "Melhores celulares Motorola",
+    description: "Moto G56, Moto G86 e Edge 60 Pro: qual comprar e até quanto pagar.",
+    href: "/melhores-celulares-motorola",
+    highlight: "Moto G86 para a maioria",
+  },
+  {
     title: "Melhores celulares Samsung",
     description: "Veja quais modelos Samsung realmente valem a pena atualmente.",
     href: "/melhores-celulares-samsung",

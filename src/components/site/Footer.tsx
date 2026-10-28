@@ -18,6 +18,7 @@ const GUIAS = [
   { to: "/melhores-celulares-ate-2500", label: "Melhores celulares até R$ 2.500" },
   { to: "/melhores-celulares-samsung", label: "Melhores celulares Samsung" },
   { to: "/melhores-celulares-xiaomi", label: "Melhores celulares Xiaomi" },
+  { to: "/melhores-celulares-motorola", label: "Melhores celulares Motorola" },
 ];
 
 const REVIEWS = [

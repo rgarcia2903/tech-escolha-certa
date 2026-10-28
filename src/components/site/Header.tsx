@@ -18,6 +18,7 @@ const FEATURED_LINKS = [
   { to: "/melhores-celulares-ate-2500", label: "Celulares até R$ 2.500" },
   { to: "/melhores-celulares-custo-beneficio", label: "Melhores custo-benefício" },
   { to: "/melhores-celulares-xiaomi", label: "Melhores Xiaomi" },
+  { to: "/melhores-celulares-motorola", label: "Melhores Motorola" },
 ] as const;
 
 export function Header() {
