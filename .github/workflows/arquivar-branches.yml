@@ -1,0 +1,52 @@
+name: Arquivar e remover branches antigas
+
+# Execução manual. Para cada branch (exceto main e as listadas em "manter"),
+# cria a tag archive/<branch> apontando para o último commit e só então apaga a branch.
+# Para restaurar: git push origin archive/<branch>:refs/heads/<branch>
+on:
+  workflow_dispatch:
+    inputs:
+      manter:
+        description: "Branches a manter, separadas por espaço (além da main)"
+        required: false
+        default: ""
+      executar:
+        description: "Digite SIM para apagar de verdade (caso contrário, só lista)"
+        required: true
+        default: "nao"
+
+permissions:
+  contents: write
+
+jobs:
+  arquivar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Arquivar em tags e remover branches
+        env:
+          MANTER: ${{ inputs.manter }}
+          EXECUTAR: ${{ inputs.executar }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          echo "| Branch | Commit | Ação |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| --- | --- | --- |" >> "$GITHUB_STEP_SUMMARY"
+          git ls-remote --heads origin | while read -r sha ref; do
+            branch="${ref#refs/heads/}"
+            if [ "$branch" = "main" ] || [[ " $MANTER " == *" $branch "* ]]; then
+              echo "| $branch | ${sha:0:7} | mantida |" >> "$GITHUB_STEP_SUMMARY"; continue
+            fi
+            if [ "$EXECUTAR" != "SIM" ]; then
+              echo "| $branch | ${sha:0:7} | seria arquivada |" >> "$GITHUB_STEP_SUMMARY"; continue
+            fi
+            git push origin "$sha:refs/tags/archive/$branch"
+            # Confere que a tag aponta para o mesmo commit antes de apagar.
+            test "$(git ls-remote origin "refs/tags/archive/$branch" | cut -f1)" = "$sha"
+            git push origin --delete "$branch"
+            echo "| $branch | ${sha:0:7} | arquivada em archive/$branch e removida |" >> "$GITHUB_STEP_SUMMARY"
+          done
