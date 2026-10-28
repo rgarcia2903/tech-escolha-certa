@@ -130,6 +130,14 @@ const SEARCH_ITEMS = [
   },
   {
     group: "Marcas e perfis",
+    title: "Melhores celulares Motorola",
+    description: "Moto G56, Moto G86 e Edge 60 Pro: qual comprar",
+    to: "/melhores-celulares-motorola",
+    keywords: "motorola moto g56 g86 edge 60 pro",
+    icon: Smartphone,
+  },
+  {
+    group: "Marcas e perfis",
     title: "Melhores para jogos até R$ 2.000",
     description: "Desempenho e tela para jogar",
     to: "/guia/melhores-celulares-para-jogos-ate-2000",

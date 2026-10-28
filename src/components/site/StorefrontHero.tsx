@@ -35,6 +35,9 @@ export function StorefrontHero() {
           <Link to="/melhores-celulares-xiaomi" className="storefront-chip">
             Xiaomi e Redmi
           </Link>
+          <Link to="/melhores-celulares-motorola" className="storefront-chip">
+            Motorola
+          </Link>
           <Link to="/celulares" className="storefront-chip">
             Todas as marcas
           </Link>

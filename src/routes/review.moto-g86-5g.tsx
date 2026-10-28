@@ -161,6 +161,7 @@ function ReviewMotoG86() {
         },
       ]}
       relatedLinks={[
+        { label: "Melhores celulares Motorola", to: "/melhores-celulares-motorola" },
         { label: "Review Redmi Note 15 5G", to: "/review/redmi-note-15-5g" },
         { label: "Review Poco X7 Pro", to: "/review/poco-x7-pro" },
         { label: "Review Moto G56 5G", to: "/review/moto-g56-5g" },

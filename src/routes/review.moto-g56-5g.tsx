@@ -164,6 +164,7 @@ function ReviewMotoG56() {
         },
       ]}
       relatedLinks={[
+        { label: "Melhores celulares Motorola", to: "/melhores-celulares-motorola" },
         { label: "Review Moto G86 5G", to: "/review/moto-g86-5g" },
         { label: "Review Galaxy A36 5G", to: "/review/galaxy-a36-5g" },
         { label: "Melhores celulares até R$ 1.500", to: "/guia/melhores-celulares-ate-1500-reais" },

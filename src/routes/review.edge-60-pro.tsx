@@ -162,6 +162,7 @@ function ReviewEdge60Pro() {
         },
       ]}
       relatedLinks={[
+        { label: "Melhores celulares Motorola", to: "/melhores-celulares-motorola" },
         { label: "Review Galaxy S25 FE", to: "/review/galaxy-s25-fe" },
         { label: "Review Moto G86 5G", to: "/review/moto-g86-5g" },
         { label: "Melhores celulares até R$ 3.000", to: "/guia/melhores-celulares-ate-3000-reais" },
