@@ -11,18 +11,18 @@ export function StorefrontHero() {
         <div className="mt-3 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <h1 className="max-w-3xl text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-              Seu próximo celular começa aqui.
+              Qual celular comprar? A gente responde.
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-200 md:text-base">
-              Compare os aparelhos. Escolha seu perfil. Confira preço e versão na Amazon e no
-              Mercado Livre.
+              Veredito direto, até quanto vale pagar em cada modelo e o link para conferir o preço de hoje
+              na Amazon e no Mercado Livre.
             </p>
           </div>
           <a
-            href="#selecao-editorial"
+            href="#escolhas-de-hoje"
             className="inline-flex min-h-12 w-fit shrink-0 items-center gap-3 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#103A49]"
           >
-            Explorar celulares <ArrowRight className="h-4 w-4" aria-hidden />
+            Ver as escolhas de hoje <ArrowRight className="h-4 w-4" aria-hidden />
           </a>
         </div>
         <nav
