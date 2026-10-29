@@ -300,4 +300,187 @@ export const COMPARISONS: Record<string, Comparison> = {
       },
     ],
   },
+  "poco-x8-pro-vs-poco-x7-pro": {
+    slug: "poco-x8-pro-vs-poco-x7-pro",
+    a: { id: "poco-x8-pro", name: "Poco X8 Pro", reviewPath: "/melhores-celulares-xiaomi" },
+    b: { id: "poco-x7-pro", name: "Poco X7 Pro", reviewPath: "/review/poco-x7-pro" },
+    title: "Poco X8 Pro ou Poco X7 Pro: qual comprar em 2026?",
+    description:
+      "Poco X8 Pro vs Poco X7 Pro: processador, bateria, recarga e atualizações lado a lado. Veja se vale pagar a diferença pelo modelo novo.",
+    shortAnswer:
+      "O Poco X8 Pro, se a diferença for de até uns R$ 300: o Dimensity 8500 Ultra é bem mais rápido, a bateria sobe para 6.500 mAh, a recarga para 100 W e ele recebe atualizações por mais tempo. O X7 Pro só vale se estiver abaixo de R$ 2.150, especialmente na versão de 512 GB.",
+    chooseA: [
+      "Joga títulos pesados e quer o máximo de desempenho.",
+      "Quer a maior bateria e a recarga mais rápida.",
+      "Vai ficar com o celular por vários anos.",
+    ],
+    chooseB: [
+      "Ele está bem mais barato que o X8 Pro.",
+      "Prefere uma versão de 512 GB pelo mesmo dinheiro.",
+      "Joga jogos populares, não os mais pesados.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 8500 Ultra", b: "Dimensity 8400-Ultra", winner: "a" },
+      { label: "Tela", a: 'AMOLED 6,59" 1.5K • 120 Hz • 3.500 nits', b: 'AMOLED 6,67" 1.5K • 120 Hz', winner: "tie" },
+      { label: "Bateria", a: "6.500 mAh", b: "6.000 mAh", winner: "a" },
+      { label: "Recarga", a: "100 W", b: "90 W", winner: "a" },
+      { label: "Câmera principal", a: "50 MP com OIS", b: "50 MP com OIS", winner: "tie" },
+      { label: "Proteção", a: "IP68", b: "IP68", winner: "tie" },
+      { label: "Atualizações", a: "4 de sistema, 6 de segurança", b: "Geração anterior", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 2.450", b: "R$ 2.150", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "O Poco X8 Pro é muito melhor que o X7 Pro?",
+        answer:
+          "Em desempenho e bateria, sim. Na tela e na câmera, a diferença é pequena. Se o preço for parecido, o X8 Pro é a escolha.",
+      },
+      {
+        question: "Qual o melhor Poco para jogos em 2026?",
+        answer: "O Poco X8 Pro. O Dimensity 8500 Ultra é o processador mais forte da faixa de até R$ 2.500.",
+      },
+      {
+        question: "Poco X8 Pro ou X8 Pro Max?",
+        answer:
+          "O Max é outro aparelho, maior e mais caro, com bateria ainda maior. Confira o nome no anúncio para não pagar a mais por engano.",
+      },
+    ],
+  },
+  "moto-g77-vs-moto-g86": {
+    slug: "moto-g77-vs-moto-g86",
+    a: { id: "moto-g86-5g", name: "Moto G86 5G", reviewPath: "/review/moto-g86-5g" },
+    b: { id: "moto-g77", name: "Moto G77", reviewPath: "/melhores-celulares-motorola" },
+    title: "Moto G77 ou Moto G86: qual comprar em 2026?",
+    description:
+      "Moto G77 vs Moto G86: processador, tela, câmera de 108 MP, resistência e atualizações. Veja qual Motorola intermediário vale mais a pena.",
+    shortAnswer:
+      "O Moto G86 é mais completo: processador bem mais forte (Dimensity 7300 contra 6400) e resistência IP68/IP69. O Moto G77 é mais novo, tem tela maior e mais brilhante, câmera de 108 MP com OIS e três atualizações de Android, e costuma custar menos. Para jogos e durabilidade, G86; para tela, câmera e economia, G77.",
+    chooseA: [
+      "Quer mais desempenho para jogos e multitarefa.",
+      "Precisa de resistência a água e poeira (IP68 e IP69).",
+      "A diferença de preço é pequena.",
+    ],
+    chooseB: [
+      "Quer a tela maior e mais brilhante (6,78\", 5.000 nits).",
+      "Prefere câmera de 108 MP e mais atualizações de Android.",
+      "Quer gastar menos.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 7300 (4 nm)", b: "Dimensity 6400 (6 nm)", winner: "a" },
+      { label: "Tela", a: 'pOLED 6,67" • 120 Hz • 4.500 nits', b: 'AMOLED 6,78" • 120 Hz • 5.000 nits', winner: "b" },
+      { label: "Câmera principal", a: "50 MP Sony com OIS", b: "108 MP com OIS", winner: "b" },
+      { label: "Bateria", a: "5.200 mAh", b: "5.200 mAh", winner: "tie" },
+      { label: "Proteção", a: "IP68 e IP69", b: "IP64 e MIL-STD", winner: "a" },
+      { label: "Atualizações", a: "2 de Android, 4 de segurança", b: "3 de Android", winner: "b" },
+      { label: "Lançamento", a: "Maio de 2025", b: "Janeiro de 2026", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 1.900", b: "R$ 1.500", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "O Moto G77 substitui o Moto G86?",
+        answer:
+          "Não exatamente. O G77 é mais novo, mas tem processador mais fraco. Os dois convivem: o G86 é mais forte e resistente; o G77 tem tela e câmera melhores no papel.",
+      },
+      {
+        question: "Qual é melhor para jogos?",
+        answer: "O Moto G86, pelo Dimensity 7300. Para jogos pesados, o Poco X8 Pro é ainda melhor.",
+      },
+      {
+        question: "Qual tem a câmera melhor?",
+        answer:
+          "No papel, o G77, com 108 MP e OIS. O G86 usa sensor Sony de 50 MP com OIS, que também entrega fotos muito boas.",
+      },
+    ],
+  },
+  "edge-70-vs-edge-60-pro": {
+    slug: "edge-70-vs-edge-60-pro",
+    a: { id: "edge-60-pro", name: "Motorola Edge 60 Pro", reviewPath: "/review/edge-60-pro" },
+    b: { id: "edge-70", name: "Motorola Edge 70", reviewPath: "/melhores-celulares-motorola" },
+    title: "Edge 70 ou Edge 60 Pro: qual comprar em 2026?",
+    description:
+      "Motorola Edge 70 vs Edge 60 Pro: o ultrafino contra o de bateria grande e zoom óptico. Veja diferenças, atualizações e qual comprar.",
+    shortAnswer:
+      "Depende do que você valoriza. O Edge 60 Pro tem bateria bem maior (6.000 contra 4.800 mAh), recarga mais rápida e teleobjetiva com zoom óptico de 3x. O Edge 70 é ultrafino (6,3 mm e 163 g), tem processador Snapdragon e quatro anos de Android, contra três do 60 Pro. Bateria e zoom: Edge 60 Pro. Leveza e suporte: Edge 70.",
+    chooseA: [
+      "Quer bateria para mais de um dia e recarga de 90 W.",
+      "Usa zoom óptico para fotos de longe.",
+      "Prefere mais RAM (12 GB).",
+    ],
+    chooseB: [
+      "Quer um celular fino e leve.",
+      "Prefere mais anos de atualização de Android.",
+      "Quer processador Snapdragon.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 8350 Extreme", b: "Snapdragon 7 Gen 4", winner: "tie" },
+      { label: "Espessura e peso", a: "8,2 mm • 186 g", b: "6,3 mm • 163 g", winner: "b" },
+      { label: "Bateria", a: "6.000 mAh", b: "4.800 mAh", winner: "a" },
+      { label: "Recarga", a: "90 W + sem fio 15 W", b: "68 W + sem fio 15 W", winner: "a" },
+      { label: "Câmeras traseiras", a: "50 + 50 MP + tele 10 MP (3x)", b: "50 + 50 MP", winner: "a" },
+      { label: "Câmera frontal", a: "50 MP", b: "50 MP", winner: "tie" },
+      { label: "Proteção", a: "IP68, IP69 e MIL-STD", b: "IP68, IP69 e MIL-STD", winner: "tie" },
+      { label: "Atualizações", a: "3 anos", b: "4 anos de Android", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 2.700", b: "R$ 2.400", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "O Edge 70 é sucessor do Edge 60 Pro?",
+        answer:
+          "Não diretamente. O Edge 70 é a versão fina da linha; o sucessor direto do 60 Pro é o Edge 70 Pro. Por isso cada um ganha em pontos diferentes.",
+      },
+      {
+        question: "A bateria do Edge 70 dura o dia todo?",
+        answer:
+          "Para uso normal, sim. Mas com 4.800 mAh ela é bem menor que a do Edge 60 Pro, que é a escolha para quem usa muito o celular fora de casa.",
+      },
+      {
+        question: "Algum dos dois vem com carregador?",
+        answer: "Confira no anúncio: o conteúdo da caixa pode variar conforme a loja.",
+      },
+    ],
+  },
+  "galaxy-a37-vs-galaxy-a36": {
+    slug: "galaxy-a37-vs-galaxy-a36",
+    a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
+    b: { id: "galaxy-a37", name: "Galaxy A37 5G", reviewPath: "/melhores-celulares-samsung" },
+    title: "Galaxy A37 ou Galaxy A36: qual comprar em 2026?",
+    description:
+      "Galaxy A37 vs Galaxy A36: processador, proteção, atualizações e preço lado a lado. Veja se vale pagar a mais pelo modelo novo.",
+    shortAnswer:
+      "O Galaxy A36 continua sendo a melhor compra pelo preço. O A37 tem processador mais forte (Exynos 1480, o mesmo do antigo A55), IP68 e atualizações até mais tarde, por ser de 2026. Vale pagar a mais pelo A37 se a diferença for de até uns R$ 300; acima disso, fique com o A36.",
+    chooseA: [
+      "Quer gastar menos com a mesma tela, câmera e bateria.",
+      "O uso é redes sociais, vídeos e fotos do dia a dia.",
+      "A diferença para o A37 passa de R$ 300.",
+    ],
+    chooseB: [
+      "Quer mais desempenho para jogos e multitarefa.",
+      "Faz questão de IP68.",
+      "Quer o suporte de atualizações indo até o mais tarde possível.",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 6 Gen 3", b: "Exynos 1480", winner: "b" },
+      { label: "Tela", a: 'AMOLED 6,7" • 120 Hz', b: 'AMOLED 6,7" • 120 Hz • 1.900 nits', winner: "tie" },
+      { label: "Câmeras", a: "50 MP OIS + 8 + 5 MP", b: "50 MP OIS + 8 + 5 MP", winner: "tie" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 45 W", b: "5.000 mAh • 45 W", winner: "tie" },
+      { label: "Proteção", a: "IP67", b: "IP68", winner: "b" },
+      { label: "Atualizações", a: "6 anos (desde 2025)", b: "6 anos (desde 2026)", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 1.350", b: "R$ 1.700", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena trocar o A36 pelo A37?",
+        answer: "Não. Se você já tem o A36, a diferença não justifica a troca.",
+      },
+      {
+        question: "Galaxy A37 ou Galaxy A57?",
+        answer:
+          "O A57 tem processador ainda mais forte, corpo mais fino de alumínio e ultrawide melhor. Se a diferença for pequena, vá de A57.",
+      },
+      {
+        question: "Algum dos dois vem com carregador de 45 W?",
+        answer: "Não. O carregamento de 45 W exige um adaptador compatível, vendido separadamente.",
+      },
+    ],
+  },
 };

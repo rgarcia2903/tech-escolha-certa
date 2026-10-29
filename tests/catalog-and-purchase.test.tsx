@@ -46,6 +46,7 @@ const mercadoLivre = [
   ["galaxy-a57-5g", "https://meli.la/1XMLUtz"],
   ["iphone-17", "https://meli.la/2nabFeE"],
   ["iphone-17e", "https://meli.la/2cjYfah"],
+  ["poco-x8-pro", "https://meli.la/19LzSLu"],
 ];
 const amazon = [
   ["galaxy-a17-5g", "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20"],
@@ -67,9 +68,13 @@ const amazon = [
   ["galaxy-a17-4g", "https://www.amazon.com.br/dp/B0FPYV6K68?tag=techescolha03-20"],
   ["galaxy-a07", "https://www.amazon.com.br/dp/B0FPJ52LSR?tag=techescolha03-20"],
   ["moto-g06", "https://www.amazon.com.br/dp/B0FR5NSCF7?tag=techescolha03-20"],
+  ["poco-x8-pro", "https://www.amazon.com.br/dp/B0GQC19Y8D?tag=techescolha03-20"],
+  ["moto-g77", "https://www.amazon.com.br/dp/B0GLSLLGZL?tag=techescolha03-20"],
+  ["edge-70", "https://www.amazon.com.br/dp/B0GLTJ4MYM?tag=techescolha03-20"],
+  ["galaxy-a37", "https://www.amazon.com.br/dp/B0GVT89H5W?tag=techescolha03-20"],
 ];
-test("19 Mercado Livre and 19 Amazon addresses preserve exact model identity", () => {
-  assert.equal(OFFERS.length, 38);
+test("20 Mercado Livre and 23 Amazon addresses preserve exact model identity", () => {
+  assert.equal(OFFERS.length, 43);
   for (const [store, pairs] of [
     ["mercado_livre", mercadoLivre],
     ["amazon", amazon],
@@ -265,7 +270,7 @@ test("PR #43 export names remain compatible without duplicating offers", () => {
     assert.equal(current, legacy);
     assert.equal(getOfferByUrl(current)?.productId, id);
   }
-  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 38);
+  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 43);
 });
 
 test("PR #43 candidates remain shared while evaluation models stay unapproved", () => {

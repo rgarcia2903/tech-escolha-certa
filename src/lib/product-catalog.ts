@@ -412,6 +412,38 @@ export const PRODUCTS: Product[] = [
     { officialUrl: "https://www.apple.com/br/iphone-17/specs/", reviewPath: "/qual-iphone-comprar" },
   ),
   product(
+    "poco-x8-pro",
+    "Poco X8 Pro",
+    "POCO",
+    "candidate",
+    "O mais forte para jogos até R$ 2.500: Dimensity 8500 Ultra, 6.500 mAh, 100 W e IP68.",
+    { reviewPath: "/comparativo/poco-x8-pro-vs-poco-x7-pro" },
+  ),
+  product(
+    "moto-g77",
+    "Moto G77",
+    "Motorola",
+    "candidate",
+    "Tela AMOLED de 6,78\" com 5.000 nits, câmera de 108 MP com OIS e 3 anos de Android; processador de entrada.",
+    { reviewPath: "/comparativo/moto-g77-vs-moto-g86" },
+  ),
+  product(
+    "edge-70",
+    "Motorola Edge 70",
+    "Motorola",
+    "candidate",
+    "Ultrafino (6,3 mm), Snapdragon 7 Gen 4, câmeras de 50 MP, IP69 e 4 anos de Android.",
+    { reviewPath: "/comparativo/edge-70-vs-edge-60-pro" },
+  ),
+  product(
+    "galaxy-a37",
+    "Galaxy A37 5G",
+    "Samsung",
+    "candidate",
+    "Sucessor do A36: Exynos 1480, IP68 e seis anos de atualizações.",
+    { reviewPath: "/comparativo/galaxy-a37-vs-galaxy-a36" },
+  ),
+  product(
     "galaxy-a17-4g",
     "Galaxy A17 4G",
     "Samsung",
@@ -522,6 +554,7 @@ const ml: [string, string][] = [
   ["galaxy-a57-5g", links.GALAXY_A57_AFFILIATE_URL],
   ["iphone-17", links.IPHONE_17_AFFILIATE_URL],
   ["iphone-17e", links.IPHONE_17E_AFFILIATE_URL],
+  ["poco-x8-pro", links.POCO_X8_PRO_AFFILIATE_URL],
 ];
 const amazon: [string, string][] = [
   ["galaxy-a17-5g", links.GALAXY_A17_AMAZON_URL],
@@ -543,6 +576,10 @@ const amazon: [string, string][] = [
   ["galaxy-a17-4g", links.GALAXY_A17_4G_AMAZON_URL],
   ["galaxy-a07", links.GALAXY_A07_AMAZON_URL],
   ["moto-g06", links.MOTO_G06_AMAZON_URL],
+  ["poco-x8-pro", links.POCO_X8_PRO_AMAZON_URL],
+  ["moto-g77", links.MOTO_G77_AMAZON_URL],
+  ["edge-70", links.EDGE_70_AMAZON_URL],
+  ["galaxy-a37", links.GALAXY_A37_AMAZON_URL],
 ];
 function offer(productId: string, store: Store, url: string, legacy = false): Offer {
   return {

@@ -35,6 +35,38 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Poco X8 Pro vs Poco X7 Pro",
+    summary: "Vale pagar a diferença pelo modelo novo? Desempenho, bateria e recarga lado a lado.",
+    href: "/comparativo/poco-x8-pro-vs-poco-x7-pro",
+    family: "Poco vs Poco",
+    tag: "Novo",
+    bestFor: "Quem quer o melhor para jogos.",
+  },
+  {
+    title: "Moto G77 vs Moto G86",
+    summary: "Tela e câmera de 108 MP contra desempenho e IP69.",
+    href: "/comparativo/moto-g77-vs-moto-g86",
+    family: "Motorola vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem quer um Motorola intermediário.",
+  },
+  {
+    title: "Edge 70 vs Edge 60 Pro",
+    summary: "O ultrafino contra o de bateria grande e zoom óptico.",
+    href: "/comparativo/edge-70-vs-edge-60-pro",
+    family: "Motorola vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem quer um Motorola premium.",
+  },
+  {
+    title: "Galaxy A37 vs Galaxy A36",
+    summary: "Vale pagar a mais pelo modelo novo?",
+    href: "/comparativo/galaxy-a37-vs-galaxy-a36",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer um Samsung intermediário.",
+  },
+  {
     title: "Galaxy A17 4G vs A17 5G",
     summary: "Quase iguais: veja a única diferença que importa e qual versão comprar.",
     href: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g",

@@ -8,7 +8,7 @@ import { FAIR_PRICES, formatBRL, goodDealFor, type FairPriceId } from "@/lib/fai
 // não exibir preço de loja (política da Amazon).
 const PAGE_TITLE = "Melhor celular custo-benefício em 2026: qual comprar";
 const PAGE_DESCRIPTION =
-  "Qual o melhor celular custo-benefício em 2026? Galaxy A36, Moto G86, Poco X7 Pro e Edge 60 Pro: veja qual comprar para cada orçamento e até quanto pagar em cada um.";
+  "Qual o melhor celular custo-benefício em 2026? Galaxy A36, Moto G86, Poco X8 Pro e Edge 60 Pro: veja qual comprar para cada orçamento e até quanto pagar em cada um.";
 
 export const Route = createFileRoute("/melhores-celulares-custo-beneficio")({
   head: () => ({
@@ -45,19 +45,19 @@ const PICKS = [
     summary:
       "Tela pOLED 1.5K de até 4.500 nits, câmera Sony com estabilização óptica, IP68/IP69 e carregador de 33 W na caixa.",
     forWho: "Quem quer a melhor tela e câmera da faixa, com resistência de sobra.",
-    watchOut: "Duas atualizações de Android. Para jogos pesados, o Poco X7 Pro é mais forte.",
+    watchOut: "Duas atualizações de Android. Para jogos pesados, o Poco X8 Pro é mais forte.",
     reviewPath: "/review/moto-g86-5g",
   },
   {
-    id: "poco-x7-pro",
+    id: "poco-x8-pro",
     badge: "Mais desempenho pelo preço",
-    name: "Poco X7 Pro",
-    version: "512 GB, 12 GB de RAM",
+    name: "Poco X8 Pro",
+    version: "256 GB, 8 GB de RAM",
     summary:
-      "Dimensity 8400-Ultra, bateria de 6.000 mAh, recarga de 90 W, tela AMOLED 1.5K de 120 Hz e IP68.",
+      "Dimensity 8500 Ultra, bateria de 6.500 mAh, recarga de 100 W, tela AMOLED 1.5K de 120 Hz e IP68.",
     forWho: "Quem joga títulos pesados ou quer potência de topo sem pagar preço de topo.",
     watchOut: "As câmeras não são o foco do aparelho.",
-    reviewPath: "/review/poco-x7-pro",
+    reviewPath: "/comparativo/poco-x8-pro-vs-poco-x7-pro",
   },
   {
     id: "edge-60-pro",
@@ -77,12 +77,12 @@ const TABLE: [string, string, string, string, string][] = [
     "Compre se estiver até",
     formatBRL(goodDealFor("galaxy-a36-5g")!),
     formatBRL(goodDealFor("moto-g86-5g")!),
-    formatBRL(goodDealFor("poco-x7-pro")!),
+    formatBRL(goodDealFor("poco-x8-pro")!),
     formatBRL(goodDealFor("edge-60-pro")!),
   ],
-  ["Processador", "Snapdragon 6 Gen 3", "Dimensity 7300", "Dimensity 8400-Ultra", "Dimensity 8350"],
+  ["Processador", "Snapdragon 6 Gen 3", "Dimensity 7300", "Dimensity 8500 Ultra", "Dimensity 8350"],
   ["Tela", "AMOLED 120 Hz", "pOLED 1.5K 120 Hz", "AMOLED 1.5K 120 Hz", "pOLED curva 120 Hz"],
-  ["Bateria e recarga", "5.000 mAh • 45 W", "5.200 mAh • 33 W", "6.000 mAh • 90 W", "6.000 mAh • 90 W"],
+  ["Bateria e recarga", "5.000 mAh • 45 W", "5.200 mAh • 33 W", "6.500 mAh • 100 W", "6.000 mAh • 90 W"],
   ["Proteção", "IP67", "IP68 e IP69", "IP68", "IP68 e IP69"],
 ];
 
@@ -97,6 +97,7 @@ const COMPARISONS = [
   { to: "/comparativo/galaxy-a57-vs-galaxy-a36", label: "Galaxy A57 vs Galaxy A36" },
   { to: "/comparativo/moto-g86-vs-redmi-note-15-5g", label: "Moto G86 vs Redmi Note 15 5G" },
   { to: "/comparativo/edge-60-pro-vs-galaxy-s25-fe", label: "Edge 60 Pro vs Galaxy S25 FE" },
+  { to: "/comparativo/poco-x8-pro-vs-poco-x7-pro", label: "Poco X8 Pro vs Poco X7 Pro" },
   { to: "/comparativo/poco-x6-pro-vs-poco-x7-pro", label: "Poco X6 Pro vs Poco X7 Pro" },
 ];
 
@@ -113,12 +114,12 @@ const FAQ = [
   },
   {
     question: "Qual o celular custo-benefício para jogos?",
-    answer: "O Poco X7 Pro. O Dimensity 8400-Ultra é o processador mais forte desta faixa de preço.",
+    answer: "O Poco X8 Pro. O Dimensity 8500 Ultra é o processador mais forte desta faixa de preço.",
   },
   {
     question: "Galaxy A55 e Poco X6 Pro ainda são custo-benefício?",
     answer:
-      "Só abaixo do teto indicado nesta página. Acima disso, os sucessores (Galaxy A57 e Poco X7 Pro) entregam mais pelo mesmo dinheiro.",
+      "Só abaixo do teto indicado nesta página. Acima disso, os sucessores (Galaxy A57 e Poco X8 Pro) entregam mais pelo mesmo dinheiro.",
   },
 ];
 
@@ -146,7 +147,7 @@ function MelhoresCustoBeneficio() {
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
             Resposta curta: o <strong className="text-white">Galaxy A36</strong> é o melhor custo-benefício para a
             maioria das pessoas. Até R$ 2.000, o <strong className="text-white">Moto G86</strong> entrega a melhor tela
-            e câmera; para jogos, o <strong className="text-white">Poco X7 Pro</strong>; e o{" "}
+            e câmera; para jogos, o <strong className="text-white">Poco X8 Pro</strong>; e o{" "}
             <strong className="text-white">Edge 60 Pro</strong> é o premium que mais entrega pelo preço.
           </p>
           <HeroPickCTA productId="galaxy-a36-5g" pageType="guia" />
@@ -210,7 +211,7 @@ function MelhoresCustoBeneficio() {
                   <th className="p-4"> </th>
                   <th className="p-4">Galaxy A36</th>
                   <th className="p-4">Moto G86</th>
-                  <th className="p-4">Poco X7 Pro</th>
+                  <th className="p-4">Poco X8 Pro</th>
                   <th className="p-4">Edge 60 Pro</th>
                 </tr>
               </thead>

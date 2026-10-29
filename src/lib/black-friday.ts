@@ -84,10 +84,10 @@ export const BUDGET_GROUPS: { title: string; items: ReferencePrice[] }[] = [
     title: "Acima de R$ 2.000",
     items: [
       {
-        productId: "poco-x7-pro",
-        version: "512 GB, 12 GB de RAM",
+        productId: "poco-x8-pro",
+        version: "256 GB, 8 GB de RAM",
         note: "O mais forte para jogos nesta lista.",
-        reviewPath: "/review/poco-x7-pro",
+        reviewPath: "/comparativo/poco-x8-pro-vs-poco-x7-pro",
       },
       {
         productId: "edge-60-pro",
@@ -108,6 +108,7 @@ export const BUDGET_GROUPS: { title: string; items: ReferencePrice[] }[] = [
 /** Modelos que costumam aparecer "em promoção", mas que não compensam acima do teto. */
 export const AVOID: { id: FairPriceId; reviewPath: string }[] = [
   { id: "galaxy-s24", reviewPath: "/review/galaxy-s24" },
+  { id: "poco-x7-pro", reviewPath: "/review/poco-x7-pro" },
   { id: "galaxy-a55", reviewPath: "/review/galaxy-a55" },
   { id: "galaxy-a35", reviewPath: "/review/galaxy-a35" },
   { id: "poco-x6-pro", reviewPath: "/review/poco-x6-pro" },

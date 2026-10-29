@@ -53,6 +53,12 @@ export const IPHONE_16_AMAZON_URL = "https://www.amazon.com.br/dp/B0DJFTCKNN?tag
 export const GALAXY_A17_4G_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPYV6K68?tag=techescolha03-20";
 export const GALAXY_A07_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPJ52LSR?tag=techescolha03-20";
 export const MOTO_G06_AMAZON_URL = "https://www.amazon.com.br/dp/B0FR5NSCF7?tag=techescolha03-20";
+// Geração 2026 (mais vendidos da Amazon em 29/10/2026).
+export const POCO_X8_PRO_AFFILIATE_URL = "https://meli.la/19LzSLu";
+export const POCO_X8_PRO_AMAZON_URL = "https://www.amazon.com.br/dp/B0GQC19Y8D?tag=techescolha03-20";
+export const MOTO_G77_AMAZON_URL = "https://www.amazon.com.br/dp/B0GLSLLGZL?tag=techescolha03-20";
+export const EDGE_70_AMAZON_URL = "https://www.amazon.com.br/dp/B0GLTJ4MYM?tag=techescolha03-20";
+export const GALAXY_A37_AMAZON_URL = "https://www.amazon.com.br/dp/B0GVT89H5W?tag=techescolha03-20";
 export const IPHONE_15_AMAZON_URL = "https://www.amazon.com.br/dp/B0CP6CVJSG?tag=techescolha03-20";
 
 // Endereços originais gerados pelo usuário no programa Amazon Associados.
