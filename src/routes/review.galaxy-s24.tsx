@@ -1,3 +1,4 @@
+import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
@@ -363,6 +364,7 @@ function ReviewPage() {
 
         {/* Main */}
         <main className="lg:col-span-9 space-y-14">
+          <QuickVerdict fairPriceId="galaxy-s24" productId="galaxy-s24" alternativeReviewPath="/review/galaxy-s25-fe" className="!px-0 !pt-0" />
           {/* Veredito */}
           <section id="veredito" className="scroll-mt-24">
             <SectionTitle
