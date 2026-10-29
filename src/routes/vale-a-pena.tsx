@@ -145,14 +145,14 @@ function ValeAPena() {
             <h2 id={slug(g.brand)} className="scroll-mt-24 text-2xl font-extrabold text-[#0F3F4A] sm:text-3xl">
               {g.brand}
             </h2>
-            <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-5 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
               {g.items.map(({ id, path }) => {
                 const fp = FAIR_PRICES[id];
                 return (
                   <li key={id}>
                     <Link
                       to={path}
-                      className="flex h-full flex-col rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200 transition hover:ring-[#0F3F4A]"
+                      className="flex h-full flex-col rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200 transition hover:ring-[#0F3F4A] sm:p-5"
                     >
                       <span className="font-bold text-[#0F3F4A]">{fp.productName}</span>
                       <span className="mt-1 text-sm text-slate-700">
