@@ -20,6 +20,7 @@ const GUIAS = [
   { to: "/melhores-celulares-xiaomi", label: "Melhores celulares Xiaomi" },
   { to: "/melhores-celulares-motorola", label: "Melhores celulares Motorola" },
   { to: "/qual-iphone-comprar", label: "Qual iPhone comprar" },
+  { to: "/melhor-celular-ate-1000", label: "Melhores celulares até R$ 1.000" },
 ];
 
 const REVIEWS = [

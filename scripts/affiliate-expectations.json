@@ -339,5 +339,34 @@
       "plus",
       "iphone 16"
     ]
+  },
+  "GALAXY_A17_4G_AMAZON_URL": {
+    "include": [
+      "a17"
+    ],
+    "exclude": [
+      "5g",
+      "a07",
+      "a36"
+    ]
+  },
+  "GALAXY_A07_AMAZON_URL": {
+    "include": [
+      "a07"
+    ],
+    "exclude": [
+      "a17",
+      "5g"
+    ]
+  },
+  "MOTO_G06_AMAZON_URL": {
+    "include": [
+      "g06"
+    ],
+    "exclude": [
+      "g56",
+      "g86",
+      "g05"
+    ]
   }
 }

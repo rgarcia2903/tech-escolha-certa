@@ -207,4 +207,97 @@ export const COMPARISONS: Record<string, Comparison> = {
       },
     ],
   },
+  "galaxy-a17-4g-vs-galaxy-a17-5g": {
+    slug: "galaxy-a17-4g-vs-galaxy-a17-5g",
+    a: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
+    b: { id: "galaxy-a17-4g", name: "Galaxy A17 4G", reviewPath: "/melhor-celular-ate-1000" },
+    title: "Galaxy A17 4G ou 5G: qual comprar em 2026?",
+    description:
+      "Galaxy A17 4G vs A17 5G: a tela, as câmeras e a bateria são iguais. Veja a única diferença que importa e qual versão comprar pelo preço de hoje.",
+    shortAnswer:
+      "Os dois são quase iguais: mesma tela AMOLED de 90 Hz, mesmas câmeras, mesma bateria de 5.000 mAh, IP54 e seis anos de atualizações. O 5G tem processador um pouco mais rápido (Exynos 1330) e, claro, 5G. Se a diferença de preço for pequena, compre o 5G. O 4G só vale se estiver claramente mais barato.",
+    chooseA: [
+      "A diferença de preço para o 4G é pequena.",
+      "Você quer 5G e um pouco mais de fôlego no processador.",
+      "Vai ficar com o celular por muitos anos.",
+    ],
+    chooseB: [
+      "Ele está pelo menos uns R$ 100 mais barato.",
+      "Na sua região, o 5G ainda não faz diferença.",
+      "O uso é básico: WhatsApp, redes sociais e vídeos.",
+    ],
+    rows: [
+      { label: "Processador", a: "Exynos 1330 (5 nm)", b: "Helio G99 (6 nm)", winner: "a" },
+      { label: "5G", a: "Sim", b: "Não", winner: "a" },
+      { label: "Tela", a: 'AMOLED 6,7" • 90 Hz', b: 'AMOLED 6,7" • 90 Hz', winner: "tie" },
+      { label: "Câmeras", a: "50 MP OIS + 5 + 2 MP", b: "50 MP OIS + 5 + 2 MP", winner: "tie" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 25 W", b: "5.000 mAh • 25 W", winner: "tie" },
+      { label: "Proteção", a: "IP54", b: "IP54", winner: "tie" },
+      { label: "Atualizações", a: "6 anos", b: "6 anos", winner: "tie" },
+      { label: "Preço de lançamento", a: "R$ 1.699", b: "R$ 1.399", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 900", b: "R$ 850", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Qual a diferença entre o Galaxy A17 4G e o A17 5G?",
+        answer:
+          "O processador (Exynos 1330 no 5G, Helio G99 no 4G) e o suporte a 5G. Tela, câmeras, bateria, proteção e atualizações são iguais.",
+      },
+      {
+        question: "O Galaxy A17 4G é ruim?",
+        answer:
+          "Não. Para uso básico ele atende bem. Só não faz sentido pagar quase o mesmo que o 5G, que é um pouco mais rápido.",
+      },
+      {
+        question: "Vale mais um A17 5G ou um Galaxy A36?",
+        answer:
+          "Se você pode gastar uns R$ 450 a mais, o A36 é bem superior: processador mais forte, tela de 120 Hz e IP67.",
+      },
+    ],
+  },
+  "galaxy-a07-vs-moto-g06": {
+    slug: "galaxy-a07-vs-moto-g06",
+    a: { id: "galaxy-a07", name: "Galaxy A07", reviewPath: "/melhor-celular-ate-1000" },
+    b: { id: "moto-g06", name: "Moto G06", reviewPath: "/melhor-celular-ate-1000" },
+    title: "Galaxy A07 ou Moto G06: qual comprar em 2026?",
+    description:
+      "Galaxy A07 vs Moto G06: processador, tela, bateria, recarga e atualizações dos dois celulares mais baratos entre os mais vendidos. Veja qual comprar.",
+    shortAnswer:
+      "O Galaxy A07, para a maioria das pessoas: o processador Helio G99 é bem mais rápido que o Helio G81 do Moto G06, a recarga é mais rápida e a Samsung promete seis anos de atualizações. O Moto G06 só compensa se você quer tela grande de 120 Hz, entrada para fone e o menor preço possível.",
+    chooseA: [
+      "Quer um celular que continue fluido por mais tempo.",
+      "Valoriza atualizações por muitos anos.",
+      "Quer carregar mais rápido.",
+    ],
+    chooseB: [
+      "Quer a maior tela (6,9\") com 120 Hz.",
+      "Prefere mais proteção contra água e poeira (IP64).",
+      "Ele está bem mais barato que o A07.",
+    ],
+    rows: [
+      { label: "Processador", a: "Helio G99 (6 nm)", b: "Helio G81 (12 nm)", winner: "a" },
+      { label: "Tela", a: 'LCD 6,7" HD+ • 90 Hz', b: 'LCD 6,9" HD+ • 120 Hz', winner: "b" },
+      { label: "Câmera principal", a: "50 MP", b: "50 MP", winner: "tie" },
+      { label: "Bateria", a: "5.000 mAh", b: "5.200 mAh", winner: "b" },
+      { label: "Recarga", a: "15 W", b: "10 W", winner: "a" },
+      { label: "Proteção", a: "IP54", b: "IP64", winner: "b" },
+      { label: "Atualizações", a: "6 anos", b: "Não divulgado em detalhe", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 800", b: "R$ 700", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Qual é mais rápido, Galaxy A07 ou Moto G06?",
+        answer: "O Galaxy A07. O Helio G99 é bem mais forte que o Helio G81 do Moto G06.",
+      },
+      {
+        question: "Vale juntar um pouco mais?",
+        answer:
+          "Sim, se puder. O Galaxy A17 5G costuma custar pouco mais e tem tela AMOLED, câmera com estabilização óptica, 5G e seis anos de atualizações.",
+      },
+      {
+        question: "Os dois têm 5G?",
+        answer: "Não. As versões mais vendidas dos dois são 4G.",
+      },
+    ],
+  },
 };

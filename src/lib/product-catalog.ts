@@ -412,6 +412,30 @@ export const PRODUCTS: Product[] = [
     { officialUrl: "https://www.apple.com/br/iphone-17/specs/", reviewPath: "/qual-iphone-comprar" },
   ),
   product(
+    "galaxy-a17-4g",
+    "Galaxy A17 4G",
+    "Samsung",
+    "candidate",
+    "Mesma tela, câmeras e bateria do A17 5G, com Helio G99 e sem 5G; seis anos de atualizações.",
+    { connectivity: "4G", reviewPath: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g" },
+  ),
+  product(
+    "galaxy-a07",
+    "Galaxy A07",
+    "Samsung",
+    "candidate",
+    "Samsung mais barato: tela LCD de 90 Hz, Helio G99 e seis anos de atualizações.",
+    { connectivity: "4G", reviewPath: "/comparativo/galaxy-a07-vs-moto-g06" },
+  ),
+  product(
+    "moto-g06",
+    "Moto G06",
+    "Motorola",
+    "candidate",
+    "Tela grande de 6,9\" com 120 Hz, 5.200 mAh, IP64 e microSD; processador e recarga fracos.",
+    { connectivity: "4G", reviewPath: "/comparativo/galaxy-a07-vs-moto-g06" },
+  ),
+  product(
     "iphone-17e",
     "iPhone 17e",
     "Apple",
@@ -516,6 +540,9 @@ const amazon: [string, string][] = [
   ["iphone-16e", links.IPHONE_16E_AMAZON_URL],
   ["iphone-16", links.IPHONE_16_AMAZON_URL],
   ["iphone-15", links.IPHONE_15_AMAZON_URL],
+  ["galaxy-a17-4g", links.GALAXY_A17_4G_AMAZON_URL],
+  ["galaxy-a07", links.GALAXY_A07_AMAZON_URL],
+  ["moto-g06", links.MOTO_G06_AMAZON_URL],
 ];
 function offer(productId: string, store: Store, url: string, legacy = false): Offer {
   return {

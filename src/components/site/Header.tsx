@@ -14,6 +14,7 @@ const NAV = [
 const FEATURED_LINKS = [
   { to: "/black-friday-celulares", label: "Black Friday: quanto pagar" },
   { to: "/qual-iphone-comprar", label: "Qual iPhone comprar" },
+  { to: "/melhor-celular-ate-1000", label: "Celulares até R$ 1.000" },
   { to: "/guia/melhores-celulares-ate-1500-reais", label: "Celulares até R$ 1.500" },
   { to: "/melhores-celulares-ate-2000", label: "Celulares até R$ 2.000" },
   { to: "/melhores-celulares-ate-2500", label: "Celulares até R$ 2.500" },

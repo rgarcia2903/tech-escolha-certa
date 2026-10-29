@@ -35,6 +35,22 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Galaxy A17 4G vs A17 5G",
+    summary: "Quase iguais: veja a única diferença que importa e qual versão comprar.",
+    href: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer um Samsung barato.",
+  },
+  {
+    title: "Galaxy A07 vs Moto G06",
+    summary: "Os dois mais baratos entre os mais vendidos: desempenho, tela e atualizações.",
+    href: "/comparativo/galaxy-a07-vs-moto-g06",
+    family: "Samsung vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem quer gastar menos de R$ 800.",
+  },
+  {
     title: "iPhone 17 vs iPhone 17e",
     summary: "Mesmo chip A19 e 256 GB: quando vale pagar mais pela tela de 120 Hz e pelas câmeras do 17.",
     href: "/comparativo/iphone-17-vs-iphone-17e",
