@@ -1,3 +1,4 @@
+import { FaqJsonLd } from "@/components/site/FaqJsonLd";
 import { Link } from "@tanstack/react-router";
 import { Check, Minus } from "lucide-react";
 import { HeroPickCTA } from "@/components/site/HeroPickCTA";
@@ -118,6 +119,8 @@ export function ComparisonPage({ c }: { c: Comparison }) {
             </section>
           ))}
         </div>
+
+        <FaqJsonLd faq={c.faq} />
 
         <section aria-labelledby="faq" className="mt-14">
           <h2 id="faq" className="text-2xl font-bold text-[#0F3F4A]">

@@ -1,3 +1,4 @@
+import { FaqJsonLd } from "@/components/site/FaqJsonLd";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BadgeCheck, CircleAlert } from "lucide-react";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
@@ -265,6 +266,8 @@ function QualIphoneComprar() {
             </li>
           </ul>
         </section>
+
+        <FaqJsonLd faq={FAQ} />
 
         <section aria-labelledby="faq" className="mt-14">
           <h2 id="faq" className="text-2xl font-bold text-[#0F3F4A]">
