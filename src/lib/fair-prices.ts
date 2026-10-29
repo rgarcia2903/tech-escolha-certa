@@ -95,6 +95,25 @@ export const FAIR_PRICES = {
     alternativeSeenPrice: 2999,
     why: "o S25 FE recebe atualizações por sete anos, contra três do Edge 60 Pro.",
   },
+  // Geração anterior sem oferta própria: a página leva ao sucessor.
+  "poco-x6-5g": {
+    productName: "Poco X6 5G",
+    maxPrice: 1500,
+    checkedAt: CHECKED_AT,
+    alternativeName: "Redmi Note 15 5G",
+    alternativeHref: links.REDMI_NOTE_15_5G_AMAZON_URL,
+    alternativeSeenPrice: 1829,
+    why: "o Redmi Note 15 5G é quase dois anos mais novo, tem bateria maior e carregador na caixa.",
+  },
+  "redmi-note-13-5g": {
+    productName: "Redmi Note 13 5G",
+    maxPrice: 1000,
+    checkedAt: CHECKED_AT,
+    alternativeName: "Galaxy A36 5G",
+    alternativeHref: links.GALAXY_A36_AMAZON_URL,
+    alternativeSeenPrice: 1348,
+    why: "o Galaxy A36 tem processador bem mais forte, IP67 e seis anos de atualizações.",
+  },
 } satisfies Record<string, FairPrice>;
 
 export type FairPriceId = keyof typeof FAIR_PRICES;
