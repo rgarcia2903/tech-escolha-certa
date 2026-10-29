@@ -1,3 +1,4 @@
+import { FaqJsonLd } from "@/components/site/FaqJsonLd";
 import { Link } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
 import { FairPriceBox } from "@/components/site/FairPriceBox";
@@ -170,6 +171,8 @@ export function OlderModelVerdict(p: OlderModelVerdictProps) {
             .
           </p>
         </section>
+
+        <FaqJsonLd faq={p.faq} />
 
         <section aria-labelledby="faq" className="mt-12">
           <h2 id="faq" className="text-2xl font-bold text-[#0F3F4A]">
