@@ -83,6 +83,9 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
   { id: "iphone-12", reviewPath: "/review/iphone-12" },
   { id: "iphone-11", reviewPath: "/review/iphone-11" },
   { id: "iphone-xr", reviewPath: "/review/iphone-xr" },
+  { id: "iphone-15-pro", reviewPath: "/review/iphone-15-pro" },
+  { id: "iphone-14-pro", reviewPath: "/review/iphone-14-pro" },
+  { id: "iphone-13-pro", reviewPath: "/review/iphone-13-pro" },
 ];
 
 const COMPARISONS = [
