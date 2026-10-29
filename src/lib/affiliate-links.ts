@@ -77,10 +77,10 @@ export const IPHONE_15_AMAZON_URL = "https://www.amazon.com.br/dp/B0CP6CVJSG?tag
 export const GALAXY_A17_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20";
 export const GALAXY_A36_AMAZON_URL = "https://www.amazon.com.br/dp/B0DYVNRG3B?tag=techescolha03-20";
 export const REDMI_NOTE_15_5G_AMAZON_URL = "https://www.amazon.com.br/dp/B0G2BFZRGL?tag=techescolha03-20";
-export const MOTO_G56_AMAZON_URL = "https://link.amazon/B0ewfAqbv";
-export const MOTO_G86_AMAZON_URL = "https://link.amazon/B03tWVgr1";
-export const EDGE_60_PRO_AMAZON_URL = "https://link.amazon/B09Sm06fg";
-export const GALAXY_S25_FE_AMAZON_URL = "https://link.amazon/B03cMVNVL";
+export const MOTO_G56_AMAZON_URL = "https://www.amazon.com.br/dp/B0F9MSZ87B?tag=techescolha03-20";
+export const MOTO_G86_AMAZON_URL = "https://www.amazon.com.br/dp/B0FCYP5FB2?tag=techescolha03-20";
+export const EDGE_60_PRO_AMAZON_URL = "https://www.amazon.com.br/dp/B0F7J35H7W?tag=techescolha03-20";
+export const GALAXY_S25_FE_AMAZON_URL = "https://www.amazon.com.br/dp/B0FTC96JJ5?tag=techescolha03-20";
 export const REDMI_NOTE_14_PRO_PLUS_AMAZON_URL = "https://www.amazon.com.br/dp/B0DSQZX1C5?tag=techescolha03-20";
 
 // Compatibilidade com os nomes usados no PR #43; sem novas ofertas ou URLs.
