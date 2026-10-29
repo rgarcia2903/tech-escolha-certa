@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BadgeCheck, CircleAlert, ShieldCheck } from "lucide-react";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
-import { AVOID, BLACK_FRIDAY, BUDGET_GROUPS, ceilingFor } from "@/lib/black-friday";
+import { AVOID, BLACK_FRIDAY, BUDGET_GROUPS, ceilingFor, daysUntilBlackFriday } from "@/lib/black-friday";
 import { FAIR_PRICES, formatBRL } from "@/lib/fair-prices";
 import { getProduct } from "@/lib/product-catalog";
 
-const PAGE_TITLE = `Black Friday de celulares ${BLACK_FRIDAY.year}: preço de referência`;
-const PAGE_DESCRIPTION = `Quanto custavam os celulares antes da Black Friday ${BLACK_FRIDAY.year}, até quanto vale pagar e quais "ofertas" evitar. Galaxy, Motorola, Redmi e Poco.`;
+const PAGE_TITLE = `Black Friday de celulares ${BLACK_FRIDAY.year}: até quanto pagar`;
+const PAGE_DESCRIPTION = `Até quanto vale pagar em cada celular na Black Friday ${BLACK_FRIDAY.year}: Galaxy, Motorola, Redmi e Poco. Veja o preço-alvo de cada modelo e quais "ofertas" evitar.`;
 
 export const Route = createFileRoute("/black-friday-celulares")({
   head: () => ({
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/black-friday-celulares")({
 });
 
 const CHECKLIST = [
-  "Compare o preço final com a referência desta página, não com o preço riscado do anúncio.",
+  "Compare o preço final com o preço-alvo desta página, não com o preço riscado do anúncio.",
   "Confira a versão: memória, armazenamento e se é 4G ou 5G mudam o preço e o aparelho.",
   "Veja quem vende. \"Vendido e entregue pela Amazon\" ou loja oficial dão mais segurança.",
   "Some frete e confira se o preço à vista é no Pix ou no cartão.",
@@ -35,16 +35,16 @@ const FAQ = [
   {
     question: "Como saber se a oferta de Black Friday é real?",
     answer:
-      "Compare o preço final com o preço que o mesmo modelo, na mesma versão, tinha semanas antes. Esta página guarda essa referência. Se o \"desconto\" deixar o preço igual ou acima dela, não é oferta.",
+      "Ignore o preço riscado e compare o preço final com o preço-alvo do modelo nesta página. Se ficar abaixo, é um bom negócio. Se ficar acima, o \"desconto\" provavelmente é sobre preço inflado.",
   },
   {
     question: "Vale esperar a Black Friday para comprar celular?",
     answer:
-      "Se você não precisa trocar agora, vale acompanhar. Mas preços baixos também aparecem fora da data. Se o modelo que você quer já estiver abaixo da referência, não há motivo para esperar.",
+      "Se você não precisa trocar agora, vale acompanhar. Mas preços baixos também aparecem fora da data. Se o modelo que você quer já estiver abaixo do preço-alvo, não há motivo para esperar.",
   },
   {
-    question: "Quando os preços desta página foram conferidos?",
-    answer: `Em ${BLACK_FRIDAY.checkedAt}, à vista, na Amazon Brasil. Vamos atualizar a página perto da Black Friday.`,
+    question: "Como vocês definem o preço-alvo?",
+    answer: `É uma avaliação editorial: comparamos o modelo com os concorrentes e sucessores à venda e indicamos até quanto ele ainda é a melhor compra. Revisado em ${BLACK_FRIDAY.reviewedAt}; vamos revisar de novo perto da Black Friday. Não é o preço da loja: o preço atual aparece só no anúncio.`,
   },
 ];
 
@@ -66,11 +66,16 @@ function BlackFridayPage() {
             Black Friday de celulares: quanto vale pagar em cada modelo
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
-            Anotamos quanto cada celular custava antes da Black Friday. Na data, compare o preço final com esta
-            referência: desconto sobre preço inflado não é oferta.
+            Para cada celular, dizemos até quanto vale pagar. Se o preço na loja estiver abaixo do preço-alvo, é
+            um bom negócio. Se estiver acima, o desconto é de fachada.
           </p>
           <p className="mt-4 text-sm text-slate-300">
-            Preços conferidos em {BLACK_FRIDAY.checkedAt}, à vista, na Amazon Brasil.{" "}
+            {daysUntilBlackFriday() > 0 && (
+              <strong suppressHydrationWarning className="mr-1 text-[#F2C38B]">
+                Faltam {daysUntilBlackFriday()} dias.
+              </strong>
+            )}
+            Preços-alvo revisados em {BLACK_FRIDAY.reviewedAt}.{" "}
             <Link to="/divulgacao-de-afiliados" className="underline">
               Usamos links de afiliado
             </Link>
@@ -112,30 +117,18 @@ function BlackFridayPage() {
                     <div>
                       <h3 className="text-xl font-bold text-[#0F3F4A]">{product.name}</h3>
                       <p className="mt-1 text-sm text-slate-500">{item.version}</p>
-                      <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-3">
-                        <div>
-                          <dt className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                            Preço antes da Black Friday
-                          </dt>
-                          <dd className="text-2xl font-extrabold text-slate-900">
-                            {formatBRL(item.referencePrice)}
-                          </dd>
+                      {ceiling !== undefined && (
+                        <div className="mt-4 rounded-2xl bg-[#FFF8EF] p-4">
+                          <p className="text-xs font-bold uppercase tracking-wider text-[#8B5A2B]">
+                            Compre se estiver até
+                          </p>
+                          <p className="text-3xl font-extrabold text-[#8B5A2B]">{formatBRL(ceiling)}</p>
+                          <p className="mt-1 text-sm text-slate-600">
+                            Abaixo disso, é bom negócio. Veja o preço de hoje na loja.
+                          </p>
                         </div>
-                        {ceiling !== undefined && (
-                          <div>
-                            <dt className="text-xs font-bold uppercase tracking-wider text-[#8B5A2B]">
-                              Vale a pena até
-                            </dt>
-                            <dd className="text-2xl font-extrabold text-[#8B5A2B]">{formatBRL(ceiling)}</dd>
-                          </div>
-                        )}
-                      </dl>
-                      <p className="mt-4 leading-7 text-slate-700">{item.note}</p>
-                      {!item.soldByAmazon && (
-                        <p className="mt-2 text-sm text-slate-500">
-                          Na checagem, a oferta era de um vendedor parceiro da Amazon.
-                        </p>
                       )}
+                      <p className="mt-4 leading-7 text-slate-700">{item.note}</p>
                       {item.reviewPath && (
                         <Link to={item.reviewPath} className="mt-3 inline-block text-sm font-semibold text-[#0F3F4A] underline">
                           Ler a análise do {product.name}
@@ -164,7 +157,7 @@ function BlackFridayPage() {
             entrega mais pelo mesmo dinheiro.
           </p>
           <ul className="mt-5 grid gap-4 sm:grid-cols-2">
-            {AVOID.map(({ id, seenPrice, reviewPath }) => {
+            {AVOID.map(({ id, reviewPath }) => {
               const fp = FAIR_PRICES[id];
               return (
                 <li key={id} className="rounded-2xl bg-white p-5 shadow-sm">
@@ -173,11 +166,6 @@ function BlackFridayPage() {
                     Só vale abaixo de <strong>{formatBRL(fp.maxPrice)}</strong>. Acima disso, prefira o{" "}
                     {fp.alternativeName}.
                   </p>
-                  {seenPrice && (
-                    <p className="mt-1 text-sm text-slate-500">
-                      Em {BLACK_FRIDAY.checkedAt}, estava por {formatBRL(seenPrice)} na Amazon.
-                    </p>
-                  )}
                   <Link to={reviewPath} className="mt-2 inline-block text-sm font-semibold text-[#0F3F4A] underline">
                     Ver o veredito
                   </Link>

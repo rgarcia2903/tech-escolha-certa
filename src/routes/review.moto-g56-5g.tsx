@@ -5,7 +5,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 // Ficha conferida em 28/10/2026: Oficina da Net (lançamento no Brasil em 29/05/2025 e ficha
-// técnica) e anúncio da Amazon Brasil. Preço visto na Amazon em 28/10/2026: R$ 1.368,99.
+// técnica) e anúncio da Amazon Brasil.
 const PAGE_TITLE = fairPriceTitle("moto-g56-5g");
 const PAGE_DESCRIPTION = fairPriceDescription("moto-g56-5g");
 
@@ -51,7 +51,7 @@ function ReviewMotoG56() {
       affiliate={{
         title: "Moto G56 5G: confira o preço de hoje",
         description:
-          "Compare o preço na Amazon e no Mercado Livre e confira o vendedor. Na nossa checagem de outubro de 2026, a oferta da Amazon era de um vendedor parceiro, não da própria Amazon.",
+          "Compare as duas lojas e confira o vendedor. Até R$ 1.200 é uma boa compra; acima disso, veja o Galaxy A36.",
         buttonText: "Ver Moto G56 5G na Amazon",
         highlight: "256 GB • 5.200 mAh • IP68 e IP69 • Fone P2",
       }}
@@ -132,7 +132,7 @@ function ReviewMotoG56() {
         {
           eyebrow: "Comparação",
           title: "Moto G56 5G ou Galaxy A36 5G?",
-          text: "Na nossa checagem de outubro de 2026, os dois custavam quase o mesmo na Amazon. O Galaxy A36 vence em tela, processador e tempo de atualização. O Moto G56 vence em armazenamento, resistência, cartão de memória e entrada para fone. Para a maioria das pessoas, o A36 é a compra melhor; o G56 só passa na frente quando aparece bem mais barato.",
+          text: "Os dois costumam custar quase o mesmo. O Galaxy A36 vence em tela, processador e tempo de atualização. O Moto G56 vence em armazenamento, resistência, cartão de memória e entrada para fone. Para a maioria das pessoas, o A36 é a compra melhor; o G56 só passa na frente quando aparece bem mais barato.",
         },
       ]}
       finalRecommendation="O Moto G56 5G vale a pena até cerca de R$ 1.200, para quem quer resistência, bateria e espaço de sobra. Acima disso, prefira o Galaxy A36 5G, que tem tela e suporte melhores pelo mesmo preço. Antes de comprar, confira se o anúncio é da versão 5G com 256 GB e quem é o vendedor."

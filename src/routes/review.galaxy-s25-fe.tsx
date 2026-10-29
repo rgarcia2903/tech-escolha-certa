@@ -57,7 +57,7 @@ function ReviewGalaxyS25FE() {
       affiliate={{
         title: "Galaxy S25 FE: confira o preço de hoje",
         description:
-          "Compare o preço na Amazon e no Mercado Livre. Na nossa checagem de outubro de 2026, a versão de 128 GB estava mais barata na Amazon.",
+          "Compare as duas lojas. Até R$ 3.000, é a forma mais barata de ter um Galaxy S novo com sete anos de atualizações.",
         buttonText: "Ver Galaxy S25 FE na Amazon",
         highlight: "7 anos de atualizações • IP68 • Teleobjetiva • 4.900 mAh",
       }}

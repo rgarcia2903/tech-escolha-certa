@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BadgeCheck, CircleAlert } from "lucide-react";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
-import { FAIR_PRICES, formatBRL, type FairPriceId } from "@/lib/fair-prices";
+import { HeroPickCTA } from "@/components/site/HeroPickCTA";
+import { FAIR_PRICES, formatBRL, goodDealFor, type FairPriceId } from "@/lib/fair-prices";
 
-// Preços vistos na Amazon em 28/10/2026. Fichas: reviews do site, Samsung Newsroom Brasil
+// Preços-alvo editoriais em src/lib/fair-prices.ts; não exibir preço de loja (política da Amazon). Fichas: reviews do site, Samsung Newsroom Brasil
 // (Galaxy A57, lançado em 15/04/2026 a R$ 3.599) e Samsung Newsroom (S25 FE).
 const PAGE_TITLE = "Melhor celular Samsung em 2026: qual comprar e até quanto pagar";
 const PAGE_DESCRIPTION =
@@ -29,7 +30,6 @@ const PICKS = [
     id: "galaxy-a36-5g",
     badge: "Melhor custo-benefício",
     name: "Galaxy A36 5G",
-    seenPrice: 1348,
     version: "128 GB, 6 GB de RAM",
     summary:
       "Tela Super AMOLED de 6,7\" com 120 Hz, Snapdragon 6 Gen 3, câmera de 50 MP com estabilização óptica, IP67 e seis anos de atualizações.",
@@ -41,19 +41,17 @@ const PICKS = [
     id: "galaxy-a57-5g",
     badge: "Melhor intermediário",
     name: "Galaxy A57 5G",
-    seenPrice: 1857,
     version: "128 GB, 8 GB de RAM",
     summary:
       "O intermediário mais novo da Samsung: tela Super AMOLED+ de 120 Hz, câmeras de 50 + 12 + 5 MP, IP68, corpo de 6,9 mm e 179 g, e seis anos de atualizações.",
     forWho: "Quem quer acabamento premium, resistência IP68 e suporte longo sem pagar preço de linha S.",
     watchOut:
-      "Foi lançado a R$ 3.599 em abril de 2026. Na nossa checagem estava bem abaixo disso; confira a versão e o vendedor no anúncio.",
+      "Foi lançado a R$ 3.599 em abril de 2026 e costuma aparecer bem abaixo disso. Confira a versão e o vendedor no anúncio.",
   },
   {
     id: "galaxy-s25-fe",
     badge: "Melhor linha S acessível",
     name: "Galaxy S25 FE",
-    seenPrice: 2999,
     version: "128 GB, 8 GB de RAM",
     summary:
       "Tela Dynamic AMOLED 2X de 120 Hz, câmera tripla com teleobjetiva, IP68, bateria de 4.900 mAh e sete anos de atualizações.",
@@ -65,7 +63,6 @@ const PICKS = [
     id: "galaxy-a17-5g",
     badge: "Mais barato que vale a pena",
     name: "Galaxy A17 5G",
-    seenPrice: 899,
     version: "128 GB, 4 GB de RAM",
     summary:
       "Tela Super AMOLED de 6,7\" com 90 Hz, câmera de 50 MP com estabilização óptica, 5G, NFC, microSD e seis anos de atualizações.",
@@ -76,7 +73,13 @@ const PICKS = [
 ];
 
 const TABLE: [string, string, string, string, string][] = [
-  ["Preço visto (28/10)", formatBRL(899), formatBRL(1348), formatBRL(1857), formatBRL(2999)],
+  [
+    "Compre se estiver até",
+    formatBRL(goodDealFor("galaxy-a17-5g")!),
+    formatBRL(goodDealFor("galaxy-a36-5g")!),
+    formatBRL(goodDealFor("galaxy-a57-5g")!),
+    formatBRL(goodDealFor("galaxy-s25-fe")!),
+  ],
   ["Tela", "AMOLED 90 Hz", "AMOLED 120 Hz", "AMOLED+ 120 Hz", "AMOLED 2X 120 Hz"],
   ["Câmeras traseiras", "50 + 5 + 2 MP", "50 + 8 + 5 MP", "50 + 12 + 5 MP", "50 + 12 + 8 MP tele"],
   ["Bateria", "5.000 mAh", "5.000 mAh", "5.000 mAh", "4.900 mAh"],
@@ -108,7 +111,7 @@ const FAQ = [
   {
     question: "Qual Samsung tem o melhor custo-benefício?",
     answer:
-      "O Galaxy A36 5G. Ele custava praticamente o mesmo que intermediários de outras marcas na nossa checagem e tem suporte bem mais longo.",
+      "O Galaxy A36 5G. Ele costuma custar o mesmo que intermediários de outras marcas e tem suporte bem mais longo.",
   },
   {
     question: "Ainda vale comprar Galaxy A55, A35 ou S24?",
@@ -149,8 +152,9 @@ function MelhoresCelularesSamsung() {
             <strong className="text-white">Galaxy S25 FE</strong> para ficar muitos anos e o{" "}
             <strong className="text-white">Galaxy A17</strong> para gastar menos de R$ 1.000.
           </p>
+          <HeroPickCTA productId="galaxy-a36-5g" pageType="guia" />
           <p className="mt-4 text-sm text-slate-300">
-            Análise documental com fichas oficiais e preços conferidos na Amazon em 28 de outubro de 2026.{" "}
+            Análise documental com fichas oficiais, revisada em outubro de 2026.{" "}
             <Link to="/divulgacao-de-afiliados" className="underline">
               Usamos links de afiliado
             </Link>
@@ -184,8 +188,8 @@ function MelhoresCelularesSamsung() {
                 </dl>
                 <p className="mt-4 rounded-2xl bg-[#FFF8EF] p-4 text-sm text-slate-700">
                   <BadgeCheck className="mr-1 inline h-4 w-4 text-[#8B5A2B]" />
-                  Na nossa checagem, a versão de {pick.version} estava por cerca de{" "}
-                  <strong>{formatBRL(pick.seenPrice)}</strong> na Amazon.
+                  Compre se estiver até <strong>{formatBRL(goodDealFor(pick.id)!)}</strong> ({pick.version}).
+                  Abaixo disso, é bom negócio.
                 </p>
                 {pick.reviewPath && (
                   <Link to={pick.reviewPath} className="mt-4 inline-block font-semibold text-[#0F3F4A] underline">

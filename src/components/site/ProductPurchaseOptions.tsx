@@ -53,7 +53,7 @@ export function ProductPurchaseOptions({
             offer.store === "amazon" ? "offer-button-amazon" : "offer-button-meli",
           )}
         >
-          Comprar {offer.store === "amazon" ? "na" : "no"} {STORE_LABELS[offer.store]}
+          Ver preço de hoje {offer.store === "amazon" ? "na" : "no"} {STORE_LABELS[offer.store]}
           <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
         </a>
       ))}
