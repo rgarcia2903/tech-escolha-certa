@@ -35,6 +35,30 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Galaxy A57 vs Galaxy A36",
+    summary: "Quando vale pagar mais pelo A57 e quando o A36 basta. Os dois têm seis anos de atualizações.",
+    href: "/comparativo/galaxy-a57-vs-galaxy-a36",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer um Samsung intermediário atual.",
+  },
+  {
+    title: "Moto G86 vs Redmi Note 15 5G",
+    summary: "Tela, câmera e resistência contra bateria, recarga e cartão de memória, na faixa de até R$ 2.000.",
+    href: "/comparativo/moto-g86-vs-redmi-note-15-5g",
+    family: "Motorola vs Xiaomi",
+    tag: "Novo",
+    bestFor: "Quem quer o melhor intermediário até R$ 2.000.",
+  },
+  {
+    title: "Edge 60 Pro vs Galaxy S25 FE",
+    summary: "Bateria, recarga e câmeras do Edge contra sete anos de atualizações do S25 FE.",
+    href: "/comparativo/edge-60-pro-vs-galaxy-s25-fe",
+    family: "Motorola vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer um premium acessível.",
+  },
+  {
     title: "Galaxy A25 5G vs Redmi Note 13 4G",
     summary:
       "Compare duas alternativas anteriores, com preço a conferir em 5G, câmera, desempenho, tela, bateria, carregamento e suporte.",

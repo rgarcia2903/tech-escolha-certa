@@ -275,4 +275,22 @@
     <priority>0.7</priority>
     <lastmod>2026-10-29</lastmod>
   </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/comparativo/galaxy-a57-vs-galaxy-a36</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/comparativo/moto-g86-vs-redmi-note-15-5g</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/comparativo/edge-60-pro-vs-galaxy-s25-fe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-10-29</lastmod>
+  </url>
 </urlset>

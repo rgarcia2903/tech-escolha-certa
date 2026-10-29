@@ -167,6 +167,7 @@ function ReviewGalaxyS25FE() {
         },
       ]}
       relatedLinks={[
+        { label: "Galaxy S25 FE ou Edge 60 Pro?", to: "/comparativo/edge-60-pro-vs-galaxy-s25-fe" },
         { label: "Review Galaxy S24", to: "/review/galaxy-s24" },
         { label: "Melhores celulares Samsung", to: "/melhores-celulares-samsung" },
         { label: "Celular custo-benefício em 2026", to: "/melhores-celulares-custo-beneficio" },

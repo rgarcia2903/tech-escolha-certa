@@ -161,6 +161,7 @@ function ReviewEdge60Pro() {
         },
       ]}
       relatedLinks={[
+        { label: "Edge 60 Pro ou Galaxy S25 FE?", to: "/comparativo/edge-60-pro-vs-galaxy-s25-fe" },
         { label: "Melhores celulares Motorola", to: "/melhores-celulares-motorola" },
         { label: "Review Galaxy S25 FE", to: "/review/galaxy-s25-fe" },
         { label: "Review Moto G86 5G", to: "/review/moto-g86-5g" },
