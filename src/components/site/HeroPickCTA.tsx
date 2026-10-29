@@ -32,8 +32,8 @@ export function HeroPickCTA({ productId, pageType }: { productId: string; pageTy
           }
           className={
             offer.store === "amazon"
-              ? "inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#FFD814] px-5 py-3 text-sm font-bold text-slate-900 shadow transition hover:brightness-95"
-              : "inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#FFE600] px-5 py-3 text-sm font-bold text-slate-900 shadow transition hover:brightness-95"
+              ? "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#FFD814] px-5 py-3 text-center text-sm sm:w-auto font-bold text-slate-900 shadow transition hover:brightness-95"
+              : "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#FFE600] px-5 py-3 text-center text-sm sm:w-auto font-bold text-slate-900 shadow transition hover:brightness-95"
           }
         >
           {product.name}: ver preço {offer.store === "amazon" ? "na" : "no"} {STORE_LABELS[offer.store]}
