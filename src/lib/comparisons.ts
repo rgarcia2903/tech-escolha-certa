@@ -160,4 +160,51 @@ export const COMPARISONS: Record<string, Comparison> = {
       },
     ],
   },
+  "iphone-17-vs-iphone-17e": {
+    slug: "iphone-17-vs-iphone-17e",
+    a: { id: "iphone-17", name: "iPhone 17", reviewPath: "/qual-iphone-comprar" },
+    b: { id: "iphone-17e", name: "iPhone 17e", reviewPath: "/qual-iphone-comprar" },
+    title: "iPhone 17 ou iPhone 17e: qual comprar em 2026?",
+    description:
+      "iPhone 17 vs iPhone 17e: tela de 120 Hz, câmeras, Dynamic Island e preço lado a lado. Veja quando vale pagar mais pelo 17 e quando o 17e basta.",
+    shortAnswer:
+      "Os dois têm o mesmo chip A19 e 256 GB. O iPhone 17 vale a diferença se você quer tela de 120 Hz maior (6,3\"), câmera ultra-angular de 48 MP, selfie de 18 MP e Dynamic Island. Se o uso é WhatsApp, redes sociais e fotos do dia a dia, o iPhone 17e entrega a mesma potência gastando menos.",
+    chooseA: [
+      "Quer a tela mais fluida (120 Hz) e um pouco maior.",
+      "Tira fotos de paisagem e de grupo (ultra-angular de 48 MP).",
+      "Faz muitas selfies e chamadas de vídeo (frontal de 18 MP Center Stage).",
+    ],
+    chooseB: [
+      "Quer o iPhone novo mais barato, com chip atual e 256 GB.",
+      "Usa uma câmera só no dia a dia e não sente falta da ultra-angular.",
+      "Prefere um aparelho menor e mais leve (6,1\", 170 g).",
+    ],
+    rows: [
+      { label: "Chip", a: "A19", b: "A19", winner: "tie" },
+      { label: "Tela", a: '6,3" OLED • 120 Hz (ProMotion)', b: '6,1" OLED • 60 Hz', winner: "a" },
+      { label: "Câmeras traseiras", a: "48 MP + ultra-angular 48 MP", b: "48 MP (uma câmera)", winner: "a" },
+      { label: "Câmera frontal", a: "18 MP Center Stage", b: "12 MP", winner: "a" },
+      { label: "Dynamic Island", a: "Sim", b: "Não (entalhe)", winner: "a" },
+      { label: "Armazenamento base", a: "256 GB", b: "256 GB", winner: "tie" },
+      { label: "MagSafe", a: "Sim", b: "Sim", winner: "tie" },
+      { label: "Preço de lançamento", a: "R$ 7.999", b: "R$ 5.799", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 5.400", b: "R$ 4.500", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "O iPhone 17e é tão rápido quanto o iPhone 17?",
+        answer: "Sim, no dia a dia. Os dois usam o chip A19. A diferença está na tela, nas câmeras e no acabamento.",
+      },
+      {
+        question: "Vale pagar a diferença pelo iPhone 17?",
+        answer:
+          "Vale se você usa muito a câmera ou valoriza a tela de 120 Hz. Se a diferença de preço passar de uns R$ 1.000 e seu uso for básico, o 17e é a compra mais inteligente.",
+      },
+      {
+        question: "E o iPhone 16, ainda vale?",
+        answer:
+          "Só abaixo de R$ 4.000. Com 128 GB e tela de 60 Hz, ele custa quase o mesmo que o 17e de 256 GB, que é mais novo.",
+      },
+    ],
+  },
 };

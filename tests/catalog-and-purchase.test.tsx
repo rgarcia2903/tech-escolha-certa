@@ -44,6 +44,8 @@ const mercadoLivre = [
   ["edge-60-pro", "https://meli.la/1Az91Ky"],
   ["galaxy-s25-fe", "https://meli.la/1KKtEmb"],
   ["galaxy-a57-5g", "https://meli.la/1XMLUtz"],
+  ["iphone-17", "https://meli.la/2nabFeE"],
+  ["iphone-17e", "https://meli.la/2cjYfah"],
 ];
 const amazon = [
   ["galaxy-a17-5g", "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20"],
@@ -57,9 +59,14 @@ const amazon = [
   ["galaxy-s24", "https://www.amazon.com.br/dp/B0CQD9H9MG?tag=techescolha03-20"],
   ["poco-x7-pro", "https://www.amazon.com.br/dp/B0DRD1SBSD?tag=techescolha03-20"],
   ["galaxy-a57-5g", "https://www.amazon.com.br/dp/B0GVSVS9WH?tag=techescolha03-20"],
+  ["iphone-17", "https://www.amazon.com.br/dp/B0GQW2J4SK?tag=techescolha03-20"],
+  ["iphone-17e", "https://www.amazon.com.br/dp/B0GTRWMZWZ?tag=techescolha03-20"],
+  ["iphone-16e", "https://www.amazon.com.br/dp/B0DXR6MKR8?tag=techescolha03-20"],
+  ["iphone-16", "https://www.amazon.com.br/dp/B0DJFTCKNN?tag=techescolha03-20"],
+  ["iphone-15", "https://www.amazon.com.br/dp/B0CP6CVJSG?tag=techescolha03-20"],
 ];
-test("17 Mercado Livre and 11 Amazon addresses preserve exact model identity", () => {
-  assert.equal(OFFERS.length, 28);
+test("19 Mercado Livre and 16 Amazon addresses preserve exact model identity", () => {
+  assert.equal(OFFERS.length, 35);
   for (const [store, pairs] of [
     ["mercado_livre", mercadoLivre],
     ["amazon", amazon],
@@ -255,7 +262,7 @@ test("PR #43 export names remain compatible without duplicating offers", () => {
     assert.equal(current, legacy);
     assert.equal(getOfferByUrl(current)?.productId, id);
   }
-  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 28);
+  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 35);
 });
 
 test("PR #43 candidates remain shared while evaluation models stay unapproved", () => {

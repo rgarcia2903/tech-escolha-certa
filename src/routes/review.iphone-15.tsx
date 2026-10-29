@@ -1,3 +1,5 @@
+import { QuickVerdict } from "@/components/site/QuickVerdict";
+import { fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
@@ -35,7 +37,7 @@ const HERO_IMG = "https://techescolhacerta.com.br/images/products/iphone-15-opti
 export const Route = createFileRoute("/review/iphone-15")({
   head: () => ({
     meta: [
-      { title: "iPhone 15 vale a pena em 2026? Review completo e honesto" },
+      { title: fairPriceTitle("iphone-15") },
       {
         name: "description",
         content:
@@ -270,6 +272,7 @@ function ReviewPage() {
           </div>
         </div>
       </header>
+      <QuickVerdict fairPriceId="iphone-15" productId="iphone-15" alternativeReviewPath="/qual-iphone-comprar" />
 
       {/* Body */}
       <div className="container-tec grid gap-10 py-14 lg:grid-cols-12 lg:gap-12">
