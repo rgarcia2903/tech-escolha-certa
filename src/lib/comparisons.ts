@@ -442,7 +442,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "galaxy-a37-vs-galaxy-a36": {
     slug: "galaxy-a37-vs-galaxy-a36",
     a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
-    b: { id: "galaxy-a37", name: "Galaxy A37 5G", reviewPath: "/melhores-celulares-samsung" },
+    b: { id: "galaxy-a37-5g", name: "Galaxy A37 5G", reviewPath: "/melhores-celulares-samsung" },
     title: "Galaxy A37 ou Galaxy A36: qual comprar em 2026?",
     description:
       "Galaxy A37 vs Galaxy A36: processador, proteção, atualizações e preço lado a lado. Veja se vale pagar a mais pelo modelo novo.",

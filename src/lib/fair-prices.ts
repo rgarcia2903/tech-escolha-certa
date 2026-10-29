@@ -178,7 +178,7 @@ export const GOOD_DEAL_UNDER: Record<string, number> = {
   "poco-x8-pro": 2450,
   "moto-g77": 1500,
   "edge-70": 2400,
-  "galaxy-a37": 1700,
+  "galaxy-a37-5g": 1700,
 };
 
 /** Até quanto vale pagar no modelo: teto de FAIR_PRICES ou limiar de bom negócio. */

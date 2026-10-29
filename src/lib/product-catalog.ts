@@ -328,8 +328,8 @@ export const PRODUCTS: Product[] = [
     "POCO X8 Pro",
     "POCO",
     "candidate",
-    "Dimensity 8500-Ultra, LPDDR5X e UFS 4.1: candidato para jogos, sem promessa de FPS.",
-    { officialUrl: "https://www.mi.com/br/product/poco-x8-pro/specs/" },
+    "O mais forte para jogos até R$ 2.500: Dimensity 8500 Ultra, 6.500 mAh, 100 W e IP68.",
+    { officialUrl: "https://www.mi.com/br/product/poco-x8-pro/specs/", reviewPath: "/comparativo/poco-x8-pro-vs-poco-x7-pro" },
   ),
   product(
     "moto-g84-5g",
@@ -365,9 +365,10 @@ export const PRODUCTS: Product[] = [
     "galaxy-a37-5g",
     "Galaxy A37 5G",
     "Samsung",
-    "evaluate",
-    "Candidato com política de suporte anunciada pela Samsung; preço por variante pendente.",
+    "candidate",
+    "Sucessor do A36: Exynos 1480, IP68 e seis anos de atualizações.",
     {
+      reviewPath: "/comparativo/galaxy-a37-vs-galaxy-a36",
       officialUrl:
         "https://news.samsung.com/br/samsung-apresenta-galaxy-a57-5g-e-galaxy-a37-5g-no-brasil-com-recursos-de-nivel-profissional",
     },
@@ -412,14 +413,6 @@ export const PRODUCTS: Product[] = [
     { officialUrl: "https://www.apple.com/br/iphone-17/specs/", reviewPath: "/qual-iphone-comprar" },
   ),
   product(
-    "poco-x8-pro",
-    "Poco X8 Pro",
-    "POCO",
-    "candidate",
-    "O mais forte para jogos até R$ 2.500: Dimensity 8500 Ultra, 6.500 mAh, 100 W e IP68.",
-    { reviewPath: "/comparativo/poco-x8-pro-vs-poco-x7-pro" },
-  ),
-  product(
     "moto-g77",
     "Moto G77",
     "Motorola",
@@ -434,14 +427,6 @@ export const PRODUCTS: Product[] = [
     "candidate",
     "Ultrafino (6,3 mm), Snapdragon 7 Gen 4, câmeras de 50 MP, IP69 e 4 anos de Android.",
     { reviewPath: "/comparativo/edge-70-vs-edge-60-pro" },
-  ),
-  product(
-    "galaxy-a37",
-    "Galaxy A37 5G",
-    "Samsung",
-    "candidate",
-    "Sucessor do A36: Exynos 1480, IP68 e seis anos de atualizações.",
-    { reviewPath: "/comparativo/galaxy-a37-vs-galaxy-a36" },
   ),
   product(
     "galaxy-a17-4g",
@@ -579,7 +564,7 @@ const amazon: [string, string][] = [
   ["poco-x8-pro", links.POCO_X8_PRO_AMAZON_URL],
   ["moto-g77", links.MOTO_G77_AMAZON_URL],
   ["edge-70", links.EDGE_70_AMAZON_URL],
-  ["galaxy-a37", links.GALAXY_A37_AMAZON_URL],
+  ["galaxy-a37-5g", links.GALAXY_A37_AMAZON_URL],
 ];
 function offer(productId: string, store: Store, url: string, legacy = false): Offer {
   return {
