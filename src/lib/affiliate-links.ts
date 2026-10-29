@@ -92,3 +92,10 @@ export const MOTO_G86_5G_AFFILIATE_URL = MOTO_G86_AFFILIATE_URL;
 // Alternativas recomendadas nos reviews de modelos fora de linha ou caros (28/10/2026).
 export const POCO_X7_PRO_AMAZON_URL = "https://www.amazon.com.br/dp/B0DRD1SBSD?tag=techescolha03-20";
 export const GALAXY_A57_AMAZON_URL = "https://www.amazon.com.br/dp/B0GVSVS9WH?tag=techescolha03-20";
+export const MOTO_G_MAX_AFFILIATE_URL = "https://meli.la/2JEAxoM";
+export const IPHONE_16E_AFFILIATE_URL = "https://meli.la/1DJVYYj";
+export const GALAXY_A37_AFFILIATE_URL = "https://meli.la/1c1q6L7";
+export const GALAXY_S25_AFFILIATE_URL = "https://meli.la/1DCByA3";
+export const GALAXY_S25_ULTRA_AFFILIATE_URL = "https://meli.la/1qhtx7H";
+export const GALAXY_S26_FE_AFFILIATE_URL = "https://meli.la/1zxgrdG";
+export const EDGE_70_AFFILIATE_URL = "https://meli.la/17uhEEF";

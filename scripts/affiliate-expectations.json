@@ -499,5 +499,70 @@
       "g37",
       "g06"
     ]
+  },
+  "MOTO_G_MAX_AFFILIATE_URL": {
+    "include": [
+      "g max"
+    ],
+    "exclude": [
+      "g86",
+      "g85",
+      "g84"
+    ]
+  },
+  "IPHONE_16E_AFFILIATE_URL": {
+    "include": [
+      "16e"
+    ],
+    "exclude": [
+      "recondicionado",
+      "17e"
+    ]
+  },
+  "GALAXY_A37_AFFILIATE_URL": {
+    "include": [
+      "a37"
+    ],
+    "exclude": [
+      "a36",
+      "a57"
+    ]
+  },
+  "GALAXY_S25_AFFILIATE_URL": {
+    "include": [
+      "s25"
+    ],
+    "exclude": [
+      "fe",
+      "ultra",
+      "s25+",
+      "edge"
+    ]
+  },
+  "GALAXY_S25_ULTRA_AFFILIATE_URL": {
+    "include": [
+      "s25 ultra"
+    ],
+    "exclude": [
+      "s24",
+      "s26"
+    ]
+  },
+  "GALAXY_S26_FE_AFFILIATE_URL": {
+    "include": [
+      "s26 fe"
+    ],
+    "exclude": [
+      "s25"
+    ]
+  },
+  "EDGE_70_AFFILIATE_URL": {
+    "include": [
+      "edge 70"
+    ],
+    "exclude": [
+      "fusion",
+      "pro"
+    ]
   }
 }
