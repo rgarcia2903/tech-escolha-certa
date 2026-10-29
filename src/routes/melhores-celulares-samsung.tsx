@@ -95,6 +95,12 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
 ];
 
 const COMPARISONS = [
+  { to: "/comparativo/galaxy-s26-vs-galaxy-s25", label: "Galaxy S26 vs Galaxy S25" },
+  { to: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra", label: "Galaxy S26 Ultra vs S25 Ultra" },
+  { to: "/comparativo/galaxy-s26-fe-vs-galaxy-s25-fe", label: "Galaxy S26 FE vs S25 FE" },
+  { to: "/comparativo/galaxy-a37-vs-galaxy-a36", label: "Galaxy A37 vs Galaxy A36" },
+  { to: "/comparativo/galaxy-a57-vs-galaxy-a36", label: "Galaxy A57 vs Galaxy A36" },
+  { to: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g", label: "Galaxy A17 4G vs A17 5G" },
   { to: "/comparativo-galaxy-a55-vs-galaxy-a35", label: "Galaxy A55 vs Galaxy A35" },
   { to: "/comparativo/galaxy-a55-vs-redmi-note-13-pro", label: "Galaxy A55 vs Redmi Note 13 Pro" },
   { to: "/comparativo/galaxy-a35-vs-redmi-note-13-pro", label: "Galaxy A35 vs Redmi Note 13 Pro" },

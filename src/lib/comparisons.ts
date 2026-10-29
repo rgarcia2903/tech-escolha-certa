@@ -483,4 +483,183 @@ export const COMPARISONS: Record<string, Comparison> = {
       },
     ],
   },
+  "galaxy-s26-vs-galaxy-s25": {
+    slug: "galaxy-s26-vs-galaxy-s25",
+    a: { id: "galaxy-s25", name: "Galaxy S25", reviewPath: "/melhores-celulares-samsung" },
+    b: { id: "galaxy-s26", name: "Galaxy S26", reviewPath: "/melhores-celulares-samsung" },
+    title: "Galaxy S26 ou Galaxy S25: qual comprar em 2026?",
+    description:
+      "Galaxy S26 vs Galaxy S25: o que mudou de verdade, o que continua igual e qual vale mais a pena pelo preço de hoje.",
+    shortAnswer:
+      "Mudou pouco. Câmeras, tela, recarga, IP68 e os sete anos de atualizações são iguais. O S26 tem bateria um pouco maior (4.300 contra 4.000 mAh), tela de 6,3\" e Exynos 2600 no lugar do Snapdragon 8 Elite. Comprando a versão de 256 GB dos dois, o S25 costuma sair bem mais barato, e é a compra mais inteligente.",
+    chooseA: [
+      "Quer o melhor preço por um Galaxy S compacto.",
+      "Prefere o processador Snapdragon.",
+      "Encontrou a versão de 256 GB.",
+    ],
+    chooseB: [
+      "A diferença de preço para o S25 é pequena.",
+      "Quer a bateria um pouco maior.",
+      "Quer o suporte de atualizações indo até o mais tarde possível.",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 8 Elite", b: "Exynos 2600", winner: "tie" },
+      { label: "Tela", a: '6,2" AMOLED • 120 Hz', b: '6,3" AMOLED • 120 Hz', winner: "tie" },
+      { label: "Câmeras", a: "50 + 12 + 10 MP (zoom 3x)", b: "50 + 12 + 10 MP (zoom 3x)", winner: "tie" },
+      { label: "Bateria", a: "4.000 mAh", b: "4.300 mAh", winner: "b" },
+      { label: "Recarga", a: "25 W • sem fio 15 W", b: "25 W • sem fio 15 W", winner: "tie" },
+      { label: "Atualizações", a: "7 anos (desde 2025)", b: "7 anos (desde 2026)", winner: "b" },
+      { label: "Preço de lançamento", a: "R$ 6.999", b: "R$ 7.499", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 3.900", b: "R$ 4.800", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena trocar o S25 pelo S26?",
+        answer: "Não. As diferenças são pequenas; a troca não compensa.",
+      },
+      {
+        question: "Galaxy S25 ou Galaxy S25 FE?",
+        answer:
+          "O S25 é compacto, tem processador bem mais forte e acabamento superior. O S25 FE tem tela maior e bateria maior, e custa menos. Para quem quer tamanho menor e desempenho, o S25.",
+      },
+      {
+        question: "O Galaxy S26 vem com carregador?",
+        answer: "Não. O carregamento de 25 W exige um adaptador compatível, vendido separadamente.",
+      },
+    ],
+  },
+  "galaxy-s26-ultra-vs-galaxy-s25-ultra": {
+    slug: "galaxy-s26-ultra-vs-galaxy-s25-ultra",
+    a: { id: "galaxy-s25-ultra", name: "Galaxy S25 Ultra", reviewPath: "/melhores-celulares-samsung" },
+    b: { id: "galaxy-s26-ultra", name: "Galaxy S26 Ultra", reviewPath: "/melhores-celulares-samsung" },
+    title: "Galaxy S26 Ultra ou S25 Ultra: qual comprar em 2026?",
+    description:
+      "Galaxy S26 Ultra vs S25 Ultra: processador, recarga, tela de privacidade, câmeras e preço. Veja se vale pagar a mais pelo modelo novo.",
+    shortAnswer:
+      "O S25 Ultra continua sendo um topo de linha excelente: mesma tela de 6,9\", mesma bateria de 5.000 mAh, câmera de 200 MP com zoom de 5x, S Pen e sete anos de atualizações. O S26 Ultra traz processador mais novo, recarga de 60 W, a Tela de Privacidade e é um pouco mais leve. Se o S25 Ultra estiver uns R$ 800 ou mais abaixo, ele é a compra mais inteligente.",
+    chooseA: [
+      "Quer um topo de linha completo gastando bem menos.",
+      "Prefere o acabamento em titânio.",
+      "A recarga de 45 W já atende você.",
+    ],
+    chooseB: [
+      "Quer o processador mais rápido e recarga de 60 W.",
+      "Usa o celular em público e quer a Tela de Privacidade.",
+      "A diferença de preço é pequena.",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 8 Elite", b: "Snapdragon 8 Elite Gen 5", winner: "b" },
+      { label: "Tela", a: '6,9" AMOLED • 120 Hz', b: '6,9" AMOLED • 120 Hz • Tela de Privacidade', winner: "b" },
+      { label: "Câmeras", a: "200 + 50 + 50 (5x) + 10 MP (3x)", b: "200 + 50 + 50 (5x) + 10 MP (3x)", winner: "tie" },
+      { label: "Bateria", a: "5.000 mAh", b: "5.000 mAh", winner: "tie" },
+      { label: "Recarga com fio", a: "45 W", b: "60 W", winner: "b" },
+      { label: "Peso e material", a: "218 g • titânio", b: "214 g • alumínio", winner: "tie" },
+      { label: "Atualizações", a: "7 anos (desde 2025)", b: "7 anos (desde 2026)", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 5.800", b: "R$ 6.750", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena trocar o S25 Ultra pelo S26 Ultra?",
+        answer: "Para a maioria das pessoas, não. A evolução é pequena; faz sentido só se a recarga de 60 W ou a Tela de Privacidade forem importantes para você.",
+      },
+      {
+        question: "Os dois têm S Pen?",
+        answer: "Sim, os dois vêm com a S Pen embutida.",
+      },
+      {
+        question: "Galaxy S25 Ultra ou iPhone 17?",
+        answer:
+          "O S25 Ultra tem câmera com zoom de 5x, S Pen e tela maior. O iPhone 17 é menor e mais barato. Para fotografia de longe e produtividade, o Ultra.",
+      },
+    ],
+  },
+  "galaxy-s26-fe-vs-galaxy-s25-fe": {
+    slug: "galaxy-s26-fe-vs-galaxy-s25-fe",
+    a: { id: "galaxy-s25-fe", name: "Galaxy S25 FE", reviewPath: "/review/galaxy-s25-fe" },
+    b: { id: "galaxy-s26-fe", name: "Galaxy S26 FE", reviewPath: "/melhores-celulares-samsung" },
+    title: "Galaxy S26 FE ou S25 FE: qual comprar em 2026?",
+    description:
+      "Galaxy S26 FE vs S25 FE: tela, câmeras e bateria são iguais. Veja o que muda e qual vale mais a pena pelo preço de hoje.",
+    shortAnswer:
+      "Tela, câmeras, bateria, recarga com fio, IP68 e os sete anos de atualizações são iguais. O S26 FE tem processador mais novo (Exynos 2500) e mais modos de vídeo, como 4K a 120 fps. Pelo preço de hoje, o S25 FE entrega praticamente a mesma experiência por bem menos, e é a melhor compra.",
+    chooseA: [
+      "Quer a linha S acessível pelo menor preço.",
+      "Grava vídeos comuns, sem câmera lenta em 4K.",
+      "Quer recarga sem fio mais rápida (25 W).",
+    ],
+    chooseB: [
+      "A diferença de preço é pequena.",
+      "Grava muitos vídeos e quer 4K a 120 fps.",
+      "Quer o processador mais novo.",
+    ],
+    rows: [
+      { label: "Processador", a: "Exynos 2400", b: "Exynos 2500", winner: "b" },
+      { label: "Tela", a: '6,7" AMOLED • 120 Hz', b: '6,7" AMOLED • 120 Hz', winner: "tie" },
+      { label: "Câmeras", a: "50 + 12 + 8 MP (zoom 3x)", b: "50 + 12 + 8 MP (zoom 3x)", winner: "tie" },
+      { label: "Vídeo", a: "Até 8K a 30 fps", b: "4K a 120 fps e 8K a 30 fps", winner: "b" },
+      { label: "Bateria", a: "4.900 mAh", b: "4.900 mAh", winner: "tie" },
+      { label: "Recarga", a: "45 W • sem fio 25 W", b: "45 W • sem fio 15 W", winner: "a" },
+      { label: "Atualizações", a: "7 anos (desde 2025)", b: "7 anos (desde 2026)", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 3.000", b: "R$ 3.300", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "O Galaxy S26 FE vale a pena?",
+        answer: "Vale se estiver perto do preço do S25 FE. Com diferença grande, o S25 FE é a compra mais inteligente.",
+      },
+      {
+        question: "Qual tem câmera melhor?",
+        answer: "As câmeras são as mesmas. O S26 FE grava mais modos de vídeo.",
+      },
+      {
+        question: "Algum dos dois vem com carregador?",
+        answer: "Não. O carregamento de 45 W exige um adaptador compatível, vendido separadamente.",
+      },
+    ],
+  },
+  "redmi-note-15-4g-vs-5g": {
+    slug: "redmi-note-15-4g-vs-5g",
+    a: { id: "redmi-note-15-5g", name: "Redmi Note 15 5G", reviewPath: "/review/redmi-note-15-5g" },
+    b: { id: "redmi-note-15-4g", name: "Redmi Note 15 4G", reviewPath: "/melhores-celulares-xiaomi" },
+    title: "Redmi Note 15 4G ou 5G: qual comprar em 2026?",
+    description:
+      "Redmi Note 15 4G vs 5G: processador, bateria, recarga, vídeo e 5G. Veja a diferença entre os dois e qual versão comprar.",
+    shortAnswer:
+      "Os nomes confundem, mas são aparelhos diferentes. O 5G tem Snapdragon 6 Gen 3, recarga de 45 W, vídeo em 4K e conexão 5G. O 4G tem Helio G100 Ultra e bateria maior (6.000 mAh), mas recarga de 33 W e vídeo só em Full HD. Para a maioria, o 5G. O 4G só vale se estiver uns R$ 300 mais barato e você não precisar de 5G.",
+    chooseA: [
+      "Quer 5G e o processador mais forte.",
+      "Grava vídeos em 4K.",
+      "Quer carregar mais rápido (45 W).",
+    ],
+    chooseB: [
+      "Quer a maior bateria (6.000 mAh).",
+      "O 5G ainda não faz diferença na sua região.",
+      "Ele está bem mais barato que o 5G.",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 6 Gen 3", b: "Helio G100 Ultra", winner: "a" },
+      { label: "5G", a: "Sim", b: "Não", winner: "a" },
+      { label: "Tela", a: "AMOLED 120 Hz", b: "AMOLED 120 Hz", winner: "tie" },
+      { label: "Câmera principal", a: "108 MP", b: "108 MP", winner: "tie" },
+      { label: "Vídeo", a: "4K a 30 fps", b: "Full HD a 60 fps", winner: "a" },
+      { label: "Bateria", a: "5.520 mAh", b: "6.000 mAh", winner: "b" },
+      { label: "Recarga", a: "45 W", b: "33 W", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 1.800", b: "R$ 1.400", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Como saber se o anúncio é do Redmi Note 15 4G ou 5G?",
+        answer:
+          "Procure \"5G\" no nome. O código 2510DRA23L, que aparece em muitos anúncios, é da versão 4G.",
+      },
+      {
+        question: "O Redmi Note 15 4G é ruim?",
+        answer: "Não. Ele tem tela boa e bateria grande. Só não faz sentido pagar quase o preço do 5G por ele.",
+      },
+      {
+        question: "E o Redmi Note 15 Pro?",
+        answer: "É outro aparelho, mais caro, com câmera e recarga superiores. Confira o nome exato no anúncio.",
+      },
+    ],
+  },
 };

@@ -85,6 +85,7 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
 ];
 
 const COMPARISONS = [
+  { to: "/comparativo/redmi-note-15-4g-vs-5g", label: "Redmi Note 15 4G vs 5G" },
   { to: "/comparativo/moto-g86-vs-redmi-note-15-5g", label: "Moto G86 vs Redmi Note 15 5G" },
   { to: "/comparativo/poco-x8-pro-vs-poco-x7-pro", label: "Poco X8 Pro vs Poco X7 Pro" },
   { to: "/comparativo/poco-x6-pro-vs-poco-x7-pro", label: "Poco X6 Pro vs Poco X7 Pro" },

@@ -35,6 +35,38 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Galaxy S26 vs Galaxy S25",
+    summary: "Mudou pouco: veja por que o S25 de 256 GB é a compra mais inteligente.",
+    href: "/comparativo/galaxy-s26-vs-galaxy-s25",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer um Galaxy S compacto.",
+  },
+  {
+    title: "Galaxy S26 Ultra vs S25 Ultra",
+    summary: "Recarga de 60 W e Tela de Privacidade valem a diferença?",
+    href: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer o topo de linha da Samsung.",
+  },
+  {
+    title: "Galaxy S26 FE vs S25 FE",
+    summary: "Mesma tela, câmeras e bateria: qual vale mais pelo preço?",
+    href: "/comparativo/galaxy-s26-fe-vs-galaxy-s25-fe",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer a linha S acessível.",
+  },
+  {
+    title: "Redmi Note 15 4G vs 5G",
+    summary: "Nomes iguais, aparelhos diferentes: qual versão comprar.",
+    href: "/comparativo/redmi-note-15-4g-vs-5g",
+    family: "Xiaomi vs Xiaomi",
+    tag: "Novo",
+    bestFor: "Quem vai comprar um Redmi Note 15.",
+  },
+  {
     title: "Poco X8 Pro vs Poco X7 Pro",
     summary: "Vale pagar a diferença pelo modelo novo? Desempenho, bateria e recarga lado a lado.",
     href: "/comparativo/poco-x8-pro-vs-poco-x7-pro",

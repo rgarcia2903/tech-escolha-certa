@@ -167,6 +167,7 @@ function ReviewGalaxyS25FE() {
         },
       ]}
       relatedLinks={[
+        { label: "Galaxy S25 FE ou S26 FE?", to: "/comparativo/galaxy-s26-fe-vs-galaxy-s25-fe" },
         { label: "Galaxy S25 FE ou Edge 60 Pro?", to: "/comparativo/edge-60-pro-vs-galaxy-s25-fe" },
         { label: "Review Galaxy S24", to: "/review/galaxy-s24" },
         { label: "Melhores celulares Samsung", to: "/melhores-celulares-samsung" },
