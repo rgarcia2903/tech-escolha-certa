@@ -8,7 +8,7 @@ import { FAIR_PRICES, formatBRL, goodDealFor, type FairPriceId } from "@/lib/fai
 // não exibir preço de loja (política da Amazon).
 const PAGE_TITLE = "Melhor celular custo-benefício em 2026: qual comprar";
 const PAGE_DESCRIPTION =
-  "Qual o melhor celular custo-benefício em 2026? Galaxy A36, Moto G86, Poco X8 Pro e Edge 60 Pro: veja qual comprar para cada orçamento e até quanto pagar em cada um.";
+  "Qual o melhor celular custo-benefício em 2026? Galaxy A36, Moto G Max, Poco X8 Pro e Edge 60 Pro: veja qual comprar para cada orçamento e até quanto pagar em cada um.";
 
 export const Route = createFileRoute("/melhores-celulares-custo-beneficio")({
   head: () => ({
@@ -38,15 +38,15 @@ const PICKS = [
     reviewPath: "/review/galaxy-a36-5g",
   },
   {
-    id: "moto-g86-5g",
+    id: "moto-g-max",
     badge: "Melhor até R$ 2.000",
-    name: "Moto G86 5G",
+    name: "Moto G Max",
     version: "256 GB, 8 GB de RAM",
     summary:
-      "Tela pOLED 1.5K de até 4.500 nits, câmera Sony com estabilização óptica, IP68/IP69 e carregador de 33 W na caixa.",
+      "Tela pOLED de 6,8\" com até 5.000 nits, câmera de 200 MP com estabilização óptica, IP68/IP69 e 256 GB com cartão de memória.",
     forWho: "Quem quer a melhor tela e câmera da faixa, com resistência de sobra.",
-    watchOut: "Duas atualizações de Android. Para jogos pesados, o Poco X8 Pro é mais forte.",
-    reviewPath: "/review/moto-g86-5g",
+    watchOut: "Processador de entrada. Para jogos, o Moto G86 ou o Poco X8 Pro são mais fortes.",
+    reviewPath: "/comparativo/moto-g-max-vs-moto-g86",
   },
   {
     id: "poco-x8-pro",
@@ -76,13 +76,13 @@ const TABLE: [string, string, string, string, string][] = [
   [
     "Compre se estiver até",
     formatBRL(goodDealFor("galaxy-a36-5g")!),
-    formatBRL(goodDealFor("moto-g86-5g")!),
+    formatBRL(goodDealFor("moto-g-max")!),
     formatBRL(goodDealFor("poco-x8-pro")!),
     formatBRL(goodDealFor("edge-60-pro")!),
   ],
-  ["Processador", "Snapdragon 6 Gen 3", "Dimensity 7300", "Dimensity 8500 Ultra", "Dimensity 8350"],
-  ["Tela", "AMOLED 120 Hz", "pOLED 1.5K 120 Hz", "AMOLED 1.5K 120 Hz", "pOLED curva 120 Hz"],
-  ["Bateria e recarga", "5.000 mAh • 45 W", "5.200 mAh • 33 W", "6.500 mAh • 100 W", "6.000 mAh • 90 W"],
+  ["Processador", "Snapdragon 6 Gen 3", "Dimensity 6400", "Dimensity 8500 Ultra", "Dimensity 8350"],
+  ["Tela", "AMOLED 120 Hz", "pOLED 6,8\" 120 Hz", "AMOLED 1.5K 120 Hz", "pOLED curva 120 Hz"],
+  ["Bateria e recarga", "5.000 mAh • 45 W", "5.200 mAh • 30 W", "6.500 mAh • 100 W", "6.000 mAh • 90 W"],
   ["Proteção", "IP67", "IP68 e IP69", "IP68", "IP68 e IP69"],
 ];
 
@@ -95,6 +95,7 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
 
 const COMPARISONS = [
   { to: "/comparativo/galaxy-a57-vs-galaxy-a36", label: "Galaxy A57 vs Galaxy A36" },
+  { to: "/comparativo/moto-g-max-vs-moto-g86", label: "Moto G Max vs Moto G86" },
   { to: "/comparativo/moto-g86-vs-redmi-note-15-5g", label: "Moto G86 vs Redmi Note 15 5G" },
   { to: "/comparativo/edge-60-pro-vs-galaxy-s25-fe", label: "Edge 60 Pro vs Galaxy S25 FE" },
   { to: "/comparativo/poco-x8-pro-vs-poco-x7-pro", label: "Poco X8 Pro vs Poco X7 Pro" },
@@ -110,7 +111,7 @@ const FAQ = [
   {
     question: "Qual o melhor custo-benefício até R$ 2.000?",
     answer:
-      "O Moto G86 5G, pela tela pOLED 1.5K, câmera com estabilização óptica e resistência IP69. Se o foco for bateria e carregador na caixa, o Redmi Note 15 5G.",
+      "O Moto G Max: tela pOLED de 5.000 nits, câmera de 200 MP com estabilização óptica e IP69 por menos de R$ 1.600. Para jogos, o Moto G86; para bateria e carregador na caixa, o Redmi Note 15 5G.",
   },
   {
     question: "Qual o celular custo-benefício para jogos?",
@@ -146,7 +147,7 @@ function MelhoresCustoBeneficio() {
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
             Resposta curta: o <strong className="text-white">Galaxy A36</strong> é o melhor custo-benefício para a
-            maioria das pessoas. Até R$ 2.000, o <strong className="text-white">Moto G86</strong> entrega a melhor tela
+            maioria das pessoas. Até R$ 2.000, o <strong className="text-white">Moto G Max</strong> entrega a melhor tela
             e câmera; para jogos, o <strong className="text-white">Poco X8 Pro</strong>; e o{" "}
             <strong className="text-white">Edge 60 Pro</strong> é o premium que mais entrega pelo preço.
           </p>
@@ -210,7 +211,7 @@ function MelhoresCustoBeneficio() {
                 <tr>
                   <th className="p-4"> </th>
                   <th className="p-4">Galaxy A36</th>
-                  <th className="p-4">Moto G86</th>
+                  <th className="p-4">Moto G Max</th>
                   <th className="p-4">Poco X8 Pro</th>
                   <th className="p-4">Edge 60 Pro</th>
                 </tr>

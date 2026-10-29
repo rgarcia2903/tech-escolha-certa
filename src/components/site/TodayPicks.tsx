@@ -11,11 +11,11 @@ const PICKS = [
     reviewPath: "/review/galaxy-a36-5g",
   },
   {
-    id: "moto-g86-5g",
+    id: "moto-g-max",
     label: "Melhor até R$ 2.000",
-    name: "Moto G86 5G",
-    why: "Melhor tela da faixa, câmera com estabilização óptica e IP69.",
-    reviewPath: "/review/moto-g86-5g",
+    name: "Moto G Max",
+    why: "Tela pOLED de 5.000 nits, câmera de 200 MP com OIS e IP69.",
+    reviewPath: "/comparativo/moto-g-max-vs-moto-g86",
   },
   {
     id: "galaxy-s25-fe",
