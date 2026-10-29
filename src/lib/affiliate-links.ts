@@ -40,6 +40,17 @@ export const MOTO_G56_AFFILIATE_URL = "https://meli.la/2WiqRMo";
 // Loja oficial Samsung no Mercado Livre, 128 GB (catálogo MLB68213841), gerado em 29/10/2026.
 export const GALAXY_A57_AFFILIATE_URL = "https://meli.la/1XMLUtz";
 
+// iPhone: loja oficial Apple (Distribuidor Autorizado) no Mercado Livre, 256 GB, gerados em 29/10/2026.
+export const IPHONE_17_AFFILIATE_URL = "https://meli.la/2nabFeE";
+export const IPHONE_17E_AFFILIATE_URL = "https://meli.la/2cjYfah";
+
+// iPhone na Amazon (vendidos pela Amazon em 29/10/2026).
+export const IPHONE_17_AMAZON_URL = "https://www.amazon.com.br/dp/B0GQW2J4SK?tag=techescolha03-20";
+export const IPHONE_17E_AMAZON_URL = "https://www.amazon.com.br/dp/B0GTRWMZWZ?tag=techescolha03-20";
+export const IPHONE_16E_AMAZON_URL = "https://www.amazon.com.br/dp/B0DXR6MKR8?tag=techescolha03-20";
+export const IPHONE_16_AMAZON_URL = "https://www.amazon.com.br/dp/B0DJFTCKNN?tag=techescolha03-20";
+export const IPHONE_15_AMAZON_URL = "https://www.amazon.com.br/dp/B0CP6CVJSG?tag=techescolha03-20";
+
 // Endereços originais gerados pelo usuário no programa Amazon Associados.
 // Não inferir ASIN, variante ou atribuição pelo código do encurtador.
 export const GALAXY_A17_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20";

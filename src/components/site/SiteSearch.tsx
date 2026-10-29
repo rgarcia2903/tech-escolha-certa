@@ -138,6 +138,14 @@ const SEARCH_ITEMS = [
   },
   {
     group: "Marcas e perfis",
+    title: "Qual iPhone comprar",
+    description: "iPhone 17, 17e, 16e, 16 ou 15: qual vale a pena",
+    to: "/qual-iphone-comprar",
+    keywords: "iphone apple 17 17e 16e 16 15",
+    icon: Smartphone,
+  },
+  {
+    group: "Marcas e perfis",
     title: "Melhores para jogos até R$ 2.000",
     description: "Desempenho e tela para jogar",
     to: "/guia/melhores-celulares-para-jogos-ate-2000",

@@ -35,6 +35,14 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "iPhone 17 vs iPhone 17e",
+    summary: "Mesmo chip A19 e 256 GB: quando vale pagar mais pela tela de 120 Hz e pelas câmeras do 17.",
+    href: "/comparativo/iphone-17-vs-iphone-17e",
+    family: "Apple vs Apple",
+    tag: "Novo",
+    bestFor: "Quem vai comprar um iPhone novo.",
+  },
+  {
     title: "Galaxy A57 vs Galaxy A36",
     summary: "Quando vale pagar mais pelo A57 e quando o A36 basta. Os dois têm seis anos de atualizações.",
     href: "/comparativo/galaxy-a57-vs-galaxy-a36",

@@ -38,6 +38,9 @@ export function StorefrontHero() {
           <Link to="/melhores-celulares-motorola" className="storefront-chip">
             Motorola
           </Link>
+          <Link to="/qual-iphone-comprar" className="storefront-chip">
+            iPhone
+          </Link>
           <Link to="/celulares" className="storefront-chip">
             Todas as marcas
           </Link>

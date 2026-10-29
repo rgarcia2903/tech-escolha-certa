@@ -114,6 +114,35 @@ export const FAIR_PRICES = {
     alternativeSeenPrice: 1348,
     why: "o Galaxy A36 tem processador bem mais forte, IP67 e seis anos de atualizações.",
   },
+  // iPhone: preços vistos na Amazon em 29/10/2026 (uso interno): 17 (256 GB) R$ 5.381,
+  // 17e (256 GB) R$ 4.499, 16 (128 GB) R$ 4.558, 16e (128 GB) R$ 3.199, 15 (128 GB) R$ 3.779.
+  "iphone-16": {
+    productName: "iPhone 16",
+    maxPrice: 4000,
+    checkedAt: "2026-10-29",
+    alternativeName: "iPhone 17",
+    alternativeHref: links.IPHONE_17_AMAZON_URL,
+    alternativeSeenPrice: 5381,
+    why: "por pouco mais, o iPhone 17 tem tela de 120 Hz, ultra-angular de 48 MP e o dobro de armazenamento (256 GB).",
+  },
+  "iphone-16e": {
+    productName: "iPhone 16e",
+    maxPrice: 3300,
+    checkedAt: "2026-10-29",
+    alternativeName: "iPhone 17e",
+    alternativeHref: links.IPHONE_17E_AMAZON_URL,
+    alternativeSeenPrice: 4499,
+    why: "o 17e tem chip A19, MagSafe e o dobro de armazenamento (256 GB).",
+  },
+  "iphone-15": {
+    productName: "iPhone 15",
+    maxPrice: 3400,
+    checkedAt: "2026-10-29",
+    alternativeName: "iPhone 17e",
+    alternativeHref: links.IPHONE_17E_AMAZON_URL,
+    alternativeSeenPrice: 4499,
+    why: "o 17e é duas gerações mais novo, com chip A19, 256 GB e atualizações por mais anos.",
+  },
 } satisfies Record<string, FairPrice>;
 
 export type FairPriceId = keyof typeof FAIR_PRICES;
@@ -131,6 +160,8 @@ export const GOOD_DEAL_UNDER: Record<string, number> = {
   "redmi-note-15-5g": 1800,
   "redmi-note-14-pro-plus": 1950,
   "poco-x7-pro": 2250,
+  "iphone-17": 5400,
+  "iphone-17e": 4500,
 };
 
 /** Até quanto vale pagar no modelo: teto de FAIR_PRICES ou limiar de bom negócio. */

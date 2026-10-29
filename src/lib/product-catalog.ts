@@ -407,9 +407,33 @@ export const PRODUCTS: Product[] = [
     "iphone-17",
     "iPhone 17",
     "Apple",
-    "evaluate",
-    "Candidato iOS com ProMotion de até 120 Hz; preço e oferta pendentes.",
-    { officialUrl: "https://www.apple.com/br/iphone-17/specs/" },
+    "candidate",
+    "iPhone de entrada atual: A19, tela de 6,3\" com 120 Hz, câmeras de 48 + 48 MP e 256 GB.",
+    { officialUrl: "https://www.apple.com/br/iphone-17/specs/", reviewPath: "/qual-iphone-comprar" },
+  ),
+  product(
+    "iphone-17e",
+    "iPhone 17e",
+    "Apple",
+    "candidate",
+    "iPhone novo mais barato: A19, 256 GB, MagSafe e IP68; tela de 60 Hz e uma câmera.",
+    { reviewPath: "/comparativo/iphone-17-vs-iphone-17e" },
+  ),
+  product(
+    "iphone-16e",
+    "iPhone 16e",
+    "Apple",
+    "previous_generation",
+    "iPhone mais barato: A18, 128 GB, IP68 e boa bateria; sem MagSafe e com uma câmera.",
+    { reviewPath: "/review/iphone-16e" },
+  ),
+  product(
+    "iphone-16",
+    "iPhone 16",
+    "Apple",
+    "previous_generation",
+    "Geração anterior: A18, 128 GB, câmera dupla e MagSafe; tela de 60 Hz.",
+    { reviewPath: "/review/iphone-16" },
   ),
   product(
     "iphone-18-pro",
@@ -472,6 +496,8 @@ const ml: [string, string][] = [
   ["edge-60-pro", links.EDGE_60_PRO_AFFILIATE_URL],
   ["galaxy-s25-fe", links.GALAXY_S25_FE_AFFILIATE_URL],
   ["galaxy-a57-5g", links.GALAXY_A57_AFFILIATE_URL],
+  ["iphone-17", links.IPHONE_17_AFFILIATE_URL],
+  ["iphone-17e", links.IPHONE_17E_AFFILIATE_URL],
 ];
 const amazon: [string, string][] = [
   ["galaxy-a17-5g", links.GALAXY_A17_AMAZON_URL],
@@ -485,6 +511,11 @@ const amazon: [string, string][] = [
   ["galaxy-s24", links.GALAXY_S24_AFFILIATE_URL],
   ["poco-x7-pro", links.POCO_X7_PRO_AMAZON_URL],
   ["galaxy-a57-5g", links.GALAXY_A57_AMAZON_URL],
+  ["iphone-17", links.IPHONE_17_AMAZON_URL],
+  ["iphone-17e", links.IPHONE_17E_AMAZON_URL],
+  ["iphone-16e", links.IPHONE_16E_AMAZON_URL],
+  ["iphone-16", links.IPHONE_16_AMAZON_URL],
+  ["iphone-15", links.IPHONE_15_AMAZON_URL],
 ];
 function offer(productId: string, store: Store, url: string, legacy = false): Offer {
   return {

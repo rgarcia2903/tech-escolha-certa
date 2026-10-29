@@ -19,6 +19,7 @@ const GUIAS = [
   { to: "/melhores-celulares-samsung", label: "Melhores celulares Samsung" },
   { to: "/melhores-celulares-xiaomi", label: "Melhores celulares Xiaomi" },
   { to: "/melhores-celulares-motorola", label: "Melhores celulares Motorola" },
+  { to: "/qual-iphone-comprar", label: "Qual iPhone comprar" },
 ];
 
 const REVIEWS = [

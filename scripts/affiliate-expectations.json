@@ -270,5 +270,74 @@
       "a37",
       "a55"
     ]
+  },
+  "IPHONE_17_AFFILIATE_URL": {
+    "include": [
+      "iphone 17"
+    ],
+    "exclude": [
+      "pro",
+      "17e",
+      "air",
+      "plus"
+    ]
+  },
+  "IPHONE_17E_AFFILIATE_URL": {
+    "include": [
+      "17e"
+    ],
+    "exclude": [
+      "pro",
+      "16e"
+    ]
+  },
+  "IPHONE_17_AMAZON_URL": {
+    "include": [
+      "iphone 17"
+    ],
+    "exclude": [
+      "pro",
+      "17e",
+      "air",
+      "plus"
+    ]
+  },
+  "IPHONE_17E_AMAZON_URL": {
+    "include": [
+      "17e"
+    ],
+    "exclude": [
+      "pro",
+      "16e"
+    ]
+  },
+  "IPHONE_16E_AMAZON_URL": {
+    "include": [
+      "16e"
+    ],
+    "exclude": [
+      "17e",
+      "pro"
+    ]
+  },
+  "IPHONE_16_AMAZON_URL": {
+    "include": [
+      "iphone 16"
+    ],
+    "exclude": [
+      "16e",
+      "pro",
+      "plus"
+    ]
+  },
+  "IPHONE_15_AMAZON_URL": {
+    "include": [
+      "iphone 15"
+    ],
+    "exclude": [
+      "pro",
+      "plus",
+      "iphone 16"
+    ]
   }
 }
