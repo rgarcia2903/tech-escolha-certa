@@ -78,6 +78,10 @@ const TABLE: [string, string, string, string][] = [
 const OLDER: { id: FairPriceId; reviewPath: string }[] = [
   { id: "iphone-16", reviewPath: "/review/iphone-16" },
   { id: "iphone-15", reviewPath: "/review/iphone-15" },
+  { id: "iphone-14", reviewPath: "/review/iphone-14" },
+  { id: "iphone-13", reviewPath: "/review/iphone-13" },
+  { id: "iphone-12", reviewPath: "/review/iphone-12" },
+  { id: "iphone-11", reviewPath: "/review/iphone-11" },
 ];
 
 const COMPARISONS = [

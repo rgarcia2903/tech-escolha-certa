@@ -33,17 +33,22 @@ const FAQ = [
   {
     question: "Poco X6 Pro compensa em 2026?",
     answer:
-      "Sim. O Poco X6 Pro compensa em 2026 se você busca desempenho, jogos, tela AMOLED e carregamento rápido por um preço competitivo. Só vale comparar com o Poco X7 Pro antes de comprar.",
+      "Só abaixo de R$ 2.100. Nesse preço, ele ainda é um dos celulares mais fortes para jogos. Acima disso, o Poco X7 Pro e o Poco X8 Pro, mais novos, entregam mais pelo dinheiro.",
   },
   {
     question: "Poco X6 Pro vale a pena em 2026?",
     answer:
-      "Vale a pena para quem prioriza potência e custo-benefício. Ele ainda é muito forte para uso diário e jogos, mas não é a melhor escolha para quem quer as melhores câmeras ou suporte de atualizações mais previsível.",
+      "Vale abaixo de R$ 2.100 para quem prioriza desempenho e jogos. Não é a melhor escolha para quem quer as melhores câmeras ou muitos anos de atualização.",
   },
   {
-    question: "Poco X6 Pro em 2026 ainda é uma boa compra?",
+    question: "Quando o Poco X6 Pro vai parar de atualizar?",
     answer:
-      "Sim. O Poco X6 Pro em 2026 ainda é uma boa compra quando aparece com preço competitivo, principalmente para quem quer desempenho forte, jogos, tela AMOLED e carregamento rápido.",
+      "A Xiaomi prometeu três versões do Android e quatro anos de correções de segurança a partir do lançamento, em janeiro de 2024. Ou seja, as atualizações de segurança vão até o início de 2028.",
+  },
+  {
+    question: "Qual o melhor Poco para comprar em 2026?",
+    answer:
+      "Para a maioria, o Poco X8 Pro: processador mais forte, bateria de 6.500 mAh e recarga de 100 W. O X7 Pro ainda vale abaixo de R$ 2.150, e o X6 Pro abaixo de R$ 2.100.",
   },
   {
     question: "Poco X6 Pro é bom?",
