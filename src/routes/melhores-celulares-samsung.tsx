@@ -93,6 +93,10 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
   { id: "galaxy-a55", reviewPath: "/review/galaxy-a55" },
   { id: "galaxy-a35", reviewPath: "/review/galaxy-a35" },
   { id: "galaxy-s24", reviewPath: "/review/galaxy-s24" },
+  { id: "galaxy-s23", reviewPath: "/review/galaxy-s23" },
+  { id: "galaxy-s22", reviewPath: "/review/galaxy-s22" },
+  { id: "galaxy-a54", reviewPath: "/review/galaxy-a54" },
+  { id: "galaxy-a15", reviewPath: "/review/galaxy-a15" },
 ];
 
 const COMPARISONS = [
