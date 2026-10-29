@@ -164,6 +164,7 @@ function ReviewGalaxyA57() {
         },
       ]}
       relatedLinks={[
+        { label: "Galaxy A57 ou Galaxy A36?", to: "/comparativo/galaxy-a57-vs-galaxy-a36" },
         { label: "Melhores celulares Samsung", to: "/melhores-celulares-samsung" },
         { label: "Review Galaxy A36 5G", to: "/review/galaxy-a36-5g" },
         { label: "Review Galaxy S25 FE", to: "/review/galaxy-s25-fe" },

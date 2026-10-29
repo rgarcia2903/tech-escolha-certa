@@ -160,6 +160,7 @@ function ReviewMotoG86() {
         },
       ]}
       relatedLinks={[
+        { label: "Moto G86 ou Redmi Note 15 5G?", to: "/comparativo/moto-g86-vs-redmi-note-15-5g" },
         { label: "Melhores celulares Motorola", to: "/melhores-celulares-motorola" },
         { label: "Review Redmi Note 15 5G", to: "/review/redmi-note-15-5g" },
         { label: "Review Poco X7 Pro", to: "/review/poco-x7-pro" },
