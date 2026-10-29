@@ -47,6 +47,13 @@ const mercadoLivre = [
   ["iphone-17", "https://meli.la/2nabFeE"],
   ["iphone-17e", "https://meli.la/2cjYfah"],
   ["poco-x8-pro", "https://meli.la/19LzSLu"],
+  ["moto-g-max", "https://meli.la/2JEAxoM"],
+  ["iphone-16e", "https://meli.la/1DJVYYj"],
+  ["galaxy-a37-5g", "https://meli.la/1c1q6L7"],
+  ["galaxy-s25", "https://meli.la/1DCByA3"],
+  ["galaxy-s25-ultra", "https://meli.la/1qhtx7H"],
+  ["galaxy-s26-fe", "https://meli.la/1zxgrdG"],
+  ["edge-70", "https://meli.la/17uhEEF"],
 ];
 const amazon = [
   ["galaxy-a17-5g", "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20"],
@@ -83,7 +90,7 @@ const amazon = [
   ["moto-g17", "https://www.amazon.com.br/dp/B0GKPXSZR6?tag=techescolha03-20"],
 ];
 test("20 Mercado Livre and 32 Amazon addresses preserve exact model identity", () => {
-  assert.equal(OFFERS.length, 52);
+  assert.equal(OFFERS.length, 59);
   for (const [store, pairs] of [
     ["mercado_livre", mercadoLivre],
     ["amazon", amazon],
@@ -279,7 +286,7 @@ test("PR #43 export names remain compatible without duplicating offers", () => {
     assert.equal(current, legacy);
     assert.equal(getOfferByUrl(current)?.productId, id);
   }
-  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 52);
+  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 59);
 });
 
 test("PR #43 candidates remain shared while evaluation models stay unapproved", () => {
