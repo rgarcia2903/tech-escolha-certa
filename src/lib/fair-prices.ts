@@ -153,6 +153,16 @@ export const FAIR_PRICES = {
     alternativeSeenPrice: 2441,
     why: "o X8 Pro é a geração seguinte, com processador mais forte, bateria de 6.500 mAh e recarga de 100 W.",
   },
+  // Moto G Max (R$ 1.599 na Amazon em 29/10) x Moto G86 (R$ 1.795).
+  "moto-g-max": {
+    productName: "Moto G Max",
+    maxPrice: 1600,
+    checkedAt: "2026-10-29",
+    alternativeName: "Moto G86 5G",
+    alternativeHref: links.MOTO_G86_AMAZON_URL,
+    alternativeSeenPrice: 1795,
+    why: "nessa faixa, o G86 passa a valer pelo processador mais forte.",
+  },
 } satisfies Record<string, FairPrice>;
 
 export type FairPriceId = keyof typeof FAIR_PRICES;

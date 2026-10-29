@@ -7,7 +7,7 @@ import { FAIR_PRICES, formatBRL } from "@/lib/fair-prices";
 // Tetos de preço editoriais em src/lib/fair-prices.ts. Não exibir preço de loja (política da Amazon).
 const PAGE_TITLE = "Melhor celular Motorola em 2026: qual comprar e até quanto pagar";
 const PAGE_DESCRIPTION =
-  "Moto G56, Moto G86 ou Edge 60 Pro? Veja qual Motorola comprar em 2026 para cada perfil, até quanto vale pagar e quando outra marca é a melhor escolha.";
+  "Moto G Max, G86, G56 ou Edge 60 Pro? Veja qual Motorola comprar em 2026 para cada perfil, até quanto vale pagar e quando outra marca é a melhor escolha.";
 
 export const Route = createFileRoute("/melhores-celulares-motorola")({
   head: () => ({
@@ -26,13 +26,23 @@ export const Route = createFileRoute("/melhores-celulares-motorola")({
 
 const PICKS = [
   {
-    id: "moto-g86-5g" as const,
+    id: "moto-g-max" as const,
     badge: "Melhor para a maioria",
+    name: "Moto G Max",
+    summary:
+      "Tela pOLED de 6,8\" com até 5.000 nits, câmera de 200 MP com estabilização óptica, IP68/IP69 e 256 GB com cartão de memória.",
+    forWho: "Quem quer a melhor tela e câmera da Motorola gastando menos de R$ 1.600.",
+    watchOut: "O processador (Dimensity 6400) é de entrada. Para jogos, o Moto G86 é mais rápido.",
+    reviewPath: "/comparativo/moto-g-max-vs-moto-g86",
+  },
+  {
+    id: "moto-g86-5g" as const,
+    badge: "Mais rápido até R$ 2.000",
     name: "Moto G86 5G",
     summary:
       "A melhor tela entre os intermediários da Motorola (pOLED 1.5K, 120 Hz), câmera Sony com estabilização óptica, IP68/IP69 e carregador de 33 W na caixa.",
     forWho: "Quem quer um celular completo para vídeos, fotos e uso diário, gastando menos de R$ 2.000.",
-    watchOut: "Duas atualizações de Android. Para jogos pesados, o Poco X7 Pro é mais forte.",
+    watchOut: "Duas atualizações de Android. Para jogos pesados, o Poco X8 Pro é mais forte.",
     reviewPath: "/review/moto-g86-5g",
   },
   {
@@ -57,28 +67,28 @@ const PICKS = [
   },
 ];
 
-const TABLE: [string, string, string, string][] = [
-  ["Tela", "LCD 6,72\" 120 Hz", "pOLED 1.5K 120 Hz", "pOLED curva 120 Hz"],
-  ["Processador", "Dimensity 7060", "Dimensity 7300", "Dimensity 8350"],
-  ["RAM / armazenamento", "8 GB / 256 GB + microSD", "8 GB / 256 GB", "12 GB / 256 GB"],
-  ["Câmera principal", "50 MP", "50 MP Sony com OIS", "50 MP Sony com OIS"],
-  ["Zoom óptico", "Não", "Não", "Sim, 3x"],
-  ["Bateria", "5.200 mAh", "5.200 mAh", "6.000 mAh"],
-  ["Recarga", "30 W", "33 W (na caixa)", "90 W + sem fio 15 W"],
-  ["Proteção", "IP68, IP69 e MIL-STD", "IP68, IP69 e MIL-STD", "IP68, IP69 e MIL-STD"],
-  ["Atualizações", "2 de sistema, 3 anos segurança", "2 de sistema, 4 anos segurança", "3 anos"],
+const TABLE: [string, string, string, string, string][] = [
+  ["Tela", "pOLED 6,8\" 120 Hz", "LCD 6,72\" 120 Hz", "pOLED 1.5K 120 Hz", "pOLED curva 120 Hz"],
+  ["Processador", "Dimensity 6400", "Dimensity 7060", "Dimensity 7300", "Dimensity 8350"],
+  ["RAM / armazenamento", "8 GB / 256 GB + microSD", "8 GB / 256 GB + microSD", "8 GB / 256 GB", "12 GB / 256 GB"],
+  ["Câmera principal", "200 MP com OIS", "50 MP", "50 MP Sony com OIS", "50 MP Sony com OIS"],
+  ["Zoom óptico", "Não", "Não", "Não", "Sim, 3x"],
+  ["Bateria", "5.200 mAh", "5.200 mAh", "5.200 mAh", "6.000 mAh"],
+  ["Recarga", "30 W", "30 W", "33 W (na caixa)", "90 W + sem fio 15 W"],
+  ["Proteção", "IP68 e IP69", "IP68, IP69 e MIL-STD", "IP68, IP69 e MIL-STD", "IP68, IP69 e MIL-STD"],
+  ["Atualizações", "3 anos de segurança", "2 de sistema, 3 anos segurança", "2 de sistema, 4 anos segurança", "3 anos"],
 ];
 
 const FAQ = [
   {
     question: "Qual o melhor celular Motorola em 2026?",
     answer:
-      "Para a maioria das pessoas, o Moto G86 5G: tela pOLED excelente, câmera com estabilização óptica, IP69 e preço abaixo de R$ 2.000. Quem quer mais bateria, recarga rápida e zoom óptico deve olhar o Edge 60 Pro.",
+      "Para a maioria das pessoas, o Moto G Max: tela pOLED de 5.000 nits, câmera de 200 MP com estabilização óptica, IP69 e preço abaixo de R$ 1.600. Para jogos, o Moto G86. Quem quer mais bateria, recarga rápida e zoom óptico deve olhar o Edge 60 Pro.",
   },
   {
     question: "Qual o Motorola com melhor custo-benefício?",
     answer:
-      "O Moto G86 5G, desde que custe até cerca de R$ 1.900. O Moto G56 só é custo-benefício abaixo de R$ 1.200; acima disso, o Galaxy A36 entrega mais.",
+      "O Moto G Max, até cerca de R$ 1.600. O Moto G86 vale até R$ 1.900 para quem joga. O Moto G56 só é custo-benefício abaixo de R$ 1.200; acima disso, o Galaxy A36 entrega mais.",
   },
   {
     question: "Motorola recebe atualizações por quanto tempo?",
@@ -114,11 +124,12 @@ function MelhoresCelularesMotorola() {
             Melhor celular Motorola em 2026: qual comprar
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
-            Resposta curta: o <strong className="text-white">Moto G86 5G</strong> para a maioria das pessoas, o{" "}
+            Resposta curta: o <strong className="text-white">Moto G Max</strong> para a maioria das pessoas, o{" "}
+            <strong className="text-white">Moto G86</strong> para quem joga, o{" "}
             <strong className="text-white">Edge 60 Pro</strong> para quem quer bateria e câmera de topo, e o{" "}
             <strong className="text-white">Moto G56 5G</strong> só se aparecer abaixo de {formatBRL(1200)}.
           </p>
-          <HeroPickCTA productId="moto-g86-5g" pageType="guia" />
+          <HeroPickCTA productId="moto-g-max" pageType="guia" />
           <p className="mt-4 text-sm text-slate-300">
             Análise documental com fichas oficiais, revisada em outubro de 2026.{" "}
             <Link to="/divulgacao-de-afiliados" className="underline">
@@ -174,10 +185,11 @@ function MelhoresCelularesMotorola() {
             Comparação lado a lado
           </h2>
           <div className="mt-5 overflow-x-auto rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
-            <table className="w-full min-w-[640px] text-left text-sm">
+            <table className="w-full min-w-[760px] text-left text-sm">
               <thead className="bg-[#0F3F4A] text-white">
                 <tr>
                   <th className="p-4"> </th>
+                  <th className="p-4">Moto G Max</th>
                   <th className="p-4">Moto G56 5G</th>
                   <th className="p-4">Moto G86 5G</th>
                   <th className="p-4">Edge 60 Pro</th>

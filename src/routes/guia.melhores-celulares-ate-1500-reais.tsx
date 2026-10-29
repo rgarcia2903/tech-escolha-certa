@@ -257,10 +257,10 @@ function MelhoresAte1500() {
           <ul className="mt-4 space-y-3 leading-7 text-slate-700">
             <li>
               <strong>Quer a melhor tela e câmera com estabilização:</strong> o{" "}
-              <Link to="/review/moto-g86-5g" className="font-semibold underline">
-                Moto G86
+              <Link to="/comparativo/moto-g-max-vs-moto-g86" className="font-semibold underline">
+                Moto G Max
               </Link>{" "}
-              vale a pena até R$ 1.900.
+              vale a pena até R$ 1.600.
             </li>
             <li>
               <strong>Quer bateria grande e carregador na caixa:</strong> o{" "}
