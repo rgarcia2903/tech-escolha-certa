@@ -1,3 +1,4 @@
+import { TodayPicks } from "@/components/site/TodayPicks";
 import { HOME_PRODUCT_IDS, STOREFRONT_PRODUCT_IDS } from "@/lib/editorial-policy";
 import { getProduct } from "@/lib/product-catalog";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
@@ -18,12 +19,12 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Tech Escolha Certa | Melhores celulares, reviews e comparativos 2026",
+        title: "Tech Escolha Certa: qual celular comprar em 2026 e até quanto pagar",
       },
       {
         name: "description",
         content:
-          "Reviews, comparativos, guias e ofertas de celulares Samsung, Xiaomi, Redmi, Poco e iPhone para comprar melhor em 2026.",
+          "Qual celular comprar em 2026? Respostas diretas, com até quanto vale pagar em cada modelo: Samsung, Motorola, Xiaomi, Redmi e Poco. Reviews e comparativos.",
       },
       {
         name: "keywords",
@@ -94,12 +95,14 @@ function HomePage() {
     <main className="min-h-screen bg-[#F5F7FA] text-slate-900">
       <StorefrontHero />
 
+      <TodayPicks />
+
       <div className="container-tec pt-6">
         <Link
           to="/black-friday-celulares"
           className="flex flex-col gap-1 rounded-2xl bg-[#0F3F4A] px-5 py-4 text-white shadow-sm transition hover:brightness-110 sm:flex-row sm:items-center sm:justify-between"
         >
-          <span className="font-bold">Black Friday: veja quanto cada celular custava antes da data</span>
+          <span className="font-bold">Black Friday: veja até quanto vale pagar em cada celular</span>
           <span className="text-sm text-slate-200 underline">Evite desconto falso →</span>
         </Link>
       </div>
