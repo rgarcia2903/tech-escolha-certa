@@ -229,7 +229,8 @@ function ReviewGalaxyA55() {
               fromProductName="Galaxy A55"
               productName="Galaxy A57 5G"
               href={GALAXY_A57_AMAZON_URL}
-              reason="Na nossa checagem de outubro de 2026, o Galaxy A57 novo custava menos que o A55 e é duas gerações mais novo, com mais anos de atualização pela frente. Compare antes de pagar mais pelo A55."
+              reason="O Galaxy A57 é duas gerações mais novo, tem IP68 e mais anos de atualização pela frente, e costuma custar menos que o A55 novo. Compare antes de pagar mais pelo A55."
+              reviewHref="/review/galaxy-a57-5g"
             />
           </section>
 

@@ -70,6 +70,7 @@ export const BUDGET_GROUPS: { title: string; items: ReferencePrice[] }[] = [
         productId: "galaxy-a57-5g",
         version: "128 GB, 8 GB de RAM",
         note: "O Samsung intermediário mais novo, com IP68. Prefira-o ao Galaxy A55.",
+        reviewPath: "/review/galaxy-a57-5g",
       },
       {
         productId: "redmi-note-14-pro-plus",

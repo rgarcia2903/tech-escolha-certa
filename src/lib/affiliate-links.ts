@@ -37,6 +37,9 @@ export const GALAXY_A36_AFFILIATE_URL = "https://meli.la/2kdrQ2M";
 
 export const MOTO_G56_AFFILIATE_URL = "https://meli.la/2WiqRMo";
 
+// Loja oficial Samsung no Mercado Livre, 128 GB (catálogo MLB68213841), gerado em 29/10/2026.
+export const GALAXY_A57_AFFILIATE_URL = "https://meli.la/1XMLUtz";
+
 // Endereços originais gerados pelo usuário no programa Amazon Associados.
 // Não inferir ASIN, variante ou atribuição pelo código do encurtador.
 export const GALAXY_A17_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPPJF4Y7?tag=techescolha03-20";

@@ -260,5 +260,15 @@
       "a56",
       "a37"
     ]
+  },
+  "GALAXY_A57_AFFILIATE_URL": {
+    "include": [
+      "a57"
+    ],
+    "exclude": [
+      "a56",
+      "a37",
+      "a55"
+    ]
   }
 }
