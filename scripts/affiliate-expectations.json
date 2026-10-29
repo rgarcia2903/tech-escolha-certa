@@ -472,5 +472,32 @@
       "pro",
       "5g"
     ]
+  },
+  "MOTO_G_MAX_AMAZON_URL": {
+    "include": [
+      "g max"
+    ],
+    "exclude": [
+      "g86",
+      "g77"
+    ]
+  },
+  "MOTO_G37_AMAZON_URL": {
+    "include": [
+      "g37"
+    ],
+    "exclude": [
+      "g17",
+      "g06"
+    ]
+  },
+  "MOTO_G17_AMAZON_URL": {
+    "include": [
+      "g17"
+    ],
+    "exclude": [
+      "g37",
+      "g06"
+    ]
   }
 }

@@ -662,4 +662,96 @@ export const COMPARISONS: Record<string, Comparison> = {
       },
     ],
   },
+  "moto-g-max-vs-moto-g86": {
+    slug: "moto-g-max-vs-moto-g86",
+    a: { id: "moto-g-max", name: "Moto G Max", reviewPath: "/melhores-celulares-motorola" },
+    b: { id: "moto-g86-5g", name: "Moto G86 5G", reviewPath: "/review/moto-g86-5g" },
+    title: "Moto G Max ou Moto G86: qual comprar em 2026?",
+    description:
+      "Moto G Max vs Moto G86: tela, câmera de 200 MP, processador e resistência lado a lado. Veja qual Motorola de até R$ 2.000 vale mais.",
+    shortAnswer:
+      "Para a maioria das pessoas, o Moto G Max: tela pOLED maior e mais brilhante (5.000 nits), câmera de 200 MP com estabilização, a mesma proteção IP68/IP69, 256 GB com cartão de memória, e costuma custar menos. O Moto G86 só leva vantagem no processador (Dimensity 7300 contra 6400): para jogos, ele é mais rápido.",
+    chooseA: [
+      "Quer a melhor tela e a melhor câmera da faixa.",
+      "Quer cartão de memória e 256 GB.",
+      "Quer gastar menos.",
+    ],
+    chooseB: [
+      "Joga bastante e quer o processador mais forte.",
+      "Prefere tela um pouco menor (6,67\").",
+      "Encontrou o G86 pelo mesmo preço.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 6400 (6 nm)", b: "Dimensity 7300 (4 nm)", winner: "b" },
+      { label: "Tela", a: 'pOLED 6,8" • 120 Hz • 5.000 nits', b: 'pOLED 6,67" • 120 Hz • 4.500 nits', winner: "a" },
+      { label: "Câmera principal", a: "200 MP com OIS", b: "50 MP Sony com OIS", winner: "a" },
+      { label: "Bateria e recarga", a: "5.200 mAh • 30 W", b: "5.200 mAh • 33 W", winner: "tie" },
+      { label: "Proteção", a: "IP68 e IP69", b: "IP68 e IP69", winner: "tie" },
+      { label: "Armazenamento", a: "256 GB + microSD", b: "256 GB", winner: "a" },
+      { label: "Lançamento", a: "Agosto de 2026", b: "Maio de 2025", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 1.600", b: "R$ 1.900", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "O Moto G Max é bom para jogos?",
+        answer:
+          "Roda bem os jogos populares, mas o Dimensity 6400 é de entrada. Para jogos pesados, o Moto G86 é mais rápido e o Poco X8 Pro, bem mais.",
+      },
+      {
+        question: "A câmera de 200 MP faz diferença?",
+        answer:
+          "Ajuda em detalhe com boa luz e em recortes. A estabilização óptica é o que mais importa à noite, e os dois têm.",
+      },
+      {
+        question: "Moto G Max ou Moto G77?",
+        answer:
+          "Usam o mesmo processador. O G Max tem câmera de 200 MP e IP68/IP69; o G77 tem IP64. Se o preço for parecido, o G Max.",
+      },
+    ],
+  },
+  "moto-g37-vs-moto-g17": {
+    slug: "moto-g37-vs-moto-g17",
+    a: { id: "moto-g37", name: "Moto G37", reviewPath: "/melhor-celular-ate-1000" },
+    b: { id: "moto-g17", name: "Moto G17", reviewPath: "/melhor-celular-ate-1000" },
+    title: "Moto G37 ou Moto G17: qual comprar em 2026?",
+    description:
+      "Moto G37 vs Moto G17: 5G, processador, tela e câmeras dos Motorola mais baratos de 2026. Veja qual comprar até R$ 1.000.",
+    shortAnswer:
+      "O Moto G37, para a maioria: tem 5G, processador bem mais rápido (Dimensity 6300 contra Helio G81) e tela de 120 Hz. O Moto G17 tem tela Full HD mais nítida, câmera ultra-angular e selfie de 32 MP, mas é 4G e mais lento. Se puder chegar a uns R$ 900, o Galaxy A17 5G ainda é melhor que os dois.",
+    chooseA: [
+      "Quer 5G e um celular mais rápido.",
+      "Prefere a tela mais fluida (120 Hz).",
+      "Quer carregar um pouco mais rápido (20 W).",
+    ],
+    chooseB: [
+      "Quer tela mais nítida (Full HD) para ler e ver vídeos.",
+      "Faz muitas selfies (32 MP) e usa a ultra-angular.",
+      "Quer 256 GB gastando pouco.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 6300 (6 nm)", b: "Helio G81 (12 nm)", winner: "a" },
+      { label: "5G", a: "Sim", b: "Não", winner: "a" },
+      { label: "Tela", a: 'LCD 6,67" HD+ • 120 Hz', b: 'LCD 6,72" Full HD • 60 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "50 MP", b: "50 MP + ultra-angular 5 MP", winner: "b" },
+      { label: "Câmera frontal", a: "8 MP", b: "32 MP", winner: "b" },
+      { label: "Bateria e recarga", a: "5.200 mAh • 20 W", b: "5.200 mAh • 18 W", winner: "a" },
+      { label: "Proteção", a: "IP64", b: "IP64", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 900", b: "R$ 850", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Qual é mais rápido, Moto G37 ou G17?",
+        answer: "O Moto G37. O Dimensity 6300 é bem mais forte que o Helio G81.",
+      },
+      {
+        question: "Vale mais um Moto G37 ou um Galaxy A17 5G?",
+        answer:
+          "O Galaxy A17 5G, se o preço for parecido: tela AMOLED, câmera com estabilização óptica e seis anos de atualizações.",
+      },
+      {
+        question: "Os dois têm entrada para fone e cartão de memória?",
+        answer: "Sim, os dois têm entrada P2 e slot para microSD.",
+      },
+    ],
+  },
 };

@@ -78,6 +78,7 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
 ];
 
 const COMPARISONS = [
+  { to: "/comparativo/moto-g37-vs-moto-g17", label: "Moto G37 vs Moto G17" },
   { to: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g", label: "Galaxy A17 4G vs A17 5G" },
   { to: "/comparativo/galaxy-a07-vs-moto-g06", label: "Galaxy A07 vs Moto G06" },
   { to: "/comparativo/galaxy-a25-vs-redmi-note-13", label: "Galaxy A25 vs Redmi Note 13" },

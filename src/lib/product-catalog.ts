@@ -356,6 +356,30 @@ export const PRODUCTS: Product[] = [
     { connectivity: "4G", reviewPath: "/comparativo/redmi-note-15-4g-vs-5g" },
   ),
   product(
+    "moto-g-max",
+    "Moto G Max",
+    "Motorola",
+    "candidate",
+    "Tela pOLED de 6,8\" com 5.000 nits, câmera de 200 MP com OIS, IP68/IP69 e 256 GB; processador de entrada.",
+    { reviewPath: "/comparativo/moto-g-max-vs-moto-g86" },
+  ),
+  product(
+    "moto-g37",
+    "Moto G37",
+    "Motorola",
+    "candidate",
+    "5G barato: Dimensity 6300, tela de 120 Hz, 5.200 mAh e IP64.",
+    { reviewPath: "/comparativo/moto-g37-vs-moto-g17" },
+  ),
+  product(
+    "moto-g17",
+    "Moto G17",
+    "Motorola",
+    "candidate",
+    "4G com tela Full HD, câmera Sony de 50 MP, ultra-angular e selfie de 32 MP; processador fraco.",
+    { connectivity: "4G", reviewPath: "/comparativo/moto-g37-vs-moto-g17" },
+  ),
+  product(
     "poco-x8-pro",
     "POCO X8 Pro",
     "POCO",
@@ -604,6 +628,9 @@ const amazon: [string, string][] = [
   ["galaxy-s26-ultra", links.GALAXY_S26_ULTRA_AMAZON_URL],
   ["galaxy-s26-fe", links.GALAXY_S26_FE_AMAZON_URL],
   ["redmi-note-15-4g", links.REDMI_NOTE_15_4G_AMAZON_URL],
+  ["moto-g-max", links.MOTO_G_MAX_AMAZON_URL],
+  ["moto-g37", links.MOTO_G37_AMAZON_URL],
+  ["moto-g17", links.MOTO_G17_AMAZON_URL],
 ];
 function offer(productId: string, store: Store, url: string, legacy = false): Offer {
   return {

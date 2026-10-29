@@ -251,6 +251,39 @@ function MelhoresCelularesMotorola() {
           </div>
         </section>
 
+        <section aria-labelledby="comparativos-motorola" className="mt-14">
+          <h2 id="comparativos-motorola" className="text-xl font-bold text-[#0F3F4A]">
+            Comparativos Motorola
+          </h2>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            <li>
+              <Link to="/comparativo/moto-g-max-vs-moto-g86" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G Max vs G86
+              </Link>
+            </li>
+            <li>
+              <Link to="/comparativo/moto-g77-vs-moto-g86" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G77 vs G86
+              </Link>
+            </li>
+            <li>
+              <Link to="/comparativo/edge-70-vs-edge-60-pro" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Edge 70 vs Edge 60 Pro
+              </Link>
+            </li>
+            <li>
+              <Link to="/comparativo/moto-g37-vs-moto-g17" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G37 vs G17
+              </Link>
+            </li>
+            <li>
+              <Link to="/comparativo/edge-60-pro-vs-galaxy-s25-fe" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Edge 60 Pro vs Galaxy S25 FE
+              </Link>
+            </li>
+          </ul>
+        </section>
+
         <p className="mt-10 text-sm text-slate-600">
           Comprando na Black Friday?{" "}
           <Link to="/black-friday-celulares" className="font-semibold underline">

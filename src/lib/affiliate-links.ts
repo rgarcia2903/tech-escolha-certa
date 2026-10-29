@@ -66,6 +66,10 @@ export const GALAXY_S25_ULTRA_AMAZON_URL = "https://www.amazon.com.br/dp/B0DSYJC
 export const GALAXY_S26_ULTRA_AMAZON_URL = "https://www.amazon.com.br/dp/B0GKQTTCMM?tag=techescolha03-20";
 export const GALAXY_S26_FE_AMAZON_URL = "https://www.amazon.com.br/dp/B0HJ9XLZG5?tag=techescolha03-20";
 export const REDMI_NOTE_15_4G_AMAZON_URL = "https://www.amazon.com.br/dp/B0GL9QPQYL?tag=techescolha03-20";
+// Motorola (Amazon, 29/10/2026).
+export const MOTO_G_MAX_AMAZON_URL = "https://www.amazon.com.br/dp/B0GZQX7CBJ?tag=techescolha03-20";
+export const MOTO_G37_AMAZON_URL = "https://www.amazon.com.br/dp/B0HHNB2PBN?tag=techescolha03-20";
+export const MOTO_G17_AMAZON_URL = "https://www.amazon.com.br/dp/B0GKPXSZR6?tag=techescolha03-20";
 export const IPHONE_15_AMAZON_URL = "https://www.amazon.com.br/dp/B0CP6CVJSG?tag=techescolha03-20";
 
 // Endereços originais gerados pelo usuário no programa Amazon Associados.
