@@ -16,6 +16,8 @@ export function documentaryArticle(productId: string, headline: string, descript
     dateModified: EDITORIAL_REVIEW_DATE,
     mainEntityOfPage: `https://techescolhacerta.com.br${product.reviewPath}`,
     ...(product.image ? { image: `https://techescolhacerta.com.br${product.image}` } : {}),
-    about: { "@type": "Product", name: product.name },
+    // "Thing", não "Product": sem preço nem nota exibidos, um Product fica inválido para o Google
+    // (exige offers, review ou aggregateRating).
+    about: { "@type": "Thing", name: product.name },
   };
 }
