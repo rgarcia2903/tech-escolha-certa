@@ -162,6 +162,9 @@ export const GOOD_DEAL_UNDER: Record<string, number> = {
   "poco-x7-pro": 2250,
   "iphone-17": 5400,
   "iphone-17e": 4500,
+  "galaxy-a17-4g": 850,
+  "galaxy-a07": 800,
+  "moto-g06": 700,
 };
 
 /** Até quanto vale pagar no modelo: teto de FAIR_PRICES ou limiar de bom negócio. */

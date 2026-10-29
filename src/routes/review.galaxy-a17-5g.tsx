@@ -113,6 +113,11 @@ function GalaxyA17Review() {
           <p className="mt-4 leading-7 text-slate-700">O modelo pesa 192 g, tem 7,5 mm de espessura, suporte a 5G e NFC na ficha brasileira. A classificação IP54 significa resistência limitada a poeira e respingos; não indica proteção para submersão. A Samsung anunciou até seis gerações de Android e seis anos de correções de segurança. Essa política é uma vantagem para longevidade, embora a capacidade do hardware permaneça importante ao longo dos anos.</p>
         </article>
         <article className="rounded-2xl bg-white p-7">
+          <h2 className="text-2xl font-bold text-[#0F3F4A]">Galaxy A17 5G ou Galaxy A17 4G?</h2>
+          <p className="mt-4 leading-7 text-slate-700">Tela, câmeras, bateria, proteção e atualizações são iguais. O 5G tem processador um pouco mais rápido (Exynos 1330 contra Helio G99) e conexão 5G. Se a diferença de preço for pequena, fique com o 5G.</p>
+          <p className="mt-4"><Link to="/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g" className="font-semibold underline">Ver o comparativo Galaxy A17 4G vs 5G</Link> · <Link to="/melhor-celular-ate-1000" className="font-semibold underline">Melhores celulares até R$ 1.000</Link></p>
+        </article>
+        <article className="rounded-2xl bg-white p-7">
           <h2 className="text-2xl font-bold text-[#0F3F4A]">Galaxy A17 5G ou Galaxy A36 5G?</h2>
           <p className="mt-4 leading-7 text-slate-700">O A17 5G prioriza tarefas essenciais e custo de entrada. O A36 5G entra na comparação quando você exige mais fluidez e um conjunto intermediário. Não recomendamos escolher automaticamente o mais caro: compare a mesma capacidade de armazenamento, os recursos de cada versão e o preço final. Se o salto de preço for pequeno, o A36 merece atenção; se o A17 estiver substancialmente mais barato e o uso for básico, ele pode ser suficiente.</p>
         </article>

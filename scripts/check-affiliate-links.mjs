@@ -53,7 +53,10 @@ function readDestination(finalUrl, html) {
     const bullets = htmlToText(html.match(/id="feature-bullets"[\s\S]{0,3000}/)?.[0] ?? "");
     return {
       state: unavailable ? "paused" : "ok",
-      product: `${htmlToText(title).trim()} ${bullets.slice(0, 300)}`,
+      product: htmlToText(title).trim(),
+      // Os destaques só ajudam a achar termos obrigatórios; termos indevidos são buscados
+      // apenas no título (palavras como "processador" contêm "pro").
+      extra: bullets.slice(0, 300),
     };
   }
   if (/mercadoli[vb]re\.com/.test(finalUrl)) {
@@ -70,11 +73,12 @@ function readDestination(finalUrl, html) {
   return { state: "unverifiable", product: finalUrl };
 }
 
-function matches(product, rule) {
+function matches(product, rule, extra = "") {
   const p = normalize(product);
-  const missing = (rule.include ?? []).filter((word) => !p.includes(normalize(word)));
+  const full = normalize(`${product} ${extra}`);
+  const missing = (rule.include ?? []).filter((word) => !full.includes(normalize(word)));
   const wrong = (rule.exclude ?? []).filter((word) => p.includes(normalize(word)));
-  const anyOk = !rule.includeAny || rule.includeAny.some((word) => p.includes(normalize(word)));
+  const anyOk = !rule.includeAny || rule.includeAny.some((word) => full.includes(normalize(word)));
   return { ok: missing.length === 0 && wrong.length === 0 && anyOk, missing, wrong };
 }
 
@@ -92,7 +96,7 @@ for (const link of links) {
     else if (dest.state === "paused") row = { ...row, result: "PAUSADO", detail: product };
     else if (!rule) row = { ...row, result: "SEM REGRA", detail: product };
     else {
-      const check = matches(dest.product, rule);
+      const check = matches(dest.product, rule, dest.extra);
       row = check.ok
         ? { ...row, result: "OK", detail: product }
         : {

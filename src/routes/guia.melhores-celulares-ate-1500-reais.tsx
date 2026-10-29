@@ -99,7 +99,7 @@ const FAQ = [
   {
     question: "Qual o melhor celular até R$ 1.000?",
     answer:
-      "O Galaxy A17 5G. Ele tem tela AMOLED, 5G, NFC e seis anos de atualizações, algo raro nessa faixa.",
+      "O Galaxy A17 5G. Ele tem tela AMOLED, 5G, NFC e seis anos de atualizações, algo raro nessa faixa. Veja o guia completo de celulares até R$ 1.000.",
   },
   {
     question: "Vale mais um modelo antigo mais forte ou um novo mais simples?",

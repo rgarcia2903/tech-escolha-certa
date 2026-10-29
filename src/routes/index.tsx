@@ -83,6 +83,7 @@ const categoryLinks = [
   { title: "Xiaomi", href: "/melhores-celulares-xiaomi" },
   { title: "Motorola", href: "/melhores-celulares-motorola" },
   { title: "iPhone", href: "/qual-iphone-comprar" },
+  { title: "Até R$ 1.000", href: "/melhor-celular-ate-1000" },
   { title: "Até R$ 1.500", href: "/guia/melhores-celulares-ate-1500-reais" },
   { title: "Até R$ 2.000", href: "/melhores-celulares-ate-2000" },
   { title: "Até R$ 2.500", href: "/melhores-celulares-ate-2500" },
