@@ -376,9 +376,10 @@ export const PRODUCTS: Product[] = [
     "galaxy-a57-5g",
     "Galaxy A57 5G",
     "Samsung",
-    "evaluate",
-    "Candidato para uso cotidiano e suporte; não há preço de enquadramento confirmado.",
+    "candidate",
+    "Intermediário mais novo da Samsung: Exynos 1680, tela AMOLED de 120 Hz, IP68, 6,9 mm e seis anos de atualizações.",
     {
+      reviewPath: "/review/galaxy-a57-5g",
       officialUrl:
         "https://news.samsung.com/br/samsung-apresenta-galaxy-a57-5g-e-galaxy-a37-5g-no-brasil-com-recursos-de-nivel-profissional",
     },
@@ -470,6 +471,7 @@ const ml: [string, string][] = [
   ["moto-g86-5g", links.MOTO_G86_AFFILIATE_URL],
   ["edge-60-pro", links.EDGE_60_PRO_AFFILIATE_URL],
   ["galaxy-s25-fe", links.GALAXY_S25_FE_AFFILIATE_URL],
+  ["galaxy-a57-5g", links.GALAXY_A57_AFFILIATE_URL],
 ];
 const amazon: [string, string][] = [
   ["galaxy-a17-5g", links.GALAXY_A17_AMAZON_URL],

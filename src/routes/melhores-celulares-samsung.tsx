@@ -47,6 +47,7 @@ const PICKS = [
     forWho: "Quem quer acabamento premium, resistência IP68 e suporte longo sem pagar preço de linha S.",
     watchOut:
       "Foi lançado a R$ 3.599 em abril de 2026 e costuma aparecer bem abaixo disso. Confira a versão e o vendedor no anúncio.",
+    reviewPath: "/review/galaxy-a57-5g",
   },
   {
     id: "galaxy-s25-fe",
