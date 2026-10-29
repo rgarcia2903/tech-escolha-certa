@@ -31,6 +31,18 @@ function htmlToText(html) {
     .replace(/\n\s*\n+/g, "\n");
 }
 
+// Não gerar cliques de afiliado automáticos: na Amazon, confere a página do produto sem a tag;
+// links encurtados da Amazon (link.amazon) não são acessados e ficam para conferência manual.
+function checkUrl(url) {
+  const parsed = new URL(url);
+  if (parsed.hostname === "link.amazon") return null;
+  if (parsed.hostname.endsWith("amazon.com.br")) {
+    parsed.search = "";
+    return parsed.toString();
+  }
+  return url;
+}
+
 async function fetchPage(url) {
   const response = await fetch(url, {
     redirect: "follow",
@@ -87,7 +99,12 @@ for (const link of links) {
   const rule = expectations[link.name];
   let row = { ...link, result: "", detail: "" };
   try {
-    const { status, finalUrl, html } = await fetchPage(link.url);
+    const target = checkUrl(link.url);
+    if (!target) {
+      results.push({ ...row, result: "NÃO VERIFICÁVEL", detail: "link encurtado da Amazon: conferir manualmente (não acessado para não gerar clique)" });
+      continue;
+    }
+    const { status, finalUrl, html } = await fetchPage(target);
     const dest = readDestination(finalUrl, html);
     const product = (dest.product ?? "").replace(/\s+/g, " ").slice(0, 120);
     if (status >= 400) row = { ...row, result: "QUEBRADO", detail: `HTTP ${status}` };
