@@ -187,6 +187,14 @@ export function OlderModelVerdict(p: OlderModelVerdictProps) {
             ))}
           </div>
         </section>
+
+        <p className="mt-10 text-sm text-slate-600">
+          Pensando em outro modelo?{" "}
+          <Link to="/vale-a-pena" className="font-semibold underline">
+            Veja se outros celulares ainda valem a pena em 2026
+          </Link>
+          .
+        </p>
       </div>
     </main>
   );
