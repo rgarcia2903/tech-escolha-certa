@@ -21,13 +21,13 @@ export const Route = createFileRoute("/review/galaxy-s23-ultra")({
       fairPriceId="galaxy-s23-ultra"
       name="Galaxy S23 Ultra"
       launched="fevereiro de 2023"
-      shortVerdict="Só abaixo de R$ 3.300. O Galaxy S23 Ultra ainda tem uma das melhores câmeras com zoom, S Pen e tela grande de alta resolução, mas a One UI 9 é a última versão grande do Android que ele recebe. Pelo mesmo dinheiro, o Galaxy S25 FE novo dura mais; para manter a S Pen, só o S25 Ultra."
-      alternative={{ id: "galaxy-s25-fe", name: "Galaxy S25 FE", reviewPath: "/review/galaxy-s25-fe" }}
+      shortVerdict="Só abaixo de R$ 3.300. O Galaxy S23 Ultra ainda tem uma das melhores câmeras com zoom, S Pen e tela grande de alta resolução, mas a One UI 9 é a última versão grande do Android que ele recebe. Acima disso, junte para o S25 Ultra, que tem atualizações até 2032; se não usa a S Pen, o S25 FE custa menos e dura mais."
+      alternative={{ id: "galaxy-s25-ultra", name: "Galaxy S25 Ultra", reviewPath: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra" }}
       secondary={{
-        id: "galaxy-s25-ultra",
-        name: "Galaxy S25 Ultra",
-        reviewPath: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra",
-        why: "Não abre mão da S Pen e do zoom de longo alcance? O Galaxy S25 Ultra tem atualizações até 2032.",
+        id: "galaxy-s25-fe",
+        name: "Galaxy S25 FE",
+        reviewPath: "/review/galaxy-s25-fe",
+        why: "Não usa a S Pen? O Galaxy S25 FE tem teleobjetiva e atualizações até 2032 por menos de R$ 3.000.",
       }}
       specs={[
         ["Processador", "Snapdragon 8 Gen 2 for Galaxy"],
@@ -41,12 +41,12 @@ export const Route = createFileRoute("/review/galaxy-s23-ultra")({
         ["Lançamento", "Fevereiro de 2023"],
       ]}
       versus={[
-        ["Zoom", "3x e 10x", "3x", "old"],
-        ["S Pen", "Sim", "Não", "old"],
-        ["Tela", "6,8\" QHD+", "6,7\" Full HD+", "old"],
-        ["Bateria", "5.000 mAh", "4.900 mAh", "tie"],
+        ["Processador", "Snapdragon 8 Gen 2", "Snapdragon 8 Elite", "new"],
+        ["Zoom", "3x e 10x", "3x e 5x", "tie"],
+        ["Ultra-angular", "12 MP", "50 MP", "new"],
+        ["S Pen", "Sim", "Sim", "tie"],
         ["Atualizações", "Última versão grande agora", "Até 2032", "new"],
-        ["Compre se estiver até", "R$ 3.300", "R$ 3.000", "tie"],
+        ["Compre se estiver até", "R$ 3.300", "R$ 5.800", "tie"],
       ]}
       stillGood={[
         "Câmera de 200 MP e zoom de 10x",
@@ -65,7 +65,7 @@ export const Route = createFileRoute("/review/galaxy-s23-ultra")({
       }}
       faq={[
         { question: "O Galaxy S23 Ultra vale a pena em 2026?", answer: "Só abaixo de R$ 3.300. As câmeras e a S Pen ainda impressionam, mas a One UI 9 é sua última versão grande do Android." },
-        { question: "Galaxy S23 Ultra ou S25 FE?", answer: "O S25 FE dura mais em atualizações (até 2032). O S23 Ultra ganha no zoom de 10x, na S Pen e na tela. Para usar por muitos anos, o S25 FE." },
+        { question: "Galaxy S23 Ultra ou S25 FE?", answer: "O S25 FE dura mais em atualizações (até 2032) e custa menos. O S23 Ultra ganha no zoom de 10x, na S Pen e na tela. Para usar por muitos anos sem S Pen, o S25 FE." },
         { question: "Até quando o Galaxy S23 Ultra recebe atualização?", answer: "A One UI 9 (Android 17) é a última versão grande; as correções de segurança vão até 2028." },
       ]}
     />
