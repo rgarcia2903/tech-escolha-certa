@@ -1,3 +1,4 @@
+import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
@@ -166,6 +167,7 @@ function ReviewGalaxyA35() {
           </div>
         </div>
       </section>
+      <QuickVerdict fairPriceId="galaxy-a35" productId="galaxy-a35" alternativeReviewPath="/review/galaxy-a36-5g" />
 
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1fr_340px] lg:px-8">
         <article className="space-y-10">
