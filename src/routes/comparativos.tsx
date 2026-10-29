@@ -35,6 +35,22 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Moto G Max vs Moto G86",
+    summary: "Tela e câmera de 200 MP contra processador mais forte.",
+    href: "/comparativo/moto-g-max-vs-moto-g86",
+    family: "Motorola vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem quer um Motorola até R$ 2.000.",
+  },
+  {
+    title: "Moto G37 vs Moto G17",
+    summary: "Os Motorola mais baratos de 2026: 5G e velocidade contra tela Full HD e selfie.",
+    href: "/comparativo/moto-g37-vs-moto-g17",
+    family: "Motorola vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem quer gastar menos de R$ 1.000.",
+  },
+  {
     title: "Galaxy S26 vs Galaxy S25",
     summary: "Mudou pouco: veja por que o S25 de 256 GB é a compra mais inteligente.",
     href: "/comparativo/galaxy-s26-vs-galaxy-s25",
