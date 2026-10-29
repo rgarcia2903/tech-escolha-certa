@@ -414,5 +414,63 @@
       "a36",
       "a57"
     ]
+  },
+  "GALAXY_S25_AMAZON_URL": {
+    "include": [
+      "s25"
+    ],
+    "exclude": [
+      "ultra",
+      "fe",
+      "edge",
+      "plus",
+      "s26"
+    ]
+  },
+  "GALAXY_S26_AMAZON_URL": {
+    "include": [
+      "s26"
+    ],
+    "exclude": [
+      "ultra",
+      "fe",
+      "edge",
+      "plus",
+      "s25"
+    ]
+  },
+  "GALAXY_S25_ULTRA_AMAZON_URL": {
+    "include": [
+      "s25 ultra"
+    ],
+    "exclude": [
+      "s26"
+    ]
+  },
+  "GALAXY_S26_ULTRA_AMAZON_URL": {
+    "include": [
+      "s26 ultra"
+    ],
+    "exclude": [
+      "s25"
+    ]
+  },
+  "GALAXY_S26_FE_AMAZON_URL": {
+    "include": [
+      "s26 fe"
+    ],
+    "exclude": [
+      "s25",
+      "ultra"
+    ]
+  },
+  "REDMI_NOTE_15_4G_AMAZON_URL": {
+    "include": [
+      "note 15"
+    ],
+    "exclude": [
+      "pro",
+      "5g"
+    ]
   }
 }

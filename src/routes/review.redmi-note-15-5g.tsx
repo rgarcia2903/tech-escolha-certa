@@ -173,6 +173,7 @@ function ReviewRedmiNote155G() {
         },
       ]}
       relatedLinks={[
+        { label: "Redmi Note 15 4G ou 5G?", to: "/comparativo/redmi-note-15-4g-vs-5g" },
         { label: "Redmi Note 15 5G ou Moto G86?", to: "/comparativo/moto-g86-vs-redmi-note-15-5g" },
         { label: "Review Redmi Note 13 Pro 5G", to: "/review/redmi-note-13-pro" },
         { label: "Review Poco X7 Pro", to: "/review/poco-x7-pro" },

@@ -179,6 +179,12 @@ export const GOOD_DEAL_UNDER: Record<string, number> = {
   "moto-g77": 1500,
   "edge-70": 2400,
   "galaxy-a37-5g": 1700,
+  "galaxy-s25": 3900,
+  "galaxy-s26": 4800,
+  "galaxy-s25-ultra": 5800,
+  "galaxy-s26-ultra": 6750,
+  "galaxy-s26-fe": 3300,
+  "redmi-note-15-4g": 1400,
 };
 
 /** Até quanto vale pagar no modelo: teto de FAIR_PRICES ou limiar de bom negócio. */

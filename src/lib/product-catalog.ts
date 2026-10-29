@@ -324,6 +324,38 @@ export const PRODUCTS: Product[] = [
     },
   ),
   product(
+    "galaxy-s25",
+    "Galaxy S25",
+    "Samsung",
+    "previous_generation",
+    "Linha S compacta de 2025: Snapdragon 8 Elite, câmera tripla com zoom 3x e sete anos de atualizações.",
+    { reviewPath: "/comparativo/galaxy-s26-vs-galaxy-s25" },
+  ),
+  product(
+    "galaxy-s25-ultra",
+    "Galaxy S25 Ultra",
+    "Samsung",
+    "previous_generation",
+    "Topo de linha de 2025: Snapdragon 8 Elite, câmera de 200 MP, zoom 5x, S Pen e titânio.",
+    { reviewPath: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra" },
+  ),
+  product(
+    "galaxy-s26-ultra",
+    "Galaxy S26 Ultra",
+    "Samsung",
+    "candidate",
+    "Topo de linha atual: Snapdragon 8 Elite Gen 5, recarga de 60 W, tela de privacidade e S Pen.",
+    { reviewPath: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra" },
+  ),
+  product(
+    "redmi-note-15-4g",
+    "Redmi Note 15 4G",
+    "Xiaomi",
+    "candidate",
+    "Versão 4G do Note 15: Helio G100 Ultra, bateria de 6.000 mAh e 33 W; sem 5G e sem vídeo 4K.",
+    { connectivity: "4G", reviewPath: "/comparativo/redmi-note-15-4g-vs-5g" },
+  ),
+  product(
     "poco-x8-pro",
     "POCO X8 Pro",
     "POCO",
@@ -389,9 +421,10 @@ export const PRODUCTS: Product[] = [
     "galaxy-s26-fe",
     "Galaxy S26 FE",
     "Samsung",
-    "evaluate",
-    "Candidato premium a comparar com S25 FE; sem oferta validada no site.",
+    "candidate",
+    "Sucessor do S25 FE: Exynos 2500, mais modos de vídeo e One UI 9; mesma tela, câmeras e bateria.",
     {
+      reviewPath: "/comparativo/galaxy-s26-fe-vs-galaxy-s25-fe",
       officialUrl:
         "https://news.samsung.com/br/samsung-galaxy-s26-fe-chega-ao-brasil-com-one-ui-9-sete-atualizacoes-de-sistema-operacional-e-de-seguranca-camera-avancada-processador-de-alta-performance-e-galaxy-ai",
     },
@@ -400,9 +433,9 @@ export const PRODUCTS: Product[] = [
     "galaxy-s26",
     "Galaxy S26",
     "Samsung",
-    "evaluate",
-    "Candidato premium; confirmar configuração e condições antes de recomendar compra.",
-    { officialUrl: "https://www.samsung.com/br/smartphones/galaxy-s26/specs/" },
+    "candidate",
+    "Linha S compacta atual: Exynos 2600, 256 GB, 4.300 mAh e sete anos de atualizações.",
+    { officialUrl: "https://www.samsung.com/br/smartphones/galaxy-s26/specs/", reviewPath: "/comparativo/galaxy-s26-vs-galaxy-s25" },
   ),
   product(
     "iphone-17",
@@ -565,6 +598,12 @@ const amazon: [string, string][] = [
   ["moto-g77", links.MOTO_G77_AMAZON_URL],
   ["edge-70", links.EDGE_70_AMAZON_URL],
   ["galaxy-a37-5g", links.GALAXY_A37_AMAZON_URL],
+  ["galaxy-s25", links.GALAXY_S25_AMAZON_URL],
+  ["galaxy-s26", links.GALAXY_S26_AMAZON_URL],
+  ["galaxy-s25-ultra", links.GALAXY_S25_ULTRA_AMAZON_URL],
+  ["galaxy-s26-ultra", links.GALAXY_S26_ULTRA_AMAZON_URL],
+  ["galaxy-s26-fe", links.GALAXY_S26_FE_AMAZON_URL],
+  ["redmi-note-15-4g", links.REDMI_NOTE_15_4G_AMAZON_URL],
 ];
 function offer(productId: string, store: Store, url: string, legacy = false): Offer {
   return {

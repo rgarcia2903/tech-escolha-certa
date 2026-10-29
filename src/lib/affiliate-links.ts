@@ -59,6 +59,13 @@ export const POCO_X8_PRO_AMAZON_URL = "https://www.amazon.com.br/dp/B0GQC19Y8D?t
 export const MOTO_G77_AMAZON_URL = "https://www.amazon.com.br/dp/B0GLSLLGZL?tag=techescolha03-20";
 export const EDGE_70_AMAZON_URL = "https://www.amazon.com.br/dp/B0GLTJ4MYM?tag=techescolha03-20";
 export const GALAXY_A37_AMAZON_URL = "https://www.amazon.com.br/dp/B0GVT89H5W?tag=techescolha03-20";
+// Linha Galaxy S e Redmi Note 15 4G (Amazon, 29/10/2026).
+export const GALAXY_S25_AMAZON_URL = "https://www.amazon.com.br/dp/B0DSY665M3?tag=techescolha03-20";
+export const GALAXY_S26_AMAZON_URL = "https://www.amazon.com.br/dp/B0GKQNGV23?tag=techescolha03-20";
+export const GALAXY_S25_ULTRA_AMAZON_URL = "https://www.amazon.com.br/dp/B0DSYJCY45?tag=techescolha03-20";
+export const GALAXY_S26_ULTRA_AMAZON_URL = "https://www.amazon.com.br/dp/B0GKQTTCMM?tag=techescolha03-20";
+export const GALAXY_S26_FE_AMAZON_URL = "https://www.amazon.com.br/dp/B0HJ9XLZG5?tag=techescolha03-20";
+export const REDMI_NOTE_15_4G_AMAZON_URL = "https://www.amazon.com.br/dp/B0GL9QPQYL?tag=techescolha03-20";
 export const IPHONE_15_AMAZON_URL = "https://www.amazon.com.br/dp/B0CP6CVJSG?tag=techescolha03-20";
 
 // Endereços originais gerados pelo usuário no programa Amazon Associados.
