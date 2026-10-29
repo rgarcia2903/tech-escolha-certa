@@ -6,7 +6,6 @@ import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 // Ficha conferida em 28/10/2026: Canaltech (lançamento no Brasil em 14/05/2025, R$ 3.999) e
 // Oficina da Net (dimensões, proteção, câmeras, Android 15 e 3 anos de atualizações).
-// Preço visto na Amazon em 28/10/2026: R$ 2.699,10, vendido pela Amazon.
 const PAGE_TITLE = fairPriceTitle("edge-60-pro");
 const PAGE_DESCRIPTION = fairPriceDescription("edge-60-pro");
 
@@ -52,7 +51,7 @@ function ReviewEdge60Pro() {
       affiliate={{
         title: "Motorola Edge 60 Pro: confira o preço de hoje",
         description:
-          "Compare o preço na Amazon e no Mercado Livre. Na nossa checagem de outubro de 2026, a versão de 256 GB com 12 GB de RAM estava bem abaixo do preço de lançamento.",
+          "Lançado a R$ 3.999, ele costuma aparecer bem abaixo disso. Compare as duas lojas: se estiver até R$ 2.700, é um ótimo negócio.",
         buttonText: "Ver Edge 60 Pro na Amazon",
         highlight: "6.000 mAh • 90 W • Zoom óptico 3x • IP68 e IP69",
       }}
@@ -107,7 +106,7 @@ function ReviewEdge60Pro() {
         {
           eyebrow: "Veredito",
           title: "Para quem o Edge 60 Pro faz sentido",
-          text: "É para quem quer recursos de aparelho caro, como zoom óptico, recarga sem fio e bateria enorme, pagando preço de intermediário premium. Lançado a R$ 3.999, ele estava por cerca de R$ 2.700 na nossa checagem de outubro de 2026. Nesse valor, poucos aparelhos entregam tanto.",
+          text: "É para quem quer recursos de aparelho caro, como zoom óptico, recarga sem fio e bateria enorme, pagando preço de intermediário premium. Lançado a R$ 3.999, ele costuma aparecer bem mais barato. Até R$ 2.700, poucos aparelhos entregam tanto.",
         },
         {
           eyebrow: "Bateria",
@@ -132,7 +131,7 @@ function ReviewEdge60Pro() {
         {
           eyebrow: "Comparação",
           title: "Edge 60 Pro ou Galaxy S25 FE?",
-          text: "O Edge 60 Pro vence em bateria, recarga, zoom e RAM, e custava cerca de R$ 300 a menos na nossa checagem. O Galaxy S25 FE vence no suporte: são sete anos de atualizações, contra três do Edge. Se você troca de celular a cada dois ou três anos, o Edge é a melhor compra. Se quer ficar com ele por muito tempo, vá de S25 FE.",
+          text: "O Edge 60 Pro vence em bateria, recarga, zoom e RAM, e costuma custar menos. O Galaxy S25 FE vence no suporte: são sete anos de atualizações, contra três do Edge. Se você troca de celular a cada dois ou três anos, o Edge é a melhor compra. Se quer ficar com ele por muito tempo, vá de S25 FE.",
         },
       ]}
       finalRecommendation="O Motorola Edge 60 Pro vale a pena até cerca de R$ 2.700 para quem quer bateria enorme, recarga rápida e câmera com zoom óptico. Se você pretende usar o aparelho por mais de três anos, o Galaxy S25 FE é a escolha mais segura. Confira no anúncio se é a versão de 12 GB de RAM."

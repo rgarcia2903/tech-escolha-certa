@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BadgeCheck, CircleAlert } from "lucide-react";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { HeroPickCTA } from "@/components/site/HeroPickCTA";
 import { FAIR_PRICES, formatBRL } from "@/lib/fair-prices";
 
-// Preços vistos na Amazon em 28/10/2026 (mesma checagem de src/lib/fair-prices.ts).
+// Tetos de preço editoriais em src/lib/fair-prices.ts. Não exibir preço de loja (política da Amazon).
 const PAGE_TITLE = "Melhor celular Motorola em 2026: qual comprar e até quanto pagar";
 const PAGE_DESCRIPTION =
   "Moto G56, Moto G86 ou Edge 60 Pro? Veja qual Motorola comprar em 2026 para cada perfil, até quanto vale pagar e quando outra marca é a melhor escolha.";
@@ -28,7 +29,6 @@ const PICKS = [
     id: "moto-g86-5g" as const,
     badge: "Melhor para a maioria",
     name: "Moto G86 5G",
-    seenPrice: 1799,
     summary:
       "A melhor tela entre os intermediários da Motorola (pOLED 1.5K, 120 Hz), câmera Sony com estabilização óptica, IP68/IP69 e carregador de 33 W na caixa.",
     forWho: "Quem quer um celular completo para vídeos, fotos e uso diário, gastando menos de R$ 2.000.",
@@ -39,7 +39,6 @@ const PICKS = [
     id: "edge-60-pro" as const,
     badge: "Melhor bateria e câmera",
     name: "Motorola Edge 60 Pro",
-    seenPrice: 2699,
     summary:
       "Bateria de 6.000 mAh com recarga de 90 W e sem fio, três câmeras de 50/50/10 MP com zoom óptico de 3x, 12 GB de RAM e IP69.",
     forWho: "Quem quer recursos de topo de linha, como zoom óptico e recarga sem fio, por preço de intermediário premium.",
@@ -50,7 +49,6 @@ const PICKS = [
     id: "moto-g56-5g" as const,
     badge: "Mais resistente e barato",
     name: "Moto G56 5G",
-    seenPrice: 1369,
     summary:
       "256 GB com cartão de memória, bateria de 5.200 mAh, IP68/IP69, entrada para fone com fio e alto-falantes estéreo.",
     forWho: "Quem precisa de um aparelho resistente e com muito espaço, e prioriza durabilidade física a tela.",
@@ -120,8 +118,9 @@ function MelhoresCelularesMotorola() {
             <strong className="text-white">Edge 60 Pro</strong> para quem quer bateria e câmera de topo, e o{" "}
             <strong className="text-white">Moto G56 5G</strong> só se aparecer abaixo de {formatBRL(1200)}.
           </p>
+          <HeroPickCTA productId="moto-g86-5g" pageType="guia" />
           <p className="mt-4 text-sm text-slate-300">
-            Análise documental com fichas oficiais e preços conferidos na Amazon em 28 de outubro de 2026.{" "}
+            Análise documental com fichas oficiais, revisada em outubro de 2026.{" "}
             <Link to="/divulgacao-de-afiliados" className="underline">
               Usamos links de afiliado
             </Link>
@@ -157,8 +156,8 @@ function MelhoresCelularesMotorola() {
                   </dl>
                   <p className="mt-4 rounded-2xl bg-[#FFF8EF] p-4 text-sm text-slate-700">
                     <BadgeCheck className="mr-1 inline h-4 w-4 text-[#8B5A2B]" />
-                    Vale a pena até <strong>{formatBRL(fp.maxPrice)}</strong>. Na checagem, estava por cerca de{" "}
-                    {formatBRL(pick.seenPrice)}. Acima do teto, prefira o {fp.alternativeName}.
+                    Compre se estiver até <strong>{formatBRL(fp.maxPrice)}</strong>. Acima disso, prefira o{" "}
+                    {fp.alternativeName}.
                   </p>
                   <Link to={pick.reviewPath} className="mt-4 inline-block font-semibold text-[#0F3F4A] underline">
                     Ler o review completo do {pick.name}

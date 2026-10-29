@@ -30,8 +30,7 @@ export function FairPriceBox({
         Vale a pena até {formatBRL(fp.maxPrice)}
       </p>
       <p className="mt-2 text-sm leading-6 text-slate-700">
-        Pagando mais que isso pelo {fp.productName} novo, prefira o {fp.alternativeName}: {fp.why}{" "}
-        Na nossa checagem, ele estava por cerca de {formatBRL(fp.alternativeSeenPrice)}.
+        Pagando mais que isso pelo {fp.productName} novo, prefira o {fp.alternativeName}: {fp.why}
       </p>
       <p className="mt-2 text-sm leading-6 text-slate-700">
         <strong>Na Black Friday:</strong> use {formatBRL(fp.maxPrice)} como teto. Desconto em cima de preço inflado

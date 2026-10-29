@@ -6,7 +6,6 @@ import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
 // Ficha conferida em 28/10/2026: Canaltech e Hardware.com.br (lançamento no Brasil, R$ 2.499),
 // Oficina da Net (Android 15, 2 atualizações de sistema e 4 anos de segurança).
-// Preço visto na Amazon em 28/10/2026: R$ 1.799,10, vendido pela Amazon.
 const PAGE_TITLE = fairPriceTitle("moto-g86-5g");
 const PAGE_DESCRIPTION = fairPriceDescription("moto-g86-5g");
 
@@ -52,7 +51,7 @@ function ReviewMotoG86() {
       affiliate={{
         title: "Moto G86 5G: confira o preço de hoje",
         description:
-          "Compare o preço na Amazon e no Mercado Livre. Na nossa checagem de outubro de 2026, a Amazon vendia a versão de 256 GB bem abaixo do preço de lançamento.",
+          "Lançado a R$ 2.499, ele costuma aparecer bem abaixo disso. Até R$ 1.900, é uma das melhores compras da faixa.",
         buttonText: "Ver Moto G86 5G na Amazon",
         highlight: "pOLED 1.5K • Sony LYTIA 600 com OIS • IP68 e IP69 • 33 W na caixa",
       }}
@@ -105,7 +104,7 @@ function ReviewMotoG86() {
         {
           eyebrow: "Veredito",
           title: "Para quem o Moto G86 5G faz sentido",
-          text: "O G86 é para quem quer um intermediário equilibrado, com tela de aparelho mais caro e boa câmera principal. Ele foi lançado a R$ 2.499 e, na nossa checagem de outubro de 2026, era vendido bem abaixo disso. Nessa faixa, é difícil achar uma tela melhor.",
+          text: "O G86 é para quem quer um intermediário equilibrado, com tela de aparelho mais caro e boa câmera principal. Ele foi lançado a R$ 2.499 e costuma aparecer bem abaixo disso. Nessa faixa, é difícil achar uma tela melhor.",
         },
         {
           eyebrow: "Tela",
@@ -130,7 +129,7 @@ function ReviewMotoG86() {
         {
           eyebrow: "Comparação",
           title: "Moto G86 5G ou Redmi Note 15 5G?",
-          text: "Na nossa checagem de outubro de 2026, os dois custavam quase o mesmo. O G86 tem tela de resolução maior, câmera com estabilização óptica e resistência IP69. O Redmi Note 15 5G tem bateria um pouco maior e processador Snapdragon. Para quem prioriza tela e câmera, o G86 leva vantagem.",
+          text: "Os dois costumam custar quase o mesmo. O G86 tem tela de resolução maior, câmera com estabilização óptica e resistência IP69. O Redmi Note 15 5G tem bateria um pouco maior e processador Snapdragon. Para quem prioriza tela e câmera, o G86 leva vantagem.",
         },
       ]}
       finalRecommendation="O Moto G86 5G vale a pena até cerca de R$ 1.900 para quem quer uma tela excelente, boa câmera principal e um aparelho resistente. Se você joga muito, compare com o Poco X7 Pro. Antes de comprar, confira se o anúncio é da versão 5G com 256 GB."

@@ -125,8 +125,8 @@ test("generic model purchase options expose two original URLs with store labels,
   );
   for (const url of ["https://meli.la/19RXcbF", "https://www.amazon.com.br/dp/B0G2BFZRGL?tag=techescolha03-20"])
     assert.ok(html.includes(`href="${url}"`));
-  assert.ok(html.includes("Comprar na Amazon"));
-  assert.ok(html.includes("Comprar no Mercado Livre"));
+  assert.ok(html.includes("Ver preço de hoje na Amazon"));
+  assert.ok(html.includes("Ver preço de hoje no Mercado Livre"));
   assert.ok(html.includes(AMAZON_DISCLOSURE));
   assert.ok(html.includes("versões diferentes"));
   assert.equal((html.match(/rel="nofollow sponsored noopener noreferrer"/g) ?? []).length, 2);
@@ -289,9 +289,9 @@ test("Black Friday reference prices point to products with offers", async () => 
     for (const item of group.items) {
       assert.ok(getProduct(item.productId), `produto inexistente: ${item.productId}`);
       assert.ok(getOffers(item.productId).length > 0, `sem oferta: ${item.productId}`);
-      assert.ok(item.referencePrice > 0);
+      assert.ok(ceilingFor(item.productId), `sem preço-alvo: ${item.productId}`);
     }
   assert.equal(ceilingFor("moto-g56-5g"), 1200);
-  assert.equal(ceilingFor("galaxy-s25-fe"), undefined);
+  assert.equal(ceilingFor("galaxy-s25-fe"), 3000);
   for (const { id } of AVOID) assert.ok(FAIR_PRICES[id]);
 });

@@ -13,7 +13,7 @@ export type FairPrice = {
   checkedAt: string;
   alternativeName: string;
   alternativeHref: string;
-  /** Preço do aparelho alternativo visto na checagem (R$). */
+  /** Preço do alternativo visto na checagem (R$). Uso interno: não exibir no site. */
   alternativeSeenPrice: number;
   /** Uma frase: por que acima do teto a alternativa é melhor. */
   why: string;
@@ -98,6 +98,26 @@ export const FAIR_PRICES = {
 } satisfies Record<string, FairPrice>;
 
 export type FairPriceId = keyof typeof FAIR_PRICES;
+
+/**
+ * "Compre se estiver até": limiar editorial de bom negócio para modelos atuais.
+ * É uma recomendação nossa, não o preço da loja. Não exibir preços de loja no site:
+ * as políticas da Amazon só permitem mostrar preço vindo da API oficial.
+ */
+export const GOOD_DEAL_UNDER: Record<string, number> = {
+  "galaxy-a17-5g": 900,
+  "galaxy-a36-5g": 1350,
+  "galaxy-a57-5g": 1850,
+  "galaxy-s25-fe": 3000,
+  "redmi-note-15-5g": 1800,
+  "redmi-note-14-pro-plus": 1950,
+  "poco-x7-pro": 2250,
+};
+
+/** Até quanto vale pagar no modelo: teto de FAIR_PRICES ou limiar de bom negócio. */
+export function goodDealFor(productId: string): number | undefined {
+  return (FAIR_PRICES as Record<string, FairPrice>)[productId]?.maxPrice ?? GOOD_DEAL_UNDER[productId];
+}
 
 export function formatBRL(value: number): string {
   return `R$\u00a0${value.toLocaleString("pt-BR", { maximumFractionDigits: 0 })}`;
