@@ -368,5 +368,51 @@
       "g86",
       "g05"
     ]
+  },
+  "POCO_X8_PRO_AFFILIATE_URL": {
+    "include": [
+      "x8 pro"
+    ],
+    "exclude": [
+      "max",
+      "x7"
+    ]
+  },
+  "POCO_X8_PRO_AMAZON_URL": {
+    "include": [
+      "x8 pro"
+    ],
+    "exclude": [
+      "max",
+      "x7"
+    ]
+  },
+  "MOTO_G77_AMAZON_URL": {
+    "include": [
+      "g77"
+    ],
+    "exclude": [
+      "g67",
+      "g87"
+    ]
+  },
+  "EDGE_70_AMAZON_URL": {
+    "include": [
+      "edge 70"
+    ],
+    "exclude": [
+      "pro",
+      "fusion",
+      "ultra"
+    ]
+  },
+  "GALAXY_A37_AMAZON_URL": {
+    "include": [
+      "a37"
+    ],
+    "exclude": [
+      "a36",
+      "a57"
+    ]
   }
 }

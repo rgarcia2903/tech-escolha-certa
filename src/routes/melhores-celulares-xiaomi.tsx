@@ -8,7 +8,7 @@ import { FAIR_PRICES, formatBRL, goodDealFor, type FairPriceId } from "@/lib/fai
 // src/lib/fair-prices.ts; não exibir preço de loja (política da Amazon).
 const PAGE_TITLE = "Melhor celular Xiaomi em 2026: qual comprar (Redmi e Poco)";
 const PAGE_DESCRIPTION =
-  "Qual o melhor celular Xiaomi em 2026? Redmi Note 15 5G, Poco X7 Pro ou Redmi Note 14 Pro+: veja qual comprar para cada perfil, até quanto pagar e quais modelos antigos evitar.";
+  "Qual o melhor celular Xiaomi em 2026? Redmi Note 15 5G, Poco X8 Pro ou Redmi Note 14 Pro+: veja qual comprar para cada perfil, até quanto pagar e quais modelos antigos evitar.";
 
 export const Route = createFileRoute("/melhores-celulares-xiaomi")({
   head: () => ({
@@ -38,15 +38,15 @@ const PICKS = [
     reviewPath: "/review/redmi-note-15-5g",
   },
   {
-    id: "poco-x7-pro",
+    id: "poco-x8-pro",
     badge: "Melhor para jogos",
-    name: "Poco X7 Pro",
-    version: "512 GB, 12 GB de RAM",
+    name: "Poco X8 Pro",
+    version: "256 GB, 8 GB de RAM",
     summary:
-      "Dimensity 8400-Ultra, o processador mais forte desta lista, com tela AMOLED 1.5K de 120 Hz, bateria de 6.000 mAh, recarga de 90 W e IP68.",
-    forWho: "Quem joga títulos pesados ou quer o máximo de desempenho por até uns R$ 2.250.",
+      "Dimensity 8500 Ultra, o processador mais forte desta lista, com tela AMOLED 1.5K de 120 Hz, bateria de 6.500 mAh, recarga de 100 W e IP68.",
+    forWho: "Quem joga títulos pesados ou quer o máximo de desempenho por até uns R$ 2.450.",
     watchOut: "As câmeras não são o foco. Para fotos, o Redmi Note 14 Pro+ é melhor.",
-    reviewPath: "/review/poco-x7-pro",
+    reviewPath: "/comparativo/poco-x8-pro-vs-poco-x7-pro",
   },
   {
     id: "redmi-note-14-pro-plus",
@@ -65,18 +65,19 @@ const TABLE: [string, string, string, string][] = [
   [
     "Compre se estiver até",
     formatBRL(goodDealFor("redmi-note-15-5g")!),
-    formatBRL(goodDealFor("poco-x7-pro")!),
+    formatBRL(goodDealFor("poco-x8-pro")!),
     formatBRL(goodDealFor("redmi-note-14-pro-plus")!),
   ],
-  ["Processador", "Snapdragon 6 Gen 3", "Dimensity 8400-Ultra", "Snapdragon 7s Gen 3"],
+  ["Processador", "Snapdragon 6 Gen 3", "Dimensity 8500 Ultra", "Snapdragon 7s Gen 3"],
   ["Tela", "AMOLED 120 Hz", "AMOLED 1.5K 120 Hz", "AMOLED 1.5K 120 Hz"],
   ["Câmera principal", "108 MP", "50 MP com OIS", "200 MP com OIS"],
-  ["Bateria", "5.520 mAh", "6.000 mAh", "5.110 mAh"],
-  ["Recarga", "45 W (na caixa)", "90 W", "120 W"],
+  ["Bateria", "5.520 mAh", "6.500 mAh", "5.110 mAh"],
+  ["Recarga", "45 W (na caixa)", "100 W", "120 W"],
   ["Proteção", "IP65", "IP68", "IP68"],
 ];
 
 const OLDER: { id: FairPriceId; reviewPath: string }[] = [
+  { id: "poco-x7-pro", reviewPath: "/review/poco-x7-pro" },
   { id: "poco-x6-pro", reviewPath: "/review/poco-x6-pro" },
   { id: "poco-x6-5g", reviewPath: "/review/poco-x6" },
   { id: "redmi-note-13-pro", reviewPath: "/review/redmi-note-13-pro" },
@@ -85,6 +86,7 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
 
 const COMPARISONS = [
   { to: "/comparativo/moto-g86-vs-redmi-note-15-5g", label: "Moto G86 vs Redmi Note 15 5G" },
+  { to: "/comparativo/poco-x8-pro-vs-poco-x7-pro", label: "Poco X8 Pro vs Poco X7 Pro" },
   { to: "/comparativo/poco-x6-pro-vs-poco-x7-pro", label: "Poco X6 Pro vs Poco X7 Pro" },
   { to: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus", label: "Redmi Note 13 Pro vs Redmi Note 14 Pro+" },
   { to: "/comparativo/redmi-note-13-pro-vs-poco-x6-pro", label: "Redmi Note 13 Pro vs Poco X6 Pro" },
@@ -96,12 +98,12 @@ const FAQ = [
   {
     question: "Qual o melhor celular Xiaomi em 2026?",
     answer:
-      "Para a maioria das pessoas, o Redmi Note 15 5G: bateria grande, carregador na caixa, tela AMOLED de 120 Hz e 5G por menos de R$ 2.000. Para jogos, o Poco X7 Pro; para fotos e recarga rápida, o Redmi Note 14 Pro+.",
+      "Para a maioria das pessoas, o Redmi Note 15 5G: bateria grande, carregador na caixa, tela AMOLED de 120 Hz e 5G por menos de R$ 2.000. Para jogos, o Poco X8 Pro; para fotos e recarga rápida, o Redmi Note 14 Pro+.",
   },
   {
     question: "Qual o Xiaomi com melhor custo-benefício?",
     answer:
-      "O Redmi Note 15 5G. Ele entrega o essencial muito bem e já vem com carregador de 45 W. Se você joga muito, o Poco X7 Pro dá mais desempenho por pouco mais.",
+      "O Redmi Note 15 5G. Ele entrega o essencial muito bem e já vem com carregador de 45 W. Se você joga muito, o Poco X8 Pro dá mais desempenho por pouco mais.",
   },
   {
     question: "Qual a diferença entre Redmi e Poco?",
@@ -111,7 +113,7 @@ const FAQ = [
   {
     question: "Ainda vale comprar Poco X6 Pro ou Redmi Note 13 Pro?",
     answer:
-      "Só com desconto, abaixo do teto indicado nesta página. Acima disso, o Poco X7 Pro e o Redmi Note 15 5G são compras melhores.",
+      "Só com desconto, abaixo do teto indicado nesta página. Acima disso, o Poco X8 Pro e o Redmi Note 15 5G são compras melhores.",
   },
 ];
 
@@ -138,7 +140,7 @@ function MelhoresCelularesXiaomi() {
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
             Resposta curta: o <strong className="text-white">Redmi Note 15 5G</strong> para a maioria das pessoas, o{" "}
-            <strong className="text-white">Poco X7 Pro</strong> para jogos e o{" "}
+            <strong className="text-white">Poco X8 Pro</strong> para jogos e o{" "}
             <strong className="text-white">Redmi Note 14 Pro+</strong> para quem quer a melhor câmera e recarga de 120 W.
           </p>
           <HeroPickCTA productId="redmi-note-15-5g" pageType="guia" />
@@ -201,7 +203,7 @@ function MelhoresCelularesXiaomi() {
                 <tr>
                   <th className="p-4"> </th>
                   <th className="p-4">Redmi Note 15 5G</th>
-                  <th className="p-4">Poco X7 Pro</th>
+                  <th className="p-4">Poco X8 Pro</th>
                   <th className="p-4">Redmi Note 14 Pro+</th>
                 </tr>
               </thead>

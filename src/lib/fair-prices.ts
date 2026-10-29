@@ -143,6 +143,16 @@ export const FAIR_PRICES = {
     alternativeSeenPrice: 4499,
     why: "o 17e é duas gerações mais novo, com chip A19, 256 GB e atualizações por mais anos.",
   },
+  // Poco X7 Pro (R$ 2.261 na Amazon em 29/10) x Poco X8 Pro 256 GB (R$ 2.441).
+  "poco-x7-pro": {
+    productName: "Poco X7 Pro",
+    maxPrice: 2150,
+    checkedAt: "2026-10-29",
+    alternativeName: "Poco X8 Pro",
+    alternativeHref: links.POCO_X8_PRO_AMAZON_URL,
+    alternativeSeenPrice: 2441,
+    why: "o X8 Pro é a geração seguinte, com processador mais forte, bateria de 6.500 mAh e recarga de 100 W.",
+  },
 } satisfies Record<string, FairPrice>;
 
 export type FairPriceId = keyof typeof FAIR_PRICES;
@@ -165,6 +175,10 @@ export const GOOD_DEAL_UNDER: Record<string, number> = {
   "galaxy-a17-4g": 850,
   "galaxy-a07": 800,
   "moto-g06": 700,
+  "poco-x8-pro": 2450,
+  "moto-g77": 1500,
+  "edge-70": 2400,
+  "galaxy-a37-5g": 1700,
 };
 
 /** Até quanto vale pagar no modelo: teto de FAIR_PRICES ou limiar de bom negócio. */

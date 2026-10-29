@@ -48,6 +48,7 @@ export const Route = createFileRoute("/review/poco-x7-pro")({
 function ReviewPocoX7Pro() {
   return (
     <ReviewTemplate
+      fairPriceId="poco-x7-pro"
       image="/images/products/poco-x7-pro-optimized.webp"
       breadcrumbs={[
         { label: "Home", to: "/" },
@@ -182,6 +183,7 @@ function ReviewPocoX7Pro() {
         },
       ]}
       relatedLinks={[
+        { label: "Poco X7 Pro ou Poco X8 Pro?", to: "/comparativo/poco-x8-pro-vs-poco-x7-pro" },
         {
           label: "Review Poco X6 Pro",
           to: "/review/poco-x6-pro",
