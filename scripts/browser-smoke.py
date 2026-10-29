@@ -77,7 +77,7 @@ async def main():
    assert await page.locator('#'+model+' a[href^="https://link.amazon/"]').count()==0
   g86=page.locator('#moto-g86')
   assert await g86.locator('a[href="https://meli.la/2uZpELs"]').count()==1
-  assert await g86.locator('a[href="https://link.amazon/B03tWVgr1"]').count()==1
+  assert await g86.locator('a[href="https://www.amazon.com.br/dp/B0FCYP5FB2?tag=techescolha03-20"]').count()==1
   await page.get_by_text('Referências anteriores preservadas: A25, Note 13 4G, M35, POCO M6 Pro e Moto G84',exact=True).click()
   for name in ['Samsung Galaxy A25 5G','Redmi Note 13 4G','Samsung Galaxy M35 5G','Poco M6 Pro','Motorola Moto G84']:
    assert await page.get_by_role('heading',name=name,exact=True).count()==1

@@ -2,7 +2,7 @@ name: Verificar links de afiliado
 
 on:
   schedule:
-    - cron: "17 11 * * 1" # segundas, 08:17 em Brasília
+    - cron: "17 11 1 * *" # dia 1º de cada mês, 08:17 em Brasília (cada acesso a um link meli.la conta como clique)
   workflow_dispatch:
   pull_request:
     branches: [main]
