@@ -539,4 +539,28 @@
     <priority>0.9</priority>
     <lastmod>2026-10-29</lastmod>
   </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/galaxy-s21-fe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/moto-g54</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/moto-g85</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/poco-f6</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-10-29</lastmod>
+  </url>
 </urlset>
