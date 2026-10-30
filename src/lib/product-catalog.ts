@@ -871,6 +871,10 @@ const ml: [string, string][] = [
   ["galaxy-a17-4g", links.GALAXY_A17_4G_AFFILIATE_URL],
   ["galaxy-a07", links.GALAXY_A07_AFFILIATE_URL],
   ["moto-g06", links.MOTO_G06_AFFILIATE_URL],
+  ["galaxy-s26", links.GALAXY_S26_AFFILIATE_URL],
+  ["galaxy-s26-ultra", links.GALAXY_S26_ULTRA_AFFILIATE_URL],
+  ["moto-g17", links.MOTO_G17_AFFILIATE_URL],
+  ["moto-g77", links.MOTO_G77_AFFILIATE_URL],
 ];
 const amazon: [string, string][] = [
   ["galaxy-a17-5g", links.GALAXY_A17_AMAZON_URL],

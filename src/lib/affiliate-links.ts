@@ -102,3 +102,7 @@ export const EDGE_70_AFFILIATE_URL = "https://meli.la/17uhEEF";
 export const GALAXY_A17_4G_AFFILIATE_URL = "https://meli.la/2FtGFqG";
 export const GALAXY_A07_AFFILIATE_URL = "https://meli.la/185612x";
 export const MOTO_G06_AFFILIATE_URL = "https://meli.la/27kny6U";
+export const GALAXY_S26_AFFILIATE_URL = "https://meli.la/1egdSnC";
+export const GALAXY_S26_ULTRA_AFFILIATE_URL = "https://meli.la/12Bv48F";
+export const MOTO_G17_AFFILIATE_URL = "https://meli.la/2NC1Xba";
+export const MOTO_G77_AFFILIATE_URL = "https://meli.la/2MToe45";
