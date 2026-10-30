@@ -174,6 +174,13 @@ function BlackFridayPage() {
               );
             })}
           </ul>
+          <p className="mt-5 text-sm text-slate-700">
+            Seu modelo não está aqui?{" "}
+            <Link to="/vale-a-pena" className="font-semibold underline">
+              Veja até quanto pagar em mais de 40 celulares antigos
+            </Link>
+            .
+          </p>
         </section>
 
         <FaqJsonLd faq={FAQ} />
