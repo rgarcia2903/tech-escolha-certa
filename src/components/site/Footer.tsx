@@ -27,6 +27,8 @@ const GUIAS = [
   { to: "/melhor-celular-para-gravar-videos", label: "Melhor celular para fotos e vídeos" },
   { to: "/celular-com-melhor-bateria", label: "Celular com melhor bateria" },
   { to: "/melhor-celular-para-motoboy", label: "Melhor celular para motoboy" },
+  { to: "/melhor-celular-para-motorista-de-aplicativo", label: "Melhor celular para Uber" },
+  { to: "/melhor-celular-para-jogos-pesados", label: "Melhor celular para jogos pesados" },
   { to: "/melhor-celular-ate-1000", label: "Melhores celulares até R$ 1.000" },
 ];
 
