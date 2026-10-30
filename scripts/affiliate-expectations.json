@@ -594,5 +594,45 @@
       "g04",
       "g15"
     ]
+  },
+  "GALAXY_S26_AFFILIATE_URL": {
+    "include": [
+      "s26"
+    ],
+    "exclude": [
+      "ultra",
+      "fe",
+      "s26+",
+      "s25"
+    ]
+  },
+  "GALAXY_S26_ULTRA_AFFILIATE_URL": {
+    "include": [
+      "s26 ultra"
+    ],
+    "exclude": [
+      "s25",
+      "s24"
+    ]
+  },
+  "MOTO_G17_AFFILIATE_URL": {
+    "include": [
+      "g17"
+    ],
+    "exclude": [
+      "g15",
+      "g37",
+      "g07"
+    ]
+  },
+  "MOTO_G77_AFFILIATE_URL": {
+    "include": [
+      "g77"
+    ],
+    "exclude": [
+      "g67",
+      "g75",
+      "g86"
+    ]
   }
 }
