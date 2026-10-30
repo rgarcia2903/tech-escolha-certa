@@ -36,6 +36,7 @@ const PICKS = [
       "Chip A19, tela de 6,3\" com 120 Hz, câmeras de 48 MP (principal e ultra-angular), selfie de 18 MP com Center Stage e 256 GB já na versão de entrada.",
     forWho: "Quem quer o iPhone completo mais barato e vai ficar com ele por muitos anos.",
     watchOut: "Foi lançado a R$ 7.999. Só compre perto do preço-alvo; desconto em cima de preço cheio não é oferta.",
+    reviewPath: "/review/iphone-17",
   },
   {
     id: "iphone-17e",
@@ -46,7 +47,7 @@ const PICKS = [
       "O mesmo chip A19 do iPhone 17, 256 GB, MagSafe e IP68, em um aparelho de 6,1\" e 170 g.",
     forWho: "Quem quer um iPhone atual para redes sociais, WhatsApp e fotos do dia a dia, gastando menos.",
     watchOut: "Tela de 60 Hz, uma câmera só e entalhe em vez de Dynamic Island.",
-    reviewPath: "/comparativo/iphone-17-vs-iphone-17e",
+    reviewPath: "/review/iphone-17e",
   },
   {
     id: "iphone-16e",

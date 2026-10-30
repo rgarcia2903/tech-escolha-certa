@@ -15,7 +15,7 @@ const PICKS = [
     label: "Melhor até R$ 2.000",
     name: "Moto G Max",
     why: "Tela pOLED de 5.000 nits, câmera de 200 MP com OIS e IP69.",
-    reviewPath: "/comparativo/moto-g-max-vs-moto-g86",
+    reviewPath: "/review/moto-g-max",
   },
   {
     id: "galaxy-s25-fe",

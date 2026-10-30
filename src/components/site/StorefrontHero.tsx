@@ -50,6 +50,9 @@ export function StorefrontHero() {
           <Link to="/vale-a-pena" className="storefront-chip">
             Meu modelo ainda vale a pena?
           </Link>
+          <Link to="/lancamentos" className="storefront-chip">
+            Lançamentos 2026
+          </Link>
         </nav>
       </div>
     </section>

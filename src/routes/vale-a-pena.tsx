@@ -68,7 +68,7 @@ const GROUPS: { brand: string; items: Item[] }[] = [
     items: [
       { id: "edge-60-pro", path: "/review/edge-60-pro" },
       { id: "moto-g86-5g", path: "/review/moto-g86-5g" },
-      { id: "moto-g-max", path: "/comparativo/moto-g-max-vs-moto-g86" },
+      { id: "moto-g-max", path: "/review/moto-g-max" },
       { id: "moto-g56-5g", path: "/review/moto-g56-5g" },
       { id: "moto-g84", path: "/review/moto-g84" },
       { id: "moto-g75", path: "/review/moto-g75" },

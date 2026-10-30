@@ -162,8 +162,8 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   "iphone-17-vs-iphone-17e": {
     slug: "iphone-17-vs-iphone-17e",
-    a: { id: "iphone-17", name: "iPhone 17", reviewPath: "/qual-iphone-comprar" },
-    b: { id: "iphone-17e", name: "iPhone 17e", reviewPath: "/qual-iphone-comprar" },
+    a: { id: "iphone-17", name: "iPhone 17", reviewPath: "/review/iphone-17" },
+    b: { id: "iphone-17e", name: "iPhone 17e", reviewPath: "/review/iphone-17e" },
     title: "iPhone 17 ou iPhone 17e: qual comprar em 2026?",
     description:
       "iPhone 17 vs iPhone 17e: tela de 120 Hz, câmeras, Dynamic Island e preço lado a lado. Veja quando vale pagar mais pelo 17 e quando o 17e basta.",
@@ -257,8 +257,8 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   "galaxy-a07-vs-moto-g06": {
     slug: "galaxy-a07-vs-moto-g06",
-    a: { id: "galaxy-a07", name: "Galaxy A07", reviewPath: "/melhor-celular-ate-1000" },
-    b: { id: "moto-g06", name: "Moto G06", reviewPath: "/melhor-celular-ate-1000" },
+    a: { id: "galaxy-a07", name: "Galaxy A07", reviewPath: "/review/galaxy-a07" },
+    b: { id: "moto-g06", name: "Moto G06", reviewPath: "/review/moto-g06" },
     title: "Galaxy A07 ou Moto G06: qual comprar em 2026?",
     description:
       "Galaxy A07 vs Moto G06: processador, tela, bateria, recarga e atualizações dos dois celulares mais baratos entre os mais vendidos. Veja qual comprar.",
@@ -302,7 +302,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   "poco-x8-pro-vs-poco-x7-pro": {
     slug: "poco-x8-pro-vs-poco-x7-pro",
-    a: { id: "poco-x8-pro", name: "Poco X8 Pro", reviewPath: "/melhores-celulares-xiaomi" },
+    a: { id: "poco-x8-pro", name: "Poco X8 Pro", reviewPath: "/review/poco-x8-pro" },
     b: { id: "poco-x7-pro", name: "Poco X7 Pro", reviewPath: "/review/poco-x7-pro" },
     title: "Poco X8 Pro ou Poco X7 Pro: qual comprar em 2026?",
     description:
@@ -349,7 +349,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "moto-g77-vs-moto-g86": {
     slug: "moto-g77-vs-moto-g86",
     a: { id: "moto-g86-5g", name: "Moto G86 5G", reviewPath: "/review/moto-g86-5g" },
-    b: { id: "moto-g77", name: "Moto G77", reviewPath: "/melhores-celulares-motorola" },
+    b: { id: "moto-g77", name: "Moto G77", reviewPath: "/review/moto-g77" },
     title: "Moto G77 ou Moto G86: qual comprar em 2026?",
     description:
       "Moto G77 vs Moto G86: processador, tela, câmera de 108 MP, resistência e atualizações. Veja qual Motorola intermediário vale mais a pena.",
@@ -395,7 +395,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "edge-70-vs-edge-60-pro": {
     slug: "edge-70-vs-edge-60-pro",
     a: { id: "edge-60-pro", name: "Motorola Edge 60 Pro", reviewPath: "/review/edge-60-pro" },
-    b: { id: "edge-70", name: "Motorola Edge 70", reviewPath: "/melhores-celulares-motorola" },
+    b: { id: "edge-70", name: "Motorola Edge 70", reviewPath: "/review/edge-70" },
     title: "Edge 70 ou Edge 60 Pro: qual comprar em 2026?",
     description:
       "Motorola Edge 70 vs Edge 60 Pro: o ultrafino contra o de bateria grande e zoom óptico. Veja diferenças, atualizações e qual comprar.",
@@ -442,7 +442,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "galaxy-a37-vs-galaxy-a36": {
     slug: "galaxy-a37-vs-galaxy-a36",
     a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
-    b: { id: "galaxy-a37-5g", name: "Galaxy A37 5G", reviewPath: "/melhores-celulares-samsung" },
+    b: { id: "galaxy-a37-5g", name: "Galaxy A37 5G", reviewPath: "/review/galaxy-a37-5g" },
     title: "Galaxy A37 ou Galaxy A36: qual comprar em 2026?",
     description:
       "Galaxy A37 vs Galaxy A36: processador, proteção, atualizações e preço lado a lado. Veja se vale pagar a mais pelo modelo novo.",
@@ -576,7 +576,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "galaxy-s26-fe-vs-galaxy-s25-fe": {
     slug: "galaxy-s26-fe-vs-galaxy-s25-fe",
     a: { id: "galaxy-s25-fe", name: "Galaxy S25 FE", reviewPath: "/review/galaxy-s25-fe" },
-    b: { id: "galaxy-s26-fe", name: "Galaxy S26 FE", reviewPath: "/melhores-celulares-samsung" },
+    b: { id: "galaxy-s26-fe", name: "Galaxy S26 FE", reviewPath: "/review/galaxy-s26-fe" },
     title: "Galaxy S26 FE ou S25 FE: qual comprar em 2026?",
     description:
       "Galaxy S26 FE vs S25 FE: tela, câmeras e bateria são iguais. Veja o que muda e qual vale mais a pena pelo preço de hoje.",
@@ -664,7 +664,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   "moto-g-max-vs-moto-g86": {
     slug: "moto-g-max-vs-moto-g86",
-    a: { id: "moto-g-max", name: "Moto G Max", reviewPath: "/melhores-celulares-motorola" },
+    a: { id: "moto-g-max", name: "Moto G Max", reviewPath: "/review/moto-g-max" },
     b: { id: "moto-g86-5g", name: "Moto G86 5G", reviewPath: "/review/moto-g86-5g" },
     title: "Moto G Max ou Moto G86: qual comprar em 2026?",
     description:
