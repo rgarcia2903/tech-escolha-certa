@@ -1,6 +1,6 @@
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
-import { GALAXY_A35_AFFILIATE_URL, GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A35_AFFILIATE_URL, GALAXY_A57_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
@@ -164,7 +164,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             <PurchaseActions
               className="mt-6"
               options={[
-                { productName: "Galaxy A55", href: GALAXY_A55_AFFILIATE_URL },
+                { productName: "Galaxy A57 5G (sucessor do A55)", href: GALAXY_A57_AFFILIATE_URL },
                 { productName: "Galaxy A35", href: GALAXY_A35_AFFILIATE_URL },
               ]}
               pageType="comparativo"
@@ -213,19 +213,19 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             </div>
 
             <a
-              href={GALAXY_A55_AFFILIATE_URL}
+              href={GALAXY_A57_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A55",
+                  productName: "Galaxy A57 5G",
                   pageType: "comparativo",
                   ctaPlacement: "content",
                 })
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A55 no Mercado Livre
+              Ver o sucessor, Galaxy A57
             </a>
           </div>
 
@@ -384,9 +384,9 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               primary: true,
             },
             {
-              productName: "Galaxy A55",
-              href: GALAXY_A55_AFFILIATE_URL,
-              label: "Escolher o Galaxy A55",
+              productName: "Galaxy A57 5G",
+              href: GALAXY_A57_AFFILIATE_URL,
+              label: "Ver o Galaxy A57 (sucessor do A55)",
               primary: false,
             },
           ]}
@@ -452,9 +452,9 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             primary: true,
           },
           {
-            productName: "Galaxy A55",
-            href: GALAXY_A55_AFFILIATE_URL,
-            label: "A55: premium",
+            productName: "Galaxy A57 5G",
+            href: GALAXY_A57_AFFILIATE_URL,
+            label: "A57: sucessor do A55",
             primary: false,
           },
         ]}

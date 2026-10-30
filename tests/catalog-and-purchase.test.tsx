@@ -29,7 +29,6 @@ import { trackAffiliateClick } from "../src/lib/analytics";
 const mercadoLivre = [
   ["galaxy-a35", "https://meli.la/1onGZVV"],
   ["galaxy-a25-5g", "https://meli.la/16gypcb"],
-  ["galaxy-a55", "https://meli.la/2NMinTZ"],
   ["iphone-15", "https://meli.la/2m3GhG6"],
   ["poco-x6-pro", "https://meli.la/2hXCQMH"],
   ["poco-x7-pro", "https://meli.la/1p5J4MW"],
@@ -97,7 +96,7 @@ const amazon = [
   ["moto-g17", "https://www.amazon.com.br/dp/B0GKPXSZR6?tag=techescolha03-20"],
 ];
 test("20 Mercado Livre and 32 Amazon addresses preserve exact model identity", () => {
-  assert.equal(OFFERS.length, 66);
+  assert.equal(OFFERS.length, 65);
   for (const [store, pairs] of [
     ["mercado_livre", mercadoLivre],
     ["amazon", amazon],
@@ -293,7 +292,7 @@ test("PR #43 export names remain compatible without duplicating offers", () => {
     assert.equal(current, legacy);
     assert.equal(getOfferByUrl(current)?.productId, id);
   }
-  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 66);
+  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 65);
 });
 
 test("PR #43 candidates remain shared while evaluation models stay unapproved", () => {
