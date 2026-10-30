@@ -22,6 +22,9 @@ const GUIAS = [
   { to: "/qual-iphone-comprar", label: "Qual iPhone comprar" },
   { to: "/vale-a-pena", label: "Vale a pena em 2026?" },
   { to: "/lancamentos", label: "Lançamentos de celulares" },
+  { to: "/melhor-celular-para-free-fire", label: "Melhor celular para Free Fire" },
+  { to: "/melhor-celular-para-roblox", label: "Melhor celular para Roblox" },
+  { to: "/melhor-celular-para-gravar-videos", label: "Melhor celular para gravar vídeos" },
   { to: "/melhor-celular-ate-1000", label: "Melhores celulares até R$ 1.000" },
 ];
 
