@@ -329,7 +329,7 @@ export const PRODUCTS: Product[] = [
     "Samsung",
     "previous_generation",
     "Linha S compacta de 2025: Snapdragon 8 Elite, câmera tripla com zoom 3x e sete anos de atualizações.",
-    { reviewPath: "/comparativo/galaxy-s26-vs-galaxy-s25" },
+    { reviewPath: "/review/galaxy-s25" },
   ),
   product(
     "galaxy-s25-ultra",
@@ -345,7 +345,7 @@ export const PRODUCTS: Product[] = [
     "Samsung",
     "candidate",
     "Topo de linha atual: Snapdragon 8 Elite Gen 5, recarga de 60 W, tela de privacidade e S Pen.",
-    { reviewPath: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra" },
+    { reviewPath: "/review/galaxy-s26-ultra" },
   ),
   product(
     "redmi-note-15-4g",
@@ -377,7 +377,7 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "candidate",
     "4G com tela Full HD, câmera Sony de 50 MP, ultra-angular e selfie de 32 MP; processador fraco.",
-    { connectivity: "4G", reviewPath: "/comparativo/moto-g37-vs-moto-g17" },
+    { connectivity: "4G", reviewPath: "/review/moto-g17" },
   ),
   product(
     "poco-x8-pro",
@@ -459,7 +459,7 @@ export const PRODUCTS: Product[] = [
     "Samsung",
     "candidate",
     "Linha S compacta atual: Exynos 2600, 256 GB, 4.300 mAh e sete anos de atualizações.",
-    { officialUrl: "https://www.samsung.com/br/smartphones/galaxy-s26/specs/", reviewPath: "/comparativo/galaxy-s26-vs-galaxy-s25" },
+    { officialUrl: "https://www.samsung.com/br/smartphones/galaxy-s26/specs/", reviewPath: "/review/galaxy-s26" },
   ),
   product(
     "iphone-17",
@@ -491,7 +491,7 @@ export const PRODUCTS: Product[] = [
     "Samsung",
     "candidate",
     "Mesma tela, câmeras e bateria do A17 5G, com Helio G99 e sem 5G; seis anos de atualizações.",
-    { connectivity: "4G", reviewPath: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g" },
+    { connectivity: "4G", reviewPath: "/review/galaxy-a17-4g" },
   ),
   product(
     "galaxy-a07",

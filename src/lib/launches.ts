@@ -420,6 +420,191 @@ export const LAUNCHES: Record<string, Launch> = {
       { question: "Edge 70 ou Edge 70 Fusion?", answer: "São aparelhos diferentes. Esta página é sobre o Edge 70 (sem Fusion)." },
     ],
   },
+  "galaxy-s26": {
+    id: "galaxy-s26",
+    name: "Galaxy S26",
+    launched: "fevereiro de 2026",
+    sortKey: "2026-02",
+    brand: "Samsung",
+    tagline: "Topo de linha compacto: tela de 6,3\", teleobjetiva e sete anos de atualizações.",
+    shortAnswer:
+      "Sim, para quem quer um topo de linha compacto. O Galaxy S26 tem tela de 6,3\" com 120 Hz, câmera tripla com teleobjetiva de 3x, IP68 e sete anos de atualizações. A bateria (4.300 mAh) e a recarga (25 W) são os pontos fracos. Lançado a R$ 7.499, só vale perto do preço-alvo.",
+    specs: [
+      ["Processador", "Samsung Exynos 2600 (versão brasileira)"],
+      ["Tela", '6,3" Dynamic AMOLED 2X • 120 Hz • até 2.600 nits'],
+      ["Câmeras traseiras", "50 MP + ultra-angular 12 MP + tele 10 MP (3x)"],
+      ["Câmera frontal", "12 MP"],
+      ["Bateria", "4.300 mAh • 25 W • sem fio 15 W"],
+      ["Proteção", "IP68"],
+      ["Atualizações", "7 anos"],
+      ["Lançamento", "Fevereiro de 2026 (R$ 7.499)"],
+    ],
+    buyIf: [
+      "Quer um celular topo de linha que caiba bem na mão.",
+      "Vai ficar com ele por muitos anos (sete de atualizações).",
+    ],
+    thinkTwiceIf: [
+      "Bateria é prioridade: 4.300 mAh é pouco para uso pesado.",
+      "Quer gastar menos: o Galaxy S25 FE tem teleobjetiva e bateria maior por bem menos.",
+    ],
+    compare: [
+      { label: "Galaxy S26 ou Galaxy S25?", path: "/comparativo/galaxy-s26-vs-galaxy-s25" },
+      { label: "Melhores celulares Samsung", path: "/melhores-celulares-samsung" },
+    ],
+    versionNote: "Galaxy S26, S26+, S26 Ultra e S26 FE são aparelhos diferentes. Confira o nome e a capacidade no anúncio.",
+    faq: [
+      { question: "O Galaxy S26 é bom?", answer: "Sim. É o topo de linha compacto da Samsung; o ponto fraco é a bateria." },
+      { question: "O Galaxy S26 é bom para jogos?", answer: "Sim, o processador é de topo de linha. Em sessões longas, a bateria de 4.300 mAh acaba antes." },
+      { question: "Quantas atualizações o Galaxy S26 recebe?", answer: "Sete anos de atualizações." },
+    ],
+  },
+  "galaxy-s26-ultra": {
+    id: "galaxy-s26-ultra",
+    name: "Galaxy S26 Ultra",
+    launched: "fevereiro de 2026",
+    sortKey: "2026-02",
+    brand: "Samsung",
+    tagline: "Câmera de 200 MP com zoom de 5x, tela de 6,9\" e sete anos de atualizações.",
+    shortAnswer:
+      "Sim, é o Samsung mais completo: tela de 6,9\" com resolução QHD+, câmera de 200 MP com teleobjetivas de 3x e 5x, Snapdragon 8 Elite Gen 5, recarga de 60 W e sete anos de atualizações. Lançado a R$ 11.499, cai bastante: só compre perto do preço-alvo. Quem já tem o S25 Ultra não precisa trocar.",
+    specs: [
+      ["Processador", "Qualcomm Snapdragon 8 Elite Gen 5"],
+      ["Tela", '6,9" Dynamic AMOLED 2X QHD+ • 120 Hz • modo privacidade'],
+      ["Câmeras traseiras", "200 MP + ultra-angular 50 MP + tele 50 MP (5x) + tele 10 MP (3x)"],
+      ["Câmera frontal", "12 MP"],
+      ["Bateria", "5.000 mAh • 60 W • sem fio 25 W"],
+      ["Proteção", "IP68"],
+      ["Atualizações", "7 anos"],
+      ["Lançamento", "Fevereiro de 2026 (R$ 11.499)"],
+    ],
+    buyIf: [
+      "Quer a melhor câmera com zoom da Samsung.",
+      "Usa o celular para trabalho e quer tela grande e privacidade.",
+    ],
+    thinkTwiceIf: [
+      "Já tem o S25 Ultra: a diferença é pequena.",
+      "Não usa zoom nem tela grande: o Galaxy S26 custa bem menos.",
+    ],
+    compare: [
+      { label: "Galaxy S26 Ultra ou S25 Ultra?", path: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra" },
+      { label: "Galaxy S24 Ultra ainda vale a pena?", path: "/review/galaxy-s24-ultra" },
+    ],
+    faq: [
+      { question: "O Galaxy S26 Ultra vale a pena?", answer: "Sim, perto do preço-alvo. Para quem já tem o S25 Ultra, a troca não compensa." },
+      { question: "Galaxy S26 Ultra ou S25 Ultra?", answer: "Se a diferença for grande, o S25 Ultra entrega quase o mesmo. O S26 Ultra tem processador mais novo, recarga mais rápida e modo de privacidade na tela." },
+    ],
+  },
+  "galaxy-s25": {
+    id: "galaxy-s25",
+    name: "Galaxy S25",
+    launched: "janeiro de 2025",
+    sortKey: "2025-01",
+    brand: "Samsung",
+    tagline: "Compacto com Snapdragon 8 Elite e sete anos de atualizações, bem mais barato que no lançamento.",
+    shortAnswer:
+      "Sim, e hoje é mais negócio que o S26 para quem quer um compacto. O Galaxy S25 tem Snapdragon 8 Elite, tela de 6,2\" com 120 Hz, teleobjetiva de 3x, IP68 e sete anos de atualizações (até 2032). O ponto fraco é a bateria de 4.000 mAh.",
+    specs: [
+      ["Processador", "Qualcomm Snapdragon 8 Elite (3 nm)"],
+      ["Tela", '6,2" Dynamic AMOLED 2X • 120 Hz • até 2.600 nits'],
+      ["Câmeras traseiras", "50 MP com OIS + ultra-angular 12 MP + tele 10 MP (3x)"],
+      ["Câmera frontal", "12 MP"],
+      ["Bateria", "4.000 mAh"],
+      ["Proteção", "IP68 • Gorilla Glass Victus 2"],
+      ["Atualizações", "7 anos"],
+      ["Lançamento", "Janeiro de 2025 (R$ 6.999)"],
+    ],
+    buyIf: [
+      "Quer desempenho de topo em um celular pequeno.",
+      "Achou o S26 caro: o S25 entrega quase o mesmo.",
+    ],
+    thinkTwiceIf: [
+      "Bateria é prioridade: 4.000 mAh é pouco para uso pesado.",
+      "Prefere tela maior e bateria maior: o Galaxy S25 FE custa menos.",
+    ],
+    compare: [
+      { label: "Galaxy S26 ou Galaxy S25?", path: "/comparativo/galaxy-s26-vs-galaxy-s25" },
+      { label: "Galaxy S24 ainda vale a pena?", path: "/review/galaxy-s24" },
+    ],
+    versionNote: "Galaxy S25, S25+, S25 Edge, S25 Ultra e S25 FE são aparelhos diferentes. Confira o nome no anúncio.",
+    faq: [
+      { question: "O Galaxy S25 vale a pena em 2026?", answer: "Sim, abaixo do preço-alvo. Tem processador de topo e sete anos de atualizações." },
+      { question: "Galaxy S25 ou S25 FE?", answer: "O S25 é menor e mais rápido. O S25 FE tem tela e bateria maiores e custa menos." },
+    ],
+  },
+  "galaxy-a17-4g": {
+    id: "galaxy-a17-4g",
+    name: "Galaxy A17 4G",
+    launched: "setembro de 2025",
+    sortKey: "2025-09",
+    brand: "Samsung",
+    tagline: "Tela AMOLED Full HD+, NFC e seis anos de atualizações, sem 5G.",
+    shortAnswer:
+      "Sim, se você não precisa de 5G. O Galaxy A17 4G tem tela Super AMOLED de 6,7\" Full HD+ com 90 Hz, Helio G99, NFC, IP54 e seis anos de atualizações. Se a diferença para o A17 5G for pequena, leve o 5G, que tem processador mais forte.",
+    specs: [
+      ["Processador", "MediaTek Helio G99 (6 nm)"],
+      ["Tela", '6,7" Super AMOLED Full HD+ • 90 Hz'],
+      ["Câmeras traseiras", "50 MP + ultra-angular 5 MP + macro 2 MP"],
+      ["Câmera frontal", "13 MP"],
+      ["Bateria", "5.000 mAh • 25 W"],
+      ["Proteção", "IP54"],
+      ["Atualizações", "6 anos"],
+      ["Extras", "NFC • microSD (slot híbrido) • sem 5G"],
+    ],
+    buyIf: [
+      "Quer tela AMOLED e muitos anos de atualização gastando pouco.",
+      "5G não faz diferença onde você usa o celular.",
+    ],
+    thinkTwiceIf: [
+      "O A17 5G está só um pouco mais caro: ele é mais rápido e tem 5G.",
+    ],
+    compare: [
+      { label: "Galaxy A17 4G ou 5G?", path: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g" },
+      { label: "Melhores celulares até R$ 1.000", path: "/melhor-celular-ate-1000" },
+    ],
+    versionNote: "Existem Galaxy A17 4G e Galaxy A17 5G, com processadores diferentes. Procure \"5G\" no nome do anúncio para saber qual é.",
+    faq: [
+      { question: "O Galaxy A17 4G é bom?", answer: "Sim, para o preço: tela AMOLED, NFC e seis anos de atualizações. Só não tem 5G." },
+      { question: "O Galaxy A17 4G tem NFC?", answer: "Sim." },
+      { question: "Galaxy A17 4G ou 5G?", answer: "O 5G, se a diferença for de até uns R$ 150: processador mais forte e conexão 5G." },
+    ],
+  },
+  "moto-g17": {
+    id: "moto-g17",
+    name: "Moto G17",
+    launched: "janeiro de 2026",
+    sortKey: "2026-01",
+    brand: "Motorola",
+    tagline: "Básico com NFC, entrada para fone, IP64 e câmera de 50 MP.",
+    shortAnswer:
+      "Só para uso básico. O Moto G17 tem NFC, entrada para fone, microSD, IP64 e bateria de 5.200 mAh, mas a tela é LCD de 60 Hz e o processador Helio G81 é fraco: roda Free Fire e jogos leves com gráficos no mínimo. Pelo mesmo dinheiro, o Galaxy A17 5G é bem mais rápido e tem tela AMOLED.",
+    specs: [
+      ["Processador", "MediaTek Helio G81 Extreme (12 nm)"],
+      ["Tela", '6,72" LCD Full HD+ • 60 Hz'],
+      ["Câmeras traseiras", "50 MP + ultra-angular 5 MP"],
+      ["Câmera frontal", "32 MP"],
+      ["Bateria", "5.200 mAh • 18 W"],
+      ["Proteção", "IP64"],
+      ["Extras", "NFC • entrada para fone • microSD"],
+      ["Lançamento", "Janeiro de 2026"],
+    ],
+    buyIf: [
+      "Quer um Motorola barato com NFC e entrada para fone.",
+      "Usa o celular para WhatsApp, redes sociais e vídeos.",
+    ],
+    thinkTwiceIf: [
+      "Joga com frequência: o processador é fraco.",
+      "Pode gastar o mesmo: o Galaxy A17 5G é bem mais rápido.",
+    ],
+    compare: [
+      { label: "Moto G37 ou Moto G17?", path: "/comparativo/moto-g37-vs-moto-g17" },
+      { label: "Melhores celulares até R$ 1.000", path: "/melhor-celular-ate-1000" },
+    ],
+    faq: [
+      { question: "O Moto G17 é bom?", answer: "Para uso básico, sim. Para jogos e para durar anos, há opções melhores pelo mesmo preço." },
+      { question: "O Moto G17 é bom para jogar Free Fire?", answer: "Roda, mas com gráficos baixos. O Helio G81 é um processador de entrada." },
+      { question: "O Moto G17 tem NFC?", answer: "Sim, e também tem entrada para fone de ouvido." },
+    ],
+  },
 };
 
 export const LAUNCH_IDS = Object.keys(LAUNCHES);
