@@ -210,7 +210,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "galaxy-a17-4g-vs-galaxy-a17-5g": {
     slug: "galaxy-a17-4g-vs-galaxy-a17-5g",
     a: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
-    b: { id: "galaxy-a17-4g", name: "Galaxy A17 4G", reviewPath: "/melhor-celular-ate-1000" },
+    b: { id: "galaxy-a17-4g", name: "Galaxy A17 4G", reviewPath: "/review/galaxy-a17-4g" },
     title: "Galaxy A17 4G ou 5G: qual comprar em 2026?",
     description:
       "Galaxy A17 4G vs A17 5G: a tela, as câmeras e a bateria são iguais. Veja a única diferença que importa e qual versão comprar pelo preço de hoje.",
@@ -485,8 +485,8 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   "galaxy-s26-vs-galaxy-s25": {
     slug: "galaxy-s26-vs-galaxy-s25",
-    a: { id: "galaxy-s25", name: "Galaxy S25", reviewPath: "/melhores-celulares-samsung" },
-    b: { id: "galaxy-s26", name: "Galaxy S26", reviewPath: "/melhores-celulares-samsung" },
+    a: { id: "galaxy-s25", name: "Galaxy S25", reviewPath: "/review/galaxy-s25" },
+    b: { id: "galaxy-s26", name: "Galaxy S26", reviewPath: "/review/galaxy-s26" },
     title: "Galaxy S26 ou Galaxy S25: qual comprar em 2026?",
     description:
       "Galaxy S26 vs Galaxy S25: o que mudou de verdade, o que continua igual e qual vale mais a pena pelo preço de hoje.",
@@ -531,7 +531,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "galaxy-s26-ultra-vs-galaxy-s25-ultra": {
     slug: "galaxy-s26-ultra-vs-galaxy-s25-ultra",
     a: { id: "galaxy-s25-ultra", name: "Galaxy S25 Ultra", reviewPath: "/melhores-celulares-samsung" },
-    b: { id: "galaxy-s26-ultra", name: "Galaxy S26 Ultra", reviewPath: "/melhores-celulares-samsung" },
+    b: { id: "galaxy-s26-ultra", name: "Galaxy S26 Ultra", reviewPath: "/review/galaxy-s26-ultra" },
     title: "Galaxy S26 Ultra ou S25 Ultra: qual comprar em 2026?",
     description:
       "Galaxy S26 Ultra vs S25 Ultra: processador, recarga, tela de privacidade, câmeras e preço. Veja se vale pagar a mais pelo modelo novo.",
@@ -685,10 +685,10 @@ export const COMPARISONS: Record<string, Comparison> = {
       { label: "Processador", a: "Dimensity 6400 (6 nm)", b: "Dimensity 7300 (4 nm)", winner: "b" },
       { label: "Tela", a: 'pOLED 6,8" • 120 Hz • 5.000 nits', b: 'pOLED 6,67" • 120 Hz • 4.500 nits', winner: "a" },
       { label: "Câmera principal", a: "200 MP com OIS", b: "50 MP Sony com OIS", winner: "a" },
-      { label: "Bateria e recarga", a: "5.200 mAh • 30 W", b: "5.200 mAh • 33 W", winner: "tie" },
+      { label: "Bateria", a: "5.200 mAh", b: "5.200 mAh", winner: "tie" },
       { label: "Proteção", a: "IP68 e IP69", b: "IP68 e IP69", winner: "tie" },
       { label: "Armazenamento", a: "256 GB + microSD", b: "256 GB", winner: "a" },
-      { label: "Lançamento", a: "Agosto de 2026", b: "Maio de 2025", winner: "a" },
+      { label: "Lançamento", a: "2026", b: "2025", winner: "a" },
       { label: "Compre se estiver até", a: "R$ 1.600", b: "R$ 1.900", winner: "a" },
     ],
     faq: [
@@ -712,7 +712,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   "moto-g37-vs-moto-g17": {
     slug: "moto-g37-vs-moto-g17",
     a: { id: "moto-g37", name: "Moto G37", reviewPath: "/melhor-celular-ate-1000" },
-    b: { id: "moto-g17", name: "Moto G17", reviewPath: "/melhor-celular-ate-1000" },
+    b: { id: "moto-g17", name: "Moto G17", reviewPath: "/review/moto-g17" },
     title: "Moto G37 ou Moto G17: qual comprar em 2026?",
     description:
       "Moto G37 vs Moto G17: 5G, processador, tela e câmeras dos Motorola mais baratos de 2026. Veja qual comprar até R$ 1.000.",
