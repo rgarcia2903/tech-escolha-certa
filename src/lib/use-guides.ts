@@ -78,7 +78,7 @@ export const USE_GUIDES: Record<string, UseGuide> = {
     ],
     related: [
       { label: "Melhor celular para Roblox", path: "/melhor-celular-para-roblox" },
-      { label: "Melhores celulares para jogos até R$ 2.000", path: "/guia/melhores-celulares-para-jogos-ate-2000" },
+      { label: "Melhor celular para jogos pesados (Genshin, COD)", path: "/melhor-celular-para-jogos-pesados" },
       { label: "Poco X8 Pro é bom?", path: "/review/poco-x8-pro" },
     ],
     faq: [
@@ -378,7 +378,7 @@ export const USE_GUIDES: Record<string, UseGuide> = {
     ],
     related: [
       { label: "Celular com melhor bateria", path: "/celular-com-melhor-bateria" },
-      { label: "Moto G Max ou Moto G86?", path: "/comparativo/moto-g-max-vs-moto-g86" },
+      { label: "Melhor celular para Uber e motorista de aplicativo", path: "/melhor-celular-para-motorista-de-aplicativo" },
       { label: "Melhores celulares Motorola", path: "/melhores-celulares-motorola" },
     ],
     faq: [
@@ -395,6 +395,157 @@ export const USE_GUIDES: Record<string, UseGuide> = {
         question: "Qual celular aguenta o dia todo com GPS ligado?",
         answer:
           "Os de 5.200 mAh ou mais desta lista dão conta de um turno normal. Para turnos longos, o Edge 60 Pro, com 6.000 mAh e recarga de 90 W, é o mais folgado.",
+      },
+    ],
+  },
+  "melhor-celular-para-jogos-pesados": {
+    slug: "melhor-celular-para-jogos-pesados",
+    title: "Melhor celular para jogos pesados em 2026: Genshin e COD Mobile",
+    description:
+      "Qual celular comprar para jogos pesados como Genshin Impact e COD Mobile em 2026: processador, memória e bateria que importam e um modelo por faixa, de R$ 2.250 a iPhone.",
+    eyebrow: "Guia por uso · jogos · atualizado em outubro de 2026",
+    h1: "Melhor celular para jogos pesados em 2026 (Genshin Impact, COD Mobile)",
+    shortAnswer:
+      "Jogos pesados, como Genshin Impact, pedem processador de alto desempenho, 8 GB de RAM ou mais e bastante espaço. Abaixo de uns R$ 2.000 quase nenhum celular dá conta com folga. Até R$ 2.250, o Poco X7 Pro. Até R$ 2.500, o Poco X8 Pro, o melhor custo-benefício para jogar. Até R$ 3.000, o Galaxy S25 FE. Até R$ 3.900, o Galaxy S25. No iPhone, o iPhone 17.",
+    tiers: [
+      {
+        label: "Até R$ 2.250",
+        productId: "poco-x7-pro",
+        name: "Poco X7 Pro",
+        why: "Dimensity 8400-Ultra, bateria de 6.000 mAh e recarga de 90 W. Ainda forte, e costuma custar menos que o X8 Pro.",
+        path: "/review/poco-x7-pro",
+      },
+      {
+        label: "Até R$ 2.500 (o melhor custo-benefício para jogar)",
+        productId: "poco-x8-pro",
+        name: "Poco X8 Pro",
+        why: "Dimensity 8500 Ultra, que passa de 1,9 milhão de pontos no AnTuTu, 6.500 mAh e recarga de 100 W.",
+        path: "/review/poco-x8-pro",
+      },
+      {
+        label: "Até R$ 3.000",
+        productId: "galaxy-s25-fe",
+        name: "Galaxy S25 FE",
+        why: "Exynos 2400, o mesmo do Galaxy S24, sete anos de atualizações e IP68: joga bem e dura muitos anos.",
+        path: "/review/galaxy-s25-fe",
+      },
+      {
+        label: "Até R$ 3.900 (topo de linha)",
+        productId: "galaxy-s25",
+        name: "Galaxy S25",
+        why: "Snapdragon 8 Elite, processador de topo de linha. Ponto fraco: a bateria de 4.000 mAh acaba antes em sessões longas.",
+        path: "/review/galaxy-s25",
+      },
+      {
+        label: "iPhone",
+        productId: "iphone-17",
+        name: "iPhone 17",
+        why: "Chip A19 e otimização dos jogos no iOS. Para jogar, prefira-o ao 17e, que tem o mesmo chip mas tela de 60 Hz.",
+        path: "/review/iphone-17",
+      },
+    ],
+    mattersTitle: "O que importa para jogos pesados",
+    matters: [
+      "Processador de alto desempenho: Dimensity 8400 ou 8500, Snapdragon 8 Elite, Exynos 2400 ou chip A19. Os intermediários comuns rodam, mas com gráficos baixos.",
+      "8 GB de RAM ou mais: evita que o jogo recarregue ao alternar de aplicativo.",
+      "Armazenamento de 256 GB: jogos como Genshin Impact ocupam dezenas de GB e crescem a cada atualização.",
+      "Bateria e recarga: jogos pesados esvaziam a bateria rápido; recarga de 90 W ou mais ajuda entre partidas.",
+    ],
+    avoid: [
+      { text: "Moto G Max: tela ótima, mas o processador é de entrada; não é celular para jogo pesado.", path: "/review/moto-g-max" },
+      { text: "Galaxy A17 5G e Galaxy A07: bons para o dia a dia e jogos leves, não para Genshin.", path: "/review/galaxy-a17-5g" },
+    ],
+    related: [
+      { label: "Melhor celular para Free Fire", path: "/melhor-celular-para-free-fire" },
+      { label: "Poco X8 Pro ou Poco X7 Pro?", path: "/comparativo/poco-x8-pro-vs-poco-x7-pro" },
+      { label: "Melhores celulares para jogos até R$ 2.000", path: "/guia/melhores-celulares-para-jogos-ate-2000" },
+    ],
+    faq: [
+      {
+        question: "Qual o melhor celular para Genshin Impact em 2026?",
+        answer:
+          "Pelo custo-benefício, o Poco X8 Pro, com Dimensity 8500 Ultra e 6.500 mAh. Sem limite de orçamento, o Galaxy S25 ou o iPhone 17.",
+      },
+      {
+        question: "Qual celular barato roda Genshin Impact?",
+        answer:
+          "O mais barato que recomendamos para jogar com folga é o Poco X7 Pro. Intermediários como o Galaxy A36 abrem o jogo, mas com gráficos baixos.",
+      },
+      {
+        question: "Qual o melhor celular para COD Mobile?",
+        answer:
+          "O COD Mobile é mais leve que o Genshin: intermediários como o Galaxy A36 e o Moto G86 rodam o jogo. Para gráficos altos e taxa de quadros alta, os desta lista, a partir do Poco X7 Pro.",
+      },
+    ],
+  },
+  "melhor-celular-para-motorista-de-aplicativo": {
+    slug: "melhor-celular-para-motorista-de-aplicativo",
+    title: "Melhor celular para Uber e motorista de aplicativo em 2026",
+    description:
+      "Qual celular comprar para dirigir por aplicativo em 2026: memória para GPS e vários apps abertos, bateria, tela legível no sol e um modelo por faixa, de R$ 900 a R$ 1.900.",
+    eyebrow: "Guia por uso · trabalho · atualizado em outubro de 2026",
+    h1: "Melhor celular para Uber e motorista de aplicativo em 2026",
+    shortAnswer:
+      "Quem dirige por aplicativo deixa GPS, dois ou três apps de corrida e o WhatsApp abertos ao mesmo tempo. Por isso, o que mais importa é memória RAM (8 GB é o ideal), um processador que não engasga e bateria grande com recarga rápida. Até R$ 900, o Galaxy A17 5G na versão de 8 GB. Até R$ 1.400, o Galaxy A36. Até R$ 1.800, o Redmi Note 15 5G. Até R$ 1.900, o Moto G86.",
+    tiers: [
+      {
+        label: "Até R$ 900",
+        productId: "galaxy-a17-5g",
+        name: "Galaxy A17 5G",
+        why: "Escolha a versão de 8 GB de RAM: a de 4 GB fica lenta com vários apps abertos. Seis anos de atualizações e 5.000 mAh.",
+        path: "/review/galaxy-a17-5g",
+      },
+      {
+        label: "Até R$ 1.400",
+        productId: "galaxy-a36-5g",
+        name: "Galaxy A36 5G",
+        why: "Snapdragon 6 Gen 3, recarga de 45 W e atualizações até 2031: aguenta GPS e apps abertos o dia todo.",
+        path: "/review/galaxy-a36-5g",
+      },
+      {
+        label: "Até R$ 1.800 (a maior bateria)",
+        productId: "redmi-note-15-5g",
+        name: "Redmi Note 15 5G",
+        why: "5.520 mAh, 8 GB de RAM, tela AMOLED de 120 Hz e carregador na caixa.",
+        path: "/review/redmi-note-15-5g",
+      },
+      {
+        label: "Até R$ 1.900 (tela para o sol)",
+        productId: "moto-g86-5g",
+        name: "Moto G86 5G",
+        why: "Tela pOLED com pico de 4.500 nits, 8 GB de RAM, 5.200 mAh e carregador de 33 W na caixa.",
+        path: "/review/moto-g86-5g",
+      },
+    ],
+    mattersTitle: "O que importa para dirigir por aplicativo",
+    matters: [
+      "Memória RAM: com 8 GB, o app de corrida não fecha sozinho quando você abre o mapa ou o WhatsApp.",
+      "Bateria de 5.000 mAh ou mais, e um carregador veicular com recarga rápida: GPS com a tela ligada gasta muito.",
+      "Tela brilhante: ajuda a ler o mapa com sol batendo no para-brisa.",
+      "Atualizações de segurança: o celular guarda dados bancários e de pagamento; prefira modelos com muitos anos de suporte.",
+    ],
+    avoid: [
+      { text: "Moto G06 e Moto G17: processador Helio G81, que engasga com GPS e vários apps abertos.", path: "/review/moto-g17" },
+      { text: "Versões com 4 GB de RAM ou 64 GB de armazenamento, mesmo de bons modelos.", path: "/review/galaxy-a17-5g" },
+    ],
+    related: [
+      { label: "Melhor celular para motoboy e entregador", path: "/melhor-celular-para-motoboy" },
+      { label: "Celular com melhor bateria", path: "/celular-com-melhor-bateria" },
+      { label: "Melhores celulares até R$ 1.000", path: "/melhor-celular-ate-1000" },
+    ],
+    faq: [
+      {
+        question: "Qual o melhor celular para trabalhar de Uber?",
+        answer:
+          "O Galaxy A36 é o mais equilibrado até R$ 1.400. Se a bateria é prioridade, o Redmi Note 15 5G; se você roda muito sob sol, o Moto G86, que tem a tela mais brilhante.",
+      },
+      {
+        question: "Quanto de RAM precisa para rodar Uber e 99 ao mesmo tempo?",
+        answer: "4 GB roda, mas os apps tendem a fechar e recarregar. Com 6 a 8 GB, ficam abertos junto com o GPS e o WhatsApp.",
+      },
+      {
+        question: "Qual celular barato para motorista de aplicativo?",
+        answer: "O Galaxy A17 5G na versão de 8 GB de RAM. Evite a versão de 4 GB para esse uso.",
       },
     ],
   },

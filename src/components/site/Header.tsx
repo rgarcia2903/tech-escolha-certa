@@ -18,6 +18,7 @@ const FEATURED_LINKS = [
   { to: "/lancamentos", label: "Lançamentos 2026" },
   { to: "/melhor-celular-para-free-fire", label: "Celular para Free Fire" },
   { to: "/melhor-celular-para-roblox", label: "Celular para Roblox" },
+  { to: "/melhor-celular-para-jogos-pesados", label: "Celular para jogos pesados" },
   { to: "/melhor-celular-para-gravar-videos", label: "Celular para fotos e vídeos" },
   { to: "/celular-com-melhor-bateria", label: "Celular com melhor bateria" },
   { to: "/melhor-celular-ate-1000", label: "Celulares até R$ 1.000" },
