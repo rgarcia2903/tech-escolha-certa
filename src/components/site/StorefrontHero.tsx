@@ -47,6 +47,9 @@ export function StorefrontHero() {
           <a href="#escolha-rapida" className="storefront-chip">
             Encontrar meu perfil
           </a>
+          <Link to="/vale-a-pena" className="storefront-chip">
+            Meu modelo ainda vale a pena?
+          </Link>
         </nav>
       </div>
     </section>
