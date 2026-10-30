@@ -12,7 +12,7 @@ import { PhoneDecisionFinder } from "@/components/site/PhoneDecisionFinder";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { SectionTitle } from "@/components/site/SectionTitle";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A36_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { TopPickCard } from "@/components/site/TopPickCard";
 
 export const Route = createFileRoute("/")({
@@ -360,10 +360,10 @@ function HomePage() {
             <AffiliateCTA
               title="Opções de compra dos celulares recomendados"
               description="Veja preço, parcelamento e disponibilidade dos modelos mais recomendados do momento."
-              buttonText="Ver Galaxy A55 no Mercado Livre"
-              href={GALAXY_A55_AFFILIATE_URL}
+              buttonText="Ver Galaxy A36 no Mercado Livre"
+              href={GALAXY_A36_AFFILIATE_URL}
               highlight="Samsung • Xiaomi • Redmi • Poco"
-              productName="Galaxy A55"
+              productName="Galaxy A36 5G"
               pageType="home"
             />
 

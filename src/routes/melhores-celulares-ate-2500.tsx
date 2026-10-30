@@ -2,7 +2,7 @@ import { getSocialImage } from "@/lib/product-media";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
-  GALAXY_A55_AFFILIATE_URL,
+  GALAXY_A57_AFFILIATE_URL,
   POCO_X6_PRO_AFFILIATE_URL,
   REDMI_NOTE_13_PRO_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/melhores-celulares-ate-2500")({
 });
 
 const affiliateLinks = {
-  galaxyA55: GALAXY_A55_AFFILIATE_URL,
+  galaxyA57: GALAXY_A57_AFFILIATE_URL,
   redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
   pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
 };
@@ -54,11 +54,11 @@ const affiliateLinks = {
 const ranking = [
   {
     category: "Perfil para comparar",
-    product: "Galaxy A55 5G",
-    description: "O intermediário premium mais equilibrado para a maioria das pessoas.",
-    reviewHref: "/review/galaxy-a55",
-    affiliateHref: affiliateLinks.galaxyA55,
-    affiliateProductName: "Galaxy A55",
+    product: "Galaxy A57 5G",
+    description: "Sucessor do Galaxy A55: IP68, Exynos 1680 e seis anos de atualizações.",
+    reviewHref: "/review/galaxy-a57-5g",
+    affiliateHref: affiliateLinks.galaxyA57,
+    affiliateProductName: "Galaxy A57 5G",
   },
   {
     category: "Perfil para comparar",
@@ -92,33 +92,33 @@ function MelhoresCelularesAte2500() {
               Alternativa para uso cotidiano
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A55 5G</h2>
+            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A57 5G</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Um dos celulares mais equilibrados da categoria para quem quer experiência premium sem
-              pagar preço de flagship.
+              O Samsung intermediário mais completo de 2026, sucessor do Galaxy A55: IP68, Exynos
+              1680 e seis anos de atualizações.
             </p>
 
             <a
-              href={GALAXY_A55_AFFILIATE_URL}
+              href={GALAXY_A57_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A55",
+                  productName: "Galaxy A57 5G",
                   pageType: "guia",
                   ctaPlacement: "hero",
                 })
               }
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver preço do Galaxy A55
+              Ver preço do Galaxy A57
             </a>
 
             <AffiliateRedirectNotice className="mt-3" tone="dark" />
 
             <Link
-              to="/review/galaxy-a55"
+              to="/review/galaxy-a57-5g"
               className="mt-3 block text-center text-sm font-semibold text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
               Ler review completo
@@ -345,15 +345,15 @@ function MelhoresCelularesAte2500() {
       <MobilePurchaseBar
         options={[
           {
-            productName: "Galaxy A55",
-            href: GALAXY_A55_AFFILIATE_URL,
+            productName: "Galaxy A57 5G",
+            href: GALAXY_A57_AFFILIATE_URL,
             label: "Ver preço",
             primary: true,
           },
         ]}
         pageType="guia"
-        title="Galaxy A55 5G"
-        eyebrow="Alternativa anterior · preço a conferir"
+        title="Galaxy A57 5G"
+        eyebrow="Sucessor do A55 · preço a conferir"
       />
     </main>
   );

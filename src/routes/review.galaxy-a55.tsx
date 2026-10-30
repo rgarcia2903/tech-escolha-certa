@@ -11,8 +11,7 @@ import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
-import { GALAXY_A55_AFFILIATE_URL } from "@/lib/affiliate-links";
-import { GALAXY_A57_AMAZON_URL } from "@/lib/affiliate-links";
+import { GALAXY_A57_AFFILIATE_URL, GALAXY_A57_AMAZON_URL } from "@/lib/affiliate-links";
 import { AlternativeOffer } from "@/components/site/AlternativeOffer";
 import { FairPriceBox } from "@/components/site/FairPriceBox";
 
@@ -174,19 +173,19 @@ function ReviewGalaxyA55() {
             <ScoreMethodLink className="mt-4" tone="dark" />
 
             <a
-              href={GALAXY_A55_AFFILIATE_URL}
+              href={GALAXY_A57_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A55",
+                  productName: "Galaxy A57 5G",
                   pageType: "review",
                   ctaPlacement: "hero",
                 })
               }
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A55 no Mercado Livre
+              Ver o sucessor, Galaxy A57
               <ArrowUpRight className="h-4 w-4" />
             </a>
             <AffiliateRedirectNotice className="mt-3" tone="dark" />
@@ -221,7 +220,7 @@ function ReviewGalaxyA55() {
               productName="Galaxy A55"
               bestFor="Você valoriza acabamento, câmera consistente, software refinado e uma experiência equilibrada para vários anos."
               caution="Desempenho bruto ou menor preço forem prioridade; Redmi e Poco podem entregar mais hardware pelo valor."
-              affiliateHref={GALAXY_A55_AFFILIATE_URL}
+              affiliateHref={GALAXY_A57_AFFILIATE_URL}
               comparisonHref="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
               comparisonLabel="Comparar Galaxy A55 e Redmi"
             />
@@ -353,12 +352,12 @@ function ReviewGalaxyA55() {
           </section>
 
           <AffiliateCTA
-            title="Conferir preço do Galaxy A55 5G"
-            description="Confira preço atualizado, parcelamento e disponibilidade do Galaxy A55 no Mercado Livre."
-            buttonText="Ver Galaxy A55 no Mercado Livre"
-            href={GALAXY_A55_AFFILIATE_URL}
-            highlight="Tela AMOLED • Ótima bateria • Excelente equilíbrio"
-            productName="Galaxy A55"
+            title="O Galaxy A55 saiu de linha: veja o sucessor"
+            description="O A55 novo praticamente sumiu das lojas. O Galaxy A57 é duas gerações mais novo, tem IP68 e mais anos de atualização pela frente."
+            buttonText="Ver Galaxy A57 no Mercado Livre"
+            href={GALAXY_A57_AFFILIATE_URL}
+            highlight="Sucessor do A55 • IP68 • 6 anos de atualizações"
+            productName="Galaxy A57 5G"
             pageType="review"
           />
 
@@ -445,19 +444,19 @@ function ReviewGalaxyA55() {
             </p>
 
             <a
-              href={GALAXY_A55_AFFILIATE_URL}
+              href={GALAXY_A57_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A55",
+                  productName: "Galaxy A57 5G",
                   pageType: "review",
                   ctaPlacement: "sidebar",
                 })
               }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A55 no Mercado Livre
+              Ver o sucessor, Galaxy A57
               <ArrowUpRight className="h-4 w-4" />
             </a>
             <AffiliateRedirectNotice className="mt-3" />
@@ -499,14 +498,14 @@ function ReviewGalaxyA55() {
       <MobilePurchaseBar
         options={[
           {
-            productName: "Galaxy A55",
-            href: GALAXY_A55_AFFILIATE_URL,
-            label: "Ver preço",
+            productName: "Galaxy A57 5G",
+            href: GALAXY_A57_AFFILIATE_URL,
+            label: "Ver o A57",
             primary: true,
           },
         ]}
         pageType="review"
-        title="Galaxy A55 5G"
+        title="Galaxy A57 5G (sucessor do A55)"
       />
     </main>
   );

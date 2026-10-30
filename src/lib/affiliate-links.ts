@@ -2,7 +2,6 @@ export const GALAXY_A35_AFFILIATE_URL = "https://meli.la/1onGZVV";
 
 export const GALAXY_A25_AFFILIATE_URL = "https://meli.la/16gypcb";
 
-export const GALAXY_A55_AFFILIATE_URL = "https://meli.la/2NMinTZ";
 
 // Sem oferta nova ativa no Mercado Livre em 28/10/2026: Galaxy S24 vendido pela Amazon.
 export const GALAXY_S24_AFFILIATE_URL = "https://www.amazon.com.br/dp/B0CQD9H9MG?tag=techescolha03-20";

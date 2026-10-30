@@ -6,7 +6,6 @@ import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions
 import {
   GALAXY_A25_AFFILIATE_URL,
   GALAXY_A35_AFFILIATE_URL,
-  GALAXY_A55_AFFILIATE_URL,
   GALAXY_S24_AFFILIATE_URL,
   IPHONE_15_AFFILIATE_URL,
   POCO_X6_PRO_AFFILIATE_URL,
@@ -144,22 +143,6 @@ const offers = [
     href: POCO_X6_PRO_AFFILIATE_URL,
     review: "/review/poco-x6-pro",
     comparison: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
-  },
-  {
-    name: "Samsung Galaxy A55 5G",
-    badge: "Samsung mais equilibrado",
-    segment: "Compra segura",
-    rating: 4.6,
-    image: "/images/products/galaxy-a55-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
-    description:
-      "É a escolha mais segura para quem prefere Samsung, quer bom acabamento, IP67, tela de qualidade e experiência mais previsível.",
-    bestFor: "Quem quer equilíbrio, pós-venda Samsung e menor risco de arrependimento.",
-    strengths: ["IP67", "Boa construção", "Experiência Samsung"],
-    caution: "desempenho bruto é prioridade; veja o Poco X7 Pro.",
-    href: GALAXY_A55_AFFILIATE_URL,
-    review: "/review/galaxy-a55",
-    comparison: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
   },
   {
     name: "Samsung Galaxy A35 5G",
