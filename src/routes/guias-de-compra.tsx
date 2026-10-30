@@ -1,3 +1,4 @@
+import { USE_GUIDES } from "@/lib/use-guides";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
@@ -40,6 +41,12 @@ const featuredGuide = {
 };
 
 const guides = [
+  ...Object.values(USE_GUIDES).map((g) => ({
+    title: g.h1,
+    excerpt: g.description,
+    href: "/" + g.slug,
+    tag: "Por uso",
+  })),
   {
     title: "Melhores celulares até R$ 2.000",
     excerpt:

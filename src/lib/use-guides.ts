@@ -170,11 +170,11 @@ export const USE_GUIDES: Record<string, UseGuide> = {
   },
   "melhor-celular-para-gravar-videos": {
     slug: "melhor-celular-para-gravar-videos",
-    title: "Melhor celular para gravar vídeos em 2026, por faixa de preço",
+    title: "Melhor celular para fotos e vídeos em 2026, por faixa de preço",
     description:
-      "Qual celular comprar para gravar vídeos e para quem tem a melhor câmera em cada faixa de preço, de R$ 900 a iPhone: estabilização, 4K, câmera frontal e o que evitar.",
+      "Qual celular tem a melhor câmera para fotos e vídeos em cada faixa de preço, de R$ 900 a iPhone: estabilização, 4K, câmera frontal e o que evitar.",
     eyebrow: "Guia por uso · câmera e vídeo · atualizado em outubro de 2026",
-    h1: "Melhor celular para gravar vídeos (e com melhor câmera) em 2026",
+    h1: "Melhor celular para fotos e vídeos em 2026",
     shortAnswer:
       "Para vídeo, o que mais pesa é estabilização da câmera e gravação em 4K, inclusive na frontal, para quem grava falando para a tela. Até R$ 900, o Galaxy A17 5G. Até R$ 1.400, o Galaxy A36. Até R$ 2.000, o Galaxy A57. Até R$ 3.000, o Galaxy S25 FE. Para o melhor vídeo, o iPhone 17.",
     tiers: [
@@ -246,4 +246,163 @@ export const USE_GUIDES: Record<string, UseGuide> = {
       },
     ],
   },
+  "celular-com-melhor-bateria": {
+    slug: "celular-com-melhor-bateria",
+    title: "Celular com melhor bateria em 2026: um por faixa de preço",
+    description:
+      "Qual celular tem a melhor bateria em 2026, de R$ 1.200 a R$ 2.700: capacidade, velocidade de recarga, o que mais pesa na duração e quais modelos evitar se bateria é prioridade.",
+    eyebrow: "Guia por uso · bateria · atualizado em outubro de 2026",
+    h1: "Celular com melhor bateria em 2026",
+    shortAnswer:
+      "Para bateria, olhe a capacidade (6.000 mAh ou mais é muito acima da média) e a velocidade da recarga. Até R$ 1.200, o Moto G56 5G. Até R$ 1.400, o Redmi Note 15 4G, com 6.000 mAh. Até R$ 1.800, o Redmi Note 15 5G. Até R$ 2.500, o Poco X8 Pro, com 6.500 mAh e recarga de 100 W. Com câmera melhor, o Edge 60 Pro.",
+    tiers: [
+      {
+        label: "Até R$ 1.200",
+        productId: "moto-g56-5g",
+        name: "Moto G56 5G",
+        why: "5.200 mAh, recarga de 30 W, 256 GB e proteção IP68/IP69. A tela é LCD, por isso só vale com desconto.",
+        path: "/review/moto-g56-5g",
+      },
+      {
+        label: "Até R$ 1.400 (a maior bateria barata)",
+        productId: "redmi-note-15-4g",
+        name: "Redmi Note 15 4G",
+        why: "6.000 mAh e recarga de 33 W. Não tem 5G nem grava em 4K: confira no anúncio que é a versão que você quer.",
+        path: "/comparativo/redmi-note-15-4g-vs-5g",
+      },
+      {
+        label: "Até R$ 1.800",
+        productId: "redmi-note-15-5g",
+        name: "Redmi Note 15 5G",
+        why: "5.520 mAh com Snapdragon 6 Gen 3, um processador econômico, e tela AMOLED de 120 Hz.",
+        path: "/review/redmi-note-15-5g",
+      },
+      {
+        label: "Até R$ 2.500 (a maior bateria da lista)",
+        productId: "poco-x8-pro",
+        name: "Poco X8 Pro",
+        why: "6.500 mAh e recarga de 100 W, além do processador mais forte da faixa.",
+        path: "/review/poco-x8-pro",
+      },
+      {
+        label: "Até R$ 2.700 (bateria e câmera)",
+        productId: "edge-60-pro",
+        name: "Motorola Edge 60 Pro",
+        why: "6.000 mAh, recarga de 90 W, zoom óptico de 3x e IP68/IP69. O ponto fraco são os três anos de atualizações.",
+        path: "/review/edge-60-pro",
+      },
+    ],
+    mattersTitle: "O que faz a bateria durar mais",
+    matters: [
+      "Capacidade: 5.000 mAh é o padrão; 6.000 mAh ou mais dá folga para mais de um dia em uso leve.",
+      "Processador: os mais novos e eficientes gastam menos; mAh sozinho não conta a história toda.",
+      "Tela: brilho no máximo e 120 Hz gastam mais. Brilho automático ajuda bastante.",
+      "Recarga rápida: não aumenta a duração, mas 30 minutos na tomada passam a render muito mais.",
+    ],
+    avoid: [
+      { text: "Galaxy S25 (4.000 mAh) e Galaxy S26 (4.300 mAh): ótimos celulares, mas bateria não é o forte.", path: "/review/galaxy-s25" },
+      { text: "Motorola Edge 70: fino e leve, com 4.800 mAh; se bateria é prioridade, o Edge 60 Pro é melhor.", path: "/comparativo/edge-70-vs-edge-60-pro" },
+    ],
+    related: [
+      { label: "Melhor celular para motoboy e entregas", path: "/melhor-celular-para-motoboy" },
+      { label: "Melhor celular para Free Fire", path: "/melhor-celular-para-free-fire" },
+      { label: "Poco X8 Pro é bom?", path: "/review/poco-x8-pro" },
+    ],
+    faq: [
+      {
+        question: "Qual o celular com a melhor bateria em 2026?",
+        answer:
+          "Entre os que recomendamos até R$ 2.500, o Poco X8 Pro, com 6.500 mAh e recarga de 100 W. Mais barato, o Redmi Note 15 4G tem 6.000 mAh.",
+      },
+      {
+        question: "Qual Samsung tem a melhor bateria?",
+        answer:
+          "Na linha A, o Galaxy A36 e o A37 têm 5.000 mAh. Na linha S, o S25 FE e o S25 Ultra têm 4.900 e 5.000 mAh. Os compactos S25 e S26 têm bateria menor.",
+      },
+      {
+        question: "Celular com bateria de 6.000 mAh dura quanto?",
+        answer:
+          "Depende do uso, da tela e do processador. Não publicamos horas porque não medimos em laboratório; o que dá para dizer é que 6.000 mAh fica bem acima dos 5.000 mAh da maioria.",
+      },
+    ],
+  },
+  "melhor-celular-para-motoboy": {
+    slug: "melhor-celular-para-motoboy",
+    title: "Melhor celular para motoboy e entregador em 2026: resistente e com bateria",
+    description:
+      "Qual celular comprar para trabalhar com entregas de moto em 2026: resistência a água e poeira, tela legível no sol, bateria para o dia todo e um modelo por faixa de preço.",
+    eyebrow: "Guia por uso · trabalho · atualizado em outubro de 2026",
+    h1: "Melhor celular para motoboy e entregador em 2026",
+    shortAnswer:
+      "Para quem trabalha na rua, o celular precisa aguentar chuva e poeira (IP68 ou IP69), ter tela que dá para ler no sol e bateria para o dia inteiro com GPS ligado. A Motorola domina essa faixa. Até R$ 1.200, o Moto G56 5G. Até R$ 1.600, o Moto G Max. Até R$ 1.900, o Moto G86. Até R$ 2.700, o Edge 60 Pro, com 6.000 mAh e recarga de 90 W.",
+    tiers: [
+      {
+        label: "Até R$ 1.200",
+        productId: "moto-g56-5g",
+        name: "Moto G56 5G",
+        why: "IP68 e IP69, Gorilla Glass 7i, 5.200 mAh e 256 GB. O mais barato que aguenta chuva de verdade.",
+        path: "/review/moto-g56-5g",
+      },
+      {
+        label: "Até R$ 1.600",
+        productId: "moto-g-max",
+        name: "Moto G Max",
+        why: "Tela grande de 6,8\" com pico de 5.000 nits, a mais fácil de ler no sol desta lista, IP68/IP69 e 5.200 mAh.",
+        path: "/review/moto-g-max",
+      },
+      {
+        label: "Até R$ 1.900",
+        productId: "moto-g86-5g",
+        name: "Moto G86 5G",
+        why: "IP68/IP69, tela pOLED com pico de 4.500 nits, 5.200 mAh e carregador de 33 W na caixa.",
+        path: "/review/moto-g86-5g",
+      },
+      {
+        label: "Até R$ 2.700 (bateria de sobra)",
+        productId: "edge-60-pro",
+        name: "Motorola Edge 60 Pro",
+        why: "6.000 mAh, recarga de 90 W para encher rápido no intervalo, IP68/IP69 e certificação militar MIL-STD-810H.",
+        path: "/review/edge-60-pro",
+      },
+    ],
+    mattersTitle: "O que importa para quem trabalha com entregas",
+    matters: [
+      "Proteção IP68 ou IP69: aguenta chuva e poeira. IP54 e IP64 só protegem contra respingos.",
+      "Tela brilhante: acima de 3.000 nits de pico, o mapa fica legível no sol do meio-dia.",
+      "Bateria de 5.000 mAh ou mais e recarga rápida: GPS e tela ligados o dia todo gastam muito.",
+      "Suporte com amortecedor: a vibração do motor pode danificar câmeras com estabilização óptica; fabricantes como a Apple alertam para isso.",
+    ],
+    avoid: [
+      { text: "Moto G06 e Moto G17: proteção IP64 (só respingos) e processador fraco para GPS e app de entrega abertos juntos.", path: "/review/moto-g17" },
+      { text: "Celulares com 64 GB: os apps de entrega e mapas ocupam espaço e deixam o aparelho lento.", path: "/review/iphone-11" },
+    ],
+    related: [
+      { label: "Celular com melhor bateria", path: "/celular-com-melhor-bateria" },
+      { label: "Moto G Max ou Moto G86?", path: "/comparativo/moto-g-max-vs-moto-g86" },
+      { label: "Melhores celulares Motorola", path: "/melhores-celulares-motorola" },
+    ],
+    faq: [
+      {
+        question: "Qual o melhor celular para motoboy barato?",
+        answer: "O Moto G56 5G: tem IP68/IP69, 5.200 mAh e 256 GB. Vale a pena até cerca de R$ 1.200.",
+      },
+      {
+        question: "Celular com IP68 pode tomar chuva?",
+        answer:
+          "Sim, a certificação cobre chuva e até imersão em teste. Mesmo assim, a garantia costuma não cobrir dano por líquido; evite molhar de propósito e seque as entradas antes de carregar.",
+      },
+      {
+        question: "Qual celular aguenta o dia todo com GPS ligado?",
+        answer:
+          "Os de 5.200 mAh ou mais desta lista dão conta de um turno normal. Para turnos longos, o Edge 60 Pro, com 6.000 mAh e recarga de 90 W, é o mais folgado.",
+      },
+    ],
+  },
 };
+
+/** Guias por uso que indicam o modelo, para links a partir dos reviews. */
+export function guidesForProduct(productId: string): { label: string; path: string }[] {
+  return Object.values(USE_GUIDES)
+    .filter((g) => g.tiers.some((t) => t.productId === productId))
+    .map((g) => ({ label: g.h1.replace(/ em 2026$/, ""), path: "/" + g.slug }));
+}

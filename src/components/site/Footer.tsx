@@ -24,7 +24,9 @@ const GUIAS = [
   { to: "/lancamentos", label: "Lançamentos de celulares" },
   { to: "/melhor-celular-para-free-fire", label: "Melhor celular para Free Fire" },
   { to: "/melhor-celular-para-roblox", label: "Melhor celular para Roblox" },
-  { to: "/melhor-celular-para-gravar-videos", label: "Melhor celular para gravar vídeos" },
+  { to: "/melhor-celular-para-gravar-videos", label: "Melhor celular para fotos e vídeos" },
+  { to: "/celular-com-melhor-bateria", label: "Celular com melhor bateria" },
+  { to: "/melhor-celular-para-motoboy", label: "Melhor celular para motoboy" },
   { to: "/melhor-celular-ate-1000", label: "Melhores celulares até R$ 1.000" },
 ];
 

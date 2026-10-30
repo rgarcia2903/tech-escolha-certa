@@ -15,6 +15,7 @@ import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
+import { guidesForProduct } from "@/lib/use-guides";
 
 export type ReviewTemplateProps = {
   breadcrumbs?: {
@@ -105,6 +106,13 @@ export function ReviewTemplate({
   alternative,
   fairPriceId,
 }: ReviewTemplateProps) {
+  const reviewOffer = getOfferByUrl(affiliateHref);
+  const allRelated = [
+    ...relatedLinks,
+    ...(reviewOffer ? guidesForProduct(reviewOffer.productId) : [])
+      .map((g) => ({ to: g.path, label: g.label }))
+      .filter((g) => !relatedLinks.some((r) => r.to === g.to)),
+  ];
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200 bg-[#071E25] text-white">
@@ -388,12 +396,12 @@ export function ReviewTemplate({
 
             <AffiliateRedirectNotice className="mt-3" />
 
-            {relatedLinks.length > 0 && (
+            {allRelated.length > 0 && (
               <div className="mt-6 border-t border-slate-200 pt-5">
                 <p className="text-sm font-bold text-[#0F3F4A]">Também leia:</p>
 
                 <div className="mt-3 space-y-3 text-sm">
-                  {relatedLinks.map((link) => (
+                  {allRelated.map((link) => (
                     <Link
                       key={link.to}
                       to={link.to}
