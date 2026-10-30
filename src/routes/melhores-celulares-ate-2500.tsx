@@ -1,10 +1,9 @@
 import { getSocialImage } from "@/lib/product-media";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
-import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
   GALAXY_A57_AFFILIATE_URL,
-  POCO_X6_PRO_AFFILIATE_URL,
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  MOTO_G86_AFFILIATE_URL,
+  POCO_X8_PRO_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
@@ -20,7 +19,7 @@ const CANONICAL = "https://techescolhacerta.com.br/melhores-celulares-ate-2500";
 const HERO_IMG = "https://techescolhacerta.com.br/images/products/phones-hero-optimized.webp";
 const PAGE_TITLE = "Celulares até R$ 2.500 em 2026: como comparar";
 const PAGE_DESCRIPTION =
-  "Compare Galaxy A55, Redmi Note 13 Pro e Poco X6 Pro. Veja qual é melhor para câmera, jogos ou uso equilibrado e confira o preço atual.";
+  "Os melhores celulares até R$ 2.500 em 2026: Galaxy A57, Moto G86 e Poco X8 Pro. Veja qual é melhor para câmera, jogos ou uso equilibrado e até quanto pagar.";
 
 export const Route = createFileRoute("/melhores-celulares-ate-2500")({
   head: () => ({
@@ -47,13 +46,13 @@ export const Route = createFileRoute("/melhores-celulares-ate-2500")({
 
 const affiliateLinks = {
   galaxyA57: GALAXY_A57_AFFILIATE_URL,
-  redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
-  pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
+  motoG86: MOTO_G86_AFFILIATE_URL,
+  pocoX8Pro: POCO_X8_PRO_AFFILIATE_URL,
 };
 
 const ranking = [
   {
-    category: "Perfil para comparar",
+    category: "Samsung mais completo",
     product: "Galaxy A57 5G",
     description: "Sucessor do Galaxy A55: IP68, Exynos 1680 e seis anos de atualizações.",
     reviewHref: "/review/galaxy-a57-5g",
@@ -61,20 +60,20 @@ const ranking = [
     affiliateProductName: "Galaxy A57 5G",
   },
   {
-    category: "Perfil para comparar",
-    product: "Redmi Note 13 Pro 5G",
-    description: "Excelente tela, carregamento rápido e ficha técnica forte.",
-    reviewHref: "/review/redmi-note-13-pro",
-    affiliateHref: affiliateLinks.redmiNote13Pro,
-    affiliateProductName: "Redmi Note 13 Pro",
+    category: "Tela e resistência",
+    product: "Moto G86 5G",
+    description: "Tela pOLED 1.5K com 4.500 nits, IP68/IP69 e carregador na caixa. Compre até R$ 1.900.",
+    reviewHref: "/review/moto-g86-5g",
+    affiliateHref: affiliateLinks.motoG86,
+    affiliateProductName: "Moto G86 5G",
   },
   {
-    category: "Perfil para comparar",
-    product: "Poco X6 Pro",
-    description: "Excelente escolha para jogos e alto desempenho.",
-    reviewHref: "/review/poco-x6-pro",
-    affiliateHref: affiliateLinks.pocoX6Pro,
-    affiliateProductName: "Poco X6 Pro",
+    category: "Jogos e desempenho",
+    product: "Poco X8 Pro",
+    description: "Dimensity 8500 Ultra, 6.500 mAh e recarga de 100 W: o mais forte para jogos até R$ 2.500.",
+    reviewHref: "/review/poco-x8-pro",
+    affiliateHref: affiliateLinks.pocoX8Pro,
+    affiliateProductName: "POCO X8 Pro",
   },
 ];
 
@@ -141,7 +140,6 @@ function MelhoresCelularesAte2500() {
         </Link>
       </CategoryHero>
       <EditorialSelection selection="ate-2500" />
-      <LegacySelectionNotice />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
@@ -201,30 +199,26 @@ function MelhoresCelularesAte2500() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <ReviewCard
-              title="Review Galaxy A55 5G"
-              description="Experiência premium sem entrar na faixa flagship."
-              href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55-optimized.webp"
-              score="9.0"
+              title="Review Galaxy A57 5G"
+              description="O Samsung intermediário mais completo de 2026, sucessor do A55."
+              href="/review/galaxy-a57-5g"
+              image="/images/products/licensed/galaxy-a57-5g.webp"
               badge="Samsung"
             />
 
             <ReviewCard
-              title="Review Redmi Note 13 Pro 5G"
-              description="Ótimo custo-benefício com tela AMOLED e carregamento rápido."
-              href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro-optimized.webp"
-              score="9.0"
-              badge="Xiaomi"
+              title="Review Moto G86 5G"
+              description="A tela mais brilhante da faixa, IP68/IP69 e carregador na caixa."
+              href="/review/moto-g86-5g"
+              image="/images/products/moto-g86-optimized.webp"
+              badge="Motorola"
             />
 
             <ReviewCard
-              title="Review Poco X6 Pro"
-              description="Excelente escolha para quem quer máxima performance."
-              href="/review/poco-x6-pro"
-              image="/images/products/poco-x6-pro-optimized.webp"
-              score="9.2"
-              badge="Performance"
+              title="Poco X8 Pro é bom?"
+              description="O celular mais forte para jogos até R$ 2.500."
+              href="/review/poco-x8-pro"
+              badge="Jogos"
             />
           </div>
         </section>
@@ -238,19 +232,19 @@ function MelhoresCelularesAte2500() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <ComparisonCard
-              title="Galaxy A55 vs Redmi Note 13 Pro"
-              description="Samsung ou Xiaomi? Compare tela, câmera, software e custo-benefício."
-              href="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-              image="/images/products/galaxy-a55-optimized.webp"
-              winner="Galaxy A55 para experiência premium; Redmi para ficha técnica."
+              title="Galaxy A57 vs Galaxy A36"
+              description="Quando vale pagar mais pelo A57 e quando o A36 basta."
+              href="/comparativo/galaxy-a57-vs-galaxy-a36"
+              image="/images/products/licensed/galaxy-a57-5g.webp"
+              winner="A57 se a diferença for de até uns R$ 500; senão, o A36."
             />
 
             <ComparisonCard
-              title="Galaxy A55 vs Poco X6 Pro"
-              description="Equilíbrio premium ou performance extrema?"
-              href="/comparativo/galaxy-a55-vs-poco-x6-pro"
-              image="/images/products/galaxy-a55-optimized.webp"
-              winner="A55 para equilíbrio; Poco para desempenho."
+              title="Poco X8 Pro vs Poco X7 Pro"
+              description="Vale pagar mais pelo modelo novo para jogar?"
+              href="/comparativo/poco-x8-pro-vs-poco-x7-pro"
+              image="/images/products/poco-x7-pro-optimized.webp"
+              winner="X8 Pro para o máximo desempenho; X7 Pro para economizar."
             />
           </div>
         </section>
@@ -326,15 +320,15 @@ function MelhoresCelularesAte2500() {
                   Melhores até R$ 2.000
                 </Link>
 
-                <Link to="/review/galaxy-a55" className="block text-slate-700 hover:text-[#8B5A2B]">
-                  Review Galaxy A55
+                <Link to="/review/galaxy-a57-5g" className="block text-slate-700 hover:text-[#8B5A2B]">
+                  Review Galaxy A57
                 </Link>
 
                 <Link
-                  to="/review/redmi-note-13-pro"
+                  to="/melhor-celular-para-jogos-pesados"
                   className="block text-slate-700 hover:text-[#8B5A2B]"
                 >
-                  Review Redmi Note 13 Pro
+                  Melhor celular para jogos pesados
                 </Link>
               </div>
             </div>
