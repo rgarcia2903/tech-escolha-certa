@@ -6,6 +6,7 @@ import { HeroPickCTA } from "@/components/site/HeroPickCTA";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { FAIR_PRICES, formatBRL, type FairPriceId } from "@/lib/fair-prices";
 import { getOffers } from "@/lib/product-catalog";
+import { comparisonsForProduct } from "@/lib/comparisons";
 
 export type OlderModelVerdictProps = {
   fairPriceId: FairPriceId;
@@ -212,6 +213,14 @@ export function OlderModelVerdict(p: OlderModelVerdictProps) {
           <Link to="/vale-a-pena" className="font-semibold underline">
             Veja se outros celulares ainda valem a pena em 2026
           </Link>
+          {comparisonsForProduct(p.fairPriceId).map((c) => (
+            <span key={c.path}>
+              {" · "}
+              <Link to={c.path} className="font-semibold underline">
+                {c.label}
+              </Link>
+            </span>
+          ))}
           .
         </p>
       </div>

@@ -79,6 +79,7 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
 ];
 
 const COMPARISONS = [
+  { to: "/comparativo/galaxy-a17-vs-galaxy-a07", label: "Galaxy A17 vs Galaxy A07" },
   { to: "/comparativo/moto-g37-vs-moto-g17", label: "Moto G37 vs Moto G17" },
   { to: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g", label: "Galaxy A17 4G vs A17 5G" },
   { to: "/comparativo/galaxy-a07-vs-moto-g06", label: "Galaxy A07 vs Moto G06" },

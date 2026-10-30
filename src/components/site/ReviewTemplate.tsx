@@ -16,6 +16,7 @@ import { ReviewDecisionPanel } from "@/components/site/ReviewDecisionPanel";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { guidesForProduct } from "@/lib/use-guides";
+import { comparisonsForProduct } from "@/lib/comparisons";
 
 export type ReviewTemplateProps = {
   breadcrumbs?: {
@@ -109,7 +110,9 @@ export function ReviewTemplate({
   const reviewOffer = getOfferByUrl(affiliateHref);
   const allRelated = [
     ...relatedLinks,
-    ...(reviewOffer ? guidesForProduct(reviewOffer.productId) : [])
+    ...(reviewOffer
+      ? [...comparisonsForProduct(reviewOffer.productId), ...guidesForProduct(reviewOffer.productId)]
+      : [])
       .map((g) => ({ to: g.path, label: g.label }))
       .filter((g) => !relatedLinks.some((r) => r.to === g.to)),
   ];

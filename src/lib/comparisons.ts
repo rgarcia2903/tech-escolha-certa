@@ -19,6 +19,233 @@ export type Comparison = {
 };
 
 export const COMPARISONS: Record<string, Comparison> = {
+  "galaxy-a17-vs-galaxy-a07": {
+    slug: "galaxy-a17-vs-galaxy-a07",
+    a: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
+    b: { id: "galaxy-a07", name: "Galaxy A07", reviewPath: "/review/galaxy-a07" },
+    title: "Galaxy A17 ou Galaxy A07: qual o melhor para comprar em 2026?",
+    description:
+      "Galaxy A17 5G vs Galaxy A07: tela, processador, câmera, 5G e atualizações lado a lado. Veja quando vale pagar mais pelo A17 e quando o A07 basta.",
+    shortAnswer:
+      "O Galaxy A17 5G é bem melhor: tela AMOLED, processador mais rápido, câmera com estabilização óptica e 5G. Vale pagar a diferença se ela for de até uns R$ 200. O Galaxy A07 só faz sentido para quem quer o Samsung mais barato possível, para WhatsApp, redes sociais e vídeos.",
+    chooseA: [
+      "Quer uma tela AMOLED, com cores e contraste bem melhores.",
+      "Tira fotos e grava vídeos com frequência (estabilização óptica).",
+      "Quer 5G e um processador que aguenta mais anos (Exynos 1330).",
+    ],
+    chooseB: [
+      "O orçamento é de até R$ 800.",
+      "O uso é básico: mensagens, redes sociais e vídeos.",
+      "4G atende onde você mora.",
+    ],
+    rows: [
+      { label: "Processador", a: "Exynos 1330 (5 nm)", b: "Helio G99 (6 nm)", winner: "a" },
+      { label: "5G", a: "Sim", b: "Não", winner: "a" },
+      { label: "Tela", a: 'AMOLED 6,7" • 90 Hz', b: 'LCD 6,7" HD+ • 90 Hz', winner: "a" },
+      { label: "Câmera principal", a: "50 MP com OIS", b: "50 MP", winner: "a" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 25 W", b: "5.000 mAh • 15 W", winner: "a" },
+      { label: "Proteção", a: "IP54", b: "IP54", winner: "tie" },
+      { label: "Atualizações", a: "6 anos", b: "6 anos", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 900", b: "R$ 800", winner: "b" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena pagar mais pelo Galaxy A17?",
+        answer:
+          "Sim, se a diferença for de até uns R$ 200. A tela AMOLED, a câmera estabilizada e o processador mais rápido fazem diferença no dia a dia.",
+      },
+      {
+        question: "Qual dos dois é melhor para jogar?",
+        answer: "O Galaxy A17 5G. O Exynos 1330 é mais rápido que o Helio G99 do A07; os dois rodam jogos leves, como Free Fire.",
+      },
+      {
+        question: "Os dois recebem atualizações por quanto tempo?",
+        answer: "A Samsung promete seis anos de atualizações para os dois.",
+      },
+    ],
+  },
+  "galaxy-a36-vs-moto-g86": {
+    slug: "galaxy-a36-vs-moto-g86",
+    a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
+    b: { id: "moto-g86-5g", name: "Moto G86 5G", reviewPath: "/review/moto-g86-5g" },
+    title: "Galaxy A36 ou Moto G86: qual comprar em 2026?",
+    description:
+      "Galaxy A36 vs Moto G86: tela, processador, câmera, bateria, resistência e atualizações lado a lado. Veja qual intermediário vale mais o seu dinheiro.",
+    shortAnswer:
+      "Para a maioria, o Galaxy A36: costuma custar menos e recebe atualizações até 2031, contra quatro anos de segurança no Moto G86. Escolha o Moto G86 se você quer a tela mais nítida e brilhante, resistência IP68/IP69 e carregador na caixa, e ele estiver perto do preço do A36.",
+    chooseA: [
+      "Quer ficar muitos anos com o celular (atualizações até 2031).",
+      "Quer gastar menos: compre até R$ 1.350.",
+      "Quer recarga de 45 W (com carregador compatível).",
+    ],
+    chooseB: [
+      "Usa muito o celular no sol: a tela chega a 4.500 nits.",
+      "Precisa de resistência a água e poeira (IP68 e IP69).",
+      "Quer o carregador na caixa e um pouco mais de bateria.",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 6 Gen 3", b: "Dimensity 7300", winner: "tie" },
+      { label: "Tela", a: 'AMOLED 6,7" • 120 Hz', b: 'pOLED 6,67" 1.5K • 120 Hz • 4.500 nits', winner: "b" },
+      { label: "Câmera principal", a: "50 MP com OIS", b: "50 MP Sony com OIS", winner: "tie" },
+      { label: "Câmera frontal", a: "12 MP", b: "32 MP", winner: "tie" },
+      { label: "Bateria", a: "5.000 mAh", b: "5.200 mAh", winner: "b" },
+      { label: "Recarga", a: "45 W, sem carregador na caixa", b: "33 W, carregador na caixa", winner: "b" },
+      { label: "Proteção", a: "IP67", b: "IP68 e IP69", winner: "b" },
+      { label: "Atualizações", a: "6 anos (até 2031)", b: "2 de Android, 4 de segurança", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 1.350", b: "R$ 1.900", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Galaxy A36 ou Moto G86: qual é melhor?",
+        answer:
+          "Pelo custo-benefício e pelos anos de atualização, o Galaxy A36. O Moto G86 ganha em tela, resistência e carregador na caixa.",
+      },
+      {
+        question: "Qual dura mais anos?",
+        answer:
+          "O Galaxy A36: a Samsung promete atualizações até 2031. O Moto G86 tem duas versões do Android e quatro anos de segurança.",
+      },
+      {
+        question: "Qual é melhor para jogar?",
+        answer:
+          "Os processadores são de desempenho parecido. Para jogos pesados, nenhum dos dois é o ideal; veja o guia de jogos pesados.",
+      },
+    ],
+  },
+  "moto-g56-vs-moto-g86": {
+    slug: "moto-g56-vs-moto-g86",
+    a: { id: "moto-g56-5g", name: "Moto G56 5G", reviewPath: "/review/moto-g56-5g" },
+    b: { id: "moto-g86-5g", name: "Moto G86 5G", reviewPath: "/review/moto-g86-5g" },
+    title: "Moto G56 ou Moto G86: qual o melhor para comprar em 2026?",
+    description:
+      "Moto G56 vs Moto G86: tela, câmera, processador e preço lado a lado. Os dois têm IP68/IP69 e 5.200 mAh; veja quando vale pagar mais pelo G86.",
+    shortAnswer:
+      "Os dois são resistentes (IP68 e IP69) e têm 5.200 mAh. O Moto G86 é melhor em quase tudo: tela pOLED 1.5K muito mais brilhante, câmera com estabilização óptica e processador mais rápido. Compre o Moto G56 só se ele estiver até uns R$ 1.200 e você não se importar com a tela LCD.",
+    chooseA: [
+      "O orçamento é de até R$ 1.200.",
+      "Quer cartão de memória e entrada para fone com fio.",
+      "Usa o celular para trabalho pesado na rua e quer gastar pouco.",
+    ],
+    chooseB: [
+      "Quer uma tela bem melhor (pOLED 1.5K, 4.500 nits).",
+      "Tira fotos à noite ou grava andando (estabilização óptica).",
+      "Quer o carregador de 33 W na caixa.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 7060 (6 nm)", b: "Dimensity 7300 (4 nm)", winner: "b" },
+      { label: "Tela", a: 'LCD 6,72" Full HD+ • 120 Hz', b: 'pOLED 6,67" 1.5K • 120 Hz • 4.500 nits', winner: "b" },
+      { label: "Câmera principal", a: "50 MP", b: "50 MP Sony com OIS", winner: "b" },
+      { label: "Bateria", a: "5.200 mAh", b: "5.200 mAh", winner: "tie" },
+      { label: "Recarga", a: "30 W", b: "33 W, carregador na caixa", winner: "b" },
+      { label: "Proteção", a: "IP68 e IP69", b: "IP68 e IP69", winner: "tie" },
+      { label: "Armazenamento", a: "256 GB + microSD", b: "256 GB", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 1.200", b: "R$ 1.900", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena pagar mais pelo Moto G86?",
+        answer:
+          "Sim, se a diferença for de até uns R$ 500. A tela pOLED e a câmera estabilizada são bem superiores. Com diferença maior, o G56 é uma compra sólida para uso básico.",
+      },
+      {
+        question: "Qual dos dois aguenta mais água e queda?",
+        answer: "Os dois têm IP68 e IP69, que protegem contra água e poeira. Mesmo assim, a garantia costuma não cobrir dano por líquido.",
+      },
+      {
+        question: "Qual tem mais bateria?",
+        answer: "Os dois têm 5.200 mAh. O G86 traz o carregador de 33 W na caixa.",
+      },
+    ],
+  },
+  "galaxy-s25-fe-vs-galaxy-a57": {
+    slug: "galaxy-s25-fe-vs-galaxy-a57",
+    a: { id: "galaxy-s25-fe", name: "Galaxy S25 FE", reviewPath: "/review/galaxy-s25-fe" },
+    b: { id: "galaxy-a57-5g", name: "Galaxy A57 5G", reviewPath: "/review/galaxy-a57-5g" },
+    title: "Galaxy S25 FE ou Galaxy A57: qual o melhor para comprar em 2026?",
+    description:
+      "Galaxy S25 FE vs Galaxy A57: processador, câmeras, zoom, bateria e atualizações lado a lado. Veja quando vale subir para a linha S.",
+    shortAnswer:
+      "O Galaxy S25 FE é melhor em desempenho e câmera: processador Exynos 2400, teleobjetiva de 3x e um ano a mais de atualizações. O Galaxy A57 é mais fino, mais leve, tem bateria um pouco maior e custa bem menos. Se você não precisa de zoom nem joga pesado, o A57 entrega o essencial gastando menos.",
+    chooseA: [
+      "Quer zoom óptico de 3x para fotos de longe e retratos.",
+      "Joga títulos pesados (Exynos 2400).",
+      "Quer recarga sem fio e sete anos de atualizações.",
+    ],
+    chooseB: [
+      "Quer gastar menos: compre até R$ 1.850.",
+      "Prefere um celular fino e leve (6,9 mm, 179 g).",
+      "Prefere bateria um pouco maior (5.000 mAh).",
+    ],
+    rows: [
+      { label: "Processador", a: "Exynos 2400", b: "Exynos 1680 (4 nm)", winner: "a" },
+      { label: "Tela", a: 'AMOLED 6,7" • 120 Hz', b: 'AMOLED+ 6,7" • 120 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "50 + 12 MP + tele 8 MP (3x)", b: "50 MP OIS + 12 MP + 5 MP", winner: "a" },
+      { label: "Bateria", a: "4.900 mAh", b: "5.000 mAh", winner: "tie" },
+      { label: "Recarga", a: "45 W • sem fio", b: "45 W", winner: "a" },
+      { label: "Proteção", a: "IP68", b: "IP68", winner: "tie" },
+      { label: "Atualizações", a: "7 anos", b: "6 anos", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 3.000", b: "R$ 1.850", winner: "b" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena pagar mais pelo Galaxy S25 FE?",
+        answer:
+          "Vale se você usa zoom, joga pesado ou quer ficar sete anos com o celular. Para redes sociais, fotos do dia a dia e vídeos, o A57 basta e custa bem menos.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "O S25 FE, pela teleobjetiva de 3x. Na câmera principal e na frontal, os dois ficam próximos.",
+      },
+      {
+        question: "Qual é melhor para jogos?",
+        answer: "O S25 FE: o Exynos 2400 é de outra categoria. Veja também o guia de jogos pesados.",
+      },
+    ],
+  },
+  "iphone-16e-vs-iphone-17e": {
+    slug: "iphone-16e-vs-iphone-17e",
+    a: { id: "iphone-16e", name: "iPhone 16e", reviewPath: "/review/iphone-16e" },
+    b: { id: "iphone-17e", name: "iPhone 17e", reviewPath: "/review/iphone-17e" },
+    title: "iPhone 16e ou 17e: qual o melhor para comprar em 2026?",
+    description:
+      "iPhone 16e vs iPhone 17e: chip, armazenamento, MagSafe e câmera lado a lado. Veja quanto vale pagar a mais pelo 17e e quando o 16e é a compra certa.",
+    shortAnswer:
+      "Os dois são parecidos: tela de 6,1\" com 60 Hz e uma câmera de 48 MP. O iPhone 17e tem chip A19, o dobro de armazenamento (256 GB) e MagSafe. O iPhone 16e vale a pena se estiver até R$ 3.300 e 128 GB bastarem para você. Se a diferença for pequena, leve o 17e.",
+    chooseA: [
+      "Quer o iPhone mais barato com chip atual: compre até R$ 3.300.",
+      "Usa pouco espaço (128 GB) e guarda fotos na nuvem.",
+      "Não usa carregador magnético nem acessórios MagSafe.",
+    ],
+    chooseB: [
+      "Quer 256 GB para fotos, vídeos e apps.",
+      "Usa ou quer usar MagSafe (carregador, carteira, suporte).",
+      "Quer o chip mais novo (A19), para mais anos de uso.",
+    ],
+    rows: [
+      { label: "Chip", a: "A18", b: "A19", winner: "b" },
+      { label: "Tela", a: '6,1" OLED • 60 Hz', b: '6,1" OLED • 60 Hz', winner: "tie" },
+      { label: "Câmera traseira", a: "48 MP (uma câmera)", b: "48 MP (uma câmera)", winner: "tie" },
+      { label: "Armazenamento base", a: "128 GB", b: "256 GB", winner: "b" },
+      { label: "MagSafe", a: "Não (sem fio de 7,5 W)", b: "Sim, até 15 W", winner: "b" },
+      { label: "Lançamento", a: "Fevereiro de 2025", b: "Março de 2026", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 3.300", b: "R$ 4.500", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena pagar mais pelo iPhone 17e?",
+        answer:
+          "Vale se a diferença for de até uns R$ 800: você leva o dobro de armazenamento, MagSafe e um chip mais novo. Com diferença maior, o 16e é a compra mais inteligente.",
+      },
+      {
+        question: "Algum dos dois tem tela de 120 Hz?",
+        answer: "Não. Os dois têm tela de 60 Hz. Para 120 Hz, o iPhone mais barato é o iPhone 17.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "São muito parecidas: uma câmera de 48 MP, sem ultra-angular. Para ter ultra-angular, veja o iPhone 17.",
+      },
+    ],
+  },
   "galaxy-a57-vs-galaxy-a36": {
     slug: "galaxy-a57-vs-galaxy-a36",
     a: { id: "galaxy-a57-5g", name: "Galaxy A57 5G", reviewPath: "/review/galaxy-a57-5g" },
@@ -755,3 +982,10 @@ export const COMPARISONS: Record<string, Comparison> = {
     ],
   },
 };
+
+/** Comparativos em que o modelo aparece, para links a partir dos reviews e lançamentos. */
+export function comparisonsForProduct(productId: string): { label: string; path: string }[] {
+  return Object.values(COMPARISONS)
+    .filter((c) => c.a.id === productId || c.b.id === productId)
+    .map((c) => ({ label: `${c.a.name} ou ${c.b.name}?`, path: "/comparativo/" + c.slug }));
+}
