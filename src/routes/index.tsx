@@ -92,6 +92,17 @@ const categoryLinks = [
   { title: "Todos os comparativos", href: "/comparativos" },
 ];
 
+const useLinks = [
+  { title: "Free Fire", href: "/melhor-celular-para-free-fire" },
+  { title: "Roblox", href: "/melhor-celular-para-roblox" },
+  { title: "Jogos pesados (Genshin, COD)", href: "/melhor-celular-para-jogos-pesados" },
+  { title: "Fotos e vídeos", href: "/melhor-celular-para-gravar-videos" },
+  { title: "Melhor bateria", href: "/celular-com-melhor-bateria" },
+  { title: "Motoboy e entregas", href: "/melhor-celular-para-motoboy" },
+  { title: "Uber e aplicativos", href: "/melhor-celular-para-motorista-de-aplicativo" },
+  { title: "Lançamentos 2026", href: "/lancamentos" },
+];
+
 function HomePage() {
   return (
     <main className="min-h-screen bg-[#F5F7FA] text-slate-900">
@@ -179,6 +190,20 @@ function HomePage() {
 
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {categoryLinks.map((item) => (
+              <CategoryLink key={item.title} title={item.title} href={item.href} />
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <SectionTitle
+            eyebrow="Por uso"
+            title="Qual celular comprar para o que você vai fazer"
+            description="Um modelo por faixa de preço para cada uso, com até quanto vale pagar."
+          />
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {useLinks.map((item) => (
               <CategoryLink key={item.title} title={item.title} href={item.href} />
             ))}
           </div>
