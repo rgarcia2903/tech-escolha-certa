@@ -35,6 +35,10 @@ export const Route = createFileRoute("/lancamentos")({
   component: Lancamentos,
 });
 
+function reviewPathOf(id: string): string {
+  return "/review/" + id;
+}
+
 function Lancamentos() {
   return (
     <main className="min-h-screen bg-[#F7F2EB] text-slate-900">
@@ -78,7 +82,7 @@ function Lancamentos() {
                 <div className="mt-auto">
                   <HeroPickCTA productId={l.id} pageType="lancamentos" />
                   <Link
-                    to={`/review/${l.id}`}
+                    to={reviewPathOf(l.id)}
                     className="mt-3 inline-block text-sm font-semibold text-[#0F3F4A] underline"
                   >
                     {l.name} é bom? Ver o veredito
