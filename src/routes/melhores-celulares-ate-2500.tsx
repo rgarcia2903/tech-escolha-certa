@@ -281,10 +281,10 @@ function MelhoresCelularesAte2500() {
             <AffiliateCTA
               title="Melhores ofertas até R$ 2.500"
               description="Veja preços, parcelamento e disponibilidade dos celulares recomendados."
-              buttonText="Ver Galaxy A55 no Mercado Livre"
-              href={affiliateLinks.galaxyA55}
+              buttonText="Ver Galaxy A57 no Mercado Livre"
+              href={affiliateLinks.galaxyA57}
               highlight="Samsung • Xiaomi • Poco"
-              productName="Galaxy A55"
+              productName="Galaxy A57 5G"
               pageType="guia"
             />
 
