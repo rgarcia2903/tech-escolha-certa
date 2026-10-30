@@ -5,6 +5,7 @@ import { HeroPickCTA } from "@/components/site/HeroPickCTA";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { formatBRL, goodDealFor } from "@/lib/fair-prices";
 import type { Launch } from "@/lib/launches";
+import { guidesForProduct } from "@/lib/use-guides";
 
 /** Página "X é bom? Vale a pena?" de um lançamento à venda: veredito, preço-alvo e lojas no topo. */
 export function LaunchVerdict({ l }: { l: Launch }) {
@@ -135,6 +136,14 @@ export function LaunchVerdict({ l }: { l: Launch }) {
           <Link to="/vale-a-pena" className="font-semibold underline">
             celulares antigos que ainda valem a pena
           </Link>
+          {guidesForProduct(l.id).map((g) => (
+            <span key={g.path}>
+              {" · "}
+              <Link to={g.path} className="font-semibold underline">
+                {g.label}
+              </Link>
+            </span>
+          ))}
           .
         </p>
       </div>
