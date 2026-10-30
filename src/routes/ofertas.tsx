@@ -1,23 +1,6 @@
-import { ProductMedia } from "@/components/site/ProductMedia";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { STOREFRONT_PRODUCT_IDS } from "@/lib/editorial-policy";
-import { getOfferByUrl } from "@/lib/product-catalog";
-import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
-import {
-  GALAXY_A25_AFFILIATE_URL,
-  GALAXY_A35_AFFILIATE_URL,
-  GALAXY_S24_AFFILIATE_URL,
-  IPHONE_15_AFFILIATE_URL,
-  POCO_X6_PRO_AFFILIATE_URL,
-  POCO_X7_PRO_AFFILIATE_URL,
-  REDMI_NOTE_13_4G_AFFILIATE_URL,
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
-  REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
-} from "@/lib/affiliate-links";
-import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { PhoneDecisionFinder } from "@/components/site/PhoneDecisionFinder";
-import { trackAffiliateClick, trackOfferResearchClick } from "@/lib/analytics";
-import { Badge, Rating } from "@/components/site/ui";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUpRight,
@@ -44,7 +27,7 @@ export const Route = createFileRoute("/ofertas")({
       {
         name: "keywords",
         content:
-          "ofertas de celulares, celulares em promoção, ofertas Mercado Livre, Redmi Note 13 Pro oferta, Redmi Note 14 Pro Plus oferta, Poco X7 Pro oferta, Poco X6 Pro oferta, Galaxy A55 oferta, Galaxy A35 oferta",
+          "ofertas de celulares, celulares em promoção, ofertas Mercado Livre, Galaxy A17 oferta, Galaxy A36 oferta, Moto G86 oferta, Redmi Note 15 oferta, Galaxy S25 FE oferta",
       },
       {
         property: "og:title",
@@ -61,138 +44,6 @@ export const Route = createFileRoute("/ofertas")({
   }),
   component: OfertasPage,
 });
-
-const budgetOffers = [
-  {
-    name: "Samsung Galaxy A25 5G",
-    badge: "Alternativa para comparar",
-    summary: "Tela AMOLED 120 Hz, 5G e experiência Samsung equilibrada para o uso diário.",
-    caution: "Confirme se a versão anunciada tem a memória e a cor que você deseja.",
-    href: GALAXY_A25_AFFILIATE_URL,
-  },
-  {
-    name: "Redmi Note 13 4G",
-    badge: "Custo-benefício",
-    summary: "Tela AMOLED, boa bateria e carregamento rápido para quem não faz questão de 5G.",
-    caution: "Este modelo é 4G; escolha outra opção se o 5G for indispensável.",
-    href: REDMI_NOTE_13_4G_AFFILIATE_URL,
-  },
-];
-
-const offers = [
-  {
-    name: "Redmi Note 13 Pro 5G",
-    badge: "Alternativa para comparar",
-    segment: "Intermediário",
-    rating: 4.5,
-    image: "/images/products/redmi-note-13-pro-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
-    description:
-      "É o modelo mais forte para quem quer ficha técnica acima da média sem pular para uma faixa de preço muito alta.",
-    bestFor: "Quem quer tela boa, bateria forte e câmera de 200 MP pagando menos.",
-    strengths: ["Câmera de 200 MP", "Tela AMOLED", "Boa relação preço/ficha"],
-    caution: "você prefere software mais simples e suporte Samsung; veja o Galaxy A35.",
-    href: REDMI_NOTE_13_PRO_AFFILIATE_URL,
-    review: "/review/redmi-note-13-pro",
-    comparison: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
-  },
-  {
-    name: "Poco X7 Pro 5G",
-    badge: "Alternativa para comparar",
-    segment: "Performance",
-    rating: 4.6,
-    image: "/images/products/poco-x7-pro-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
-    description:
-      "Boa escolha para quem prioriza velocidade, jogos, tela fluida e quer um celular mais forte para vários anos de uso.",
-    bestFor: "Quem joga, usa muitos apps e quer desempenho acima da média.",
-    strengths: ["Foco em performance", "512 GB", "Boa opção para jogos"],
-    caution: "câmera e acabamento pesam mais que potência; veja o Galaxy A55.",
-    href: POCO_X7_PRO_AFFILIATE_URL,
-    review: "/review/poco-x7-pro",
-    comparison: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
-  },
-  {
-    name: "Redmi Note 14 Pro+ 5G",
-    badge: "Alternativa para comparar",
-    segment: "Intermediário premium",
-    rating: 4.6,
-    image: "/images/products/redmi-note-14-pro-plus-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
-    description:
-      "Entra como alternativa mais completa para quem quer um Redmi mais novo, com acabamento superior e carregamento muito rápido.",
-    bestFor: "Quem quer um intermediário premium e aceita pagar mais pelo conjunto.",
-    strengths: ["Carregamento 120 W", "512 GB", "Construção mais premium"],
-    caution: "você quer uma experiência mais previsível; compare preço e suporte com o Galaxy A55.",
-    href: REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
-    review: "/review/redmi-note-14-pro-plus",
-    comparison: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus",
-  },
-  {
-    name: "Poco X6 Pro 5G",
-    badge: "Gamer custo-benefício",
-    segment: "Performance",
-    rating: 4.5,
-    image: "/images/products/poco-x6-pro-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
-    description:
-      "Continua sendo uma opção muito competitiva quando aparece com preço abaixo do Poco X7 Pro.",
-    bestFor: "Quem quer desempenho para jogos e multitarefa sem pagar pelo modelo mais novo.",
-    strengths: ["Desempenho forte", "512 GB", "Boa tela"],
-    caution: "o Poco X7 Pro estiver próximo no preço; o modelo mais novo tende a compensar.",
-    href: POCO_X6_PRO_AFFILIATE_URL,
-    review: "/review/poco-x6-pro",
-    comparison: "/comparativo/poco-x6-pro-vs-poco-x7-pro",
-  },
-  {
-    name: "Samsung Galaxy A35 5G",
-    badge: "Samsung custo-benefício",
-    segment: "Intermediário",
-    rating: 4.4,
-    image: "/images/products/galaxy-a35-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
-    description:
-      "Boa alternativa para quem quer economizar dentro da linha Samsung sem abrir mão de tela AMOLED, 5G, IP67 e boa experiência no dia a dia.",
-    bestFor: "Quem quer Samsung gastando menos que no Galaxy A55.",
-    strengths: ["IP67", "Tela AMOLED", "Bom custo-benefício"],
-    caution: "a diferença para o Galaxy A55 estiver pequena; o A55 entrega acabamento superior.",
-    href: GALAXY_A35_AFFILIATE_URL,
-    review: "/review/galaxy-a35",
-    comparison: "/comparativo-galaxy-a55-vs-galaxy-a35",
-  },
-  {
-    name: "Samsung Galaxy S24 5G",
-    badge: "Android premium equilibrado",
-    segment: "Premium",
-    rating: 4.8,
-    image: "/images/products/galaxy-s24-optimized.webp",
-    priceLabel: "Conferir preço na Amazon",
-    description:
-      "Combina desempenho de topo, boas câmeras, acabamento premium e suporte prolongado em um corpo compacto.",
-    bestFor: "Quem quer uma experiência Android premium completa e prefere celular compacto.",
-    strengths: ["Câmeras consistentes", "Desempenho de topo", "Suporte prolongado"],
-    caution: "autonomia é a maior prioridade; compare a bateria com aparelhos maiores.",
-    href: GALAXY_S24_AFFILIATE_URL,
-    review: "/review/galaxy-s24",
-    comparison: "/comparativo/iphone-15-vs-galaxy-s24",
-  },
-  {
-    name: "Apple iPhone 15",
-    badge: "Câmera e ecossistema Apple",
-    segment: "Premium",
-    rating: 4.7,
-    image: "/images/products/iphone-15-optimized.webp",
-    priceLabel: "Conferir preço no Mercado Livre",
-    description:
-      "Faz sentido para quem valoriza vídeo, câmera consistente, acabamento e integração com outros produtos Apple.",
-    bestFor: "Quem já usa o ecossistema Apple ou prioriza vídeo e consistência de câmera.",
-    strengths: ["Vídeos excelentes", "Desempenho forte", "Ecossistema Apple"],
-    caution: "tela de 60 Hz e carga mais lenta incomodam; veja o Galaxy S24.",
-    href: IPHONE_15_AFFILIATE_URL,
-    review: "/review/iphone-15",
-    comparison: "/comparativo/iphone-15-vs-galaxy-s24",
-  },
-];
 
 const confidenceCards = [
   {
@@ -213,6 +64,9 @@ const confidenceCards = [
 ];
 
 const guides = [
+  { title: "Lançamentos de 2026", href: "/lancamentos" },
+  { title: "Melhor celular para jogos pesados", href: "/melhor-celular-para-jogos-pesados" },
+  { title: "Celular com melhor bateria", href: "/celular-com-melhor-bateria" },
   {
     title: "Melhores celulares até R$ 1.500",
     href: "/guia/melhores-celulares-ate-1500-reais",
@@ -273,90 +127,6 @@ function OfertasPage() {
         title="Modelos para consultar nas lojas"
       />
 
-      <section id="ofertas-ate-1500" className="scroll-mt-28 border-b border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">
-              Opções de compra por modelo
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
-              Três alternativas anteriores para comparar
-            </h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Comece pelos modelos com oferta disponível. Cada opção atende a um perfil diferente, e
-              o preço final deve ser confirmado no Mercado Livre antes da compra.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {budgetOffers.map((offer, index) => (
-              <article
-                key={offer.name}
-                className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-elevated"
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <Badge variant={index === 0 ? "cta" : "soft"}>{offer.badge}</Badge>
-                  <span className="text-xs font-semibold text-teal">
-                    Preço no orçamento não confirmado
-                  </span>
-                </div>
-
-                <ProductMedia name={offer.name} className="mt-4 aspect-[4/3] w-full rounded-2xl" />
-                <h3 className="mt-5 text-xl font-bold text-foreground">{offer.name}</h3>
-                <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
-                  {offer.summary}
-                </p>
-
-                <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4">
-                  <p className="flex items-start gap-2 text-xs leading-5 text-amber-950">
-                    <CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                    <span>{offer.caution}</span>
-                  </p>
-                </div>
-
-                <a
-                  href={offer.href}
-                  target="_blank"
-                  rel="nofollow sponsored noopener noreferrer"
-                  onClick={() =>
-                    trackAffiliateClick({
-                      productName: offer.name,
-                      pageType: "ofertas",
-                      destination: "mercado_livre",
-                      ctaPlacement: "budget_offer_card",
-                    })
-                  }
-                  className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-cta px-5 py-3 text-center text-sm font-bold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
-                >
-                  Ver preço no Mercado Livre
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </article>
-            ))}
-          </div>
-
-          <AffiliateRedirectNotice className="mt-6 rounded-xl border border-border bg-surface p-4" />
-
-          <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-teal/25 bg-teal/5 p-5 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-sm font-bold text-foreground">
-                Em dúvida entre Galaxy A25 e Redmi Note 13?
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Veja qual ganha em 5G, câmera, desempenho, tela e carregamento antes de abrir a
-                oferta.
-              </p>
-            </div>
-            <Link
-              to="/comparativo/galaxy-a25-vs-redmi-note-13"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-teal/30 bg-card px-5 py-3 text-sm font-bold text-foreground transition hover:-translate-y-0.5 hover:shadow-soft"
-            >
-              Comparar os dois <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <PhoneDecisionFinder pageType="ofertas" showOfferMobileBar />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 md:py-16">
@@ -377,117 +147,6 @@ function OfertasPage() {
               </article>
             );
           })}
-        </div>
-      </section>
-
-      <section id="ofertas-recomendadas" className="mx-auto max-w-7xl px-6 pb-14 lg:px-8 md:pb-20">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cta">
-            Compare a seleção completa
-          </p>
-          <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
-            Quer ver todas as opções antes de decidir?
-          </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            Cada cartão apresenta uma alternativa de geração anterior e deixa claro para quem o
-            aparelho faz sentido, quando comparar outro modelo e onde aprofundar a análise. Não há
-            preço ou estoque conferido pelo site; consulte a loja e compare a mesma versão.
-          </p>
-        </div>
-
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {offers.map((offer) => (
-            <article
-              key={offer.name}
-              className="overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition hover:-translate-y-0.5 hover:shadow-elevated"
-            >
-              <div className="relative aspect-[4/3] bg-surface">
-                <ProductMedia
-                  src={offer.image}
-                  alt={offer.name}
-                  loading="lazy"
-                  className="h-full w-full object-contain bg-surface p-4"
-                />
-                <div className="absolute inset-x-4 top-4 flex items-start justify-between gap-2">
-                  <Badge variant="cta">{offer.badge}</Badge>
-                  <Badge variant="soft">{offer.segment}</Badge>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-bold text-foreground">{offer.name}</h3>
-                </div>
-
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {offer.description}
-                </p>
-
-                <div className="mt-4 rounded-xl bg-surface p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    Melhor para
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-foreground">{offer.bestFor}</p>
-                </div>
-
-                <ul className="mt-4 grid gap-2 text-sm text-muted-foreground">
-                  {offer.strengths.map((strength) => (
-                    <li key={strength} className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-teal" />
-                      <span>{strength}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-4">
-                  <p className="flex items-start gap-2 text-xs leading-5 text-amber-950">
-                    <CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                    <span>
-                      <strong>Vale comparar quando:</strong> {offer.caution}
-                    </span>
-                  </p>
-                </div>
-
-                <div className="mt-6 flex flex-col gap-3">
-                  <ProductPurchaseOptions
-                    productId={getOfferByUrl(offer.href)!.productId}
-                    pageType="ofertas"
-                    placement="offer_card"
-                  />
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <Link
-                      to={offer.review}
-                      onClick={() =>
-                        trackOfferResearchClick({
-                          productName: offer.name,
-                          destination: "review",
-                          destinationPath: offer.review,
-                        })
-                      }
-                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
-                    >
-                      Ler review
-                    </Link>
-
-                    <Link
-                      to={offer.comparison}
-                      onClick={() =>
-                        trackOfferResearchClick({
-                          productName: offer.name,
-                          destination: "comparativo",
-                          destinationPath: offer.comparison,
-                        })
-                      }
-                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
-                    >
-                      Comparar
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 

@@ -34,7 +34,7 @@ const candidates: Record<Selection, readonly string[]> = {
     "galaxy-s26",
   ],
   xiaomi: ["redmi-note-15-5g", "redmi-note-15-pro-5g", "poco-x7-pro", "poco-x8-pro", "xiaomi-15t"],
-  games: ["poco-x8-pro", "poco-x7-pro", "poco-x6-pro", "moto-g86-5g", "redmi-note-15-5g"],
+  games: ["poco-x8-pro", "poco-x7-pro", "galaxy-s25-fe", "moto-g86-5g", "redmi-note-15-5g"],
   "ate-1500": ["galaxy-a17-5g", "redmi-note-15-5g", "moto-g56-5g", "moto-g86-5g", "galaxy-a36-5g"],
   "ate-2000": ["moto-g86-5g", "galaxy-a36-5g", "redmi-note-15-5g", "poco-x7-pro"],
   "ate-2500": ["galaxy-a36-5g", "galaxy-a37-5g", "moto-g86-5g", "poco-x7-pro", "poco-x8-pro"],

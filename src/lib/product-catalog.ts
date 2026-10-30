@@ -842,7 +842,6 @@ export type Offer = {
 };
 const ml: [string, string][] = [
   ["galaxy-a35", links.GALAXY_A35_AFFILIATE_URL],
-  ["galaxy-a25-5g", links.GALAXY_A25_AFFILIATE_URL],
   ["iphone-15", links.IPHONE_15_AFFILIATE_URL],
   ["poco-x6-pro", links.POCO_X6_PRO_AFFILIATE_URL],
   ["poco-x7-pro", links.POCO_X7_PRO_AFFILIATE_URL],

@@ -10,15 +10,6 @@
       "a56"
     ]
   },
-  "GALAXY_A25_AFFILIATE_URL": {
-    "include": [
-      "a25"
-    ],
-    "exclude": [
-      "a26"
-    ],
-    "knownIssue": "Modelo fora de linha: o Mercado Livre mantém na vitrine um anúncio pausado do catálogo MLB31498601 e devolve sempre o mesmo link. Revisar ao renovar a página do A25."
-  },
   "GALAXY_S24_AFFILIATE_URL": {
     "include": [
       "s24"

@@ -5,7 +5,7 @@ import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { Badge } from "@/components/site/ui";
-import { GALAXY_A25_AFFILIATE_URL, REDMI_NOTE_13_4G_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A17_AFFILIATE_URL, REDMI_NOTE_13_4G_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -208,9 +208,9 @@ function GalaxyA25VsRedmiNote13Page() {
             className="mt-8"
             options={[
               {
-                productName: "Galaxy A25 5G",
-                href: GALAXY_A25_AFFILIATE_URL,
-                label: "Ver preço do Galaxy A25",
+                productName: "Galaxy A17 5G",
+                href: GALAXY_A17_AFFILIATE_URL,
+                label: "Ver o sucessor, Galaxy A17 5G",
               },
               {
                 productName: "Redmi Note 13 4G",
@@ -405,7 +405,7 @@ function GalaxyA25VsRedmiNote13Page() {
 
           <PurchaseActions
             options={[
-              { productName: "Galaxy A25 5G", href: GALAXY_A25_AFFILIATE_URL },
+              { productName: "Galaxy A17 5G (sucessor do A25)", href: GALAXY_A17_AFFILIATE_URL },
               { productName: "Redmi Note 13 4G", href: REDMI_NOTE_13_4G_AFFILIATE_URL },
             ]}
             pageType="comparativo"
@@ -501,7 +501,7 @@ function GalaxyA25VsRedmiNote13Page() {
 
       <MobilePurchaseBar
         options={[
-          { productName: "Galaxy A25 5G", href: GALAXY_A25_AFFILIATE_URL, label: "A25" },
+          { productName: "Galaxy A17 5G", href: GALAXY_A17_AFFILIATE_URL, label: "A17 (sucessor)" },
           {
             productName: "Redmi Note 13 4G",
             href: REDMI_NOTE_13_4G_AFFILIATE_URL,
