@@ -564,5 +564,35 @@
       "fusion",
       "pro"
     ]
+  },
+  "GALAXY_A17_4G_AFFILIATE_URL": {
+    "include": [
+      "a17"
+    ],
+    "exclude": [
+      "5g",
+      "a16",
+      "a15"
+    ]
+  },
+  "GALAXY_A07_AFFILIATE_URL": {
+    "include": [
+      "a07"
+    ],
+    "exclude": [
+      "a06",
+      "a05",
+      "256gb"
+    ]
+  },
+  "MOTO_G06_AFFILIATE_URL": {
+    "include": [
+      "g06"
+    ],
+    "exclude": [
+      "g05",
+      "g04",
+      "g15"
+    ]
   }
 }
