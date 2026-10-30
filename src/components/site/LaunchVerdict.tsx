@@ -6,6 +6,7 @@ import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions
 import { formatBRL, goodDealFor } from "@/lib/fair-prices";
 import type { Launch } from "@/lib/launches";
 import { guidesForProduct } from "@/lib/use-guides";
+import { comparisonsForProduct } from "@/lib/comparisons";
 
 /** Página "X é bom? Vale a pena?" de um lançamento à venda: veredito, preço-alvo e lojas no topo. */
 export function LaunchVerdict({ l }: { l: Launch }) {
@@ -94,7 +95,10 @@ export function LaunchVerdict({ l }: { l: Launch }) {
           <div>
             <h2 className="text-2xl font-extrabold text-[#0F3F4A]">Compare antes de comprar</h2>
             <ul className="mt-4 space-y-2">
-              {l.compare.map((c) => (
+              {[
+                ...l.compare,
+                ...comparisonsForProduct(l.id).filter((x) => !l.compare.some((c) => c.path === x.path)),
+              ].map((c) => (
                 <li key={c.path}>
                   <Link to={c.path} className="font-semibold text-[#0F3F4A] underline">
                     {c.label}

@@ -35,6 +35,46 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Galaxy A17 vs Galaxy A07",
+    summary: "Tela AMOLED, câmera estabilizada e 5G contra o Samsung mais barato.",
+    href: "/comparativo/galaxy-a17-vs-galaxy-a07",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem quer um Samsung de até R$ 900.",
+  },
+  {
+    title: "Galaxy A36 vs Moto G86",
+    summary: "Atualizações até 2031 contra tela mais brilhante, IP69 e carregador na caixa.",
+    href: "/comparativo/galaxy-a36-vs-moto-g86",
+    family: "Samsung vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem está entre os dois intermediários mais buscados.",
+  },
+  {
+    title: "Moto G56 vs Moto G86",
+    summary: "Os dois têm IP68/IP69 e 5.200 mAh; o G86 tem tela pOLED e câmera estabilizada.",
+    href: "/comparativo/moto-g56-vs-moto-g86",
+    family: "Motorola vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem quer um Motorola resistente.",
+  },
+  {
+    title: "Galaxy S25 FE vs Galaxy A57",
+    summary: "Teleobjetiva e Exynos 2400 contra um A57 mais fino e bem mais barato.",
+    href: "/comparativo/galaxy-s25-fe-vs-galaxy-a57",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem pensa em subir para a linha S.",
+  },
+  {
+    title: "iPhone 16e vs iPhone 17e",
+    summary: "Chip A19, 256 GB e MagSafe contra o iPhone mais barato à venda.",
+    href: "/comparativo/iphone-16e-vs-iphone-17e",
+    family: "Apple vs Apple",
+    tag: "Novo",
+    bestFor: "Quem quer o iPhone mais barato que vale a pena.",
+  },
+  {
     title: "Moto G Max vs Moto G86",
     summary: "Tela e câmera de 200 MP contra processador mais forte.",
     href: "/comparativo/moto-g-max-vs-moto-g86",
