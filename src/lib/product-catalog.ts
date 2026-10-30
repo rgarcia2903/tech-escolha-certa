@@ -361,7 +361,7 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "candidate",
     "Tela pOLED de 6,8\" com 5.000 nits, câmera de 200 MP com OIS, IP68/IP69 e 256 GB; processador de entrada.",
-    { reviewPath: "/comparativo/moto-g-max-vs-moto-g86" },
+    { reviewPath: "/review/moto-g-max" },
   ),
   product(
     "moto-g37",
@@ -385,7 +385,7 @@ export const PRODUCTS: Product[] = [
     "POCO",
     "candidate",
     "O mais forte para jogos até R$ 2.500: Dimensity 8500 Ultra, 6.500 mAh, 100 W e IP68.",
-    { officialUrl: "https://www.mi.com/br/product/poco-x8-pro/specs/", reviewPath: "/comparativo/poco-x8-pro-vs-poco-x7-pro" },
+    { officialUrl: "https://www.mi.com/br/product/poco-x8-pro/specs/", reviewPath: "/review/poco-x8-pro" },
   ),
   product(
     "moto-g84-5g",
@@ -424,7 +424,7 @@ export const PRODUCTS: Product[] = [
     "candidate",
     "Sucessor do A36: Exynos 1480, IP68 e seis anos de atualizações.",
     {
-      reviewPath: "/comparativo/galaxy-a37-vs-galaxy-a36",
+      reviewPath: "/review/galaxy-a37-5g",
       officialUrl:
         "https://news.samsung.com/br/samsung-apresenta-galaxy-a57-5g-e-galaxy-a37-5g-no-brasil-com-recursos-de-nivel-profissional",
     },
@@ -448,7 +448,7 @@ export const PRODUCTS: Product[] = [
     "candidate",
     "Sucessor do S25 FE: Exynos 2500, mais modos de vídeo e One UI 9; mesma tela, câmeras e bateria.",
     {
-      reviewPath: "/comparativo/galaxy-s26-fe-vs-galaxy-s25-fe",
+      reviewPath: "/review/galaxy-s26-fe",
       officialUrl:
         "https://news.samsung.com/br/samsung-galaxy-s26-fe-chega-ao-brasil-com-one-ui-9-sete-atualizacoes-de-sistema-operacional-e-de-seguranca-camera-avancada-processador-de-alta-performance-e-galaxy-ai",
     },
@@ -467,7 +467,7 @@ export const PRODUCTS: Product[] = [
     "Apple",
     "candidate",
     "iPhone de entrada atual: A19, tela de 6,3\" com 120 Hz, câmeras de 48 + 48 MP e 256 GB.",
-    { officialUrl: "https://www.apple.com/br/iphone-17/specs/", reviewPath: "/qual-iphone-comprar" },
+    { officialUrl: "https://www.apple.com/br/iphone-17/specs/", reviewPath: "/review/iphone-17" },
   ),
   product(
     "moto-g77",
@@ -475,7 +475,7 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "candidate",
     "Tela AMOLED de 6,78\" com 5.000 nits, câmera de 108 MP com OIS e 3 anos de Android; processador de entrada.",
-    { reviewPath: "/comparativo/moto-g77-vs-moto-g86" },
+    { reviewPath: "/review/moto-g77" },
   ),
   product(
     "edge-70",
@@ -483,7 +483,7 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "candidate",
     "Ultrafino (6,3 mm), Snapdragon 7 Gen 4, câmeras de 50 MP, IP69 e 4 anos de Android.",
-    { reviewPath: "/comparativo/edge-70-vs-edge-60-pro" },
+    { reviewPath: "/review/edge-70" },
   ),
   product(
     "galaxy-a17-4g",
@@ -499,7 +499,7 @@ export const PRODUCTS: Product[] = [
     "Samsung",
     "candidate",
     "Samsung mais barato: tela LCD de 90 Hz, Helio G99 e seis anos de atualizações.",
-    { connectivity: "4G", reviewPath: "/comparativo/galaxy-a07-vs-moto-g06" },
+    { connectivity: "4G", reviewPath: "/review/galaxy-a07" },
   ),
   product(
     "moto-g06",
@@ -507,7 +507,7 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "candidate",
     "Tela grande de 6,9\" com 120 Hz, 5.200 mAh, IP64 e microSD; processador e recarga fracos.",
-    { connectivity: "4G", reviewPath: "/comparativo/galaxy-a07-vs-moto-g06" },
+    { connectivity: "4G", reviewPath: "/review/moto-g06" },
   ),
   product(
     "iphone-17e",
@@ -515,7 +515,7 @@ export const PRODUCTS: Product[] = [
     "Apple",
     "candidate",
     "iPhone novo mais barato: A19, 256 GB, MagSafe e IP68; tela de 60 Hz e uma câmera.",
-    { reviewPath: "/comparativo/iphone-17-vs-iphone-17e" },
+    { reviewPath: "/review/iphone-17e" },
   ),
   product(
     "iphone-16e",

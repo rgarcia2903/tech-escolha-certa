@@ -21,6 +21,7 @@ const GUIAS = [
   { to: "/melhores-celulares-motorola", label: "Melhores celulares Motorola" },
   { to: "/qual-iphone-comprar", label: "Qual iPhone comprar" },
   { to: "/vale-a-pena", label: "Vale a pena em 2026?" },
+  { to: "/lancamentos", label: "Lançamentos de celulares" },
   { to: "/melhor-celular-ate-1000", label: "Melhores celulares até R$ 1.000" },
 ];
 
