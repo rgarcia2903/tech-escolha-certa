@@ -113,6 +113,14 @@ export const AVOID: { id: FairPriceId; reviewPath: string }[] = [
   { id: "galaxy-a35", reviewPath: "/review/galaxy-a35" },
   { id: "poco-x6-pro", reviewPath: "/review/poco-x6-pro" },
   { id: "redmi-note-13-pro", reviewPath: "/review/redmi-note-13-pro" },
+  { id: "iphone-16", reviewPath: "/review/iphone-16" },
+  { id: "iphone-15", reviewPath: "/review/iphone-15" },
+  { id: "iphone-13", reviewPath: "/review/iphone-13" },
+  { id: "galaxy-s24-fe", reviewPath: "/review/galaxy-s24-fe" },
+  { id: "galaxy-s23", reviewPath: "/review/galaxy-s23" },
+  { id: "galaxy-a56", reviewPath: "/review/galaxy-a56" },
+  { id: "galaxy-a54", reviewPath: "/review/galaxy-a54" },
+  { id: "moto-g85", reviewPath: "/review/moto-g85" },
 ];
 
 /** Até quanto vale pagar no modelo (veredito editorial). */
