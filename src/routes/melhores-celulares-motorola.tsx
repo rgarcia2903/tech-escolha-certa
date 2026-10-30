@@ -282,6 +282,16 @@ function MelhoresCelularesMotorola() {
               </Link>
             </li>
             <li>
+              <Link to="/review/moto-g85" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G85 ainda vale a pena?
+              </Link>
+            </li>
+            <li>
+              <Link to="/review/moto-g54" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G54 ainda vale a pena?
+              </Link>
+            </li>
+            <li>
               <Link to="/comparativo/moto-g77-vs-moto-g86" className="text-sm font-semibold text-[#0F3F4A] underline">
                 Moto G77 vs G86
               </Link>

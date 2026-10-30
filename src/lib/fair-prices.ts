@@ -375,6 +375,43 @@ export const FAIR_PRICES = {
     alternativeSeenPrice: 1348,
     why: "o X5 Pro já recebeu as versões do Android prometidas; o A36 é novo e tem atualizações até 2031.",
   },
+  // Lote 4 (29/10).
+  "galaxy-s21-fe": {
+    productName: "Galaxy S21 FE",
+    maxPrice: 1000,
+    checkedAt: "2026-10-29",
+    alternativeName: "Galaxy A36 5G",
+    alternativeHref: links.GALAXY_A36_AMAZON_URL,
+    alternativeSeenPrice: 1348,
+    why: "o S21 FE parou na One UI 8; o A36 é novo, tem bateria de 5.000 mAh e atualizações até 2031.",
+  },
+  "moto-g54": {
+    productName: "Moto G54",
+    maxPrice: 700,
+    checkedAt: "2026-10-29",
+    alternativeName: "Galaxy A17 5G",
+    alternativeHref: links.GALAXY_A17_AMAZON_URL,
+    alternativeSeenPrice: 899,
+    why: "o G54 parou no Android 15; o A17 5G é novo e tem seis anos de atualizações.",
+  },
+  "moto-g85": {
+    productName: "Moto G85",
+    maxPrice: 1000,
+    checkedAt: "2026-10-29",
+    alternativeName: "Galaxy A36 5G",
+    alternativeHref: links.GALAXY_A36_AMAZON_URL,
+    alternativeSeenPrice: 1348,
+    why: "o G85 parou no Android 16; o A36 tem IP67 e atualizações até 2031.",
+  },
+  "poco-f6": {
+    productName: "Poco F6",
+    maxPrice: 1900,
+    checkedAt: "2026-10-29",
+    alternativeName: "Poco X8 Pro",
+    alternativeHref: links.POCO_X8_PRO_AMAZON_URL,
+    alternativeSeenPrice: 2441,
+    why: "o X8 Pro é novo, tem bateria de 6.500 mAh e mais anos de atualização pela frente.",
+  },
 } satisfies Record<string, FairPrice>;
 
 export type FairPriceId = keyof typeof FAIR_PRICES;
