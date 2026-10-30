@@ -4,7 +4,8 @@ import { Check, X } from "lucide-react";
 import { FairPriceBox } from "@/components/site/FairPriceBox";
 import { HeroPickCTA } from "@/components/site/HeroPickCTA";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
-import type { FairPriceId } from "@/lib/fair-prices";
+import { FAIR_PRICES, formatBRL, type FairPriceId } from "@/lib/fair-prices";
+import { getOffers } from "@/lib/product-catalog";
 
 export type OlderModelVerdictProps = {
   fairPriceId: FairPriceId;
@@ -64,6 +65,24 @@ export function OlderModelVerdict(p: OlderModelVerdictProps) {
 
       <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         <FairPriceBox id={p.fairPriceId} />
+
+        {getOffers(p.fairPriceId).length > 0 && (
+          <section className="mt-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 className="text-xl font-extrabold text-[#0F3F4A]">
+              Encontrou o {p.name} por até {formatBRL(FAIR_PRICES[p.fairPriceId].maxPrice)}?
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-slate-700">
+              Nesse preço ele é uma boa compra. Confira o valor de hoje nas lojas:
+            </p>
+            <ProductPurchaseOptions
+              productId={p.fairPriceId}
+              pageType="review"
+              placement="older_model_self"
+              compact
+              className="mt-4"
+            />
+          </section>
+        )}
 
         <section aria-labelledby="versus" className="mt-12">
           <h2 id="versus" className="text-2xl font-extrabold text-[#0F3F4A] sm:text-3xl">
