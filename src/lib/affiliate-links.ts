@@ -9,7 +9,7 @@ export const IPHONE_15_AFFILIATE_URL = "https://meli.la/2m3GhG6";
 
 export const POCO_X6_PRO_AFFILIATE_URL = "https://meli.la/2hXCQMH";
 
-export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/1p5J4MW";
+export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/2FrJT42";
 
 export const REDMI_NOTE_13_PRO_AFFILIATE_URL = "https://meli.la/1dksoic";
 
@@ -26,7 +26,7 @@ export const REDMI_NOTE_15_5G_AFFILIATE_URL = "https://meli.la/19RXcbF";
 
 export const MOTO_G86_AFFILIATE_URL = "https://meli.la/2uZpELs";
 
-export const EDGE_60_PRO_AFFILIATE_URL = "https://meli.la/1Az91Ky";
+export const EDGE_60_PRO_AFFILIATE_URL = "https://meli.la/16fDGJG";
 
 export const GALAXY_S25_FE_AFFILIATE_URL = "https://meli.la/1KKtEmb";
 
@@ -36,7 +36,7 @@ export const GALAXY_A36_AFFILIATE_URL = "https://meli.la/2kdrQ2M";
 export const MOTO_G56_AFFILIATE_URL = "https://meli.la/2WiqRMo";
 
 // Loja oficial Samsung no Mercado Livre, 128 GB (catálogo MLB68213841), gerado em 29/10/2026.
-export const GALAXY_A57_AFFILIATE_URL = "https://meli.la/1XMLUtz";
+export const GALAXY_A57_AFFILIATE_URL = "https://meli.la/1jXf2Av";
 
 // iPhone: loja oficial Apple (Distribuidor Autorizado) no Mercado Livre, 256 GB, gerados em 29/10/2026.
 export const IPHONE_17_AFFILIATE_URL = "https://meli.la/2nabFeE";
@@ -52,7 +52,7 @@ export const GALAXY_A17_4G_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPYV6K68
 export const GALAXY_A07_AMAZON_URL = "https://www.amazon.com.br/dp/B0FPJ52LSR?tag=techescolha03-20";
 export const MOTO_G06_AMAZON_URL = "https://www.amazon.com.br/dp/B0FR5NSCF7?tag=techescolha03-20";
 // Geração 2026 (mais vendidos da Amazon em 29/10/2026).
-export const POCO_X8_PRO_AFFILIATE_URL = "https://meli.la/19LzSLu";
+export const POCO_X8_PRO_AFFILIATE_URL = "https://meli.la/2Rd56yX";
 export const POCO_X8_PRO_AMAZON_URL = "https://www.amazon.com.br/dp/B0GQC19Y8D?tag=techescolha03-20";
 export const MOTO_G77_AMAZON_URL = "https://www.amazon.com.br/dp/B0GLSLLGZL?tag=techescolha03-20";
 export const EDGE_70_AMAZON_URL = "https://www.amazon.com.br/dp/B0GLTJ4MYM?tag=techescolha03-20";
