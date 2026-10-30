@@ -21,6 +21,7 @@ const GROUPS: { brand: string; items: Item[] }[] = [
       { id: "galaxy-s23-fe", path: "/review/galaxy-s23-fe" },
       { id: "galaxy-s22", path: "/review/galaxy-s22" },
       { id: "galaxy-s21-fe", path: "/review/galaxy-s21-fe" },
+      { id: "galaxy-s21", path: "/review/galaxy-s21" },
       { id: "galaxy-a56", path: "/review/galaxy-a56" },
       { id: "galaxy-a55", path: "/review/galaxy-a55" },
       { id: "galaxy-a54", path: "/review/galaxy-a54" },
@@ -28,6 +29,7 @@ const GROUPS: { brand: string; items: Item[] }[] = [
       { id: "galaxy-a34", path: "/review/galaxy-a34" },
       { id: "galaxy-a16", path: "/review/galaxy-a16" },
       { id: "galaxy-a15", path: "/review/galaxy-a15" },
+      { id: "galaxy-a06", path: "/review/galaxy-a06" },
     ],
   },
   {
@@ -58,6 +60,7 @@ const GROUPS: { brand: string; items: Item[] }[] = [
       { id: "redmi-note-13-pro", path: "/review/redmi-note-13-pro" },
       { id: "redmi-note-13-5g", path: "/review/redmi-note-13" },
       { id: "redmi-note-12", path: "/review/redmi-note-12" },
+      { id: "redmi-13c", path: "/review/redmi-13c" },
     ],
   },
   {
@@ -68,8 +71,11 @@ const GROUPS: { brand: string; items: Item[] }[] = [
       { id: "moto-g-max", path: "/comparativo/moto-g-max-vs-moto-g86" },
       { id: "moto-g56-5g", path: "/review/moto-g56-5g" },
       { id: "moto-g84", path: "/review/moto-g84" },
+      { id: "moto-g75", path: "/review/moto-g75" },
       { id: "moto-g85", path: "/review/moto-g85" },
       { id: "moto-g54", path: "/review/moto-g54" },
+      { id: "moto-g35", path: "/review/moto-g35" },
+      { id: "moto-g24", path: "/review/moto-g24" },
     ],
   },
 ];
