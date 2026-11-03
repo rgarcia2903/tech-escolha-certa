@@ -626,5 +626,25 @@
       "g37 power",
       "g47"
     ]
+  },
+  "REDMI_15C_AFFILIATE_URL": {
+    "include": [
+      "15c"
+    ],
+    "exclude": [
+      "14c",
+      "13c",
+      "5g"
+    ]
+  },
+  "POCO_C85_AFFILIATE_URL": {
+    "include": [
+      "c85"
+    ],
+    "exclude": [
+      "c75",
+      "c71",
+      "5g"
+    ]
   }
 }

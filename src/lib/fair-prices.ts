@@ -546,6 +546,8 @@ export const GOOD_DEAL_UNDER: Record<string, number> = {
   "redmi-note-15-4g": 1400,
   "moto-g-max": 1600,
   "moto-g37": 900,
+  "redmi-15c": 750,
+  "poco-c85": 750,
   "moto-g17": 850,
 };
 
