@@ -33,18 +33,18 @@ const GUIAS = [
 ];
 
 const REVIEWS = [
-  { to: "/review/galaxy-a35", label: "Review Galaxy A35" },
-  { to: "/review/galaxy-a55", label: "Review Galaxy A55" },
-  { to: "/review/redmi-note-13-pro", label: "Review Redmi Note 13 Pro" },
-  { to: "/review/galaxy-s24", label: "Review Galaxy S24" },
+  { to: "/review/galaxy-a36-5g", label: "Galaxy A36 é bom?" },
+  { to: "/review/moto-g86-5g", label: "Moto G86 vale a pena?" },
+  { to: "/review/poco-x8-pro", label: "Poco X8 Pro é bom?" },
+  { to: "/review/galaxy-s25-fe", label: "Galaxy S25 FE vale a pena?" },
+  { to: "/review/galaxy-a55", label: "Galaxy A55 ainda vale a pena?" },
+  { to: "/review/poco-x6-pro", label: "Poco X6 Pro ainda vale a pena?" },
 ];
 
 const COMPARATIVOS = [
-  { to: "/comparativo-galaxy-a55-vs-galaxy-a35", label: "Galaxy A55 vs Galaxy A35" },
-  {
-    to: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
-    label: "Galaxy A55 vs Redmi Note 13 Pro",
-  },
+  { to: "/comparativo/galaxy-a36-vs-moto-g86", label: "Galaxy A36 ou Moto G86" },
+  { to: "/comparativo/galaxy-a57-vs-galaxy-a36", label: "Galaxy A57 ou Galaxy A36" },
+  { to: "/comparativo/iphone-16e-vs-iphone-17e", label: "iPhone 16e ou 17e" },
 ];
 
 const INSTITUCIONAL = [

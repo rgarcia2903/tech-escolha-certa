@@ -3,7 +3,6 @@ import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { getProductByName } from "@/lib/product-catalog";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
-import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUpRight,
@@ -31,12 +30,12 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3500-reais")(
       {
         name: "description",
         content:
-          "Veja os melhores celulares até R$ 3.500 em 2026. Guia com Galaxy S24, iPhone 15, Edge 50 Pro, Galaxy A55 e Poco X6 Pro para escolher sem errar.",
+          "Os melhores celulares até R$ 3.500 em 2026: Galaxy S26 FE, Galaxy S25 FE, Edge 60 Pro, Poco X8 Pro e iPhone 16e, com até quanto pagar em cada um.",
       },
       {
         name: "keywords",
         content:
-          "melhores celulares até 3500, melhor celular até 3500, Galaxy S24, iPhone 15, Edge 50 Pro, Galaxy A55, Poco X6 Pro, celular premium custo-benefício",
+          "melhores celulares até 3500, melhor celular até 3500, Galaxy S26 FE, Galaxy S25 FE, Edge 60 Pro, Poco X8 Pro, iPhone 16e",
       },
       {
         property: "og:title",
@@ -74,7 +73,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3500-reais")(
             name: "Tech Escolha Certa",
           },
           datePublished: "2026-06-02",
-          dateModified: "2026-06-02",
+          dateModified: "2026-11-03",
           mainEntityOfPage: CANONICAL,
         }),
       },
@@ -83,32 +82,11 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3500-reais")(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "Qual é o melhor celular até R$ 3.500 em 2026?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Para a maioria das pessoas, o Galaxy S24 é a melhor escolha até R$ 3.500 quando aparece em promoção, por entregar câmera, desempenho premium, tela excelente e muitos anos de atualização.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Qual celular até R$ 3.500 é melhor para jogos?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "O Poco X6 Pro é uma das melhores escolhas para jogos até R$ 3.500 por causa do processador Dimensity 8300-Ultra, tela AMOLED 120 Hz e carregamento rápido.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "iPhone 15 vale a pena até R$ 3.500?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Vale se você quer iOS, câmera consistente, bom desempenho e maior integração com o ecossistema Apple. Para tela 120 Hz e carregamento rápido, há opções Android melhores na faixa.",
-              },
-            },
-          ],
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
         }),
       },
     ],
@@ -119,157 +97,103 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3500-reais")(
 const phones = [
   {
     rank: "1º",
-    name: "Galaxy S24",
-    badge: "Perfil para comparar",
-    rating: 4.8,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/galaxy-s24-optimized.webp",
+    name: "Galaxy S26 FE",
+    badge: "O mais novo",
+    rating: 0,
+    price: "até R$ 3.300",
+    image: "/images/products/phones-hero-optimized.webp",
     summary:
-      "O Galaxy S24 é uma alternativa de geração anterior se uma oferta verificada couber no orçamento. Ele entrega experiência premium, ótima câmera, desempenho forte, tela excelente, recursos de IA e vários anos de atualizações.",
-    bestFor:
-      "Quem quer um celular compacto, premium, com câmera confiável, ótimo acabamento e suporte de longo prazo.",
-    pros: [
-      "Câmeras mais consistentes da lista",
-      "Tela Dynamic AMOLED de alto nível",
-      "Desempenho premium",
-      "Galaxy AI e recursos avançados",
-      "Boa política de atualizações",
-    ],
-    cons: [
-      "Bateria menor que rivais maiores",
-      "Preço varia bastante",
-      "Carregamento poderia ser mais rápido",
-    ],
-    cta: "/review/galaxy-s24",
+      "O Galaxy S26 FE é o FE mais novo da Samsung: Exynos 2500, vídeo em 4K a 120 fps, teleobjetiva de 3x, IP68 e sete anos de atualizações. Lançado a R$ 5.499, só vale perto de R$ 3.300.",
+    bestFor: "Quem quer o Samsung de linha S mais recente e vai ficar muitos anos com o celular.",
+    pros: ["Exynos 2500", "Teleobjetiva de 3x", "Sete anos de atualizações", "IP68"],
+    cons: ["Bateria de 4.900 mAh", "Câmeras quase iguais às do S25 FE, que custa menos"],
+    cta: "/review/galaxy-s26-fe",
   },
   {
     rank: "2º",
-    name: "Poco X6 Pro",
-    badge: "Perfil para comparar",
-    rating: 4.7,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/poco-x6-pro-optimized.webp",
+    name: "Galaxy S25 FE",
+    badge: "Custo-benefício",
+    rating: 0,
+    price: "até R$ 3.000",
+    image: "/images/products/gallery/galaxy-s25-fe/01-principal.webp",
     summary:
-      "O Poco X6 Pro é uma alternativa de geração anterior para quem quer desempenho, jogos e carregamento rápido entregando desempenho acima da média mesmo custando menos que muitos intermediários premium.",
-    bestFor: "Quem joga, usa muitos apps, quer fluidez e prioriza potência acima de câmera.",
-    pros: [
-      "Processador Dimensity 8300-Ultra",
-      "Excelente para jogos",
-      "Tela AMOLED 120 Hz",
-      "Carregamento rápido de 67 W",
-      "Ótimo custo-benefício",
-    ],
-    cons: [
-      "Câmeras abaixo do Galaxy S24",
-      "HyperOS pode dividir opiniões",
-      "Construção menos premium",
-    ],
-    cta: "/review/poco-x6-pro",
+      "Tem as mesmas câmeras do S26 FE (incluindo a teleobjetiva de 3x), IP68 e sete anos de atualizações, por cerca de R$ 300 a menos. O processador é o Exynos 2400, do Galaxy S24.",
+    bestFor: "Quem quer a experiência de linha S gastando menos que no S26 FE.",
+    pros: ["Teleobjetiva de 3x", "Sete anos de atualizações", "IP68 e recarga sem fio", "Vídeo até 8K"],
+    cons: ["Bateria de 4.900 mAh", "Processador um ano mais antigo"],
+    cta: "/review/galaxy-s25-fe",
   },
   {
     rank: "3º",
-    name: "iPhone 15",
-    badge: "Perfil para comparar",
-    rating: 4.6,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/iphone-15-optimized.webp",
+    name: "Motorola Edge 60 Pro",
+    badge: "Bateria e câmera",
+    rating: 0,
+    price: "até R$ 2.700",
+    image: "/images/products/gallery/edge-60-pro/01-principal.webp",
     summary:
-      "O iPhone 15 é a melhor opção para quem quer entrar ou continuar no iOS com bom desempenho, câmera confiável, acabamento premium e excelente integração com o ecossistema Apple.",
-    bestFor:
-      "Quem prefere iOS, usa outros produtos Apple e quer uma experiência simples, estável e duradoura.",
-    pros: [
-      "Chip A16 Bionic ainda muito forte",
-      "Câmera principal de 48 MP consistente",
-      "Excelente acabamento",
-      "Ótima gravação de vídeo",
-      "Boa vida útil no ecossistema Apple",
-    ],
-    cons: [
-      "Tela de 60 Hz",
-      "Carregamento mais lento",
-      "Pode custar mais que Androids mais completos",
-    ],
-    cta: "/review/iphone-15",
+      "Bateria de 6.000 mAh com recarga de 90 W, três câmeras de qualidade com zoom óptico de 3x, selfie de 50 MP e IP68/IP69 com certificação militar. Custa bem menos que os FE.",
+    bestFor: "Quem quer bateria para mais de um dia e recarga muito rápida.",
+    pros: ["6.000 mAh e 90 W", "Zoom óptico de 3x", "IP68, IP69 e MIL-STD-810H", "12 GB de RAM"],
+    cons: ["Só três anos de atualizações", "Tela curva"],
+    cta: "/review/edge-60-pro",
   },
   {
     rank: "4º",
-    name: "Motorola Edge 50 Pro",
-    badge: "Carregamento rápido",
-    rating: 4.5,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/edge-50-pro-optimized.webp",
+    name: "POCO X8 Pro",
+    badge: "Jogos",
+    rating: 0,
+    price: "até R$ 2.450",
+    image: "/images/products/phones-hero-optimized.webp",
     summary:
-      "O Edge 50 Pro é uma alternativa forte para quem quer design premium, tela de ótima qualidade, carregamento ultrarrápido e uma experiência Android mais limpa.",
-    bestFor:
-      "Quem quer tela bonita, carregamento muito rápido, design premium e boa experiência multimídia.",
-    pros: [
-      "Carregamento TurboPower 125 W",
-      "Tela pOLED de excelente qualidade",
-      "Design premium",
-      "Boa câmera principal",
-      "Interface mais limpa que muitos rivais",
-    ],
-    cons: [
-      "Atualizações menos fortes que Samsung e Apple",
-      "Desempenho abaixo do Poco X6 Pro",
-      "Preço precisa estar competitivo",
-    ],
-    cta: null,
+      "O mais forte para jogos desta lista: Dimensity 8500 Ultra, 6.500 mAh e recarga de 100 W, por bem menos de R$ 3.500.",
+    bestFor: "Quem joga títulos pesados e quer a maior bateria.",
+    pros: ["Dimensity 8500 Ultra", "6.500 mAh e 100 W", "Tela 1.5K de 120 Hz", "IP68"],
+    cons: ["Câmeras não são o foco", "Não confunda com o X8 Pro Max"],
+    cta: "/review/poco-x8-pro",
   },
   {
     rank: "5º",
-    name: "Galaxy A55 5G",
-    badge: "Perfil para comparar",
-    rating: 4.5,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/galaxy-a55-optimized.webp",
+    name: "iPhone 16e",
+    badge: "iPhone",
+    rating: 0,
+    price: "até R$ 3.300",
+    image: "/images/products/phones-hero-optimized.webp",
     summary:
-      "O Galaxy A55 é uma compra segura para quem não precisa de topo de linha, mas quer construção premium, IP67, boa tela e experiência Samsung confiável.",
-    bestFor: "Quem quer equilíbrio, durabilidade, boa câmera e menor risco de arrependimento.",
-    pros: [
-      "Construção em vidro e alumínio",
-      "IP67 contra água e poeira",
-      "Tela Super AMOLED 120 Hz",
-      "Boa câmera principal",
-      "Software Samsung confiável",
-    ],
-    cons: [
-      "Desempenho inferior ao Poco X6 Pro",
-      "Carregamento de 25 W",
-      "Não é compacto como o S24",
-    ],
-    cta: "/review/galaxy-a55",
+      "O iPhone mais barato à venda, com chip A18, IP68 e Face ID. Tem tela de 60 Hz, uma câmera só e 128 GB. Se a diferença for pequena, o iPhone 17e traz chip A19, MagSafe e 256 GB.",
+    bestFor: "Quem quer iPhone gastando o mínimo.",
+    pros: ["Chip A18", "IP68 e Face ID", "Bateria que dura o dia todo"],
+    cons: ["Tela de 60 Hz", "Uma câmera só", "128 GB podem ficar apertados"],
+    cta: "/review/iphone-16e",
   },
 ];
 
 const quickRanking = [
-  ["Perfil de uso cotidiano", "Galaxy S24"],
-  ["Perfil de desempenho", "Poco X6 Pro"],
-  ["Melhor iOS", "iPhone 15"],
-  ["Carregamento mais rápido", "Edge 50 Pro"],
-  ["Mais equilibrado", "Galaxy A55"],
+  ["O mais novo", "Galaxy S26 FE"],
+  ["Custo-benefício", "Galaxy S25 FE"],
+  ["Bateria e câmera", "Edge 60 Pro"],
+  ["Jogos", "POCO X8 Pro"],
+  ["iPhone", "iPhone 16e"],
 ];
 
 const faq = [
   {
     question: "Qual celular até R$ 3.500 comprar em 2026?",
     answer:
-      "O Galaxy S24 é a melhor escolha se estiver abaixo de R$ 3.500. Para desempenho e jogos, o Poco X6 Pro entrega mais potência por menos. Para iOS, o iPhone 15 é a opção mais segura.",
+      "O Galaxy S26 FE, se estiver perto de R$ 3.300; senão, o Galaxy S25 FE, com as mesmas câmeras, por cerca de R$ 3.000. Para jogos, o POCO X8 Pro; para iPhone, o iPhone 16e.",
   },
   {
-    question: "Poco X6 Pro ou Galaxy S24?",
+    question: "Galaxy S26 FE ou S25 FE?",
     answer:
-      "O Poco X6 Pro é melhor para desempenho por real investido. O Galaxy S24 é melhor em câmera, acabamento, software, recursos premium e atualizações.",
+      "O S26 FE tem processador mais novo (Exynos 2500) e grava em 4K a 120 fps. Câmeras, tela, bateria e os sete anos de atualizações são praticamente iguais. Se a diferença passar de uns R$ 300, leve o S25 FE.",
   },
   {
-    question: "iPhone 15 ou Galaxy S24?",
-    answer:
-      "Escolha o iPhone 15 se você prefere iOS e o ecossistema Apple. Escolha o Galaxy S24 se quer tela 120 Hz, recursos de IA, câmera mais versátil e melhor custo-benefício em promoção.",
+    question: "Qual o melhor celular para jogos até R$ 3.500?",
+    answer: "O POCO X8 Pro, com Dimensity 8500 Ultra, 6.500 mAh e recarga de 100 W, costuma custar perto de R$ 2.450.",
   },
   {
-    question: "Edge 50 Pro vale a pena até R$ 3.500?",
+    question: "Dá para comprar iPhone até R$ 3.500?",
     answer:
-      "Vale se estiver com bom preço e se você prioriza tela, design e carregamento ultrarrápido. Para atualizações e câmera mais consistente, Galaxy S24 costuma ser mais seguro.",
+      "Sim, o iPhone 16e, que vale a pena até R$ 3.300. O iPhone 17e é melhor (chip A19, MagSafe e 256 GB), mas costuma passar de R$ 4.000.",
   },
 ];
 
@@ -350,15 +274,14 @@ function BestPhones3500Guide() {
               </div>
 
               <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-                Esta faixa muda muito com promoções. Se o Galaxy S24 estiver abaixo de R$ 3.500, ele
-                costuma ser a compra mais forte.
+                Os valores são até quanto vale pagar em cada modelo, não o preço da loja. Acima
+                disso, espere uma promoção.
               </p>
             </aside>
           </div>
         </div>
       </section>
-      <EditorialSelection selection="premium" />
-      <LegacySelectionNotice />
+      <EditorialSelection selection="ate-3000" />
 
       <section id="ranking" className="mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
         <div className="max-w-3xl">
@@ -481,12 +404,12 @@ function BestPhones3500Guide() {
             <CriteriaCard
               icon={<Camera className="h-5 w-5" />}
               title="Câmera"
-              text="Se fotografia importa, o Galaxy S24 e o iPhone 15 são os mais consistentes da lista."
+              text="Para zoom, os Galaxy FE e o Edge 60 Pro têm teleobjetiva de 3x."
             />
             <CriteriaCard
               icon={<Cpu className="h-5 w-5" />}
               title="Desempenho"
-              text="Para jogos e uso pesado, Poco X6 Pro entrega muita potência pelo preço."
+              text="Para jogos e uso pesado, o POCO X8 Pro entrega a maior potência pelo preço."
             />
             <CriteriaCard
               icon={<Smartphone className="h-5 w-5" />}
@@ -539,10 +462,9 @@ function BestPhones3500Guide() {
                 <h2 className="text-2xl font-bold text-foreground">Conclusão: qual comprar?</h2>
               </div>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                Se encontrar o Galaxy S24 abaixo de R$ 3.500, ele é a melhor compra geral. Se o foco
-                for desempenho e jogos, o Poco X6 Pro é mais agressivo. Se você quer iOS, o iPhone
-                15 é a escolha mais segura. Se quer carregamento ultrarrápido e tela bonita, o Edge
-                50 Pro também merece atenção.
+                Para a maioria, um Galaxy FE: o S26 FE perto de R$ 3.300 ou o S25 FE perto de R$
+                3.000. Para bateria e recarga rápida, o Edge 60 Pro. Para jogos, o POCO X8 Pro. Para
+                iPhone, o iPhone 16e.
               </p>
             </div>
 
