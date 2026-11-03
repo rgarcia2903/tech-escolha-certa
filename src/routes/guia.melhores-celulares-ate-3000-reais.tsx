@@ -2,7 +2,6 @@ import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
-import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
@@ -35,12 +34,12 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3000-reais")(
       {
         name: "description",
         content:
-          "Guia editorial dos melhores celulares até 3000 reais em 2026: Galaxy A55, Redmi Note 13 Pro, Poco X6 Pro e Motorola Edge 50 Neo comparados por ficha técnica, câmera, bateria e desempenho.",
+          "Os melhores celulares até 3000 reais em 2026: Galaxy S25 FE, Edge 60 Pro, Poco X8 Pro, Galaxy A57 e Moto G86, com até quanto pagar em cada um.",
       },
       {
         name: "keywords",
         content:
-          "melhores celulares até 3000 reais, melhor celular custo benefício 2026, Galaxy A55, Redmi Note 13 Pro, Poco X6 Pro, Motorola Edge 50 Neo",
+          "melhores celulares até 3000 reais, melhor celular até 3000, Galaxy S25 FE, Edge 60 Pro, Poco X8 Pro, Galaxy A57, Moto G86",
       },
       {
         property: "og:title",
@@ -56,7 +55,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3000-reais")(
       {
         property: "og:image",
         content: getSocialImage(
-          "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80",
+          "https://techescolhacerta.com.br/images/products/gallery/galaxy-s25-fe/01-principal.webp",
         ),
       },
     ],
@@ -72,8 +71,9 @@ export const Route = createFileRoute("/guia/melhores-celulares-ate-3000-reais")(
             "Guia editorial dos melhores celulares intermediários premium de 2026 até R$ 3.000.",
           author: { "@type": "Organization", name: "Tech Escolha Certa" },
           datePublished: "2026-05-01",
+          dateModified: "2026-11-03",
           image: getSocialImage(
-            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80",
+            "https://techescolhacerta.com.br/images/products/gallery/galaxy-s25-fe/01-principal.webp",
           ),
         }),
       },
@@ -102,179 +102,97 @@ type Pick = {
 const PICKS: Pick[] = [
   {
     id: "melhor-geral",
-    category: "Perfil para comparar",
+    category: "O mais completo",
     icon: Award,
     badge: { variant: "cta", label: "Recomendado" },
-    name: "Samsung Galaxy A55",
-    productId: "galaxy-a55",
-    image:
-      "https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.7,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    short:
-      "O equilíbrio mais maduro da faixa: tela AMOLED 120 Hz, construção em alumínio e quatro anos de atualizações garantidas.",
+    name: "Samsung Galaxy S25 FE",
+    productId: "galaxy-s25-fe",
+    image: "/images/products/gallery/galaxy-s25-fe/01-principal.webp",
+    rating: 0,
+    price: "R$ 3.000",
+    short: "Linha S por preço de intermediário: teleobjetiva de 3x, IP68 e sete anos de atualizações.",
     review:
-      'O Galaxy A55 é o intermediário que mais se aproxima da experiência de um top de linha no dia a dia. A tela Super AMOLED de 6,6" com 1000 nits brilha bem ao sol, o Exynos 1480 entrega fluidez consistente na One UI 6 e a câmera principal de 50 MP com OIS produz fotos confiáveis em qualquer luz. O grande diferencial é o suporte: a Samsung promete quatro versões de Android e cinco anos de patches de segurança, algo raro nessa faixa de preço.',
-    profile:
-      "Quem quer um celular para usar de 3 a 4 anos sem se preocupar, com bom acabamento e ecossistema confiável.",
-    pros: [
-      "Tela AMOLED 120 Hz com excelente brilho",
-      "Quatro grandes atualizações de Android",
-      "Construção em alumínio com Gorilla Glass Victus+",
-      "Câmera principal estabilizada (OIS)",
-    ],
-    cons: ["Carregamento de 25 W abaixo da concorrência", "Exynos 1480 perde em benchmarks puros"],
+      "O Galaxy S25 FE é o celular mais completo até R$ 3.000. Tem o Exynos 2400, o mesmo do Galaxy S24, tela AMOLED de 6,7\" com 120 Hz, câmera tripla com teleobjetiva de 3x e vídeo até 8K. É o único desta lista com sete anos de atualizações, o que faz dele a compra mais segura para quem fica muitos anos com o celular. O ponto fraco é a bateria de 4.900 mAh, menor que a dos rivais.",
+    profile: "Quem quer um Samsung de linha S, com zoom e muitos anos de suporte, sem pagar preço de topo de linha.",
+    pros: ["Teleobjetiva de 3x", "Sete anos de atualizações", "IP68 e recarga sem fio", "Exynos 2400"],
+    cons: ["Bateria de 4.900 mAh", "No Mercado Livre costuma passar do preço-alvo; compare com a Amazon"],
   },
   {
-    id: "melhor-custo-beneficio",
-    category: "Perfil para comparar",
-    icon: Wallet,
-    badge: { variant: "teal", label: "Custo-benefício" },
-    name: "Xiaomi Redmi Note 13 Pro",
-    productId: "redmi-note-13-pro",
-    image:
-      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.6,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    short:
-      "O intermediário que entrega ficha técnica de top de linha por menos de R$ 2.000 — câmera de 200 MP e carga turbo de 67 W.",
-    review:
-      "Por bem menos de R$ 2.000, o Redmi Note 13 Pro entrega uma ficha técnica que envergonha celulares mais caros. A câmera principal Samsung HP3 de 200 MP usa pixel binning para fotos detalhadas mesmo com pouca luz, a tela AMOLED 1.5K de 120 Hz é uma das mais brilhantes da faixa (1800 nits em pico) e o Snapdragon 7s Gen 2 dá conta de qualquer aplicativo. Some o carregamento de 67 W e fica difícil achar pacote melhor pelo preço.",
-    profile:
-      "Quem quer o máximo de hardware pelo menor preço possível e não se importa com a interface MIUI cheia de recursos.",
-    pros: [
-      "Câmera principal de 200 MP com OIS",
-      "Carregamento turbo de 67 W",
-      "Tela AMOLED 1.5K com 1800 nits de pico",
-      "Compare a ficha técnica e o preço final",
-    ],
-    cons: ["MIUI/HyperOS com bloatware pré-instalado", "Apenas 3 anos de atualizações"],
-  },
-  {
-    id: "melhor-camera",
-    category: "Perfil para comparar",
+    id: "melhor-bateria-camera",
+    category: "Bateria e câmera",
     icon: Camera,
-    badge: { variant: "default", label: "Foto e vídeo" },
-    name: "Motorola Edge 50 Neo",
-    productId: "edge-50-neo",
-    image:
-      "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.6,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    short:
-      "Conjunto fotográfico afinado pela Pantone com sensor Sony LYT-700C — cores fiéis e vídeo 4K estabilizado de verdade.",
+    badge: { variant: "default", label: "Foto e bateria" },
+    name: "Motorola Edge 60 Pro",
+    productId: "edge-60-pro",
+    image: "/images/products/gallery/edge-60-pro/01-principal.webp",
+    rating: 0,
+    price: "R$ 2.700",
+    short: "6.000 mAh, recarga de 90 W, zoom óptico de 3x e IP68/IP69.",
     review:
-      'O Edge 50 Neo é o intermediário com a calibração de cor mais bem resolvida da categoria. A parceria com a Pantone se traduz em tons de pele realistas e céu sem aquele exagero de saturação típico dos rivais. O sensor principal Sony LYT-700C de 50 MP com OIS captura vídeo 4K a 30 fps com estabilização eletrônica suave, e a tela pOLED de 6,4" com 120 Hz e 3000 nits de pico é referência na faixa.',
-    profile:
-      "Criadores de conteúdo casuais e quem valoriza fotos com cores naturais sem precisar editar.",
-    pros: [
-      "Cores Pantone-validated muito naturais",
-      "Tela pOLED 120 Hz com 3000 nits",
-      "Resistência IP68 (rara na faixa)",
-      "Design compacto e leve (171 g)",
-    ],
-    cons: [
-      "Bateria de 4.310 mAh é a menor do grupo",
-      "Dimensity 7300 fica abaixo no gaming pesado",
-    ],
-  },
-  {
-    id: "melhor-bateria",
-    category: "Perfil para comparar",
-    icon: Battery,
-    badge: { variant: "default", label: "Autonomia" },
-    name: "Samsung Galaxy M55",
-    productId: "galaxy-m55",
-    image:
-      "https://images.unsplash.com/photo-1610792516775-01de03eae630?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.5,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    short:
-      "Bateria de 5.000 mAh combinada ao Snapdragon 7 Gen 1 entrega dois dias completos de uso moderado sem suor.",
-    review:
-      "Quando o assunto é autonomia pura, poucos rivais batem o Galaxy M55. A bateria de 5.000 mAh somada à eficiência do Snapdragon 7 Gen 1 (4 nm) e ao painel AMOLED com refresh adaptativo tem proposta de autonomia; não há medição própria de duração nesta página. O tempo de recarga precisa ser conferido em teste identificado.",
-    profile:
-      "Quem viaja, fica longe de tomada por longos períodos ou simplesmente odeia depender do carregador.",
-    pros: [
-      "Autonomia real de até dois dias",
-      "Carregamento rápido de 45 W",
-      "Tela Super AMOLED+ 120 Hz",
-      "4 anos de atualizações Samsung",
-    ],
-    cons: ["Acabamento traseiro em plástico", "Sem certificação IP de água"],
+      "O Edge 60 Pro junta o que costuma vir separado: bateria de 6.000 mAh com recarga de 90 W, três câmeras de 50 MP (principal e ultra-angular) mais teleobjetiva de 3x, selfie de 50 MP com vídeo 4K, 12 GB de RAM e proteção IP68, IP69 e MIL-STD-810H. A Motorola promete só três anos de atualizações, bem menos que a Samsung.",
+    profile: "Quem quer bateria para mais de um dia, recarga muito rápida e câmera com zoom.",
+    pros: ["Bateria de 6.000 mAh e 90 W", "Zoom óptico de 3x", "IP68, IP69 e MIL-STD-810H", "12 GB de RAM"],
+    cons: ["Só três anos de atualizações", "Tela curva divide opiniões"],
   },
   {
     id: "melhor-gaming",
-    category: "Perfil para comparar",
+    category: "Jogos e desempenho",
     icon: Gamepad2,
     badge: { variant: "default", label: "Performance" },
-    name: "Poco X6 Pro",
-    productId: "poco-x6-pro",
-    image:
-      "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1200&q=80",
-    rating: 4.7,
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    short:
-      "Dimensity 8300-Ultra coloca o Poco X6 Pro no patamar de top de linha em jogos pesados, com câmara de vapor dedicada.",
+    name: "Poco X8 Pro",
+    productId: "poco-x8-pro",
+    image: "/images/products/phones-hero-optimized.webp",
+    rating: 0,
+    price: "R$ 2.450",
+    short: "O mais forte para jogos até R$ 3.000: Dimensity 8500 Ultra, 6.500 mAh e 100 W.",
     review:
-      'Se o seu uso envolve Genshin Impact, Wuthering Waves ou Call of Duty Mobile no máximo, o Poco X6 Pro é uma alternativa de geração anterior até R$ 3.000. O MediaTek Dimensity 8300-Ultra entrega performance equivalente a um Snapdragon 8+ Gen 1, tem proposta de alto desempenho; estabilidade e temperatura exigem medição específica, e a tela CrystalRes AMOLED de 6,67" com 120 Hz e resposta ao toque de 2160 Hz garante latência mínima.',
-    profile: "Gamers mobile que querem desempenho de top de linha sem pagar R$ 5.000.",
-    pros: [
-      "Dimensity 8300-Ultra de nível flagship",
-      "Câmara de vapor para sessões longas",
-      "Tela 1.5K AMOLED com 2160 Hz de toque",
-      "Carregamento turbo de 67 W",
-    ],
-    cons: ["Câmera ultrawide de qualidade modesta", "HyperOS com publicidade em alguns apps"],
+      "O Poco X8 Pro tem o processador mais forte da faixa, o Dimensity 8500 Ultra, que passa de 1,9 milhão de pontos no AnTuTu. A bateria é de 6.500 mAh com recarga de 100 W, a tela AMOLED 1.5K de 6,59\" chega a 120 Hz e ele tem IP68. A Xiaomi promete quatro versões do Android e seis anos de segurança. As câmeras são boas, mas não são o foco.",
+    profile: "Quem joga títulos pesados, como Genshin Impact, e quer a maior bateria da lista.",
+    pros: ["Dimensity 8500 Ultra", "Bateria de 6.500 mAh e 100 W", "Tela 1.5K de 120 Hz", "IP68"],
+    cons: ["Câmeras abaixo do S25 FE e do Edge 60 Pro", "Não confunda com o X8 Pro Max, que é outro aparelho"],
+  },
+  {
+    id: "melhor-custo-beneficio",
+    category: "Custo-benefício",
+    icon: Wallet,
+    badge: { variant: "teal", label: "Custo-benefício" },
+    name: "Samsung Galaxy A57 5G",
+    productId: "galaxy-a57-5g",
+    image: "/images/products/licensed/galaxy-a57-5g.webp",
+    rating: 0,
+    price: "R$ 1.850",
+    short: "O Samsung intermediário mais completo, gastando bem menos que R$ 3.000.",
+    review:
+      "Se você não precisa de zoom nem joga pesado, o Galaxy A57 entrega o essencial por bem menos. Tem Exynos 1680, tela AMOLED de 6,7\" com 120 Hz, câmera principal de 50 MP com estabilização óptica, ultra-angular de 12 MP, IP68 e seis anos de atualizações, num corpo de 6,9 mm e 179 g.",
+    profile: "Quem quer um Samsung moderno e duradouro sem gastar perto de R$ 3.000.",
+    pros: ["Seis anos de atualizações", "IP68", "Fino e leve (6,9 mm, 179 g)", "Câmera com OIS"],
+    cons: ["Sem teleobjetiva", "Carregador vendido separadamente"],
+  },
+  {
+    id: "melhor-tela",
+    category: "Tela e resistência",
+    icon: Battery,
+    badge: { variant: "default", label: "Tela" },
+    name: "Motorola Moto G86 5G",
+    productId: "moto-g86-5g",
+    image: "/images/products/gallery/moto-g86-5g/01-principal.webp",
+    rating: 0,
+    price: "R$ 1.900",
+    short: "Tela pOLED 1.5K com 4.500 nits, IP68/IP69 e carregador na caixa.",
+    review:
+      "O Moto G86 é a opção para quem quer gastar perto de R$ 1.900 e não abre mão de uma tela excelente: pOLED 1.5K de 120 Hz com pico de 4.500 nits, fácil de ler sob o sol. Tem câmera Sony de 50 MP com estabilização óptica, bateria de 5.200 mAh, carregador de 33 W na caixa e proteção IP68/IP69. São duas versões do Android e quatro anos de segurança.",
+    profile: "Quem quer tela muito boa e resistência gastando menos.",
+    pros: ["Tela pOLED 1.5K de 4.500 nits", "IP68 e IP69", "Carregador na caixa", "Câmera com OIS"],
+    cons: ["Dimensity 7300 fica abaixo dos outros desta lista", "Menos anos de atualização"],
   },
 ];
 
 const TABLE = [
-  {
-    label: "Galaxy A55",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    screen: 'AMOLED 6,6" 120 Hz',
-    chip: "Exynos 1480",
-    camera: "50 MP OIS",
-    battery: "5.000 mAh / 25 W",
-    updates: "4 anos",
-  },
-  {
-    label: "Redmi Note 13 Pro",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    screen: 'AMOLED 6,67" 120 Hz',
-    chip: "Snapdragon 7s Gen 2",
-    camera: "200 MP OIS",
-    battery: "5.100 mAh / 67 W",
-    updates: "3 anos",
-  },
-  {
-    label: "Edge 50 Neo",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    screen: 'pOLED 6,4" 120 Hz',
-    chip: "Dimensity 7300",
-    camera: "50 MP OIS Pantone",
-    battery: "4.310 mAh / 68 W",
-    updates: "5 anos",
-  },
-  {
-    label: "Galaxy M55",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    screen: 'AMOLED+ 6,7" 120 Hz',
-    chip: "Snapdragon 7 Gen 1",
-    camera: "50 MP OIS",
-    battery: "5.000 mAh / 45 W",
-    updates: "4 anos",
-  },
-  {
-    label: "Poco X6 Pro",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    screen: 'AMOLED 6,67" 120 Hz',
-    chip: "Dimensity 8300-Ultra",
-    camera: "64 MP OIS",
-    battery: "5.000 mAh / 67 W",
-    updates: "3 anos",
-  },
+  { label: "Galaxy S25 FE", price: "R$ 3.000", screen: 'AMOLED 6,7" 120 Hz', chip: "Exynos 2400", camera: "50 MP + tele 3x", battery: "4.900 mAh / 45 W", updates: "7 anos" },
+  { label: "Edge 60 Pro", price: "R$ 2.700", screen: 'pOLED 6,7" 120 Hz', chip: "Dimensity 8350 Extreme", camera: "50 + 50 MP + tele 3x", battery: "6.000 mAh / 90 W", updates: "3 anos" },
+  { label: "Poco X8 Pro", price: "R$ 2.450", screen: 'AMOLED 6,59" 1.5K 120 Hz', chip: "Dimensity 8500 Ultra", camera: "50 MP OIS", battery: "6.500 mAh / 100 W", updates: "4 Android + 6 segurança" },
+  { label: "Galaxy A57", price: "R$ 1.850", screen: 'AMOLED 6,7" 120 Hz', chip: "Exynos 1680", camera: "50 MP OIS + 12 MP", battery: "5.000 mAh / 45 W", updates: "6 anos" },
+  { label: "Moto G86", price: "R$ 1.900", screen: 'pOLED 6,67" 1.5K 120 Hz', chip: "Dimensity 7300", camera: "50 MP OIS", battery: "5.200 mAh / 33 W", updates: "2 Android + 4 segurança" },
 ];
 
 const TIPS = [
@@ -302,24 +220,24 @@ const TIPS = [
 
 const FAQ = [
   {
-    q: "Vale a pena comprar um celular intermediário em 2026?",
-    a: "Sim. Os intermediários premium de 2026 entregam tela AMOLED 120 Hz, câmera com OIS e processadores eficientes — recursos que custavam R$ 5.000 há três anos. Para 90% dos usuários, um celular até R$ 3.000 cobre todas as necessidades sem comprometer.",
+    q: "Qual o melhor celular até 3000 reais em 2026?",
+    a: "O Galaxy S25 FE, pelo conjunto: teleobjetiva de 3x, IP68 e sete anos de atualizações. Para jogos, o Poco X8 Pro; para bateria e câmera, o Edge 60 Pro.",
   },
   {
-    q: "Qual o melhor celular custo-benefício até 3000 reais?",
-    a: "O Redmi Note 13 Pro é a escolha mais agressiva em ficha técnica pelo preço, enquanto o Galaxy A55 vence em longevidade e ecossistema. Para a maioria, o A55 oferece o equilíbrio mais inteligente entre hardware, software e suporte.",
+    q: "Qual o melhor celular para jogos até 3000 reais?",
+    a: "O Poco X8 Pro, com Dimensity 8500 Ultra, 6.500 mAh e recarga de 100 W. Ele costuma custar perto de R$ 2.450, abaixo do teto.",
   },
   {
-    q: "Intermediário aguenta jogos pesados como Genshin Impact?",
-    a: "Sim, mas escolha bem o processador. Dimensity 8300-Ultra (Poco X6 Pro) e Snapdragon 7+ Gen 2 são candidatos para jogos; a taxa de quadros depende do título e das condições. Exynos 1480 e Snapdragon 7s Gen 2 rodam em médio com algumas quedas.",
+    q: "Vale gastar R$ 3.000 ou um celular de R$ 1.900 basta?",
+    a: "Para redes sociais, fotos do dia a dia e vídeos, o Galaxy A57 ou o Moto G86 bastam. Os R$ 3.000 valem para quem quer zoom, joga pesado ou quer sete anos de atualizações.",
   },
   {
-    q: "Qual a diferença entre Galaxy A55 e M55?",
-    a: "O A55 tem acabamento em alumínio, design mais premium e Gorilla Glass Victus+. O M55 prioriza autonomia e carregamento rápido (45 W) em uma carcaça plástica. Mesmo Snapdragon 7 Gen 1 no M55 e Exynos 1480 no A55 — desempenho prático similar.",
+    q: "Galaxy S25 FE ou Edge 60 Pro?",
+    a: "O S25 FE recebe atualizações por sete anos, contra três do Edge 60 Pro. O Edge tem bateria bem maior (6.000 mAh), recarga de 90 W e costuma custar menos.",
   },
   {
-    q: "Compensa esperar Black Friday para comprar?",
-    a: "Modelos lançados há 6+ meses (como Redmi Note 13 Pro e Galaxy A55) já caem 15-25% em datas promocionais. Se não há urgência, vale esperar.",
+    q: "Compensa esperar a Black Friday?",
+    a: "Se não há urgência, sim, desde que o preço fique perto do valor indicado em cada modelo. Desconfie de \"promoção\" que só volta ao preço normal.",
   },
 ];
 
@@ -371,7 +289,7 @@ function Page() {
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-2">
               <Badge variant="cta">Guia editorial 2026</Badge>
-              <Badge variant="soft">Atualizado em maio/2026</Badge>
+              <Badge variant="soft">Atualizado em novembro/2026</Badge>
             </div>
             <h1 className="mt-4 font-heading text-3xl md:text-5xl font-bold leading-[1.1] text-foreground">
               Melhores celulares até 3000 reais em 2026
@@ -379,14 +297,14 @@ function Page() {
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
               Comparamos documentalmente intermediários premium, sem testes próprios, para discutir
               qual smartphone até R$ 3.000 entrega o melhor pacote em câmera, bateria, desempenho e
-              longevidade. Cinco categorias, cinco vencedores.
+              longevidade. Um modelo atual para cada perfil.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
                 <User className="h-4 w-4" /> Equipe Tech Escolha Certa
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CalendarDays className="h-4 w-4" /> Maio de 2026
+                <CalendarDays className="h-4 w-4" /> Novembro de 2026
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-4 w-4" /> 14 min de leitura
@@ -404,7 +322,6 @@ function Page() {
           <article className="min-w-0 max-w-3xl space-y-16">
             {/* Intro */}
             <EditorialSelection selection="ate-3000" />
-            <LegacySelectionNotice />
             <div id="introducao" className="space-y-5 text-muted-foreground leading-relaxed">
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
                 Como escolhemos os melhores celulares até R$ 3.000
@@ -416,16 +333,10 @@ function Page() {
                 armadilhas de marketing.
               </p>
               <p>
-                Para este guia, analisamos mais de 20 lançamentos entre 2024 e 2026 considerando
-                cinco critérios objetivos:{" "}
-                <strong className="text-foreground">qualidade real da tela</strong> (brilho medido,
-                refresh adaptativo, calibração),
-                <strong className="text-foreground"> desempenho sustentado</strong> (não apenas pico
-                de benchmark), <strong className="text-foreground">câmera em cenários reais</strong>{" "}
-                (baixa luz, vídeo, retratos),{" "}
-                <strong className="text-foreground">autonomia comprovada</strong> e
-                <strong className="text-foreground"> tempo garantido de atualizações</strong>. Preço
-                de referência considera lojas oficiais e principais marketplaces em maio de 2026.
+                Escolhemos um modelo atual, à venda no Brasil, para cada perfil, com base na ficha
+                técnica oficial, no tempo de atualizações e no preço visto nas lojas em novembro de
+                2026. Não fazemos testes de laboratório próprios. O valor indicado em cada modelo é
+                até quanto vale pagar, não o preço da loja.
               </p>
               <p>
                 Os links de oferta são afiliados. Você paga o mesmo preço e nós recebemos uma
@@ -564,19 +475,13 @@ function Page() {
                 O veredito final
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Se a sua prioridade é{" "}
-                <strong className="text-foreground">durar 4 anos sem dor de cabeça</strong>, escolha
-                o <strong className="text-foreground">Galaxy A55</strong>. Para
-                <strong className="text-foreground">
-                  {" "}
-                  extrair o máximo de hardware pelo menor preço
-                </strong>
-                , o<strong className="text-foreground"> Redmi Note 13 Pro</strong> não tem rival.
-                Quem fotografa muito deve olhar o{" "}
-                <strong className="text-foreground">Motorola Edge 50 Neo</strong>; quem joga, o
-                <strong className="text-foreground"> Poco X6 Pro</strong>; e quem precisa de bateria
-                infinita, o <strong className="text-foreground">Galaxy M55</strong>. Cinco escolhas,
-                cinco perfis — e nenhuma escolha errada dentro do orçamento de R$ 3.000.
+                Para a maioria, o <strong className="text-foreground">Galaxy S25 FE</strong>:
+                teleobjetiva, IP68 e sete anos de atualizações. Quem quer bateria e zoom gastando
+                menos deve olhar o <strong className="text-foreground">Edge 60 Pro</strong>; quem
+                joga, o <strong className="text-foreground">Poco X8 Pro</strong>. Se o orçamento
+                pode ser menor, o <strong className="text-foreground">Galaxy A57</strong> e o{" "}
+                <strong className="text-foreground">Moto G86</strong> entregam o essencial por
+                cerca de R$ 1.900.
               </p>
             </section>
           </article>
@@ -628,9 +533,9 @@ function Page() {
                     Top do guia
                   </span>
                 </div>
-                <p className="mt-2 font-heading font-semibold text-foreground">Galaxy A55</p>
+                <p className="mt-2 font-heading font-semibold text-foreground">Galaxy S25 FE</p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Alternativa para uso cotidiano 2026
+                  O mais completo até R$ 3.000
                 </p>
                 <a
                   href="#melhor-geral"
@@ -682,7 +587,7 @@ function PickBlock({ pick }: { pick: Pick }) {
             <div className="flex items-center justify-between gap-3">
               <div className="text-right">
                 <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
-                  Preço atual
+                  Compre se estiver até
                 </span>
                 <span className="font-heading text-xl font-bold text-foreground">{pick.price}</span>
               </div>
