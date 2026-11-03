@@ -268,9 +268,34 @@ function MelhoresCelularesMotorola() {
 
         <section aria-labelledby="comparativos-motorola" className="mt-14">
           <h2 id="comparativos-motorola" className="text-xl font-bold text-[#0F3F4A]">
-            Comparativos Motorola
+            Outros Motorola e comparativos
           </h2>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            <li>
+              <Link to="/review/moto-g37" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G37 é bom?
+              </Link>
+            </li>
+            <li>
+              <Link to="/review/moto-g15" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G15 é bom?
+              </Link>
+            </li>
+            <li>
+              <Link to="/review/edge-60-fusion" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Edge 60 Fusion é bom?
+              </Link>
+            </li>
+            <li>
+              <Link to="/review/edge-60" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Edge 60 é bom?
+              </Link>
+            </li>
+            <li>
+              <Link to="/comparativo/moto-g56-vs-moto-g86" className="text-sm font-semibold text-[#0F3F4A] underline">
+                Moto G56 vs G86
+              </Link>
+            </li>
             <li>
               <Link to="/comparativo/moto-g-max-vs-moto-g86" className="text-sm font-semibold text-[#0F3F4A] underline">
                 Moto G Max vs G86

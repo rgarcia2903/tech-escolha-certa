@@ -646,5 +646,37 @@
       "c71",
       "5g"
     ]
+  },
+  "MOTO_G15_AFFILIATE_URL": {
+    "include": [
+      "g15"
+    ],
+    "exclude": [
+      "power",
+      "g05",
+      "g35"
+    ]
+  },
+  "EDGE_60_FUSION_AFFILIATE_URL": {
+    "include": [
+      "edge 60",
+      "fusion"
+    ],
+    "exclude": [
+      "pro",
+      "edge 50",
+      "edge 70"
+    ]
+  },
+  "EDGE_60_AFFILIATE_URL": {
+    "include": [
+      "edge 60"
+    ],
+    "exclude": [
+      "fusion",
+      "pro",
+      "edge 50",
+      "edge 70"
+    ]
   }
 }
