@@ -46,7 +46,7 @@ const PICKS = [
     summary: "Tela de 6,7\" com 90 Hz, Helio G99, câmera de 50 MP, 5.000 mAh e seis anos de atualizações.",
     forWho: "Quem quer gastar o mínimo e ainda ter atualizações por muitos anos.",
     watchOut: "Tela LCD HD+ e desempenho básico. Se der para juntar uns R$ 100, o A17 5G é bem melhor.",
-    reviewPath: "/comparativo/galaxy-a07-vs-moto-g06",
+    reviewPath: "/review/galaxy-a07",
   },
   {
     id: "moto-g06",
@@ -56,7 +56,7 @@ const PICKS = [
     summary: "Tela de 6,9\" com 120 Hz, bateria de 5.200 mAh, IP64, microSD e entrada para fone.",
     forWho: "Quem quer tela grande para vídeos e paga o mínimo possível.",
     watchOut: "Processador Helio G81 fraco e carregador de 10 W. Só vale até uns R$ 700.",
-    reviewPath: "/comparativo/galaxy-a07-vs-moto-g06",
+    reviewPath: "/review/moto-g06",
   },
 ];
 
@@ -83,7 +83,9 @@ const COMPARISONS = [
   { to: "/comparativo/moto-g37-vs-moto-g17", label: "Moto G37 vs Moto G17" },
   { to: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g", label: "Galaxy A17 4G vs A17 5G" },
   { to: "/comparativo/galaxy-a07-vs-moto-g06", label: "Galaxy A07 vs Moto G06" },
-  { to: "/comparativo/galaxy-a25-vs-redmi-note-13", label: "Galaxy A25 vs Redmi Note 13" },
+  { to: "/review/moto-g37", label: "Moto G37 é bom?" },
+  { to: "/review/redmi-15c", label: "Redmi 15C é bom?" },
+  { to: "/review/poco-c85", label: "Poco C85 é bom?" },
 ];
 
 const FAQ = [
@@ -294,7 +296,7 @@ function MelhorAte1000() {
 
         <section aria-labelledby="comparativos" className="mt-14">
           <h2 id="comparativos" className="text-xl font-bold text-[#0F3F4A]">
-            Comparativos úteis
+            Compare e veja também
           </h2>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             {COMPARISONS.map((c) => (
