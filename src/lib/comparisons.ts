@@ -19,6 +19,178 @@ export type Comparison = {
 };
 
 export const COMPARISONS: Record<string, Comparison> = {
+  "galaxy-a36-vs-galaxy-a17": {
+    slug: "galaxy-a36-vs-galaxy-a17",
+    a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
+    b: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
+    title: "Galaxy A36 ou Galaxy A17: qual o melhor para comprar em 2026?",
+    description:
+      "Galaxy A36 vs Galaxy A17 5G: processador, tela, câmera, recarga e resistência lado a lado. Veja quando vale pagar mais pelo A36 e quando o A17 basta.",
+    shortAnswer:
+      "O Galaxy A36 é melhor em quase tudo: processador mais rápido, tela de 120 Hz, recarga de 45 W e IP67. Os dois recebem seis anos de atualizações. Vale pagar a diferença se ela for de até uns R$ 450; acima disso, o Galaxy A17 5G entrega o essencial com tela AMOLED e câmera estabilizada.",
+    chooseA: [
+      "Joga ou usa muitos apps ao mesmo tempo (Snapdragon 6 Gen 3).",
+      "Quer tela de 120 Hz e recarga de 45 W.",
+      "Quer resistência a água (IP67).",
+    ],
+    chooseB: [
+      "O orçamento é de até R$ 900.",
+      "O uso é WhatsApp, redes sociais, fotos e vídeos.",
+      "Quer a versão de 8 GB de RAM gastando menos.",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 6 Gen 3", b: "Exynos 1330 (5 nm)", winner: "a" },
+      { label: "Tela", a: 'AMOLED 6,7" • 120 Hz', b: 'AMOLED 6,7" • 90 Hz', winner: "a" },
+      { label: "Câmeras traseiras", a: "50 MP OIS + 8 MP + 5 MP", b: "50 MP OIS + 5 MP + 2 MP", winner: "a" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 45 W", b: "5.000 mAh • 25 W", winner: "a" },
+      { label: "Proteção", a: "IP67", b: "IP54", winner: "a" },
+      { label: "Atualizações", a: "6 anos (até 2031)", b: "6 anos", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 1.350", b: "R$ 900", winner: "b" },
+    ],
+    faq: [
+      {
+        question: "Vale a pena pagar mais pelo Galaxy A36?",
+        answer: "Vale se a diferença for de até uns R$ 450: ele é mais rápido, tem tela de 120 Hz, recarga de 45 W e IP67.",
+      },
+      {
+        question: "Qual dos dois é melhor para jogar?",
+        answer: "O Galaxy A36. O Snapdragon 6 Gen 3 é mais forte que o Exynos 1330 e a tela tem 120 Hz.",
+      },
+      {
+        question: "Os dois recebem atualizações pelo mesmo tempo?",
+        answer: "Sim. A Samsung promete seis anos de atualizações para os dois.",
+      },
+    ],
+  },
+  "poco-x8-pro-vs-galaxy-s25-fe": {
+    slug: "poco-x8-pro-vs-galaxy-s25-fe",
+    a: { id: "poco-x8-pro", name: "Poco X8 Pro", reviewPath: "/review/poco-x8-pro" },
+    b: { id: "galaxy-s25-fe", name: "Galaxy S25 FE", reviewPath: "/review/galaxy-s25-fe" },
+    title: "Poco X8 Pro ou Galaxy S25 FE: qual comprar em 2026?",
+    description:
+      "Poco X8 Pro vs Galaxy S25 FE: desempenho, bateria, câmeras, zoom e atualizações lado a lado. Veja qual vale mais o seu dinheiro.",
+    shortAnswer:
+      "Para jogos e bateria, o Poco X8 Pro: Dimensity 8500 Ultra, 6.500 mAh e recarga de 100 W, e costuma custar menos. Para câmera e longevidade, o Galaxy S25 FE: teleobjetiva de 3x, recarga sem fio e sete anos de atualizações.",
+    chooseA: [
+      "Joga títulos pesados e quer o máximo de desempenho pelo preço.",
+      "Quer a maior bateria e a recarga mais rápida (6.500 mAh, 100 W).",
+      "Quer gastar menos: compre até R$ 2.450.",
+    ],
+    chooseB: [
+      "Quer zoom óptico de 3x para fotos de longe.",
+      "Vai ficar muitos anos com o celular (sete anos de atualizações).",
+      "Quer recarga sem fio e a experiência Samsung.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 8500 Ultra", b: "Exynos 2400", winner: "a" },
+      { label: "Tela", a: 'AMOLED 6,59" 1.5K • 120 Hz • 3.500 nits', b: 'AMOLED 6,7" • 120 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "50 MP OIS + 8 MP", b: "50 + 12 MP + tele 8 MP (3x)", winner: "b" },
+      { label: "Bateria", a: "6.500 mAh", b: "4.900 mAh", winner: "a" },
+      { label: "Recarga", a: "100 W", b: "45 W • sem fio", winner: "a" },
+      { label: "Proteção", a: "IP68", b: "IP68", winner: "tie" },
+      { label: "Atualizações", a: "4 versões do Android, 6 anos de segurança", b: "7 anos", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 2.450", b: "R$ 3.000", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Qual é melhor para jogos?",
+        answer: "O Poco X8 Pro. O Dimensity 8500 Ultra é mais forte e a bateria de 6.500 mAh aguenta sessões longas.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "O Galaxy S25 FE, pela teleobjetiva de 3x. Na câmera principal, os dois têm estabilização óptica.",
+      },
+      {
+        question: "Qual dura mais anos?",
+        answer: "O Galaxy S25 FE, com sete anos de atualizações. O Poco X8 Pro tem quatro versões do Android e seis anos de segurança.",
+      },
+    ],
+  },
+  "iphone-16e-vs-iphone-15": {
+    slug: "iphone-16e-vs-iphone-15",
+    a: { id: "iphone-16e", name: "iPhone 16e", reviewPath: "/review/iphone-16e" },
+    b: { id: "iphone-15", name: "iPhone 15", reviewPath: "/review/iphone-15" },
+    title: "iPhone 16e ou iPhone 15: qual o melhor para comprar em 2026?",
+    description:
+      "iPhone 16e vs iPhone 15: chip, câmeras, MagSafe, Dynamic Island e preço lado a lado. Veja qual iPhone barato vale mais a pena.",
+    shortAnswer:
+      "O iPhone 16e tem chip mais novo (A18) e deve receber atualizações por mais tempo. O iPhone 15 tem câmera ultra-angular, MagSafe e Dynamic Island, que o 16e não tem. Se você usa ultra-angular ou MagSafe, leve o 15 até R$ 3.400; senão, o 16e até R$ 3.300 é a compra mais segura para os próximos anos.",
+    chooseA: [
+      "Quer o chip mais novo (A18), para mais anos de uso.",
+      "Uma câmera só (48 MP) atende você.",
+      "Não usa MagSafe.",
+    ],
+    chooseB: [
+      "Usa a câmera ultra-angular para fotos de grupo e paisagem.",
+      "Usa ou quer usar MagSafe (carregador, carteira, suporte).",
+      "Gosta da Dynamic Island.",
+    ],
+    rows: [
+      { label: "Chip", a: "A18", b: "A16", winner: "a" },
+      { label: "Tela", a: '6,1" OLED • 60 Hz', b: '6,1" OLED • 60 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "48 MP (uma câmera)", b: "48 MP + ultra-angular 12 MP", winner: "b" },
+      { label: "MagSafe", a: "Não (sem fio de 7,5 W)", b: "Sim, até 15 W", winner: "b" },
+      { label: "Dynamic Island", a: "Não (entalhe)", b: "Sim", winner: "b" },
+      { label: "Armazenamento base", a: "128 GB", b: "128 GB", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 3.300", b: "R$ 3.400", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "iPhone 16e ou iPhone 15: qual dura mais?",
+        answer: "O 16e, por ter chip mais novo (A18) e ter sido lançado depois. O 15 continua recebendo atualizações, mas deve parar antes.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "O iPhone 15, por ter também a ultra-angular. Na câmera principal de 48 MP, os dois ficam próximos.",
+      },
+      {
+        question: "Algum dos dois tem tela de 120 Hz?",
+        answer: "Não. Os dois têm 60 Hz. Para 120 Hz, o iPhone mais barato é o iPhone 17.",
+      },
+    ],
+  },
+  "edge-60-fusion-vs-moto-g86": {
+    slug: "edge-60-fusion-vs-moto-g86",
+    a: { id: "edge-60-fusion", name: "Edge 60 Fusion", reviewPath: "/review/edge-60-fusion" },
+    b: { id: "moto-g86-5g", name: "Moto G86 5G", reviewPath: "/review/moto-g86-5g" },
+    title: "Edge 60 Fusion ou Moto G86: qual o melhor para comprar em 2026?",
+    description:
+      "Edge 60 Fusion vs Moto G86: os dois têm Dimensity 7300, tela de 4.500 nits e IP68/IP69. Veja as diferenças de tela, câmera e preço.",
+    shortAnswer:
+      "São muito parecidos: mesmo processador (Dimensity 7300), bateria de 5.200 mAh, IP68/IP69 e tela pOLED de 120 Hz com 4.500 nits. O Edge 60 Fusion tem tela curva e visual mais premium; o Moto G86 tem tela 1.5K plana, carregador de 33 W na caixa e câmera Sony com estabilização. Leve o que estiver mais barato.",
+    chooseA: [
+      "Gosta de tela curva e de um visual mais premium.",
+      "Encontrou mais barato que o G86.",
+    ],
+    chooseB: [
+      "Prefere tela plana, mais fácil para película e capinha.",
+      "Quer o carregador de 33 W na caixa.",
+      "Encontrou mais barato que o Edge 60 Fusion.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 7300", b: "Dimensity 7300", winner: "tie" },
+      { label: "Tela", a: 'pOLED curva 6,7" • 120 Hz • 4.500 nits', b: 'pOLED plana 6,67" 1.5K • 120 Hz • 4.500 nits', winner: "tie" },
+      { label: "Câmera principal", a: "50 MP com OIS", b: "50 MP Sony com OIS", winner: "tie" },
+      { label: "Memória", a: "8 GB • 256 GB", b: "8 GB • 256 GB", winner: "tie" },
+      { label: "Bateria", a: "5.200 mAh", b: "5.200 mAh • 33 W, carregador na caixa", winner: "b" },
+      { label: "Proteção", a: "IP68 e IP69", b: "IP68 e IP69", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 1.800", b: "R$ 1.900", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Edge 60 Fusion ou Moto G86: qual é mais rápido?",
+        answer: "São iguais: os dois usam o Dimensity 7300 com 8 GB de RAM.",
+      },
+      {
+        question: "Qual tem a melhor tela?",
+        answer: "As duas são pOLED de 120 Hz com 4.500 nits. A do Fusion é curva; a do G86 é plana e tem resolução 1.5K.",
+      },
+      {
+        question: "Qual comprar?",
+        answer: "O que estiver mais barato. Se o preço for igual, o G86 pelo carregador na caixa; o Fusion se você prefere tela curva.",
+      },
+    ],
+  },
   "galaxy-a17-vs-galaxy-a07": {
     slug: "galaxy-a17-vs-galaxy-a07",
     a: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
