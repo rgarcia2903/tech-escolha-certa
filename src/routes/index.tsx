@@ -218,56 +218,49 @@ function HomePage() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <ReviewCard
-              title="Review Redmi Note 14 Pro+ 5G"
-              description="Alternativa de geração anterior com 200 MP, IP68 e 120 W. Compare também modelos posteriores."
-              href="/review/redmi-note-14-pro-plus"
-              image="/images/products/redmi-note-14-pro-plus-optimized.webp"
-              score="9.2"
-              badge="Xiaomi premium"
+              title="Review Galaxy A17 5G"
+              description="O melhor até R$ 1.000: tela AMOLED, câmera com OIS e seis anos de atualizações."
+              href="/review/galaxy-a17-5g"
+              image="/images/products/licensed/galaxy-a17-5g.webp"
+              badge="Até R$ 1.000"
             />
 
             <ReviewCard
-              title="Review Poco X7 Pro"
-              description="Uma das melhores opções para desempenho, jogos e bateria."
-              href="/review/poco-x7-pro"
-              image="/images/products/poco-x7-pro-optimized.webp"
-              score="9.3"
-              badge="Performance"
-            />
-
-            <ReviewCard
-              title="Review Redmi Note 13 Pro 5G"
-              description="Excelente equilíbrio entre tela, câmera e carregamento rápido."
-              href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro-optimized.webp"
-              score="9.0"
-              badge="Custo-benefício"
-            />
-
-            <ReviewCard
-              title="Review Poco X6 Pro"
-              description="Ainda vale para quem quer muita performance pagando menos."
-              href="/review/poco-x6-pro"
-              image="/images/products/poco-x6-pro-optimized.webp"
-              score="8.9"
-              badge="Gamer"
-            />
-
-            <ReviewCard
-              title="Review Galaxy A55 5G"
-              description="Uma alternativa Samsung de geração anterior."
-              href="/review/galaxy-a55"
-              image="/images/products/galaxy-a55-optimized.webp"
-              score="9.0"
+              title="Review Galaxy A36 5G"
+              description="O Samsung mais equilibrado até R$ 1.500, com atualizações até 2031."
+              href="/review/galaxy-a36-5g"
+              image="/images/products/licensed/galaxy-a36-5g.webp"
               badge="Samsung"
             />
 
             <ReviewCard
-              title="Review Galaxy S24"
-              description="Experiência flagship compacta, premium e muito completa."
-              href="/review/galaxy-s24"
-              image="/images/products/galaxy-s24-optimized.webp"
-              score="9.4"
+              title="Review Moto G86 5G"
+              description="Tela pOLED de 4.500 nits, IP68/IP69 e carregador na caixa."
+              href="/review/moto-g86-5g"
+              image="/images/products/moto-g86-optimized.webp"
+              badge="Motorola"
+            />
+
+            <ReviewCard
+              title="Review Redmi Note 15 5G"
+              description="Bateria de 5.520 mAh, tela AMOLED de 120 Hz e carregador na caixa."
+              href="/review/redmi-note-15-5g"
+              image="/images/products/redmi-note-15-5g-optimized.webp"
+              badge="Xiaomi"
+            />
+
+            <ReviewCard
+              title="Poco X8 Pro é bom?"
+              description="O mais forte para jogos até R$ 2.500, com 6.500 mAh e recarga de 100 W."
+              href="/review/poco-x8-pro"
+              badge="Jogos"
+            />
+
+            <ReviewCard
+              title="Review Galaxy S25 FE"
+              description="Linha S com teleobjetiva de 3x, IP68 e sete anos de atualizações."
+              href="/review/galaxy-s25-fe"
+              image="/images/products/gallery/galaxy-s25-fe/01-principal.webp"
               badge="Premium"
             />
           </div>
@@ -284,35 +277,34 @@ function HomePage() {
 
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
             <ComparisonCard
-              title="Redmi Note 13 Pro vs Redmi Note 14 Pro+"
-              description="Compare os dois Redmi mais importantes para decidir se vale pagar mais no modelo novo."
-              href="/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus"
-              image="/images/products/redmi-note-14-pro-plus-optimized.webp"
-              winner="Redmi Note 14 Pro+ para conjunto mais completo; Redmi Note 13 Pro para economizar."
+              title="Galaxy A36 vs Moto G86"
+              description="Os dois intermediários mais buscados: atualizações contra tela e resistência."
+              href="/comparativo/galaxy-a36-vs-moto-g86"
+              image="/images/products/licensed/galaxy-a36-5g.webp"
+              winner="Galaxy A36 pelo custo-benefício; Moto G86 pela tela e resistência."
             />
 
             <ComparisonCard
-              title="Poco X6 Pro vs Poco X7 Pro"
-              description="Veja qual Poco vale mais a pena em desempenho, bateria, tela e preço."
-              href="/comparativo/poco-x6-pro-vs-poco-x7-pro"
+              title="Galaxy A17 vs Galaxy A07"
+              description="Vale pagar a mais pelo A17 5G ou o A07 basta?"
+              href="/comparativo/galaxy-a17-vs-galaxy-a07"
+              image="/images/products/licensed/galaxy-a17-5g.webp"
+              winner="Galaxy A17 se a diferença for de até uns R$ 200."
+            />
+
+            <ComparisonCard
+              title="Poco X8 Pro vs Poco X7 Pro"
+              description="Vale pagar mais pelo modelo novo para jogar?"
+              href="/comparativo/poco-x8-pro-vs-poco-x7-pro"
               image="/images/products/poco-x7-pro-optimized.webp"
-              winner="Poco X7 Pro para bateria e hardware novo; Poco X6 Pro se estiver bem mais barato."
+              winner="X8 Pro para o máximo desempenho; X7 Pro para economizar."
             />
 
             <ComparisonCard
-              title="Galaxy A55 vs Redmi Note 13 Pro"
-              description="Samsung ou Xiaomi? Compare software, câmera, bateria e custo-benefício."
-              href="/comparativo/galaxy-a55-vs-redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro-optimized.webp"
-              winner="Galaxy A55 para experiência premium; Redmi para ficha técnica e preço."
-            />
-
-            <ComparisonCard
-              title="Galaxy A55 vs Poco X6 Pro"
-              description="Samsung mais equilibrado contra Poco com foco em desempenho e jogos."
-              href="/comparativo/galaxy-a55-vs-poco-x6-pro"
-              image="/images/products/poco-x6-pro-optimized.webp"
-              winner="Galaxy A55 para equilíbrio; Poco X6 Pro para desempenho."
+              title="iPhone 16e vs iPhone 17e"
+              description="Chip A19, 256 GB e MagSafe contra o iPhone mais barato à venda."
+              href="/comparativo/iphone-16e-vs-iphone-17e"
+              winner="iPhone 17e se a diferença for de até uns R$ 800."
             />
           </div>
 
