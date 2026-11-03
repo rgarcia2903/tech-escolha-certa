@@ -1,9 +1,8 @@
 import { EditorialSelection } from "@/components/site/EditorialSelection";
-import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
-  GALAXY_A35_AFFILIATE_URL,
-  POCO_X6_PRO_AFFILIATE_URL,
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  GALAXY_A36_AFFILIATE_URL,
+  MOTO_G_MAX_AFFILIATE_URL,
+  REDMI_NOTE_15_5G_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateCTA } from "@/components/site/AffiliateCTA";
@@ -20,12 +19,12 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
   head: () => ({
     meta: [
       {
-        title: "Celulares até R$ 2.000 em 2026: candidatos e critérios",
+        title: "Melhores celulares até R$ 2.000 em 2026: Galaxy A36, Moto G Max e Redmi",
       },
       {
         name: "description",
         content:
-          "Compare candidatos por perfil e alternativas antigas. Preço e disponibilidade dentro de R$ 2.000 dependem da oferta e não foram verificados.",
+          "Os melhores celulares até R$ 2.000 em 2026: Galaxy A36, Moto G Max e Redmi Note 15 5G. Veja qual combina com você e até quanto vale pagar em cada um.",
       },
       {
         property: "og:url",
@@ -37,35 +36,35 @@ export const Route = createFileRoute("/melhores-celulares-ate-2000")({
 });
 
 const affiliateLinks = {
-  galaxyA35: GALAXY_A35_AFFILIATE_URL,
-  redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
-  pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
+  galaxyA36: GALAXY_A36_AFFILIATE_URL,
+  motoGMax: MOTO_G_MAX_AFFILIATE_URL,
+  redmiNote15: REDMI_NOTE_15_5G_AFFILIATE_URL,
 };
 
 const ranking = [
   {
-    category: "Perfil para comparar",
-    product: "Galaxy A35 5G",
-    description: "Excelente equilíbrio entre tela, bateria, software e confiabilidade.",
-    reviewHref: "/review/galaxy-a35",
-    affiliateHref: affiliateLinks.galaxyA35,
-    affiliateProductName: "Galaxy A35",
+    category: "O mais equilibrado",
+    product: "Galaxy A36 5G",
+    description: "Snapdragon 6 Gen 3, tela AMOLED de 120 Hz, IP67 e atualizações até 2031. Compre até R$ 1.350.",
+    reviewHref: "/review/galaxy-a36-5g",
+    affiliateHref: affiliateLinks.galaxyA36,
+    affiliateProductName: "Galaxy A36 5G",
   },
   {
-    category: "Perfil para comparar",
-    product: "Redmi Note 13 Pro 5G",
-    description: "Tela AMOLED forte, carregamento rápido e ótimo conjunto geral.",
-    reviewHref: "/review/redmi-note-13-pro",
-    affiliateHref: affiliateLinks.redmiNote13Pro,
-    affiliateProductName: "Redmi Note 13 Pro",
+    category: "Tela e câmera",
+    product: "Moto G Max",
+    description: "Tela pOLED de 6,8\" com 5.000 nits, câmera de 200 MP com OIS e IP68/IP69. Compre até R$ 1.600.",
+    reviewHref: "/review/moto-g-max",
+    affiliateHref: affiliateLinks.motoGMax,
+    affiliateProductName: "Moto G Max",
   },
   {
-    category: "Perfil para comparar",
-    product: "Poco X6 Pro",
-    description: "Ótima performance para quem prioriza jogos e desempenho.",
-    reviewHref: "/review/poco-x6-pro",
-    affiliateHref: affiliateLinks.pocoX6Pro,
-    affiliateProductName: "Poco X6 Pro",
+    category: "Bateria",
+    product: "Redmi Note 15 5G",
+    description: "5.520 mAh, tela AMOLED de 120 Hz e carregador na caixa. Compre até R$ 1.800.",
+    reviewHref: "/review/redmi-note-15-5g",
+    affiliateHref: affiliateLinks.redmiNote15,
+    affiliateProductName: "Redmi Note 15 5G",
   },
 ];
 
@@ -75,41 +74,41 @@ function MelhoresCelularesAte2000() {
       <CategoryHero
         eyebrow="Especial até R$ 2.000"
         title="Celulares até R$ 2.000: como comparar em 2026"
-        description="Compare os candidatos atuais e as análises anteriores por perfil. Sem preço verificado, nenhum modelo é garantido dentro do teto."
+        description="Os celulares atuais que mais valem a pena nessa faixa, com até quanto pagar em cada um. Preço muda todo dia: confira na loja."
         image="/images/products/phones-hero-optimized.webp"
         aside={
           <>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8B5A2B]">
-              Alternativa para uso cotidiano
+              O mais equilibrado da faixa
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A35 5G</h2>
+            <h2 className="mt-3 text-3xl font-bold text-white">Galaxy A36 5G</h2>
 
             <p className="mt-4 text-sm leading-6 text-slate-200">
-              Alternativa de geração anterior para comparar, sem preço atual confirmado no teto.
-              Avalie segurança, bateria e experiência Samsung consistente.
+              Tela AMOLED de 120 Hz, Snapdragon 6 Gen 3 e atualizações até 2031. Vale a pena até
+              R$ 1.350.
             </p>
 
             <a
-              href={GALAXY_A35_AFFILIATE_URL}
+              href={GALAXY_A36_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A35",
+                  productName: "Galaxy A36 5G",
                   pageType: "guia",
                   ctaPlacement: "hero",
                 })
               }
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver preço do Galaxy A35
+              Ver preço do Galaxy A36
             </a>
 
             <AffiliateRedirectNotice className="mt-3" tone="dark" />
 
             <Link
-              to="/review/galaxy-a35"
+              to="/review/galaxy-a36-5g"
               className="mt-3 block text-center text-sm font-semibold text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
               Ler review completo
@@ -132,7 +131,6 @@ function MelhoresCelularesAte2000() {
         </Link>
       </CategoryHero>
       <EditorialSelection selection="ate-2000" />
-      <LegacySelectionNotice />
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <SectionTitle
@@ -192,30 +190,26 @@ function MelhoresCelularesAte2000() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <ReviewCard
-              title="Review Galaxy A35 5G"
-              description="Excelente equilíbrio entre bateria, tela e experiência Samsung."
-              href="/review/galaxy-a35"
-              image="/images/products/galaxy-a35-optimized.webp"
-              score="8.7"
+              title="Review Galaxy A36 5G"
+              description="O Samsung mais equilibrado até R$ 1.500, com atualizações até 2031."
+              href="/review/galaxy-a36-5g"
+              image="/images/products/licensed/galaxy-a36-5g.webp"
               badge="Samsung"
             />
 
             <ReviewCard
-              title="Review Redmi Note 13 Pro 5G"
-              description="Ótima tela AMOLED, carregamento rápido e forte custo-benefício."
-              href="/review/redmi-note-13-pro"
-              image="/images/products/redmi-note-13-pro-optimized.webp"
-              score="9.0"
-              badge="Xiaomi"
+              title="Moto G Max é bom?"
+              description="A tela mais brilhante e a câmera de 200 MP até R$ 1.600."
+              href="/review/moto-g-max"
+              badge="Motorola"
             />
 
             <ReviewCard
-              title="Review Poco X6 Pro"
-              description="Ótima escolha para quem prioriza desempenho e jogos."
-              href="/review/poco-x6-pro"
-              image="/images/products/poco-x6-pro-optimized.webp"
-              score="9.2"
-              badge="Performance"
+              title="Review Redmi Note 15 5G"
+              description="Bateria de 5.520 mAh e tela AMOLED de 120 Hz."
+              href="/review/redmi-note-15-5g"
+              image="/images/products/redmi-note-15-5g-optimized.webp"
+              badge="Xiaomi"
             />
           </div>
         </section>
@@ -246,10 +240,10 @@ function MelhoresCelularesAte2000() {
             <AffiliateCTA
               title="Melhores ofertas até R$ 2.000"
               description="Veja preços, parcelamento e disponibilidade dos celulares recomendados."
-              buttonText="Ver Galaxy A35 no Mercado Livre"
-              href={affiliateLinks.galaxyA35}
-              highlight="Samsung • Xiaomi • Poco"
-              productName="Galaxy A35"
+              buttonText="Ver Galaxy A36 no Mercado Livre"
+              href={affiliateLinks.galaxyA36}
+              highlight="Samsung • Motorola • Xiaomi"
+              productName="Galaxy A36 5G"
               pageType="guia"
             />
 
@@ -298,8 +292,11 @@ function MelhoresCelularesAte2000() {
                   Melhores Xiaomi
                 </Link>
 
-                <Link to="/review/galaxy-a35" className="block text-slate-700 hover:text-[#8B5A2B]">
-                  Review Galaxy A35
+                <Link
+                  to="/comparativo/galaxy-a36-vs-moto-g86"
+                  className="block text-slate-700 hover:text-[#8B5A2B]"
+                >
+                  Galaxy A36 ou Moto G86?
                 </Link>
               </div>
             </div>
@@ -310,15 +307,15 @@ function MelhoresCelularesAte2000() {
       <MobilePurchaseBar
         options={[
           {
-            productName: "Galaxy A35",
-            href: GALAXY_A35_AFFILIATE_URL,
+            productName: "Galaxy A36 5G",
+            href: GALAXY_A36_AFFILIATE_URL,
             label: "Ver preço",
             primary: true,
           },
         ]}
         pageType="guia"
-        title="Galaxy A35 5G"
-        eyebrow="Alternativa anterior · preço a conferir"
+        title="Galaxy A36 5G"
+        eyebrow="O mais equilibrado · até R$ 1.350"
       />
     </main>
   );

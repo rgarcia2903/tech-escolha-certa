@@ -2,15 +2,14 @@ import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
-import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { AuthorByline } from "@/components/site/AuthorByline";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import {
+  GALAXY_A36_5G_AFFILIATE_URL,
   MOTO_G86_5G_AFFILIATE_URL,
-  POCO_X6_PRO_AFFILIATE_URL,
   POCO_X7_PRO_AFFILIATE_URL,
   REDMI_NOTE_15_5G_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
@@ -33,7 +32,7 @@ const CANONICAL = "https://techescolhacerta.com.br/guia/melhores-celulares-para-
 
 const PAGE_TITLE = "Melhor celular para jogos até R$ 2.000 em 2026: top 3 e qual comprar";
 const PAGE_DESCRIPTION =
-  "Moto G86, Redmi Note 15 5G ou POCO X6 Pro? Ranking de 2026 por desempenho em jogos, tela e bateria, com o veredito de cada um e onde comprar.";
+  "Moto G86, Redmi Note 15 5G ou Galaxy A36? Ranking de 2026 por desempenho em jogos, tela e bateria, com até quanto pagar e quando vale esticar para o Poco X7 Pro.";
 
 export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-2000")({
   head: () => ({
@@ -50,7 +49,7 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
       {
         name: "keywords",
         content:
-          "melhor celular para jogos até 2000, celular gamer até 2000, melhor celular para Free Fire, melhor celular para COD Mobile, celular para Genshin Impact barato, POCO X7 Pro, POCO X6 Pro, Moto G86",
+          "melhor celular para jogos até 2000, celular gamer até 2000, melhor celular para Free Fire, melhor celular para COD Mobile, celular para Genshin Impact barato, Moto G86, Redmi Note 15 5G, Galaxy A36, POCO X7 Pro",
       },
       {
         property: "og:title",
@@ -105,10 +104,10 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
           "@type": "ItemList",
           name: "Celulares para jogos até R$ 2.000 em 2026",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "POCO X7 Pro" },
-            { "@type": "ListItem", position: 2, name: "POCO X6 Pro" },
-            { "@type": "ListItem", position: 3, name: "Moto G86 5G" },
-            { "@type": "ListItem", position: 4, name: "Redmi Note 15 5G" },
+            { "@type": "ListItem", position: 1, name: "Moto G86 5G" },
+            { "@type": "ListItem", position: 2, name: "Redmi Note 15 5G" },
+            { "@type": "ListItem", position: 3, name: "Galaxy A36 5G" },
+            { "@type": "ListItem", position: 4, name: "POCO X7 Pro" },
           ],
         }),
       },
@@ -117,32 +116,11 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "Qual é o melhor celular para jogos até R$ 2.000?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "O POCO X7 Pro é a opção mais potente quando aparece por até R$ 2.000. Se estiver acima do limite, POCO X6 Pro e Moto G86 são alternativas mais realistas, conforme a oferta do dia.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Celular até R$ 2.000 roda Genshin Impact?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Roda, mas o nível gráfico e a estabilidade dependem do aparelho. POCO X7 Pro e POCO X6 Pro têm mais folga; Moto G86 e Redmi Note 15 5G pedem ajustes mais moderados em jogos pesados.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "O Moto G86 é bom para jogos?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Sim. O Moto G86 atende bem jogos populares e uso equilibrado, mas POCO X7 Pro e POCO X6 Pro entregam mais desempenho bruto em títulos pesados.",
-              },
-            },
-          ],
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
         }),
       },
     ],
@@ -153,13 +131,94 @@ export const Route = createFileRoute("/guia/melhores-celulares-para-jogos-ate-20
 const phones = [
   {
     rank: "1º",
+    name: "Moto G86 5G",
+    productId: "moto-g86-5g",
+    badge: "Perfil para comparar",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    image: "/images/products/moto-g86-optimized.webp",
+    summary:
+      "O mais completo para jogar dentro de R$ 2.000: Dimensity 7300, 8 GB de RAM e tela pOLED 1.5K de 120 Hz. Roda bem os jogos populares; nos pesados, pede gráficos médios. Compre até R$ 1.900.",
+    bestFor: "Free Fire, COD Mobile, PUBG, jogos populares e uso misto no dia a dia.",
+    pros: [
+      "Tela pOLED 1.5K de 120 Hz",
+      "Bateria de 5.200 mAh",
+      "Proteção IP68 e IP69",
+      "8 GB de RAM física e boa experiência geral",
+    ],
+    cons: [
+      "Dimensity 7300 fica abaixo dos POCO, que custam mais de R$ 2.000",
+      "Não é indicado para gráficos máximos em jogos pesados",
+      "Carregamento de 33 W é apenas mediano",
+    ],
+    actionHref: MOTO_G86_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Moto G86",
+    isAffiliate: true,
+    secondaryPath: "/review/moto-g86-5g",
+    secondaryLabel: "Ver análise",
+  },
+  {
+    rank: "2º",
+    name: "Redmi Note 15 5G",
+    productId: "redmi-note-15-5g",
+    badge: "Perfil para comparar",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    image: "/images/products/redmi-note-15-5g-optimized.webp",
+    summary:
+      "É uma escolha atual para jogos leves e intermediários. O Snapdragon 6 Gen 3 não concorre com os chips dos POCO, mas a bateria de 5.520 mAh, a tela AMOLED e o carregamento de 45 W formam um pacote coerente.",
+    bestFor: "Free Fire, Roblox, jogos competitivos leves, vídeos e uso diário.",
+    pros: [
+      "Modelo lançado em 2026",
+      "Tela AMOLED de 120 Hz",
+      "Bateria de 5.520 mAh",
+      "Carregamento de 45 W e proteção IP65",
+    ],
+    cons: [
+      "Snapdragon 6 Gen 3 não é um chip gamer de alto desempenho",
+      "Exige reduzir gráficos em títulos pesados",
+      "Não substitui um POCO para foco total em jogos pesados",
+    ],
+    actionHref: REDMI_NOTE_15_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Redmi Note 15 5G",
+    isAffiliate: true,
+    secondaryPath: "/review/redmi-note-15-5g",
+    secondaryLabel: "Ver análise",
+  },
+  {
+    rank: "3º",
+    name: "Galaxy A36 5G",
+    productId: "galaxy-a36-5g",
+    badge: "Perfil para comparar",
+    price: "Consultar na loja; preço no orçamento não confirmado",
+    image: "/images/products/licensed/galaxy-a36-5g.webp",
+    summary:
+      "O mais barato desta lista e o que recebe atualizações por mais tempo (até 2031). O Snapdragon 6 Gen 3 roda Free Fire, Roblox e COD Mobile; nos jogos pesados, pede gráficos baixos. Compre até R$ 1.350.",
+    bestFor: "Quem joga jogos populares e quer um celular que dure muitos anos, gastando menos.",
+    pros: [
+      "Tela AMOLED de 120 Hz",
+      "Atualizações até 2031",
+      "Proteção IP67",
+      "Recarga de 45 W",
+    ],
+    cons: [
+      "6 GB de RAM na versão de entrada",
+      "Não é indicado para gráficos altos em jogos pesados",
+      "Carregador vendido separadamente",
+    ],
+    actionHref: GALAXY_A36_5G_AFFILIATE_URL,
+    actionLabel: "Conferir preço do Galaxy A36",
+    isAffiliate: true,
+    secondaryPath: "/review/galaxy-a36-5g",
+    secondaryLabel: "Ver análise",
+  },
+  {
+    rank: "4º",
     name: "POCO X7 Pro",
     productId: "poco-x7-pro",
-    badge: "Perfil para comparar",
+    badge: "Se puder esticar",
     price: "Consultar na loja; preço no orçamento não confirmado",
     image: "/images/products/poco-x7-pro-optimized.webp",
     summary:
-      "É uma referência anterior desta seleção, mas só pertence a um guia de até R$ 2.000 quando uma promoção realmente o coloca dentro do teto. O Dimensity 8400-Ultra, a memória rápida e a bateria grande são recursos relevantes para comparar em jogos.",
+      "Hoje ele custa mais de R$ 2.000, mas é o salto de desempenho para quem joga títulos pesados, como Genshin. Vale esticar até uns R$ 2.250. Se for gastar perto de R$ 2.500, prefira o Poco X8 Pro.",
     bestFor: "Jogos pesados, emulação, multitarefa e quem quer mais folga de desempenho.",
     pros: [
       "Dimensity 8400-Ultra é o chip mais forte da lista",
@@ -178,111 +237,30 @@ const phones = [
     secondaryPath: "/review/poco-x7-pro",
     secondaryLabel: "Ver análise",
   },
-  {
-    rank: "2º",
-    name: "POCO X6 Pro",
-    productId: "poco-x6-pro",
-    badge: "Perfil para comparar",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/poco-x6-pro-optimized.webp",
-    summary:
-      "Continua muito rápido para jogos, mas é um modelo mais antigo. A compra só é racional quando custa claramente menos que o POCO X7 Pro na mesma capacidade de armazenamento.",
-    bestFor: "Quem quer alto desempenho gastando menos e encontrou uma promoção real.",
-    pros: [
-      "Dimensity 8300-Ultra ainda entrega muita potência",
-      "Tela AMOLED 120 Hz com boa definição",
-      "Memória LPDDR5X e armazenamento UFS 4.0",
-      "Carregamento de 67 W",
-    ],
-    cons: [
-      "Modelo de geração anterior",
-      "Pode aquecer em sessões longas",
-      "Perde valor se o X7 Pro estiver próximo de preço",
-    ],
-    actionHref: POCO_X6_PRO_AFFILIATE_URL,
-    actionLabel: "Conferir preço do POCO X6 Pro",
-    isAffiliate: true,
-    secondaryPath: "/review/poco-x6-pro",
-    secondaryLabel: "Ver análise",
-  },
-  {
-    rank: "3º",
-    name: "Moto G86 5G",
-    productId: "moto-g86-5g",
-    badge: "Perfil para comparar",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/moto-g86-optimized.webp",
-    summary:
-      "Não disputa potência bruta com os dois POCO, mas oferece um conjunto mais equilibrado para quem joga e também valoriza tela, resistência, câmera e uso diário.",
-    bestFor: "Free Fire, COD Mobile, PUBG, jogos populares e uso misto no dia a dia.",
-    pros: [
-      "Tela pOLED 1.5K de 120 Hz",
-      "Bateria de 5.200 mAh",
-      "Proteção IP68 e IP69",
-      "8 GB de RAM física e boa experiência geral",
-    ],
-    cons: [
-      "Dimensity 7300 fica abaixo dos POCO",
-      "Não é indicado para gráficos máximos em jogos pesados",
-      "Carregamento de 33 W é apenas mediano",
-    ],
-    actionHref: MOTO_G86_5G_AFFILIATE_URL,
-    actionLabel: "Conferir preço do Moto G86",
-    isAffiliate: true,
-    secondaryPath: "/celulares",
-    secondaryLabel: "Ver outros celulares",
-  },
-  {
-    rank: "4º",
-    name: "Redmi Note 15 5G",
-    productId: "redmi-note-15-5g",
-    badge: "Perfil para comparar",
-    price: "Consultar na loja; preço no orçamento não confirmado",
-    image: "/images/products/redmi-note-15-5g-optimized.webp",
-    summary:
-      "É uma escolha atual para jogos leves e intermediários. O Snapdragon 6 Gen 3 não concorre com os chips dos POCO, mas a bateria de 5.520 mAh, a tela AMOLED e o carregamento de 45 W formam um pacote coerente.",
-    bestFor: "Free Fire, Roblox, jogos competitivos leves, vídeos e uso diário.",
-    pros: [
-      "Modelo lançado em 2026",
-      "Tela AMOLED de 120 Hz",
-      "Bateria de 5.520 mAh",
-      "Carregamento de 45 W e proteção IP65",
-    ],
-    cons: [
-      "Snapdragon 6 Gen 3 não é um chip gamer de alto desempenho",
-      "Exige reduzir gráficos em títulos pesados",
-      "Não substitui POCO X7 Pro ou X6 Pro para foco total em jogos",
-    ],
-    actionHref: REDMI_NOTE_15_5G_AFFILIATE_URL,
-    actionLabel: "Conferir preço do Redmi Note 15 5G",
-    isAffiliate: true,
-    secondaryPath: "/melhores-celulares-xiaomi",
-    secondaryLabel: "Ver guia Xiaomi",
-  },
 ];
 
 const quickRanking = [
-  ["Mais potente", "POCO X7 Pro"],
-  ["Melhor em promoção", "POCO X6 Pro"],
-  ["Mais equilibrado", "Moto G86 5G"],
-  ["Mais novo e econômico", "Redmi Note 15 5G"],
+  ["Melhor até R$ 2.000", "Moto G86 5G"],
+  ["Mais bateria", "Redmi Note 15 5G"],
+  ["Mais barato e duradouro", "Galaxy A36 5G"],
+  ["Se puder esticar", "POCO X7 Pro"],
 ];
 
 const faq = [
   {
     question: "Qual é o melhor celular para jogos até R$ 2.000 em 2026?",
     answer:
-      "O POCO X7 Pro é um candidato se uma oferta confirmada couber no orçamento; compare também o X8 Pro. Fora de promoção, POCO X6 Pro e Moto G86 costumam ser alternativas mais realistas. O preço precisa ser confirmado no dia da compra.",
+      "O Moto G86 5G: Dimensity 7300, 8 GB de RAM e tela de 120 Hz, até R$ 1.900. Os POCO X7 Pro e X8 Pro são mais fortes, mas hoje custam acima de R$ 2.000.",
   },
   {
     question: "Celular até R$ 2.000 roda Genshin Impact?",
     answer:
-      "Sim, mas normalmente com ajustes gráficos. POCO X7 Pro e X6 Pro têm mais folga; Moto G86 e Redmi Note 15 5G pedem qualidade gráfica mais moderada para manter estabilidade.",
+      "Abre, mas com gráficos baixos ou médios. Para jogar Genshin com folga, o mínimo que recomendamos é o POCO X7 Pro, que passa de R$ 2.000. Veja o guia de jogos pesados.",
   },
   {
-    question: "POCO X7 Pro ou POCO X6 Pro: qual comprar?",
+    question: "Ainda vale comprar o POCO X6 Pro?",
     answer:
-      "Escolha o POCO X7 Pro se a diferença de preço for pequena e o total ficar dentro do orçamento. O X6 Pro só é o melhor negócio quando custa claramente menos na mesma configuração de memória.",
+      "Só até R$ 2.100. Hoje ele costuma aparecer acima disso, e o POCO X7 Pro, mais novo, custa pouco mais.",
   },
   {
     question: "O que olhar antes de comprar um celular para jogos?",
@@ -311,9 +289,9 @@ function GamingPhonesGuide() {
               </h1>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                O POCO X7 Pro é um candidato para jogos se uma oferta verificada o colocar dentro do
-                limite. Se ele passar de R$ 2.000, compare POCO X6 Pro, Moto G86 e Redmi Note 15 5G
-                antes de decidir.
+                Dentro de R$ 2.000, o Moto G86 5G é o mais completo para jogar. O Redmi Note 15 5G
+                tem mais bateria e o Galaxy A36 custa menos. Para jogos pesados, vale esticar até o
+                POCO X7 Pro.
               </p>
 
               <AuthorByline reviewedAt="16 de outubro de 2026" className="mt-6" />
@@ -375,27 +353,26 @@ function GamingPhonesGuide() {
         </div>
       </section>
       <EditorialSelection selection="games" />
-      <LegacySelectionNotice />
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
           <PurchaseActions
             options={[
               {
-                productName: "POCO X7 Pro",
-                href: POCO_X7_PRO_AFFILIATE_URL,
-                label: "Ver preço do POCO X7 Pro",
+                productName: "Moto G86 5G",
+                href: MOTO_G86_5G_AFFILIATE_URL,
+                label: "Ver preço do Moto G86",
               },
               {
-                productName: "POCO X6 Pro",
-                href: POCO_X6_PRO_AFFILIATE_URL,
-                label: "Comparar preço do POCO X6 Pro",
+                productName: "Redmi Note 15 5G",
+                href: REDMI_NOTE_15_5G_AFFILIATE_URL,
+                label: "Ver preço do Redmi Note 15 5G",
               },
             ]}
             pageType="guia"
             placement="hero"
-            title="Comece pelas duas escolhas mais fortes"
-            description="Compare versões equivalentes, frete e preço final. O POCO X7 Pro só entra neste guia se a oferta ficar até R$ 2.000."
+            title="Comece pelas duas melhores escolhas até R$ 2.000"
+            description="Compare versões equivalentes, frete e preço final. Moto G86 até R$ 1.900; Redmi Note 15 5G até R$ 1.800."
           />
         </div>
       </section>
@@ -594,16 +571,6 @@ function GamingPhonesGuide() {
                 </li>
                 <li>
                   <a
-                    href="https://www.mi.com/br/product/poco-x6-pro/specs/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-cta hover:underline"
-                  >
-                    Xiaomi Brasil — especificações do POCO X6 Pro
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://motorolanews.com/br/novo-moto-g86-chega-ao-mercado-como-o-smartphone-intermediario-com-as-melhores-experiencias-premium/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -673,27 +640,26 @@ function GamingPhonesGuide() {
                 <h2 className="text-2xl font-bold text-foreground">Conclusão: qual comprar?</h2>
               </div>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                O POCO X7 Pro é a escolha mais forte se o preço final ficar até R$ 2.000. Se
-                ultrapassar o teto, procure o POCO X6 Pro com desconto. O Moto G86 é mais
-                equilibrado para uso misto, enquanto o Redmi Note 15 5G serve melhor a jogos leves e
-                quem prefere um modelo mais novo.
+                Até R$ 2.000, compre o Moto G86 5G. O Redmi Note 15 5G é a escolha para quem quer
+                mais bateria, e o Galaxy A36 para quem quer gastar menos e ficar muitos anos com o
+                celular. Se você joga títulos pesados, estique até o POCO X7 Pro.
               </p>
             </div>
 
             <a
-              href={POCO_X7_PRO_AFFILIATE_URL}
+              href={MOTO_G86_5G_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "POCO X7 Pro",
+                  productName: "Moto G86 5G",
                   pageType: "guia",
                   ctaPlacement: "gaming_conclusion",
                 })
               }
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:-translate-y-0.5 hover:brightness-105"
             >
-              Conferir preço do POCO X7 Pro
+              Conferir preço do Moto G86
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
@@ -704,14 +670,14 @@ function GamingPhonesGuide() {
       <MobilePurchaseBar
         options={[
           {
-            productName: "POCO X7 Pro",
-            href: POCO_X7_PRO_AFFILIATE_URL,
+            productName: "Moto G86 5G",
+            href: MOTO_G86_5G_AFFILIATE_URL,
             label: "Ver preço",
           },
         ]}
         pageType="guia"
-        title="POCO X7 Pro"
-        eyebrow="Mais potente até R$ 2.000"
+        title="Moto G86 5G"
+        eyebrow="Melhor para jogos até R$ 2.000"
       />
     </main>
   );
