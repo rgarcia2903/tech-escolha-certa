@@ -281,7 +281,7 @@ function BestPhones3500Guide() {
           </div>
         </div>
       </section>
-      <EditorialSelection selection="premium" />
+      <EditorialSelection selection="ate-3000" />
 
       <section id="ranking" className="mx-auto max-w-7xl px-6 py-14 lg:px-8 md:py-20">
         <div className="max-w-3xl">
