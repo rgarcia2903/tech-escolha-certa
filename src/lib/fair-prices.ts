@@ -574,5 +574,5 @@ export function fairPriceTitle(id: FairPriceId): string {
 /** Descrição para o Google: teto, alternativa e o que a página responde. */
 export function fairPriceDescription(id: FairPriceId): string {
   const fp = FAIR_PRICES[id];
-  return `Veredito: o ${fp.productName} novo só compensa abaixo de ${formatBRL(fp.maxPrice)}. Acima disso, o ${fp.alternativeName} é a compra melhor. Veja problemas, versão certa e onde comprar.`;
+  return `Veredito: o ${fp.productName} só compensa abaixo de ${formatBRL(fp.maxPrice)}. Acima disso, o ${fp.alternativeName} é a compra melhor. Veja problemas, versão certa e onde comprar.`;
 }
