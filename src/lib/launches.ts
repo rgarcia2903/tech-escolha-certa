@@ -568,6 +568,46 @@ export const LAUNCHES: Record<string, Launch> = {
       { question: "Galaxy A17 4G ou 5G?", answer: "O 5G, se a diferença for de até uns R$ 150: processador mais forte e conexão 5G." },
     ],
   },
+  "moto-g37": {
+    id: "moto-g37",
+    name: "Moto G37",
+    launched: "maio de 2026",
+    sortKey: "2026-05",
+    brand: "Motorola",
+    tagline: "O Motorola 5G mais barato com tela de 120 Hz e 5.200 mAh.",
+    shortAnswer:
+      "Sim, para quem quer 5G gastando pouco. O Moto G37 tem Dimensity 6300, tela de 120 Hz, bateria de 5.200 mAh, IP64 e microSD, e é bem mais rápido que o Moto G17. Os pontos fracos são a tela HD+ (720p) e os 4 GB de RAM. Se puder chegar a uns R$ 900, o Galaxy A17 5G tem tela AMOLED e câmera com estabilização óptica.",
+    specs: [
+      ["Processador", "MediaTek Dimensity 6300 (6 nm)"],
+      ["Tela", '6,67" LCD HD+ (720 × 1604) • 120 Hz • 1.050 nits'],
+      ["Câmera principal", "50 MP"],
+      ["Memória", "4 GB de RAM • 128 GB + microSD"],
+      ["Bateria", "5.200 mAh • 20 W"],
+      ["Proteção", "IP64"],
+      ["Sistema", "Android 16"],
+      ["Lançamento", "Maio de 2026 (R$ 1.199)"],
+    ],
+    buyIf: [
+      "Quer 5G e tela de 120 Hz no Motorola mais barato.",
+      "Usa o celular para WhatsApp, redes sociais, vídeos e jogos leves.",
+      "Quer cartão de memória e bateria grande.",
+    ],
+    thinkTwiceIf: [
+      "Quer tela nítida: é HD+ (720p), abaixo do Full HD.",
+      "Pode chegar a uns R$ 900: o Galaxy A17 5G tem tela AMOLED e câmera com OIS.",
+    ],
+    compare: [
+      { label: "Moto G37 ou Moto G17?", path: "/comparativo/moto-g37-vs-moto-g17" },
+      { label: "Melhores celulares até R$ 1.000", path: "/melhor-celular-ate-1000" },
+    ],
+    versionNote:
+      "Moto G37 e Moto G37 Power são aparelhos diferentes. A Motorola não detalha quantas versões do Android o G37 vai receber.",
+    faq: [
+      { question: "O Moto G37 é bom?", answer: "Sim, para uso do dia a dia com 5G. É bem mais rápido que o Moto G17, mas a tela é HD+ e são 4 GB de RAM." },
+      { question: "O Moto G37 roda Free Fire?", answer: "Roda bem: o Dimensity 6300 e a tela de 120 Hz dão conta. Jogos pesados exigem gráficos baixos." },
+      { question: "Moto G37 ou Galaxy A17 5G?", answer: "Se o preço for parecido, o Galaxy A17 5G: tela AMOLED, câmera com estabilização óptica e seis anos de atualizações." },
+    ],
+  },
   "moto-g17": {
     id: "moto-g17",
     name: "Moto G17",

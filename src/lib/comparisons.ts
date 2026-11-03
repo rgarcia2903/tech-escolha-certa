@@ -938,7 +938,7 @@ export const COMPARISONS: Record<string, Comparison> = {
   },
   "moto-g37-vs-moto-g17": {
     slug: "moto-g37-vs-moto-g17",
-    a: { id: "moto-g37", name: "Moto G37", reviewPath: "/melhor-celular-ate-1000" },
+    a: { id: "moto-g37", name: "Moto G37", reviewPath: "/review/moto-g37" },
     b: { id: "moto-g17", name: "Moto G17", reviewPath: "/review/moto-g17" },
     title: "Moto G37 ou Moto G17: qual comprar em 2026?",
     description:
