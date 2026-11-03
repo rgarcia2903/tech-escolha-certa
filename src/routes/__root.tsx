@@ -214,12 +214,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
 
         {
-          name: "keywords",
-          content:
-            "melhores celulares, comparativo celular, review smartphone, celular custo benefício, galaxy a55, redmi note 13 pro, melhores celulares 2026",
-        },
-
-        {
           name: "robots",
           content: "index, follow",
         },

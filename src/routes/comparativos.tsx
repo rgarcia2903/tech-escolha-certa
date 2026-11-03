@@ -35,6 +35,38 @@ export const Route = createFileRoute("/comparativos")({
 
 const FEATURED_COMPARISONS = [
   {
+    title: "Galaxy A36 vs Galaxy A17",
+    summary: "Vale pagar mais pelo A36? Processador, tela de 120 Hz, recarga e IP67.",
+    href: "/comparativo/galaxy-a36-vs-galaxy-a17",
+    family: "Samsung vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem está entre os dois Samsung mais vendidos.",
+  },
+  {
+    title: "Poco X8 Pro vs Galaxy S25 FE",
+    summary: "Desempenho e bateria contra zoom e sete anos de atualizações.",
+    href: "/comparativo/poco-x8-pro-vs-galaxy-s25-fe",
+    family: "Xiaomi vs Samsung",
+    tag: "Novo",
+    bestFor: "Quem tem até R$ 3.000 e quer o melhor celular.",
+  },
+  {
+    title: "iPhone 16e vs iPhone 15",
+    summary: "Chip mais novo contra ultra-angular, MagSafe e Dynamic Island.",
+    href: "/comparativo/iphone-16e-vs-iphone-15",
+    family: "Apple vs Apple",
+    tag: "Novo",
+    bestFor: "Quem quer um iPhone barato.",
+  },
+  {
+    title: "Edge 60 Fusion vs Moto G86",
+    summary: "Mesmo processador e IP69: tela curva contra tela plana e carregador na caixa.",
+    href: "/comparativo/edge-60-fusion-vs-moto-g86",
+    family: "Motorola vs Motorola",
+    tag: "Novo",
+    bestFor: "Quem quer um Motorola resistente e com tela ótima.",
+  },
+  {
     title: "Galaxy A17 vs Galaxy A07",
     summary: "Tela AMOLED, câmera estabilizada e 5G contra o Samsung mais barato.",
     href: "/comparativo/galaxy-a17-vs-galaxy-a07",
