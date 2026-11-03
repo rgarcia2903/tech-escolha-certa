@@ -103,4 +103,5 @@ export const MOTO_G06_AFFILIATE_URL = "https://meli.la/27kny6U";
 export const GALAXY_S26_AFFILIATE_URL = "https://meli.la/1egdSnC";
 export const GALAXY_S26_ULTRA_AFFILIATE_URL = "https://meli.la/12Bv48F";
 export const MOTO_G17_AFFILIATE_URL = "https://meli.la/2NC1Xba";
+export const MOTO_G37_AFFILIATE_URL = "https://meli.la/2H9sHgp";
 export const MOTO_G77_AFFILIATE_URL = "https://meli.la/2MToe45";

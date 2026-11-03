@@ -616,5 +616,15 @@
       "g75",
       "g86"
     ]
+  },
+  "MOTO_G37_AFFILIATE_URL": {
+    "include": [
+      "g37"
+    ],
+    "exclude": [
+      "g17",
+      "g37 power",
+      "g47"
+    ]
   }
 }

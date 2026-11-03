@@ -369,7 +369,7 @@ export const PRODUCTS: Product[] = [
     "Motorola",
     "candidate",
     "5G barato: Dimensity 6300, tela de 120 Hz, 5.200 mAh e IP64.",
-    { reviewPath: "/comparativo/moto-g37-vs-moto-g17" },
+    { reviewPath: "/review/moto-g37" },
   ),
   product(
     "moto-g17",
@@ -887,6 +887,7 @@ const ml: [string, string][] = [
   ["galaxy-s26", links.GALAXY_S26_AFFILIATE_URL],
   ["galaxy-s26-ultra", links.GALAXY_S26_ULTRA_AFFILIATE_URL],
   ["moto-g17", links.MOTO_G17_AFFILIATE_URL],
+  ["moto-g37", links.MOTO_G37_AFFILIATE_URL],
   ["moto-g77", links.MOTO_G77_AFFILIATE_URL],
 ];
 const amazon: [string, string][] = [
