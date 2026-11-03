@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/command";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { PRODUCTS } from "@/lib/product-catalog";
+import { COMPARISONS } from "@/lib/comparisons";
+import { USE_GUIDES } from "@/lib/use-guides";
 import { trackSiteSearchSelection } from "@/lib/analytics";
 
 const SEARCH_ITEMS = [
@@ -27,6 +29,38 @@ const SEARCH_ITEMS = [
     keywords: `${product.brand} ${product.connectivity} ${product.editorialStatus}`,
     icon: Smartphone,
   })),
+  ...Object.values(COMPARISONS).map((c) => ({
+    group: "Comparativos",
+    title: `${c.a.name} vs ${c.b.name}`,
+    to: "/comparativo/" + c.slug,
+    description: "Qual comprar: lado a lado",
+    keywords: "versus comparar diferenças ou qual melhor",
+    icon: GitCompareArrows,
+  })),
+  ...Object.values(USE_GUIDES).map((g) => ({
+    group: "Comece por aqui",
+    title: g.h1.replace(/ em 2026.*$/, ""),
+    to: "/" + g.slug,
+    description: "Um modelo por faixa de preço",
+    keywords: "melhor celular para uso jogo bateria câmera trabalho",
+    icon: Smartphone,
+  })),
+  {
+    group: "Comece por aqui",
+    title: "Lançamentos de 2026",
+    description: "Os celulares novos à venda e até quanto pagar",
+    to: "/lancamentos",
+    keywords: "novo lançamento 2026",
+    icon: Smartphone,
+  },
+  {
+    group: "Comece por aqui",
+    title: "Ainda vale a pena?",
+    description: "Modelos antigos: até quanto pagar e qual comprar no lugar",
+    to: "/vale-a-pena",
+    keywords: "antigo vale a pena 2026 usado",
+    icon: Smartphone,
+  },
   ...[
     ["Galaxy A25 5G vs Redmi Note 13 4G", "/comparativo/galaxy-a25-vs-redmi-note-13"],
     ["Galaxy A35 vs Redmi Note 13 Pro 5G", "/comparativo/galaxy-a35-vs-redmi-note-13-pro"],
@@ -152,77 +186,12 @@ const SEARCH_ITEMS = [
     keywords: "gamer jogos desempenho poco",
     icon: Smartphone,
   },
-  {
-    group: "Reviews",
-    title: "Galaxy A35 5G",
-    description: "Samsung equilibrado até R$ 2.000",
-    to: "/review/galaxy-a35",
-    keywords: "review análise samsung",
-    icon: BookOpen,
-  },
-  {
-    group: "Reviews",
-    title: "Galaxy A55 5G",
-    description: "Intermediário Samsung mais completo",
-    to: "/review/galaxy-a55",
-    keywords: "review análise samsung",
-    icon: BookOpen,
-  },
-  {
-    group: "Reviews",
-    title: "Galaxy S24",
-    description: "Flagship compacto da Samsung",
-    to: "/review/galaxy-s24",
-    keywords: "review análise premium samsung",
-    icon: BookOpen,
-  },
-  {
-    group: "Reviews",
-    title: "iPhone 15",
-    description: "Desempenho, câmera e ecossistema Apple",
-    to: "/review/iphone-15",
-    keywords: "review análise apple ios",
-    icon: BookOpen,
-  },
-  {
-    group: "Reviews",
-    title: "Redmi Note 13 Pro 5G",
-    description: "Câmera e ficha técnica pelo preço",
-    to: "/review/redmi-note-13-pro",
-    keywords: "review análise xiaomi redmi",
-    icon: BookOpen,
-  },
-  {
-    group: "Reviews",
-    title: "Redmi Note 14 Pro+ 5G",
-    description: "Redmi mais completo da seleção",
-    to: "/review/redmi-note-14-pro-plus",
-    keywords: "review análise xiaomi redmi plus",
-    icon: BookOpen,
-  },
-  {
-    group: "Reviews",
-    title: "Poco X6 Pro",
-    description: "Desempenho forte pagando menos",
-    to: "/review/poco-x6-pro",
-    keywords: "review análise xiaomi jogos gamer",
-    icon: BookOpen,
-  },
-  {
-    group: "Reviews",
-    title: "Poco X7 Pro",
-    description: "Performance e bateria para jogos",
-    to: "/review/poco-x7-pro",
-    keywords: "review análise xiaomi jogos gamer",
-    icon: BookOpen,
-  },
 ] as const;
 
 const GROUPS = [
   "Comece por aqui",
   "Guias por orçamento",
   "Marcas e perfis",
-  "Reviews",
   "Modelos e versões",
   "Comparativos",
 ] as const;
