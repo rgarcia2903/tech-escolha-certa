@@ -41,36 +41,31 @@ export const Route = createFileRoute("/celulares")({
 
 const reviews = [
   {
-    title: "Review Galaxy A35 5G",
-    description:
-      "Um dos melhores celulares Samsung para quem quer equilíbrio entre preço, tela e bateria.",
-    href: "/review/galaxy-a35",
-    score: "8.7",
+    title: "Review Galaxy A36 5G",
+    description: "O Samsung mais equilibrado até R$ 1.500, com tela AMOLED e atualizações até 2031.",
+    href: "/review/galaxy-a36-5g",
+    image: "/images/products/licensed/galaxy-a36-5g.webp",
     badge: "Samsung",
   },
   {
-    title: "Review Galaxy A55 5G",
-    description:
-      "Construção premium, boa autonomia e experiência refinada para quem quer subir de categoria.",
-    href: "/review/galaxy-a55",
-    score: "9.1",
+    title: "Review Moto G86 5G",
+    description: "Tela pOLED de 4.500 nits, IP68/IP69 e carregador na caixa até R$ 1.900.",
+    href: "/review/moto-g86-5g",
+    image: "/images/products/moto-g86-optimized.webp",
+    badge: "Motorola",
+  },
+  {
+    title: "Poco X8 Pro é bom?",
+    description: "O mais forte para jogos até R$ 2.500, com 6.500 mAh e recarga de 100 W.",
+    href: "/review/poco-x8-pro",
+    badge: "Jogos",
+  },
+  {
+    title: "Review Galaxy S25 FE",
+    description: "Linha S com teleobjetiva, IP68 e sete anos de atualizações.",
+    href: "/review/galaxy-s25-fe",
+    image: "/images/products/gallery/galaxy-s25-fe/01-principal.webp",
     badge: "Premium",
-  },
-  {
-    title: "Review Redmi Note 13 Pro 5G",
-    description:
-      "Tela forte, ótimo desempenho e carregamento rápido para quem busca custo-benefício.",
-    href: "/review/redmi-note-13-pro",
-    score: "9.0",
-    badge: "Xiaomi",
-  },
-  {
-    title: "Review Galaxy S24",
-    description:
-      "O principal topo de linha compacto da Samsung com foco em IA e experiência premium.",
-    href: "/review/galaxy-s24",
-    score: "9.6",
-    badge: "Flagship",
   },
 ];
 
@@ -86,13 +81,13 @@ const guides = [
     title: "Melhores celulares até R$ 2.000",
     description: "Os modelos mais equilibrados para quem quer comprar bem gastando menos.",
     href: "/melhores-celulares-ate-2000",
-    highlight: "Melhor compra geral: Galaxy A35",
+    highlight: "Mais equilibrado: Galaxy A36",
   },
   {
     title: "Melhores celulares até R$ 2.500",
     description: "Guia completo para quem busca intermediários premium em 2026.",
     href: "/melhores-celulares-ate-2500",
-    highlight: "Melhor intermediário premium: Galaxy A55",
+    highlight: "Samsung mais completo: Galaxy A57",
   },
   {
     title: "Melhores celulares Xiaomi",
@@ -122,40 +117,24 @@ const guides = [
 
 const comparisons = [
   {
-    title: "Galaxy A55 vs Galaxy A35",
-    description: "Qual Samsung intermediário faz mais sentido para o seu perfil?",
-    href: "/comparativo-galaxy-a55-vs-galaxy-a35",
-    winner: "Galaxy A55 entrega experiência mais premium.",
+    title: "Galaxy A36 vs Moto G86",
+    description: "Os dois intermediários mais buscados: atualizações contra tela e resistência.",
+    href: "/comparativo/galaxy-a36-vs-moto-g86",
+    winner: "Galaxy A36 pelo custo-benefício; Moto G86 pela tela.",
   },
   {
-    title: "Galaxy A55 vs Redmi Note 13 Pro",
-    description: "Samsung ou Xiaomi? Compare câmera, bateria, desempenho e experiência.",
-    href: "/comparativo/galaxy-a55-vs-redmi-note-13-pro",
-    winner: "Empate técnico dependendo do perfil.",
+    title: "Galaxy A17 vs Galaxy A07",
+    description: "Vale pagar a mais pelo A17 5G?",
+    href: "/comparativo/galaxy-a17-vs-galaxy-a07",
+    winner: "Galaxy A17 se a diferença for de até uns R$ 200.",
   },
 ];
 
 const rankings = [
-  {
-    category: "Alternativa de geração anterior",
-    product: "Galaxy S24",
-    href: "/review/galaxy-s24",
-  },
-  {
-    category: "Alternativa de geração anterior",
-    product: "Galaxy A35",
-    href: "/review/galaxy-a35",
-  },
-  {
-    category: "Alternativa de geração anterior",
-    product: "Galaxy A55",
-    href: "/review/galaxy-a55",
-  },
-  {
-    category: "Alternativa de geração anterior",
-    product: "Redmi Note 13 Pro",
-    href: "/review/redmi-note-13-pro",
-  },
+  { category: "Até R$ 1.000", product: "Galaxy A17 5G", href: "/review/galaxy-a17-5g" },
+  { category: "Até R$ 1.500", product: "Galaxy A36 5G", href: "/review/galaxy-a36-5g" },
+  { category: "Até R$ 2.000", product: "Moto G86 5G", href: "/review/moto-g86-5g" },
+  { category: "Até R$ 3.000", product: "Galaxy S25 FE", href: "/review/galaxy-s25-fe" },
 ];
 
 function CelularesPage() {

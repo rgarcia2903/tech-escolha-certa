@@ -117,11 +117,9 @@ const COMPARISONS = [
   { to: "/comparativo/galaxy-a57-vs-galaxy-a36", label: "Galaxy A57 vs Galaxy A36" },
   { to: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g", label: "Galaxy A17 4G vs A17 5G" },
   { to: "/comparativo-galaxy-a55-vs-galaxy-a35", label: "Galaxy A55 vs Galaxy A35" },
-  { to: "/comparativo/galaxy-a55-vs-redmi-note-13-pro", label: "Galaxy A55 vs Redmi Note 13 Pro" },
-  { to: "/comparativo/galaxy-a35-vs-redmi-note-13-pro", label: "Galaxy A35 vs Redmi Note 13 Pro" },
-  { to: "/comparativo/galaxy-a55-vs-poco-x6-pro", label: "Galaxy A55 vs Poco X6 Pro" },
-  { to: "/comparativo/iphone-15-vs-galaxy-s24", label: "iPhone 15 vs Galaxy S24" },
-  { to: "/comparativo/galaxy-a25-vs-redmi-note-13", label: "Galaxy A25 vs Redmi Note 13" },
+  { to: "/comparativo/galaxy-a36-vs-moto-g86", label: "Galaxy A36 vs Moto G86" },
+  { to: "/comparativo/galaxy-a17-vs-galaxy-a07", label: "Galaxy A17 vs Galaxy A07" },
+  { to: "/comparativo/galaxy-s25-fe-vs-galaxy-a57", label: "Galaxy S25 FE vs Galaxy A57" },
 ];
 
 const FAQ = [

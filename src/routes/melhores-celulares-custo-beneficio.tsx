@@ -101,6 +101,8 @@ const COMPARISONS = [
   { to: "/comparativo/edge-60-pro-vs-galaxy-s25-fe", label: "Edge 60 Pro vs Galaxy S25 FE" },
   { to: "/comparativo/poco-x8-pro-vs-poco-x7-pro", label: "Poco X8 Pro vs Poco X7 Pro" },
   { to: "/comparativo/poco-x6-pro-vs-poco-x7-pro", label: "Poco X6 Pro vs Poco X7 Pro" },
+  { to: "/comparativo/galaxy-a36-vs-moto-g86", label: "Galaxy A36 vs Moto G86" },
+  { to: "/comparativo/galaxy-s25-fe-vs-galaxy-a57", label: "Galaxy S25 FE vs Galaxy A57" },
 ];
 
 const FAQ = [
