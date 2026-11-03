@@ -17,6 +17,7 @@ import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
 import { guidesForProduct } from "@/lib/use-guides";
 import { comparisonsForProduct } from "@/lib/comparisons";
+import { HeroQuickBuy } from "@/components/site/HeroQuickBuy";
 
 export type ReviewTemplateProps = {
   breadcrumbs?: {
@@ -123,7 +124,7 @@ export function ReviewTemplate({
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(185,119,75,0.25),transparent_42%)]" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#071E25]/90 to-transparent" />
 
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1fr_380px] lg:px-8">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-10 md:py-20 lg:grid-cols-[1fr_380px] lg:px-8">
           <div>
             <nav className="mb-5 flex flex-wrap items-center gap-2 text-xs text-slate-300">
               {breadcrumbs.map((item, index) => (
@@ -144,11 +145,13 @@ export function ReviewTemplate({
               {eyebrow}
             </p>
 
-            <h1 className="max-w-5xl text-4xl font-extrabold tracking-tight text-[#F8FAFC] md:text-6xl">
+            <h1 className="max-w-5xl text-3xl font-extrabold tracking-tight text-[#F8FAFC] md:text-6xl">
               {title}
             </h1>
 
-            <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">{description}</p>
+            <p className="mt-4 max-w-4xl text-base leading-7 text-slate-200 md:mt-6 md:text-lg md:leading-8">{description}</p>
+
+            {reviewOffer && <HeroQuickBuy productId={reviewOffer.productId} fairPriceId={fairPriceId} />}
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">

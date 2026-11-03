@@ -1,3 +1,4 @@
+import { HeroQuickBuy } from "@/components/site/HeroQuickBuy";
 import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { ProductMedia } from "@/components/site/ProductMedia";
@@ -131,6 +132,8 @@ function ReviewGalaxyA55() {
               equilibrada e encontra um preço competitivo. Compare o custo com modelos mais novos e
               considere os limites em jogos e na recarga.
             </p>
+
+            <HeroQuickBuy productId="galaxy-a55" fairPriceId="galaxy-a55" />
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
