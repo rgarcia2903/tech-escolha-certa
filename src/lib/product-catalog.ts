@@ -364,6 +364,22 @@ export const PRODUCTS: Product[] = [
     { reviewPath: "/review/moto-g-max" },
   ),
   product(
+    "redmi-15c",
+    "Redmi 15C",
+    "Xiaomi",
+    "candidate",
+    "Tela de 6,9\" com 120 Hz e 6.000 mAh; processador de entrada.",
+    { connectivity: "4G", reviewPath: "/review/redmi-15c" },
+  ),
+  product(
+    "poco-c85",
+    "Poco C85",
+    "POCO",
+    "candidate",
+    "Praticamente o Redmi 15C com outra marca: 6,9\", 120 Hz e 6.000 mAh.",
+    { connectivity: "4G", reviewPath: "/review/poco-c85" },
+  ),
+  product(
     "moto-g37",
     "Moto G37",
     "Motorola",
@@ -888,6 +904,8 @@ const ml: [string, string][] = [
   ["galaxy-s26-ultra", links.GALAXY_S26_ULTRA_AFFILIATE_URL],
   ["moto-g17", links.MOTO_G17_AFFILIATE_URL],
   ["moto-g37", links.MOTO_G37_AFFILIATE_URL],
+  ["redmi-15c", links.REDMI_15C_AFFILIATE_URL],
+  ["poco-c85", links.POCO_C85_AFFILIATE_URL],
   ["moto-g77", links.MOTO_G77_AFFILIATE_URL],
 ];
 const amazon: [string, string][] = [

@@ -568,6 +568,86 @@ export const LAUNCHES: Record<string, Launch> = {
       { question: "Galaxy A17 4G ou 5G?", answer: "O 5G, se a diferença for de até uns R$ 150: processador mais forte e conexão 5G." },
     ],
   },
+  "redmi-15c": {
+    id: "redmi-15c",
+    name: "Redmi 15C",
+    launched: "agosto de 2025",
+    sortKey: "2025-08",
+    brand: "Xiaomi",
+    tagline: "Tela grande de 6,9\" e bateria de 6.000 mAh, mas processador de entrada.",
+    shortAnswer:
+      "Só para uso básico e se estiver até R$ 750. O Redmi 15C tem tela grande de 6,9\" com 120 Hz, bateria de 6.000 mAh, NFC, IP64 e microSD, mas o processador Helio G81 Ultra é de entrada e a tela é HD+. Pelo mesmo dinheiro, o Galaxy A07 tem processador mais forte e seis anos de atualizações; por uns R$ 900, o Galaxy A17 5G é bem melhor.",
+    specs: [
+      ["Processador", "MediaTek Helio G81 Ultra"],
+      ["Tela", '6,9" LCD HD+ (720 × 1600) • 120 Hz'],
+      ["Câmera principal", "50 MP"],
+      ["Memória", "4, 6 ou 8 GB de RAM • 128 ou 256 GB + microSD"],
+      ["Bateria", "6.000 mAh"],
+      ["Proteção", "IP64"],
+      ["Extras", "NFC • 4G (sem 5G)"],
+      ["Lançamento", "Agosto de 2025"],
+    ],
+    buyIf: [
+      "Quer tela grande e bateria para mais de um dia gastando pouco.",
+      "Usa o celular para WhatsApp, redes sociais e vídeos.",
+    ],
+    thinkTwiceIf: [
+      "Joga com frequência: o Helio G81 é fraco.",
+      "Quer que o celular dure anos: o Galaxy A07 tem seis anos de atualizações.",
+      "Pode chegar a uns R$ 900: o Galaxy A17 5G tem tela AMOLED e 5G.",
+    ],
+    compare: [
+      { label: "Galaxy A07 é bom?", path: "/review/galaxy-a07" },
+      { label: "Galaxy A17 ou Galaxy A07?", path: "/comparativo/galaxy-a17-vs-galaxy-a07" },
+      { label: "Melhores celulares até R$ 1.000", path: "/melhor-celular-ate-1000" },
+    ],
+    versionNote:
+      "Redmi 15C e Redmi 15C 5G são aparelhos diferentes; no Brasil, o mais vendido é o 4G. O Poco C85 é praticamente o mesmo celular com outra marca.",
+    faq: [
+      { question: "O Redmi 15C é bom?", answer: "Para uso básico, sim: tela grande e bateria de 6.000 mAh. Para jogos e para durar anos, o Galaxy A07 e o A17 5G são melhores." },
+      { question: "O Redmi 15C tem 5G?", answer: "A versão mais vendida no Brasil é 4G. Existe um Redmi 15C 5G, que é outro aparelho: confira no anúncio." },
+      { question: "Redmi 15C ou Poco C85?", answer: "São praticamente o mesmo celular. Leve o que estiver mais barato na mesma memória." },
+    ],
+  },
+  "poco-c85": {
+    id: "poco-c85",
+    name: "Poco C85",
+    launched: "dezembro de 2025",
+    sortKey: "2025-12",
+    brand: "Xiaomi",
+    tagline: "O Redmi 15C com outra marca: 6,9\", 120 Hz e 6.000 mAh.",
+    shortAnswer:
+      "Só para uso básico e se estiver até R$ 750. O Poco C85 vendido no Brasil é praticamente o Redmi 15C: tela de 6,9\" com 120 Hz, bateria de 6.000 mAh, NFC, IP64 e microSD, com tela HD+ e processador de entrada. Pelo mesmo dinheiro, o Galaxy A07 tem processador mais forte e seis anos de atualizações.",
+    specs: [
+      ["Tela", '6,9" LCD HD+ (720 × 1600) • 120 Hz • 810 nits'],
+      ["Câmera principal", "50 MP"],
+      ["Memória", "4, 6 ou 8 GB de RAM • 128 ou 256 GB + microSD"],
+      ["Bateria", "6.000 mAh"],
+      ["Proteção", "IP64"],
+      ["Extras", "NFC"],
+      ["Lançamento", "Dezembro de 2025"],
+    ],
+    buyIf: [
+      "Quer tela grande e bateria grande gastando pouco.",
+      "Encontrou mais barato que o Redmi 15C na mesma memória.",
+    ],
+    thinkTwiceIf: [
+      "Quer que o celular dure anos: o Galaxy A07 tem seis anos de atualizações.",
+      "Pode chegar a uns R$ 900: o Galaxy A17 5G tem tela AMOLED, 5G e câmera com OIS.",
+    ],
+    compare: [
+      { label: "Redmi 15C é bom?", path: "/review/redmi-15c" },
+      { label: "Galaxy A07 é bom?", path: "/review/galaxy-a07" },
+      { label: "Melhores celulares até R$ 1.000", path: "/melhor-celular-ate-1000" },
+    ],
+    versionNote:
+      "Existem versões 4G e 5G do Poco C85, com processadores diferentes (as fichas divergem). O anúncio do Mercado Livre que indicamos é 4G, com Helio G81 Ultra: confira a versão antes de comprar.",
+    faq: [
+      { question: "O Poco C85 é bom?", answer: "Para uso básico, sim. É praticamente o Redmi 15C: tela grande, 6.000 mAh e processador de entrada." },
+      { question: "O Poco C85 tem 5G?", answer: "Depende da versão. O mais vendido no Brasil é 4G; confira no anúncio." },
+      { question: "Poco C85 ou Galaxy A07?", answer: "O Galaxy A07, se o preço for parecido: processador mais forte (Helio G99) e seis anos de atualizações." },
+    ],
+  },
   "moto-g37": {
     id: "moto-g37",
     name: "Moto G37",
