@@ -145,11 +145,11 @@ export function ReviewTemplate({
               {eyebrow}
             </p>
 
-            <h1 className="max-w-5xl text-4xl font-extrabold tracking-tight text-[#F8FAFC] md:text-6xl">
+            <h1 className="max-w-5xl text-3xl font-extrabold tracking-tight text-[#F8FAFC] md:text-6xl">
               {title}
             </h1>
 
-            <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">{description}</p>
+            <p className="mt-4 max-w-4xl text-base leading-7 text-slate-200 md:mt-6 md:text-lg md:leading-8">{description}</p>
 
             {reviewOffer && <HeroQuickBuy productId={reviewOffer.productId} fairPriceId={fairPriceId} />}
 
