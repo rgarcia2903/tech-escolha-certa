@@ -87,6 +87,8 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
   { id: "redmi-note-12", reviewPath: "/review/redmi-note-12" },
   { id: "poco-x5-pro", reviewPath: "/review/poco-x5-pro" },
   { id: "poco-f6", reviewPath: "/review/poco-f6" },
+  { id: "poco-f5", reviewPath: "/review/poco-f5" },
+  { id: "poco-f3", reviewPath: "/review/poco-f3" },
   { id: "redmi-13c", reviewPath: "/review/redmi-13c" },
 ];
 

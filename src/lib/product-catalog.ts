@@ -757,6 +757,21 @@ export const PRODUCTS: Product[] = [
     "Linha S de 2021; suporte encerrado.",
     { reviewPath: "/review/galaxy-s21" },
   ),
+  product("iphone-x", "iPhone X", "Apple", "previous_generation", "iPhone de 2017; parou no iOS 16.", {
+    reviewPath: "/review/iphone-x",
+  }),
+  product("iphone-xs", "iPhone XS", "Apple", "previous_generation", "iPhone de 2018; parou no iOS 18.", {
+    reviewPath: "/review/iphone-xs",
+  }),
+  product("galaxy-s10", "Galaxy S10", "Samsung", "previous_generation", "Linha S de 2019; parou no Android 12.", {
+    reviewPath: "/review/galaxy-s10",
+  }),
+  product("poco-f3", "Poco F3", "POCO", "previous_generation", "Snapdragon 870 de 2021; parou no Android 13.", {
+    reviewPath: "/review/poco-f3",
+  }),
+  product("poco-f5", "Poco F5", "POCO", "previous_generation", "Snapdragon 7+ Gen 2 de 2023; fim do ciclo de atualizações.", {
+    reviewPath: "/review/poco-f5",
+  }),
   product(
     "redmi-13c",
     "Redmi 13C",

@@ -422,6 +422,51 @@ export const FAIR_PRICES = {
     alternativeSeenPrice: 1348,
     why: "o S21 não recebe mais atualizações; o A36 é novo, tem bateria de 5.000 mAh e atualizações até 2031.",
   },
+  "iphone-x": {
+    productName: "iPhone X",
+    maxPrice: 500,
+    checkedAt: "2026-11-03",
+    alternativeName: "iPhone 16e",
+    alternativeHref: links.IPHONE_16E_AMAZON_URL,
+    alternativeSeenPrice: 3199,
+    why: "o X parou no iOS 16; o 16e é atual e vai ser atualizado por muitos anos.",
+  },
+  "iphone-xs": {
+    productName: "iPhone XS",
+    maxPrice: 750,
+    checkedAt: "2026-11-03",
+    alternativeName: "iPhone 16e",
+    alternativeHref: links.IPHONE_16E_AMAZON_URL,
+    alternativeSeenPrice: 3199,
+    why: "o XS parou no iOS 18 e não recebe o iOS 26; o 16e é atual e vai ser atualizado por muitos anos.",
+  },
+  "galaxy-s10": {
+    productName: "Galaxy S10",
+    maxPrice: 600,
+    checkedAt: "2026-11-03",
+    alternativeName: "Galaxy A36 5G",
+    alternativeHref: links.GALAXY_A36_AMAZON_URL,
+    alternativeSeenPrice: 1348,
+    why: "o S10 parou no Android 12 e não recebe mais atualizações; o A36 tem atualizações até 2031.",
+  },
+  "poco-f3": {
+    productName: "Poco F3",
+    maxPrice: 900,
+    checkedAt: "2026-11-03",
+    alternativeName: "Poco X7 Pro",
+    alternativeHref: links.POCO_X7_PRO_AMAZON_URL,
+    alternativeSeenPrice: 2266,
+    why: "o F3 parou no Android 13; o X7 Pro é bem mais forte, tem bateria de 6.000 mAh e recebe atualizações.",
+  },
+  "poco-f5": {
+    productName: "Poco F5",
+    maxPrice: 1400,
+    checkedAt: "2026-11-03",
+    alternativeName: "Poco X7 Pro",
+    alternativeHref: links.POCO_X7_PRO_AMAZON_URL,
+    alternativeSeenPrice: 2266,
+    why: "o X7 Pro tem processador mais forte, bateria de 6.000 mAh, IP68 e mais anos de atualização.",
+  },
   "redmi-13c": {
     productName: "Redmi 13C",
     maxPrice: 500,
@@ -529,5 +574,5 @@ export function fairPriceTitle(id: FairPriceId): string {
 /** Descrição para o Google: teto, alternativa e o que a página responde. */
 export function fairPriceDescription(id: FairPriceId): string {
   const fp = FAIR_PRICES[id];
-  return `Veredito: o ${fp.productName} novo só compensa abaixo de ${formatBRL(fp.maxPrice)}. Acima disso, o ${fp.alternativeName} é a compra melhor. Veja problemas, versão certa e onde comprar.`;
+  return `Veredito: o ${fp.productName} só compensa abaixo de ${formatBRL(fp.maxPrice)}. Acima disso, o ${fp.alternativeName} é a compra melhor. Veja problemas, versão certa e onde comprar.`;
 }
