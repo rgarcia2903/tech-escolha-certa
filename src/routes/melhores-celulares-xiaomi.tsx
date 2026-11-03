@@ -95,10 +95,6 @@ const COMPARISONS = [
   { to: "/comparativo/moto-g86-vs-redmi-note-15-5g", label: "Moto G86 vs Redmi Note 15 5G" },
   { to: "/comparativo/poco-x8-pro-vs-poco-x7-pro", label: "Poco X8 Pro vs Poco X7 Pro" },
   { to: "/comparativo/poco-x6-pro-vs-poco-x7-pro", label: "Poco X6 Pro vs Poco X7 Pro" },
-  { to: "/comparativo/redmi-note-13-pro-vs-redmi-note-14-pro-plus", label: "Redmi Note 13 Pro vs Redmi Note 14 Pro+" },
-  { to: "/comparativo/redmi-note-13-pro-vs-poco-x6-pro", label: "Redmi Note 13 Pro vs Poco X6 Pro" },
-  { to: "/comparativo/galaxy-a55-vs-redmi-note-13-pro", label: "Galaxy A55 vs Redmi Note 13 Pro" },
-  { to: "/comparativo/galaxy-a25-vs-redmi-note-13", label: "Galaxy A25 vs Redmi Note 13" },
 ];
 
 const FAQ = [

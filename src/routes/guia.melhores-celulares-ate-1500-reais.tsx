@@ -87,8 +87,9 @@ const OLDER: { id: FairPriceId; reviewPath: string }[] = [
 const COMPARISONS = [
   { to: "/comparativo/galaxy-a57-vs-galaxy-a36", label: "Galaxy A57 vs Galaxy A36" },
   { to: "/comparativo/moto-g86-vs-redmi-note-15-5g", label: "Moto G86 vs Redmi Note 15 5G" },
-  { to: "/comparativo/galaxy-a25-vs-redmi-note-13", label: "Galaxy A25 vs Redmi Note 13" },
-  { to: "/comparativo/galaxy-a35-vs-redmi-note-13-pro", label: "Galaxy A35 vs Redmi Note 13 Pro" },
+  { to: "/comparativo/galaxy-a36-vs-moto-g86", label: "Galaxy A36 vs Moto G86" },
+  { to: "/comparativo/moto-g56-vs-moto-g86", label: "Moto G56 vs Moto G86" },
+  { to: "/comparativo/galaxy-a17-vs-galaxy-a07", label: "Galaxy A17 vs Galaxy A07" },
 ];
 
 const FAQ = [
