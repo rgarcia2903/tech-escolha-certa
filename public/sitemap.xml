@@ -767,4 +767,34 @@
     <priority>0.8</priority>
     <lastmod>2026-10-30</lastmod>
   </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/iphone-x</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/iphone-xs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/galaxy-s10</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/poco-f3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://techescolhacerta.com.br/review/poco-f5</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-11-03</lastmod>
+  </url>
 </urlset>

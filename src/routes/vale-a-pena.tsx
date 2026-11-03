@@ -46,6 +46,8 @@ const GROUPS: { brand: string; items: Item[] }[] = [
       { id: "iphone-12", path: "/review/iphone-12" },
       { id: "iphone-11", path: "/review/iphone-11" },
       { id: "iphone-xr", path: "/review/iphone-xr" },
+      { id: "iphone-xs", path: "/review/iphone-xs" },
+      { id: "iphone-x", path: "/review/iphone-x" },
     ],
   },
   {
@@ -54,6 +56,8 @@ const GROUPS: { brand: string; items: Item[] }[] = [
       { id: "poco-x7-pro", path: "/review/poco-x7-pro" },
       { id: "poco-x6-pro", path: "/review/poco-x6-pro" },
       { id: "poco-f6", path: "/review/poco-f6" },
+      { id: "poco-f5", path: "/review/poco-f5" },
+      { id: "poco-f3", path: "/review/poco-f3" },
       { id: "poco-x6-5g", path: "/review/poco-x6" },
       { id: "poco-x5-pro", path: "/review/poco-x5-pro" },
       { id: "redmi-note-14", path: "/review/redmi-note-14" },
