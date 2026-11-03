@@ -1,3 +1,4 @@
+import { HeroQuickBuy } from "@/components/site/HeroQuickBuy";
 import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
@@ -103,6 +104,8 @@ function ReviewGalaxyA35() {
               boa tela, bateria confiável, câmera honesta e uma experiência segura sem pagar preço
               de topo de linha.
             </p>
+
+            <HeroQuickBuy productId="galaxy-a35" fairPriceId="galaxy-a35" />
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
