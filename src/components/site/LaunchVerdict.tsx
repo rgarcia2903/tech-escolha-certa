@@ -1,3 +1,4 @@
+import { BlackFridayStrip } from "@/components/site/BlackFridayStrip";
 import { AccessoryLinks } from "@/components/site/AccessoryLinks";
 import { Link } from "@tanstack/react-router";
 import { Check, CircleAlert } from "lucide-react";
@@ -51,6 +52,7 @@ export function LaunchVerdict({ l }: { l: Launch }) {
           </p>
         </div>
       </section>
+      <BlackFridayStrip />
 
       <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         <section aria-labelledby="ficha">

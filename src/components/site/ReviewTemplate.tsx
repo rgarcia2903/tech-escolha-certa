@@ -1,3 +1,4 @@
+import { BlackFridayStrip } from "./BlackFridayStrip";
 import { AccessoryLinks } from "./AccessoryLinks";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductGallery } from "@/components/site/ProductGallery";
@@ -215,6 +216,7 @@ export function ReviewTemplate({
           </div>
         </div>
       </section>
+      <BlackFridayStrip />
 
       {getOfferByUrl(affiliateHref) && (
         <ReviewContext productId={getOfferByUrl(affiliateHref)!.productId} />

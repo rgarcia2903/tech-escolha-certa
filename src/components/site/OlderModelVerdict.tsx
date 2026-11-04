@@ -1,3 +1,4 @@
+import { BlackFridayStrip } from "@/components/site/BlackFridayStrip";
 import { FaqJsonLd } from "@/components/site/FaqJsonLd";
 import { Link } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
@@ -63,6 +64,7 @@ export function OlderModelVerdict(p: OlderModelVerdictProps) {
           </p>
         </div>
       </section>
+      <BlackFridayStrip />
 
       <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         <FairPriceBox id={p.fairPriceId} />
