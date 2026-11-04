@@ -31,7 +31,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
-      (function(c,l,a,r,i,t,y){
+      if (/(^|\\.)techescolhacerta\\.com\\.br$/.test(location.hostname)) (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
@@ -46,6 +46,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
+        // Previews (workers.dev) e localhost não entram nas métricas.
+        if (!/(^|\\.)techescolhacerta\\.com\\.br$/.test(location.hostname)) window['ga-disable-G-0FBRT0FGY5'] = true;
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
