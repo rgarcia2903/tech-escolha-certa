@@ -30,7 +30,7 @@ export function FairPriceBox({
         Vale a pena até {formatBRL(fp.maxPrice)}
       </p>
       <p className="mt-2 text-sm leading-6 text-slate-700">
-        Pagando mais que isso pelo {fp.productName} novo, prefira o {fp.alternativeName}: {fp.why}
+        Pagando mais que isso pelo {fp.productName}, novo ou usado, prefira o {fp.alternativeName}: {fp.why}
       </p>
       <p className="mt-2 text-sm leading-6 text-slate-700">
         <strong>Na Black Friday:</strong> use {formatBRL(fp.maxPrice)} como teto. Desconto em cima de preço inflado
@@ -57,7 +57,7 @@ export function FairPriceBox({
         <ArrowUpRight className="h-4 w-4" />
       </a>
       <p className="mt-3 text-xs text-slate-500">
-        Referência editorial para o aparelho novo, não o preço da loja. Preços mudam; confira o valor final antes de comprar.
+        Referência editorial de preço máximo para o aparelho novo; usado deve sair bem mais barato. Não é o preço da loja. Preços mudam; confira o valor final antes de comprar.
       </p>
     </section>
   );
