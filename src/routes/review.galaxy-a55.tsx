@@ -128,16 +128,16 @@ function ReviewGalaxyA55() {
             </h1>
 
             <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
-              O Galaxy A55 pode valer a pena em 2026 para quem busca uma experiência Samsung
-              equilibrada e encontra um preço competitivo. Compare o custo com modelos mais novos e
-              considere os limites em jogos e na recarga.
+              Vale, mas só abaixo de R$ 1.700. Nesse preço, ele ainda entrega acabamento premium,
+              tela AMOLED de 120 Hz e IP67. Acima disso, o Galaxy A57, duas gerações mais novo e
+              com mais anos de atualização, é a compra melhor.
             </p>
 
             <HeroQuickBuy productId="galaxy-a55" fairPriceId="galaxy-a55" />
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
-                Atualizado em outubro de 2026
+                Atualizado em novembro de 2026
               </span>
               <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white ring-1 ring-white/20">
                 Intermediário premium
