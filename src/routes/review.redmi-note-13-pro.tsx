@@ -154,8 +154,8 @@ function ReviewRedmiNote13Pro() {
       ]}
       eyebrow="Análise editorial"
       title="Redmi Note 13 Pro 5G vale a pena em 2026?"
-      description="Sim — o Redmi Note 13 Pro 5G ainda vale a pena para quem busca tela AMOLED, câmera principal de 200 MP e recarga de 67 W. A escolha depende do preço frente ao Galaxy A35 e ao Poco X6 Pro. Esta análise se refere à versão 5G."
-      updatedAt="Atualizado em outubro de 2026"
+      description="Vale, mas só abaixo de R$ 1.600. Ele ainda tem tela AMOLED, câmera principal de 200 MP e recarga de 67 W. Acima disso, o Redmi Note 15 5G, dois anos mais novo, é a compra melhor. Esta análise se refere à versão 5G."
+      updatedAt="Atualizado em novembro de 2026"
       readingTime="Leitura • 7 min"
       productName="Redmi Note 13 Pro 5G"
       priceLabel="Ver preço atual"
@@ -269,7 +269,7 @@ function ReviewRedmiNote13Pro() {
           text: "Antes de comprar o Redmi Note 13 Pro 5G, confira se o anúncio é da versão desejada, se o produto é novo, qual é a garantia oferecida, a reputação do vendedor, o prazo de entrega e o valor final parcelado. A recomendação muda bastante dependendo do preço encontrado no momento.",
         },
       ]}
-      finalRecommendation="O Redmi Note 13 Pro 5G é uma excelente escolha para quem prioriza custo-benefício, tela de qualidade, bom desempenho e carregamento rápido. Se o foco for ficha técnica pelo menor preço, ele é um dos modelos mais fortes da categoria. Se você prioriza software mais refinado, suporte e experiência mais previsível, o Galaxy A55 pode fazer mais sentido."
+      finalRecommendation="Compre o Redmi Note 13 Pro 5G só abaixo de R$ 1.600. Nesse preço, ele ainda entrega tela AMOLED, câmera de 200 MP e recarga rápida. Acima disso, leve o Redmi Note 15 5G: é dois anos mais novo e terá suporte por mais tempo."
       faq={FAQ}
       relatedLinks={[
         {
