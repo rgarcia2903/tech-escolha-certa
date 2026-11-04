@@ -7,7 +7,7 @@ import { FAIR_PRICES, formatBRL } from "@/lib/fair-prices";
 import { getProduct } from "@/lib/product-catalog";
 
 const PAGE_TITLE = `Black Friday de celulares ${BLACK_FRIDAY.year}: até quanto pagar`;
-const PAGE_DESCRIPTION = `Até quanto vale pagar em cada celular na Black Friday ${BLACK_FRIDAY.year}: Galaxy, Motorola, Redmi e Poco. Veja o preço-alvo de cada modelo e quais "ofertas" evitar.`;
+const PAGE_DESCRIPTION = `Até quanto vale pagar em cada celular na Black Friday ${BLACK_FRIDAY.year}: Galaxy, Motorola, Redmi, Poco e iPhone. Veja o preço-alvo de cada modelo e quais "ofertas" evitar.`;
 
 export const Route = createFileRoute("/black-friday-celulares")({
   head: () => ({
@@ -33,6 +33,16 @@ const CHECKLIST = [
 ];
 
 const FAQ = [
+  {
+    question: "Qual o melhor celular para comprar na Black Friday?",
+    answer:
+      "Depende do orçamento. Até R$ 1.000, o Galaxy A17 5G. Até R$ 1.500, o Galaxy A36. Até R$ 2.000, o Moto G86 ou o Redmi Note 15 5G. Acima disso, o Poco X8 Pro para jogos e o Galaxy S25 FE para ficar muitos anos. Em todos, só compre abaixo do preço-alvo desta página.",
+  },
+  {
+    question: "Qual iPhone comprar na Black Friday?",
+    answer:
+      "Para a maioria, o iPhone 17, que tem tela de 120 Hz e 256 GB. Para gastar menos, o iPhone 16e é o mais barato que vale a pena. Modelos antigos como o iPhone 13 e o 15 só compensam abaixo do teto indicado na lista de ofertas a evitar.",
+  },
   {
     question: "Como saber se a oferta de Black Friday é real?",
     answer:

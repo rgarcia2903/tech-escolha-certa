@@ -7,7 +7,7 @@ export const BLACK_FRIDAY = {
   year: 2026,
   date: "27 de novembro",
   isoDate: "2026-11-27",
-  reviewedAt: "outubro de 2026",
+  reviewedAt: "novembro de 2026",
 };
 
 /** Dias inteiros até a Black Friday (0 no dia, negativo depois). */
@@ -29,14 +29,37 @@ export type ReferencePrice = {
 
 export const BUDGET_GROUPS: { title: string; items: ReferencePrice[] }[] = [
   {
-    title: "Até R$ 1.500",
+    title: "Até R$ 1.000",
     items: [
+      {
+        productId: "galaxy-a07",
+        version: "128 GB, 4 GB de RAM",
+        note: "O mais barato que vale a pena: Helio G99 e seis anos de atualizações.",
+        reviewPath: "/review/galaxy-a07",
+      },
+      {
+        productId: "moto-g37",
+        version: "128 GB, 4 GB de RAM",
+        note: "O Motorola 5G mais barato que indicamos, com tela de 120 Hz e IP64.",
+        reviewPath: "/review/moto-g37",
+      },
       {
         productId: "galaxy-a17-5g",
         version: "128 GB, 4 GB de RAM",
-        note: "Básico com 5G e muitos anos de atualização. Bom para quem quer gastar pouco.",
+        note: "Tela AMOLED, câmera com estabilização e seis anos de atualizações. O melhor até R$ 1.000.",
         reviewPath: "/review/galaxy-a17-5g",
       },
+      {
+        productId: "redmi-15c",
+        version: "128 GB, 4 GB de RAM",
+        note: "Só para uso básico: tela grande e bateria de 6.000 mAh, mas processador fraco.",
+        reviewPath: "/review/redmi-15c",
+      },
+    ],
+  },
+  {
+    title: "De R$ 1.000 a R$ 1.500",
+    items: [
       {
         productId: "galaxy-a36-5g",
         version: "128 GB, 6 GB de RAM",
@@ -73,6 +96,24 @@ export const BUDGET_GROUPS: { title: string; items: ReferencePrice[] }[] = [
         reviewPath: "/review/galaxy-a57-5g",
       },
       {
+        productId: "galaxy-a37-5g",
+        version: "128 GB, 8 GB de RAM",
+        note: "O sucessor do A36, com IP68. Vale se custar até uns R$ 300 a mais que ele.",
+        reviewPath: "/review/galaxy-a37-5g",
+      },
+      {
+        productId: "moto-g-max",
+        version: "256 GB, 8 GB de RAM",
+        note: "Tela pOLED de 6,8\", câmera de 200 MP e IP68/IP69. Não é para jogos pesados.",
+        reviewPath: "/review/moto-g-max",
+      },
+      {
+        productId: "edge-60-fusion",
+        version: "256 GB, 8 GB de RAM",
+        note: "Tela curva de 4.500 nits e IP69, com o mesmo processador do Moto G86.",
+        reviewPath: "/review/edge-60-fusion",
+      },
+      {
         productId: "redmi-note-14-pro-plus",
         version: "256 GB, 8 GB de RAM",
         note: "Câmera de 200 MP e recarga rápida. Compare com o Note 15 5G antes.",
@@ -100,6 +141,29 @@ export const BUDGET_GROUPS: { title: string; items: ReferencePrice[] }[] = [
         version: "128 GB, 8 GB de RAM",
         note: "Linha S com sete anos de atualizações. A escolha para ficar muitos anos.",
         reviewPath: "/review/galaxy-s25-fe",
+      },
+    ],
+  },
+  {
+    title: "iPhone",
+    items: [
+      {
+        productId: "iphone-16e",
+        version: "128 GB",
+        note: "O iPhone mais barato que vale a pena. Uma câmera só e tela de 60 Hz.",
+        reviewPath: "/review/iphone-16e",
+      },
+      {
+        productId: "iphone-17e",
+        version: "256 GB",
+        note: "Chip A19, 256 GB e MagSafe. Compare com o 16e: a diferença de preço decide.",
+        reviewPath: "/review/iphone-17e",
+      },
+      {
+        productId: "iphone-17",
+        version: "256 GB",
+        note: "O iPhone que recomendamos para a maioria: tela de 120 Hz e ultra-angular de 48 MP.",
+        reviewPath: "/review/iphone-17",
       },
     ],
   },
