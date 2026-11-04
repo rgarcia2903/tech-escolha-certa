@@ -57,8 +57,8 @@ function ReviewPocoX7Pro() {
       ]}
       eyebrow="Review completo"
       title="Poco X7 Pro vale a pena em 2026? Review completo e honesto"
-      description="O Poco X7 Pro é uma das opções mais fortes para quem quer muita performance, tela de qualidade, boa bateria e carregamento rápido sem pagar preço de topo de linha. A proposta é clara: entregar velocidade e ficha técnica forte acima de quase tudo."
-      updatedAt="Atualizado em 2026"
+      description="Vale abaixo de R$ 2.150. Ele continua entre os celulares mais fortes para jogos, com tela de qualidade, bateria grande e recarga rápida. Acima disso, o Poco X8 Pro, a geração seguinte, é a compra melhor."
+      updatedAt="Atualizado em novembro de 2026"
       readingTime="Leitura • 8 min"
       productName="Poco X7 Pro"
       priceLabel="Ver no Mercado Livre"
@@ -154,7 +154,7 @@ function ReviewPocoX7Pro() {
           text: "O Poco X7 Pro faz mais sentido para quem quer um passo à frente em bateria, hardware e longevidade. Já o Poco X6 Pro ainda continua interessante se aparecer com preço muito agressivo, principalmente para quem quer economizar sem abrir mão de muita performance.",
         },
       ]}
-      finalRecommendation="O Poco X7 Pro vale a pena para quem quer um celular com foco claro em desempenho, jogos, bateria e custo-benefício. Se você procura potência e uma ficha técnica forte, ele é uma das opções mais interessantes da categoria. Se seu foco principal for câmera, acabamento premium ou software mais refinado, pode valer comparar com outras linhas antes de decidir."
+      finalRecommendation="Compre o Poco X7 Pro abaixo de R$ 2.150: nesse preço, é uma das opções mais fortes para jogos e uso pesado. Acima disso, leve o Poco X8 Pro, a geração seguinte. Se o seu foco for câmera ou acabamento premium, compare com outras linhas antes de decidir."
       faq={[
         {
           question: "O Poco X7 Pro vale a pena em 2026?",

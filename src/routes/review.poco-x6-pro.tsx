@@ -166,8 +166,8 @@ function ReviewPocoX6Pro() {
       ]}
       eyebrow="Análise editorial"
       title="Poco X6 Pro ainda vale a pena em 2026?"
-      description="Sim — o Poco X6 Pro ainda vale a pena para quem prioriza jogos e encontra uma oferta claramente mais barata que o Poco X7 Pro. Compare versões equivalentes e considere as limitações das câmeras antes de decidir."
-      updatedAt="Atualizado em outubro de 2026"
+      description="Vale, mas só abaixo de R$ 2.100. Nesse preço, ele ainda é um dos celulares mais fortes para jogos, com Dimensity 8300-Ultra, tela AMOLED de 120 Hz e recarga de 67 W. Acima disso, o Poco X7 Pro, a geração seguinte com bateria maior, é a compra melhor."
+      updatedAt="Atualizado em novembro de 2026"
       readingTime="Leitura • 7 min"
       productName="Poco X6 Pro"
       priceLabel="Ver preço atual"
@@ -291,7 +291,7 @@ function ReviewPocoX6Pro() {
           text: "Antes de comprar, confira se o anúncio é da versão desejada, se o produto é novo, a reputação do vendedor, o prazo de entrega, a garantia e o preço final parcelado. No caso do Poco X6 Pro, a recomendação depende muito da diferença de preço para o Poco X7 Pro.",
         },
       ]}
-      finalRecommendation="O Poco X6 Pro ainda compensa em 2026 para quem quer desempenho forte, tela AMOLED, boa bateria e carregamento rápido. Ele é especialmente indicado para jogos e uso pesado. A compra só fica menos atrativa se o Poco X7 Pro estiver próximo de preço ou se você priorizar câmeras, acabamento e atualizações mais previsíveis."
+      finalRecommendation="Compre o Poco X6 Pro só abaixo de R$ 2.100. Nesse preço, ele entrega desempenho de sobra para jogos e uso pesado. Acima disso, leve o Poco X7 Pro: é a geração seguinte, tem bateria maior e custa pouco mais. Se câmera ou muitos anos de atualização pesam mais para você, ele não é a melhor escolha."
       faq={FAQ}
       relatedLinks={[
         {

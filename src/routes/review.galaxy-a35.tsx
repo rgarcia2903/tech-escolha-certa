@@ -100,9 +100,9 @@ function ReviewGalaxyA35() {
             </h1>
 
             <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
-              O Galaxy A35 5G é um dos intermediários mais importantes da Samsung para quem busca
-              boa tela, bateria confiável, câmera honesta e uma experiência segura sem pagar preço
-              de topo de linha.
+              Vale, mas só abaixo de R$ 1.200. Nesse preço, ele ainda tem boa tela Super AMOLED e
+              bateria confiável. Acima disso, o Galaxy A36, a geração seguinte, custa pouco mais e é a
+              compra melhor.
             </p>
 
             <HeroQuickBuy productId="galaxy-a35" fairPriceId="galaxy-a35" />
