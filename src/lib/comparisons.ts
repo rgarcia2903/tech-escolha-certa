@@ -19,6 +19,256 @@ export type Comparison = {
 };
 
 export const COMPARISONS: Record<string, Comparison> = {
+  "galaxy-a17-vs-moto-g56": {
+    slug: "galaxy-a17-vs-moto-g56",
+    a: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
+    b: { id: "moto-g56-5g", name: "Moto G56 5G", reviewPath: "/review/moto-g56-5g" },
+    title: "Galaxy A17 ou Moto G56: qual o melhor para comprar em 2026?",
+    description:
+      "Galaxy A17 5G vs Moto G56 5G: tela, câmera, bateria, resistência e atualizações lado a lado. Veja qual compensa mais pelo preço.",
+    shortAnswer:
+      "Depende do que pesa mais. O Galaxy A17 5G tem tela AMOLED, câmera com estabilização óptica e seis anos de atualizações, e costuma custar menos. O Moto G56 tem tela de 120 Hz, bateria maior, recarga de 30 W e é muito mais resistente (IP68 e IP69). Para durar anos, o A17; para quem trabalha na rua ou derruba o celular, o G56.",
+    chooseA: [
+      "Quer a tela AMOLED, com cores e contraste melhores.",
+      "Vai ficar muitos anos com o celular (seis anos de atualizações).",
+      "Quer gastar menos: compre até R$ 900.",
+    ],
+    chooseB: [
+      "Precisa de um celular resistente a água e poeira (IP68 e IP69).",
+      "Quer tela de 120 Hz e recarga mais rápida.",
+      "Quer 256 GB com microSD.",
+    ],
+    rows: [
+      { label: "Processador", a: "Exynos 1330 (5 nm)", b: "Dimensity 7060 (6 nm)", winner: "tie" },
+      { label: "Tela", a: 'AMOLED 6,7" • 90 Hz', b: 'LCD 6,72" Full HD+ • 120 Hz', winner: "a" },
+      { label: "Câmera principal", a: "50 MP com OIS", b: "50 MP", winner: "a" },
+      { label: "Bateria", a: "5.000 mAh", b: "5.200 mAh", winner: "b" },
+      { label: "Recarga", a: "25 W", b: "30 W", winner: "b" },
+      { label: "Proteção", a: "IP54", b: "IP68 e IP69", winner: "b" },
+      { label: "Atualizações", a: "6 anos", b: "2 versões do Android, 3 anos de segurança", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 900", b: "R$ 1.200", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Galaxy A17 ou Moto G56: qual dura mais?",
+        answer: "Em atualizações, o Galaxy A17, com seis anos prometidos pela Samsung. Em resistência física, o Moto G56, com IP68 e IP69.",
+      },
+      {
+        question: "Qual tem a melhor tela?",
+        answer: "A do Galaxy A17 é AMOLED, com cores e contraste melhores. A do Moto G56 é LCD, mas tem 120 Hz, mais fluida.",
+      },
+      {
+        question: "Qual é melhor para jogar?",
+        answer: "Os processadores ficam próximos. O G56 leva vantagem pela tela de 120 Hz e pela bateria um pouco maior.",
+      },
+    ],
+  },
+  "galaxy-a17-vs-redmi-note-15-5g": {
+    slug: "galaxy-a17-vs-redmi-note-15-5g",
+    a: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
+    b: { id: "redmi-note-15-5g", name: "Redmi Note 15 5G", reviewPath: "/review/redmi-note-15-5g" },
+    title: "Galaxy A17 ou Redmi Note 15 5G: qual comprar em 2026?",
+    description:
+      "Galaxy A17 5G vs Redmi Note 15 5G: processador, tela de 120 Hz, bateria, recarga e preço lado a lado. Veja se vale pagar mais pelo Redmi.",
+    shortAnswer:
+      "O Redmi Note 15 5G é melhor em quase tudo: processador mais forte, tela AMOLED de 120 Hz, bateria de 5.520 mAh com carregador de 45 W na caixa e IP65. Mas costuma custar perto do dobro. Até R$ 900, o Galaxy A17 5G é a compra certa e ainda tem seis anos de atualizações; se o orçamento chega a R$ 1.800, leve o Redmi.",
+    chooseA: [
+      "O orçamento é de até R$ 900.",
+      "Vai ficar muitos anos com o celular (seis anos de atualizações).",
+      "O uso é WhatsApp, redes sociais, fotos e vídeos.",
+    ],
+    chooseB: [
+      "Joga com frequência (Snapdragon 6 Gen 3).",
+      "Quer tela de 120 Hz e bateria para o dia todo.",
+      "Quer o carregador de 45 W na caixa.",
+    ],
+    rows: [
+      { label: "Processador", a: "Exynos 1330 (5 nm)", b: "Snapdragon 6 Gen 3", winner: "b" },
+      { label: "Tela", a: 'AMOLED 6,7" • 90 Hz', b: 'AMOLED 6,67" • 120 Hz • 3.200 nits', winner: "b" },
+      { label: "Câmera principal", a: "50 MP com OIS", b: "108 MP", winner: "tie" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 25 W", b: "5.520 mAh • 45 W, carregador na caixa", winner: "b" },
+      { label: "Proteção", a: "IP54", b: "IP65", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 900", b: "R$ 1.800", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Vale pagar o dobro pelo Redmi Note 15 5G?",
+        answer: "Vale se você joga ou quer bateria e recarga melhores. Para uso do dia a dia, o Galaxy A17 5G entrega o essencial por metade do preço.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "Ficam próximos: o Redmi tem sensor de 108 MP; o Galaxy A17 tem estabilização óptica, que ajuda em fotos noturnas e vídeos.",
+      },
+      {
+        question: "Não confunda com o Redmi Note 15 4G",
+        answer: "O Redmi Note 15 4G tem outro processador. Este comparativo é da versão 5G: confira no anúncio.",
+      },
+    ],
+  },
+  "moto-g06-vs-moto-g17": {
+    slug: "moto-g06-vs-moto-g17",
+    a: { id: "moto-g06", name: "Moto G06", reviewPath: "/review/moto-g06" },
+    b: { id: "moto-g17", name: "Moto G17", reviewPath: "/review/moto-g17" },
+    title: "Moto G06 ou Moto G17: qual o melhor para comprar em 2026?",
+    description:
+      "Moto G06 vs Moto G17: mesmo processador, telas diferentes. Compare tela, câmeras, recarga e preço, e veja qual Motorola barato levar.",
+    shortAnswer:
+      "Têm o mesmo processador (Helio G81), a mesma bateria de 5.200 mAh e IP64. O Moto G06 tem tela maior de 6,9\" com 120 Hz, mas HD+ e recarga de só 10 W. O Moto G17 tem tela Full HD+ (60 Hz), câmera ultra-angular, frontal de 32 MP e recarga de 18 W. Pelo uso do dia a dia, o G17 vale a diferença se ela for pequena.",
+    chooseA: [
+      "Quer gastar o mínimo: compre até R$ 700.",
+      "Prefere tela grande e fluida (6,9\", 120 Hz).",
+    ],
+    chooseB: [
+      "Quer tela mais nítida (Full HD+).",
+      "Tira selfies e fotos de grupo (frontal de 32 MP e ultra-angular).",
+      "Quer recarga menos lenta (18 W).",
+    ],
+    rows: [
+      { label: "Processador", a: "Helio G81 Extreme", b: "Helio G81 Extreme", winner: "tie" },
+      { label: "Tela", a: 'LCD 6,9" HD+ • 120 Hz', b: 'LCD 6,72" Full HD+ • 60 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "50 MP", b: "50 MP + ultra-angular 5 MP", winner: "b" },
+      { label: "Câmera frontal", a: "8 MP", b: "32 MP", winner: "b" },
+      { label: "Bateria e recarga", a: "5.200 mAh • 10 W", b: "5.200 mAh • 18 W", winner: "b" },
+      { label: "Proteção", a: "IP64", b: "IP64", winner: "tie" },
+      { label: "Extras", a: "NFC • fone • microSD", b: "NFC • fone • microSD", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 700", b: "R$ 850", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Moto G06 ou G17: qual é mais rápido?",
+        answer: "São iguais: os dois usam o Helio G81 Extreme, um processador de entrada.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "O Moto G17, pela ultra-angular e pela câmera frontal de 32 MP.",
+      },
+      {
+        question: "Tem opção melhor pelo mesmo preço?",
+        answer: "Sim. Por uns R$ 800, o Galaxy A07 tem processador bem mais rápido (Helio G99) e seis anos de atualizações.",
+      },
+    ],
+  },
+  "redmi-15c-vs-poco-c85": {
+    slug: "redmi-15c-vs-poco-c85",
+    a: { id: "redmi-15c", name: "Redmi 15C", reviewPath: "/review/redmi-15c" },
+    b: { id: "poco-c85", name: "Poco C85", reviewPath: "/review/poco-c85" },
+    title: "Redmi 15C ou Poco C85: qual a diferença e qual comprar?",
+    description:
+      "Redmi 15C vs Poco C85: tela de 6,9\" com 120 Hz, bateria de 6.000 mAh e NFC nos dois. Veja a diferença real e qual vale mais a pena.",
+    shortAnswer:
+      "São praticamente o mesmo celular com marcas diferentes: tela LCD de 6,9\" com 120 Hz, bateria de 6.000 mAh, câmera de 50 MP, NFC, IP64 e microSD. Leve o que estiver mais barato na mesma memória, até R$ 750. Confira se o anúncio é 4G ou 5G: são versões diferentes.",
+    chooseA: [
+      "Encontrou mais barato que o Poco C85 na mesma memória.",
+    ],
+    chooseB: [
+      "Encontrou mais barato que o Redmi 15C na mesma memória.",
+    ],
+    rows: [
+      { label: "Tela", a: 'LCD 6,9" HD+ • 120 Hz', b: 'LCD 6,9" HD+ • 120 Hz', winner: "tie" },
+      { label: "Câmera principal", a: "50 MP", b: "50 MP", winner: "tie" },
+      { label: "Memória", a: "4, 6 ou 8 GB • 128 ou 256 GB + microSD", b: "4, 6 ou 8 GB • 128 ou 256 GB + microSD", winner: "tie" },
+      { label: "Bateria", a: "6.000 mAh", b: "6.000 mAh", winner: "tie" },
+      { label: "Proteção", a: "IP64", b: "IP64", winner: "tie" },
+      { label: "NFC", a: "Sim", b: "Sim", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 750", b: "R$ 750", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Redmi 15C e Poco C85 são iguais?",
+        answer: "Praticamente. Têm a mesma tela, bateria, câmera e memória. A diferença está na marca e no preço de cada anúncio.",
+      },
+      {
+        question: "Algum dos dois tem 5G?",
+        answer: "Existem versões 4G e 5G, que são aparelhos diferentes. As mais vendidas no Brasil são 4G: confira no anúncio.",
+      },
+      {
+        question: "Tem opção melhor pelo mesmo preço?",
+        answer: "Para durar mais, o Galaxy A07 tem processador mais forte e seis anos de atualizações, mas bateria e tela menores.",
+      },
+    ],
+  },
+  "moto-g15-vs-moto-g17": {
+    slug: "moto-g15-vs-moto-g17",
+    a: { id: "moto-g15", name: "Moto G15", reviewPath: "/review/moto-g15" },
+    b: { id: "moto-g17", name: "Moto G17", reviewPath: "/review/moto-g17" },
+    title: "Moto G15 ou Moto G17: qual o melhor para comprar em 2026?",
+    description:
+      "Moto G15 vs Moto G17: mesmo processador e tela Full HD. Veja as diferenças de câmera, resistência e preço, e qual Motorola barato levar.",
+    shortAnswer:
+      "São muito parecidos: mesmo processador (Helio G81), tela LCD Full HD+ de 6,72\" com 60 Hz, bateria de 5.200 mAh e NFC. O Moto G17 é mais novo e acrescenta câmera ultra-angular, frontal de 32 MP e proteção IP64. Se a diferença de preço for pequena, leve o G17; senão, o G15 até R$ 750.",
+    chooseA: [
+      "Quer gastar menos: compre até R$ 750.",
+      "Quer 256 GB com microSD.",
+    ],
+    chooseB: [
+      "Tira selfies e fotos de grupo (frontal de 32 MP e ultra-angular).",
+      "Quer proteção contra poeira e água (IP64).",
+      "Quer o modelo mais novo (janeiro de 2026).",
+    ],
+    rows: [
+      { label: "Processador", a: "Helio G81 Extreme", b: "Helio G81 Extreme", winner: "tie" },
+      { label: "Tela", a: 'LCD 6,72" Full HD+ • 60 Hz', b: 'LCD 6,72" Full HD+ • 60 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "50 MP", b: "50 MP + ultra-angular 5 MP", winner: "b" },
+      { label: "Bateria", a: "5.200 mAh", b: "5.200 mAh • 18 W", winner: "tie" },
+      { label: "Proteção", a: "Contra respingos", b: "IP64", winner: "b" },
+      { label: "Lançamento", a: "Dezembro de 2024", b: "Janeiro de 2026", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 750", b: "R$ 850", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Moto G15 ou G17: qual é mais rápido?",
+        answer: "São iguais: os dois usam o Helio G81 Extreme.",
+      },
+      {
+        question: "Algum dos dois tem 5G?",
+        answer: "Não. Os dois são 4G. O Motorola 5G mais barato que indicamos é o Moto G37.",
+      },
+      {
+        question: "Tem opção melhor pelo mesmo preço?",
+        answer: "Por uns R$ 900, o Galaxy A17 5G tem 5G, tela AMOLED e seis anos de atualizações.",
+      },
+    ],
+  },
+  "galaxy-a07-vs-redmi-15c": {
+    slug: "galaxy-a07-vs-redmi-15c",
+    a: { id: "galaxy-a07", name: "Galaxy A07", reviewPath: "/review/galaxy-a07" },
+    b: { id: "redmi-15c", name: "Redmi 15C", reviewPath: "/review/redmi-15c" },
+    title: "Galaxy A07 ou Redmi 15C: qual o melhor celular barato em 2026?",
+    description:
+      "Galaxy A07 vs Redmi 15C: processador, tela, bateria e atualizações lado a lado. Veja qual celular barato dura mais.",
+    shortAnswer:
+      "Para a maioria, o Galaxy A07: o Helio G99 é bem mais rápido que o Helio G81 do Redmi e a Samsung promete seis anos de atualizações. O Redmi 15C ganha em tela (6,9\", 120 Hz), bateria (6.000 mAh) e resistência (IP64). Se o uso é só vídeos e redes sociais e a bateria pesa mais, o Redmi; para durar anos sem travar, o A07.",
+    chooseA: [
+      "Quer um celular barato que não fique lento (Helio G99).",
+      "Vai ficar muitos anos com o aparelho (seis anos de atualizações).",
+    ],
+    chooseB: [
+      "Quer a maior bateria (6.000 mAh) e tela grande de 120 Hz.",
+      "Quer mais proteção contra água e poeira (IP64).",
+    ],
+    rows: [
+      { label: "Processador", a: "Helio G99 (6 nm)", b: "Helio G81 Ultra", winner: "a" },
+      { label: "Tela", a: 'LCD 6,7" HD+ • 90 Hz', b: 'LCD 6,9" HD+ • 120 Hz', winner: "b" },
+      { label: "Câmera principal", a: "50 MP", b: "50 MP", winner: "tie" },
+      { label: "Bateria", a: "5.000 mAh", b: "6.000 mAh", winner: "b" },
+      { label: "Proteção", a: "IP54", b: "IP64", winner: "b" },
+      { label: "Compre se estiver até", a: "R$ 800", b: "R$ 750", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Galaxy A07 ou Redmi 15C: qual é mais rápido?",
+        answer: "O Galaxy A07. O Helio G99 é um processador de categoria acima do Helio G81 Ultra.",
+      },
+      {
+        question: "Qual tem a bateria maior?",
+        answer: "O Redmi 15C, com 6.000 mAh, contra 5.000 mAh do Galaxy A07.",
+      },
+      {
+        question: "Qual dura mais anos?",
+        answer: "O Galaxy A07, com seis anos de atualizações prometidas pela Samsung.",
+      },
+    ],
+  },
   "galaxy-a36-vs-galaxy-a17": {
     slug: "galaxy-a36-vs-galaxy-a17",
     a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
