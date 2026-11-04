@@ -1,3 +1,4 @@
+import { RelatedComparisons } from "@/components/site/RelatedComparisons";
 import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
@@ -669,7 +670,8 @@ function ReviewPage() {
               </div>
             </div>
           </section>
-        </main>
+        <RelatedComparisons productId="iphone-15" name="iPhone 15" />
+</main>
       </div>
 
       <MobilePurchaseBar

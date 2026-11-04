@@ -1,3 +1,4 @@
+import { RelatedComparisons } from "@/components/site/RelatedComparisons";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductGallery } from "@/components/site/ProductGallery";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
@@ -84,5 +85,6 @@ function GalaxyA36Review() {
    <InfoSection title="Fontes e transparência"><p className="mt-4 leading-7 text-slate-700">Dados técnicos conferidos no lançamento oficial Samsung Brasil. Medições de tela, autonomia, recarga e impressões de desempenho são da GSMArena, não testes realizados pelo Tech Escolha Certa.</p><ul className="mt-4 list-disc space-y-2 pl-5 text-sm"><li><a href="https://news.samsung.com/br/o-seu-primeiro-smartphone-galaxy-com-ai-samsung-apresenta-galaxy-a56-a36-e-a26-com-evolucao-da-inteligencia-artificial" target="_blank" rel="noopener noreferrer" className="underline">Samsung Newsroom Brasil — A36 5G</a></li><li><a href="https://www.gsmarena.com/samsung_galaxy_a36-review-2814.php" target="_blank" rel="noopener noreferrer" className="underline">GSMArena — análise completa</a></li><li><a href="https://www.gsmarena.com/samsung_galaxy_a36-review-2814p3.php" target="_blank" rel="noopener noreferrer" className="underline">GSMArena — testes de tela e bateria</a></li></ul></InfoSection>
    <section className="rounded-2xl bg-[#0F3F4A] p-7 text-white"><h2 className="text-2xl font-bold">Decidiu pelo Galaxy A36 5G?</h2><p className="mt-3 text-sm">Confira as ofertas e confirme o modelo, memória, vendedor e garantia na loja.</p><ProductPurchaseOptions productId={product.id} pageType="review" placement="footer" tone="dark" className="mt-5"/></section>
   </div>
- </main>;
+ <RelatedComparisons productId="galaxy-a36-5g" name="Galaxy A36 5G" />
+</main>;
 }

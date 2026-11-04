@@ -1,3 +1,4 @@
+import { RelatedComparisons } from "@/components/site/RelatedComparisons";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductGallery } from "@/components/site/ProductGallery";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
@@ -157,6 +158,7 @@ function GalaxyA17Review() {
           <ProductPurchaseOptions productId={product.id} pageType="review" placement="footer" className="mt-5"/>
         </div>
       </section>
-    </main>
+    <RelatedComparisons productId="galaxy-a17-5g" name="Galaxy A17 5G" />
+</main>
   );
 }

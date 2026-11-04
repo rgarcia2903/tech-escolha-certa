@@ -1,3 +1,4 @@
+import { RelatedComparisons } from "@/components/site/RelatedComparisons";
 import { HeroQuickBuy } from "@/components/site/HeroQuickBuy";
 import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
@@ -510,7 +511,8 @@ function ReviewGalaxyA55() {
         pageType="review"
         title="Galaxy A57 5G (sucessor do A55)"
       />
-    </main>
+    <RelatedComparisons productId="galaxy-a55" name="Galaxy A55" />
+</main>
   );
 }
 

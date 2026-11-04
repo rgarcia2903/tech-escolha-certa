@@ -1,3 +1,4 @@
+import { RelatedComparisons } from "@/components/site/RelatedComparisons";
 import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
@@ -756,7 +757,8 @@ function ReviewPage() {
               })}
             </div>
           </section>
-        </main>
+        <RelatedComparisons productId="galaxy-s24" name="Galaxy S24" />
+</main>
       </div>
 
       <MobilePurchaseBar

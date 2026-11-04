@@ -1,3 +1,4 @@
+import { RelatedComparisons } from "@/components/site/RelatedComparisons";
 import { HeroQuickBuy } from "@/components/site/HeroQuickBuy";
 import { QuickVerdict } from "@/components/site/QuickVerdict";
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
@@ -483,6 +484,7 @@ function ReviewGalaxyA35() {
         ]}
         pageType="review"
       />
-    </main>
+    <RelatedComparisons productId="galaxy-a35" name="Galaxy A35" />
+</main>
   );
 }
