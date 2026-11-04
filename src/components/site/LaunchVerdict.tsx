@@ -1,3 +1,4 @@
+import { AccessoryLinks } from "@/components/site/AccessoryLinks";
 import { Link } from "@tanstack/react-router";
 import { Check, CircleAlert } from "lucide-react";
 import { FaqJsonLd } from "@/components/site/FaqJsonLd";
@@ -113,6 +114,7 @@ export function LaunchVerdict({ l }: { l: Launch }) {
             )}
           </div>
           <ProductPurchaseOptions productId={l.id} pageType="lancamento" placement="launch_bottom" compact />
+          <AccessoryLinks productId={l.id} pageType="lancamento" />
         </section>
 
         <FaqJsonLd faq={l.faq} />

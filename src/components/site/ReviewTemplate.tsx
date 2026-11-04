@@ -1,3 +1,4 @@
+import { AccessoryLinks } from "./AccessoryLinks";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductGallery } from "@/components/site/ProductGallery";
 import { ReviewContext } from "./ReviewContext";
@@ -225,6 +226,7 @@ export function ReviewTemplate({
             pageType="review"
             placement="after_verdict"
           />
+          <AccessoryLinks productId={getOfferByUrl(affiliateHref)!.productId} pageType="review" />
         </div>
       )}
       {fairPriceId && (
