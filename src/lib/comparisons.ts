@@ -19,6 +19,258 @@ export type Comparison = {
 };
 
 export const COMPARISONS: Record<string, Comparison> = {
+  "galaxy-a37-vs-galaxy-a57": {
+    slug: "galaxy-a37-vs-galaxy-a57",
+    a: { id: "galaxy-a37-5g", name: "Galaxy A37 5G", reviewPath: "/review/galaxy-a37-5g" },
+    b: { id: "galaxy-a57-5g", name: "Galaxy A57 5G", reviewPath: "/review/galaxy-a57-5g" },
+    title: "Galaxy A37 ou Galaxy A57: qual o melhor para comprar em 2026?",
+    description:
+      "Galaxy A37 vs Galaxy A57: processador, câmeras, tela e preço lado a lado. Veja se vale pagar mais pelo A57 ou se o A37 basta.",
+    shortAnswer:
+      "São irmãos: tela AMOLED de 6,7\" com 120 Hz, bateria de 5.000 mAh com recarga de 45 W, IP68 e seis anos de atualizações nos dois. O Galaxy A57 tem processador mais forte (Exynos 1680) e ultra-angular de 12 MP. Se a diferença de preço for pequena, leve o A57; se passar de uns R$ 200, o A37 entrega quase tudo.",
+    chooseA: [
+      "Quer gastar menos: compre até R$ 1.700.",
+      "O uso é redes sociais, fotos, vídeos e jogos leves.",
+    ],
+    chooseB: [
+      "Joga ou usa muitos apps ao mesmo tempo (Exynos 1680).",
+      "Fotografa muito com a ultra-angular.",
+      "A diferença de preço é pequena.",
+    ],
+    rows: [
+      { label: "Processador", a: "Exynos 1480", b: "Exynos 1680 (4 nm)", winner: "b" },
+      { label: "Tela", a: 'AMOLED 6,7" • 120 Hz', b: 'AMOLED+ 6,7" • 120 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "50 MP OIS + 8 MP + 5 MP", b: "50 MP OIS + 12 MP + 5 MP", winner: "b" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 45 W", b: "5.000 mAh • 45 W", winner: "tie" },
+      { label: "Proteção", a: "IP68", b: "IP68", winner: "tie" },
+      { label: "Atualizações", a: "6 versões do Android", b: "6 anos", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 1.700", b: "R$ 1.850", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Vale pagar mais pelo Galaxy A57?",
+        answer: "Vale se a diferença for de até uns R$ 200: o processador é mais forte e a ultra-angular é melhor. O resto é praticamente igual.",
+      },
+      {
+        question: "Qual é melhor para jogar?",
+        answer: "O Galaxy A57, pelo Exynos 1680.",
+      },
+      {
+        question: "Algum dos dois aceita cartão de memória?",
+        answer: "O A37 não tem microSD. Escolha a capacidade certa na compra.",
+      },
+    ],
+  },
+  "moto-g17-vs-galaxy-a17": {
+    slug: "moto-g17-vs-galaxy-a17",
+    a: { id: "moto-g17", name: "Moto G17", reviewPath: "/review/moto-g17" },
+    b: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
+    title: "Moto G17 ou Galaxy A17: qual o melhor para comprar em 2026?",
+    description:
+      "Moto G17 vs Galaxy A17 5G: processador, tela, 5G, resistência e atualizações lado a lado. Veja qual celular barato vale mais.",
+    shortAnswer:
+      "Para a maioria, o Galaxy A17 5G: processador bem mais rápido (Exynos 1330 contra Helio G81), tela AMOLED de 90 Hz, 5G e seis anos de atualizações, por um preço parecido. O Moto G17 só leva vantagem em resistência (IP64), entrada para fone e câmera frontal de 32 MP.",
+    chooseA: [
+      "Faz questão de entrada para fone de ouvido.",
+      "Precisa de mais resistência a poeira e água (IP64).",
+      "Tira muitas selfies (frontal de 32 MP).",
+    ],
+    chooseB: [
+      "Quer um celular que não fique lento (Exynos 1330).",
+      "Quer 5G e tela AMOLED.",
+      "Vai ficar muitos anos com o aparelho (seis anos de atualizações).",
+    ],
+    rows: [
+      { label: "Processador", a: "Helio G81 Extreme (12 nm)", b: "Exynos 1330 (5 nm)", winner: "b" },
+      { label: "Rede", a: "4G", b: "5G", winner: "b" },
+      { label: "Tela", a: 'LCD 6,72" Full HD+ • 60 Hz', b: 'AMOLED 6,7" • 90 Hz', winner: "b" },
+      { label: "Câmeras traseiras", a: "50 MP + ultra-angular 5 MP", b: "50 MP OIS + 5 MP + 2 MP", winner: "b" },
+      { label: "Bateria e recarga", a: "5.200 mAh • 18 W", b: "5.000 mAh • 25 W", winner: "tie" },
+      { label: "Proteção", a: "IP64", b: "IP54", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 850", b: "R$ 900", winner: "tie" },
+    ],
+    faq: [
+      {
+        question: "Moto G17 ou Galaxy A17: qual é mais rápido?",
+        answer: "O Galaxy A17 5G. O Exynos 1330 é de uma categoria acima do Helio G81 do Moto G17.",
+      },
+      {
+        question: "Qual dura mais anos?",
+        answer: "O Galaxy A17 5G, com seis anos de atualizações prometidas pela Samsung.",
+      },
+      {
+        question: "Cuidado com o Galaxy A17 4G",
+        answer: "Existe um Galaxy A17 4G com outro processador. Este comparativo é da versão 5G: confira no anúncio.",
+      },
+    ],
+  },
+  "moto-g17-vs-galaxy-a07": {
+    slug: "moto-g17-vs-galaxy-a07",
+    a: { id: "moto-g17", name: "Moto G17", reviewPath: "/review/moto-g17" },
+    b: { id: "galaxy-a07", name: "Galaxy A07", reviewPath: "/review/galaxy-a07" },
+    title: "Moto G17 ou Galaxy A07: qual o melhor celular barato em 2026?",
+    description:
+      "Moto G17 vs Galaxy A07: processador, tela, câmeras, resistência e atualizações lado a lado. Veja qual celular de entrada levar.",
+    shortAnswer:
+      "Depende do que pesa mais. O Galaxy A07 tem processador mais rápido (Helio G99) e seis anos de atualizações: dura mais sem travar. O Moto G17 tem tela Full HD+, câmera ultra-angular, frontal de 32 MP, bateria maior, IP64, NFC e entrada para fone. Para durar anos, o A07; para câmera e extras, o G17.",
+    chooseA: [
+      "Quer ultra-angular e selfie melhor (frontal de 32 MP).",
+      "Quer NFC, entrada para fone e IP64.",
+    ],
+    chooseB: [
+      "Quer um celular barato que não fique lento (Helio G99).",
+      "Vai ficar muitos anos com o aparelho (seis anos de atualizações).",
+      "Quer gastar menos: compre até R$ 800.",
+    ],
+    rows: [
+      { label: "Processador", a: "Helio G81 Extreme", b: "Helio G99 (6 nm)", winner: "b" },
+      { label: "Tela", a: 'LCD 6,72" Full HD+ • 60 Hz', b: 'LCD 6,7" HD+ • 90 Hz', winner: "tie" },
+      { label: "Câmeras traseiras", a: "50 MP + ultra-angular 5 MP", b: "50 MP", winner: "a" },
+      { label: "Bateria", a: "5.200 mAh • 18 W", b: "5.000 mAh", winner: "a" },
+      { label: "Proteção", a: "IP64", b: "IP54", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 850", b: "R$ 800", winner: "b" },
+    ],
+    faq: [
+      {
+        question: "Moto G17 ou Galaxy A07: qual é mais rápido?",
+        answer: "O Galaxy A07. O Helio G99 é mais forte que o Helio G81 do Moto G17.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "O Moto G17, pela ultra-angular e pela frontal de 32 MP.",
+      },
+      {
+        question: "Tem opção melhor por pouco mais?",
+        answer: "Sim. Por uns R$ 900, o Galaxy A17 5G tem 5G, tela AMOLED e processador ainda mais rápido.",
+      },
+    ],
+  },
+  "galaxy-a36-vs-moto-g56": {
+    slug: "galaxy-a36-vs-moto-g56",
+    a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
+    b: { id: "moto-g56-5g", name: "Moto G56 5G", reviewPath: "/review/moto-g56-5g" },
+    title: "Galaxy A36 ou Moto G56: qual o melhor para comprar em 2026?",
+    description:
+      "Galaxy A36 vs Moto G56: processador, tela AMOLED, câmeras, resistência e atualizações lado a lado. Veja qual vale mais o seu dinheiro.",
+    shortAnswer:
+      "O Galaxy A36 é melhor em quase tudo: processador mais forte (Snapdragon 6 Gen 3), tela AMOLED, câmera com estabilização e seis anos de atualizações. O Moto G56 ganha em resistência (IP68 e IP69) e costuma custar menos. Se a diferença for de até uns R$ 200, leve o A36.",
+    chooseA: [
+      "Joga ou quer o celular mais rápido da faixa.",
+      "Quer tela AMOLED e câmera com estabilização.",
+      "Vai ficar muitos anos com o aparelho (até 2031).",
+    ],
+    chooseB: [
+      "Precisa de resistência máxima (IP68 e IP69).",
+      "Quer gastar menos: compre até R$ 1.200.",
+      "Quer microSD.",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 6 Gen 3", b: "Dimensity 7060 (6 nm)", winner: "a" },
+      { label: "Tela", a: 'AMOLED 6,7" • 120 Hz', b: 'LCD 6,72" Full HD+ • 120 Hz', winner: "a" },
+      { label: "Câmeras traseiras", a: "50 MP OIS + 8 MP + 5 MP", b: "50 MP", winner: "a" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 45 W", b: "5.200 mAh • 30 W", winner: "tie" },
+      { label: "Proteção", a: "IP67", b: "IP68 e IP69", winner: "b" },
+      { label: "Atualizações", a: "6 anos (até 2031)", b: "2 versões do Android, 3 anos de segurança", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 1.350", b: "R$ 1.200", winner: "b" },
+    ],
+    faq: [
+      {
+        question: "Galaxy A36 ou Moto G56: qual é melhor para jogar?",
+        answer: "O Galaxy A36. O Snapdragon 6 Gen 3 é mais forte que o Dimensity 7060.",
+      },
+      {
+        question: "Qual é mais resistente?",
+        answer: "O Moto G56, com IP68 e IP69. O A36 tem IP67, que já aguenta respingos e submersão rápida.",
+      },
+      {
+        question: "Qual dura mais anos?",
+        answer: "O Galaxy A36, com atualizações até 2031.",
+      },
+    ],
+  },
+  "moto-g-max-vs-edge-60-fusion": {
+    slug: "moto-g-max-vs-edge-60-fusion",
+    a: { id: "moto-g-max", name: "Moto G Max", reviewPath: "/review/moto-g-max" },
+    b: { id: "edge-60-fusion", name: "Edge 60 Fusion", reviewPath: "/review/edge-60-fusion" },
+    title: "Moto G Max ou Edge 60 Fusion: qual comprar em 2026?",
+    description:
+      "Moto G Max vs Motorola Edge 60 Fusion: tela, câmera de 200 MP, processador e preço lado a lado. Veja qual Motorola vale mais.",
+    shortAnswer:
+      "Para câmera e tela, o Moto G Max: câmera de 200 MP com estabilização, tela plana de 6,8\" com 5.000 nits e microSD, e costuma custar menos. Para desempenho, o Edge 60 Fusion: o Dimensity 7300 é mais forte que o Dimensity 6400 do G Max. Os dois têm IP68 e IP69.",
+    chooseA: [
+      "Prioriza câmera (200 MP) e tela mais brilhante.",
+      "Quer microSD e tela plana.",
+      "Quer gastar menos: compre até R$ 1.600.",
+    ],
+    chooseB: [
+      "Joga ou quer um celular mais rápido (Dimensity 7300).",
+      "Gosta de tela curva e visual mais premium.",
+    ],
+    rows: [
+      { label: "Processador", a: "Dimensity 6400 (6 nm)", b: "Dimensity 7300", winner: "b" },
+      { label: "Tela", a: 'pOLED plana 6,8" • 120 Hz • 5.000 nits', b: 'pOLED curva 6,7" • 120 Hz • 4.500 nits', winner: "a" },
+      { label: "Câmera principal", a: "200 MP com OIS", b: "50 MP com OIS", winner: "a" },
+      { label: "Armazenamento", a: "256 GB + microSD", b: "256 GB", winner: "a" },
+      { label: "Bateria", a: "5.200 mAh", b: "5.200 mAh", winner: "tie" },
+      { label: "Proteção", a: "IP68 e IP69", b: "IP68 e IP69", winner: "tie" },
+      { label: "Compre se estiver até", a: "R$ 1.600", b: "R$ 1.800", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Moto G Max ou Edge 60 Fusion: qual é mais rápido?",
+        answer: "O Edge 60 Fusion, com Dimensity 7300. O G Max usa o Dimensity 6400, suficiente para o dia a dia.",
+      },
+      {
+        question: "Qual tem a melhor câmera?",
+        answer: "O Moto G Max, com sensor de 200 MP e estabilização óptica.",
+      },
+      {
+        question: "Moto G Max é o mesmo que Moto G87?",
+        answer: "Sim, no exterior o mesmo aparelho é vendido como Moto G87.",
+      },
+    ],
+  },
+  "galaxy-a36-vs-redmi-note-15-5g": {
+    slug: "galaxy-a36-vs-redmi-note-15-5g",
+    a: { id: "galaxy-a36-5g", name: "Galaxy A36 5G", reviewPath: "/review/galaxy-a36-5g" },
+    b: { id: "redmi-note-15-5g", name: "Redmi Note 15 5G", reviewPath: "/review/redmi-note-15-5g" },
+    title: "Galaxy A36 ou Redmi Note 15 5G: qual comprar em 2026?",
+    description:
+      "Galaxy A36 vs Redmi Note 15 5G: mesmo processador, telas AMOLED de 120 Hz. Compare câmeras, bateria, resistência e preço.",
+    shortAnswer:
+      "Os dois usam o mesmo processador (Snapdragon 6 Gen 3) e têm tela AMOLED de 120 Hz. O Galaxy A36 tem câmera com estabilização, IP67 e atualizações até 2031, e costuma custar menos. O Redmi Note 15 5G tem bateria maior (5.520 mAh), carregador de 45 W na caixa e tela mais brilhante. Pelo preço, o A36 é a escolha mais segura.",
+    chooseA: [
+      "Quer gastar menos pelo mesmo desempenho: compre até R$ 1.350.",
+      "Vai ficar muitos anos com o aparelho (até 2031).",
+      "Quer câmera com estabilização óptica.",
+    ],
+    chooseB: [
+      "Quer a maior bateria e o carregador na caixa.",
+      "Usa muito o celular no sol (3.200 nits).",
+    ],
+    rows: [
+      { label: "Processador", a: "Snapdragon 6 Gen 3", b: "Snapdragon 6 Gen 3", winner: "tie" },
+      { label: "Tela", a: 'AMOLED 6,7" • 120 Hz', b: 'AMOLED 6,67" • 120 Hz • 3.200 nits', winner: "tie" },
+      { label: "Câmera principal", a: "50 MP com OIS", b: "108 MP", winner: "tie" },
+      { label: "Bateria e recarga", a: "5.000 mAh • 45 W", b: "5.520 mAh • 45 W, carregador na caixa", winner: "b" },
+      { label: "Proteção", a: "IP67", b: "IP65", winner: "a" },
+      { label: "Compre se estiver até", a: "R$ 1.350", b: "R$ 1.800", winner: "a" },
+    ],
+    faq: [
+      {
+        question: "Galaxy A36 ou Redmi Note 15 5G: qual é mais rápido?",
+        answer: "São iguais: os dois usam o Snapdragon 6 Gen 3.",
+      },
+      {
+        question: "Qual tem a bateria maior?",
+        answer: "O Redmi Note 15 5G, com 5.520 mAh e carregador de 45 W na caixa.",
+      },
+      {
+        question: "Não confunda com o Redmi Note 15 4G",
+        answer: "O Redmi Note 15 4G tem outro processador. Este comparativo é da versão 5G: confira no anúncio.",
+      },
+    ],
+  },
   "galaxy-a17-vs-moto-g56": {
     slug: "galaxy-a17-vs-moto-g56",
     a: { id: "galaxy-a17-5g", name: "Galaxy A17 5G", reviewPath: "/review/galaxy-a17-5g" },
