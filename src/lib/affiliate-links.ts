@@ -9,7 +9,7 @@ export const IPHONE_15_AFFILIATE_URL = "https://meli.la/2m3GhG6";
 
 export const POCO_X6_PRO_AFFILIATE_URL = "https://meli.la/2hXCQMH";
 
-export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/2FrJT42";
+export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/1p5J4MW";
 
 export const REDMI_NOTE_13_PRO_AFFILIATE_URL = "https://meli.la/1dksoic";
 

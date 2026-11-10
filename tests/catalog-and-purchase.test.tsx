@@ -30,7 +30,7 @@ const mercadoLivre = [
   ["galaxy-a35", "https://meli.la/1onGZVV"],
   ["iphone-15", "https://meli.la/2m3GhG6"],
   ["poco-x6-pro", "https://meli.la/2hXCQMH"],
-  ["poco-x7-pro", "https://meli.la/2FrJT42"],
+  ["poco-x7-pro", "https://meli.la/1p5J4MW"],
   ["redmi-note-13-pro", "https://meli.la/1dksoic"],
   ["redmi-note-13-4g", "https://meli.la/1s5tD1G"],
   ["redmi-note-14-pro-plus", "https://meli.la/1at28cv"],

@@ -403,7 +403,7 @@
     ],
     "exclude": [
       "ultra",
-      "fe",
+      "s25 fe",
       "edge",
       "plus",
       "s26"
@@ -415,7 +415,7 @@
     ],
     "exclude": [
       "ultra",
-      "fe",
+      "s26 fe",
       "edge",
       "plus",
       "s25"
@@ -515,7 +515,7 @@
       "s25"
     ],
     "exclude": [
-      "fe",
+      "s25 fe",
       "ultra",
       "s25+",
       "edge"
@@ -583,7 +583,7 @@
     ],
     "exclude": [
       "ultra",
-      "fe",
+      "s26 fe",
       "s26+",
       "s25"
     ]
