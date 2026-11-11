@@ -1632,7 +1632,7 @@ export const COMPARISONS: Record<string, Comparison> = {
     rows: [
       { label: "Processador", a: "Dimensity 6300 (6 nm)", b: "Helio G81 (12 nm)", winner: "a" },
       { label: "5G", a: "Sim", b: "Não", winner: "a" },
-      { label: "Tela", a: 'LCD 6,67" HD+ • 120 Hz', b: 'LCD 6,72" Full HD • 60 Hz', winner: "tie" },
+      { label: "Tela", a: 'LCD 6,7" HD+ • 120 Hz', b: 'LCD 6,72" Full HD • 60 Hz', winner: "tie" },
       { label: "Câmeras traseiras", a: "50 MP", b: "50 MP + ultra-angular 5 MP", winner: "b" },
       { label: "Câmera frontal", a: "8 MP", b: "32 MP", winner: "b" },
       { label: "Bateria e recarga", a: "5.200 mAh • 20 W", b: "5.200 mAh • 18 W", winner: "a" },
