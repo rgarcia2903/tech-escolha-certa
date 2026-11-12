@@ -732,8 +732,8 @@ export const LAUNCHES: Record<string, Launch> = {
   "edge-60": {
     id: "edge-60",
     name: "Motorola Edge 60",
-    launched: "abril de 2025",
-    sortKey: "2025-04",
+    launched: "maio de 2025",
+    sortKey: "2025-05",
     brand: "Motorola",
     tagline: "512 GB, 12 GB de RAM, tela LTPO e proteção militar, mas processador intermediário.",
     shortAnswer:
@@ -746,7 +746,7 @@ export const LAUNCHES: Record<string, Launch> = {
       ["Bateria", "5.200 mAh"],
       ["Proteção", "IP68, IP69 e MIL-STD-810H"],
       ["Extras", "5G • NFC"],
-      ["Lançamento", "Abril de 2025 (R$ 3.499)"],
+      ["Lançamento", "Maio de 2025 (R$ 3.499)"],
     ],
     buyIf: [
       "Quer muito espaço (512 GB) e 12 GB de RAM.",
