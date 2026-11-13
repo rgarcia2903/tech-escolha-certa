@@ -1,7 +1,7 @@
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import {
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  REDMI_NOTE_15_5G_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -124,7 +124,7 @@ export const Route = createFileRoute("/comparativo/redmi-note-13-pro-vs-redmi-no
   component: ComparisonPage,
 });
 
-const REDMI13_AFFILIATE_URL = REDMI_NOTE_13_PRO_AFFILIATE_URL;
+const REDMI13_AFFILIATE_URL = REDMI_NOTE_15_5G_AFFILIATE_URL;
 
 const REDMI14_AFFILIATE_URL = REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL;
 
@@ -328,7 +328,7 @@ function ComparisonPage() {
             className="mt-8"
             options={[
               { productName: "Redmi Note 14 Pro+", href: REDMI14_AFFILIATE_URL },
-              { productName: "Redmi Note 13 Pro", href: REDMI13_AFFILIATE_URL },
+              { productName: "Redmi Note 15 5G", href: REDMI13_AFFILIATE_URL },
             ]}
             pageType="comparativo"
             placement="hero"
@@ -392,13 +392,13 @@ function ComparisonPage() {
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
                     trackAffiliateClick({
-                      productName: "Redmi Note 13 Pro",
+                      productName: "Redmi Note 15 5G",
                       pageType: "comparativo",
                     })
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Conferir preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver o sucessor, Redmi Note 15 5G <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
               <AffiliateRedirectNotice className="mt-3" />
@@ -452,7 +452,7 @@ function ComparisonPage() {
                   className="mt-4"
                   options={[
                     { productName: "Redmi Note 14 Pro+", href: REDMI14_AFFILIATE_URL },
-                    { productName: "Redmi Note 13 Pro", href: REDMI13_AFFILIATE_URL },
+                    { productName: "Redmi Note 15 5G", href: REDMI13_AFFILIATE_URL },
                   ]}
                   pageType="comparativo"
                   placement="content"
@@ -745,13 +745,13 @@ function ComparisonPage() {
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
                     trackAffiliateClick({
-                      productName: "Redmi Note 13 Pro",
+                      productName: "Redmi Note 15 5G",
                       pageType: "comparativo",
                     })
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Conferir preço do Redmi Note 13 Pro <ArrowUpRight className="h-4 w-4" />
+                  Ver o sucessor, Redmi Note 15 5G <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

@@ -9,11 +9,9 @@ export const IPHONE_15_AFFILIATE_URL = "https://meli.la/2m3GhG6";
 
 export const POCO_X6_PRO_AFFILIATE_URL = "https://meli.la/2hXCQMH";
 
-export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/1p5J4MW";
+export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/2wev94e";
 
-export const REDMI_NOTE_13_PRO_AFFILIATE_URL = "https://meli.la/1dksoic";
 
-export const REDMI_NOTE_13_4G_AFFILIATE_URL = "https://meli.la/1s5tD1G";
 
 export const REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL = "https://meli.la/1at28cv";
 
@@ -97,7 +95,6 @@ export const GALAXY_S25_AFFILIATE_URL = "https://meli.la/1DCByA3";
 export const GALAXY_S25_ULTRA_AFFILIATE_URL = "https://meli.la/1qhtx7H";
 export const GALAXY_S26_FE_AFFILIATE_URL = "https://meli.la/1zxgrdG";
 export const EDGE_70_AFFILIATE_URL = "https://meli.la/17uhEEF";
-export const GALAXY_A17_4G_AFFILIATE_URL = "https://meli.la/2FtGFqG";
 export const GALAXY_A07_AFFILIATE_URL = "https://meli.la/185612x";
 export const MOTO_G06_AFFILIATE_URL = "https://meli.la/27kny6U";
 export const GALAXY_S26_AFFILIATE_URL = "https://meli.la/1egdSnC";

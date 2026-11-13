@@ -30,9 +30,7 @@ const mercadoLivre = [
   ["galaxy-a35", "https://meli.la/1onGZVV"],
   ["iphone-15", "https://meli.la/2m3GhG6"],
   ["poco-x6-pro", "https://meli.la/2hXCQMH"],
-  ["poco-x7-pro", "https://meli.la/1p5J4MW"],
-  ["redmi-note-13-pro", "https://meli.la/1dksoic"],
-  ["redmi-note-13-4g", "https://meli.la/1s5tD1G"],
+  ["poco-x7-pro", "https://meli.la/2wev94e"],
   ["redmi-note-14-pro-plus", "https://meli.la/1at28cv"],
   ["galaxy-a17-5g", "https://meli.la/33rVhq6"],
   ["galaxy-a36-5g", "https://meli.la/2kdrQ2M"],
@@ -52,7 +50,6 @@ const mercadoLivre = [
   ["galaxy-s25-ultra", "https://meli.la/1qhtx7H"],
   ["galaxy-s26-fe", "https://meli.la/1zxgrdG"],
   ["edge-70", "https://meli.la/17uhEEF"],
-  ["galaxy-a17-4g", "https://meli.la/2FtGFqG"],
   ["galaxy-a07", "https://meli.la/185612x"],
   ["moto-g06", "https://meli.la/27kny6U"],
   ["galaxy-s26", "https://meli.la/1egdSnC"],
@@ -101,7 +98,7 @@ const amazon = [
   ["moto-g17", "https://www.amazon.com.br/dp/B0GKPXSZR6?tag=techescolha03-20"],
 ];
 test("20 Mercado Livre and 32 Amazon addresses preserve exact model identity", () => {
-  assert.equal(OFFERS.length, 70);
+  assert.equal(OFFERS.length, 67);
   for (const [store, pairs] of [
     ["mercado_livre", mercadoLivre],
     ["amazon", amazon],
@@ -146,7 +143,9 @@ test("4G, 5G, Pro, Pro+ and generation distinctions never share offer identity",
   assert.equal(getOffers("poco-x6-5g").length, 0);
   assert.equal(getOffers("edge-50-pro").length, 0);
   assert.equal(getOffers("galaxy-s24-plus").length, 0);
-  assert.notEqual(getOffers("redmi-note-13-pro")[0].url, getOffers("redmi-note-13-4g")[0].url);
+  // Sem oferta nova ativa no Mercado Livre (13/11/2026): os botões levam ao sucessor.
+  assert.equal(getOffers("redmi-note-13-pro").filter((o) => o.store === "mercado_livre").length, 0);
+  assert.equal(getOffers("redmi-note-13-4g").filter((o) => o.store === "mercado_livre").length, 0);
   assert.equal(getProductByName("Redmi Note 13"), undefined);
   assert.equal(getOfferByUrl("https://meli.la/19RXcbF")?.productId, "redmi-note-15-5g");
 });
@@ -297,7 +296,7 @@ test("PR #43 export names remain compatible without duplicating offers", () => {
     assert.equal(current, legacy);
     assert.equal(getOfferByUrl(current)?.productId, id);
   }
-  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 70);
+  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 67);
 });
 
 test("PR #43 candidates remain shared while evaluation models stay unapproved", () => {

@@ -50,26 +50,6 @@
       "x8"
     ]
   },
-  "REDMI_NOTE_13_PRO_AFFILIATE_URL": {
-    "include": [
-      "note 13 pro"
-    ],
-    "exclude": [
-      "pro+",
-      "plus",
-      "note 14",
-      "note 15"
-    ]
-  },
-  "REDMI_NOTE_13_4G_AFFILIATE_URL": {
-    "include": [
-      "note 13"
-    ],
-    "exclude": [
-      "pro",
-      "5g"
-    ]
-  },
   "REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL": {
     "include": [
       "note 14 pro"
@@ -385,7 +365,7 @@
     "exclude": [
       "pro",
       "fusion",
-      "ultra"
+      "70 ultra"
     ]
   },
   "GALAXY_A37_AMAZON_URL": {
@@ -545,16 +525,6 @@
     "exclude": [
       "fusion",
       "pro"
-    ]
-  },
-  "GALAXY_A17_4G_AFFILIATE_URL": {
-    "include": [
-      "a17"
-    ],
-    "exclude": [
-      "5g",
-      "a16",
-      "a15"
     ]
   },
   "GALAXY_A07_AFFILIATE_URL": {

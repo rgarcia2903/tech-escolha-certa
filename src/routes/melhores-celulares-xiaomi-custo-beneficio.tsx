@@ -3,7 +3,7 @@ import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
   POCO_X6_PRO_AFFILIATE_URL,
   POCO_X7_PRO_AFFILIATE_URL,
-  REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  REDMI_NOTE_15_5G_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
 } from "@/lib/affiliate-links";
 import { createFileRoute, Link, redirect } from "@tanstack/react-router";
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/melhores-celulares-xiaomi-custo-beneficio
 });
 
 const affiliateLinks = {
-  redmiNote13Pro: REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  redmiNote13Pro: REDMI_NOTE_15_5G_AFFILIATE_URL,
   redmiNote14ProPlus: REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
   pocoX7Pro: POCO_X7_PRO_AFFILIATE_URL,
   pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
@@ -479,8 +479,8 @@ function MelhoresCelularesXiaomiCustoBeneficio() {
             <AffiliateCTA
               title="Melhores ofertas Xiaomi atualizadas"
               description="Veja preços, parcelamento e disponibilidade dos celulares Xiaomi recomendados."
-              buttonText="Ver Redmi Note 13 Pro no Mercado Livre"
-              href={REDMI_NOTE_13_PRO_AFFILIATE_URL}
+              buttonText="Ver o sucessor, Redmi Note 15 5G"
+              href={REDMI_NOTE_15_5G_AFFILIATE_URL}
               highlight="Redmi • Poco • Xiaomi"
               productName="Redmi Note 13 Pro"
               pageType="guia"
