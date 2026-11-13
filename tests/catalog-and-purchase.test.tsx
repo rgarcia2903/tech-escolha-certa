@@ -143,7 +143,9 @@ test("4G, 5G, Pro, Pro+ and generation distinctions never share offer identity",
   assert.equal(getOffers("poco-x6-5g").length, 0);
   assert.equal(getOffers("edge-50-pro").length, 0);
   assert.equal(getOffers("galaxy-s24-plus").length, 0);
-  assert.notEqual(getOffers("redmi-note-13-pro")[0].url, getOffers("redmi-note-13-4g")[0].url);
+  // Sem oferta nova ativa no Mercado Livre (13/11/2026): os botões levam ao sucessor.
+  assert.equal(getOffers("redmi-note-13-pro").filter((o) => o.store === "mercado_livre").length, 0);
+  assert.equal(getOffers("redmi-note-13-4g").filter((o) => o.store === "mercado_livre").length, 0);
   assert.equal(getProductByName("Redmi Note 13"), undefined);
   assert.equal(getOfferByUrl("https://meli.la/19RXcbF")?.productId, "redmi-note-15-5g");
 });
