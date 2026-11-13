@@ -1,7 +1,7 @@
 import { FairPriceBox } from "@/components/site/FairPriceBox";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
-import { POCO_X6_PRO_AFFILIATE_URL, REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { POCO_X6_PRO_AFFILIATE_URL, REDMI_NOTE_15_5G_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
@@ -158,7 +158,7 @@ const REDMI_NOTE_13_PRO = {
   badge: "Mais equilibrado",
   rating: 4.7,
   image: "/images/products/redmi-note-13-pro-optimized.webp",
-  affiliateHref: REDMI_NOTE_13_PRO_AFFILIATE_URL,
+  affiliateHref: REDMI_NOTE_15_5G_AFFILIATE_URL,
   strengths: [
     "Câmera principal de 200 MP com OIS",
     "Bateria de 5.100 mAh com boa autonomia",
@@ -367,7 +367,7 @@ function ComparisonPage() {
               <div className="mt-4 space-y-2">
                 <AffiliateButton
                   product={REDMI_NOTE_13_PRO}
-                  label="Conferir preço do Redmi Note 13 Pro"
+                  label="Ver o sucessor, Redmi Note 15 5G"
                   variant="primary"
                 />
                 <AffiliateButton
@@ -431,9 +431,9 @@ function ComparisonPage() {
                       label: "Conferir preço do Poco X6 Pro",
                     },
                     {
-                      productName: "Redmi Note 13 Pro",
-                      href: REDMI_NOTE_13_PRO_AFFILIATE_URL,
-                      label: "Conferir preço do Redmi Note 13 Pro",
+                      productName: "Redmi Note 15 5G",
+                      href: REDMI_NOTE_15_5G_AFFILIATE_URL,
+                      label: "Ver o sucessor, Redmi Note 15 5G",
                     },
                   ]}
                   pageType="comparativo"
@@ -711,7 +711,7 @@ function ComparisonPage() {
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
                 <AffiliateButton
                   product={REDMI_NOTE_13_PRO}
-                  label="Conferir preço do Redmi Note 13 Pro"
+                  label="Ver o sucessor, Redmi Note 15 5G"
                   variant="primary"
                 />
                 <AffiliateButton
@@ -741,13 +741,13 @@ function ComparisonPage() {
             rel="noopener noreferrer sponsored"
             onClick={() =>
               trackAffiliateClick({
-                productName: "Redmi Note 13 Pro",
+                productName: "Redmi Note 15 5G",
                 pageType: "comparativo",
               })
             }
             className="inline-flex items-center gap-1.5 rounded-lg bg-cta px-4 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            Ver preço atual <ArrowUpRight className="h-3.5 w-3.5" />
+            Sucessor: Redmi Note 15 <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>

@@ -1,8 +1,7 @@
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { documentaryArticle } from "@/lib/editorial-schema";
-import { REDMI_NOTE_13_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
-import { REDMI_NOTE_15_5G_AMAZON_URL } from "@/lib/affiliate-links";
+import { REDMI_NOTE_15_5G_AFFILIATE_URL, REDMI_NOTE_15_5G_AMAZON_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
@@ -158,10 +157,11 @@ function ReviewRedmiNote13Pro() {
       updatedAt="Atualizado em novembro de 2026"
       readingTime="Leitura • 7 min"
       productName="Redmi Note 13 Pro 5G"
-      priceLabel="Ver preço atual"
+      priceLabel="Ver o sucessor, Redmi Note 15 5G"
       overallScore="9.0"
       verdictShort="Sim — o Redmi Note 13 Pro 5G vale a pena em 2026 se você quer tela excelente, desempenho forte, carregamento rápido e boa ficha técnica sem pagar preço de topo de linha. Ele só não é a melhor escolha para quem prioriza software mais limpo, suporte mais previsível e câmeras mais consistentes à noite."
-      affiliateHref={REDMI_NOTE_13_PRO_AFFILIATE_URL}
+      affiliateHref={REDMI_NOTE_15_5G_AFFILIATE_URL}
+      affiliateIsSuccessor
       fairPriceId="redmi-note-13-pro"
       alternative={{
         productName: "Redmi Note 15 5G",
@@ -171,10 +171,10 @@ function ReviewRedmiNote13Pro() {
         reviewHref: "/review/redmi-note-15-5g",
       }}
       affiliate={{
-        title: "Redmi Note 13 Pro 5G: confira oferta e versão",
+        title: "Redmi Note 13 Pro 5G sumiu do Mercado Livre novo",
         description:
-          "Confira o preço atualizado e confirme no anúncio se é a versão 5G com Snapdragon 7s Gen 2. Compare também memória, garantia, frete e parcelamento.",
-        buttonText: "Conferir preço atual",
+          "Em novembro de 2026, o Mercado Livre não tinha mais o Note 13 Pro 5G novo em oferta ativa (o único anúncio estava acima de R$ 3.000). O sucessor, Redmi Note 15 5G, é dois anos mais novo e terá suporte por mais tempo.",
+        buttonText: "Ver o sucessor, Redmi Note 15 5G",
         highlight: "Tela AMOLED 120 Hz • Câmera 200 MP • Carga de 67 W",
       }}
       decision={{

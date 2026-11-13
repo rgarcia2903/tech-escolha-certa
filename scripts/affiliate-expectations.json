@@ -50,26 +50,6 @@
       "x8"
     ]
   },
-  "REDMI_NOTE_13_PRO_AFFILIATE_URL": {
-    "include": [
-      "note 13 pro"
-    ],
-    "exclude": [
-      "pro+",
-      "plus",
-      "note 14",
-      "note 15"
-    ]
-  },
-  "REDMI_NOTE_13_4G_AFFILIATE_URL": {
-    "include": [
-      "note 13"
-    ],
-    "exclude": [
-      "pro",
-      "5g"
-    ]
-  },
   "REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL": {
     "include": [
       "note 14 pro"
