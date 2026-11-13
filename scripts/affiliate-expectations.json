@@ -547,16 +547,6 @@
       "pro"
     ]
   },
-  "GALAXY_A17_4G_AFFILIATE_URL": {
-    "include": [
-      "a17"
-    ],
-    "exclude": [
-      "5g",
-      "a16",
-      "a15"
-    ]
-  },
   "GALAXY_A07_AFFILIATE_URL": {
     "include": [
       "a07"

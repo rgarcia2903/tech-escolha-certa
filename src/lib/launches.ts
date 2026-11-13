@@ -539,7 +539,7 @@ export const LAUNCHES: Record<string, Launch> = {
     brand: "Samsung",
     tagline: "Tela AMOLED Full HD+, NFC e seis anos de atualizações, sem 5G.",
     shortAnswer:
-      "Sim, se você não precisa de 5G. O Galaxy A17 4G tem tela Super AMOLED de 6,7\" Full HD+ com 90 Hz, Helio G99, NFC, IP54 e seis anos de atualizações. Se a diferença para o A17 5G for pequena, leve o 5G, que tem processador mais forte.",
+      "Sim, se você não precisa de 5G. O Galaxy A17 4G tem tela Super AMOLED de 6,7\" Full HD+ com 90 Hz, Helio G99, NFC, IP54 e seis anos de atualizações. No Mercado Livre ele costuma sair mais caro que o A17 5G; nesse caso, leve o 5G, que tem processador mais forte.",
     specs: [
       ["Processador", "MediaTek Helio G99 (6 nm)"],
       ["Tela", '6,7" Super AMOLED Full HD+ • 90 Hz'],
@@ -556,9 +556,11 @@ export const LAUNCHES: Record<string, Launch> = {
     ],
     thinkTwiceIf: [
       "O A17 5G está só um pouco mais caro: ele é mais rápido e tem 5G.",
+      "No Mercado Livre, o A17 4G costuma aparecer mais caro que o A17 5G. Se for o caso, leve o 5G.",
     ],
     compare: [
       { label: "Galaxy A17 4G ou 5G?", path: "/comparativo/galaxy-a17-4g-vs-galaxy-a17-5g" },
+      { label: "Ver o Galaxy A17 5G", path: "/review/galaxy-a17-5g" },
       { label: "Melhores celulares até R$ 1.000", path: "/melhor-celular-ate-1000" },
     ],
     versionNote: "Existem Galaxy A17 4G e Galaxy A17 5G, com processadores diferentes. Procure \"5G\" no nome do anúncio para saber qual é.",

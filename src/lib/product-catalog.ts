@@ -921,7 +921,6 @@ const ml: [string, string][] = [
   ["galaxy-s25-ultra", links.GALAXY_S25_ULTRA_AFFILIATE_URL],
   ["galaxy-s26-fe", links.GALAXY_S26_FE_AFFILIATE_URL],
   ["edge-70", links.EDGE_70_AFFILIATE_URL],
-  ["galaxy-a17-4g", links.GALAXY_A17_4G_AFFILIATE_URL],
   ["galaxy-a07", links.GALAXY_A07_AFFILIATE_URL],
   ["moto-g06", links.MOTO_G06_AFFILIATE_URL],
   ["galaxy-s26", links.GALAXY_S26_AFFILIATE_URL],
