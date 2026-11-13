@@ -403,7 +403,7 @@ export function ReviewTemplate({
               }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver {storeLabelForUrl(affiliateHref)}
+              {affiliateIsSuccessor ? priceLabel : `Ver ${storeLabelForUrl(affiliateHref)}`}
               <ArrowUpRight className="h-4 w-4" />
             </a>
 
@@ -435,7 +435,7 @@ export function ReviewTemplate({
           {
             productName,
             href: affiliateHref,
-            label: "Ver preço",
+            label: affiliateIsSuccessor ? "Ver o sucessor" : "Ver preço",
             primary: true,
           },
         ]}
