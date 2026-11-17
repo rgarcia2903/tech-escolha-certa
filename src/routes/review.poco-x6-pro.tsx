@@ -1,8 +1,7 @@
 import { fairPriceDescription, fairPriceTitle } from "@/lib/fair-prices";
 import { getSocialImage } from "@/lib/product-media";
 import { documentaryArticle } from "@/lib/editorial-schema";
-import { POCO_X6_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
-import { POCO_X7_PRO_AMAZON_URL } from "@/lib/affiliate-links";
+import { POCO_X7_PRO_AFFILIATE_URL, POCO_X7_PRO_AMAZON_URL } from "@/lib/affiliate-links";
 import { createFileRoute } from "@tanstack/react-router";
 import { ReviewTemplate } from "@/components/site/ReviewTemplate";
 
@@ -170,10 +169,11 @@ function ReviewPocoX6Pro() {
       updatedAt="Atualizado em novembro de 2026"
       readingTime="Leitura • 7 min"
       productName="Poco X6 Pro"
-      priceLabel="Ver preço atual"
+      priceLabel="Ver o sucessor, Poco X7 Pro"
       overallScore="8.9"
       verdictShort="Sim — o Poco X6 Pro compensa em 2026 se você quer potência, jogos, tela boa e carregamento rápido por um preço competitivo. Ele não é a melhor escolha para quem prioriza câmeras, acabamento premium ou atualizações mais previsíveis."
-      affiliateHref={POCO_X6_PRO_AFFILIATE_URL}
+      affiliateHref={POCO_X7_PRO_AFFILIATE_URL}
+      affiliateIsSuccessor
       fairPriceId="poco-x6-pro"
       alternative={{
         productName: "Poco X7 Pro",
@@ -183,10 +183,10 @@ function ReviewPocoX6Pro() {
         reviewHref: "/review/poco-x7-pro",
       }}
       affiliate={{
-        title: "Poco X6 Pro: confira a oferta antes de decidir",
+        title: "Poco X6 Pro novo sumiu do Mercado Livre",
         description:
-          "Confira o preço atualizado e compare com o Poco X7 Pro. O X6 Pro faz mais sentido quando a economia é relevante na mesma versão de memória.",
-        buttonText: "Conferir preço atual",
+          "Em novembro de 2026, o Mercado Livre não tinha mais o Poco X6 Pro novo em oferta ativa. O sucessor, Poco X7 Pro, tem bateria maior e é a geração seguinte.",
+        buttonText: "Ver o sucessor, Poco X7 Pro",
         highlight: "Desempenho forte • Tela AMOLED 120 Hz • Carga de 67 W",
       }}
       decision={{

@@ -7,7 +7,6 @@ export const GALAXY_S24_AFFILIATE_URL = "https://www.amazon.com.br/dp/B0CQD9H9MG
 
 export const IPHONE_15_AFFILIATE_URL = "https://meli.la/2m3GhG6";
 
-export const POCO_X6_PRO_AFFILIATE_URL = "https://meli.la/2hXCQMH";
 
 export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/2wev94e";
 

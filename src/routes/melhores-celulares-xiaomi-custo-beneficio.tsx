@@ -1,7 +1,6 @@
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { LegacySelectionNotice } from "@/components/site/LegacySelectionNotice";
 import {
-  POCO_X6_PRO_AFFILIATE_URL,
   POCO_X7_PRO_AFFILIATE_URL,
   REDMI_NOTE_15_5G_AFFILIATE_URL,
   REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
@@ -56,7 +55,7 @@ const affiliateLinks = {
   redmiNote13Pro: REDMI_NOTE_15_5G_AFFILIATE_URL,
   redmiNote14ProPlus: REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL,
   pocoX7Pro: POCO_X7_PRO_AFFILIATE_URL,
-  pocoX6Pro: POCO_X6_PRO_AFFILIATE_URL,
+  pocoX6Pro: POCO_X7_PRO_AFFILIATE_URL,
 };
 
 const ranking = [

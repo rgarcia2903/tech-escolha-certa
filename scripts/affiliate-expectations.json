@@ -32,15 +32,6 @@
       "iphone 17"
     ]
   },
-  "POCO_X6_PRO_AFFILIATE_URL": {
-    "include": [
-      "x6 pro"
-    ],
-    "exclude": [
-      "x7",
-      "x8"
-    ]
-  },
   "POCO_X7_PRO_AFFILIATE_URL": {
     "include": [
       "x7 pro"

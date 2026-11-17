@@ -1,7 +1,7 @@
 import { FairPriceBox } from "@/components/site/FairPriceBox";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
-import { POCO_X6_PRO_AFFILIATE_URL, REDMI_NOTE_15_5G_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { POCO_X7_PRO_AFFILIATE_URL, REDMI_NOTE_15_5G_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
@@ -138,7 +138,7 @@ const POCO_X6 = {
   badge: "Melhor para desempenho",
   rating: 4.6,
   image: "/images/products/poco-x6-pro-optimized.webp",
-  affiliateHref: POCO_X6_PRO_AFFILIATE_URL,
+  affiliateHref: POCO_X7_PRO_AFFILIATE_URL,
   strengths: [
     "Dimensity 8300-Ultra ainda entrega desempenho muito forte",
     "Ótimo custo-benefício quando aparece abaixo do Redmi Note 13 Pro",
@@ -372,7 +372,7 @@ function ComparisonPage() {
                 />
                 <AffiliateButton
                   product={POCO_X6}
-                  label="Conferir preço do Poco X6 Pro"
+                  label="Ver o sucessor, Poco X7 Pro"
                   variant="secondary"
                 />
               </div>
@@ -426,9 +426,9 @@ function ComparisonPage() {
                   className="mt-4"
                   options={[
                     {
-                      productName: "Poco X6 Pro",
-                      href: POCO_X6_PRO_AFFILIATE_URL,
-                      label: "Conferir preço do Poco X6 Pro",
+                      productName: "Poco X7 Pro",
+                      href: POCO_X7_PRO_AFFILIATE_URL,
+                      label: "Ver o sucessor, Poco X7 Pro",
                     },
                     {
                       productName: "Redmi Note 15 5G",
@@ -716,7 +716,7 @@ function ComparisonPage() {
                 />
                 <AffiliateButton
                   product={POCO_X6}
-                  label="Conferir preço do Poco X6 Pro"
+                  label="Ver o sucessor, Poco X7 Pro"
                   variant="secondary"
                 />
               </div>
