@@ -325,7 +325,7 @@ test("fair prices point to a real offer of the alternative and keep titles short
 });
 
 test("Black Friday reference prices point to products with offers", async () => {
-  const { BUDGET_GROUPS, AVOID, ceilingFor } = await import("../src/lib/black-friday");
+  const { BUDGET_GROUPS, AVOID, BELOW_TARGET, ceilingFor } = await import("../src/lib/black-friday");
   const { FAIR_PRICES } = await import("../src/lib/fair-prices");
   for (const group of BUDGET_GROUPS)
     for (const item of group.items) {
@@ -336,4 +336,9 @@ test("Black Friday reference prices point to products with offers", async () => 
   assert.equal(ceilingFor("moto-g56-5g"), 1200);
   assert.equal(ceilingFor("galaxy-s25-fe"), 3000);
   for (const { id } of AVOID) assert.ok(FAIR_PRICES[id]);
+  for (const item of BELOW_TARGET.items) {
+    assert.ok(getProduct(item.productId), `produto inexistente: ${item.productId}`);
+    assert.ok(getOffers(item.productId).some((o) => o.store === "mercado_livre"), `sem oferta ML: ${item.productId}`);
+    assert.ok(ceilingFor(item.productId), `sem preço-alvo: ${item.productId}`);
+  }
 });
