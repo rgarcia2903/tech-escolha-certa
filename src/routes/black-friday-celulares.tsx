@@ -2,7 +2,7 @@ import { FaqJsonLd } from "@/components/site/FaqJsonLd";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BadgeCheck, CircleAlert, ShieldCheck } from "lucide-react";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
-import { AVOID, BLACK_FRIDAY, BUDGET_GROUPS, ceilingFor, daysUntilBlackFriday } from "@/lib/black-friday";
+import { AVOID, BELOW_TARGET, BLACK_FRIDAY, BUDGET_GROUPS, ceilingFor, daysUntilBlackFriday } from "@/lib/black-friday";
 import { FAIR_PRICES, formatBRL } from "@/lib/fair-prices";
 import { getProduct } from "@/lib/product-catalog";
 
@@ -110,6 +110,42 @@ function BlackFridayPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section id="abaixo-do-teto" aria-labelledby="abaixo-do-teto-titulo" className="mt-12 scroll-mt-24">
+          <h2 id="abaixo-do-teto-titulo" className="flex items-center gap-2 text-2xl font-extrabold text-[#0F3F4A] sm:text-3xl">
+            <BadgeCheck className="h-7 w-7 text-[#1F7A4D]" /> Já abaixo do preço-alvo
+          </h2>
+          <p className="mt-2 max-w-3xl leading-7 text-slate-700">
+            Na nossa conferência de {BELOW_TARGET.checkedAt}, o anúncio do Mercado Livre destes modelos estava abaixo
+            do preço-alvo. Preço de loja muda a toda hora: compare o valor final com o preço-alvo antes de pagar.
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {BELOW_TARGET.items.map((item) => {
+              const product = getProduct(item.productId);
+              const ceiling = ceilingFor(item.productId);
+              if (!product || ceiling === undefined) return null;
+              return (
+                <article key={item.productId} className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-[#1F7A4D]/30">
+                  <h3 className="text-lg font-bold text-[#0F3F4A]">{product.name}</h3>
+                  <p className="mt-1 text-sm text-slate-600">
+                    Vale a pena até <strong className="text-[#8B5A2B]">{formatBRL(ceiling)}</strong>.{" "}
+                    <Link to={item.reviewPath} className="font-semibold text-[#0F3F4A] underline">
+                      Ver análise
+                    </Link>
+                  </p>
+                  <div className="mt-4">
+                    <ProductPurchaseOptions
+                      productId={item.productId}
+                      pageType="black_friday"
+                      placement="bf_abaixo_teto"
+                      compact
+                    />
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </section>
 
         {BUDGET_GROUPS.map((group) => (

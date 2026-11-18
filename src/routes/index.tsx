@@ -113,10 +113,11 @@ function HomePage() {
       <div className="container-tec pt-6">
         <Link
           to="/black-friday-celulares"
+          hash="abaixo-do-teto"
           className="flex flex-col gap-1 rounded-2xl bg-[#0F3F4A] px-5 py-4 text-white shadow-sm transition hover:brightness-110 sm:flex-row sm:items-center sm:justify-between"
         >
-          <span className="font-bold">Black Friday: veja até quanto vale pagar em cada celular</span>
-          <span className="text-sm text-slate-200 underline">Evite desconto falso →</span>
+          <span className="font-bold">Black Friday: celulares que já estão abaixo do preço-alvo</span>
+          <span className="text-sm text-slate-200 underline">Ver a lista e evitar desconto falso →</span>
         </Link>
       </div>
 
