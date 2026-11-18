@@ -123,7 +123,11 @@ function matches(product, rule, extra = "") {
   const p = normalize(product);
   const full = normalize(`${product} ${extra}`);
   const missing = (rule.include ?? []).filter((word) => !full.includes(normalize(word)));
-  const wrong = (rule.exclude ?? []).filter((word) => p.includes(normalize(word)));
+  // Termo indevido só conta como palavra inteira: "pro" não pode casar com "produto" ou "processador".
+  const escape = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const wrong = (rule.exclude ?? []).filter((word) =>
+    new RegExp(`(^|[^a-z0-9])${escape(normalize(word))}([^a-z0-9]|$)`).test(p),
+  );
   const anyOk = !rule.includeAny || rule.includeAny.some((word) => full.includes(normalize(word)));
   return { ok: missing.length === 0 && wrong.length === 0 && anyOk, missing, wrong };
 }
