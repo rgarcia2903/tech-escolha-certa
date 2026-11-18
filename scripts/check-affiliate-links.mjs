@@ -12,6 +12,40 @@ const links = [...source.matchAll(/export const (\w+) = "(https:\/\/[^"]+)"/g)].
   url: m[2],
 }));
 
+// Teto editorial (preço-alvo) por constante de link, para avisar quando o anúncio está caro.
+const catalogSource = fs.readFileSync("src/lib/product-catalog.ts", "utf8");
+const fairSource = fs.readFileSync("src/lib/fair-prices.ts", "utf8");
+const productByConst = Object.fromEntries(
+  [...catalogSource.matchAll(/\["([\w-]+)", links\.(\w+)\]/g)].map((m) => [m[2], m[1]]),
+);
+const goodDealStart = fairSource.indexOf("GOOD_DEAL_UNDER");
+// Mesma precedência de goodDealFor: FAIR_PRICES (veredito) vence GOOD_DEAL_UNDER.
+const targetById = {
+  ...Object.fromEntries(
+    [...fairSource.slice(goodDealStart).matchAll(/^\s*"([\w-]+)": (\d+),/gm)].map((m) => [m[1], Number(m[2])]),
+  ),
+  ...Object.fromEntries(
+    [...fairSource.slice(0, goodDealStart).matchAll(/"([\w-]+)": \{[^}]*?maxPrice: (\d+)/g)].map((m) => [m[1], Number(m[2])]),
+  ),
+};
+
+// Preço à vista do anúncio: com desconto, é o valor logo antes de "% OFF"; sem desconto, o primeiro
+// valor que não é parcela ("10x R$ 122").
+function readPrice(text) {
+  const t = text.replace(/\s+/g, " ");
+  const amounts = [...t.matchAll(/(\d+x )?R\$ ?([\d.]+)(?: ?, ?(\d{2}))?/g)]
+    .filter((m) => !m[1])
+    .map((m) => ({ index: m.index, value: Number(m[2].replace(/\./g, "")) + (m[3] ? Number(m[3]) / 100 : 0) }));
+  if (!amounts.length) return undefined;
+  const off = t.search(/\d+% OFF/);
+  if (off > -1) {
+    const before = amounts.filter((a) => a.index < off);
+    if (before.length) return before[before.length - 1].value;
+  }
+  return amounts[0].value;
+}
+const brl = (v) => `R$ ${v.toLocaleString("pt-BR", { maximumFractionDigits: 0 })}`;
+
 const normalize = (text) =>
   text
     .normalize("NFD")
@@ -97,7 +131,7 @@ function matches(product, rule, extra = "") {
 const results = [];
 for (const link of links) {
   const rule = expectations[link.name];
-  let row = { ...link, result: "", detail: "" };
+  let row = { ...link, result: "", detail: "", price: undefined, target: targetById[productByConst[link.name]] };
   try {
     const target = checkUrl(link.url);
     if (!target) {
@@ -107,6 +141,7 @@ for (const link of links) {
     const { status, finalUrl, html } = await fetchPage(target);
     const dest = readDestination(finalUrl, html);
     const product = (dest.product ?? "").replace(/\s+/g, " ").slice(0, 120);
+    if (dest.state === "ok" && /mercadoli[vb]re/.test(finalUrl)) row.price = readPrice(dest.product ?? "");
     if (status >= 400) row = { ...row, result: "QUEBRADO", detail: `HTTP ${status}` };
     else if (dest.state === "unverifiable") row = { ...row, result: "NÃO VERIFICÁVEL", detail: "loja pediu login ou captcha" };
     else if (dest.state === "broken") row = { ...row, result: "QUEBRADO", detail: product };
@@ -128,20 +163,41 @@ for (const link of links) {
   if (rule?.knownIssue && ["QUEBRADO", "PAUSADO", "MODELO ERRADO"].includes(row.result))
     row = { ...row, result: "CONHECIDO", detail: `${row.result}: ${rule.knownIssue}` };
   results.push(row);
-  console.log(`${row.result.padEnd(16)} ${row.name} — ${row.detail}`);
+  const priceNote = row.price ? ` [${brl(row.price)}${row.target ? ` / teto ${brl(row.target)}` : ""}]` : "";
+  console.log(`${row.result.padEnd(16)} ${row.name}${priceNote} — ${row.detail}`);
 }
 
+const aboveTarget = results.filter((r) => r.price && r.target && r.price > r.target);
 const failing = results.filter((r) => ["QUEBRADO", "PAUSADO", "MODELO ERRADO"].includes(r.result));
 const report = [
   `# Verificação de links de afiliado — ${new Date().toISOString().slice(0, 10)}`,
   "",
   `${results.length} links: ${results.filter((r) => r.result === "OK").length} OK, ${failing.length} com problema, ${results.filter((r) => r.result === "NÃO VERIFICÁVEL").length} não verificáveis (a Amazon bloqueia robôs; esses são conferidos manualmente), ${results.filter((r) => r.result === "CONHECIDO").length} problema(s) já conhecido(s).`,
   "",
-  "| Resultado | Constante | Destino |",
-  "| --- | --- | --- |",
+  "## Mercado Livre acima do teto editorial",
+  "",
+  "Aviso, não falha: o anúncio do link custa mais que o preço-alvo da página. Procure um anúncio mais barato do mesmo modelo ou confira se a página orienta outra compra.",
+  "",
+  ...(aboveTarget.length
+    ? [
+        "| Constante | Preço no anúncio | Teto | Diferença |",
+        "| --- | --- | --- | --- |",
+        ...aboveTarget
+          .sort((a, b) => b.price / b.target - a.price / a.target)
+          .map((r) => `| \`${r.name}\` | ${brl(r.price)} | ${brl(r.target)} | +${Math.round((r.price / r.target - 1) * 100)}% |`),
+      ]
+    : ["Nenhum."]),
+  "",
+  "## Todos os links",
+  "",
+  "| Resultado | Constante | Preço / teto | Destino |",
+  "| --- | --- | --- | --- |",
   ...results
     .sort((a, b) => (a.result === "OK") - (b.result === "OK"))
-    .map((r) => `| ${r.result} | \`${r.name}\` | ${r.detail.replace(/\|/g, "/")} |`),
+    .map(
+      (r) =>
+        `| ${r.result} | \`${r.name}\` | ${r.price ? brl(r.price) : "-"}${r.target ? ` / ${brl(r.target)}` : ""} | ${r.detail.replace(/\|/g, "/")} |`,
+    ),
 ].join("\n");
 
 const reportIndex = process.argv.indexOf("--report");
