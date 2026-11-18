@@ -37,6 +37,8 @@ export type ReviewTemplateProps = {
   overallScore: string;
   verdictShort: string;
   affiliateHref: string;
+  /** O link de compra leva ao sucessor (o próprio modelo não tem oferta ativa): esconde blocos de oferta do modelo. */
+  affiliateIsSuccessor?: boolean;
   affiliate: {
     title: string;
     description: string;
@@ -97,6 +99,7 @@ export function ReviewTemplate({
   overallScore,
   verdictShort,
   affiliateHref,
+  affiliateIsSuccessor = false,
   affiliate,
   decision,
   pros,
@@ -110,7 +113,7 @@ export function ReviewTemplate({
   alternative,
   fairPriceId,
 }: ReviewTemplateProps) {
-  const reviewOffer = getOfferByUrl(affiliateHref);
+  const reviewOffer = affiliateIsSuccessor ? undefined : getOfferByUrl(affiliateHref);
   const allRelated = [
     ...relatedLinks,
     ...(reviewOffer
@@ -218,17 +221,17 @@ export function ReviewTemplate({
       </section>
       <BlackFridayStrip />
 
-      {getOfferByUrl(affiliateHref) && (
-        <ReviewContext productId={getOfferByUrl(affiliateHref)!.productId} />
+      {reviewOffer && (
+        <ReviewContext productId={reviewOffer.productId} />
       )}
-      {getOfferByUrl(affiliateHref) && (
+      {reviewOffer && (
         <div className="container-tec py-4">
           <ProductPurchaseOptions
-            productId={getOfferByUrl(affiliateHref)!.productId}
+            productId={reviewOffer.productId}
             pageType="review"
             placement="after_verdict"
           />
-          <AccessoryLinks productId={getOfferByUrl(affiliateHref)!.productId} pageType="review" />
+          <AccessoryLinks productId={reviewOffer.productId} pageType="review" />
         </div>
       )}
       {fairPriceId && (
@@ -400,7 +403,7 @@ export function ReviewTemplate({
               }
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver {storeLabelForUrl(affiliateHref)}
+              {affiliateIsSuccessor ? priceLabel : `Ver ${storeLabelForUrl(affiliateHref)}`}
               <ArrowUpRight className="h-4 w-4" />
             </a>
 
@@ -432,7 +435,7 @@ export function ReviewTemplate({
           {
             productName,
             href: affiliateHref,
-            label: "Ver preço",
+            label: affiliateIsSuccessor ? "Ver o sucessor" : "Ver preço",
             primary: true,
           },
         ]}

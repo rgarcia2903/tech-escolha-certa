@@ -1,6 +1,6 @@
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
-import { POCO_X6_PRO_AFFILIATE_URL, POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { trackAffiliateClick } from "@/lib/analytics";
@@ -87,7 +87,7 @@ const POCO_X6 = {
   badge: "Melhor se estiver barato",
   rating: 4.6,
   image: "/images/products/poco-x6-pro-optimized.webp",
-  affiliateHref: POCO_X6_PRO_AFFILIATE_URL,
+  affiliateHref: POCO_X7_PRO_AFFILIATE_URL,
   strengths: [
     "Dimensity 8300-Ultra ainda entrega desempenho muito forte",
     "Ótimo custo-benefício quando aparece abaixo do Poco X7 Pro",
@@ -318,11 +318,6 @@ function ComparisonPage() {
                   product={POCO_X7}
                   label="Ver Poco X7 Pro no Mercado Livre"
                   variant="primary"
-                />
-                <AffiliateButton
-                  product={POCO_X6}
-                  label="Ver Poco X6 Pro no Mercado Livre"
-                  variant="secondary"
                 />
               </div>
             </div>
@@ -600,11 +595,6 @@ function ComparisonPage() {
                   product={POCO_X7}
                   label="Ver Poco X7 Pro no Mercado Livre"
                   variant="primary"
-                />
-                <AffiliateButton
-                  product={POCO_X6}
-                  label="Ver Poco X6 Pro no Mercado Livre"
-                  variant="secondary"
                 />
               </div>
             </div>

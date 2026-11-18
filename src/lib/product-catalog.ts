@@ -898,10 +898,7 @@ export type Offer = {
 const ml: [string, string][] = [
   ["galaxy-a35", links.GALAXY_A35_AFFILIATE_URL],
   ["iphone-15", links.IPHONE_15_AFFILIATE_URL],
-  ["poco-x6-pro", links.POCO_X6_PRO_AFFILIATE_URL],
   ["poco-x7-pro", links.POCO_X7_PRO_AFFILIATE_URL],
-  ["redmi-note-13-pro", links.REDMI_NOTE_13_PRO_AFFILIATE_URL],
-  ["redmi-note-13-4g", links.REDMI_NOTE_13_4G_AFFILIATE_URL],
   ["redmi-note-14-pro-plus", links.REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL],
   ["galaxy-a17-5g", links.GALAXY_A17_AFFILIATE_URL],
   ["galaxy-a36-5g", links.GALAXY_A36_AFFILIATE_URL],

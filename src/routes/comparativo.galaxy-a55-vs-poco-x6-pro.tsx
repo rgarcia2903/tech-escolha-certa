@@ -1,6 +1,6 @@
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
-import { GALAXY_A57_AFFILIATE_URL, POCO_X6_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A57_AFFILIATE_URL, POCO_X7_PRO_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
@@ -281,7 +281,7 @@ function ComparisonPage() {
             className="mt-8"
             options={[
               { productName: "Galaxy A57 5G", href: GALAXY_A57_AFFILIATE_URL },
-              { productName: "Poco X6 Pro", href: POCO_X6_PRO_AFFILIATE_URL },
+              { productName: "Poco X7 Pro", href: POCO_X7_PRO_AFFILIATE_URL },
             ]}
             pageType="comparativo"
             placement="hero"
@@ -341,19 +341,19 @@ function ComparisonPage() {
                   Ver o sucessor, Galaxy A57 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href={POCO_X6_PRO_AFFILIATE_URL}
+                  href={POCO_X7_PRO_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
                     trackAffiliateClick({
-                      productName: "Poco X6 Pro",
+                      productName: "Poco X7 Pro",
                       pageType: "comparativo",
                       ctaPlacement: "sidebar",
                     })
                   }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Poco X6 Pro no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                  Ver o sucessor, Poco X7 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
               <AffiliateRedirectNotice className="mt-3" />
@@ -642,18 +642,18 @@ function ComparisonPage() {
                   Ver o sucessor, Galaxy A57 <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href={POCO_X6_PRO_AFFILIATE_URL}
+                  href={POCO_X7_PRO_AFFILIATE_URL}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   onClick={() =>
                     trackAffiliateClick({
-                      productName: "Poco X6 Pro",
+                      productName: "Poco X7 Pro",
                       pageType: "comparativo",
                     })
                   }
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
                 >
-                  Ver Poco X6 Pro no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                  Ver o sucessor, Poco X7 Pro <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

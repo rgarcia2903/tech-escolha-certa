@@ -5,7 +5,7 @@ import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
 import { PurchaseActions } from "@/components/site/PurchaseActions";
 import { ScoreMethodLink } from "@/components/site/ScoreMethodLink";
 import { Badge } from "@/components/site/ui";
-import { GALAXY_A17_AFFILIATE_URL, REDMI_NOTE_13_4G_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A17_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -212,16 +212,11 @@ function GalaxyA25VsRedmiNote13Page() {
                 href: GALAXY_A17_AFFILIATE_URL,
                 label: "Ver o sucessor, Galaxy A17 5G",
               },
-              {
-                productName: "Redmi Note 13 4G",
-                href: REDMI_NOTE_13_4G_AFFILIATE_URL,
-                label: "Ver preço do Redmi Note 13",
-              },
             ]}
             pageType="comparativo"
             placement="hero"
-            title="Compare o preço dos dois modelos"
-            description="O melhor negócio depende da diferença de preço hoje. Confirme versão, memória, vendedor e frete no anúncio."
+            title="Veja o sucessor do Galaxy A25"
+            description="O Redmi Note 13 4G novo saiu de linha no Mercado Livre. Confirme versão, memória, vendedor e frete no anúncio."
           />
           <ScoreMethodLink className="mt-3" />
         </div>
@@ -397,8 +392,9 @@ function GalaxyA25VsRedmiNote13Page() {
               Confira a versão do anúncio
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              O nome “Redmi Note 13” aparece em versões 4G e 5G, com processadores diferentes. Os
-              links desta página levam ao Galaxy A25 5G e ao Redmi Note 13 4G. Confira memória, cor,
+              O nome “Redmi Note 13” aparece em versões 4G e 5G, com processadores diferentes. O
+              Redmi Note 13 4G novo não tem mais oferta ativa no Mercado Livre; o link desta página
+              leva ao Galaxy A17 5G, sucessor do A25. Confira memória, cor,
               garantia, vendedor e valor final antes de pagar.
             </p>
           </div>
@@ -406,11 +402,10 @@ function GalaxyA25VsRedmiNote13Page() {
           <PurchaseActions
             options={[
               { productName: "Galaxy A17 5G (sucessor do A25)", href: GALAXY_A17_AFFILIATE_URL },
-              { productName: "Redmi Note 13 4G", href: REDMI_NOTE_13_4G_AFFILIATE_URL },
             ]}
             pageType="comparativo"
             placement="decision"
-            title="Veja qual oferta compensa hoje"
+            title="Veja a oferta do sucessor"
             description="Os links podem abrir uma vitrine intermediária do Mercado Livre antes do anúncio. Isso é normal no programa de afiliados."
           />
         </div>
@@ -502,12 +497,6 @@ function GalaxyA25VsRedmiNote13Page() {
       <MobilePurchaseBar
         options={[
           { productName: "Galaxy A17 5G", href: GALAXY_A17_AFFILIATE_URL, label: "A17 (sucessor)" },
-          {
-            productName: "Redmi Note 13 4G",
-            href: REDMI_NOTE_13_4G_AFFILIATE_URL,
-            label: "Redmi",
-            primary: false,
-          },
         ]}
         pageType="comparativo"
         title="Galaxy A25 vs Redmi Note 13"
