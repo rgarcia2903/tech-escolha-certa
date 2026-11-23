@@ -16,6 +16,8 @@ export type Comparison = {
   chooseB: string[];
   rows: { label: string; a: string; b: string; winner: Side }[];
   faq: { question: string; answer: string }[];
+  /** Terceira opção que a resposta curta indica (ex.: um modelo melhor pelo mesmo preço), com botões no topo. */
+  alternative?: { id: string; name: string; reviewPath: string; reason: string };
 };
 
 export const COMPARISONS: Record<string, Comparison> = {
@@ -1618,7 +1620,14 @@ export const COMPARISONS: Record<string, Comparison> = {
     description:
       "Moto G37 vs Moto G17: 5G, processador, tela e câmeras dos Motorola mais baratos de 2026. Veja qual comprar até R$ 1.000.",
     shortAnswer:
-      "O Moto G37, para a maioria: tem 5G, processador bem mais rápido (Dimensity 6300 contra Helio G81) e tela de 120 Hz. O Moto G17 tem tela Full HD mais nítida, câmera ultra-angular e selfie de 32 MP, mas é 4G e mais lento. Se puder chegar a uns R$ 900, o Galaxy A17 5G ainda é melhor que os dois.",
+      "O Moto G37, para a maioria: tem 5G, processador bem mais rápido (Dimensity 6300 contra Helio G81) e tela de 120 Hz. O Moto G17 tem tela Full HD mais nítida, câmera ultra-angular e selfie de 32 MP, mas é 4G e mais lento. Mas confira o Galaxy A17 5G: se estiver pelo mesmo preço ou menos, ele é melhor que os dois.",
+    alternative: {
+      id: "galaxy-a17-5g",
+      name: "Galaxy A17 5G",
+      reviewPath: "/review/galaxy-a17-5g",
+      reason:
+        "Pelo mesmo preço, leve o Galaxy A17 5G: tela AMOLED, câmera com estabilização óptica e seis anos de atualizações.",
+    },
     chooseA: [
       "Quer 5G e um celular mais rápido.",
       "Prefere a tela mais fluida (120 Hz).",

@@ -6,7 +6,15 @@ import { getOffers, getProduct, STORE_LABELS } from "@/lib/product-catalog";
  * Botão de compra no topo de guias e listas: leva direto à loja o modelo indicado
  * como melhor escolha, para quem já decidiu ao ler a resposta curta.
  */
-export function HeroPickCTA({ productId, pageType }: { productId: string; pageType: string }) {
+export function HeroPickCTA({
+  productId,
+  pageType,
+  placement = "hero_pick",
+}: {
+  productId: string;
+  pageType: string;
+  placement?: string;
+}) {
   const product = getProduct(productId);
   const offers = getOffers(productId);
   if (!product || !offers.length) return null;
@@ -27,7 +35,7 @@ export function HeroPickCTA({ productId, pageType }: { productId: string; pageTy
               offerId: offer.id,
               destination: offer.store,
               pageType,
-              ctaPlacement: "hero_pick",
+              ctaPlacement: placement,
             })
           }
           className={
