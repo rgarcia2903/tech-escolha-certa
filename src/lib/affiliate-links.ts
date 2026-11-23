@@ -1,11 +1,9 @@
-export const GALAXY_A35_AFFILIATE_URL = "https://meli.la/1onGZVV";
 
 
 
 // Sem oferta nova ativa no Mercado Livre em 28/10/2026: Galaxy S24 vendido pela Amazon.
 export const GALAXY_S24_AFFILIATE_URL = "https://www.amazon.com.br/dp/B0CQD9H9MG?tag=techescolha03-20";
 
-export const IPHONE_15_AFFILIATE_URL = "https://meli.la/2m3GhG6";
 
 
 export const POCO_X7_PRO_AFFILIATE_URL = "https://meli.la/2wev94e";
@@ -21,7 +19,7 @@ export const GALAXY_A17_AFFILIATE_URL = "https://meli.la/33rVhq6";
 
 export const REDMI_NOTE_15_5G_AFFILIATE_URL = "https://meli.la/19RXcbF";
 
-export const MOTO_G86_AFFILIATE_URL = "https://meli.la/2uZpELs";
+export const MOTO_G86_AFFILIATE_URL = "https://meli.la/2P33tyP";
 
 export const EDGE_60_PRO_AFFILIATE_URL = "https://meli.la/16fDGJG";
 
@@ -103,7 +101,6 @@ export const MOTO_G17_AFFILIATE_URL = "https://meli.la/2NC1Xba";
 export const MOTO_G37_AFFILIATE_URL = "https://meli.la/2H9sHgp";
 export const MOTO_G15_AFFILIATE_URL = "https://meli.la/1RUrEPW";
 export const EDGE_60_FUSION_AFFILIATE_URL = "https://meli.la/1Cj5csm";
-export const EDGE_60_AFFILIATE_URL = "https://meli.la/2bKCWMB";
 export const REDMI_15C_AFFILIATE_URL = "https://meli.la/1ALDeef";
 export const POCO_C85_AFFILIATE_URL = "https://meli.la/1BscLvS";
 export const MOTO_G77_AFFILIATE_URL = "https://meli.la/2MToe45";

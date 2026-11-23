@@ -1,6 +1,6 @@
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
-import { GALAXY_A35_AFFILIATE_URL, GALAXY_A57_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A36_AFFILIATE_URL, GALAXY_A57_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
 import { MobilePurchaseBar } from "@/components/site/MobilePurchaseBar";
@@ -165,7 +165,7 @@ function ComparativoGalaxyA55VsGalaxyA35() {
               className="mt-6"
               options={[
                 { productName: "Galaxy A57 5G (sucessor do A55)", href: GALAXY_A57_AFFILIATE_URL },
-                { productName: "Galaxy A35", href: GALAXY_A35_AFFILIATE_URL },
+                { productName: "Galaxy A36 5G", href: GALAXY_A36_AFFILIATE_URL },
               ]}
               pageType="comparativo"
               placement="hero"
@@ -264,19 +264,19 @@ function ComparativoGalaxyA55VsGalaxyA35() {
             </div>
 
             <a
-              href={GALAXY_A35_AFFILIATE_URL}
+              href={GALAXY_A36_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A35",
+                  productName: "Galaxy A36 5G",
                   pageType: "comparativo",
                   ctaPlacement: "content",
                 })
               }
               className="mt-8 inline-flex rounded-full bg-[#8B5A2B] px-6 py-3 text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A35 no Mercado Livre
+              Ver o sucessor, Galaxy A36
             </a>
           </div>
         </div>
@@ -378,9 +378,9 @@ function ComparativoGalaxyA55VsGalaxyA35() {
           className="mt-6"
           options={[
             {
-              productName: "Galaxy A35",
-              href: GALAXY_A35_AFFILIATE_URL,
-              label: "Economizar com o Galaxy A35",
+              productName: "Galaxy A36 5G",
+              href: GALAXY_A36_AFFILIATE_URL,
+              label: "Ver o sucessor do A35, Galaxy A36",
               primary: true,
             },
             {
@@ -446,9 +446,9 @@ function ComparativoGalaxyA55VsGalaxyA35() {
         title="A35 ou A55? Confira os preços"
         options={[
           {
-            productName: "Galaxy A35",
-            href: GALAXY_A35_AFFILIATE_URL,
-            label: "A35: economizar",
+            productName: "Galaxy A36 5G",
+            href: GALAXY_A36_AFFILIATE_URL,
+            label: "A36: sucessor do A35",
             primary: true,
           },
           {
