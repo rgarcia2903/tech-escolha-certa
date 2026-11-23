@@ -5,7 +5,7 @@ import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
-import { IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { IPHONE_15_AMAZON_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -230,8 +230,8 @@ function ReviewPage() {
               options={[
                 {
                   productName: "iPhone 15",
-                  href: IPHONE_15_AFFILIATE_URL,
-                  label: "Ver iPhone 15 no Mercado Livre",
+                  href: IPHONE_15_AMAZON_URL,
+                  label: "Ver iPhone 15 na Amazon",
                 },
               ]}
               pageType="review"
@@ -312,7 +312,7 @@ function ReviewPage() {
                 Preço, estoque e condições podem mudar
               </span>
               <a
-                href={IPHONE_15_AFFILIATE_URL}
+                href={IPHONE_15_AMAZON_URL}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 onClick={() =>
@@ -324,7 +324,7 @@ function ReviewPage() {
                 }
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
               >
-                Ver iPhone 15 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                Ver iPhone 15 na Amazon <ArrowUpRight className="h-4 w-4" />
               </a>
               <AffiliateRedirectNotice className="mt-3" />
               <Link
@@ -358,7 +358,7 @@ function ReviewPage() {
               productName="iPhone 15"
               bestFor="Você prioriza câmera previsível, vídeos, longevidade e integração com outros produtos Apple."
               caution="Tela de 120 Hz, carregamento rápido ou mais especificações pelo preço forem prioridades."
-              affiliateHref={IPHONE_15_AFFILIATE_URL}
+              affiliateHref={IPHONE_15_AMAZON_URL}
               comparisonHref="/comparativo/iphone-15-vs-galaxy-s24"
               comparisonLabel="Comparar iPhone 15 e Galaxy S24"
             />
@@ -646,7 +646,7 @@ function ReviewPage() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href={IPHONE_15_AFFILIATE_URL}
+                    href={IPHONE_15_AMAZON_URL}
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     onClick={() =>
@@ -658,7 +658,7 @@ function ReviewPage() {
                     }
                     className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
                   >
-                    Ver iPhone 15 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                    Ver iPhone 15 na Amazon <ArrowUpRight className="h-4 w-4" />
                   </a>
                   <Link
                     to="/comparativos"
@@ -678,7 +678,7 @@ function ReviewPage() {
         options={[
           {
             productName: "iPhone 15",
-            href: IPHONE_15_AFFILIATE_URL,
+            href: IPHONE_15_AMAZON_URL,
             label: "Ver preço",
             primary: true,
           },

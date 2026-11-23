@@ -13,6 +13,8 @@ type ReviewDecisionPanelProps = {
   affiliateHref: string;
   comparisonHref: string;
   comparisonLabel: string;
+  /** Quando o link leva a outro modelo (sucessor), mostra só este botão com este texto. */
+  ctaLabel?: string;
 };
 
 export function ReviewDecisionPanel({
@@ -22,8 +24,9 @@ export function ReviewDecisionPanel({
   affiliateHref,
   comparisonHref,
   comparisonLabel,
+  ctaLabel,
 }: ReviewDecisionPanelProps) {
-  const offer = getOfferByUrl(affiliateHref);
+  const offer = ctaLabel ? undefined : getOfferByUrl(affiliateHref);
   return (
     <div className="mt-6 overflow-hidden rounded-3xl border border-[#0F3F4A]/10 bg-gradient-to-br from-[#F9FCFC] to-[#FFF8F1] p-5 shadow-sm md:p-6">
       <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8B5A2B]">
@@ -72,7 +75,7 @@ export function ReviewDecisionPanel({
             }
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#B9774B] px-5 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:brightness-105"
           >
-            Ver preço atual <ArrowUpRight className="h-4 w-4" aria-hidden />
+            {ctaLabel ?? "Ver preço atual"} <ArrowUpRight className="h-4 w-4" aria-hidden />
           </a>
         )}
 

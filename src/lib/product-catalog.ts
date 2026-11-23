@@ -896,8 +896,6 @@ export type Offer = {
   price: number | null;
 };
 const ml: [string, string][] = [
-  ["galaxy-a35", links.GALAXY_A35_AFFILIATE_URL],
-  ["iphone-15", links.IPHONE_15_AFFILIATE_URL],
   ["poco-x7-pro", links.POCO_X7_PRO_AFFILIATE_URL],
   ["redmi-note-14-pro-plus", links.REDMI_NOTE_14_PRO_PLUS_AFFILIATE_URL],
   ["galaxy-a17-5g", links.GALAXY_A17_AFFILIATE_URL],
@@ -927,7 +925,6 @@ const ml: [string, string][] = [
   ["moto-g37", links.MOTO_G37_AFFILIATE_URL],
   ["moto-g15", links.MOTO_G15_AFFILIATE_URL],
   ["edge-60-fusion", links.EDGE_60_FUSION_AFFILIATE_URL],
-  ["edge-60", links.EDGE_60_AFFILIATE_URL],
   ["redmi-15c", links.REDMI_15C_AFFILIATE_URL],
   ["poco-c85", links.POCO_C85_AFFILIATE_URL],
   ["moto-g77", links.MOTO_G77_AFFILIATE_URL],

@@ -6,7 +6,7 @@ import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { documentaryArticle } from "@/lib/editorial-schema";
 import { ReviewContext } from "@/components/site/ReviewContext";
-import { GALAXY_A35_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_A36_AFFILIATE_URL } from "@/lib/affiliate-links";
 import { GALAXY_A36_AMAZON_URL } from "@/lib/affiliate-links";
 import { AlternativeOffer } from "@/components/site/AlternativeOffer";
 import { FairPriceBox } from "@/components/site/FairPriceBox";
@@ -153,19 +153,19 @@ function ReviewGalaxyA35() {
             <ScoreMethodLink className="mt-4" tone="dark" />
 
             <a
-              href={GALAXY_A35_AFFILIATE_URL}
+              href={GALAXY_A36_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A35",
+                  productName: "Galaxy A36 5G",
                   pageType: "review",
                   ctaPlacement: "hero",
                 })
               }
               className="mt-6 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A35 no Mercado Livre
+              Ver o sucessor, Galaxy A36
             </a>
             <AffiliateRedirectNotice className="mt-3" tone="dark" />
           </div>
@@ -210,7 +210,8 @@ function ReviewGalaxyA35() {
               productName="Galaxy A35"
               bestFor="Você quer uma experiência Samsung segura, boa tela, bateria confiável e proteção IP67 sem entrar na faixa premium."
               caution="Jogos pesados ou câmeras melhores forem prioridade, ou a diferença de preço para o Galaxy A55 estiver pequena."
-              affiliateHref={GALAXY_A35_AFFILIATE_URL}
+              affiliateHref={GALAXY_A36_AFFILIATE_URL}
+              ctaLabel="Ver o sucessor, Galaxy A36"
               comparisonHref="/comparativo-galaxy-a55-vs-galaxy-a35"
               comparisonLabel="Comparar Galaxy A35 e A55"
             />
@@ -352,9 +353,9 @@ function ReviewGalaxyA35() {
           <PurchaseActions
             options={[
               {
-                productName: "Galaxy A35",
-                href: GALAXY_A35_AFFILIATE_URL,
-                label: "Conferir preço do Galaxy A35",
+                productName: "Galaxy A36 5G",
+                href: GALAXY_A36_AFFILIATE_URL,
+                label: "Ver o sucessor, Galaxy A36",
               },
             ]}
             pageType="review"
@@ -420,19 +421,19 @@ function ReviewGalaxyA35() {
             </p>
 
             <a
-              href={GALAXY_A35_AFFILIATE_URL}
+              href={GALAXY_A36_AFFILIATE_URL}
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               onClick={() =>
                 trackAffiliateClick({
-                  productName: "Galaxy A35",
+                  productName: "Galaxy A36 5G",
                   pageType: "review",
                   ctaPlacement: "sidebar",
                 })
               }
               className="mt-5 block rounded-full bg-[#8B5A2B] px-5 py-3 text-center text-sm font-bold text-white transition hover:brightness-95"
             >
-              Ver Galaxy A35 no Mercado Livre
+              Ver o sucessor, Galaxy A36
             </a>
             <AffiliateRedirectNotice className="mt-3" />
 
@@ -477,9 +478,9 @@ function ReviewGalaxyA35() {
         title="Galaxy A35 5G"
         options={[
           {
-            productName: "Galaxy A35",
-            href: GALAXY_A35_AFFILIATE_URL,
-            label: "Ver preço",
+            productName: "Galaxy A36 5G",
+            href: GALAXY_A36_AFFILIATE_URL,
+            label: "Ver o sucessor",
           },
         ]}
         pageType="review"

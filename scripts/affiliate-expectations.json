@@ -1,15 +1,5 @@
 {
   "_comment": "Para cada constante de src/lib/affiliate-links.ts: palavras que o produto de destino precisa ter (todas) e palavras que indicam modelo errado. Comparação sem acento e sem diferenciar maiúsculas.",
-  "GALAXY_A35_AFFILIATE_URL": {
-    "include": [
-      "a35"
-    ],
-    "exclude": [
-      "a36",
-      "a55",
-      "a56"
-    ]
-  },
   "GALAXY_S24_AFFILIATE_URL": {
     "include": [
       "s24"
@@ -19,17 +9,6 @@
       "s24 fe",
       "s24+",
       "plus"
-    ]
-  },
-  "IPHONE_15_AFFILIATE_URL": {
-    "include": [
-      "iphone 15"
-    ],
-    "exclude": [
-      "pro",
-      "plus",
-      "iphone 16",
-      "iphone 17"
     ]
   },
   "POCO_X7_PRO_AFFILIATE_URL": {
@@ -634,17 +613,6 @@
       "fusion"
     ],
     "exclude": [
-      "pro",
-      "edge 50",
-      "edge 70"
-    ]
-  },
-  "EDGE_60_AFFILIATE_URL": {
-    "include": [
-      "edge 60"
-    ],
-    "exclude": [
-      "fusion",
       "pro",
       "edge 50",
       "edge 70"

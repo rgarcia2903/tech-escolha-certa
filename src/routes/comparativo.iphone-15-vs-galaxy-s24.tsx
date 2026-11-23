@@ -1,7 +1,7 @@
 import { storeLabelForUrl } from "@/lib/product-catalog";
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
-import { GALAXY_S24_AFFILIATE_URL, IPHONE_15_AFFILIATE_URL } from "@/lib/affiliate-links";
+import { GALAXY_S24_AFFILIATE_URL, IPHONE_15_AMAZON_URL } from "@/lib/affiliate-links";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -199,8 +199,8 @@ const PROFILES = [
       "prefere uma curva de uso simples, sem bloatware nem propaganda",
     ],
     productName: "iPhone 15",
-    affiliateHref: IPHONE_15_AFFILIATE_URL,
-    cta: "Ver iPhone 15 no Mercado Livre",
+    affiliateHref: IPHONE_15_AMAZON_URL,
+    cta: "Ver iPhone 15 na Amazon",
     accent: "cta" as const,
   },
   {
@@ -297,7 +297,7 @@ function VersusPage() {
                 options={[
                   {
                     productName: "iPhone 15",
-                    href: IPHONE_15_AFFILIATE_URL,
+                    href: IPHONE_15_AMAZON_URL,
                     label: "Ver iPhone 15",
                   },
                   {
@@ -361,7 +361,7 @@ function VersusPage() {
                 Opções de compra
               </span>
               <div className="mt-4 space-y-3">
-                <OfferLine name="iPhone 15" affiliateHref={IPHONE_15_AFFILIATE_URL} variant="cta" />
+                <OfferLine name="iPhone 15" affiliateHref={IPHONE_15_AMAZON_URL} variant="cta" />
                 <OfferLine
                   name="Galaxy S24"
                   affiliateHref={GALAXY_S24_AFFILIATE_URL}
@@ -639,7 +639,7 @@ function VersusPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href={IPHONE_15_AFFILIATE_URL}
+                href={IPHONE_15_AMAZON_URL}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 onClick={() =>
@@ -650,7 +650,7 @@ function VersusPage() {
                 }
                 className="inline-flex items-center gap-2 rounded-lg bg-cta px-5 py-3 text-sm font-semibold text-cta-foreground shadow-soft transition hover:brightness-105 hover:-translate-y-0.5"
               >
-                Ver iPhone 15 no Mercado Livre <ArrowUpRight className="h-4 w-4" />
+                Ver iPhone 15 na Amazon <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href={GALAXY_S24_AFFILIATE_URL}
@@ -676,7 +676,7 @@ function VersusPage() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur lg:hidden">
         <div className="container-tec flex items-center gap-2">
           <a
-            href={IPHONE_15_AFFILIATE_URL}
+            href={IPHONE_15_AMAZON_URL}
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={() =>
@@ -687,7 +687,7 @@ function VersusPage() {
             }
             className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-cta px-3 py-2.5 text-xs font-semibold text-cta-foreground shadow-soft"
           >
-            iPhone 15 no Mercado Livre
+            iPhone 15 na Amazon
           </a>
           <a
             href={GALAXY_S24_AFFILIATE_URL}

@@ -27,8 +27,6 @@ import { trackAffiliateClick } from "../src/lib/analytics";
 
 // Links conferidos um a um em 28/10/2026 (ver scripts/check-affiliate-links.mjs).
 const mercadoLivre = [
-  ["galaxy-a35", "https://meli.la/1onGZVV"],
-  ["iphone-15", "https://meli.la/2m3GhG6"],
   ["poco-x7-pro", "https://meli.la/2wev94e"],
   ["galaxy-a17-4g", "https://meli.la/2FtGFqG"],
   ["redmi-note-14-pro-plus", "https://meli.la/1at28cv"],
@@ -36,7 +34,7 @@ const mercadoLivre = [
   ["galaxy-a36-5g", "https://meli.la/2kdrQ2M"],
   ["redmi-note-15-5g", "https://meli.la/19RXcbF"],
   ["moto-g56-5g", "https://meli.la/2WiqRMo"],
-  ["moto-g86-5g", "https://meli.la/2uZpELs"],
+  ["moto-g86-5g", "https://meli.la/2P33tyP"],
   ["edge-60-pro", "https://meli.la/16fDGJG"],
   ["galaxy-s25-fe", "https://meli.la/1KKtEmb"],
   ["galaxy-a57-5g", "https://meli.la/1jXf2Av"],
@@ -58,7 +56,6 @@ const mercadoLivre = [
   ["moto-g37", "https://meli.la/2H9sHgp"],
   ["moto-g15", "https://meli.la/1RUrEPW"],
   ["edge-60-fusion", "https://meli.la/1Cj5csm"],
-  ["edge-60", "https://meli.la/2bKCWMB"],
   ["redmi-15c", "https://meli.la/1ALDeef"],
   ["poco-c85", "https://meli.la/1BscLvS"],
   ["moto-g77", "https://meli.la/2MToe45"],
@@ -98,7 +95,7 @@ const amazon = [
   ["moto-g17", "https://www.amazon.com.br/dp/B0GKPXSZR6?tag=techescolha03-20"],
 ];
 test("20 Mercado Livre and 32 Amazon addresses preserve exact model identity", () => {
-  assert.equal(OFFERS.length, 67);
+  assert.equal(OFFERS.length, 64);
   for (const [store, pairs] of [
     ["mercado_livre", mercadoLivre],
     ["amazon", amazon],
@@ -296,7 +293,7 @@ test("PR #43 export names remain compatible without duplicating offers", () => {
     assert.equal(current, legacy);
     assert.equal(getOfferByUrl(current)?.productId, id);
   }
-  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 67);
+  assert.equal(new Set(OFFERS.map((o) => o.url)).size, 64);
 });
 
 test("PR #43 candidates remain shared while evaluation models stay unapproved", () => {
