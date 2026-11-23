@@ -43,6 +43,17 @@ export function ComparisonPage({ c }: { c: Comparison }) {
             <HeroPickCTA productId={c.a.id} pageType="comparativo" />
             <HeroPickCTA productId={c.b.id} pageType="comparativo" />
           </div>
+          {c.alternative && (
+            <div className="mt-6 rounded-2xl bg-white/10 p-4 ring-1 ring-white/20">
+              <p className="text-sm leading-6 text-slate-100">
+                <strong className="text-white">Ou nenhum dos dois.</strong> {c.alternative.reason}{" "}
+                <Link to={c.alternative.reviewPath} className="underline">
+                  Ver análise
+                </Link>
+              </p>
+              <HeroPickCTA productId={c.alternative.id} pageType="comparativo" placement="comparison_alternative" />
+            </div>
+          )}
         </div>
       </section>
 
