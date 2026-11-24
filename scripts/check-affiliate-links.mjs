@@ -146,7 +146,10 @@ for (const link of links) {
     const dest = readDestination(finalUrl, html);
     const product = (dest.product ?? "").replace(/\s+/g, " ").slice(0, 120);
     if (dest.state === "ok" && /mercadoli[vb]re/.test(finalUrl)) row.price = readPrice(dest.product ?? "");
-    if (status >= 400) row = { ...row, result: "QUEBRADO", detail: `HTTP ${status}` };
+    // 429/503 são a loja bloqueando o robô do GitHub (a Amazon faz isso em lote), não link quebrado.
+    if (status === 429 || status === 503)
+      row = { ...row, result: "NÃO VERIFICÁVEL", detail: `HTTP ${status}: a loja bloqueou o robô; conferir manualmente` };
+    else if (status >= 400) row = { ...row, result: "QUEBRADO", detail: `HTTP ${status}` };
     else if (dest.state === "unverifiable") row = { ...row, result: "NÃO VERIFICÁVEL", detail: "loja pediu login ou captcha" };
     else if (dest.state === "broken") row = { ...row, result: "QUEBRADO", detail: product };
     else if (dest.state === "paused") row = { ...row, result: "PAUSADO", detail: product };
