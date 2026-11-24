@@ -175,16 +175,19 @@ export const BUDGET_GROUPS: { title: string; items: ReferencePrice[] }[] = [
  * só diz que estava abaixo do teto editorial. Atualizar perto da data (24/11) e tirar quem subir.
  */
 export const BELOW_TARGET = {
-  checkedAt: "23/11",
+  checkedAt: "24/11",
   items: [
     { productId: "galaxy-a07", reviewPath: "/review/galaxy-a07" },
+    { productId: "galaxy-a17-5g", reviewPath: "/review/galaxy-a17-5g" },
+    { productId: "galaxy-a36-5g", reviewPath: "/review/galaxy-a36-5g" },
     { productId: "galaxy-a37-5g", reviewPath: "/review/galaxy-a37-5g" },
+    { productId: "moto-g86-5g", reviewPath: "/review/moto-g86-5g" },
     { productId: "edge-60-fusion", reviewPath: "/review/edge-60-fusion" },
-    { productId: "iphone-16e", reviewPath: "/review/iphone-16e" },
     { productId: "iphone-17e", reviewPath: "/review/iphone-17e" },
     { productId: "galaxy-s25", reviewPath: "/review/galaxy-s25" },
     { productId: "galaxy-s26", reviewPath: "/review/galaxy-s26" },
     { productId: "galaxy-s25-ultra", reviewPath: "/comparativo/galaxy-s26-ultra-vs-galaxy-s25-ultra" },
+    { productId: "galaxy-s26-ultra", reviewPath: "/review/galaxy-s26-ultra" },
   ],
 };
 
