@@ -442,15 +442,6 @@
       "g84"
     ]
   },
-  "IPHONE_16E_AFFILIATE_URL": {
-    "include": [
-      "16e"
-    ],
-    "exclude": [
-      "recondicionado",
-      "17e"
-    ]
-  },
   "GALAXY_A37_AFFILIATE_URL": {
     "include": [
       "a37"

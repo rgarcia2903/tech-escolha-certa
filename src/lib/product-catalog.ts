@@ -910,7 +910,6 @@ const ml: [string, string][] = [
   ["iphone-17e", links.IPHONE_17E_AFFILIATE_URL],
   ["poco-x8-pro", links.POCO_X8_PRO_AFFILIATE_URL],
   ["moto-g-max", links.MOTO_G_MAX_AFFILIATE_URL],
-  ["iphone-16e", links.IPHONE_16E_AFFILIATE_URL],
   ["galaxy-a37-5g", links.GALAXY_A37_AFFILIATE_URL],
   ["galaxy-s25", links.GALAXY_S25_AFFILIATE_URL],
   ["galaxy-s25-ultra", links.GALAXY_S25_ULTRA_AFFILIATE_URL],
