@@ -1,6 +1,7 @@
 import { getSocialImage } from "@/lib/product-media";
 import { ProductMedia } from "@/components/site/ProductMedia";
 import { ProductPurchaseOptions } from "@/components/site/ProductPurchaseOptions";
+import { HeroPickCTA } from "@/components/site/HeroPickCTA";
 import { EditorialSelection } from "@/components/site/EditorialSelection";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateRedirectNotice } from "@/components/site/AffiliateRedirectNotice";
@@ -293,6 +294,8 @@ function GamingPhonesGuide() {
                 tem mais bateria e o Galaxy A36 custa menos. Para jogos pesados, vale esticar até o
                 POCO X7 Pro.
               </p>
+
+              <HeroPickCTA productId="moto-g86-5g" pageType="guia" />
 
               <AuthorByline reviewedAt="16 de outubro de 2026" className="mt-6" />
               <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
